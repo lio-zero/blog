@@ -8,7 +8,7 @@
 
 ## 示例
 
-我们还是使用在 [JavaScript 函数合成](https://www.jianshu.com/p/5409606673b5) 和 [如何在 JavaScript 中使用管道（管道运算符）？](https://www.jianshu.com/p/d48a8bcba6da) 中的例子。
+我们还是使用在 [JavaScript 合成函数](https://github.com/lio-zero/blog/blob/master/JavaScript/JavaScript%20%E5%90%88%E6%88%90%E5%87%BD%E6%95%B0.md) 和 [如何在 JavaScript 中使用管道（管道运算符）？](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%20JavaScript%20%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%AE%A1%E9%81%93%EF%BC%88%E7%AE%A1%E9%81%93%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%89%EF%BC%9F.md) 中的例子。
 
 
 ```javascript

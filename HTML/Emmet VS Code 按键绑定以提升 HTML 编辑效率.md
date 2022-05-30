@@ -22,7 +22,7 @@ div.someClass>span*5
 
 Emmet 还提供了其他一些快捷方式提升 HTML 开发效率。
 
-> 推荐：[Emmet 语法](https://www.jianshu.com/p/5416e3315f6e)
+> 推荐：[Emmet 语法](https://github.com/lio-zero/blog/blob/master/HTML/Emmet%20%E8%AF%AD%E6%B3%95.md)
 
 ## 添加 VS Code 快捷方式
 

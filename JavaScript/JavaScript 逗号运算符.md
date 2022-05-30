@@ -46,4 +46,4 @@ for 循环的多参数
 for (let i = 0, len = arr.length; i < len; i++) {}
 ```
 
-我在之前写过一篇 [JavaScript 运算符总结](https://www.jianshu.com/p/364fbac0e542)，简单的总结了一些常用运算符的用法。
+我在之前写过一篇 [JavaScript 运算符总结](https://github.com/lio-zero/blog/blob/master/JavaScript/JavaScript%20%E8%BF%90%E7%AE%97%E7%AC%A6%E6%80%BB%E7%BB%93.md)，简单的总结了一些常用运算符的用法。

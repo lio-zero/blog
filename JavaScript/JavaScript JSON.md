@@ -24,7 +24,7 @@ JavaScript 提供了两个方法，用于处理 JSON 数据格式，如下：
 - `JSON.stringify` 将对象转换为 JSON。
 - `JSON.parse` 将 JSON 转换回对象。
 
-> 推荐：[格式化输出 JSON](https://www.jianshu.com/p/85fded9e6652)
+> 推荐：[格式化输出 JSON](https://github.com/lio-zero/blog/blob/master/JavaScript/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA%20JSON.md)
 
 ## JSON.stringify
 

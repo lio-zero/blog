@@ -30,7 +30,7 @@ console.log(sayHelloToPerson(sayHello, 'IU')) // Hello IU
 
 在 `sayHelloToPerson` 函数中，变量 `greeter` 现在将指向内存中的 `sayHello` 函数。当我们调用 `greeter()` 时，函数被调用！
 
-你如果阅读过我之前写过的文章，那么你可能会马上想到[高阶函数](https://www.jianshu.com/p/f5433de9ff99)！以下给你回忆以下：
+你如果阅读过我之前写过的文章，那么你可能会马上想到[高阶函数](https://github.com/lio-zero/blog/blob/master/JavaScript/JavaScript%20%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0.md)！以下给你回忆以下：
 
 > 高阶函数：之所以可以使用 JavaScript 编写高阶函数，是因为函数是值，这意味着它们可以分配给变量并作为值传递。
 >

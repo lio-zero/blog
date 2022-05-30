@@ -2,8 +2,8 @@
 
 你可以看看其他常用的 CSS 技巧：
 
-- [常用的一些 CSS 技巧一](https://www.jianshu.com/p/e7faf60939ec)
-- [常用的一些 CSS 技巧二 — 选择器（伪类与伪元素）](https://www.jianshu.com/p/0be9e3dc04c0)
+- [常用的一些 CSS 技巧一](https://github.com/lio-zero/blog/blob/master/CSS/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%20CSS%20%E6%8A%80%E5%B7%A7%E4%B8%80.md)
+- [常用的一些 CSS 技巧二 — 选择器（伪类与伪元素）](https://github.com/lio-zero/blog/blob/master/CSS/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%20CSS%20%E6%8A%80%E5%B7%A7%E4%BA%8C%20%E2%80%94%20%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%88%E4%BC%AA%E7%B1%BB%E4%B8%8E%E4%BC%AA%E5%85%83%E7%B4%A0%EF%BC%89.md)
 
 以下整理了 [30 seconds of code](https://www.30secondsofcode.org/) 的一些简短 CSS 代码段。
 

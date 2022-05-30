@@ -2,8 +2,8 @@
 
 你可以看看其他常用的 CSS 技巧：
 
-- [常用的一些 CSS 技巧一](https://www.jianshu.com/p/e7faf60939ec)
-- [常用的一些 CSS 技巧三](https://www.jianshu.com/p/4a99b2b36465)
+- [常用的一些 CSS 技巧一](https://github.com/lio-zero/blog/blob/master/CSS/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%20CSS%20%E6%8A%80%E5%B7%A7%E4%B8%80.md)
+- [常用的一些 CSS 技巧三](https://github.com/lio-zero/blog/blob/master/CSS/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%20CSS%20%E6%8A%80%E5%B7%A7%E4%B8%89.md)
 
 ## CSS 重置盒模型
 

@@ -163,14 +163,14 @@ location.reload() // 重新加载当前文档。
 
 ```js
 // 将跳转到该链接相应的页面
-location.replace('https://www.jianshu.com/u/3f644e66afa3')
+location.replace('https://github.com/lio-zero')
 ```
 
 `location.assign(url)` 方法会触发窗口加载并显示指定的 URL 的内容。加载新的文档。
 
 ```js
 // 跳转到给定 URL 的页面
-location.assign('https://www.jianshu.com/u/3f644e66afa3')
+location.assign('https://github.com/lio-zero')
 ```
 
 `replace()` 和 `assign()` 不同在于，调用 `replace()` 方法后，当前页面不会保存到会话历史中，这样，用户点击回退按钮时，将不会再跳转到该页面。（不保存跳转前的页面）

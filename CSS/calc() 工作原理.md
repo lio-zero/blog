@@ -37,7 +37,7 @@ $second-width: 20px;
 
 - **我们可以合并不同的单位**。具体来说，我们可以将相对单位（如百分比（`%`）和视口单位（`vw`、`vh`、`vmax`、`vmin`））与绝对单位（如像素（`px`））混合。例如，我们可以创建一个表达式，用百分比值减去像素值。
 
-> 单位详细介绍可查看：[CSS 单位及其需要注意的地方](https://www.jianshu.com/p/1ae437f68dcf)。
+> 单位详细介绍可查看：[CSS 单位及其需要注意的地方](https://github.com/lio-zero/blog/blob/master/CSS/CSS%20%E5%8D%95%E4%BD%8D%E5%8F%8A%E5%85%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9.md)。
 
 ```css
 .sidebar {

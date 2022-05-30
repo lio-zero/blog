@@ -60,7 +60,7 @@ HTML `title` 包含表示与其所属元素相关的建议信息的文本。也�
 
 当鼠标移动到带有 `title` 属性的元素上时，提示文本将作为工具提示（tooltip）显示出来。可以说，`title` 是对该元素的描述和进一步的说明。
 
-可查看 [HTML title 属性](https://www.jianshu.com/p/9c5ac54cc727) 关于使用上需要注意的地方。
+可查看 [HTML title 属性](https://github.com/lio-zero/blog/blob/master/HTML/HTML%20title%20%E5%B1%9E%E6%80%A7.md) 关于使用上需要注意的地方。
 
 ## accesskey
 
@@ -101,7 +101,7 @@ HTML `title` 包含表示与其所属元素相关的建议信息的文本。也�
 <a href="/logo.png" download="logo">home</a>
 ```
 
-详细可查看 [使用 HTML5 download 属性创建可下载的链接](https://www.jianshu.com/p/0662e5989578)
+详细可查看 [使用 HTML5 download 属性创建可下载的链接](https://github.com/lio-zero/blog/blob/master/HTML/%E4%BD%BF%E7%94%A8%20HTML5%20download%20%E5%B1%9E%E6%80%A7%E5%88%9B%E5%BB%BA%E5%8F%AF%E4%B8%8B%E8%BD%BD%E7%9A%84%E9%93%BE%E6%8E%A5.md)
 
 ## autocomplete
 
@@ -122,7 +122,7 @@ HTML `autocomplete` 属性为 `<input>` 字段提供了各种各样的选项。�
 </form>
 ```
 
-详细可查看 [HTML autocomplete 属性](https://www.jianshu.com/p/c7cb9c79e5d0)
+详细可查看 [HTML autocomplete 属性](https://github.com/lio-zero/blog/blob/master/HTML/HTML%20autocomplete%20%E5%B1%9E%E6%80%A7.md)
 
 ## loading
 

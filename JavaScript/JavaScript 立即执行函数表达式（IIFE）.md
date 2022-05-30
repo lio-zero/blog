@@ -72,7 +72,7 @@ var a = 1
 
 IIFE 通常用于创建一个独立的作用域，运行某些代码，同时将所有变量和函数保持在全局范围之外以避免冲突时使用。
 
-它还常用于经典的[闭包](https://www.jianshu.com/p/ac3f32ca73bc)：
+它还常用于经典的[闭包](https://github.com/lio-zero/blog/blob/master/JavaScript/JavaScript%20%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85.md)：
 
 ```js
 for (var i = 1; i <= 10; i++) {

@@ -201,5 +201,4 @@ function logFile(event) {
 
 ## 更多资料
 
-- [前端文件上传](https://www.jianshu.com/p/0846d7d60481)
-- [上传前预览图像](https://www.jianshu.com/p/701ca1d6f82e)
+[前端文件上传](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%89%8D%E7%AB%AF%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.md)

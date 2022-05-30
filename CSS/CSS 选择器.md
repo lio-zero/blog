@@ -2,7 +2,7 @@
 
 > [CSS 选择器](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Selectors)是 CSS 规则集的一部分，它实际上选择要设置样式的内容。
 
-查看[常用的一些 CSS 技巧二 — 选择器（伪类与伪元素）](https://www.jianshu.com/p/0be9e3dc04c0) 了解更多关系选择器的技巧。
+查看[常用的一些 CSS 技巧二 — 选择器（伪类与伪元素）](https://github.com/lio-zero/blog/blob/master/CSS/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%20CSS%20%E6%8A%80%E5%B7%A7%E4%BA%8C%20%E2%80%94%20%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%88%E4%BC%AA%E7%B1%BB%E4%B8%8E%E4%BC%AA%E5%85%83%E7%B4%A0%EF%BC%89.md) 了解更多关系选择器的技巧。
 
 ## CSS 选择符
 
@@ -118,7 +118,7 @@ a[title] {
 }
 
 /* 匹配 href 属性并且属性值为 http:.... 的 <a> 元素 */
-a[href='https://www.jianshu.com/u/3f644e66afa3'] {
+a[href='https://github.com/lio-zero/blog'] {
   color: plum;
 }
 

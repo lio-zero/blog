@@ -127,7 +127,7 @@ obj.set('age', 18)
 obj.size // 2
 ```
 
-> 您可以查看[如何在 JavaScript 中获取对象的长度](https://www.jianshu.com/p/15883d2fae94)，以了解获取对象长度的多种方式。
+> 您可以查看[如何在 JavaScript 中获取对象的长度](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%20JavaScript%20%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%AF%B9%E8%B1%A1%E7%9A%84%E9%95%BF%E5%BA%A6.md)，以了解获取对象长度的多种方式。
 
 - 清除对象需要手动操作，并且在某些情况下可能并不简单。`map` 通过使用 `Map.prototype.clear()` 解决这个问题。
 - 您可以使用 `in` 运算符或 `Object.prototype.hasOwnProperty()` 检查对象中是否存在给定键。`map` 使用 `Map.prototype.has()` 完成同样的事情。

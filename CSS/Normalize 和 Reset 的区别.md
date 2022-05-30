@@ -60,4 +60,4 @@ sup {
 - [water.css](https://github.com/kognise/water.css) 为常用标签添加了更多视觉样式
 - [minireset](https://github.com/jgthms/minireset.css) 是另一个小型的现代 CSS 重置
 - [Browser Default Styles](https://browserdefaultstyles.com/) 允许我们获取特定元素的各种渲染引擎的默认样式
-- [CSS Reset 与 Sprites](https://www.jianshu.com/p/5339f620a91f)
+- [CSS Reset 与 Sprites](https://github.com/lio-zero/blog/blob/master/CSS/CSS%20Reset%20%E4%B8%8E%20Sprites.md)

@@ -367,7 +367,7 @@ const arr4 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]]
 arr4.flat(Infinity) // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
-> 更多实现技巧可查阅[数组扁平化](https://www.jianshu.com/p/84573d2c9685)。
+> 更多实现技巧可查阅[数组扁平化](https://github.com/lio-zero/blog/blob/master/JavaScript/%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96.md)。
 
 ## Array.prototype.flatMap()
 
@@ -403,7 +403,7 @@ arr.sort((a, b) => a - b) // [1, 4, 21, 30, 100000]
 arr.sort((a, b) => b - a) // [100000, 30, 21, 4, 1]
 ```
 
-> 更多内容可查阅[如何在 JavaScript 中对对象数组进行排序？](https://www.jianshu.com/p/c5a84d5a1c7f)
+> 更多内容可查阅[如何在 JavaScript 中对对象数组进行排序？](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%20JavaScript%20%E4%B8%AD%E5%AF%B9%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F%EF%BC%9F.md)
 
 > **注意**：该方法会改变原数组。
 
@@ -857,7 +857,7 @@ arr // [1, 2, 3, 4, 5]
 const clone = (arr) => arr.slice(0)
 ```
 
-> 更多详细内容可查阅[浅拷贝和深拷贝](https://www.jianshu.com/p/e076a1e3bb03)
+> 更多详细内容可查阅[浅拷贝和深拷贝](https://github.com/lio-zero/blog/blob/master/JavaScript/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D.md)
 
 ## `some` 和 `every`
 
@@ -972,48 +972,17 @@ list.splice(2, 0, 6) // list == [1, 2, 6, 3, 4, 5]
 
 以下整理了过往写过关于数组的文章：
 
-- [如何在 JavaScript 中对对象数组进行排序？](https://www.jianshu.com/p/c5a84d5a1c7f)
-- [数组扁平化](https://www.jianshu.com/p/84573d2c9685)
-- [JavaScript 数组去重](https://www.jianshu.com/p/2f1d24dad37d)
-- [如何在 JavaScript 中合并两个数组？](https://www.jianshu.com/p/5c7267b7fffb)
-- [如何在 JavaScript 中判断值是否为数组？](https://www.jianshu.com/p/ad69edec7c1c)
-- [如何在 JavaScript 中将数组转为对象](https://www.jianshu.com/p/1478f9669781)
-- [检查数组是否已排序](https://www.jianshu.com/p/165ddcd4a20d)
-- [过滤并排序字符串列表](https://www.jianshu.com/p/ceea96d5986d)
-- [数组平均值与中位数](https://www.jianshu.com/p/20c7c4d038d2)
-- [从数组中删除重复的对象](https://www.jianshu.com/p/a90a170bb3a6)
-- [数组中的最大值/最小值](https://www.jianshu.com/p/ef29437109ad)
-- [JavaScript 中清空数组](https://www.jianshu.com/p/76f7019a5690)
-- [如何在 JavaScript 中将数组拆分为一组数组](https://www.jianshu.com/p/379112f6f202)
-- [如何在 JavaScript 中判断数组是否包含某个值？](https://www.jianshu.com/p/128864e3bb16)
-
-- [Does it mutate 😱](https://doesitmutate.xyz/)
-- [Understanding JSON Array In JavaScript](https://codehandbook.org/javascript-json-array-revisited/)
-- [JavaScript Array Includes Method](https://codehandbook.org/javascript-array-includes-method/)
-- [Array Manipulation Using JavaScript Filter Method](https://codehandbook.org/array-manipulation-using-javascript-filter-method/)
-- [How to Remove Duplicates from JavaScript Array](https://codehandbook.org/how-to-remove-duplicates-from-javascript-array/)
-- [How To Loop Through An Array In JavaScript](https://codehandbook.org/how-to-loop-through-an-array-in-javascript/)
-- [Filter Arrays with the Javascript Filter() Method Sarah Chima - Front-End Developer](https://sarahchima.com/blog/javascript-array-filter/)
-- [The JavaScript Array Map() Method Sarah Chima - Front-End Developer](https://sarahchima.com/blog/javascript-map-function/)
-- [Array Manipulation Using JavaScript Map Method](https://codehandbook.org/array-manipulation-using-javascript-map-method/)
-- [Understanding JavaScript Map Method For Array Manipulation](https://codehandbook.org/array-manipulation-using-javascript-map-method/)
-- https://www.stefanjudis.com/notes/new-in-javascript-array-findlast-and-array-findlastindex/
-- [了解 JavaScript Array.every() 和 Array.some() 方法](https://typeofnan.dev/learn-javascript-array-every-some-methods/)
-
-[4 Methods to Search an Array Sarah Chima - Front-End Developer](https://sarahchima.com/blog/4-methods-to-search-an-array/)
-
-## Array.prototype.toSource()
-
-[`toSource()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSource) 方法返回表示数组源代码的字符串。
-
-```js
-const alpha = new Array('a', 'b', 'c')
-
-console.log(alpha.toSource()) // ['a', 'b', 'c']
-```
-
-- [JavaScript Array Reduce Method](https://codehandbook.org/javascript-array-reduce-method/)
-- [使用 JS 数组的五种有趣的方法](https://24ways.org/2019/five-interesting-ways-to-use-array-reduce/)
-- https://codehandbook.org/javascript-program-find-sum-n-numbers/
-
-> 详细内容可查看我之前写过的 [Object.keys/values/entries](https://www.jianshu.com/p/43445c4118de)。
+- [如何在 JavaScript 中对对象数组进行排序？](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%20JavaScript%20%E4%B8%AD%E5%AF%B9%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F%EF%BC%9F.md)
+- [数组扁平化](https://github.com/lio-zero/blog/blob/master/JavaScript/%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96.md)
+- [JavaScript 数组去重](https://github.com/lio-zero/blog/blob/master/JavaScript/JavaScript%20%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D.md)
+- [如何在 JavaScript 中合并两个数组？](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%20JavaScript%20%E4%B8%AD%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%EF%BC%9F.md)
+- [如何在 JavaScript 中判断一个值是否为数组？](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%20JavaScript%20%E4%B8%AD%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%80%BC%E6%98%AF%E5%90%A6%E4%B8%BA%E6%95%B0%E7%BB%84%EF%BC%9F.md)
+- [如何在 JavaScript 中将数组转为对象](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%20JavaScript%20%E4%B8%AD%E5%B0%86%E6%95%B0%E7%BB%84%E8%BD%AC%E4%B8%BA%E5%AF%B9%E8%B1%A1.md)
+- [检查数组是否已排序](https://github.com/lio-zero/blog/blob/master/JavaScript/%E6%A3%80%E6%9F%A5%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%B7%B2%E6%8E%92%E5%BA%8F.md)
+- [过滤并排序字符串列表](https://github.com/lio-zero/blog/blob/master/JavaScript/%E8%BF%87%E6%BB%A4%E5%B9%B6%E6%8E%92%E5%BA%8F%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%97%E8%A1%A8.md)
+- [数组平均值与中位数](https://github.com/lio-zero/blog/blob/master/JavaScript/%E6%95%B0%E7%BB%84%E5%B9%B3%E5%9D%87%E5%80%BC%E4%B8%8E%E4%B8%AD%E4%BD%8D%E6%95%B0.md)
+- [从数组中删除重复的对象](https://github.com/lio-zero/blog/blob/master/JavaScript/%E4%BB%8E%E6%95%B0%E7%BB%84%E4%B8%AD%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AF%B9%E8%B1%A1.md)
+- [数组中的最大值/最小值](https://github.com/lio-zero/blog/blob/master/JavaScript/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC-%E6%9C%80%E5%B0%8F%E5%80%BC.md)
+- [JavaScript 中清空数组](https://github.com/lio-zero/blog/blob/master/JavaScript/JavaScript%20%E4%B8%AD%E6%B8%85%E7%A9%BA%E6%95%B0%E7%BB%84.md)
+- [如何在 JavaScript 中将数组拆分为一组数组](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%20JavaScript%20%E4%B8%AD%E5%B0%86%E6%95%B0%E7%BB%84%E6%8B%86%E5%88%86%E4%B8%BA%E4%B8%80%E7%BB%84%E6%95%B0%E7%BB%84.md)
+- [如何在 JavaScript 中判断数组是否包含某个值？](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%20JavaScript%20%E4%B8%AD%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%8C%85%E5%90%AB%E6%9F%90%E4%B8%AA%E5%80%BC%EF%BC%9F.md)
