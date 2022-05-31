@@ -11,7 +11,3 @@
 ```
 
 > [新的 CSS 属性`input-security`正在使密码显示更容易](https://twitter.com/stefanjudis/status/1457281480556781568)。
-
-https://www.stefanjudis.com/snippets/how-to-hide-microsoft-edges-password-reveal-button/
-
-https://docs.microsoft.com/en-us/microsoft-edge/web-platform/password-reveal

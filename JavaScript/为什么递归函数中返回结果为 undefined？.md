@@ -27,3 +27,7 @@ console.log(factorial(5)) // 120
 ```
 
 就这样，不管函数怎么走，都要确保 `return` 出一些东西。不然它将默认返回 `undefined`。
+
+## 更多资料
+
+[JavaScript专题之递归](https://github.com/mqyqingfeng/Blog/issues/49)

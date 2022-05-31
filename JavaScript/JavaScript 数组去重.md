@@ -142,4 +142,5 @@ unique(arr) // ["1", "2", "null", "", "undefined", "NaN", "true", "false"]
 
 ## 更多资料
 
-[Remove duplicate values from JS array [duplicate]](https://stackoverflow.com/questions/9229645/remove-duplicate-values-from-js-array)
+- [Remove duplicate values from JS array [duplicate]](https://stackoverflow.com/questions/9229645/remove-duplicate-values-from-js-array)
+- [JavaScript专题之数组去重](https://github.com/mqyqingfeng/Blog/issues/27)

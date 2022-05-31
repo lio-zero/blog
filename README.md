@@ -251,7 +251,7 @@
 - [TypeScript 基础 — Null 和 Undefined](https://github.com/lio-zero/blog/blob/master/TypeScipt/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20Null%20%E5%92%8C%20Undefined.md)
 - [TypeScript 基础 — Object 类型](https://github.com/lio-zero/blog/blob/master/TypeScipt/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20Object%20%E7%B1%BB%E5%9E%8B.md)
 - [TypeScript 基础 — const 和 readonly 的区别](https://github.com/lio-zero/blog/blob/master/TypeScipt/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20const%20%E5%92%8C%20readonly%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
-- [TypeScript 基础 — d.ts 和 .ts 的区别](https://github.com/lio-zero/blog/blob/master/TypeScipt/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20d.ts%20%E5%92%8C%20.ts%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
+- [TypeScript 基础 — *.d.ts 和 *.ts 的区别](https://github.com/lio-zero/blog/blob/master/TypeScipt/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20d.ts%20%E5%92%8C%20.ts%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 - [TypeScript 基础 — interface 中的函数和属性](https://github.com/lio-zero/blog/blob/master/TypeScipt/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20interface%20%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%B1%9E%E6%80%A7.md)
 - [TypeScript 基础 — interface 和 type 的区别](https://github.com/lio-zero/blog/blob/master/TypeScipt/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20interface%20%E5%92%8C%20type%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 - [TypeScript 基础 — interface 接口](https://github.com/lio-zero/blog/blob/master/TypeScipt/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20interface%20%E6%8E%A5%E5%8F%A3.md)
