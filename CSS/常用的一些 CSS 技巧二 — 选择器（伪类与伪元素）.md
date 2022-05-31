@@ -116,7 +116,7 @@ css 如下
 
 ## 实现分割线
 
-实现分割线的方式有很多种，这里我们使用 `::before` 和 `::after` 伪元素实现
+实现分割线的方式有很多种，这里我们使用 `flex` 加伪元素（`::before` 和 `::after`）实现
 
 ```css
 .divider {
@@ -143,7 +143,33 @@ css 如下
 
 ![分割线](https://upload-images.jianshu.io/upload_images/18281896-64451b14844cfa41.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-更多方法：[CSS 巧妙实现分隔线的几种方法](https://www.daqianduan.com/4258.html) 和 [CSS 巧妙实现自适应分隔线的 N 种方法](https://www.jb51.net/css/706905.html)
+另一种使用 `grid`，左右两侧为水平线的标题可以构造为具有三列的网格：
+
+```css
+.heading {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-gap: 1rem;
+  text-align: center;
+}
+```
+
+`1fr auto 1fr` 表示左侧和右侧列的宽度相同，它们将占用剩余的空间。
+
+我们可以使用 `::before` 和 `::after` 伪元素分别表示标题的左侧和右侧：
+
+```css
+.heading::before,
+.heading::after {
+  align-self: center;
+  border-top: 0.25rem double #e5e7eb;
+  content: '';
+}
+```
+
+> [查看效果](https://codepen.io/lio-zero/pen/qBXPjPV)
+
+更多方法：[CSS 巧妙实现分隔线的几种方法](https://www.400zi.com/4258.html)
 
 ## CSS `:empty`
 
