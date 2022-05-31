@@ -110,4 +110,4 @@ factorial(5)
 ## 更多资料
 
 - [JavaScript 专题之函数记忆](https://github.com/mqyqingfeng/Blog/issues/46)
-- [JavaScript 纯函数](https://www.jianshu.com/p/5d521da67ae1)
+- [JavaScript 纯函数](https://github.com/lio-zero/blog/blob/master/JavaScript/JavaScript%20%E7%BA%AF%E5%87%BD%E6%95%B0.md)

@@ -122,5 +122,5 @@ let theme: Theme.DEFAULT = 'Default' // type error
 
 ## 更多资料
 
-- [TypeScript 基础 — 枚举](https://www.jianshu.com/p/f5b5a8cfd49f)
-- [TypeScript 基础 — 联合类型](https://www.jianshu.com/p/3833adeddcf0)
+- [TypeScript 基础 — 枚举](https://github.com/lio-zero/blog/blob/master/TypeScipt/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20%E6%9E%9A%E4%B8%BE.md)
+- [TypeScript 基础 — 联合类型](https://github.com/lio-zero/blog/blob/master/TypeScipt/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B.md)
