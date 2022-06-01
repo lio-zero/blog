@@ -28,7 +28,7 @@
 > - 带有 `async setup()` 钩子的组件。这包括使用 `<script setup>` 顶级 `await` 表达式的组件。
 > - [异步组件](https://vuejs.org/guide/components/async.html)。
 >
-> 对于异步组件，你可以看看之前写过的一篇 [Vue3 中使用 defineAsyncComponent 延迟加载组件](https://www.jianshu.com/p/ff9fde39e9b0)。
+> 对于异步组件，你可以看看之前写过的一篇 [Vue3 中使用 defineAsyncComponent 延迟加载组件](https://github.com/lio-zero/blog/blob/master/Vue/Vue3%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20defineAsyncComponent%20%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD%E7%BB%84%E4%BB%B6.md)。
 
 例如，我们有一个 `TodoInfo` 组件，其中使用了 `<script setup>`，该组件在完全渲染前异步加载一些数据。
 
@@ -105,4 +105,4 @@ Vue 的另一个很酷的特性是，当我们开始使用异步组件时，我�
 </script>
 ```
 
-> 之前写过一篇相关的文章：[Vue 错误处理 — onErrorCaptured 钩子](https://www.jianshu.com/p/1c9d4bce92ce)。
+> 之前写过一篇相关的文章：[Vue 错误处理 — onErrorCaptured 钩子](https://github.com/lio-zero/blog/blob/master/Vue/Vue%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%20%E2%80%94%20onErrorCaptured%20%E9%92%A9%E5%AD%90.md)。

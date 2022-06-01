@@ -359,4 +359,4 @@ scope.stop() // 'Count: 0'
 
 详细查阅 [Reactivity API: Advanced](https://vuejs.org/api/reactivity-advanced.html#reactivity-api-advanced)
 
-> 关于 `watch`、`computed` 和 `watchEffect` 可以查看 [Vue Computed — 计算属性](https://www.jianshu.com/p/9786a56a124f) 和 [watch 与 watchEffect 的区别](https://www.jianshu.com/p/64a6427aaf43)。
+> 关于 `watch`、`computed` 和 `watchEffect` 可以查看 [Vue Computed — 计算属性](https://github.com/lio-zero/blog/blob/master/Vue/Vue%20Computed%20%E2%80%94%20%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7.md) 和 [watch 与 watchEffect 的区别](https://github.com/lio-zero/blog/blob/master/Vue/watch%20%E4%B8%8E%20watchEffect%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)。
