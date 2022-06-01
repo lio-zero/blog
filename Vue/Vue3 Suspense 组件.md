@@ -8,7 +8,7 @@
 
 您可能会想，**我们什么时候会使用异步组件？**
 
-老实说，比你想象的要多。每当我们希望我们的组件等待它获取数据（通常是在异步 API 调用中）时，我们可以使用 [Vue3 Composition API](Composition API FAQ) 创建一个异步组件。
+老实说，比你想象的要多。每当我们希望我们的组件等待它获取数据（通常是在异步 API 调用中）时，我们可以使用 Vue3 Composition API 创建一个异步组件。
 
 以下是一些异步组件有用的实例：
 
@@ -71,11 +71,11 @@
 </Suspense>
 ```
 
-## 您还可以捕获组件错误
+## 捕获组件错误
 
-Vue 的另一个很酷的特性是，当我们开始使用异步组件时，我们可以捕获错误并实际向用户显示一些错误消息。
+当我们使用异步组件时，我们还可以捕获错误并向用户显示一些错误消息。
 
-即使在 Vue2 中，也可以使用 [errorCaptured](https://vuejs.org/v2/api/#errorCaptured) 钩子实现，但是在 Vue3 中，它已重命名为 `onErrorCaptured`。
+在 Vue2 中，我们可以使用 [errorCaptured](https://vuejs.org/v2/api/#errorCaptured) 钩子，但是在 Vue3 中，它已重命名为 `onErrorCaptured`。
 
 不管它被命名为什么，当任何子代组件的错误被捕获时，这个钩子就会运行。我们可以在 `Suspense` 中使用这个来渲染出错时的错误。
 

@@ -1,3 +1,5 @@
+# watch 与 watchEffect 的区别
+
 在开发 Vue 应用程序的整个过程中，您将拥有大量的响应性数据属性。您的应用程序将跟踪 `input` 字段、`data` 计算和一系列其他属性，并且可能需要在值更新时执行操作。
 
 Vue 中的 `watch` 可以观察响应性属性，并可以检测到属性何时发生变化。它本质上充当组件响应式数据的事件监听器。
@@ -50,8 +52,6 @@ watch: {
 ![watch title](https://upload-images.jianshu.io/upload_images/18281896-15c48e35d55ec856.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 **如果我们需要跟踪两个依赖项呢？**在 Vue2 中，我们可以为创建两个观察者，但是 Vue3 Composition API 为该用例提供了更好的解决方案，它就是 `watchEffect`。
-
-# watch 与 watchEffect 的区别
 
 ## Vue `watchEffect` 是如何工作的？
 

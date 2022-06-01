@@ -97,7 +97,7 @@ clipboard.on('error', (e) => {
 document.addEventListener('copy', (e) => {
   const selection = document.getSelection()
   const ct = `作者：lio
-链接：https://www.jianshu.com
+链接：https://github.com/lio-zero
 来源：简书
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。`
   e.clipboardData.setData('text/plain', selection.toString() + '\n' + ct)

@@ -299,7 +299,7 @@
 - [watch 与 watchEffect 的区别](https://github.com/lio-zero/blog/blob/master/Vue/watch%20%E4%B8%8E%20watchEffect%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 - [使用 v-once 和 v-memo 指令来提升性能](https://github.com/lio-zero/blog/blob/master/Vue/%E4%BD%BF%E7%94%A8%20v-once%20%E5%92%8C%20v-memo%20%E6%8C%87%E4%BB%A4%E6%9D%A5%E6%8F%90%E5%8D%87%E6%80%A7%E8%83%BD.md)
 - [使用导航守卫保护 Vue 路由](https://github.com/lio-zero/blog/blob/master/Vue/%E4%BD%BF%E7%94%A8%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB%E4%BF%9D%E6%8A%A4%20Vue%20%E8%B7%AF%E7%94%B1.md)
-- [创建您的第一个 Vue 自定义指令](https://github.com/lio-zero/blog/blob/master/Vue/%E5%88%9B%E5%BB%BA%E6%82%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%20Vue%20%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4.)
+- [创建您的第一个 Vue 自定义指令](https://github.com/lio-zero/blog/blob/master/Vue/%E5%88%9B%E5%BB%BA%E6%82%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%20Vue%20%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4.md)
 - [制作您的第一个 Vue 插件](https://github.com/lio-zero/blog/blob/master/Vue/%E5%88%B6%E4%BD%9C%E6%82%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%20Vue%20%E6%8F%92%E4%BB%B6.md)
 - [在 Vue 中使用 $emit 自定义事件](https://github.com/lio-zero/blog/blob/master/Vue/%E5%9C%A8%20Vue%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20%24emit%20%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6.md)
 - [在 Vue2 与 Vue3 中构建相同的组件](https://github.com/lio-zero/blog/blob/master/Vue/%E5%9C%A8%20Vue2%20%E4%B8%8E%20Vue3%20%E4%B8%AD%E6%9E%84%E5%BB%BA%E7%9B%B8%E5%90%8C%E7%9A%84%E7%BB%84%E4%BB%B6.md)
