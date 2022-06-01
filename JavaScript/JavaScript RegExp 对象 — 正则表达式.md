@@ -31,7 +31,7 @@ const regex = new RegExp('abc', 'i')
 `test()` 方法返回一个布尔值，表示当前模式是否能匹配参数字符串。
 
 ```js
-/lit/.test('I am a lit') // true
+;/lit/.test('I am a lit') // true
 ```
 
 ### exec()
@@ -52,44 +52,45 @@ const str = '_x_x'
 - `global` 只读属性。返回一个布尔值，表示是否设置了 `g` 修饰符。
 
 ```js
-const reg = /abc/igm
+const reg = /abc/gim
 
 reg.ignoreCase // true
 reg.global // true
 reg.multiline // true
 ```
 
-> **Tips：**这些修饰符的作用下文有做解释。
+> **Tips**：这些修饰符的作用下文有做解释。
 
 `lastIndex` 可读可写。返回一个数值，表示下一次开始搜索的位置。
 
 ```js
-/(hi)?/g.lastIndex // 0
+;/(hi)?/g.lastIndex // 0
 ```
 
 `source` 只读属性。返回正则表达式的字符串形式（不包括反斜杠）。
 
 ```js
-/abc/igm.source // "abc"
+;/abc/gim.source // "abc"
 ```
 
 `unicode ` 只读属性。属性表明正则表达式带有 `u` 修饰符。
 
 ```js
-/\u{61}/u.unicode // true
+;/\u{61}/u.unicode // true
 ```
 
 `sticky` ES6 新增的只读属性。表示是否设置了`y`修饰符。
 
 ```js
-/foo/y.sticky // true
+;/foo/y.sticky // true
 ```
 
 `flags` ES6 新增。该属性返回一个字符串，由当前正则表达式对象的修饰符组成，以字典序排序（从左到右，即 `"gimuy"`）。
 
 ```js
-/foo/ig.flags // "gi"
-/bar/myu.flags .flags // "muy"
+;/foo/gi.flags / // "gi"
+  bar /
+  myu.flags.flags // "muy"
 ```
 
 ## 字符串的正则方法
@@ -119,7 +120,7 @@ str.split(separator, [limit])
 ```js
 'The fat cat sat on the mat.'.split(' ', 3) // ["The", "fat", "cat"]
 
-"Hello 1 word. Sentence number 2.".split(/(\d)/) // ["Hello ", "1", " word. Sentence number ", "2", "."]
+'Hello 1 word. Sentence number 2.'.split(/(\d)/) // ["Hello ", "1", " word. Sentence number ", "2", "."]
 ```
 
 ### replace()
@@ -178,19 +179,19 @@ array[1] // ['test2', 'e', 'st2', '2', index: 5, input: 'test1test2', groups: un
 
 ## 元字符
 
-| 元字符   | 描述                                                         |
-| -------- | ------------------------------------------------------------ |
-| `.`      | 匹配任意单个任何字符，除了换行符                             |
-| `[ ]`    | 字符种类。匹配方括号内的任意字符。                           |
-| `[^]`    | 否定的字符种类。匹配除了方括号里的任意字符。                 |
-| `*`      | 匹配 `>=0` 个重复的在 `*` 号之前的字符。                    |
-| `+`      | 匹配 `>=1` 个重复的 `+` 号前的字符。                             |
-| `?`      | 标记 `?` 之前的字符为可选。                                  |
-| `{n, m}` | 匹配 `num` 个大括号之前的字符或字符集 (n <= num <= m)。      |
-| `(xyz)`  | 字符集，匹配与 `xyz` 完全相等的字符串。                      |
-| `\`      | 转义字符，用于匹配一些保留的字符 `[ ] ( ) { } . * + ? ^ $ \ |
-| `^`      | 从开始行开始匹配。                                           |
-| `$`      | 从末端开始匹配。                                             |
+| 元字符   | 描述                                                          |
+| -------- | ------------------------------------------------------------- |
+| `.`      | 匹配任意单个任何字符，除了换行符                              |
+| `[ ]`    | 字符种类。匹配方括号内的任意字符。                            |
+| `[^]`    | 否定的字符种类。匹配除了方括号里的任意字符。                  |
+| `*`      | 匹配 `>=0` 个重复的在 `*` 号之前的字符。                      |
+| `+`      | 匹配 `>=1` 个重复的 `+` 号前的字符。                          |
+| `?`      | 标记 `?` 之前的字符为可选。                                   |
+| `{n, m}` | 匹配 `num` 个大括号之前的字符或字符集 (n <= num <= m)。       |
+| `(xyz)`  | 字符集，匹配与 `xyz` 完全相等的字符串。                       |
+| `\`      | 转义字符，用于匹配一些保留的字符 `[ ] ( ) { } . \* + ? ^ $ \  |
+| `^`      | 从开始行开始匹配。                                            |
+| `$`      | 从末端开始匹配。                                              |
 
 ![管道符](https://upload-images.jianshu.io/upload_images/18281896-e1ea39893d001ced.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -238,15 +239,20 @@ array[1] // ['test2', 'e', 'st2', '2', index: 5, input: 'test1test2', groups: un
 | `\r`       | 回车                         |
 
 ```js
-/1+1/.test('1+1') // false
+;/1+1/
+  .test('1+1')
+  (
+    // false
 
-(/1\+1/).test('1+1') // true
+    /1\+1/
+  )
+  .test('1+1') // true
 ```
 
 如果使用 `RegExp` 方法生成正则对象，转义需要使用两个斜杠，因为字符串内部会先转义一次。
 
 ```js
-const reg = new RegExp('1\+1')
+const reg = new RegExp('1+1')
 reg.test('1+1') // false
 
 const reg1 = new RegExp('1\\+1')
@@ -266,32 +272,32 @@ reg1.test('1+1') // true
 
 ## 简写字符集
 
-| `.`  | 除换行符外的所有字符                                         |
-| ---- | ------------------------------------------------------------ |
-| `\w` | 文字（字母、数字、下划线）。相当于 `[A-Za-z0-9_]`            |
-| `\d` | 数字。相当于 `[0-9]`                                         |
+| `.`  | 除换行符外的所有字符                                                     |
+| ---- | ------------------------------------------------------------------------ |
+| `\w` | 文字（字母、数字、下划线）。相当于 `[A-Za-z0-9_]`                        |
+| `\d` | 数字。相当于 `[0-9]`                                                     |
 | `\s` | 空白（任何空白字符，包括空格、制表符、换页符等）。相当于 `[ \f\n\r\t\v]` |
-| `\W` | 非文字                                                       |
-| `\D` | 非数字                                                       |
-| `\S` | 非空白                                                       |
-| `\f` | 匹配一个换页符                                               |
-| `\n` | 匹配一个换行符                                               |
-| `\r` | 匹配一个回车符                                               |
-| `\t` | 匹配一个制表符                                               |
-| `\v` | 匹配一个垂直制表符                                           |
-| `\p` | 匹配 CR/LF（等同于 `\r\n`），用来匹配 DOS 行终止符           |
+| `\W` | 非文字                                                                   |
+| `\D` | 非数字                                                                   |
+| `\S` | 非空白                                                                   |
+| `\f` | 匹配一个换页符                                                           |
+| `\n` | 匹配一个换行符                                                           |
+| `\r` | 匹配一个回车符                                                           |
+| `\t` | 匹配一个制表符                                                           |
+| `\v` | 匹配一个垂直制表符                                                       |
+| `\p` | 匹配 CR/LF（等同于 `\r\n`），用来匹配 DOS 行终止符                       |
 
 ## 标志
 
 标志也叫模式修饰符，用来修改表达式的搜索结果，它们可以任意组合。
 
-| 修饰符 | 描述                                                         |
-| :----- | :----------------------------------------------------------- |
-| `i`    | 忽略大小写。                                                 |
-| `g`    | 全局匹配（查找所有匹配而非在找到第一个匹配后停止）。         |
-| `m`    | 多行匹配：锚点元字符 `^` `$` 工作范围在每行的起始。          |
-| `u`    | Unicode 模式                                                 |
-| `y`    | 粘连（sticky），与 `g` 修饰符类似，也是全局匹配。`y` 修饰符确保匹配必须从剩余的第一个位置开始 |
+| 修饰符 | 描述                                                                                             |
+| :----- | :----------------------------------------------------------------------------------------------- |
+| `i`    | 忽略大小写。                                                                                     |
+| `g`    | 全局匹配（查找所有匹配而非在找到第一个匹配后停止）。                                             |
+| `m`    | 多行匹配：锚点元字符 `^` `$` 工作范围在每行的起始。                                              |
+| `u`    | Unicode 模式                                                                                     |
+| `y`    | 粘连（sticky），与 `g` 修饰符类似，也是全局匹配。`y` 修饰符确保匹配必须从剩余的第一个位置开始    |
 | `s`    | ES2018 引入 `s` 修饰符，使得 `.` 可以匹配任意单个字符。 `dotAll` 模式。即点（dot）代表一切字符。 |
 
 ### 忽略大小写 (Case Insensitive)
@@ -356,7 +362,7 @@ reg1.test('1+1') // true
 `?!` 负先行断言，用于筛选所有匹配结果，筛选条件为 其后不跟随着断言中定义的格式。 正先行断言定义和负先行断言一样，区别就是 `=` 替换成 `!` 也就是 `(?!...)`。
 
 ```js
-/(T|t)he(?!\sfat)/.exec('The fat cat sat on the mat.') // ['the', 't', index: 19, input: 'The fat cat sat on the mat.', groups: undefined]
+;/(T|t)he(?!\sfat)/.exec('The fat cat sat on the mat.') // ['the', 't', index: 19, input: 'The fat cat sat on the mat.', groups: undefined]
 ```
 
 ### `?<=` 正后发断言
@@ -364,7 +370,7 @@ reg1.test('1+1') // true
 `?<=` 正后发断言，用于筛选所有匹配结果，筛选条件为 其前跟随着断言中定义的格式。
 
 ```js
-/(?<=(T|t)he\s)(fat|mat)/.exec('The fat cat sat on the mat.') // ['fat', 'T', 'fat', index: 4, input: 'The fat cat sat on the mat.', groups: undefined]
+;/(?<=(T|t)he\s)(fat|mat)/.exec('The fat cat sat on the mat.') // ['fat', 'T', 'fat', index: 4, input: 'The fat cat sat on the mat.', groups: undefined]
 ```
 
 ### `?<!` 负后发断言
@@ -372,7 +378,7 @@ reg1.test('1+1') // true
 `?<!` 负后发断言，用于筛选所有匹配结果，筛选条件为 其前不跟随着断言中定义的格式。
 
 ```js
-/(?<!(T|t)he\s)(cat)/.exec('The fat cat sat on the mat.') // ['cat', undefined, 'cat', index: 8, input: 'The fat cat sat on the mat.', groups: undefined]
+;/(?<!(T|t)he\s)(cat)/.exec('The fat cat sat on the mat.') // ['cat', undefined, 'cat', index: 8, input: 'The fat cat sat on the mat.', groups: undefined]
 ```
 
 ## 贪婪匹配与惰性匹配（Greedy vs lazy matching）
@@ -393,7 +399,7 @@ reg1.test('1+1') // true
 - [learn-regex](https://github.com/ziishaned/learn-regex)
 - [regexr](https://regexr.com/) RegExr 是基于 HTML/JS 的工具，用于创建，测试和学习正则表达式。
 - [RegExper](https://regexper.com/) 可以将正则表达式转成解释图片。
-- [RegExLib](https://regexlib.com/) 收集各种常用的正则表达式，比如搜索 "email"，会返回该站点收集的所有关于📪正则表达式。
+- [RegExLib](https://regexlib.com/) 收集各种常用的正则表达式，比如搜索 "email"，会返回该站点收集的所有关于 📪 正则表达式。
 - [RegexBuddy](https://www.regexbuddy.com/)
 - [RegexMagic](https://www.regexmagic.com/)
 - [Rubular](https://rubular.com/)

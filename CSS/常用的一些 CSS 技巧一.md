@@ -639,7 +639,7 @@ table {
 仅使用一个属性将所有样式重置为默认值。
 
 - 使用该`all`属性将所有样式（继承或不继承）重置为其默认值。
-- **注意：**这不会影响 `direction`和`unicode-bidi`属性。
+- **注意**：这不会影响 `direction`和`unicode-bidi`属性。
 
 ```css
 .reset-all-styles {

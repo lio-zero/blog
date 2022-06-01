@@ -322,7 +322,7 @@ document.doctype
 </label>
 ```
 
-> **注意：**点击 `label` 的时候，事件冒泡一次，`label` 会触发关联 `input` 的 `click` 事件，导致事件再次触发事件。
+> **注意**：点击 `label` 的时候，事件冒泡一次，`label` 会触发关联 `input` 的 `click` 事件，导致事件再次触发事件。
 
 ## title 与 h1 的区别、b 与 strong 的区别、i 与 em 的区别？
 
@@ -438,7 +438,7 @@ html
 - HTML 内联框架元素 [`<iframe>`](<[iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)>) 表示嵌入的[浏览上下文](https://developer.mozilla.org/en-US/docs/Glossary/browsing_context)。它能够将另一个 HTML 页面嵌入到当前页面中。
 - iframe 是用来在网页中插入第三方页面，早期的页面使用 iframe 主要是用于导航栏这种很多页面都相同的部分，这样在切换页面的时候避免重复下载。
 
-> **Tips：**可以将提示文字放在 `<iframe></iframe>` 之间，来提示某些不支持 iframe 的浏览器
+> **Tips**：可以将提示文字放在 `<iframe></iframe>` 之间，来提示某些不支持 iframe 的浏览器
 
 ### 优点
 
@@ -463,7 +463,7 @@ html
 - 如果需要使用 iframe，最好通过 javascript 动态给 iframe 添加 src 属性值，这样可以绕开以上两个问题
 - iframe 框架结构有时会让人感到迷惑，如果框架个数多的话，可能会出现上下、左右滚动条，会分散访问者的注意力，用户体验度差。
 
-> **Tips：**除非特殊需要，一般不推荐使用。目前 iframe 的优点完全可以使用 Ajax 实现，因此已经没有必要使用 iframe 了。
+> **Tips**：除非特殊需要，一般不推荐使用。目前 iframe 的优点完全可以使用 Ajax 实现，因此已经没有必要使用 iframe 了。
 
 ## div+css 的布局较 table 布局有什么优点？
 
@@ -1464,7 +1464,7 @@ document.addEventListener('visibilitychange', function () {
 })
 ```
 
-**用途：**
+**用途**：
 
 - 动画，视频，音频都可以在页面显示时打开，在页面隐藏时关闭
 - 完成登陆后，无刷新自动同步其他页面的登录状态
@@ -1816,7 +1816,7 @@ fullscreen(false) // 退出全屏模式
 
 > [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) 是一套不同的技术，允许您创建可重用的定制元素（它们的功能封装在您的代码之外）并且在您的 web 应用中使用它们。不需要需要任何外部库来工作。
 
-**特征：**
+**特征**：
 
 - **Custom elements（自定义元素）**
 - **Shadow DOM（影子 DOM）**

@@ -104,7 +104,7 @@ console.log(user.run()) // lio
 console.log(user.foo() === window) // true
 ```
 
-> **注意：**箭头函数没有自己的 `this`，`arguments`，`super` 等。
+> **注意**：箭头函数没有自己的 `this`，`arguments`，`super` 等。
 
 ## 事件处理程序上下文
 

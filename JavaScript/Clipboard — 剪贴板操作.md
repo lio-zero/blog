@@ -55,7 +55,7 @@ $ npm i clipboard
 </button>
 ```
 
-> **注意：**`cut` 操作仅适用于 `<input>` 或 `<textarea>` 元素。
+> **注意**：`cut` 操作仅适用于 `<input>` 或 `<textarea>` 元素。
 
 ### 事件
 

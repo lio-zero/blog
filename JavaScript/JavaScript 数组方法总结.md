@@ -254,7 +254,7 @@ if (arr.includes(3, 2)) {
 }
 ```
 
-> **建议：**使用 `includes` 替代 `indexOf` 检查数组是否包含某个元素。
+> **建议**：使用 `includes` 替代 `indexOf` 检查数组是否包含某个元素。
 
 ## Array.prototype.reduce()
 

@@ -18,7 +18,7 @@
 // Non-strict code...
 ```
 
-> **Tips：**ES6 的原生模块（`import` 和 `export`）和类（`class`）默认启动严格模式。
+> **Tips**：ES6 的原生模块（`import` 和 `export`）和类（`class`）默认启动严格模式。
 
 ## 设立 "严格模式" 的目的
 

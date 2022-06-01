@@ -12,8 +12,8 @@
 
 JavaScript 媒体查询有以下两个主要优势：
 
-- **灵活性：** 您可以[通过编程方式将媒体查询](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Testing_media_queries)合并到 JavaScript 代码中，以便它们仅在特定事件开始时或满足特定条件时触发。使用仅限 CSS3 的方法，媒体查询描述的更改将对每个屏幕大小调整事件生效。
-- **方便性：** JavaScript 媒体查询使用与使用 CSS 时相同的语法。
+- **灵活性**：您可以[通过编程方式将媒体查询](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Testing_media_queries)合并到 JavaScript 代码中，以便它们仅在特定事件开始时或满足特定条件时触发。使用仅限 CSS3 的方法，媒体查询描述的更改将对每个屏幕大小调整事件生效。
+- **方便性**：JavaScript 媒体查询使用与使用 CSS 时相同的语法。
 
 > **考虑一下：如果你想动态改变不同屏幕尺寸的属性，你会怎么做？**
 

@@ -18,7 +18,7 @@ value = 'hello'
 value = undefined
 ```
 
-> **注意：**默认情况下，将禁用 `null` 和 `undefined` 处理，我们可以通过在 `tsconfig.json` 文件将 `strictNullChecks` 设置为 `true` 来启用。当启用 `strictNullChecks` 时，本文的示例才能正常运行。
+> **注意**：默认情况下，将禁用 `null` 和 `undefined` 处理，我们可以通过在 `tsconfig.json` 文件将 `strictNullChecks` 设置为 `true` 来启用。当启用 `strictNullChecks` 时，本文的示例才能正常运行。
 
 ## 可选链
 

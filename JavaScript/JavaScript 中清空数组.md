@@ -11,7 +11,7 @@ course.splice(0)
 console.log(course.length) // 0
 ```
 
-> **注意：**此方法会影响其他引用。
+> **注意**：此方法会影响其他引用。
 
 ```js
 let course = ['HTML', 'CSS', 'JavaScript']

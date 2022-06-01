@@ -47,7 +47,7 @@ article * + h2 {
 }
 ```
 
-> **注意：**仅在用于 `float` 构建布局时，此选项才有用。考虑使用更现代的方法，例如 `flexbox` 或 `grid` 布局
+> **注意**：仅在用于 `float` 构建布局时，此选项才有用。考虑使用更现代的方法，例如 `flexbox` 或 `grid` 布局
 
 ## :focus 状态样式
 
@@ -496,7 +496,7 @@ p::-moz-selection {
 }
 ```
 
-**更多资料：**
+**更多资料**
 
 - [Scrollbar Shenanigans](https://www.swyx.io/scrollbar-shenanigans/)
 - [Strut Your Stuff With a Custom Scrollbar](https://css-tricks.com/strut-your-stuff-with-a-custom-scrollbar/)

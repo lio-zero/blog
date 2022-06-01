@@ -22,7 +22,7 @@
 - 实现 JavaScript 文件的异步加载，也就是模块是并行加载的，而不是通过等待加载完成来阻止执行。
 - 管理模块之间的依赖性，便于代码的编写和维护。
 
-**更多详细内容：**
+**更多详细内容**：
 
 - [Javascript 模块化编程（二）：AMD 规范](http://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html)
 - [Javascript 模块化编程（三）：require.js 的用法](http://www.ruanyifeng.com/blog/2012/11/require_js.html)
