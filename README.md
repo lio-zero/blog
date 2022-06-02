@@ -305,3 +305,13 @@
 - [在 Vue2 与 Vue3 中构建相同的组件](https://github.com/lio-zero/blog/blob/master/Vue/%E5%9C%A8%20Vue2%20%E4%B8%8E%20Vue3%20%E4%B8%AD%E6%9E%84%E5%BB%BA%E7%9B%B8%E5%90%8C%E7%9A%84%E7%BB%84%E4%BB%B6.md)
 
 其他文章会陆续整理...
+
+## 勘误及提问
+
+如果有疑问或者发现错误，可以在相应的 issues 进行提问或勘误。
+
+如果喜欢或者有所启发，欢迎 star，对作者也是一种鼓励。
+
+## License
+
+所有文章采用[知识共享署名-非商业性使用-相同方式共享 3.0 中国大陆许可协议](http://creativecommons.org/licenses/by-nc-sa/3.0/cn/)进行许可。
