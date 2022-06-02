@@ -29,7 +29,7 @@ object.length // undefined
 object.hasOwnProperty('length') // false
 ```
 
-可以看到，它没有 `length` 属性。我们需要知道，仅 `string` 和 `arrays` 具有属性 `length`。
+可以看到，它没有 `length` 属性。我们需要知道，仅 `string` 和 `array` 具有属性 `length`。
 
 ```js
 const string = 'hello'
@@ -39,7 +39,7 @@ string.hasOwnProperty('length') // true
 array.hasOwnProperty('length') // true
 ```
 
-## 什么是可枚举数
+## 什么是可枚举属性？
 
 我在开头提到 `Object.keys` 返回一个**可枚举**属性键数组。所以，让我们找出 `enumerable` 属性的来源。
 
@@ -112,7 +112,7 @@ object.propertyIsEnumerable(id) // true
 
 对于我们大多数人来说，在定义属性时很少触及可枚举属性。对于我们来说，这只是一种控制在使用 `Object.keys` 遍历对象时，创建的特定属性是显示还是隐藏的方法。
 
-如果您想了解有关可枚举性的更多信息，可以 [ECMAScript 6 中的可枚举性](http://2ality.com/2015/10/enumerability-es6.html)。
+如果您想了解有关可枚举性的更多信息，可以查阅 [ECMAScript 6 中的可枚举性](http://2ality.com/2015/10/enumerability-es6.html)。
 
 > 因此，`enumerable` 属性用于隐藏不应迭代的属性。这就是在 ECMAScript 1 中引入可枚举性的原因。
 

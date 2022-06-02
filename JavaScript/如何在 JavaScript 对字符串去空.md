@@ -27,16 +27,13 @@ string // '   hello   '
 其可以删除以下创建的空白：
 
 - 空格
-
 - 标签
-
 - 无中断空格
-
 - 行终止符字符
 
 我们来看几个例子。
 
-## 行结束符字符
+## 行终止符字符
 
 > 除了空白符之外，行终止符也可以提高源码的可读性。不同的是，行终止符可以影响 JavaScript 代码的执行。行终止符也会影响自动分号补全的执行。在正则表达式中，行终止符会被 `\s` 匹配。
 
@@ -61,7 +58,7 @@ string // '   hello   '
 
 在 JavaScript 中，我们可以使用**模板字符串**轻松创建多行字符串。`trim` 方法同样可以去除空白部分。
 
-```javascript
+```js
 const multiLine = `
 hello
 
@@ -74,7 +71,7 @@ multiline.trim() // 'hello'
 
 与多行相同，它只 `trim` 第一个单词的开头和最后一个单词的结尾。
 
-```javascript
+```js
 '  Hello IO  '.trim() // 'Hello IO'
 ```
 
@@ -82,7 +79,7 @@ multiline.trim() // 'hello'
 
 与多行相同，它只修剪第一个单词的开头和最后一个单词的结尾。
 
-```javascript
+```js
 const multiLine = `
 Hello
 
@@ -102,7 +99,7 @@ IO"
 
 `trimStart` 用于删除前导空白。它还有一个别名 `trimLeft()`，两者做着相同的事情。
 
-```javascript
+```js
 const string = '   Hello   '
 
 string.trimStart() // 'Hello   '
@@ -134,16 +131,23 @@ string.trimRight() // '   Hello'
 
 ## 其他解决方案
 
-```javascript
+```js
 const str = '  hi   '
 str.replace(/ /g, '') // 'hi'
 ```
 
 **注意**：此解决方案将删除字符串中的所有空白。
 
-```javascript
-let str = '      Superman      '
-let trimStr = str.replace(/^\s+ | \s+$/g, '')
+```js
+const str = '  h i   '
+str.replace(/ /g, '') // 'hi'
+```
+
+我们可以替换一下正则，只匹配开头和结尾：
+
+```js
+const str = '      Superman      '
+const trimStr = str.replace(/^\s+ | \s+$/g, '')
 
 console.log(trimStr) // 'Superman'
 ```

@@ -28,9 +28,7 @@ if (arr.includes('red')) {
 - [`Array.prototype.find()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/find) 返回数组中满足条件的**第一个元素的值**，如果没有，返回 `undefined`。
 
 ```js
-arr.find((item) => {
-  if (item === 'black') return item
-}) // "black"
+arr.find((item) => item === 'black' && item) // "black"
 ```
 
 - [`Array.prototype.findIndex()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex) 返回数组中满足条件的第一个元素的下标，如果没有找到，返回 `-1`。

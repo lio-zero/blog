@@ -47,7 +47,7 @@ console.log(_.isArray(arr)) // true
 console.log(_.isArray(str)) // false
 ```
 
-我们一般会组合前两种方法实现一个完美的 isArray：
+我们一般会组合前两种方法实现一个完美的 `isArray`：
 
 ```js
 const isArray =

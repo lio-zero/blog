@@ -47,6 +47,6 @@
 'hello'.charAt(100) // ''
 ```
 
-## 为什么 `hello.charAt(true)` 返回 `e`？
+## 为什么 `'hello'.charAt(true)` 返回 `e`？
 
 `charAt(index)` 方法首先尝试将索引转换为数字。由于 `Number(true) == 1`，`charAt(true)` 将返回一个索引位置的字符，即第二个字符。
