@@ -23,8 +23,14 @@ React 会找出已经进行了哪些更改，并且只更改需要更改的内�
 你可以直接在 HTML 文件中练习、编写 React，通过 CDN 引入的方式：
 
 ```html
-<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script
+  src="https://unpkg.com/react@17/umd/react.development.js"
+  crossorigin
+></script>
+<script
+  src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+  crossorigin
+></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 ```
 
@@ -221,28 +227,28 @@ const elem = (
 JSX 遵循 XML 规则，因此必须正确关闭 HTML 元素。
 
 ```js
-const elem = <input type="text" />
+const elem = <input type='text' />
 ```
 
 如果 HTML 没有正确关闭，JSX 会抛出错误。
 
 ### 属性 `class` = `className`
 
-`class` 属性在 HTML 中是一个常用 的属性，但是由于 JSX 被渲染为 JavaScript，并且 `class` 关键字是 JavaScript 中的保留字，所以你不能在 JSX 中使用它。
+`class` 属性在 HTML 中是一个常用   的属性，但是由于 JSX 被渲染为 JavaScript，并且 `class` 关键字是 JavaScript 中的保留字，所以你不能在 JSX 中使用它。
 
 改用属性 `className`。
 
-JSX 通过使用 `className` 解决了这个问题。当 JSX 被渲染时，`className` 会将属性转换为 `class` 属性。
+JSX 通过使用 `className` 解决了这个问题。当 JSX 被渲染时，`className`  会将属性转换为 `class` 属性。
 
 ```js
-const elem = <h1 className="myclass">Hello React</h1>
+const elem = <h1 className='myclass'>Hello React</h1>
 ```
 
 ### 条件 — `if` 语句
 
 React 支持 `if` 语句，但不支持 JSX。
 
-为了能够在 JSX 中使用条件语句，您应该将 `if` 语句放在 JSX 之外，或者您可以使用三元表达式代替。
+为了能够在 JSX 中使用条件语句，您应该将 `if`  语句放在 JSX 之外，或者您可以使用三元表达式代替。
 
 在 JSX 代码之外编写 `if` 语句：
 
@@ -329,7 +335,7 @@ function SayHello(props) {
   return <h2>Hello {props.language}!</h2>
 }
 
-ReactDOM.render(<SayHello language="React"/>, document.getElementById('root'))
+ReactDOM.render(<SayHello language='React' />, document.getElementById('root'))
 ```
 
 ### 组件中的组件
@@ -380,14 +386,14 @@ React Props 就像 JavaScript 中的函数参数和 HTML 中的属性。
 要将 props 发送到组件中，请使用与 HTML 属性相同的语法：
 
 ```js
-const elem = <SayHello language="React" />
+const elem = <SayHello language='React' />
 ```
 
 组件将参数作为 `props` 对象接收：
 
 ```js
 function SayHello(props) {
-  return <h2>Hello { props.language }!</h2>
+  return <h2>Hello {props.language}!</h2>
 }
 ```
 
@@ -397,14 +403,14 @@ function SayHello(props) {
 
 ```js
 function SayHello(props) {
-  return <h2>Hello { props.language }!</h2>
+  return <h2>Hello {props.language}!</h2>
 }
 
 function Person() {
   return (
     <>
       <h1>我编写的代码输出的第一段内容</h1>
-      <SayHello language="React" />
+      <SayHello language='React' />
     </>
   )
 }
@@ -416,7 +422,7 @@ ReactDOM.render(<Person />, document.getElementById('root'))
 
 ```js
 function SayHello(props) {
-  return <h2>Hello { props.language }!</h2>
+  return <h2>Hello {props.language}!</h2>
 }
 
 function Person() {
@@ -424,7 +430,7 @@ function Person() {
   return (
     <>
       <h1>我编写的代码输出的第一段内容</h1>
-      <SayHello language={ language } />
+      <SayHello language={language} />
     </>
   )
 }
@@ -436,16 +442,16 @@ ReactDOM.render(<Person />, document.getElementById('root'))
 
 ```js
 function SayHello(props) {
-  return <h2>Hello { props.article.language }!</h2>
+  return <h2>Hello {props.article.language}!</h2>
 }
 
 function Person() {
   const article = { language: 'React', price: 99 }
-  const carInfo = { name: "Ford", model: "Mustang" };
+  const carInfo = { name: 'Ford', model: 'Mustang' }
   return (
     <>
       <h1>我编写的代码输出的第一段内容</h1>
-      <SayHello language={ article } />
+      <SayHello language={article} />
     </>
   )
 }
@@ -465,7 +471,7 @@ React 与 HTML 具有相同的事件：单击、更改、鼠标悬停等。
 
 React 事件以 camelCase 语法编写：用 `onClick` 代替 `onclick`。
 
-React 事件处理程序写在花括号内，例如：`onClick={shoot}`  而不是 `onClick="shoot()"`。
+React 事件处理程序写在花括号内，例如：`onClick={shoot}`  而不是  `onClick="shoot()"`。
 
 ```js
 <button onClick={shoot}>发射!</button>
@@ -555,7 +561,7 @@ ReactDOM.render(<Goal isGoal={true} />, document.getElementById('root'))
 
 ### 逻辑 `&&` 运算符
 
-另一种有条件地渲染  React 组件的另一种方法是使用 `&&` 操作符。
+另一种有条件地渲染 React 组件的另一种方法是使用 `&&` 操作符。
 
 我们可以使用花括号在 JSX 中嵌入 JavaScript 表达式：
 
@@ -577,7 +583,7 @@ const cars = ['Ford', 'BMW', 'Audi']
 ReactDOM.render(<Garage cars={cars} />, document.getElementById('root'))
 ```
 
-如果`cars.length` 等于 true，则将渲染 `&&` 后面的表达式。
+如果`cars.length`  等于 true，则将渲染 `&&` 后面的表达式。
 
 尝试清空 `cars` 数组：
 
@@ -593,16 +599,12 @@ const cars = []
 condition ? true : false
 ```
 
-我们回到之前的例子，如果 `isGoal` 为 `true`，则返回 `Car` 组件，否则返回 `House` 组件：
+我们回到之前的例子，如果  `isGoal` 为 `true`，则返回 `Car` 组件，否则返回 `House` 组件：
 
 ```js
 function Goal(props) {
   const isGoal = props.isGoal
-  return (
-    <>
-      { isGoal ? <Car /> : <House /> }
-    </>
-  )
+  return <>{isGoal ? <Car /> : <House />}</>
 }
 
 ReactDOM.render(<Goal isGoal={false} />, document.getElementById('root'))
@@ -882,7 +884,7 @@ React 中的下拉列表或选择框也有点不同于 HTML。
 </select>
 ```
 
-在React中，所选值由 `select` 标签上的 `value` 属性定义：
+在 React 中，所选值由 `select` 标签上的 `value` 属性定义：
 
 ```js
 function MyForm() {
@@ -916,7 +918,7 @@ Vite 构建工具没有为我们添加路由，我们需要自己手动安装依
 $ npm i -D react-router-dom
 ```
 
-本节写一个简单的示例，在 `src` 文件夹中，我们将创建一个 `pages` 包含多个文件的文件夹：
+本节写一个简单的示例，在 `src` 文件夹中，我们将创建一个  `pages` 包含多个文件的文件夹：
 
 - `Layout.js`
 - `Home.js`
@@ -962,20 +964,20 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 `<Route>` 可以嵌套。第一个 `<Route>` 具有 `/` 组件的路径，并渲染 `Layout` 组件。
 
-嵌套的 `<Route>` 继承并添加到父路由。因此，`blogs` 路径与父路径合并，成为 `/blogs`。
+嵌套的 `<Route>` 继承并添加到父路由。因此，`blogs` 路径与父路径合并，成为  `/blogs`。
 
-`Home` 组件路由没有路径，但有 `index` 属性。将此路由指定为父路由的默认路由，即 `/`。
+`Home` 组件路由没有路径，但有  `index` 属性。将此路由指定为父路由的默认路由，即 `/`。
 
 设置 `path` 为 `*` 将作为任何未定义 URL 的回退。这对于 404 错误页面是很好的。
 
 ### 页面/组件
 
-`Layout` 组件具有 `<Outlet>` 和 `<Link>` 元素。
+`Layout` 组件具有  `<Outlet>` 和 `<Link>` 元素。
 
 - `<Outlet>` 渲染当前选择的路由。
 - `<Link>` 用于设置 URL 并跟踪浏览历史记录。
 
-每当我们链接到内部路径时，我们将使用 `<Link>` 而不是 `<a href="">`。
+每当我们链接到内部路径时，我们将使用 `<Link>`  而不是 `<a href="">`。
 
 `Layout` 路由是一个共享组件，可以在所有页面上插入公共内容，例如导航菜单。
 
@@ -1071,7 +1073,7 @@ const Header = () => {
       <h1 style={{ backgroundColor: 'plum' }}>Hello Style!</h1>
       <p>添加一点样式!</p>
     </>
-  );
+  )
 }
 ```
 
@@ -1090,7 +1092,7 @@ const Header = () => {
 
   return (
     <>
-      <h1 style={ myStyle }>Hello Style!</h1>
+      <h1 style={myStyle}>Hello Style!</h1>
       <p>添加一点样式!</p>
     </>
   )
@@ -1099,7 +1101,7 @@ const Header = () => {
 
 ### CSS 样式表
 
-您可以在单独的文件中编写 CSS 样式，只需使用 `.css` 文件扩展名保存文件，然后将其导入您的应用程序。
+您可以在单独的文件中编写 CSS 样式，只需使用  `.css` 文件扩展名保存文件，然后将其导入您的应用程序。
 
 ```scss
 // index.scss
@@ -1158,7 +1160,7 @@ CSS 模块对于放置在单独文件中的组件很方便。
 import styles from './index.module.css'
 
 const SayHello = () => {
-  return <h1 className={ styles.bigplum }>Hello React!</h1>
+  return <h1 className={styles.bigplum}>Hello React!</h1>
 }
 
 export default SayHello
@@ -1180,7 +1182,7 @@ Sass 是一个 CSS 预处理器。
 
 Sass 文件在服务器上执行并将 CSS 发送到浏览器。
 
-> 详细内容可以查看我之前写过的一篇 [SASS 预处理器](https://www.jianshu.com/p/489961c3d99f)。
+> 详细内容可以查看我之前写过的一篇 [SASS 预处理器](https://github.com/lio-zero/blog/blob/master/CSS/SASS%20%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8.md)。
 
 通过在终端中运行以下命令来安装 Sass：
 

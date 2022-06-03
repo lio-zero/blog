@@ -5,7 +5,7 @@
 要让输入框自动聚焦，最简单的方法是使用 `autoFocus` 属性（注意大小写）：
 
 ```html
-<input name="username" type="text" autoFocus />
+<input name="username" type="text" autofocus />
 ```
 
 由于该属性在各个浏览器的工作方式不一致，React 内部实现了一个 polyfill，会在元素挂载时使用 `focus()` 方法。
@@ -101,4 +101,4 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 ## 更多资料
 
-[React Hooks](https://www.jianshu.com/p/e462a8b2255c)
+[React Hooks](https://github.com/lio-zero/blog/blob/master/React/React%20Hooks.md)
