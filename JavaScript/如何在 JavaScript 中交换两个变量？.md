@@ -24,5 +24,21 @@ const [x, y] = [1, 2]
 
 ```js
 let a = 10
-let b = ((20)[(a, b)] = [b, a])
+let b = 20
+
+;[a, b] = [b, a]
 ```
+
+## 其他解决方案
+
+您可以在 [How to swap two variables in JavaScript](https://stackoverflow.com/questions/16201656/how-to-swap-two-variables-in-javascript) 找到更多的解决方法。
+
+例如，我们还可以使用[按位异或运算符](http://en.wikipedia.org/wiki/XOR_swap_algorithm)：
+
+```js
+a = a ^ b
+b = a ^ b
+a = a ^ b
+```
+
+但使用这些技巧或多或少都有一些限制，像上面这种方式，只适用于数字类型的整数值。
