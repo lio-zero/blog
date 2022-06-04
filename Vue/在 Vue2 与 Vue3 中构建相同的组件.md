@@ -132,6 +132,8 @@ export default {
 }
 ```
 
+> 阅读：[Vue2 与 Vue3 生命周期变化](https://github.com/lio-zero/blog/blob/master/Vue/Vue2%20%E4%B8%8E%20Vue3%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8F%98%E5%8C%96.md)
+
 ## 计算属性 — `computed`
 
 让我们添加一个将用户名转换为小写字母的 `computed` 属性。
@@ -173,6 +175,8 @@ export default {
   }
 }
 ```
+
+> 阅读：[Vue Computed — 计算属性](https://github.com/lio-zero/blog/blob/master/Vue/Vue%20Computed%20%E2%80%94%20%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7.md)
 
 ## 访问 `props`
 
@@ -237,7 +241,7 @@ login() {
 然后，我们只需要调用 `emit` 发送事件即可。然后，像以前一样，`emit` 方法采用两个参数：
 
 - 事件名称
-- 与事件一起传递的有效负载对象
+- 与事件一起传递的有效 payload 对象
 
 ```js
 setup(props, { emit }) {
@@ -249,6 +253,8 @@ setup(props, { emit }) {
   }
 }
 ```
+
+> 阅读：[在 Vue 中使用 $emit 自定义事件](https://github.com/lio-zero/blog/blob/master/Vue/%E5%9C%A8%20Vue%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20%24emit%20%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6.md)
 
 ## 最后
 

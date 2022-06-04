@@ -1,14 +1,14 @@
 # Vue keep-alive
 
-当使用动态组件时，当您切换 [:is 指令](https://vuejs.org/v2/guide/components.html#Dynamic-Components)的值时，Vue 会重新创建组件的新实例。尽管它在大多数情况下很有用，但有时我们想要保存隐藏元素的状态。
+当使用动态组件时，当您切换 [`:is` 指令](https://vuejs.org/v2/guide/components.html#Dynamic-Components)的值时，Vue 会重新创建组件的新实例。尽管它在大多数情况下很有用，但有时我们想要保存隐藏元素的状态。
 
-这时 Vue 的 [`keep-alive`](https://cn.vuejs.org/v2/api/#keep-alive) 组件就派上用场了，它可以是提高速度并提供更好的用户体验的好方法。
+这时 Vue 的 [`keep-alive`](https://vuejs.org/guide/built-ins/keep-alive.html#keepalive) 组件就派上用场了，它可以是提高速度并提供更好的用户体验的好方法。
 
 ## 什么是 `keep-alive`？
 
 为了理解 `<keep-alive>`，您首先必须了解什么是动态组件。简而言之，它可以使用 `v-bind:is` 指令在不同组件之间切换。
 
-最常见的示例是**Tab 切换**，其中根据打开的选项卡，内容切换到不同的组件。
+最常见的示例是 **Tab 切换**，其中根据打开的选项卡，内容切换到不同的组件。
 
 通常，当您在动态组件之间切换时，Vue 会为您的组件创建一个全新的实例。
 

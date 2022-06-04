@@ -88,5 +88,3 @@ export default {
 | `errorCaptured` | `onErrorCaptured`                   |
 
 除了上述介绍和一些命名上的变化，具体用法差不多，详细内容查阅新文档 [Composition API: Lifecycle Hooks](https://vuejs.org/api/composition-api-lifecycle.html)。
-
-> 时刻保持查阅文档的习惯，文档时刻在更新，文章不一定。

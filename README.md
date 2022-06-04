@@ -274,6 +274,8 @@
 
 ## Vue
 
+> 时刻保持查阅文档的好习惯，文档时刻在更新，文章不一定。
+
 - [Vue 3 中的新的响应式 API](https://github.com/lio-zero/blog/blob/master/Vue/Vue%203%20%E4%B8%AD%E7%9A%84%E6%96%B0%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%20API.md)
 - [Vue CSS 变量 — 响应式样式 RFC](https://github.com/lio-zero/blog/blob/master/Vue/Vue%20CSS%20%E5%8F%98%E9%87%8F%20%E2%80%94%20%E5%93%8D%E5%BA%94%E5%BC%8F%E6%A0%B7%E5%BC%8F%20RFC.md)
 - [Vue Computed — 计算属性](https://github.com/lio-zero/blog/blob/master/Vue/Vue%20Computed%20%E2%80%94%20%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7.md)
