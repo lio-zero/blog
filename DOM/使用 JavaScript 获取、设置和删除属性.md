@@ -24,7 +24,7 @@ if (elem.hasAttribute('data-name')) {
 }
 ```
 
-> [获取、设置和删除 data-\* 属性](https://www.jianshu.com/p/a54036587917)
+> [获取、设置和删除 data-* 属性](https://github.com/lio-zero/blog/blob/master/DOM/%E8%8E%B7%E5%8F%96%E3%80%81%E8%AE%BE%E7%BD%AE%E5%92%8C%E5%88%A0%E9%99%A4%20data-%20%E5%B1%9E%E6%80%A7.md)
 
 ## 元素属性
 

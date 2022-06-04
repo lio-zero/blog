@@ -40,7 +40,7 @@ NodeList 对象中的属性和方法：
 - `NodeList.forEach()` 方法用于遍历 NodeList 的所有成员。它接受一个回调函数作为参数，每一轮遍历就执行一次这个回调函数，用法与数组实例的 `forEach` 方法完全一致。
 - `NodeList.keys()/values()/entries()` —— 这三个方法都返回一个 ES6 的遍历器对象，可以通过 `for...of` 循环遍历获取每一个成员的信息。
 
-**区别**：`keys()` 返回键名的遍历器，`values()` 返回键值的遍历器，`entries()` 返回的遍历器同时包含键名和键值的信息。如果你还不熟悉，可以在我之前写过的一篇 [Object.keys/values/entries](https://www.jianshu.com/p/43445c4118de) 了解它基本- 用法。
+**区别**：`keys()` 返回键名的遍历器，`values()` 返回键值的遍历器，`entries()` 返回的遍历器同时包含键名和键值的信息。如果你还不熟悉，可以在我之前写过的一篇 [Object.keys/values/entries](https://github.com/lio-zero/blog/blob/master/JavaScript/Object.keys%E3%80%81values%E3%80%81entries.md) 了解它基本用法。
 
 ```js
 const nodelist = document.querySelectorAll('body')

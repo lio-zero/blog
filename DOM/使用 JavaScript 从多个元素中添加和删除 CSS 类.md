@@ -113,5 +113,5 @@ function removeClass(elems, ...classes) {
 
 ## 更多资料
 
-- [HTMLCollection 和 NodeList 的区别](https://www.jianshu.com/p/71cd68cd517c)
-- [切换 HTML 元素的类](https://www.jianshu.com/p/d282fbe7510f)
+- [HTMLCollection 和 NodeList 的区别](https://github.com/lio-zero/blog/blob/master/DOM/HTMLCollection%20%E5%92%8C%20NodeList%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
+- [切换 HTML 元素的类](https://github.com/lio-zero/blog/blob/master/DOM/%E5%88%87%E6%8D%A2%20HTML%20%E5%85%83%E7%B4%A0%E7%9A%84%E7%B1%BB.md)
