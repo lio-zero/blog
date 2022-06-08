@@ -2,7 +2,7 @@
 
 当你在 Vue 开发时，具有相似的组件，你可能会一遍遍的复制粘贴相同的逻辑（`data`、`watch`、`computed` 等）。当然，你可能会想到将其编写问单个组件，并用 `props` 对其进行自定义。但是，如果有很多 `props` 很容易会造成混乱。
 
-Vue 有一个很好的解决方案：[混入（`Mixins`）](https://v3.cn.vuejs.org/guide/mixins.html)，它是不同组件之间共享**可重用**代码的最简单方法之一。一个混入对象可以包含任意组件选项。当组件使用混入对象时，所有混入对象的选项将被合并到该组件本身的选项。
+Vue 有一个很好的解决方案：[混入（Mixins）](https://v3.cn.vuejs.org/guide/mixins.html)，它是不同组件之间共享**可重用**代码的最简单方法之一。一个混入对象可以包含任意组件选项。当组件使用混入对象时，所有混入对象的选项将被合并到该组件本身的选项。
 
 > **注意**：Vue3 不建议在使用 Mixin，因为有更改的 Composition API 的支持。
 
@@ -128,6 +128,12 @@ export default {
 ```
 
 如您所见，内部组件的数据优先于默认的 mixin 值。
+
+## Mixins 与组件的优先级
+
+- 组件中 `data` 定义的属性和 `methods` 中的方法会覆盖 mixins 中同名属性和方法
+- 对于 `created`、`mounted` 等生命周期函数，mixins 中生命周期函数优先执行，再执行组件中生命周期函数
+- 对于相同的 `computed` 属性，组件的 `computed` 属性覆盖 mixins 内的 `computed` 属性；而对于相同的 `watch` 监听，mixins 中的 `watch` 监听先执行。
 
 ## Mixins 和 vuex 的区别
 
