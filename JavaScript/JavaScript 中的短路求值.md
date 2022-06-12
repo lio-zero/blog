@@ -10,7 +10,7 @@
 
 下面是一个 `if-else` 语句转换为短路求值的示例。在本例中，我们希望获得用户的显示名。如果 `user` 对象有 `name` 属性，我们将使用它作为显示名。否则，我们只会称我们的用户为 `Guest`。
 
-```javascript
+```js
 const user = {}
 
 let displayName
@@ -25,7 +25,7 @@ console.log(displayName) // "Guest"
 
 使用短路求值可以大大简化此过程：
 
-```javascript
+```js
 const user = {}
 const displayName = user.name || 'Guest'
 console.log(displayName) // "Guest"
@@ -33,7 +33,7 @@ console.log(displayName) // "Guest"
 
 因为 `user.name` 是 `undefined`，所以它是错误的。因此，短路求值返回 `Guest`！相反，如果 `user.name` 存在并且不是虚假的，则返回：
 
-```javascript
+```js
 const user = { name: 'D.O' }
 const displayName = user.name || 'Guest'
 console.log(displayName) // "D.O"
@@ -41,7 +41,7 @@ console.log(displayName) // "D.O"
 
 真正整洁的是，我们可以将这些条件联系起来。假设我们也可能有一个用户的昵称。我们的 `if-else` 条件可能会变得很难看：
 
-```javascript
+```js
 const user = { name: 'IU' }
 let displayName
 
@@ -58,7 +58,7 @@ console.log(displayName) // "IU"
 
 使用短路求值，这一切变得更加简单：
 
-```javascript
+```js
 const user = { name: 'IU' }
 const displayName = user.nickname || user.name || 'Guest'
 console.log(displayName) // "IU"
@@ -68,7 +68,7 @@ console.log(displayName) // "IU"
 
 `&&` 短路的工作原理有点不同。使用 `&&` 运算符，我们可以确保只有在前面的表达式是真实的情况下才运行后续表达式。这到底是什么意思？让我们看另一个例子！在本例中，如果服务器响应不成功，我们希望在控制台中显示一个错误。首先，我们可以使用 `if` 语句来实现这一点。
 
-```javascript
+```js
 const response = { success: false }
 if (!response.success) {
   console.error('ERROR')
@@ -77,7 +77,7 @@ if (!response.success) {
 
 使用短路求值，可以完成以下任务：
 
-```javascript
+```js
 const response = { success: false }
 !response.success && console.error('ERROR')
 ```
@@ -88,13 +88,13 @@ const response = { success: false }
 
 假设你的应用程序可能知道也可能不知道一个用户有多少个孩子。您可以考虑使用以下短路评估：
 
-```javascript
+```js
 const numberOfChildrenDisplay = user.numberOfChildren || 'Unknown'
 ```
 
 这里的问题在于，`0` 是已知子对象数的合法值，但 `0` 却是错误的！因此，以下行为将是不正确的：
 
-```javascript
+```js
 const user = { numberOfChildren: 0 }
 const numberOfChildrenDisplay = user.numberOfChildren || 'Unknown'
 console.log(numberOfChildrenDisplay) // "Unknown"
