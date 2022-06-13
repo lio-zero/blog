@@ -57,6 +57,7 @@
 - [CSS scroll-behavior 属性 — 纯 CSS 平滑滚动](https://github.com/lio-zero/blog/blob/master/CSS/CSS%20scroll-behavior%E5%B1%9E%E6%80%A7%20%E2%80%94%20%E7%BA%AF%20CSS%20%E5%B9%B3%E6%BB%91%E6%BB%9A%E5%8A%A8.md)
 - [CSS vertical-align 属性](https://github.com/lio-zero/blog/blob/master/CSS/CSS%20vertical-align%20%E5%B1%9E%E6%80%A7.md)
 - [CSS 单位及其需要注意的地方](https://github.com/lio-zero/blog/blob/master/CSS/CSS%20%E5%8D%95%E4%BD%8D%E5%8F%8A%E5%85%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9.md)
+- [CSS 实现文本溢出省略效果](https://github.com/lio-zero/blog/blob/master/CSS/CSS%20%E5%AE%9E%E7%8E%B0%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E7%9C%81%E7%95%A5%E6%95%88%E6%9E%9C.md)
 - [CSS 盒模型](https://github.com/lio-zero/blog/blob/master/CSS/CSS%20%E7%9B%92%E6%A8%A1%E5%9E%8B.md)
 - [CSS 继承、级联和特异性](https://github.com/lio-zero/blog/blob/master/CSS/CSS%20%E7%BB%A7%E6%89%BF%E3%80%81%E7%BA%A7%E8%81%94%E5%92%8C%E7%89%B9%E5%BC%82%E6%80%A7.md)
 - [CSS 选择器](https://github.com/lio-zero/blog/blob/master/CSS/CSS%20%E9%80%89%E6%8B%A9%E5%99%A8.md)
