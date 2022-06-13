@@ -5,7 +5,7 @@
 ```js
 const User = mongoose.model(
   'User',
-  mongoose.Schema({
+  new mongoose.Schema({
     name: String,
     age: Number
   })

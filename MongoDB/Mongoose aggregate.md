@@ -114,7 +114,7 @@ console.log(docs[2]) // { _id: 28, count: 1 }
 [Mongoose 中间件](https://mongoosejs.com/docs/middleware.html)也支持 `pre('aggregate')` 和 `post('aggregate')` 钩子。您可以使用聚合中间件来转换聚合管道。
 
 ```js
-const userSchema = Schema({ name: String, age: Number })
+const userSchema = new mongoose.Schema({ name: String, age: Number })
 userSchema.pre('aggregate', function () {
   // 将 $match 添加到管道的开头
   this.pipeline().unshift({ $match: { age: { $lt: 30 } } })

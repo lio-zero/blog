@@ -9,7 +9,7 @@
 ```js
 const Person = mongoose.model(
   'Person',
-  mongoose.Schema({
+  new mongoose.Schema({
     name: String
   })
 )
@@ -17,7 +17,7 @@ const Person = mongoose.model(
 // ref 告诉 Mongoose Populate 要查询的模型
 const Movie = mongoose.model(
   'Movie',
-  mongoose.Schema({
+  new mongoose.Schema({
     title: String,
     director: {
       type: mongoose.ObjectId,

@@ -5,7 +5,7 @@
 例如，假设您有一个带有 `tags` 数组的 `BlogPost` 模型骨架：
 
 ```js
-const blogPostSchema = Schema({
+const blogPostSchema = new mongoose.Schema({
   title: String,
   tags: [String]
 })
@@ -48,7 +48,7 @@ await doc.save()
 `tags` 示例是一个基元数组。Mongoose 还支持子文档数组。下面是如何定义 `members` 数组的方法，每个数组都有 `firstName` 和 `lastName` 属性。
 
 ```js
-const groupSchema = Schema({
+const groupSchema = new mongoose.Schema({
   name: String,
   members: [{ firstName: String, lastName: String }]
 })
@@ -57,7 +57,7 @@ const groupSchema = Schema({
 `doc.members` 是一个普通 JavaScript 数组的实例，因此它具有所有常用函数，例如 `slice()` 和 `filter()`。但它也有一些特定于 Mongoose 的功能。
 
 ```js
-const groupSchema = Schema({
+const groupSchema = new mongoose.Schema({
   name: String,
   members: [{ firstName: String, lastName: String }]
 })

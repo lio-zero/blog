@@ -113,7 +113,7 @@ const userSchema = new mongoose.Schema({
 要使 `MongoDB E11000` 错误消息对用户友好，您可以使用 [mongoose-beautiful-unique-validation](https://www.npmjs.com/package/mongoose-beautiful-unique-validation) 包。
 
 ```js
-const schema = new Schema({ name: String })
+const schema = new mongoose.Schema({ name: String })
 schema.plugin(require('mongoose-beautiful-unique-validation'))
 
 const UserModel = mongoose.model('User', schema)

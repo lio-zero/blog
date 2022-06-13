@@ -5,7 +5,7 @@ Mongoose `model` 有一个 [`create()` 方法](https://mongoosejs.com/docs/api/m
 ```js
 const User = mongoose.model(
   'User',
-  mongoose.Schema({
+  new mongoose.Schema({
     name: String
   })
 )
@@ -28,7 +28,7 @@ await doc.save()
 ```js
 const User = mongoose.model(
   'User',
-  mongoose.Schema({
+  new mongoose.Schema({
     name: String
   })
 )
@@ -77,7 +77,7 @@ await session.withTransaction(async () => {
 ```js
 const User = mongoose.model(
   'User',
-  mongoose.Schema({
+  new mongoose.Schema({
     name: String
   })
 )

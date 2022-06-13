@@ -11,7 +11,7 @@ Mongoose 的 [`save()` 方法](https://mongoosejs.com/docs/api/model.html#model_
 ```js
 const Person = mongoose.model(
   'Person',
-  Schema({
+  new mongoose.Schema({
     name: String,
     rank: Number
   })
@@ -62,7 +62,7 @@ Mongoose 在保存之前验证修改后的路径。如果将字段设置为无�
 ```js
 const Person = mongoose.model(
   'Person',
-  Schema({
+  new mongoose.Schema({
     name: String,
     age: Number
   })
@@ -87,7 +87,7 @@ await doc.save()
 [Mongoose 中间件](https://mongoosejs.com/docs/middleware.html)允许您在每次调用 `save()` 时告诉 Mongoose 执行一个方法。例如，调用 `pre('save')` 告诉 Mongoose 在执行 `save()` 之前先执行一个方法。
 
 ```js
-const schema = Schema({ name: String, age: Number })
+const schema = new mongoose.Schema({ name: String, age: Number })
 schema.pre('save', function () {
   // 在 save 中间件中，this 是正在保存的文档。
   console.log('Save', this.name)
@@ -103,7 +103,7 @@ await doc.save()
 类似地，`post('save')` 告诉 Mongoose 在调用 `save()` 后执行一个方法。例如，您可以将 `pre('save')` 和 `post('save')` 组合起来打印 `save()` 所用的时间。
 
 ```js
-const schema = Schema({ name: String, age: Number })
+const schema = new mongoose.Schema({ name: String, age: Number })
 schema.pre('save', function () {
   this.$locals.start = Date.now()
 })
@@ -121,11 +121,11 @@ await doc.save()
 `save()` 中间件是递归的，因此对父文档调用 `save()` 也会触发子文档的 `save()` 中间件。
 
 ```js
-const friendSchema = Schema({ name: String, age: Number, hobby: String })
+const friendSchema = new mongoose.Schema({ name: String, age: Number, hobby: String })
 friendSchema.pre('save', function () {
   console.log('Save', this.hobby)
 })
-const schema = Schema({
+const schema = new mongoose.Schema({
   name: String,
   age: Number,
   friend: friendSchema

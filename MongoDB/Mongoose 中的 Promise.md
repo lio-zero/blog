@@ -5,7 +5,7 @@
 ```js
 const Model = mongoose.model(
   'test',
-  Schema({
+  new mongoose.Schema({
     name: String
   })
 )

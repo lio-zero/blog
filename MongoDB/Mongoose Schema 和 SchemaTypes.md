@@ -40,11 +40,11 @@ const doc = new UserModel({
   hobby: 'programming'
 })
 
-console.log(doc.name) // 'Jean-Luc Picard'
+console.log(doc.name) // 'O.O'
 console.log(doc.age) // 59
 
-// undefined, Mongoose 去掉了 hobby，因为它不在 schema 中
-console.log(doc.hobby)
+// Mongoose 去掉了 hobby，因为它不在 schema 中
+console.log(doc.hobby) // undefined
 ```
 
 此外，Mongoose 将强制转换文档以匹配给定的 `Schema` 类型。这意味着您可以安全地将不受信任的数据传递给 Mongoose，并相信数据将与您的 `Schema` 匹配。
@@ -125,7 +125,7 @@ schema.path('otherProperty') // SchemaString { ... }
 在 Mongoose 中，[SchemaType](https://mongoosejs.com/docs/schematypes.html) 是 Schema 中单个路径的配置对象。SchemaType 说明路径应该是什么类型，如何验证该路径，路径的默认值是什么，以及其他特定于 Mongoose 的配置选项。
 
 ```js
-const schema = Schema({ name: String, age: Number })
+const schema = new mongoose.Schema({ name: String, age: Number })
 
 schema.path('name') instanceof mongoose.SchemaType // true
 schema.path('age') instanceof mongoose.SchemaType // true
@@ -147,7 +147,7 @@ schema.path('age') instanceof mongoose.SchemaType // true
 例如：
 
 ```js
-const schema = Schema({ name: String, age: Number })
+const schema = new mongoose.Schema({ name: String, age: Number })
 
 schema.path('name') instanceof mongoose.SchemaType // true
 schema.path('name') instanceof mongoose.Schema.Types.String // true
@@ -159,7 +159,7 @@ schema.path('age') instanceof mongoose.Schema.Types.Number // true
 您通常不必直接使用 `SchemaType` 实例。您可以在 `Schema` 定义中声明验证器和默认值。例如，下面的示例将默认 `age` 设置为 25，并添加一个验证器，以确保 `age` 至少为 21。
 
 ```js
-const schema = Schema({
+const schema = new mongoose.Schema({
   age: {
     type: Number,
     default: 25,
@@ -172,7 +172,7 @@ const schema = Schema({
 
 ```js
 // 等价的
-const schema = Schema({ age: Number })
+const schema = new mongoose.Schema({ age: Number })
 
 schema.path('age').default(25)
 schema.path('age').validate((v) => v >= 21)
