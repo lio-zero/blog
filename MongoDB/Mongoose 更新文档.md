@@ -25,9 +25,9 @@ doc.title = '使用 save() 方法更新文档'
 await doc.save()
 ```
 
-这个简单的例子有几个细微差别。首先，`save()`是文档上的一个方法，这意味着您必须有一个要保存的文档。您需要使用 `create()` 或使用 `find()` 来获取文件。
+这个简单的例子有几个细微差别。首先，`save()` 是文档上的一个方法，这意味着您必须有一个要保存的文档。您需要使用 `create()` 或 `find()` 来获取文件。
 
-其次，Mongoose 文档具有更改跟踪功能。当您调用时 `doc.save()`，Mongoose 知道您设置 `title` 并将您的 `save()` 调用转换为 `updateOne({ $set: { title } })`。尝试在调试模式下运行 Mongoose 以查看 Mongoose 执行的查询。
+其次，Mongoose 文档具有更改跟踪功能。当您调用 `doc.save()` 时，Mongoose 知道您设置 `title` 并将您的 `save()` 调用转换为 `updateOne({ $set: { title } })`。尝试在调试模式下运行 Mongoose 以查看 Mongoose 执行的查询。
 
 ## 使用 Model.updateOne() 和 Model.updateMany()
 
