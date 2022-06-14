@@ -74,5 +74,6 @@ setTimeout(function () {
 
 ## 更多资料
 
-- [JavaScript 运行机制详解：再谈 Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 - [什么是 Event Loop？](http://www.ruanyifeng.com/blog/2013/10/event_loop.html)
+- [JavaScript 运行机制详解：再谈 Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
+- [第 10 题：常见异步笔试题，请写出代码的运行结果](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)
