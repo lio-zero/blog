@@ -2,7 +2,7 @@
 
 [process](https://nodejs.org/api/process.html) 对象是 Node.js 核心 API 提供的少数全局对象之一。它可以从任何地方访问，因此它的方法也可以访问。
 
-其中 [`process.nextTick()`](https://nodejs.org/docs/latest/api/process.html#process_process_nexttick_callback_args) 方法用于将函数的执行推迟到下一个[事件循环迭代](https://www.jianshu.com/p/02322f407a7b)。
+其中 [`process.nextTick()`](https://nodejs.org/docs/latest/api/process.html#process_process_nexttick_callback_args) 方法用于将函数的执行推迟到下一个[事件循环迭代](https://github.com/lio-zero/blog/blob/master/JavaScript/JavaScript%20%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6%20%E2%80%94%20%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%EF%BC%88Event-Loop%EF%BC%89.md)。
 
 浏览器 JavaScript 为我们引入了 `setTimeout()` 等函数，以便在不久的将来延迟任务。该函数的作用是：获取一个回调函数和一个表示回调函数执行时间的数值，以毫秒为单位。
 

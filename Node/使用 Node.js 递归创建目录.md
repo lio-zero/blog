@@ -53,4 +53,4 @@ path.split('/').reduce((directories, directory) => {
 
 ## 更多资料
 
-[Node.js 文件系统模块](https://www.jianshu.com/p/ad21cc8ac42a)
+[Node.js 文件系统模块](https://github.com/lio-zero/blog/blob/master/Node/Node.js%20%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%9D%97.md)

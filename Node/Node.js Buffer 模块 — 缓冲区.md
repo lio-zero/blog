@@ -58,6 +58,6 @@ buf.length // 15
 ## 更多资料
 
 - [Node.js 缓冲区介绍](https://livecodestream.dev/post/2020-06-06-a-complete-introduction-to-node-buffers/)
-- [在 Nodejs 中将 Buffer 转换为 JSON 和 Utf8 字符串](https://www.jianshu.com/p/629a3de0d09d)
+- [在 Nodejs 中将 Buffer 转换为 JSON 和 Utf8 字符串](https://github.com/lio-zero/blog/blob/master/Node/%E5%9C%A8Node.js%20%E4%B8%AD%E5%B0%86%20Buffer%20%E8%BD%AC%E6%8D%A2%E4%B8%BA%20JSON%20%E5%92%8C%20Utf8%20%E5%AD%97%E7%AC%A6%E4%B8%B2.md)
 - [Node.js Buffer(缓冲区)](https://www.runoob.com/nodejs/nodejs-buffer.html)
 - [Buffer](https://github.com/ElemeFE/node-interview/blob/master/sections/zh-cn/io.md#buffer)

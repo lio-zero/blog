@@ -333,7 +333,7 @@ $ npm login
 $ npm publish
 ```
 
-> 详细内容可查阅另一篇[如何对 npm package 进行发包](https://www.jianshu.com/p/0232bd2bfd5a)。
+> 详细内容可查阅另一篇[如何对 npm package 进行发包](https://github.com/lio-zero/blog/blob/master/Node/%E5%A6%82%E4%BD%95%E5%AF%B9%20npm%20package%20%E8%BF%9B%E8%A1%8C%E5%8F%91%E5%8C%85.md)。
 
 ## 更新软件包
 
@@ -359,4 +359,4 @@ $ npm-check -u
 
 它将显示用于选择要更新的模块的交互式 UI。替代的还有 [`npm-check-updates`](https://www.npmjs.com/package/npm-check-updates)。
 
-> 可查看另一篇[检查 npm 模块更新](https://www.jianshu.com/p/dc6eaef98c1d)
+> 可查看另一篇[检查 npm 模块更新](https://github.com/lio-zero/blog/blob/master/Node/%E6%A3%80%E6%9F%A5%20npm%20%E6%A8%A1%E5%9D%97%E6%9B%B4%E6%96%B0.md)
