@@ -12,12 +12,12 @@ class FancyElement extends HTMLElement {
 }
 
 customElements.get('imperative-fancy-element') ||
-customElements.define('imperative-fancy-element', FancyElement)
+  customElements.define('imperative-fancy-element', FancyElement)
 ```
 
 嗯，这对仅客户端的应用程序很有效，但是在服务器（SSR）上表达和构建它们有很多挑战，当声明性阴影出现时！
 
-[声明式 Shadow DOM](https://h3manth.com/new/blog/2021/declarative-shadow-dom/)（DSD）帮助我们轻松地将 Shadow DOM 发送到服务器，上面的示例命令式示例如下所示：
+声明式 Shadow DOM（DSD）帮助我们轻松地将 Shadow DOM 发送到服务器，上面的示例命令式示例如下所示：
 
 ```html
 <imperative-fancy-element>

@@ -40,7 +40,7 @@ $ npm config get registry
 
 如果返回设置的源链接，说明镜像设置成功。
 
-> **建议：**您可以安装 [nrm](https://github.com/Pana/nrm) 包在不同源之间快速切换，例如 `npm`、`cnpm`、`taobao` 等。
+> **建议**：您可以安装 [nrm](https://github.com/Pana/nrm) 包在不同源之间快速切换，例如 `npm`、`cnpm`、`taobao` 等。
 
 ## 使用快捷方式安装包
 

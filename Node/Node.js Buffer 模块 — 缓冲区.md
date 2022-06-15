@@ -53,7 +53,7 @@ buf.length // 15
 
 详细示例请查阅[文档](http://nodejs.cn/api/buffer.html#buffer)。
 
-> **扩展：**Node 全局对象有 `process`、`console`、`Buffer`、`global`、EventLoop 相关 API（`setImmediate`、`setInterval` 和 `setTimeout` 等）及为模块包装所使用的全局对象（`exports`、`module`、`require` 等），它们都不需要您使用 `require()` 即可在 Node 环境中使用。
+> **扩展**：Node 全局对象有 `process`、`console`、`Buffer`、`global`、EventLoop 相关 API（`setImmediate`、`setInterval` 和 `setTimeout` 等）及为模块包装所使用的全局对象（`exports`、`module`、`require` 等），它们都不需要您使用 `require()` 即可在 Node 环境中使用。
 
 ## 更多资料
 
