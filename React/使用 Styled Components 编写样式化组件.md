@@ -316,3 +316,7 @@ const MatButton = styled.button.attrs({
 ```
 
 上面的例子是一个 Material Design 风格的组件。
+
+## 更多资料
+
+[The styled-components Happy Path](https://www.joshwcomeau.com/css/styled-components/)

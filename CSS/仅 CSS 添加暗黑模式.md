@@ -35,3 +35,4 @@ video {
 - [A Dark Mode Toggle with React and ThemeProvider](https://css-tricks.com/a-dark-mode-toggle-with-react-and-themeprovider/)
 - [Dark Mode Favicons](https://css-tricks.com/dark-mode-favicons/)
 - [Dark mode and variable fonts](https://css-tricks.com/dark-mode-and-variable-fonts/)
+- [The Quest for the Perfect Dark Mode](https://www.joshwcomeau.com/react/dark-mode/)
