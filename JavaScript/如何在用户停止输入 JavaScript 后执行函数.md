@@ -34,7 +34,7 @@ HTML 结构如下：
 
 然后，我们的输入上有一个 `keyup` 事件监听器。当触发此事件时，我们清除全局计时器（如果它正在运行）。这意味着计时器只有在指定的超时之前没有被清除时才会触发，换句话说，只有在超时之前没有 `keyup` 事件时才会触发！
 
-```javascript
+```js
 let timer
 const input = document.querySelector('.article-filter')
 input.addEventListener('keyup', function (e) {
@@ -51,7 +51,7 @@ input.addEventListener('keyup', function (e) {
 
 现在，我们大致的结构已经出来了，接着我们将遍历 `.article-list` 元素的所有 `children`，并相应地更新 `style.display` 属性。
 
-```javascript
+```js
 let timer
 const input = document.querySelector('.article-filter')
 input.addEventListener('keyup', function (e) {

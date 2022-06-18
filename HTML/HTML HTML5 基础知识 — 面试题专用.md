@@ -38,7 +38,7 @@ HTML 是网页的基础。它代表**超文本标记语言**。
 
 - `<!DOCTYPE>` 声明位于 HTML 文档中的第一行，处于 `<html>` 标签之前。告知浏览器的解析器使用标准模式渲染文档。DOCTYPE 不存在或格式不正确会导致文档以兼容模式呈现。
 
-```javascript
+```js
 // 返回当前文档关联的文档类型定义（DTD），如果当前文档没有 DTD，则该属性返回 null。
 document.doctype
 ```
@@ -1364,7 +1364,7 @@ IndexedDB 像一个 NoSQL 数据库，而 WebSQL 像关系型数据库，使用 
 
 客户端 js：
 
-```javascript
+```js
 var myWebWorker = new Worker('task.js') // 创建 worker
 
 // 监听 task.js worker 消息
@@ -1382,7 +1382,7 @@ worker.postMessage('From web worker file')
 
 task.js（工作文件）文件：
 
-```javascript
+```js
 // 监听客户端 JS 文件发布消息
 self.addEventListener(
   'message',
@@ -1453,7 +1453,7 @@ if ('geolocation' in navigator) {
   - `unloaded`：已被废弃，不在使用。
 - 只要 `document.visibilityState` 属性发生变化，就会触发 `visibilitychange` 事件
 
-```javascript
+```js
 // 打开新的页面，来回切换标签页，观察页面标题的变化
 document.addEventListener('visibilitychange', function () {
   if (document.visibilityState === 'hidden') {
@@ -1543,7 +1543,7 @@ document.addEventListener('visibilitychange', function () {
 
 - 控制 CSS 的 增、删、切换、是否存在某个类
 
-```javascript
+```js
 ele.classList.add('addClass')
 ele.classList.remove('removeClass')
 ele.classList.toggle('toggleClass')

@@ -8,7 +8,7 @@
 
 如果要从 JavaScript 对象中选择任意数量的属性，实现如下：
 
-```javascript
+```js
 const choice = (obj, ...props) => {
   return props.reduce((result, prop) => {
     result[prop] = obj[prop]
@@ -19,7 +19,7 @@ const choice = (obj, ...props) => {
 
 `choice` 函数的第一个参数将是我们要从中选择的对象，随后的参数将是我们要保留的键的名称。
 
-```javascript
+```js
 const user = {
   name: 'IU',
   age: 18,
@@ -35,7 +35,7 @@ console.log(choice(user, 'name', 'age')) // { name: "IU", age: "18" }
 
 如果要从 JavaScript 对象中省略任意数量的属性，实现如下：
 
-```javascript
+```js
 const ignore = (obj, ...props) => {
   const result = { ...obj }
   props.forEach((prop) => delete result[prop])
@@ -45,7 +45,7 @@ const ignore = (obj, ...props) => {
 
 同样，让我们使用相同的 `user` 对象来查看实际效果。
 
-```javascript
+```js
 const user = {
   name: 'IU',
   age: 18,

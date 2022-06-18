@@ -16,7 +16,7 @@ if (arr.indexOf('red') != -1) {
 
 - [`Array.prototype.includes()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/includes) 判断数组中是否存在某个值，如果存在返回 `true`，否则返回 `false`。
 
-```javascript
+```js
 arr.includes('red') // true
 arr.includes('plum') // false
 

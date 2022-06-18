@@ -5,8 +5,8 @@
 现代浏览器（包括 IE9）为 `<img>` 元素提供 `naturalWidth` 和 `naturalHeight` 属性。这些属性包含图像的实际、未修改的宽度和高度。
 
 ```js
-var maxWidth = document.getElementById('img').naturalWidth
-var maxHeight = document.getElementById('img').naturalHeight
+const maxWidth = document.getElementById('img').naturalWidth
+const maxHeight = document.getElementById('img').naturalHeight
 ```
 
 `naturalWidth` 和 `naturalHeight` 提供给我们图像的像素值，以下是这两个属性的支持情况：
@@ -29,7 +29,7 @@ function getMaxWidth(img) {
     maxWidth = img.naturalWidth
     // 不支持，创建回退解决方案
   } else {
-    var image = new Image()
+    const image = new Image()
     image.src = img.src
     maxWidth = image.width
   }
@@ -41,7 +41,7 @@ function getMaxWidth(img) {
 
 **注意**：你应该确保图像必须已加载完成，然后再检查宽度，以确保图像有尺寸：
 
-```javascript
+```js
 const hasDimensions = (img) =>
   !!((img.complete && typeof img.naturalWidth !== 'undefined') || img.width)
 ```

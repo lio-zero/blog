@@ -4,7 +4,7 @@
 
 `debug` 日志消息被绑定到一个模块名，只有当 `debug` 环境变量列出特定模块名时才会出现。
 
-```javascript
+```js
 // 只有当设置 DEBUG=http 时记录消息
 const debug = require('debug')('http')
 
@@ -17,7 +17,7 @@ Node.js 内置了类似的功能。[`util.debuglog`](https://nodejs.cn/api/util.
 
 让我们看一个示例：
 
-```javascript
+```js
 // index.js
 const util = require('util')
 const debuglog = util.debuglog('app')
@@ -34,7 +34,7 @@ APP 1000: hello from my debugger [123]
 
 `util.debuglog` 甚至支持通配符（`*`），以防您希望同时为不同的模块启用日志消息。
 
-```javascript
+```js
 // index.js
 const util = require('util')
 const logGeneral = util.debuglog('app-general')

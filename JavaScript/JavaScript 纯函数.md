@@ -13,7 +13,7 @@
 
 我们首先考虑一个函数，它对于相同的输入没有相同的输出：
 
-```javascript
+```js
 let str = 'Hello'
 
 const f = (name) => `${str} ${name}`
@@ -25,7 +25,7 @@ console.log(f('IU')) // Hello IU
 
 对于相同的输入，我们如何使输出相同？这就像确保 `f` 也是函数的参数一样简单：
 
-```javascript
+```js
 const f = (str, name) => `${str} ${name}`
 
 console.log(f('KAI', 'LAY')) // KAI LAY
@@ -37,7 +37,7 @@ console.log(f('KAI', 'LAY')) // KAI LAY
 
 副作用是当函数改变了函数范围之外的内容时。还是一样，我们先来看看**有副作用**规则的函数示例：
 
-```javascript
+```js
 const user = {
   password: '123456'
 }
@@ -55,7 +55,7 @@ const validate = (user) => {
 
 那么，如何消除这种副作用呢？我们可以从函数本身返回用户是否有效，而不是更改外部 `isValid` 变量：
 
-```javascript
+```js
 const user = {
   password: '123456'
 }
@@ -73,7 +73,7 @@ const isValid = validate(user)
 
 让我们考虑一下测试我们的 `f` 函数。在最初的形式中，我们可以做出以下断言：
 
-```javascript
+```js
 describe('f', function () {
   it('action', function () {
     expect(f('IU')).toEqual('Hello IU')

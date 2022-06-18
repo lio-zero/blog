@@ -10,9 +10,8 @@
 
 我们还是使用在 [JavaScript 合成函数](https://github.com/lio-zero/blog/blob/master/JavaScript/JavaScript%20%E5%90%88%E6%88%90%E5%87%BD%E6%95%B0.md) 和 [如何在 JavaScript 中使用管道（管道运算符）？](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%20JavaScript%20%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%AE%A1%E9%81%93%EF%BC%88%E7%AE%A1%E9%81%93%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%89%EF%BC%9F.md) 中的例子。
 
-
-```javascript
-const compose = f => g => x => f(g(x))
+```js
+const compose = (f) => (g) => (x) => f(g(x))
 
 const title = 'Front End Interview'
 
@@ -30,7 +29,7 @@ JavaScript 中很多内置的高阶函数，如 `reduce`、`filter`、`sort`、`
 
 ```js
 const add = (a, b) => a + b
-const isEven = num => num % 2 === 0
+const isEven = (num) => num % 2 === 0
 
 const data = [2, 3, 1, 5, 4, 6]
 
@@ -43,16 +42,15 @@ data.sort((a, b) => a - b) // [1, 2, 3, 4, 5, 6]
 
 你可以在 [30 seconds of code](https://www.30secondsofcode.org/js/p/1) 中的 JavaScript 部分找到很多关于高阶函数的有用示例。
 
-
 - 高阶函数是将一个或多个函数作为参数的函数，它用于数据处理，也可能将函数作为返回结果。
 - 高阶函数旨在抽象一些重复执行的操作
-- 一个典型的例子是 `map`，它将一个数组和一个函数作为参数。`map` 使用这个函数来转换数组中的每个元素，并返回一个包含转换后元素的新数组。JavaScript 中的其他常见示例是 `forEach`、`filter` 和      `reduce`。
+- 一个典型的例子是 `map`，它将一个数组和一个函数作为参数。`map` 使用这个函数来转换数组中的每个元素，并返回一个包含转换后元素的新数组。JavaScript 中的其他常见示例是 `forEach`、`filter` 和 `reduce`。
 
-```javascript
+```js
 let arr = [1, 2, 3, 4, 5]
 
 function pow(x) {
-    return x * x;
+  return x * x
 }
 
 let results = arr.map(pow)

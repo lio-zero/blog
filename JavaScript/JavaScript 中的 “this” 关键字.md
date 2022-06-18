@@ -127,7 +127,7 @@ btn.addEventListener('click', () => {
 
 使用 `Function.prototype.bind()` 从现有函数返回一个新函数，其中该函数永久绑定到 `bind()` 的第一个参数。
 
-```javascript
+```js
 function func() {
   console.log(this)
 }

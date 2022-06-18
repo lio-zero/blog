@@ -22,7 +22,7 @@ new_sentence(sentence, 'Superman', 'superwoman') // "I am superman.Are you super
 
 > [`String.prototype.replaceAll()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll) 方法返回一个新字符串，新字符串所有满足 `pattern` 的部分都已被 `replacement` 替换。`pattern` 可以是一个字符串或一个 `RegExp`， `replacement` 可以是一个字符串或一个在> 每次匹配被调用的函数。
 
-```javascript
+```js
 const new_sentence = (str, search, replacement) =>
   str.replaceAll(search, replacement)
 new_sentence(sentence, 'Superman', 'superwoman') // "I am superman.Are you superman?"

@@ -6,7 +6,7 @@
 
 此外，我们最常用的应该是使用 `Date` 对象来评估某件事情需要多长时间。例如：
 
-```javascript
+```js
 const before = Date.now()
 console.log(before) // 1505722233092
 
@@ -39,7 +39,7 @@ console.timeEnd('testEnd') // testTime: 48.5732421875 ms
 
 `window.performance.now` 也可用于 Web 或 Services Workers。在 Window 上下文中，返回的值是自 `navigationStart` 以来经过的时间。
 
-```javascript
+```js
 const before = window.performance.now()
 console.log(before) // 1381822.74
 
@@ -61,7 +61,7 @@ Node.js `process` 模块中有一个名为 `hrtime.bigint()` 的方法以毫微�
 
 以下是文档给出的一个代码示例：
 
-```javascript
+```js
 import { hrtime } from 'process'
 
 const start = hrtime.bigint() // 191051479007711n

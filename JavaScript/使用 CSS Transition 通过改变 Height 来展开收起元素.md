@@ -90,7 +90,7 @@ button {
 
 JavaScript 如下：
 
-```javascript
+```js
 const seeMore = document.getElementById('seeMoreBtn')
 const article = document.getElementById('article')
 

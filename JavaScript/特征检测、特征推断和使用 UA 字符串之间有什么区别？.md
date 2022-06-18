@@ -4,7 +4,7 @@
 
 特征检测包括确定浏览器是否支持某段代码，以及是否运行不同的代码（取决于它是否执行），以便浏览器始终能够正常运行代码功能，而不会在某些浏览器中出现崩溃和错误。例如：
 
-```javascript
+```js
 if ('geolocation' in navigator) {
   // 可以使用 navigator.geolocation
 } else {
@@ -18,7 +18,7 @@ if ('geolocation' in navigator) {
 
 特征推断与特征检测一样，会对功能可用性进行检查，但是在判断通过后，还会使用其他功能，因为它假设其他功能也可用，例如：
 
-```javascript
+```js
 if (document.getElementsByTagName) {
   elem = document.getElementById(id)
 }

@@ -173,7 +173,7 @@
 
 使用前面的示例实现这些挂钩，在切换组件时将其输出到控制台。
 
-```javascript
+```js
 // About.vue
 mounted() {
   console.log('About 已挂载')

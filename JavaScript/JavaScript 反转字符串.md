@@ -79,7 +79,7 @@ reverseString('abcdefg') // "gfedcba"
 
 使用 `Array.prototype.sort` 反转字符串，这里不过多介绍，跟上面其他方法差不多，你可以再 [如何在 JavaScript 中对对象数组进行排序？](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%20JavaScript%20%E4%B8%AD%E5%AF%B9%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F%EF%BC%9F.md) 查看 sort 如何使用。
 
-```javascript
+```js
 function reverseString(str) {
   return str
     .split('')

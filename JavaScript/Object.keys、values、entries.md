@@ -8,7 +8,7 @@ JavaScript 中的数据结构 `Set`、`Map`、`Array` 都有 `keys()`，`values(
 
 [`Object.keys()`](https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Object/keys) 返回一个包含该对象所有的键的数组。
 
-```javascript
+```js
 let user = {
   name: 'IU',
   age: 18
@@ -24,7 +24,7 @@ console.log(keyList) // ["name", "age"]
 
 可以使用 `Array.prototype.includes()` 方法检查数组中是否存在键。
 
-```javascript
+```js
 const val = 'age'
 
 if (keyList.length > 0) {
@@ -38,7 +38,7 @@ if (keyList.length > 0) {
 
 **计算属性数量**
 
-```javascript
+```js
 const count = (obj) => Object.keys(obj).length
 
 count(user) // 2

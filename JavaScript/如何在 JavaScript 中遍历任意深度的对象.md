@@ -4,7 +4,7 @@
 
 ## 示例：深层占位符替换
 
-```javascript
+```js
 const user = {
   name: 'IU',
   hobby: ['eat', 'sleep', '[placeholder]'],
@@ -27,7 +27,7 @@ const user = {
 
 **JavaScript 实现如下**
 
-```javascript
+```js
 const replacePlaceholder = (obj) => {
   for (let key in obj) {
     if (typeof obj[key] === 'string')

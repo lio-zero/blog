@@ -56,8 +56,3 @@ me.friend.name = 'D.O'
 console.log(me.friend.name) // "D.O"
 console.log(user.friend.name) // "D.O"
 ```
-
-你可能喜欢：
-
-- [JavaScript 手写 instanceof 的实现](https://www.jianshu.com/p/6bc86ec26918)
-- [JavaScript 手写 new 的实现](https://www.jianshu.com/p/5e83c009fa96)

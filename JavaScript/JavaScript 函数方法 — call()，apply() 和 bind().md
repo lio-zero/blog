@@ -89,7 +89,7 @@ sum.call(null, 1, 2, 3) // 6
 ```
 
 - 您可以使用标记方法来记住 `apple`（A 代表数组）和 `call`（C 代表逗号）之间的区别。
-- `call` 和 `apply` 的第一个参数传入 `null` 时，它将在调用时将被忽略，实际应用的是默认绑定规则：
+- `call` 和 `apply` 的第一个参数传入 `null` 时，它在调用时将被忽略，实际应用的是默认绑定规则：
 
 ```js
 var count = 3
@@ -98,8 +98,8 @@ function add(a, b) {
 }
 
 add.call(null) // 3 undefined undefined
-console.log(add.call(null, 1, 2)) // 3 1 2
-console.log(add.apply(null, [1, 2])) // 3 1 2
+add.call(null, 1, 2) // 3 1 2
+add.apply(null, [1, 2]) // 3 1 2
 ```
 
 - `bind` 返回一个绑定了 `this` 上下文的函数，它不像 `call` 和 `apply` 一旦使用立即执行，你可以在之后执行这个返回的函数，它的参数和 `call` 一样，并且可以将参数在执行的时候添加。

@@ -12,7 +12,7 @@ JavaScript 的函数是**一等函数**。以下三个点表示重要的一等�
 
 让我们创建一个返回文本 `Hello` 的函数，然后将该函数赋给一个命名为 `sayHello` 的变量。
 
-```javascript
+```js
 const sayHello = () => 'Hello'
 
 console.log(sayHello()) // "Hello"
@@ -22,7 +22,7 @@ console.log(sayHello()) // "Hello"
 
 让我们采用上述 `sayHello` 函数，并将其作为参数传递给另一个函数。
 
-```javascript
+```js
 const sayHelloToPerson = (greeter, person) => greeter() + ' ' + person
 
 console.log(sayHelloToPerson(sayHello, 'IU')) // Hello IU
@@ -40,7 +40,7 @@ console.log(sayHelloToPerson(sayHello, 'IU')) // Hello IU
 
 也许我们并不总是想说 `"Hello"`，而是想选择创建任意数量的不同类型的问候者。让我们使用一个函数来创建问候函数。
 
-```javascript
+```js
 const greeterMaker = (greeting) => (person) => greeting + ' ' + person
 
 const sayHello1 = greeterMaker('Hello')
@@ -59,7 +59,7 @@ console.log(sayHello2('IU')) // "你好 IU"
 
 也许你有一系列的条件，一个对象（例如，新的用户信息）需要传递才能被认为是“有效的”。让我们创建一个函数来迭代所有的条件，并返回该对象是否有效。
 
-```javascript
+```js
 const usernameLongEnough = (obj) => obj.username.length >= 5
 
 const passwordsMatch = (obj) => obj.password === obj.confirmPassword
@@ -98,7 +98,7 @@ console.log(obj2Valid) // false
 
 **注意：不要在前端代码中放置机密 API 密钥。相反，假设以下代码位于基于 Node 的后端中。**
 
-```javascript
+```js
 const apiConnect = (apiKey) => {
   const getData = (route) => {
     return axios.get(`${route}?key=${apiKey}`)

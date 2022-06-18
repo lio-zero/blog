@@ -122,7 +122,7 @@ CommonJS 指定了一个全局方法 `require()` 来加载模块，获取依赖�
 - `export`命令用于规定模块的对外接口
 - `import`命令用于输入其他模块提供的功能。
 
-```javascript
+```js
 export const name = 'li'   // 命名导出
 import { name } from '...' // 命名导入
 

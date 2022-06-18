@@ -89,13 +89,13 @@ mQuery.addListener(handleMobilePhoneResize)
 
 这种技术允许我们响应媒体查询更改，并根据需要动态调用其他方法。然后，这些动态调用的方法可以更改各种文档属性，如字体样式、边框和间距、动画等。
 
-例如，为 😊 emjoy 添加动画，我们可以通过以下方式实现：
+例如，为 😊 emoji 添加动画，我们可以通过以下方式实现：
 
 ```js
 const reduceMotionQuery = matchMedia('(min-width: 320px)')
-reduceMotionQuery.addListener(setblushAnimate)
+reduceMotionQuery.addListener(setBlushAnimate)
 
-function setblushAnimate() {
+function setBlushAnimate() {
   if (reduceMotionQuery.matches) {
     document.body.style.setProperty('--toggle', '0')
     document.body.style.setProperty('--playState', 'paused')
@@ -105,12 +105,12 @@ function setblushAnimate() {
   }
 }
 
-setblushAnimate()
+setBlushAnimate()
 ```
 
 效果如下：
 
-![☺动起来](https://upload-images.jianshu.io/upload_images/18281896-75b066233e6a5ad8.image?imageMogr2/auto-orient/strip)
+![😊 动起来](https://upload-images.jianshu.io/upload_images/18281896-75b066233e6a5ad8.image?imageMogr2/auto-orient/strip)
 
 > [查看效果](https://codepen.io/lio-zero/pen/OJmqaPO)
 
@@ -122,4 +122,4 @@ setblushAnimate()
 
 ## 更多资料
 
-- [Working with JavaScript Media Queries](https://css-tricks.com/working-with-javascript-media-queries/)
+[Working with JavaScript Media Queries](https://css-tricks.com/working-with-javascript-media-queries/)

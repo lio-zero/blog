@@ -123,7 +123,7 @@ btn.addEventListener('click', function () {
 
 ### 平滑滚动至页面顶部
 
-```javascript
+```js
 const scrollToTop = () => {
   const c = document.documentElement.scrollTop || document.body.scrollTop
   if (c > 0) {
@@ -137,7 +137,7 @@ scrollToTop()
 
 ### 滚动到页面顶部
 
-```javascript
+```js
 const goToTop = () => window.scrollTo(0, 0)
 goToTop()
 ```
@@ -201,7 +201,7 @@ currentURL() // 'https://www.baidu.com/'
 
 如果页面当前在 HTTP 中，则将其重定向到 HTTPS
 
-```javascript
+```js
 const httpsRedirect = () => {
   if (location.protocol !== 'https:')
     location.replace('https://' + location.href.split('//')[1])
@@ -268,7 +268,7 @@ if (window.opera) { ... }
 
 ### 如何检测浏览器版本（UA 检测）？
 
-```javascript
+```js
 // 如何检测是否为 Chrome 浏览器
 var ua = navigator.userAgent
 console.log(ua)
@@ -294,7 +294,7 @@ detectDeviceType() // 'Mobile' or 'Desktop'
 
 ### 检查当前用户是否为苹果设备
 
-```javascript
+```js
 const isAppleDevice = /Mac|iPod|iPhone|iPad/.test(navigator.platform)
 console.log(isAppleDevice)
 ```
@@ -390,7 +390,7 @@ window.addEventListener('popstate', (e) => {
 
 ## 检查是否为浏览器环境
 
-```javascript
+```js
 const isBrowser = () => ![typeof window, typeof document].includes('undefined')
 
 isBrowser() // true (browser)
