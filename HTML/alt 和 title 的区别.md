@@ -46,5 +46,3 @@ img[alt=''] {
 当您将鼠标悬停在元素上时，它将自动检测问题并显示详细信息。
 
 ![使用 webhint 检测缺少的备用文本](https://upload-images.jianshu.io/upload_images/18281896-dec384ace4201f38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-

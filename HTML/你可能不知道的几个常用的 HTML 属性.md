@@ -27,15 +27,19 @@
 
 `dir` 属性规定元素内容的文本方向。它的取值如下：
 
-- `ltr` ——  默认。从左向右的文本方向。常用于那种从左向右书写的语言（比如英语）；
+- `ltr` —— 默认。从左向右的文本方向。常用于那种从左向右书写的语言（比如英语）；
 - `rtl` —— 从右向左的文本方向。常用于那种从右向左书写的语言（比如阿拉伯语）；
 - `auto` —— 让浏览器根据内容来判断文本方向。它在解析元素中字符时会运用一个基本算法，直到发现一个具有强方向性的字符，然后将这一方向应用于整个元素。仅在文本方向未知时推荐使用。
 
 ```html
-<p dir="rtl">This paragraph is in English but incorrectly goes right to left.</p>
+<p dir="rtl">
+  This paragraph is in English but incorrectly goes right to left.
+</p>
 <p dir="ltr">This paragraph is in English and correctly goes left to right.</p>
 <p>هذه الفقرة باللغة العربية ولكن بشكل خاطئ من اليسار إلى اليمين.</p>
-<p dir="auto">هذه الفقرة باللغة العربية ، لذا يجب الانتقال من اليمين إلى اليسار.</p>
+<p dir="auto">
+  هذه الفقرة باللغة العربية ، لذا يجب الانتقال من اليمين إلى اليسار.
+</p>
 ```
 
 ## hidden
@@ -71,11 +75,11 @@ HTML `title` 包含表示与其所属元素相关的建议信息的文本。也�
 <a href="https://www.baidu.com/" accesskey="c">百度一下，你就知道</a>
 ```
 
->**注意**：不同浏览器使用的快捷键方法不同：
+> **注意**：不同浏览器使用的快捷键方法不同：
 >
->- **IE，Chrome，Safari，Opera 15+**：`[ALT] + accesskey`
->- **Opera prior version 15**：`[SHIFT] [ESC] + accesskey`
->- **Firefox**：`[ALT] [SHIFT] + accesskey`
+> - **IE，Chrome，Safari，Opera 15+**：`[ALT] + accesskey`
+> - **Opera prior version 15**：`[SHIFT] [ESC] + accesskey`
+> - **Firefox**：`[ALT] [SHIFT] + accesskey`
 
 ## tabindex
 
@@ -142,6 +146,8 @@ HTML `autocomplete` 属性为 `<input>` 字段提供了各种各样的选项。�
 
 **注意**：大多数现代浏览器都支持 `loading` 属性，但 Safari 和 IE 11 则不支持该属性。
 
+详细可查看[使用 loading 属性延迟加载图片](https://github.com/lio-zero/blog/blob/master/HTML/%E4%BD%BF%E7%94%A8%20loading%20%E5%B1%9E%E6%80%A7%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87.md)。
+
 ## reversed 和 start
 
 HTML `reversed` 属性可以帮助我们创建一个降序的编号列表。此布尔属性特定于 `<ol>` 元素，并指定列表元素的顺序相反（即从高到低编号）。
@@ -163,7 +169,7 @@ HTML `reversed` 属性可以帮助我们创建一个降序的编号列表。此�
 
 `start` 属性和 `reversed` 一样，都用于有序列表 `<ol>` 元素，它的值为一个整数，用于指定列表计数器的初始值。两者结合可以指定任意的以哪个倒序数字开始。
 
-例如，如果您想在一个反向的3项列表中显示数字 101 到 99，只需添加 `start="101"`。
+例如，如果您想在一个反向的 3 项列表中显示数字 101 到 99，只需添加 `start="101"`。
 
 ```html
 <ol reversed start="101">

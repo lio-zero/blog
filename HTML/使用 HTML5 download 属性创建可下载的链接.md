@@ -26,10 +26,10 @@ HTML5 引入了许多我们日常开发经常用到的一些方便的特性。�
 
 也就是说，用户只能下载来自源站点的文件。下面将给出 URL `http://www.google.com/` 的源进行比对的示例：
 
-| 源：`https://www.google.com/` | 结果 | 原因 |
-| --- | --- | --- |
-| `https://www.google.com/logo.png` | 同源 | 只有路径不同 |
-| `https://www.google.com/public/img/logo.png` | 同源 | 只有路径不同 |
-| `http://www.google.com/logo.png` | 失败 | 协议不同 |
-| `https://www.google.com:444/logo.png` | 失败 | 端口不同 ( `https://` 默认端口是 443) |
-| `https://www.google.com/dir/logo.png` | 失败 | 域名不同 |
+| 源：`https://www.google.com/`                | 结果 | 原因                                  |
+| -------------------------------------------- | ---- | ------------------------------------- |
+| `https://www.google.com/logo.png`            | 同源 | 只有路径不同                          |
+| `https://www.google.com/public/img/logo.png` | 同源 | 只有路径不同                          |
+| `http://www.google.com/logo.png`             | 失败 | 协议不同                              |
+| `https://www.google.com:444/logo.png`        | 失败 | 端口不同 ( `https://` 默认端口是 443) |
+| `https://www.google.com/dir/logo.png`        | 失败 | 域名不同                              |

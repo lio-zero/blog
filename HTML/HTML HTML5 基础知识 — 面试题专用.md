@@ -36,14 +36,12 @@ HTML 是网页的基础。它代表**超文本标记语言**。
 
 ## DOCTYPE 有什么用？
 
-- `<!DOCTYPE>` 声明位于 HTML 文档中的第一行，处于 `<html>` 标签之前。告知浏览器的解析器使用标准模式渲染文档。DOCTYPE 不存在或格式不正确会导致文档以兼容模式呈现。
+- [`<!DOCTYPE>`](https://developer.mozilla.org/en-US/docs/Glossary/Doctype) 声明位于 HTML 文档中的第一行，处于 `<html>` 标签之前。告知浏览器的解析器使用标准模式渲染文档。DOCTYPE 不存在或格式不正确会导致文档以兼容模式呈现。
 
 ```js
 // 返回当前文档关联的文档类型定义（DTD），如果当前文档没有 DTD，则该属性返回 null。
 document.doctype
 ```
-
-- [Doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype)
 
 ## 标准模式与兼容模式各有什么区别？它们有何意义？
 
@@ -52,23 +50,17 @@ document.doctype
 - **兼容模式**：又称怪异模式或混杂模式，是指浏览器用自己的方式解析代码。
   - 在兼容模式中，页面以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作。
 - **如何区分**：
-
   - 在 HTML4.01 标准中，浏览器解析时到底使用标准模式还是兼容模式，与网页中的 DTD 直接相关，因为 HTML 4.01 基于 SGML，DTD 规定了标记语言的规则，这样浏览器才能正确地呈现。 且有三种
   - HTML5 不基于 SGML，因此不需要对 DTD 进行引用。只需要在顶部声明 `<!DOCTYPE html>`
-
 - **目的**：防止呈现文档时浏览器切换到 “兼容模式”。
-
 - [怪异模式和标准模式](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Quirks_Mode_and_Standards_Mode)
 - [怪异模式（Quirks Mode）对 HTML 页面的影响](https://www.ibm.com/developerworks/cn/web/1310_shatao_quirks/)
 
 ## 页面导入样式时，使用 link 和 @import 有什么区别？
 
 - `link` 属于 XHTML 标签，除了加载 CSS 外，还能用于定义 RSS，定义 rel 连接属性等作用；而 `@import` 是 CSS 提供的，只能用于加载 CSS；
-
 - 页面被加载的时，`link` 会同时被加载，而 `@import` 引用的 CSS 会等到页面被加载完再加载；
-
 - `@import` 是 CSS2.1 提出的，只在 IE5 以上才能被识别，而 `link` 是 XHTML 标签，无兼容问题；
-
 - `link` 方式的样式的权重高于 `@import` 的权重。
 
 ## HTML 中 form 里 action 方法的 Get 和 Post 有什么区别？
@@ -190,7 +182,7 @@ document.doctype
 
 ## 块级元素和行内元素的区别？
 
-- HTML4.01 中，元素被分成两大类：inlink（行内元素）与 block（块级元素）。区别如下：
+- HTML4.01 中，元素被分成两大类：[inlink（行内元素）](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Inline_elements) 与 [block（块级元素）](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Block-level_elements)。区别如下：
 
 | 块级元素                       | 行内元素                                                                                       |
 | ------------------------------ | ---------------------------------------------------------------------------------------------- |
@@ -199,7 +191,6 @@ document.doctype
 | 可以包含行内元素和其他块级元素 | 行内元素只能包含文本和其他行内元素。                                                           |
 
 - 默认情况下是这样，但可以利用 `display` 来修改其为块级还是行内
-- [内联元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Inline_elements)和[块级元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Block-level_elements)
 
 ## 块级元素和行内元素分别有哪些？ 空（void）元素有哪些？
 
@@ -262,12 +253,12 @@ document.doctype
 <img src="wenhao.jpg" alt="满脸问号的男人" />
 ```
 
-- **图像上 alt 属性的用途是什么？**
-  - 如果用户无法查看图像，alt 属性将为图像提供可选信息。alt 属性应该用来描述任何图像，除了那些仅用于装饰目的的图像，在这种情况下，应该将其留空。
-  - 装饰性图像应具有空 alt 属性。
-  - 网络爬虫使用 alt 标签来理解图像内容，因此它们被认为对搜索引擎优化（SEO）很重要。
-  - 在 alt 标签的末尾增加可访问性。
-- [img](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)
+### **图像上 alt 属性的用途是什么？**
+
+- 如果用户无法查看图像，`alt` 属性将为图像提供可选信息。`alt` 属性应该用来描述任何图像，除了那些仅用于装饰目的的图像，在这种情况下，应该将其留空。
+- 装饰性图像应具有空 `alt` 属性。
+- 网络爬虫使用 `alt` 标签来理解图像内容，因此它们被认为对搜索引擎优化（SEO）很重要。
+- 在 `alt` 标签的末尾增加可访问性。
 
 ## 为什么在 img 标签中使用 srcset 属性？请描述浏览器遇到该属性后的处理过程。
 
@@ -467,11 +458,12 @@ html
 
 ## div+css 的布局较 table 布局有什么优点？
 
-- 分离方便、改版快、清晰简洁、seo
-  - 表现与结构相分离。
-  - 改版的时候更方便，只要改 css 文件。
-  - 页面加载速度更快、结构化清晰、页面显示简洁。
-  - 易于优化（seo）搜索引擎更友好，排名更容易靠前。
+分离方便、改版快、清晰简洁、seo
+
+- 表现与结构相分离。
+- 改版的时候更方便，只要改 css 文件。
+- 页面加载速度更快、结构化清晰、页面显示简洁。
+- 易于优化（seo）搜索引擎更友好，排名更容易靠前。
 
 ## 很多网站不常用 table，iframe 这两个元素，知道原因吗？
 
@@ -481,7 +473,7 @@ html
 
 ## HTML 中的 lang 属性有什么作用？
 
-- 通过在 css:lang() 伪类拼写和语法检查器中使用页面样式来帮助搜索引擎进行语言检测
+- 通过在 `css:lang()` 伪类拼写和语法检查器中使用页面样式来帮助搜索引擎进行语言检测
 
 ```css
 :lang(zh) {
@@ -495,7 +487,7 @@ html
 
 ## 什么 `enctype='multipart/form-data'` 意思？
 
-- `enctype` 属性指定将表单数据提交到服务器时应如何编码。
+`enctype` 属性指定将表单数据提交到服务器时应如何编码。
 
 ## HTML5
 
@@ -503,7 +495,7 @@ HTML5 是 HTML（超文本标记语言）最新的修订版本，由万维网联
 
 ### HTML5 向后兼容旧浏览器吗？
 
-- HTML5 被设计成尽可能向后兼容现有的 web 浏览器
+HTML5 被设计成尽可能向后兼容现有的 web 浏览器
 
 ### HTML5 为什么只需要写 `<!DOCTYPE html>`？
 
@@ -1410,34 +1402,33 @@ self.addEventListener(
 - 基于 multipart 编码发送 XHR
 - 基于长轮询的 XHR
 
-**websocket 与 socket 的区别**
+**websocket 与 socket 的区别**：
 
 Socket 是传输控制层协议，WebSocket 是应用层协议。更多请看参考
 
-**更多资料**
+**更多学习资料**：
 
 - [WebSocket 介绍和 Socket 的区别](https://blog.csdn.net/qushaming/article/details/90747326)
 - [WebSocket 教程](http://www.ruanyifeng.com/blog/2017/05/websocket.html)
 - [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket)
 - [WebSocket 是什么原理？为什么可以实现持久连接？](https://www.zhihu.com/question/20215561/answer/40316953)
 
-### 地理定位 API 如何在 HTML5 中工作？
+### Geolocation API 如何在 HTML5 中工作？
 
-- HTML5 地理定位 API 允许用户在需要时向 web 应用程序提供用户的位置。出于隐私原因，用户需要获得报告位置信息的权限。
+- HTML5 [Geolocation API](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/geolocation)（地理定位）允许用户在需要时向 web 应用程序提供用户的位置。出于隐私原因，用户需要获得报告位置信息的权限。
 - JavaScript 可以捕获你的纬度和经度，并可以发送到后端 Web 服务器，做一些奇特的位置感知的事情，比如找到本地企业或在地图上显示你的位置
-- 如今，大多数浏览器和移动设备都[支持](https://www.caniuse.com/?search=geolocation)地理定位 API
-- 地理定位 API 通过 `navigator` 获取对象。
+- 如今，大多数浏览器和移动设备都[支持](https://www.caniuse.com/?search=geolocation) Geolocation API
+- Geolocation API 通过 `navigator` 获取对象。
 
 ```js
 if ('geolocation' in navigator) {
-  /* geolocation is available */
+  /* geolocation 是可用的 */
 } else {
-  /* geolocation IS NOT available */
+  /* geolocation 是不可用的 */
 }
 ```
 
 - 使用 `navigator.geolocation.getCurrentPosition()` 方法获取用户的位置
-- [Navigator.geolocation](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/geolocation)
 
 ### 页面可见性（Page Visibility）API 可以有哪些用途？
 
@@ -1576,7 +1567,7 @@ menu.addEventListener('contextmenu', function (e) {
 
 #### dataset
 
-- 通过 [`dataset`](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/dataset) 可以方便的获取或设置 data-\* 自定义数据属性集
+- 通过 [`dataset`](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/dataset) 可以方便的获取或设置 `data-*` 自定义数据属性集
 
 ```html
 <div
@@ -1959,7 +1950,7 @@ fullscreen(false) // 退出全屏模式
 - [Best Practices for Speeding Up Your Web Site](http://developer.yahoo.com/performance/rules.html)
 - [基于 JavaScript 和网络信息 API 的自适应服务](https://addyosmani.com/blog/adaptive-serving/)
 
-## 参考
+## 参考资料
 
 - [HTML 最佳实践](https://github.com/hail2u/html-best-practices)
 - [W3C](https://www.w3.org/)

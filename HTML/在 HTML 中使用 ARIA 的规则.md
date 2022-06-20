@@ -22,7 +22,8 @@
 </style>
 <section>
   <div role="note">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo illum cum totam.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo illum cum
+    totam.
   </div>
 </section>
 ```
@@ -45,7 +46,7 @@
 <div role="button">Click Me</div>
 ```
 
-上面的写法是错误的，你不应该使用  `<div>` 和 ARIA `role` 来创建一个按钮。
+上面的写法是错误的，你不应该使用 `<div>` 和 ARIA `role` 来创建一个按钮。
 
 我们应该只使用一个明确其语义的 `<button>` 元素，就像这样：
 
@@ -96,21 +97,14 @@
 
 HTML5 使用默认的隐式语义定义了一组新的结构和分段元素，这些语义与 [ARIA `role`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Region_role) 匹配（在某些情况下）：
 
-*   使用 `role=button` 时，考虑使用 `<button>` 元素，或者其他各种原生 HTML 按钮类型。
-
-*   使用 `role=link` 时，考虑改用 `<a href>` 元素。
-
-*   使用 `role=heading` 和 `aria-level="1-6"`，考虑改用 `<h1>` 到 `<h6>` 元素。
-
-*   使用 `role=list` 和 `role=listitem` 时，考虑改用 `<ol>` 或 `<ul>` 和 `<li>` 元素。
-
-*   使用 `role=listbox` 和 `role=option`，考虑改用 `<select>` 和 `<option>` 元素。
-
-*   使用 `role=checkbox` 或 `role=radio` 时，考虑改用 `<input type="checkbox">` 或 `<input type="radio">` 元素。
-
-*   使用 `role=textbox`，可以考虑使用 `<input type="text">` 或搜索、电子邮件、URL 或电话。
-
-*   其他一些语义元素：`article`、`aside`、`footer`、`header`、`main`、`nav`、`section` 等等…
+- 使用 `role=button` 时，考虑使用 `<button>` 元素，或者其他各种原生 HTML 按钮类型。
+- 使用 `role=link` 时，考虑改用 `<a href>` 元素。
+- 使用 `role=heading` 和 `aria-level="1-6"`，考虑改用 `<h1>` 到 `<h6>` 元素。
+- 使用 `role=list` 和 `role=listitem` 时，考虑改用 `<ol>` 或 `<ul>` 和 `<li>` 元素。
+- 使用 `role=listbox` 和 `role=option`，考虑改用 `<select>` 和 `<option>` 元素。
+- 使用 `role=checkbox` 或 `role=radio` 时，考虑改用 `<input type="checkbox">` 或 `<input type="radio">` 元素。
+- 使用 `role=textbox`，可以考虑使用 `<input type="text">` 或搜索、电子邮件、URL 或电话。
+- 其他一些语义元素：`article`、`aside`、`footer`、`header`、`main`、`nav`、`section` 等等…
 
 这意味着在实现后，浏览器将公开该元素的默认隐式语义，因此您不必这样做。
 
@@ -155,11 +149,11 @@ ARIA `role="presentation"` 属性意味着元素仅用于视觉目的，并且�
 ```html
 <label>
   Username
-  <input type="text">
+  <input type="text" />
 </label>
 
 <label for="password">Password</label>
-<input type="password" id="password">
+<input type="password" id="password" />
 ```
 
 其他元素，例如按钮和链接，可以从它们的文本内容或标签属性中获得它们的可访问名称。
@@ -168,8 +162,5 @@ ARIA `role="presentation"` 属性意味着元素仅用于视觉目的，并且�
 
 - [MDN：ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) —— MDN 上丰富的 ARIA 资料
 - [在 HTML 和 ARIA 大括号上（默认的隐式 ARIA 语义，他们不想让你知道）](http://html5doctor.com/on-html-belts-and-aria-braces/)
-- [HTML5 – W3C建议书2014年10月28日](https://www.w3.org/TR/html5/)
+- [HTML5 – W3C 建议书 2014 年 10 月 28 日](https://www.w3.org/TR/html5/)
 - [在 HTML 中使用 ARIA 的注意事项](http://w3c.github.io/aria-in-html/)
-
-
-

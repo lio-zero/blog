@@ -26,10 +26,10 @@
 `div` 节点是元素节点，而其子节点（`Hello`）是文本节点。下表取自 [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType)，显示了常用的节点类型：
 
 - `Node.ELEMENT_NODE` (`1`)：一个元素节点，它是一个 HTML 标签，如 `<div>`、`<p>` 等。
-- `Node.TEXT_NODE` (`3`)：元素节点内的实际文本
-- `Node.COMMENT_NODE` (`8`)：注释节点，例如 `<!-...-->`
-- `Node.DOCUMENT_NODE` (`9`)：文档节点
-- `Node.DOCUMENT_TYPE_NODE` (`10`)：文档类型节点，例如  `<!DOCTYPE html>`
+- `Node.TEXT_NODE` (`3`)：元素节点内的实际文本
+- `Node.COMMENT_NODE` (`8`)：注释节点，例如 `<!-...-->`
+- `Node.DOCUMENT_NODE` (`9`)：文档节点
+- `Node.DOCUMENT_TYPE_NODE` (`10`)：文档类型节点，例如 `<!DOCTYPE html>`
 
 ```js
 document.nodeType // 9

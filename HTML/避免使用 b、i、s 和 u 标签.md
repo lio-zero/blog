@@ -2,12 +2,12 @@
 
 这些标签通常用于设置样式。建议不要使用它们。相反，使用提供相同外观的语义标签或 CSS 样式。
 
-| 标签 | 推荐方式 |
-| --- | --- |
-| `<b>` | `<strong>` |
-| `<i>` | `<em>` |
+| 标签  | 推荐方式                        |
+| ----- | ------------------------------- |
+| `<b>` | `<strong>`                      |
+| `<i>` | `<em>`                          |
 | `<s>` | `text-decoration: line-through` |
-| `<u>` | `text-decoration: underline` |
+| `<u>` | `text-decoration: underline`    |
 
 ## <b>、<i> 与 <strong>、<em> 的区别
 

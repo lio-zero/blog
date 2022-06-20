@@ -25,4 +25,3 @@ window.opener.location = 'https://example.com'
 ```
 
 一些现代浏览器，如 Chrome 88+，如果缺少 `noopener` 行为，会自动添加它。但是，仍然建议手动添加 `rel="noopener"` 或 `rel="noreferrer"`，以避免旧浏览器中的安全性和性能问题。
-

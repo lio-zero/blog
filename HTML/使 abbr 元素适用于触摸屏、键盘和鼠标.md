@@ -21,9 +21,7 @@
 定义术语时，你还可以与 `<dfn>` 混合使用
 
 ```html
-<dfn>
-  <abbr title="Today I learned">TIL</abbr> something awesome!
-</dfn>
+<dfn> <abbr title="Today I learned">TIL</abbr> something awesome! </dfn>
 ```
 
 ## `abbr` 元素的问题
@@ -98,7 +96,7 @@ abbr[title]:focus::after {
   background-color: #1e1e1e;
   color: #fff;
   border-radius: 3px;
-  box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.4);
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
   font-size: 14px;
   padding: 3px 5px;
 }
@@ -108,9 +106,8 @@ abbr[title]:focus::after {
 
 ![更改后的样式](https://upload-images.jianshu.io/upload_images/18281896-a80548e76d99737f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-👉 [查看效果](https://codepen.io/lio-zero/pen/BaRjpK)
+> 👉 [查看效果](https://codepen.io/lio-zero/pen/BaRjpK)
 
 ## 最后
 
 对比原来的效果，明显更加好看了一些，如果你想要更加好看的工具提示，可以继续更改其外观，或者使用现有的一些提示工具，如 Bootstrap 的[工具提示](https://getbootstrap.com/docs/4.5/components/tooltips/)组件。
-

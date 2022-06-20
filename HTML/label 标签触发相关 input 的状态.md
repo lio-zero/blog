@@ -3,9 +3,9 @@
 `input` 元素的伪类 `:hover` 和 `:active` 也会在相关被悬停时被触发。
 
 ```html
-<label for="foo">Fooo</label>
+<label for="foo">Foo</label>
 <p>Some more content here</p>
-<input id="foo">
+<input id="foo" />
 ```
 
 ```css

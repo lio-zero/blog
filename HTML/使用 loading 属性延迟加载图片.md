@@ -10,7 +10,7 @@
 
 可以看到，在最新版本的 Chromium powered（包括 Chrome、Edge 和 Opera）和 Firefox 浏览器中，都支持 `loading="lazy"` 属性。
 
-用法很简单，我们只需要在想到延迟加载的图像上添加 `loading="lazy"` 属性即可：
+用法很简单，我们只需要在想到延迟加载的图像上添加 `loading="lazy"` 属性即可：
 
 ```html
 <img src="/img/logo.png" alt="website logo" loading="lazy" />
@@ -21,7 +21,13 @@
 当图像完全加载时，通常会看到布局发生移动。为避免此问题，建议使用内联样式或属性设置图像的大小：
 
 ```html
-<img src="/img/logo.png" alt="website logo" loading="lazy" height="200" width="300" />
+<img
+  src="/img/logo.png"
+  alt="website logo"
+  loading="lazy"
+  height="200"
+  width="300"
+/>
 ```
 
 > [查看效果](https://codepen.io/lio-zero/pen/oNeQKXq)
