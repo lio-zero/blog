@@ -21,4 +21,5 @@ CSS 的主要职责是将表现与内容分离。网页的内容和结构由从 
 
 ## 学习资料
 
-[The Importance of Learning CSS](https://www.joshwcomeau.com/css/the-importance-of-learning-css/)
+- [The Importance of Learning CSS](https://www.joshwcomeau.com/css/the-importance-of-learning-css/)
+- [WTF, HTML and CSS?](http://wtfhtmlcss.com/#doctype)
