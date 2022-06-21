@@ -40,7 +40,7 @@ console.log(uc.upperCase('Hello World!'))
 
 对于 Node 应用开发而言，您可以通过 `package.json` 文件来管理项目信息，配置脚本， 以及指明项目依赖的具体版本。
 
-> 推荐 [package.json 详解](https://www.jianshu.com/p/7816f8308e02)
+> 推荐 [package.json 详解](https://github.com/lio-zero/blog/blob/master/Node/package.json%20%E8%AF%A6%E8%A7%A3.md)
 
 > 关于 NPM 的更多信息，你可以查阅[官方文档](https://docs.npmjs.com/cli/v6/configuring-npm/package-json)。
 

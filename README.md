@@ -427,6 +427,19 @@
 - [递归删除 node_modules](https://github.com/lio-zero/blog/blob/master/Node/%E9%80%92%E5%BD%92%E5%88%A0%E9%99%A4%20node_modules.md)
 - [防止 npm 安装不支持的 Node.js 版本](https://github.com/lio-zero/blog/blob/master/Node/%E9%98%B2%E6%AD%A2%20npm%20%E5%AE%89%E8%A3%85%E4%B8%8D%E6%94%AF%E6%8C%81%E7%9A%84%20Node.js%20%E7%89%88%E6%9C%AC.md)
 
+## Git 和 Github
+
+- [Git Amend](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/Git%20Amend.md)
+- [Git hooks](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/Git%20hooks.md)
+- [Git status 的简短版本和不同的 --porcelain 模式](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/Git%20status%20%E7%9A%84%E7%AE%80%E7%9F%AD%E7%89%88%E6%9C%AC%E5%92%8C%E4%B8%8D%E5%90%8C%E7%9A%84%20--porcelain%20%E6%A8%A1%E5%BC%8F.md)
+- [Git 常用配置和技巧](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/Git%20%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E5%92%8C%E6%8A%80%E5%B7%A7.md)
+- [git clean 删除未跟踪的文件或目录](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/git%20clean%20%E5%88%A0%E9%99%A4%E6%9C%AA%E8%B7%9F%E8%B8%AA%E7%9A%84%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95.md)
+- [git pull 和 git fetch 的区别](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/git%20pull%20%E5%92%8C%20git%20fetch%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
+- [为不同的 GitHub 帐户使用多个 SSH 密钥](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/%E4%B8%BA%E4%B8%8D%E5%90%8C%E7%9A%84%20GitHub%20%E5%B8%90%E6%88%B7%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AA%20SSH%20%E5%AF%86%E9%92%A5.md)
+- [删除本地和远程 Git 分支](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%92%8C%E8%BF%9C%E7%A8%8B%20Git%20%E5%88%86%E6%94%AF.md)
+- [在不切换分支的情况下查看不同分支中的文件](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/%E5%9C%A8%E4%B8%8D%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E6%9F%A5%E7%9C%8B%E4%B8%8D%E5%90%8C%E5%88%86%E6%94%AF%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6.md)
+- [用于 GitHub markdown 和 Git 提交的 emoji 表情](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/%E7%94%A8%E4%BA%8E%20GitHub%20markdown%20%E5%92%8C%20Git%20%E6%8F%90%E4%BA%A4%E7%9A%84%20emoji%20%E8%A1%A8%E6%83%85.md)
+
 ## 手写系列
 
 - [仅执行一次函数](https://github.com/lio-zero/blog/blob/master/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E4%BB%85%E6%89%A7%E8%A1%8C%E4%B8%80%E6%AC%A1%E5%87%BD%E6%95%B0.md)
@@ -437,6 +450,7 @@
 - [实现 new 运算符](https://github.com/lio-zero/blog/blob/master/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%20new%20%E8%BF%90%E7%AE%97%E7%AC%A6.md)
 - [实现 reduce](https://github.com/lio-zero/blog/blob/master/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%20reduce.md)
 - [实现 sleep 函数](https://github.com/lio-zero/blog/blob/master/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%20sleep%20%E5%87%BD%E6%95%B0.md)
+- [实现一个 add 方法](https://github.com/lio-zero/blog/blob/main/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%20add%20%E6%96%B9%E6%B3%95.md)
 - [实现一个简单的单页应用](https://github.com/lio-zero/blog/blob/master/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%8D%95%E9%A1%B5%E5%BA%94%E7%94%A8.md)
 - [实现数组洗牌函数](https://github.com/lio-zero/blog/blob/master/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E6%95%B0%E7%BB%84%E6%B4%97%E7%89%8C%E5%87%BD%E6%95%B0.md)
 - [构建一个虚拟 DOM](https://github.com/lio-zero/blog/blob/master/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%99%9A%E6%8B%9F%20DOM.md)
@@ -455,6 +469,9 @@
 
 ## 计算机网络
 
+- [HTTP 中 GET 和 POST 的区别？](https://github.com/lio-zero/blog/blob/main/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP%20%E4%B8%AD%20GET%20%E5%92%8C%20POST%20%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
+- [TCP 和 UDP 的区别](https://github.com/lio-zero/blog/blob/main/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%20%E5%92%8C%20UDP%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
+- [URL 重定向](https://github.com/lio-zero/blog/blob/main/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/URL%20%E9%87%8D%E5%AE%9A%E5%90%91.md)
 - [常见的 HTTP 状态码](https://github.com/lio-zero/blog/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%B8%B8%E8%A7%81%E7%9A%84%20HTTP%20%E7%8A%B6%E6%80%81%E7%A0%81.md)
 - [常见的网络端口及对应服务](https://github.com/lio-zero/blog/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%B8%B8%E8%A7%81%E7%9A%84%E7%BD%91%E7%BB%9C%E7%AB%AF%E5%8F%A3%E5%8F%8A%E5%AF%B9%E5%BA%94%E6%9C%8D%E5%8A%A1.md)
 
