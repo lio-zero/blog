@@ -10,7 +10,7 @@
 </pre>
 ```
 
-它是如此的神奇，👉 [查看示例](https://aem1k.com/meta/quine/)。其中还收集了一些其他类型的项目，代码地址 [aemkei.github.io](https://github.com/aemkei/aemkei.github.io)
+它是如此的神奇，👉 [查看示例](https://aem1k.com/meta/quine/)。其中还收集了一些其他类似的项目，代码地址 [aemkei.github.io](https://github.com/aemkei/aemkei.github.io)。
 
 ## 更多资料
 

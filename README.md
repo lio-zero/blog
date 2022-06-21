@@ -507,6 +507,10 @@
 - [使用 Mongoose 连接到 MongoDB](https://github.com/lio-zero/blog/blob/master/MongoDB/%E4%BD%BF%E7%94%A8%20Mongoose%20%E8%BF%9E%E6%8E%A5%E5%88%B0%20MongoDB.md)
 - [在 Mongoose 中使用 MongoDB Explain](https://github.com/lio-zero/blog/blob/master/MongoDB/%E5%9C%A8%20Mongoose%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20MongoDB%20Explain.md)
 
+## Magic
+
+[Code Golf](https://github.com/lio-zero/blog/blob/main/Magic/Code%20Golf.md)
+
 ## WTF
 
 - [什么是 CSRF 攻击？.md](https://github.com/lio-zero/blog/blob/master/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20CSRF%20%E6%94%BB%E5%87%BB%EF%BC%9F.md)
