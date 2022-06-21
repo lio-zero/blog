@@ -1,8 +1,12 @@
 # Git hooks
 
-Git 允许在各种操作之前添加一些 Hook 脚本，如未正常运行，则 Git 操作不通过。
+Git hooks 是每次 Git 存储库中发生特定事件时自动运行的脚本。它们允许您定制 Git 的内部行为，并在开发生命周期的关键点触发可定制的操作。
 
-而 Hook 脚本置于目录 `~/.git/hooks` 中，以可执行文件的形式存在。
+![在提交创建过程中执行的 hooks](https://wac-cdn.atlassian.com/dam/jcr:ac22adee-d740-4216-a92a-33c14b5623e5/01.svg?cdnVersion=396)
+
+Git hooks 的常见用例包括鼓励提交策略、根据存储库的状态改变项目环境，以及实现连续集成工作流。但是，由于脚本是无限可定制的，您可以使用 Git hooks 来自动化或优化开发工作流的几乎任何方面。但如果添加的 Hook 脚本未正常运行，则 Git 操作将不会通过。
+
+Hook 脚本置于目录 `~/.git/hooks` 中，以可执行文件的形式存在。
 
 ```bash
 $ ls -lah .git/hooks
@@ -15,7 +19,7 @@ pre-commit.sample         push-to-checkout.sample
 pre-merge-commit.sample
 ```
 
-以上常用 hook 有：
+以上常用 hooks 有：
 
 - `pre-commit`
 - `pre-push`
@@ -54,4 +58,5 @@ npm run lint
 
 ## 更多资料
 
-[Can Git hook scripts be managed along with the repository?](https://stackoverflow.com/questions/427207/can-git-hook-scripts-be-managed-along-with-the-repository)
+- [Git Hooks](https://www.atlassian.com/git/tutorials/git-hooks)
+- [Can Git hook scripts be managed along with the repository?](https://stackoverflow.com/questions/427207/can-git-hook-scripts-be-managed-along-with-the-repository)
