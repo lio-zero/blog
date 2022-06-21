@@ -467,6 +467,15 @@
 - [浏览器如何解析 HTML？](https://github.com/lio-zero/blog/blob/master/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A6%82%E4%BD%95%E8%A7%A3%E6%9E%90%20HTML%EF%BC%9F.md)
 - [浏览器重绘和回流（Repaint & Reflow）](https://github.com/lio-zero/blog/blob/master/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%E9%87%8D%E7%BB%98%E5%92%8C%E5%9B%9E%E6%B5%81%EF%BC%88Repaint%20%26%20Reflow%EF%BC%89.md)
 
+## Web API
+
+- [Web Bluetooth API](https://github.com/lio-zero/blog/blob/main/Web%20API/Web%20Bluetooth%20API.md)
+- [Web Fullscreen API](https://github.com/lio-zero/blog/blob/main/Web%20API/Web%20Fullscreen%20API.md)
+- [Web Geolocation API](https://github.com/lio-zero/blog/blob/main/Web%20API/Web%20Geolocation%20API.md)
+- [Web Share API](https://github.com/lio-zero/blog/blob/main/Web%20API/Web%20Share%20API.md)
+- [Web Vibration API](https://github.com/lio-zero/blog/blob/main/Web%20API/Web%20Vibration%20API.md)
+- [使用 MediaDevices API 访问您的网络摄像头](https://github.com/lio-zero/blog/blob/main/Web%20API/%E4%BD%BF%E7%94%A8%20MediaDevices%20API%20%E8%AE%BF%E9%97%AE%E6%82%A8%E7%9A%84%E7%BD%91%E7%BB%9C%E6%91%84%E5%83%8F%E5%A4%B4.md)
+
 ## 计算机网络
 
 - [HTTP 中 GET 和 POST 的区别？](https://github.com/lio-zero/blog/blob/main/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP%20%E4%B8%AD%20GET%20%E5%92%8C%20POST%20%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
