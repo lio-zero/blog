@@ -1,4 +1,4 @@
-# CSS content-visibility 属性
+# CSS content-visibility 属性 — 推迟内容渲染
 
 [`content-visibility`](https://web.dev/content-visibility/) 是新的 CSS 属性，可以提高页面加载性能。对于具有大量内容块、图像和视频丰富的复杂布局，解码数据和渲染像素可能是一项非常昂贵的操作，尤其是在低端设备上。
 
