@@ -537,14 +537,14 @@
 
 ## WTF
 
-- [什么是 CSRF 攻击？.md](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20CSRF%20%E6%94%BB%E5%87%BB%EF%BC%9F.md)
-- [什么是 CSS？.md](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20CSS%EF%BC%9F.md)
-- [什么是 NPM？.md](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20NPM%EF%BC%9F.md)
-- [什么是 REST？.md](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20REST%EF%BC%9F.md)
-- [什么是 XSS 攻击？.md](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20XSS%20%E6%94%BB%E5%87%BB%EF%BC%9F.md)
-- [什么是 YAML？.md](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20YAML%EF%BC%9F.md)
-- [什么是包管理器？.md](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%9F.md)
-- [什么是单一职责原则？.md](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99%EF%BC%9F.md)
+- [什么是 CSRF 攻击？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20CSRF%20%E6%94%BB%E5%87%BB%EF%BC%9F.md)
+- [什么是 CSS？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20CSS%EF%BC%9F.md)
+- [什么是 NPM？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20NPM%EF%BC%9F.md)
+- [什么是 REST？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20REST%EF%BC%9F.md)
+- [什么是 XSS 攻击？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20XSS%20%E6%94%BB%E5%87%BB%EF%BC%9F.md)
+- [什么是 YAML？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20YAML%EF%BC%9F.md)
+- [什么是包管理器？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%9F.md)
+- [什么是单一职责原则？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99%EF%BC%9F.md)
 
 其他文章会陆续整理...
 
