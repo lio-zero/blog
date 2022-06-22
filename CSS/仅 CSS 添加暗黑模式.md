@@ -36,3 +36,4 @@ video {
 - [Dark Mode Favicons](https://css-tricks.com/dark-mode-favicons/)
 - [Dark mode and variable fonts](https://css-tricks.com/dark-mode-and-variable-fonts/)
 - [The Quest for the Perfect Dark Mode](https://www.joshwcomeau.com/react/dark-mode/)
+- [Dark mode in 5 minutes, with inverted lightness variables](https://lea.verou.me/2021/03/inverted-lightness-variables/)
