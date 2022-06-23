@@ -17,5 +17,5 @@ noEmojiRegex.test('⭐') // false
 
 ```js
 // 注意 g 标志以替换所有 Emojis
-'🙈–👍–⭐'.replaceAll(/\p{Emoji}/gu, '_') // '_–_–_'
+'🙈-👍-⭐'.replaceAll(/\p{Emoji}/gu, '_') // '_-_-_'
 ```

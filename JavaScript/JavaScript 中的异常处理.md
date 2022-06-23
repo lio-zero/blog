@@ -41,7 +41,7 @@ throw «value»
 
 // 不要这样做
 if (somethingBadHappened) {
-  throw 'Something bad happened'
+  throw 'Something bad happened'
 }
 ```
 
@@ -76,14 +76,14 @@ Error: Error!!!
 
 ```js
 try {
-  // 要运行的代码
+  // 要运行的代码
 } catch (e) {
-  // 发生异常时要运行的代码
+  // 发生异常时要运行的代码
 }
-  
+
 [ // 可选
-  finally {
-    // 无论发生异常都始终执行的代码
+  finally {
+    // 无论发生异常都始终执行的代码
   }
 ]
 ```
@@ -132,8 +132,8 @@ try {
 
 ```js
 async function(code, (err, result) => {
-  if (err) return console.error(err)
-  console.log(result)
+  if (err) return console.error(err)
+  console.log(result)
 })
 ```
 
@@ -141,9 +141,9 @@ async function(code, (err, result) => {
 
 在 `if (err)` 块中返回某些内容或将其他指令包装在 `else` 块中都很重要。否则，您可能会遇到另一个错误。例如，当您尝试访问 `result.data` 时，`result` 可能未定义。
 
-### Promises
+### Promise
 
-使用 `promises` 的 `then` 或者 `catch`，我们可以通过将错误处理程序传递给 `then` 方法或使用 `catch` 子句来处理错误。
+使用 promise 的 `then` 或者 `catch`，我们可以通过将错误处理程序传递给 `then` 方法或使用 `catch` 子句来处理错误。
 
 ```js
 promise.then(onFulfilled, onRejected)

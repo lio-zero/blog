@@ -7,7 +7,7 @@
 使用 `Boolean` 方法或者 `!!` 运算符，将 [truthy](https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy) 或 [falsy](https://developer.mozilla.org/zh-CN/docs/Glossary/Falsy) 值转换为布尔值。
 
 - Falsy：`false`、`null`、`undefined`、`NaN`、`0 +0 -0`、空字符串（""、''、``）
-- truthy：其他都为 `ture`
+- truthy：其他都为 `true`
 
 ```js
 !!false // false
