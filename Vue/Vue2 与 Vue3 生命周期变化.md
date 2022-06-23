@@ -55,8 +55,8 @@ Composition API 不包括 `beforeCreate` 和 `created`（由 `setup` 方法本�
 | `onUpdated`       | 重新渲染后调用                         |
 | `onBeforeUnmount` | 在销毁 Vue 实例之前调用                |
 | `onUnmounted`     | 在实例销毁后调用                       |
-| `onActivated`     | 激活保持活动的组件时调用               |
-| `onDeactivated`   | 停用保持活动的组件时调用               |
+| `onActivated`     | 激活 keep-alive 的组件时调用           |
+| `onDeactivated`   | 停用 keep-alive 的组件时调用           |
 | `onErrorCaptured` | 从子组件捕获错误时调用                 |
 
 导入并使用它们：
@@ -87,4 +87,10 @@ export default {
 | `destroyed`     | `onUnmounted`                       |
 | `errorCaptured` | `onErrorCaptured`                   |
 
-除了上述介绍和一些命名上的变化，具体用法差不多，详细内容查阅新文档 [Composition API: Lifecycle Hooks](https://vuejs.org/api/composition-api-lifecycle.html)。
+除了上述介绍和一些命名上的变化，具体用法差不多。Vue3 还新增了用于调试和服务端渲染场景的钩子：
+
+- `onRenderTracked` — 调试钩子，响应式依赖被收集时调用
+- `onRenderTriggered` — 调试钩子，响应式依赖被触发时调用
+- `onServerPrefetch` — 组件实例在服务器上被渲染前调用
+
+详细内容查阅新文档 [Composition API: Lifecycle Hooks](https://vuejs.org/api/composition-api-lifecycle.html)。
