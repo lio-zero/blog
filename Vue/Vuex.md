@@ -2,6 +2,8 @@
 
 > [Vuex](https://vuex.vuejs.org/zh/) 是一个专为 Vue.js 应用程序开发的**状态管理库**，是实现组件全局状态（数据）管理的一种机制，可以方便的实现组件之间的数据的共享。
 
+> **注意**：本文为 Vue 2.x 写法，详细的语法变更请查阅 [Vuex 4.x 文档](https://vuex.vuejs.org/zh/)。此外，Vue 3.x 的下一代 Vuex 开发重心已转移到 [pinia](https://github.com/vuejs/pinia)，它支持 Vue 2.x 和 Vue 3.x 版本。
+
 ## 安装
 
 ```bash
@@ -36,7 +38,7 @@ state: {
 }
 ```
 
-**获取方式二**
+**获取方式二**：
 
 使用 `mapState` 函数，将全局数据映射为当前组件的 `computed` 计算属性使用
 
@@ -70,7 +72,7 @@ mutations: {
 }
 ```
 
-**调用方式一**
+**调用方式一**：
 
 ```js
 // 调用 commit 函数
@@ -79,7 +81,7 @@ this.$store.commit('increment')
 this.$store.commit('incrementN', 3)
 ```
 
-**调用方式二**
+**调用方式二**：
 
 使用 `mapMutations` 函数，映射为当前组件的 `methods` 函数
 
@@ -103,7 +105,7 @@ actions: {
 }
 ```
 
-**获取异步方法**
+**获取异步方法**：
 
 ```js
 // 触发 actions 异步任务时携带参数
@@ -129,13 +131,13 @@ getters: {
 }
 ```
 
-**获取方式一**
+**获取方式一**：
 
 ```js
 $store.getters.tripleCounter
 ```
 
-**获取方式二**
+**获取方式二**：
 
 使用 `mapGetters` 函数，将全局数据映射为当前组件的计算属性使用
 
@@ -151,7 +153,7 @@ computed: {
 
 > 由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。
 
-为了解决以上问题，Vuex 允许我们将 store 分割成**模块（module）**。每个模块拥有自己的 state、mutation、action、getter。
+为了解决以上问题，Vuex 允许我们将 store 分割成**模块（module）**。每个模块拥有自己的 `state`、`mutation`、`action` 和 `getter`。
 
 ```js
 // module/moduleA.js
@@ -191,7 +193,7 @@ store.state.moduleA // -> moduleA 的状态
 store.state.moduleB // -> moduleB 的状态
 ```
 
-详细信息请看 [modules](https://vuex.vuejs.org/zh/guide/modules.html)
+详细信息请看 [modules](https://vuex.vuejs.org/zh/guide/modules.html)。
 
 ## 其他
 
@@ -252,7 +254,7 @@ const store = new Vuex.Store({
 
 假设这里的 `obj` 是在计算属性中返回的一个属于 Vuex store 的对象，在用户输入时，`v-model` 会试图直接修改 `obj.message`。在严格模式中，由于这个修改不是在 mutation 函数中执行的, 这里会抛出一个错误。
 
-**方式一：给 `<input>` 中绑定 value，然后侦听 `input` 或者 `change` 事件，在事件回调中调用一个方法**
+**方式一**：给 `<input>` 中绑定 value，然后侦听 `input` 或者 `change` 事件，在事件回调中调用一个方法
 
 ```html
 <input :value="message" @input="updateMessage" />
@@ -273,7 +275,7 @@ const store = new Vuex.Store({
 </script>
 ```
 
-**mutation 函数**
+**mutation 函数**：
 
 ```js
 mutations: {
@@ -283,7 +285,7 @@ mutations: {
 }
 ```
 
-**方式二：使用 setter 的双向绑定计算属性**
+**方式二**：使用 setter 的双向绑定计算属性
 
 ```js
 computed: {
@@ -309,9 +311,9 @@ const store = new Vuex.Store({
 })
 ```
 
-在严格模式下，无论何时发生了状态变更且不是由 mutation 函数引起的，将会抛出错误。这能保证所有的状态变更都能被调试工具跟踪到。
+在严格模式下，无论何时发生了状态变更且不是由 `mutation` 函数引起的，将会抛出错误。这能保证所有的状态变更都能被调试工具跟踪到。
 
-**不要在发布环境下启用严格模式**！严格模式会深度监测状态树来检测不合规的状态变更——请确保在发布环境下关闭严格模式，以避免性能损失。
+**不要在生成环境下启用严格模式**！严格模式会深度监测状态树来检测不合规的状态变更，请确保在生产环境下关闭严格模式，以避免性能损失。
 
 类似于插件，我们可以让构建工具来处理这种情况：
 
@@ -323,6 +325,14 @@ const store = new Vuex.Store({
 ```
 
 ## 常见的问题
+
+### 谈谈你对 Vuex 的理解？
+
+理解如下两张图，结合官网对 Vuex 的解释（[Vuex 是什么？](https://vuex.vuejs.org/zh/)）：
+
+![flow](https://vuex.vuejs.org/flow.png)
+
+![vuex](https://vuex.vuejs.org/vuex.png)
 
 ### 什么时候使用 Vuex？
 
@@ -341,3 +351,10 @@ Vuex 借鉴了 [Flux](https://facebook.github.io/flux/docs/overview)、[Redux](h
 - 能够在 Vuex 中集中管理共享的数据，易于开发和后期维护
 - 能够高效地实现组件之间的数据共享，提高开发效率
 - 存储在 Vuex 中的数据都是响应式的，能够实时保存数据与页面的同步
+
+### Mutation 和 Action 有什么区别？
+
+- mutation 是 Vuex 用于修改 store 中状态的唯一方法，而 action 只能通过 mutation 修改状态。
+- action 可以包含任意异步操作，而 mutation 只能是同步操作
+- 它们提交的方式不同，mutation 使用 `commit` 方法，而 action 使用 `dispatch` 方法。
+- 这些你都可以在官网找到 — [Mutation](https://vuex.vuejs.org/zh/guide/mutations.html) 和 [Action](https://vuex.vuejs.org/zh/guide/actions.html)
