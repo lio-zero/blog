@@ -75,8 +75,6 @@ $emit('event-name', data)
 
 ## 在 Options API 中以 `$emit()` 发送事件
 
-与 Vue 3 中的几乎所有内容一样，我们可以选择使用 Options API 或 Composition API **从组件中发送自定义事件**。
-
 在 Options API 中，可以使用 `this` 调用 `$emit` 方法，然后将 `e.target.value` 传递给它。
 
 ```html
@@ -93,11 +91,11 @@ $emit('event-name', data)
 
 ## 使用 `context.emit` 在 Composition API 中发送事件
 
-在 Composition API 中，由于安装程序在创建组件之前运行，因此我们无法访问它。
+在 Composition API 中，由于安装程序在创建组件之前运行，因此我们无法访问 `this`。
 
 相反，我们可以使用 `setup` 函数的第二个参数 `context` 来访问 `emit` 方法。
 
-> `context` 还可以获取 `solts` 和 `attr`。
+> `context` 还可以获取 `slots` 和 `attrs`。
 
 两种获取方法：
 
@@ -106,7 +104,7 @@ $emit('event-name', data)
 
 我们可以调用与 Options API 完全相同的 `emit`：创建一个方法，调用 `emit`，并将参数传递给它！
 
-````html
+```html
 <script>
   export default {
     setup(props, { emit }) {
@@ -120,23 +118,29 @@ $emit('event-name', data)
     }
   }
 </script>
+```
 
-以上就是 Vue `emit()` 方法发送自定义事件的三种不同方法。 ## setup 语法糖 `setup
-script` 可以通过 `defineEmits` 方法定义 emit 自定义事件。 ```vue
+以上就是 Vue `emit()` 方法发送自定义事件的三种不同方法。
+
+## setup 语法糖 `setup script`
+
+可以通过 `defineEmits` 方法定义 emit 自定义事件。
+
+```html
 <script setup>
   const emit = defineEmits(['customChange'])
   const handleAPI = (e) => {
     emit('customChange', e.target.value)
   }
 </script>
-````
+```
 
 ## 监听事件时使用 `kebab-case`
 
-Vue 官方文档建议在事件名称中使用 **kebab-case**，即使是在脚本中。**如果您使用的是 Vue 2，这一点至关重要**。
+Vue 官方文档建议在事件名称中使用 **kebab-case**，即使是在脚本中。**如果您使用的是 Vue2，这一点至关重要**。
 
-在 Vue2 中，事件名称没有自动将 **camelCase** 转换为 **kebab-case**，`v-on` 指令会自动将事件名称转换为小写，因此 **camelCase** 命名的事件不可能被监听。
+在 Vue2 中，事件名称没有自动将 **camelCase** 转换为 **kebab-case**，`v-on` 指令会自动将事件名称转换为小写，因此 **camelCase** 命名的事件不可能被侦听。
 
 例如，如果我们发出一个名为 `myEvent` 的事件，则侦听 `my-event` **将不起作用**。
 
-在 Vue3 中，事件名称（如 `props` 和 `components`）可以在不同情况下自动转换。与 `props` 类似，最好还是坚持每种编程语言的约，**在脚本中使用 camelCase，在模板中使用 kebab-case**。
+在 Vue3 中，事件名称（如 `props` 和 `components`）可以在不同情况下自动转换。与 `props` 类似，最好还是坚持每种编程语言的约定，**在脚本中使用 camelCase，在模板中使用 kebab-case**。
