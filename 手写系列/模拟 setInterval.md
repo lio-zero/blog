@@ -11,10 +11,10 @@ setTimeout(function () {
 }, 0)
 ```
 
-> **注意**：这里不能使用箭头函数，因为箭头函数没有 `argument` 对象。
+这里需要注意两点：
 
-> **注意**：`argument` 已经从 Web 标准中删除，并且在严格模式（`'use strict'`）下，不能使用 [`arguments.callee`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/arguments)
-> 。
+- 这里不能使用箭头函数，因为箭头函数没有 `argument` 对象。
+- `argument` 已经从 Web 标准中删除，并且在严格模式（`'use strict'`）下，不能使用 [`arguments.callee`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/arguments)。
 
 ## 递归 + `setTimeout()`
 

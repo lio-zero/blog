@@ -29,6 +29,8 @@
 
 ## CMD
 
+CMD 最为代表的 [seajs](https://github.com/seajs/seajs) 库。
+
 这里简单带过，了解的不多，使用的也不多。
 
 > CMD 延迟执行，推崇依赖就近，只有用户需要的时候才执行（性能好）
@@ -343,6 +345,16 @@ import baz from './baz'
 推荐一篇关于 ES6 之前各种规范的模块化 [《JavaScript Module Pattern: In-Depth》](http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth)
 
 也可以阅读阮一峰老师的 [Javascript 模块化编程（一）：模块的写法](http://www.ruanyifeng.com/blog/2012/10/javascript_module.html)
+
+## 总结
+
+- AMD、CMD、CommonJS 和 ES6 Module 都是为了解决原始无模块化的痛点
+- AMD — 代表 requirejs 库，提前执行，推崇依赖前置
+- CMD — 代表 seajs 库，延迟执行，推崇依赖就近
+- CommonJS — 模块输出的是一个值的拷贝，运行时加载，加载的是一个对象（`module.exports` 属性），该对象只有在脚本运行完才会生成
+- ES6 Module — 模块输出的是一个值的引用，编译时输出接口，ES6 模块不是对象，它对外接口只是一种静态定义，在代码静态解析阶段就会生成
+
+它们都是在 JS 推广模块定义过程的规范化产出。
 
 ## 更多资料
 
