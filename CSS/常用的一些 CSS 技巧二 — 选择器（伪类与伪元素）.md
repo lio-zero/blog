@@ -450,14 +450,9 @@ p::-moz-selection {
 
 为具有可滚动溢出的元素自定义滚动条样式。
 
-主要有三个：
-
 - `::-webkit-scrollbar` 设置整个滚动条元素的样式。
 - `::-webkit-scrollbar-track` 滚动条轨道（滚动条的背景）的样式。
 - `::-webkit-scrollbar-thumb` 滚动条滑块（可拖动元素）的样式。
-
-其他：
-
 - `::-webkit-scrollbar-button` 设置滚动条上的按钮 (上下箭头)的样式。
 - `::-webkit-scrollbar-track-piece` 设置滚动条没有滑块的轨道部分的样式。
 - `::-webkit-scrollbar-corner` 设置当同时有垂直滚动条和水平滚动条时交汇的部分的样式。
@@ -479,9 +474,11 @@ p::-moz-selection {
   background: #666e8f;
   border-radius: 12px;
 }
+```
 
-/* 仅在单独地方设置滚动条样式 */
+仅在单独地方设置滚动条样式：
 
+```css
 .box::-webkit-scrollbar {
   width: 8px;
   background: transparent;
@@ -496,11 +493,12 @@ p::-moz-selection {
 }
 ```
 
-## 更多资料
+相关资料：
 
 - [Scrollbar Shenanigans](https://www.swyx.io/scrollbar-shenanigans/)
 - [Strut Your Stuff With a Custom Scrollbar](https://css-tricks.com/strut-your-stuff-with-a-custom-scrollbar/)
 - [scrollbar](https://css-tricks.com/almanac/properties/s/scrollbar/)
+- [The story of the custom scrollbar using CSS](https://blog.greenroots.info/the-story-of-the-custom-scrollbar-using-css)
 
 ## 首字大写
 

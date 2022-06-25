@@ -16,23 +16,23 @@
 因此，在您的计算机中：
 
 ```git
-$ git init
-$ touch README
-$ git add README
-$ git commit -m "initial commit"
+git init
+touch README
+git add README
+git commit -m "initial commit"
 ```
 
 在服务器上：
 
 ```git
-$ cd /www/project
-$ git init --bare
+cd /www/project
+git init --bare
 ```
 
 在客户端，你推送：
 
 ```git
-$ git push username@server:/www/project main
+git push username@server:/www/project main
 ```
 
 然后，您可以通过将其添加为远程来保存键入内容。

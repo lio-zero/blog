@@ -202,3 +202,7 @@ avatar.dataset.animateSpeed = 4000
 avatar.dataset.id = 'user'
 console.log(avatar.dataset)
 ```
+
+## 更多资料
+
+[HTML5 Feature Tips](https://html5-tips.netlify.app/) & [地址](https://github.com/atapas/html-tips-tricks)

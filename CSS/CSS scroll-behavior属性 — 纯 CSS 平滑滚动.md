@@ -47,7 +47,4 @@ html {
 
 - [scroll-behavior](https://css-tricks.com/almanac/properties/s/scroll-behavior/)
 - [Downsides of Smooth Scrolling](https://css-tricks.com/downsides-of-smooth-scrolling/)
-- [CSS overscroll-behavior 让滚动嵌套时父滚动不触发](https://www.zhangxinxu.com/wordpress/2020/01/css-overscroll-behavior/)
-- [纯 CSS 平滑滚动“返回顶部”](https://moderncss.dev/pure-css-smooth-scroll-back-to-top/)
-- [带有 Ken Kens 奖金效应的动画图片库字幕](https://moderncss.dev/animated-image-gallery-captions-with-bonus-ken-burns-effect/)
-- [仅 CSS 可访问的下拉导航菜单](https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/)
+- [滚动到页面顶部的多种实现](https://github.com/lio-zero/blog/blob/main/JavaScript/%E6%BB%9A%E5%8A%A8%E5%88%B0%E9%A1%B5%E9%9D%A2%E9%A1%B6%E9%83%A8%E7%9A%84%E5%A4%9A%E7%A7%8D%E5%AE%9E%E7%8E%B0.md)

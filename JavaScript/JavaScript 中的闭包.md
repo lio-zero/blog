@@ -12,13 +12,10 @@
 
 ECMAScript 中，闭包指的是：
 
-1.  从理论角度：所有的函数。因为它们都在创建的时候就将上层上下文的数据保存起来了。哪怕是简单的全局变量也是如此，因为函数中访问全局变量就相当于是在访问自由变量，这个时候使用最外层的作用域。
-
-2.  从实践角度：以下函数才算是闭包：
-
-    1.  即使创建它的上下文已经销毁，它仍然存在（比如，内部函数从父函数中返回）
-
-    2.  在代码中引用了自由变量
+- 从理论角度：所有的函数。因为它们都在创建的时候就将上层上下文的数据保存起来了。哪怕是简单的全局变量也是如此，因为函数中访问全局变量就相当于是在访问自由变量，这个时候使用最外层的作用域。
+- 从实践角度：以下函数才算是闭包：
+  - 即使创建它的上下文已经销毁，它仍然存在（比如，内部函数从父函数中返回）
+  - 在代码中引用了自由变量
 
 之所以所有的 JavaScript 函数都是闭包，是因为它们可以访问外部作用域，但是大多数函数没有利用闭包的作用：状态的持久性。因此，闭包有时也被称为有状态函数。
 
@@ -62,7 +59,7 @@ f() // 2
 
 在每次 foo 被调用时，都会创建一个新的作用域，以存储 foo 运行时的变量。所以每次调用都会加 1。
 
-**另一个例子**
+另一个例子：
 
 ```js
 function foo() {
@@ -171,14 +168,14 @@ data[2]() // 3
 
 ## 闭包的优缺点
 
-**优点**
+**优点**：
 
 - 可以避免使用全局变量，防止全局变量污染
 - 让外部访问函数内部变量成为可能
 
-**缺点**
+**缺点**：
 
-- 会造成内存泄漏：有一块内存空间被长期占用，而不被释放
+- 会造成内存泄漏 — 有一块内存空间被长期占用，而不被释放
 - 导致变量不会被垃圾回收机制回收，造成内存消耗
 
 **闭包要做的最重要的事情是即使函数的环境急剧变化或消失，函数也可以继续工作**。创建函数时作用域内的所有变量均被封闭并加以保护，以确保该函数仍然有效。对于非动态的语言（例如 JavaScript），这种行为是必不可少的，在 JavaScript 中您经常动态地创建，修改和销毁对象。
@@ -256,5 +253,6 @@ f.get(2) // null
 - [破解前端面试（80% 应聘者不及格系列）：从闭包说起](https://juejin.im/post/6844903474212143117#heading-0)
 - [深入理解 JavaScript 系列（16）：闭包（Closures）](https://www.cnblogs.com/TomXu/archive/2012/01/31/2330252.html)
 - [JavaScript 深入之闭包](https://github.com/mqyqingfeng/Blog/issues/9)
-- [A simple guide to help you understand closures in JavaScript](https://medium.com/@prashantramnyc/javascript-closures-simplified-d0d23fa06ba4) (Prashant Ram)
-- [Master the JavaScript Interview: What is a Closure?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36) (JavaScript Scene)
+- [A simple guide to help you understand closures in JavaScript](https://medium.com/@prashantramnyc/javascript-closures-simplified-d0d23fa06ba4) (Prashant Ram)
+- [Master the JavaScript Interview: What is a Closure?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36) (JavaScript Scene)
+- [How do JavaScript closures work?](https://stackoverflow.com/questions/111102/how-do-javascript-closures-work)

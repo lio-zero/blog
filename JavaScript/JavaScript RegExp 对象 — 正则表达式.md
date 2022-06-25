@@ -107,7 +107,7 @@ reg.multiline // true
 
 `split()` 按照给定规则进行字符串分割，返回一个数组，包含分割后的各个成员。
 
-**语法**
+语法：
 
 ```js
 str.split(separator, [limit])
@@ -115,7 +115,7 @@ str.split(separator, [limit])
 
 该方法接受两个参数，第一个参数是正则表达式，表示分隔规则，第二个参数是返回数组的最大成员数。
 
-**示例**
+示例：
 
 ```js
 'The fat cat sat on the mat.'.split(' ', 3) // ["The", "fat", "cat"]
@@ -127,13 +127,13 @@ str.split(separator, [limit])
 
 `replace()` 按照给定的正则表达式进行替换，返回替换后的字符串。
 
-**语法**
+语法：
 
 ```js
 str.replace(regexp|substr, newSubStr|function)
 ```
 
-**示例**
+示例：
 
 ```js
 const str = 'Twas the night before Xmas...'
@@ -240,8 +240,7 @@ array[1] // ['test2', 'e', 'st2', '2', index: 5, input: 'test1test2', groups: un
 
 ```js
 ;/1+1/
-  .test('1+1')
-  (
+  .test('1+1')(
     // false
 
     /1\+1/
