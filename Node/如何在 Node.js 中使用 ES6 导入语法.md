@@ -51,7 +51,7 @@ console.log('print: ', sep)
 首先从终端窗口安装以下开发人员依赖项：
 
 ```bash
-$ npm i -D @babel/core @babel/preset-env @babel/node
+npm i -D @babel/core @babel/preset-env @babel/node
 ```
 
 然后在 Node.js 项目的根目录下创建一个名为 `babel.config.json` 的文件，并添加以下内容：

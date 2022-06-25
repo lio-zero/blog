@@ -5,8 +5,8 @@
 要删除本地分支，可以使用以下方法之一：
 
 ```git
-$ git branch -d <branch_name>
-$ git branch -D <branch_name>
+git branch -d <branch_name>
+git branch -D <branch_name>
 ```
 
 - `-d` 选项是 `--delete` 的别名，它只在分支已经完全合并到其上游分支时删除该分支。如果您尝试删除当前选定的分支，您将收到错误消息。
@@ -17,13 +17,13 @@ $ git branch -D <branch_name>
 Git v1.5.0 删除远程分支使用：
 
 ```git
-$ git push <remote_name> :<branch_name>
+git push <remote_name> :<branch_name>
 ```
 
 Git v1.7.0 删除远程分支使用：
 
 ```git
-$ git push <remote_name> --delete <branch_name>
+git push <remote_name> --delete <branch_name>
 ```
 
 从 Git v2.8.0 开始，我们可以使用 `-d` 选项作为 `--delete` 的别名。使用这些语法取决于你使用的 Git 版本。
@@ -31,7 +31,7 @@ $ git push <remote_name> --delete <branch_name>
 示例：
 
 ```git
-$ git push origin :next
+git push origin :next
 ```
 
 上面命令表示删除 `origin` 主机的 `next` 分支。

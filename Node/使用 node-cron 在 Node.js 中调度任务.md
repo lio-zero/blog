@@ -32,12 +32,12 @@ crontab 语法如下所示：
 
 | **字段**           | **值**                                 |
 | ------------------ | -------------------------------------- |
-| `second`           | 0–59                                   |
-| `minute`           | 0–59                                   |
-| `hour`             | 0–23                                   |
-| `day of the month` | 1–31                                   |
-| `month`            | 1–12（或月份简写 Jan、Feb...）         |
-| `day of the week`  | 0–7（或 Jan、Feb...，0 或 7 是星期日） |
+| `second`           | 0-59                                   |
+| `minute`           | 0-59                                   |
+| `hour`             | 0-23                                   |
+| `day of the month` | 1-31                                   |
+| `month`            | 1-12（或月份简写 Jan、Feb...）         |
+| `day of the week`  | 0-7（或 Jan、Feb...，0 或 7 是星期日） |
 
 下面我们来看看它的一些用法和用例。
 
@@ -46,7 +46,7 @@ crontab 语法如下所示：
 使用 `npm` 安装 `node-cron` 模块。
 
 ```bash
-$ npm install --save node-cron
+npm install --save node-cron
 ```
 
 ### 语法

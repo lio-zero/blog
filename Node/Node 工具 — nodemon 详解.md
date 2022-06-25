@@ -17,16 +17,16 @@
 
 ## 安装
 
-**全局安装**
+全局安装：
 
 ```sh
-$ npm i -g nodemon
+npm i -g nodemon
 ```
 
-**本地安装**
+本地安装：
 
 ```sh
-$ npm i -D nodemon
+npm i -D nodemon
 ```
 
 注意：本地安装需要在 `package.json` 文件的 script 脚本中指定要需要执行的命令
@@ -79,7 +79,7 @@ $ nodemon --watch app --watch libs app.js
 使用 `-e` 或 `--ext` 指定监听的文件扩展名，如下所示：
 
 ```bash
-$ nodemon -e js,pug
+nodemon -e js,pug
 ```
 
 **优先级**：nodemon 会先读取 `watch` 里面需要监听的文件或文件路径，再从文件中选择监控 `ext` 中指定的后缀名，最后去掉从 `ignore` 中指定的忽略文件或文件路径。
@@ -89,7 +89,7 @@ $ nodemon -e js,pug
 `exec` 执行项。若设定了执行项，`nodemon` 将执行程序而不是 JavaScript 脚本。
 
 ```bash
-$ nodemon --exec "python -v" ./app.py
+nodemon --exec "python -v" ./app.py
 ```
 
 ### ignore
@@ -134,7 +134,7 @@ $ nodemon --ignore 'lib/*.js'
 现在运行以下命令，nodemon 将知道将其 `perl` 用作可执行文件：
 
 ```bash
-$ nodemon app.pl
+nodemon app.pl
 ```
 
 设置运行服务的后缀名与对应的命令
@@ -144,9 +144,9 @@ $ nodemon app.pl
 `delay` 延迟重启时间（毫秒）。延迟重启类似于 JavaScript 函数中的函数节流，只在最后一次更改的文件往后延迟重启，以避免了短时间多次重启。
 
 ```bash
-$ nodemon --delay 10 app.js
-$ nodemon --delay 2.5 app.js
-$ nodemon --delay 2500ms app.js
+nodemon --delay 10 app.js
+nodemon --delay 2.5 app.js
+nodemon --delay 2500ms app.js
 ```
 
 ### verbose

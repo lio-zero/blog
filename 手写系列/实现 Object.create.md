@@ -2,7 +2,7 @@
 
 > [`Object.create()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create) 方法创建一个新对象，使用现有的对象来提供新创建的对象的 `__proto__`。
 
-**用法**
+**用法**：
 
 ```js
 const user = {

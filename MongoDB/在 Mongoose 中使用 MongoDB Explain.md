@@ -102,7 +102,7 @@ explain.queryPlanner
 
 例如，下面是简单集合扫描的 `executionStats` 输出：
 
-```
+```js
 {
   executionSuccess: true,
   nReturned: 1,

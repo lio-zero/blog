@@ -55,20 +55,20 @@ React 会找出已经进行了哪些更改，并且只更改需要更改的内�
 全局安装 `create-react-app`：
 
 ```bash
-$ npm i -g create-react-app
+npm i -g create-react-app
 ```
 
 运行以下命令来创建一个名为 `my-react-app` 的 React 应用程序：
 
 ```bash
-$ npx create-react-app my-react-app
+npx create-react-app my-react-app
 ```
 
 进入目录，并启动项目：
 
 ```bash
-$ cd my-react-app
-$ npm start
+cd my-react-app
+npm start
 ```
 
 启动后将启动跳转到浏览器，效果如下：
@@ -90,7 +90,7 @@ function App() {
 这里不过多介绍，我们来看看如何安装 React 环境。
 
 ```bash
-$ npm init vite@latest my-react-app
+npm init vite@latest my-react-app
 ```
 
 根据选项选择 react 即可，vite 会为您提供很轻量的 react 环境。
@@ -98,9 +98,9 @@ $ npm init vite@latest my-react-app
 同样的进入目录，安装依赖包，然后启动项目：
 
 ```js
-$ cd my-react-app
-$ npm i
-$ npm dev
+cd my-react-app
+npm i
+npm dev
 ```
 
 下面我们来看一下 React 的一些基础用法。
@@ -234,11 +234,11 @@ const elem = <input type='text' />
 
 ### 属性 `class` = `className`
 
-`class` 属性在 HTML 中是一个常用   的属性，但是由于 JSX 被渲染为 JavaScript，并且 `class` 关键字是 JavaScript 中的保留字，所以你不能在 JSX 中使用它。
+`class` 属性在 HTML 中是一个常用 的属性，但是由于 JSX 被渲染为 JavaScript，并且 `class` 关键字是 JavaScript 中的保留字，所以你不能在 JSX 中使用它。
 
 改用属性 `className`。
 
-JSX 通过使用 `className` 解决了这个问题。当 JSX 被渲染时，`className`  会将属性转换为 `class` 属性。
+JSX 通过使用 `className` 解决了这个问题。当 JSX 被渲染时，`className` 会将属性转换为 `class` 属性。
 
 ```js
 const elem = <h1 className='myclass'>Hello React</h1>
@@ -248,7 +248,7 @@ const elem = <h1 className='myclass'>Hello React</h1>
 
 React 支持 `if` 语句，但不支持 JSX。
 
-为了能够在 JSX 中使用条件语句，您应该将 `if`  语句放在 JSX 之外，或者您可以使用三元表达式代替。
+为了能够在 JSX 中使用条件语句，您应该将 `if` 语句放在 JSX 之外，或者您可以使用三元表达式代替。
 
 在 JSX 代码之外编写 `if` 语句：
 
@@ -471,7 +471,7 @@ React 与 HTML 具有相同的事件：单击、更改、鼠标悬停等。
 
 React 事件以 camelCase 语法编写：用 `onClick` 代替 `onclick`。
 
-React 事件处理程序写在花括号内，例如：`onClick={shoot}`  而不是  `onClick="shoot()"`。
+React 事件处理程序写在花括号内，例如：`onClick={shoot}` 而不是 `onClick="shoot()"`。
 
 ```js
 <button onClick={shoot}>发射!</button>
@@ -583,7 +583,7 @@ const cars = ['Ford', 'BMW', 'Audi']
 ReactDOM.render(<Garage cars={cars} />, document.getElementById('root'))
 ```
 
-如果`cars.length`  等于 true，则将渲染 `&&` 后面的表达式。
+如果`cars.length` 等于 true，则将渲染 `&&` 后面的表达式。
 
 尝试清空 `cars` 数组：
 
@@ -599,7 +599,7 @@ const cars = []
 condition ? true : false
 ```
 
-我们回到之前的例子，如果  `isGoal` 为 `true`，则返回 `Car` 组件，否则返回 `House` 组件：
+我们回到之前的例子，如果 `isGoal` 为 `true`，则返回 `Car` 组件，否则返回 `House` 组件：
 
 ```js
 function Goal(props) {
@@ -915,10 +915,10 @@ Vite 构建工具没有为我们添加路由，我们需要自己手动安装依
 添加 React 路由：
 
 ```bash
-$ npm i -D react-router-dom
+npm i -D react-router-dom
 ```
 
-本节写一个简单的示例，在 `src` 文件夹中，我们将创建一个  `pages` 包含多个文件的文件夹：
+本节写一个简单的示例，在 `src` 文件夹中，我们将创建一个 `pages` 包含多个文件的文件夹：
 
 - `Layout.js`
 - `Home.js`
@@ -964,20 +964,20 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 `<Route>` 可以嵌套。第一个 `<Route>` 具有 `/` 组件的路径，并渲染 `Layout` 组件。
 
-嵌套的 `<Route>` 继承并添加到父路由。因此，`blogs` 路径与父路径合并，成为  `/blogs`。
+嵌套的 `<Route>` 继承并添加到父路由。因此，`blogs` 路径与父路径合并，成为 `/blogs`。
 
-`Home` 组件路由没有路径，但有  `index` 属性。将此路由指定为父路由的默认路由，即 `/`。
+`Home` 组件路由没有路径，但有 `index` 属性。将此路由指定为父路由的默认路由，即 `/`。
 
 设置 `path` 为 `*` 将作为任何未定义 URL 的回退。这对于 404 错误页面是很好的。
 
 ### 页面/组件
 
-`Layout` 组件具有  `<Outlet>` 和 `<Link>` 元素。
+`Layout` 组件具有 `<Outlet>` 和 `<Link>` 元素。
 
 - `<Outlet>` 渲染当前选择的路由。
 - `<Link>` 用于设置 URL 并跟踪浏览历史记录。
 
-每当我们链接到内部路径时，我们将使用 `<Link>`  而不是 `<a href="">`。
+每当我们链接到内部路径时，我们将使用 `<Link>` 而不是 `<a href="">`。
 
 `Layout` 路由是一个共享组件，可以在所有页面上插入公共内容，例如导航菜单。
 
@@ -1101,7 +1101,7 @@ const Header = () => {
 
 ### CSS 样式表
 
-您可以在单独的文件中编写 CSS 样式，只需使用  `.css` 文件扩展名保存文件，然后将其导入您的应用程序。
+您可以在单独的文件中编写 CSS 样式，只需使用 `.css` 文件扩展名保存文件，然后将其导入您的应用程序。
 
 ```scss
 // index.scss
@@ -1146,7 +1146,7 @@ CSS 模块对于放置在单独文件中的组件很方便。
 
 ```scss
 // index.module.css
-.bigplum {
+.bigPlum {
   color: plum;
   padding: 40px;
   font-family: Sans-Serif;
@@ -1160,7 +1160,7 @@ CSS 模块对于放置在单独文件中的组件很方便。
 import styles from './index.module.css'
 
 const SayHello = () => {
-  return <h1 className={styles.bigplum}>Hello React!</h1>
+  return <h1 className={styles.bigPlum}>Hello React!</h1>
 }
 
 export default SayHello
@@ -1187,7 +1187,7 @@ Sass 文件在服务器上执行并将 CSS 发送到浏览器。
 通过在终端中运行以下命令来安装 Sass：
 
 ```bash
-$ npm i sass
+npm i sass
 ```
 
 现在我们可以在项目中包含 Sass 文件了！

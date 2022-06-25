@@ -450,13 +450,13 @@ p::-moz-selection {
 
 为具有可滚动溢出的元素自定义滚动条样式。
 
-**主要有三个**
+主要有三个：
 
 - `::-webkit-scrollbar` 设置整个滚动条元素的样式。
 - `::-webkit-scrollbar-track` 滚动条轨道（滚动条的背景）的样式。
 - `::-webkit-scrollbar-thumb` 滚动条滑块（可拖动元素）的样式。
 
-**其他**
+其他：
 
 - `::-webkit-scrollbar-button` 设置滚动条上的按钮 (上下箭头)的样式。
 - `::-webkit-scrollbar-track-piece` 设置滚动条没有滑块的轨道部分的样式。
@@ -496,7 +496,7 @@ p::-moz-selection {
 }
 ```
 
-**更多资料**
+## 更多资料
 
 - [Scrollbar Shenanigans](https://www.swyx.io/scrollbar-shenanigans/)
 - [Strut Your Stuff With a Custom Scrollbar](https://css-tricks.com/strut-your-stuff-with-a-custom-scrollbar/)
@@ -720,7 +720,7 @@ option:checked {
 
 `:default` 默认应用到有 checked 属性的的标签上。当你切换或选择其他选项时，该选择器不会跟随着应用到你选择的标签上。（它是固定的，不响应的）
 
-**示例：默认推荐**
+示例（默认推荐）：
 
 ```css
 input:default + label:after {

@@ -9,7 +9,7 @@
 使用下面的命令创建别名，将 `<alias>` 替换为别名名称，将 `<command>` 替换为要使用别名的命令：
 
 ```bash
-$ git config --global alias.<alias> <command>
+git config --global alias.<alias> <command>
 ```
 
 常用的别名有：
@@ -53,8 +53,8 @@ $ git config --global alias.br branch
 接下来，试下效果：
 
 ```bash
-$ git st
-$ git cm "xxx"
+git st
+git cm "xxx"
 ```
 
 ## 强制推送
@@ -68,13 +68,13 @@ Git 有一种更安全的方式来推送更改并覆盖您的提交。而不是�
 您可以 `force-push` 为此编写别名：
 
 ```bash
-$ git config --global alias.force-push "push --force-with-lease"
+git config --global alias.force-push "push --force-with-lease"
 ```
 
 现在您可以运行 `git force-push`，这更容易记住。当然，为了节省几次按键操作，您还可以添加此别名的简短版本。
 
 ```bash
-$ git config --global alias.fp force-push
+git config --global alias.fp force-push
 ```
 
 请注意，您只能在 Git 2.20+ 中为别名设置别名。
@@ -124,16 +124,16 @@ $ git config -l | grep alias | sed 's/^alias\.//g'
 
 ## 添加提交消息模板
 
-为当前存储库设置提交消息模板。可以使用 `git config commit.template ` 指定 `<file>` 的提交当前库信息模板。
+为当前存储库设置提交消息模板。可以使用 `git config commit.template` 指定 `<file>` 的提交当前库信息模板。
 
 ```bash
-$ git config commit.template <file>
+git config commit.template <file>
 ```
 
 假设我们使用 `"commit-template"`作为我们的提交消息模板：
 
 ```bash
-$ git config commit.template "commit-template"
+git config commit.template "commit-template"
 ```
 
 `commit-template` 参考如下：
@@ -159,7 +159,7 @@ fix(<模块>): <描述>
 # Footer：用来关闭 Issue或以BREAKING CHANGE开头，后面是对变动的描述、以及变动理由和迁移方法
 ```
 
-详细的 Git 提交规范，可以参考  [Vue](https://github.com/vuejs/vue/blob/dev/.github/COMMIT_CONVENTION.md)  或 [Angular](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular) 规范。
+详细的 Git 提交规范，可以参考 [Vue](https://github.com/vuejs/vue/blob/dev/.github/COMMIT_CONVENTION.md) 或 [Angular](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular) 规范。
 
 ## 配置 Git 用户信息
 
@@ -168,22 +168,22 @@ fix(<模块>): <描述>
 - 您可以使用 `--global` 标志来配置全局用户信息。
 
 ```bash
-$ git config [--global] user.email <email>
-$ git config [--global] user.name <name>
+git config [--global] user.email <email>
+git config [--global] user.name <name>
 ```
 
 配置当前存储库的用户
 
 ```bash
-$ git config user.email "xxx@xxx.xxx"
-$ git config user.name "O.O"
+git config user.email "xxx@xxx.xxx"
+git config user.name "O.O"
 ```
 
 配置全局 Git 用户
 
 ```bash
-$ git config --global user.email "xxx@xxx.xxx"
-$ git config --global user.name "O.O"
+git config --global user.email "xxx@xxx.xxx"
+git config --global user.name "O.O"
 ```
 
 ## 配置存储库的行尾
@@ -192,13 +192,13 @@ $ git config --global user.name "O.O"
 - `lf` 是 UNIX 行的结尾（`\n`），而 `crlf` DOS 行的结尾是（`\r\n`）。
 
 ```bash
-$ git config core.eol [lf | crlf]
+git config core.eol [lf | crlf]
 ```
 
 配置为使用 UNIX 行结束符
 
 ```bash
-$ git config core.eol lf
+git config core.eol lf
 ```
 
 ## 自动更正 Git 命令
@@ -206,8 +206,8 @@ $ git config core.eol lf
 将 Git 配置为自动更正键入错误的命令。可以使用 `git config --global help.autocorrect 1` 使 Git 的自动更正。
 
 ```bash
-$ git config --global help.autocorrect 1
-$ git sttaus # 改为运行 "git status"
+git config --global help.autocorrect 1
+git sttaus # 改为运行 "git status"
 ```
 
 ## 配置 Git 文本编辑器
@@ -217,19 +217,19 @@ $ git sttaus # 改为运行 "git status"
 使用 `git config --global core.editor <editor-command>` 调用 `<editor-command>` 作为 Git 文本编辑器。
 
 ```bash
-$ git config --global core.editor <editor-command>
+git config --global core.editor <editor-command>
 ```
 
 将 VS Code 设置为 Git 文本编辑器
 
 ```bash
-$ git config --global core.editor "code --wait"
+git config --global core.editor "code --wait"
 ```
 
 将 `vi` 作为 Git 的文本编辑器
 
 ```bash
-$ git config --global core.editor "vi"
+git config --global core.editor "vi"
 ```
 
 ## 编辑 Git 配置文件
@@ -237,15 +237,15 @@ $ git config --global core.editor "vi"
 使用 `git config --global -e` 在默认 Git 文本编辑器中打开 Git 全局配置文件。
 
 ```bash
-$ git config --global -e
+git config --global -e
 ```
 
 ## shell 别名
 
 ```bash
-$ git config --global alias.hello "!echo hello"
+git config --global alias.hello "!echo hello"
 ```
 
 ```bash
-$ git config --global alias.dad '!curl https://icanhazdadjoke.com/ && echo'
+git config --global alias.dad '!curl https://icanhazdadjoke.com/ && echo'
 ```

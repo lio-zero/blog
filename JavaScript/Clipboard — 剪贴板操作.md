@@ -1,6 +1,6 @@
 # Clipboard — 剪贴板操作
 
-**四种实现剪贴板的操作**
+四种实现剪贴板的操作：
 
 - 原生 `document.execCommand()` 方法
 - 异步的 Clipboard API
@@ -14,7 +14,7 @@
 首先，在我们的项目中使用 NPM 引入 clipboard：
 
 ```js
-$ npm i clipboard
+npm i clipboard
 ```
 
 或者使用 CDN：
@@ -84,7 +84,7 @@ clipboard.on('error', (e) => {
 
 我们在很多知识分享平台都可以看到，当我们复制一段超过一定字数的内容时，会在您复制的内容最后追加上一段标注：
 
-```
+```txt
 作者：xxx
 链接：xxx
 来源：xxx

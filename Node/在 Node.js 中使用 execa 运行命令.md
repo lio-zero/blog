@@ -29,20 +29,20 @@ Node.js 有一个内置 [`child_process`](https://nodejs.cn/api/child_process.ht
 创建并切换到 `tutorial` 目录：
 
 ```js
-$ mkdir execa-test
-$ cd execa-test
+mkdir execa-test
+cd execa-test
 ```
 
 初始化项目：
 
 ```js
-$ npm init -y
+npm init -y
 ```
 
 安装 `execa`
 
 ```js
-$ npm i execa
+npm i execa
 ```
 
 ### 在 Node.js 中使用纯 ES 模块包
@@ -91,7 +91,7 @@ run()
 现在，我们将创建一个脚本，使用 `execa` 运行以下命令：
 
 ```js
-$ echo "Process execution for humans"
+echo "Process execution for humans"
 ```
 
 `echo` 程序打印出传递给它的文本字符串。
@@ -185,7 +185,7 @@ try {
 
 运行脚本后，输出：
 
-```
+```txt
 ERROR: The command failed. stderr: ls: cannot access 'file.txt': No such file or directory (1)
 ```
 
@@ -220,7 +220,7 @@ try {
 
 运行 `node run.js`，输出：
 
-```
+```txt
 ERROR: The command took too long to run.
 ```
 
@@ -238,7 +238,7 @@ const subprocess = execa('echo', ["is it me you're looking for?"])
 subprocess.stdout.pipe(process.stdout)
 ```
 
-```
+```txt
 is it me you're looking for?
 { stdout: "is it me you're looking for?", stderr: '' }
 ```
@@ -263,7 +263,7 @@ subprocess.stdout.pipe(fs.createWriteStream('stdout.txt'))
 
 运行脚本，输出：
 
-```
+```txt
 { stdout: "is it me you're looking for?", stderr: '' }
 ```
 

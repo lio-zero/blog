@@ -13,7 +13,7 @@ Bluma 是纯 CSS 的框架，你只需要将已经给定的类添加到你的标
 ### 使用 NPM
 
 ```bash
-$ npm install bulma
+npm install bulma
 ```
 
 安装后，导入 CSS 文件：

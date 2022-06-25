@@ -60,3 +60,4 @@ npm run lint
 
 - [Git Hooks](https://www.atlassian.com/git/tutorials/git-hooks)
 - [Can Git hook scripts be managed along with the repository?](https://stackoverflow.com/questions/427207/can-git-hook-scripts-be-managed-along-with-the-repository)
+- [How I Learned to Stop Worrying and Love Git Hooks](https://css-tricks.com/how-i-learned-to-stop-worrying-and-love-git-hooks/)

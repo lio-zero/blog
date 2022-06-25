@@ -597,7 +597,7 @@ Web 语义化是指通过 HTML 标签表示页面包含的信息，包含了 HTM
 - `<footer>` 用于保存应该出现在内容节末尾的信息，并包含有关该节的附加信息。作者姓名、版权信息和相关链接是此类内容的典型示例。
 - `<main>` 元素表示 `body` 文档的主要内容。主要内容区域由与文档的中心主题或应用程序的中心功能直接相关或扩展的内容组成。
 - 查看 [Semantic in HTML5](https://htmlreference.io/semantic/) 以了解其他的语义标签。
-- [Why use an HTML5 semantic tag instead of div? [duplicate]](https://stackoverflow.com/questions/17272019/why-use-an-html5-semantic-tag-instead-of-div)
+- [Why use an HTML5 semantic tag instead of div?](https://stackoverflow.com/questions/17272019/why-use-an-html5-semantic-tag-instead-of-div)
 - [Should I use <i> tag for icons instead of <span>? [closed]](https://stackoverflow.com/questions/11135261/should-i-use-i-tag-for-icons-instead-of-span)
 - [What is the difference between <section> and <div>?](https://stackoverflow.com/questions/6939864/what-is-the-difference-between-section-and-div)
 - [How To Write Semantic HTML](https://hackernoon.com/how-to-write-semantic-html-dkq3ulo)

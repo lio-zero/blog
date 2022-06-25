@@ -15,7 +15,7 @@ $ npm login
 最后，执行 `npm publish` 发包：
 
 ```bash
-$ npm publish
+npm publish
 ```
 
 > **注意**：`package.json` 不能将 `private` 设置为 `ture`，他会将包标记为私有。

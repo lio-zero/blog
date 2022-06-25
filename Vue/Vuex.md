@@ -1,6 +1,6 @@
 # Vuex
 
-> [Vuex](https://vuex.vuejs.org/zh/) 是一个专为 Vue.js 应用程序开发的**状态管理库**，是实现组件全局状态（数据）管理的一种机制，可以方便的实现组件之间的数据的共享。
+[Vuex](https://vuex.vuejs.org/zh/) 是一个专为 Vue.js 应用程序开发的**状态管理库**，是实现组件全局状态（数据）管理的一种机制，可以方便的实现组件之间的数据的共享。
 
 > **注意**：本文为 Vue 2.x 写法，详细的语法变更请查阅 [Vuex 4.x 文档](https://vuex.vuejs.org/zh/)。此外，Vue 3.x 的下一代 Vuex 开发重心已转移到 [pinia](https://github.com/vuejs/pinia)，它支持 Vue 2.x 和 Vue 3.x 版本。
 

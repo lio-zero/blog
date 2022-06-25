@@ -260,7 +260,7 @@ p::-moz-selection {
 
 CSS 关于文本渲染的 [`text-rendering`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering) 属性告诉渲染引擎工作时如何优化显示文本。 浏览器会在渲染速度、易读性（清晰度）和几何精度方面做一个权衡。
 
-**语法**
+语法：
 
 ```css
 text-rendering: optimizeLegibility | auto | optimizeSpeed | geometricPrecision;

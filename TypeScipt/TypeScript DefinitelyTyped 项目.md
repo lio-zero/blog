@@ -13,7 +13,7 @@
 DefinitelyTyped 是一个为没有类型的 npm 包提供 TypeScript 定义的中央存储库的项目。
 
 ```bash
-$ npm i -D @types/jquery
+npm i -D @types/jquery
 ```
 
 安装声明包后，通常不需要其他步骤来使用类型，TypeScript 会在使用包本身时自动选择类型。

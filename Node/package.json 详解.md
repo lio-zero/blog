@@ -118,7 +118,7 @@
 
 ## 依赖
 
-`dependencies` 字段指定了生产环境项目的依赖。当你添加生产环境依赖时，他会自动生成，如：`npm i express`
+[`dependencies`](https://github.com/npm/npm/blob/2e3776bf5676bc24fec6239a3420f377fe98acde/doc/files/package.json.md#dependencies) 字段指定了生产环境项目的依赖。当你添加生产环境依赖时，他会自动生成，如：`npm i express`
 
 ```json
 {
@@ -128,7 +128,7 @@
 }
 ```
 
-`devDependencies` 字段指定了开发环境项目的依赖。当你添加生产环境依赖时，他会自动生成，如：`npm i eslint -D`
+[`devDependencies`](https://github.com/npm/npm/blob/2e3776bf5676bc24fec6239a3420f377fe98acde/doc/files/package.json.md#devdependencies) 字段指定了开发环境项目的依赖。当你添加生产环境依赖时，他会自动生成，如：`npm i eslint -D`
 
 ```json
 {
@@ -138,7 +138,7 @@
 }
 ```
 
-`peerDependencies` 兼容性依赖。如果你的包是插件，适合这种方式。
+[`peerDependencies`](https://github.com/npm/npm/blob/2e3776bf5676bc24fec6239a3420f377fe98acde/doc/files/package.json.md#peerdependencies) 兼容性依赖。如果你的包是插件，适合这种方式。
 
 ```json
 {
@@ -148,7 +148,7 @@
 }
 ```
 
-`optionalDependencies` 如果你想在某些依赖即使没有找到，或则安装失败的情况下，npm 都继续执行。那么这些依赖适合放在这里。
+[`optionalDependencies`](https://github.com/npm/npm/blob/2e3776bf5676bc24fec6239a3420f377fe98acde/doc/files/package.json.md#optionaldependencies) 如果你想在某些依赖即使没有找到，或则安装失败的情况下，npm 都继续执行。那么这些依赖适合放在这里。
 
 ```json
 {
@@ -186,22 +186,20 @@ console.log(process.env.npm_package_config_foo)
 你可以使用下面命令改变这个值。
 
 ```bash
-$ npm config set node:foo hi
+npm config set node:foo hi
 ```
 
 ## lint-staged
 
 在代码提交之前，进行代码规则检查能够确保进入 git 库的代码都是符合代码规则的。但是整个项目上运行 lint 速度会很慢，lint-staged 能够让 lint 只检测暂存区的文件，所以速度很快。
 
-**安装与配置**
-
-`husky` 和 `lint-staged`
+**安装与配置**：`husky` 和 `lint-staged`
 
 ```bash
-$ npm i husky lint-staged -D
+npm i husky lint-staged -D
 ```
 
-package.json 中配置：
+`package.json` 中配置：
 
 ```json
 {
@@ -351,13 +349,13 @@ package.json 中配置：
 只需在项目根部运行以下命令并回答问题：
 
 ```bash
-$ npx readme-md-generator
+npx readme-md-generator
 ```
 
 或使用 `-y` 标志默认生成：
 
 ```bash
-$ npx readme-md-generator -y
+npx readme-md-generator -y
 ```
 
 假设我们有如下配置：
@@ -394,5 +392,7 @@ $ npx readme-md-generator -y
 
 ## 更多资料
 
+- [npm Docs - package-json](https://docs.npmjs.com/cli/v8/configuring-npm/package-json)
 - [package.json](http://caibaojian.com/npm/files/package.json.html)
+- [What's the difference between dependencies, devDependencies and peerDependencies in npm package.json file?](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies/22004559#22004559)
 - [What's what? - Package.json cheatsheet!](https://areknawo.com/whats-what-package-json-cheatsheet/)

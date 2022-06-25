@@ -9,7 +9,7 @@ Koa 应用程序是一系列中间件功能，可按顺序运行以处理传入�
 安装 koa：
 
 ```bash
-$ npm i koa
+npm i koa
 ```
 
 创建一个简单的服务器：
@@ -271,13 +271,13 @@ app.use(router.routes())
 
 ## 托管静态文件
 
-**安装**
+安装：
 
 ```bash
-$ npm i koa-static
+npm i koa-static
 ```
 
-**使用**
+使用：
 
 ```js
 const serve = require('koa-static')
@@ -289,13 +289,13 @@ app.use(serve(__dirname + '/public')) // 托管 public 目录下的所有文件
 
 ## 日志记录
 
-**安装**
+安装：
 
 ```bash
-$ npm i koa-static
+npm i koa-static
 ```
 
-**使用**
+使用：
 
 ```js
 const Logger = require('koa-logger')
@@ -382,11 +382,13 @@ const CONFIG = {
 
 ## 跨域
 
+安装：
+
 ```bash
-$ npm i koa2-cors
+npm i koa2-cors
 ```
 
-**使用**
+使用：
 
 ```js
 const route = require('koa2-cors')

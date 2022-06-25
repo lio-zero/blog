@@ -7,7 +7,7 @@
 安装：
 
 ```js
-$ npm i -S fs-extra
+npm i -S fs-extra
 ```
 
 引入：

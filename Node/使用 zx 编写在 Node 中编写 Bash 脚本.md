@@ -23,7 +23,7 @@ zx 接受来自标准输入、文件和 URL 的脚本。它将您的 zx 命令�
 全局安装 zx：
 
 ```js
-$ npm i -g zx
+npm i -g zx
 ```
 
 版本要求：`node >= 16.0.0`
@@ -31,7 +31,7 @@ $ npm i -g zx
 在终端运行 zx 以检查程序是否已成功安装：
 
 ```bash
-$ zx
+zx
 
 Usage:
    zx [options] <script>
@@ -76,7 +76,7 @@ console.log(`当前分支：${branch}`)
 运行脚本，以获取项目的当前 Git 分支：
 
 ```bash
-$ zx demo.mjs
+zx demo.mjs
 ```
 
 它还将显示您执行的每个命令，因为 zx 在默认情况下打开了详细模式。
@@ -90,7 +90,7 @@ $.verbose = false
 由于我们在第一行使用了 [shebang](https://en.wikipedia.org/wiki/Shebang_%28Unix%29)（`#!`），我们也可以在不使用 zx 命令的情况下运行脚本。
 
 ```bash
-$ chmod +x ./demo.mjs
+chmod +x ./demo.mjs
 ```
 
 ## 颜色和格式
@@ -232,7 +232,7 @@ zx 命令行程序也可以从 URL 运行远程脚本。以提供文件名的方
 以下是 zx 仓库提供的一个示例：
 
 ```js
-$ zx https://github.com/google/zx/blob/main/examples/interactive.mjs
+zx https://github.com/google/zx/blob/main/examples/interactive.mjs
 ```
 
 其他：

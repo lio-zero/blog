@@ -16,7 +16,7 @@
 ## 全局安装
 
 ```bash
-$ npm i -g pm2
+npm i -g pm2
 ```
 
 ## 常用命令
@@ -160,8 +160,8 @@ $ pm2 save
 先 `pm2 start` 运行你要开机启动的程序，在输入以下两个命令。
 
 ```bash
-$ pm2 save
-$ pm2 startup
+pm2 save
+pm2 startup
 ```
 
 按上面步骤试了一下发生错误提示。网上找了一些文章，但还没试过，这里贴出来给有需要的看看 **[在 windows 上安装 pm2 并设置开机启动](https://www.huaface.com/article/11)**。

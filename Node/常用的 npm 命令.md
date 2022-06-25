@@ -7,7 +7,7 @@
 `npm init` 命令是一个逐步构建项目的工具。
 
 ```bash
-$ npm init
+npm init
 ```
 
 根据提示填写内容，也可以按提供的默认值一路回车（Enter）。
@@ -15,8 +15,8 @@ $ npm init
 为了省去上面的操作，我们加上 `--yes` 标志将自动使用默认值 `npm init` 填充所有选项：
 
 ```bash
-$ npm init --yes
-$ npm init -y
+npm init --yes
+npm init -y
 ```
 
 完成以上面操作后，将会生成一个 `package.json` 文件并将其放置在当前目录中。
@@ -35,7 +35,7 @@ $ npm config set registry https://registry.npm.taobao.org
 查看是否切换成功
 
 ```bash
-$ npm config get registry
+npm config get registry
 ```
 
 如果返回设置的源链接，说明镜像设置成功。
@@ -47,41 +47,41 @@ $ npm config get registry
 安装依赖项：
 
 ```bash
-$ npm install <package_name>
-$ npm i <package_name>
+npm install <package_name>
+npm i <package_name>
 ```
 
 安装开发环境依赖：
 
 ```bash
-$ npm install --save-dev <package_name>
-$ npm i -D <package_name>
+npm install --save-dev <package_name>
+npm i -D <package_name>
 ```
 
 安装生产环境依赖（默认）：
 
 ```bash
-$ npm install --save-prod <package_name>
-$ npm i -P <package_name>
+npm install --save-prod <package_name>
+npm i -P <package_name>
 ```
 
 全局安装软件包：
 
 ```bash
-$ npm install --global <package_name>
-$ npm i -g <package_name>
+npm install --global <package_name>
+npm i -g <package_name>
 ```
 
 同时安装多个包：
 
 ```bash
-$ npm i express cheerio axios
+npm i express cheerio axios
 ```
 
 安装具有相同前缀的多个包：
 
 ```bash
-$ npm i eslint-{plugin-import,plugin-react,loader} express
+npm i eslint-{plugin-import,plugin-react,loader} express
 ```
 
 ## 干净安装你的包依赖
@@ -89,7 +89,7 @@ $ npm i eslint-{plugin-import,plugin-react,loader} express
 `npm ci` 用于清除安装包依赖项。它通常用于自动化环境，如 CI/CD 平台。
 
 ```bash
-$ npm ci
+npm ci
 ```
 
 它与 `npm install` 有以下不同之处：
@@ -104,7 +104,7 @@ $ npm ci
 `npm scripts` 用于自定义脚本，例如：
 
 ```bash
-$ npm run env
+npm run env
 ```
 
 上面的命令是 `npm cli` 为我们提供的一个脚本命令，用于列出程序内的所有环境变量。
@@ -157,7 +157,7 @@ console.log(process.npm_package_name) // app-project
 执行以下命令：
 
 ```bash
-$ npm run env | grep npm_package_config_
+npm run env | grep npm_package_config_
 ```
 
 我们将看到，我们刚才所配置的变量，它以 `npm_package_config_` 为前缀。
@@ -171,7 +171,7 @@ console.log(process.npm_package_config_myVariable) // Hello World
 > **注意**：`config` 字段内的变量可以在输入命令时被覆盖：
 
 ```js
-$ npm config set app-project:myVariable Hello Node
+npm config set app-project:myVariable Hello Node
 ```
 
 ## 快速导航到包主页、储存库和 issues
@@ -191,13 +191,13 @@ $ npm home vue
 导航到 issues：
 
 ```bash
-$ npm bug <package-name>
+npm bug <package-name>
 ```
 
 打开它的存储库也很容易：
 
 ```bash
-$ npm repo <package-name>
+npm repo <package-name>
 ```
 
 这三个命令都将在您的默认浏览器中打开目标网站。
@@ -227,7 +227,7 @@ $ npm ddp
 `npm audit` 检查项目依赖项是否存在漏洞。它可以看出有风险的 package、依赖库的依赖链、风险原因及其解决方案。
 
 ```bash
-$ npm audit
+npm audit
 ```
 
 如果发现存在漏洞，我们可以使用 `npm audit fix`，它将自动安装所有易受攻击依赖包的修补版本（如果可用）。
@@ -241,7 +241,7 @@ $ npm audit fix --force
 更好的做法是使用 [synk](https://github.com/snyk/cli)，它是一个高级版的 `npm audit`，可自动修复，且支持 CI/CD 集成与多种语言。
 
 ```bash
-$ npx snyk
+npx snyk
 ```
 
 ## 清理 npm 缓存
@@ -249,9 +249,9 @@ $ npx snyk
 磁盘满了，试着清楚 npm 缓存：
 
 ```bash
-$ npm cache clean --force
-$ yarn cache clean
-$ pnpm store prune
+npm cache clean --force
+yarn cache clean
+pnpm store prune
 ```
 
 ## 检查环境
@@ -259,13 +259,13 @@ $ pnpm store prune
 `npm doctor` 命令可以在我们的环境中运行多项检查。
 
 ```bash
-$ npm doctor
+npm doctor
 ```
 
 ## 在本地测试你的包
 
 ```bash
-$ npm link <package_name>
+npm link <package_name>
 ```
 
 ## 检查过时的包
@@ -291,13 +291,13 @@ $ npm v <package-name>
 仅显示最新版本
 
 ```bash
-$ npm v <package-name> version
+npm v <package-name> version
 ```
 
 显示所有版本的列表
 
 ```bash
-$ npm v <package-name> versions
+npm v <package-name> versions
 ```
 
 ## 列出所有已安装的包
@@ -324,13 +324,13 @@ $ npm list -g --depth 0
 首先，需要使用 `npm login` 登录：
 
 ```bash
-$ npm login
+npm login
 ```
 
 然后，在使用 `npm publish` 发布项目：
 
 ```bash
-$ npm publish
+npm publish
 ```
 
 > 详细内容可查阅另一篇[如何对 npm package 进行发包](https://github.com/lio-zero/blog/blob/master/Node/%E5%A6%82%E4%BD%95%E5%AF%B9%20npm%20package%20%E8%BF%9B%E8%A1%8C%E5%8F%91%E5%8C%85.md)。
@@ -340,21 +340,21 @@ $ npm publish
 `npm update` 命令用于更新软件包：
 
 ```bash
-$ npm update <name>
-$ npm update <name> -g
-$ npm update <name> -D
+npm update <name>
+npm update <name> -g
+npm update <name> -D
 ```
 
 为了便于查看依赖信息，我们可以安装 `npm-check` 包，它用于检查过时、不正确和未使用的依赖项。
 
 ```bash
-$ npm i -g npm-check
+npm i -g npm-check
 ```
 
 运行以下命令：
 
 ```bash
-$ npm-check -u
+npm-check -u
 ```
 
 它将显示用于选择要更新的模块的交互式 UI。替代的还有 [`npm-check-updates`](https://www.npmjs.com/package/npm-check-updates)。

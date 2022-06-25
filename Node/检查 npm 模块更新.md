@@ -3,9 +3,9 @@
 npm 提供了我们更新模块的命令 `npm update`：
 
 ```bash
-$ npm update <name>
-$ npm update <name> -g
-$ npm update <name> -D
+npm update <name>
+npm update <name> -g
+npm update <name> -D
 ```
 
 您可以指定项目所依赖的模块进行更新，但如果我们需要像 yarn 的内置命令 `yarn upgrade-interactive` 一样，查看项目模块详细的更新情况呢？有一些方便模块可以帮助到我们。
@@ -15,7 +15,7 @@ $ npm update <name> -D
 [`npm-check-updates`](https://www.npmjs.com/package/npm-check-updates) 将你的 `package.json` 依赖升级到最新版本，忽略指定的版本。
 
 ```bash
-$ npm i npm-check-updates -g
+npm i npm-check-updates -g
 ```
 
 使用 `ncu` 命令检查 npm 模块更新并将为您更新 `package.json`。
@@ -27,13 +27,13 @@ $ npm i npm-check-updates -g
 为了便于查看依赖信息，我们可以安装 [`npm-check`](https://www.npmjs.com/package/npm-check) 包，它用于检查过时、不正确和未使用的依赖项。
 
 ```bash
-$ npm i -g npm-check
+npm i -g npm-check
 ```
 
 运行以下命令：
 
 ```bash
-$ npm-check -u
+npm-check -u
 ```
 
 效果如下：

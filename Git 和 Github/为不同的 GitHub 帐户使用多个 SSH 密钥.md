@@ -43,8 +43,8 @@ $ ssh-add ~/.ssh/id_bar
 这一步让 SSH 知道应该为特定主机使用哪个私钥。
 
 ```git
-$ cd ~/.ssh
-$ touch config
+cd ~/.ssh
+touch config
 ```
 
 将以下内容添加到 `config` 文件：

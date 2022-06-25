@@ -7,7 +7,7 @@
 NPM：
 
 ```js
-$ npm i dayjs
+npm i dayjs
 ```
 
 CDN：
