@@ -1,6 +1,6 @@
 # Flex 布局
 
-Flex 是 Flexible Box 的缩写，意为"弹性布局"，它旨在提供一种更有效的方式来布局、对齐和分配容器中项目之间的空间，即使这些项目的大小未知或是动态（因此称为 "flex"）。
+Flex 是 Flexible Box 的缩写，意为**弹性布局**，它旨在提供一种更有效的方式来布局、对齐和分配容器中项目之间的空间，即使这些项目的大小未知或是动态（因此称为 `flex`）。
 
 Flex 布局背后的主要思想是让容器能够改变其项目的宽度/高度（和顺序），以最好地填充可用空间（主要是为了适应各种显示设备和屏幕大小）。flex 容器扩展项目以填充可用空间，或收缩项目以防止溢出。
 
@@ -20,7 +20,7 @@ Flex 布局在 2009 年由 W3C 提出的。它在所有的浏览器都支持。
 
 **Flex 容器**仅环绕其直接子容器。因此，没有孙子或孙子孙辈的关系。只有父母 ↔️ 直系子女！只要存在父子关系，就可以建立 Flexbox。因此，孩子也可以成为其孩子的伸缩容器。但这将是一个单独的 flex 容器。而且它不会继承祖父母的 flex 属性。
 
-这里有一篇关于不能将文本容器设置为 flexbox 容器 [Never make your text container a flexbox container](https://dev.to/afif/never-make-your-text-container-a-flexbox-container-m9p)。
+关于为什么不能将文本容器设置为 flexbox 容器，可以阅读 [Never make your text container a flexbox container](https://dev.to/afif/never-make-your-text-container-a-flexbox-container-m9p)。
 
 ![img](https://upload-images.jianshu.io/upload_images/18281896-d907e938cdf1d8b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -36,7 +36,7 @@ Flexbox 在 2 轴系统中运行：水平的主轴（main axis）和垂直的交
 
 父容器和子项目都有自己的一套属性。
 
-**父容器**
+父容器：
 
 - `flex-direction`
 - `flex-wrap`
@@ -45,7 +45,7 @@ Flexbox 在 2 轴系统中运行：水平的主轴（main axis）和垂直的交
 - `align-items`
 - `align-content`
 
-**子项目**
+子项目：
 
 - `flex-grow`
 - `flex-shrink`
@@ -261,7 +261,7 @@ flex 是上面所提到的 `flex-grow`、`flex-shrink` 和 `flex-basis` 的简�
 
 ### 垂直水平居中元素
 
-**方式一**
+方式一：
 
 ```css
 .container {
@@ -271,7 +271,7 @@ flex 是上面所提到的 `flex-grow`、`flex-shrink` 和 `flex-basis` 的简�
 }
 ```
 
-**方式二**
+方式二：
 
 ```css
 .container {
@@ -442,7 +442,7 @@ flex 是上面所提到的 `flex-grow`、`flex-shrink` 和 `flex-basis` 的简�
 
 ### 固定脚部
 
-**HTML 结构**
+HTML 结构：
 
 ```html
 <section>
@@ -452,7 +452,7 @@ flex 是上面所提到的 `flex-grow`、`flex-shrink` 和 `flex-basis` 的简�
 </section>
 ```
 
-**方式一**
+方式一：
 
 ```css
 section {
@@ -466,7 +466,7 @@ main {
 }
 ```
 
-**方式二**
+方式二：
 
 ```css
 section {
@@ -514,7 +514,7 @@ footer {
 
 ### 圣杯布局
 
-**HTML 结构**
+HTML 结构：
 
 ```html
 <div class="container">
@@ -526,7 +526,7 @@ footer {
 </div>
 ```
 
-**CSS**
+CSS 样式：
 
 ```css
 .container {
