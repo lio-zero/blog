@@ -4,6 +4,8 @@
 
 ## 示例：深层占位符替换
 
+假设，我们有以下数据：
+
 ```js
 const user = {
   name: 'IU',
@@ -19,13 +21,15 @@ const user = {
 }
 ```
 
-**分析**
+我们需要做的是，将 `[placeholder]` 替换为我们提供的内容。
+
+### 分析
 
 - 创建一个以对象作为参数的函数。
 - 对于该对象中的每个键，如果该键是 `string`，则执行占位符替换
 - 如果键是 `object`，则将该键返回给初始化函数进行递归！
 
-**JavaScript 实现如下**
+### JavaScript 实现如下
 
 ```js
 const replacePlaceholder = (obj) => {

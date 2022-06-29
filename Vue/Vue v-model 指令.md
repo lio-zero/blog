@@ -23,7 +23,7 @@
 其他的表单元素如下：
 
 - `text` 和 `textarea` 元素使用 `value` 属性和 `input` 事件
-- `checkbox` 和 `radio` 使用 `checked 属性和 `change` 事件
+- `checkbox` 和 `radio` 使用 `checked` 属性和 `change` 事件
 - `select` 字段将 `value` 作为 prop 并将 `change` 作为事件
 
 ## 自定义组件

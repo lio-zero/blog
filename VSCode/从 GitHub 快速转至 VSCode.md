@@ -6,7 +6,7 @@
 
 您可以使用 [github1s](https://github.com/conwnet/github1s)，而不是克隆 repo 并查找所需的文件。只需在 URL 中的 github 后添加 1s，按 **Enter** 键，repo 或单个文件将直接在 VSCode 中打开。
 
-例如，下面是 [swesome](https://github1s.com/sindresorhus/awesome) 打开后的效果：
+例如，下面是 [awesome](https://github1s.com/sindresorhus/awesome) 打开后的效果：
 
 ![image.png](https://upload-images.jianshu.io/upload_images/18281896-b6f1a8d315a4241b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
