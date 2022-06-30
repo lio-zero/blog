@@ -14,7 +14,7 @@
 
 ```git
 git add README.md
-git commit -m "Adding plines to reddme"
+git commit -m "Adding lines to readme"
 ```
 
 查找日志：
