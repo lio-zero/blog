@@ -195,6 +195,7 @@
 - [图片懒加载](https://github.com/lio-zero/blog/blob/main/JavaScript/%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD.md)
 - [在列表中拖放元素](https://github.com/lio-zero/blog/blob/main/JavaScript/%E5%9C%A8%E5%88%97%E8%A1%A8%E4%B8%AD%E6%8B%96%E6%94%BE%E5%85%83%E7%B4%A0.md)
 - [在单击位置显示自定义上下文菜单](https://github.com/lio-zero/blog/blob/main/JavaScript/%E5%9C%A8%E5%8D%95%E5%87%BB%E4%BD%8D%E7%BD%AE%E6%98%BE%E7%A4%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8A%E4%B8%8B%E6%96%87%E8%8F%9C%E5%8D%95.md)
+- [在浏览器中截屏](https://github.com/lio-zero/blog/blob/main/JavaScript/%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E6%88%AA%E5%B1%8F.md)
 - [在浏览器和 Node.js 中更精确地测量执行时间](https://github.com/lio-zero/blog/blob/main/JavaScript/%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E5%92%8C%20Node.js%20%E4%B8%AD%E6%9B%B4%E7%B2%BE%E7%A1%AE%E5%9C%B0%E6%B5%8B%E9%87%8F%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4.md)
 - [在解构 {} 时使用默认值防止错误](https://github.com/lio-zero/blog/blob/main/JavaScript/%E5%9C%A8%E8%A7%A3%E6%9E%84%20%7B%7D%20%E6%97%B6%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4%E5%80%BC%E9%98%B2%E6%AD%A2%E9%94%99%E8%AF%AF.md)
 - [如何从 JavaScript Date 对象获取月份名称？](https://github.com/lio-zero/blog/blob/main/JavaScript/%E5%A6%82%E4%BD%95%E4%BB%8E%20JavaScript%20Date%20%E5%AF%B9%E8%B1%A1%E8%8E%B7%E5%8F%96%E6%9C%88%E4%BB%BD%E5%90%8D%E7%A7%B0%EF%BC%9F.md)
@@ -254,6 +255,7 @@
 - [调整文本框的宽度以自动适应其内容](https://github.com/lio-zero/blog/blob/main/JavaScript/%E8%B0%83%E6%95%B4%E6%96%87%E6%9C%AC%E6%A1%86%E7%9A%84%E5%AE%BD%E5%BA%A6%E4%BB%A5%E8%87%AA%E5%8A%A8%E9%80%82%E5%BA%94%E5%85%B6%E5%86%85%E5%AE%B9.md)
 - [过滤并排序字符串列表](https://github.com/lio-zero/blog/blob/main/JavaScript/%E8%BF%87%E6%BB%A4%E5%B9%B6%E6%8E%92%E5%BA%8F%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%97%E8%A1%A8.md)
 - [重复字符串的多种方法](https://github.com/lio-zero/blog/blob/main/JavaScript/%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%A4%9A%E7%A7%8D%E6%96%B9%E6%B3%95.md)
+- [重定向到另一个网页](https://github.com/lio-zero/blog/blob/main/JavaScript/%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E7%BD%91%E9%A1%B5.md)
 
 ## DOM
 
@@ -366,6 +368,7 @@
 - [Vue keep-alive](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20keep-alive.md)
 - [Vue nextTick](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20nextTick.md)
 - [Vue v-model 指令](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20v-model%20%E6%8C%87%E4%BB%A4.md)
+- [Vue vue-loader](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20vue-loader.md)
 - [Vue 事件处理](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86.md)
 - [Vue 依赖注入使用 Provide 和 Inject](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E4%BD%BF%E7%94%A8%20Provide%20%E5%92%8C%20Inject.md)
 - [Vue 动态组件](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6.md)
@@ -373,11 +376,13 @@
 - [Vue 条件渲染 v-if 与 v-show](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93%20v-if%20%E4%B8%8E%20v-show.md)
 - [Vue 的深度 CSS 选择器](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20%E7%9A%84%E6%B7%B1%E5%BA%A6%20CSS%20%E9%80%89%E6%8B%A9%E5%99%A8.md)
 - [Vue 过渡和动画](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20%E8%BF%87%E6%B8%A1%E5%92%8C%E5%8A%A8%E7%94%BB.md)
+- [Vue 递归组件](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20%E9%80%92%E5%BD%92%E7%BB%84%E4%BB%B6.md)
 - [Vue 错误处理 — onErrorCaptured 钩子](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%20%E2%80%94%20onErrorCaptured%20%E9%92%A9%E5%AD%90.md)
 - [Vue2 与 Vue3 生命周期变化](https://github.com/lio-zero/blog/blob/main/Vue/Vue2%20%E4%B8%8E%20Vue3%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8F%98%E5%8C%96.md)
 - [Vue3 Suspense 组件](https://github.com/lio-zero/blog/blob/main/Vue/Vue3%20Suspense%20%E7%BB%84%E4%BB%B6.md)
 - [Vue3 Teleport 组件](https://github.com/lio-zero/blog/blob/main/Vue/Vue3%20Teleport%20%E7%BB%84%E4%BB%B6.md)
 - [Vue3 中使用 defineAsyncComponent 延迟加载组件](https://github.com/lio-zero/blog/blob/main/Vue/Vue3%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20defineAsyncComponent%20%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD%E7%BB%84%E4%BB%B6.md)
+- [Vue3 使用 Event Bus](https://github.com/lio-zero/blog/blob/main/Vue/Vue3%20%E4%BD%BF%E7%94%A8%20Event%20Bus.md)
 - [Vue3 注册全局组件](https://github.com/lio-zero/blog/blob/main/Vue/Vue3%20%E6%B3%A8%E5%86%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6.md)
 - [Vuex](https://github.com/lio-zero/blog/blob/main/Vue/Vuex.md)
 - [watch 与 watchEffect 的区别](https://github.com/lio-zero/blog/blob/main/Vue/watch%20%E4%B8%8E%20watchEffect%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
@@ -447,11 +452,14 @@
 - [Git hooks](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/Git%20hooks.md)
 - [Git status 的简短版本和不同的 --porcelain 模式](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/Git%20status%20%E7%9A%84%E7%AE%80%E7%9F%AD%E7%89%88%E6%9C%AC%E5%92%8C%E4%B8%8D%E5%90%8C%E7%9A%84%20--porcelain%20%E6%A8%A1%E5%BC%8F.md)
 - [Git 常用配置和技巧](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/Git%20%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E5%92%8C%E6%8A%80%E5%B7%A7.md)
+- [GitHub repo 快速筛选文件](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/GitHub%20repo%20%E5%BF%AB%E9%80%9F%E7%AD%9B%E9%80%89%E6%96%87%E4%BB%B6.md)
 - [git clean 删除未跟踪的文件或目录](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/git%20clean%20%E5%88%A0%E9%99%A4%E6%9C%AA%E8%B7%9F%E8%B8%AA%E7%9A%84%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95.md)
+- [git init 和 git init --bare 有什么区别？](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/git%20init%20%E5%92%8C%20git%20init%20--bare%20%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
 - [git pull 和 git fetch 的区别](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/git%20pull%20%E5%92%8C%20git%20fetch%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 - [为不同的 GitHub 帐户使用多个 SSH 密钥](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/%E4%B8%BA%E4%B8%8D%E5%90%8C%E7%9A%84%20GitHub%20%E5%B8%90%E6%88%B7%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AA%20SSH%20%E5%AF%86%E9%92%A5.md)
 - [删除本地和远程 Git 分支](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%92%8C%E8%BF%9C%E7%A8%8B%20Git%20%E5%88%86%E6%94%AF.md)
 - [在不切换分支的情况下查看不同分支中的文件](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/%E5%9C%A8%E4%B8%8D%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E6%9F%A5%E7%9C%8B%E4%B8%8D%E5%90%8C%E5%88%86%E6%94%AF%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6.md)
+- [将本地 git 标签推送到 GitHub 上的远程仓](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/%E5%B0%86%E6%9C%AC%E5%9C%B0%20git%20%E6%A0%87%E7%AD%BE%E6%8E%A8%E9%80%81%E5%88%B0%20GitHub%20%E4%B8%8A%E7%9A%84%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93.md)
 - [用于 GitHub markdown 和 Git 提交的 emoji 表情](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/%E7%94%A8%E4%BA%8E%20GitHub%20markdown%20%E5%92%8C%20Git%20%E6%8F%90%E4%BA%A4%E7%9A%84%20emoji%20%E8%A1%A8%E6%83%85.md)
 
 ## 手写系列
@@ -550,6 +558,16 @@
 - [使用 Mongoose 连接到 MongoDB](https://github.com/lio-zero/blog/blob/main/MongoDB/%E4%BD%BF%E7%94%A8%20Mongoose%20%E8%BF%9E%E6%8E%A5%E5%88%B0%20MongoDB.md)
 - [在 Mongoose 中使用 MongoDB Explain](https://github.com/lio-zero/blog/blob/main/MongoDB/%E5%9C%A8%20Mongoose%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20MongoDB%20Explain.md)
 
+## Linux
+
+- [Bash 常用快捷键](https://github.com/lio-zero/blog/blob/main/Linux/Bash%20%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE.md)
+- [bash 中的历史命令快捷方式](https://github.com/lio-zero/blog/blob/main/Linux/bash%20%E4%B8%AD%E7%9A%84%E5%8E%86%E5%8F%B2%E5%91%BD%E4%BB%A4%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F.md)
+- [curl -fsSL](https://github.com/lio-zero/blog/blob/main/Linux/curl%20-fsSL.md)
+- [curl 和 wget 有什么区别？](https://github.com/lio-zero/blog/blob/main/Linux/curl%20%E5%92%8C%20wget%20%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
+- [shell 大括号扩展 — {}](https://github.com/lio-zero/blog/blob/main/Linux/shell%20%E5%A4%A7%E6%8B%AC%E5%8F%B7%E6%89%A9%E5%B1%95%20%E2%80%94%20%7B%7D.md)
+- [同时创建多个文件](https://github.com/lio-zero/blog/blob/main/Linux/%E5%90%8C%E6%97%B6%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6.md)
+- [如何在 Linux 中删除在特定端口上运行的进程](https://github.com/lio-zero/blog/blob/main/Linux/%E5%A6%82%E4%BD%95%E5%9C%A8%20Linux%20%E4%B8%AD%E5%88%A0%E9%99%A4%E5%9C%A8%E7%89%B9%E5%AE%9A%E7%AB%AF%E5%8F%A3%E4%B8%8A%E8%BF%90%E8%A1%8C%E7%9A%84%E8%BF%9B%E7%A8%8B.md)
+
 ## Nginx
 
 - [Nginx 配置旧域名重定向到新域名](https://github.com/lio-zero/blog/blob/main/Nginx/Nginx%20%E9%85%8D%E7%BD%AE%E6%97%A7%E5%9F%9F%E5%90%8D%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0%E6%96%B0%E5%9F%9F%E5%90%8D.md)
@@ -570,6 +588,11 @@
 - [什么是 YAML？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20YAML%EF%BC%9F.md)
 - [什么是包管理器？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%9F.md)
 - [什么是单一职责原则？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99%EF%BC%9F.md)
+
+## VSCode
+
+- [VSCode 快捷键](https://github.com/lio-zero/blog/blob/main/VSCode/VSCode%20%E5%BF%AB%E6%8D%B7%E9%94%AE.md)
+- [从 GitHub 快速转至 VSCode](https://github.com/lio-zero/blog/blob/main/VSCode/%E4%BB%8E%20GitHub%20%E5%BF%AB%E9%80%9F%E8%BD%AC%E8%87%B3%20VSCode.md)
 
 其他文章会陆续整理...
 
