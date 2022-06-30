@@ -1,6 +1,6 @@
 # JavaScript 纯函数
 
-你可能听过一个术语叫**纯函数**，它是一个非常重要的概念，我们下面将来介绍它。
+你可能听过一个术语叫**纯函数（Pure Function）**，它是一个非常重要的概念，我们下面将来介绍它。
 
 ## 两项标准
 
@@ -35,7 +35,7 @@ console.log(f('KAI', 'LAY')) // KAI LAY
 
 ## 无副作用
 
-副作用是当函数改变了函数范围之外的内容时。还是一样，我们先来看看**有副作用**规则的函数示例：
+副作用是当函数改变了函数作用域之外的内容时。还是一样，我们先来看看**有副作用**规则的函数示例：
 
 ```js
 const user = {
@@ -51,7 +51,15 @@ const validate = (user) => {
 }
 ```
 
-我们可以看到，我们正在明显地更改 `isValid` 变量，该变量不在 `validate` 函数的范围之内。（注意：如果你的函数没有返回任何内容，则表明它可能有副作用！）。
+我们可以看到，我们正在明显地更改 `isValid` 变量，该变量不在 `validate` 函数的作用域之内。
+
+**注意**，如果你的函数没有返回任何内容，则表明它可能有副作用！
+
+```js
+function hello() {
+  console.log('Hello World!')
+}
+```
 
 那么，如何消除这种副作用呢？我们可以从函数本身返回用户是否有效，而不是更改外部 `isValid` 变量：
 
@@ -65,7 +73,34 @@ const validate = (user) => user.password.length > 4
 const isValid = validate(user)
 ```
 
-就是这样，我们的 `validate` 函数不再改变其范围之外的任何内容。
+就是这样，我们的 `validate` 函数不再改变其作用域之外的任何内容。
+
+还有，DOM 操作，任何回调或读/写文件，也存在副作用：
+
+```js
+function calculate(a, b) {
+  document.write('Hello world!')
+  return a * b
+}
+
+console.log(calculate(2, 5))
+```
+
+额外的，你可以对外部状态进行克隆，而不会使它为非纯函数。
+
+```js
+let name = ['O.O', 'K.O']
+
+function fullName(newName, name) {
+  let clonedName = [...name]
+  clonedName[clonedName.length] = newName
+  return clonedName
+}
+
+console.log(fullName('O.K', name)) // ['O.O', 'K.O', 'O.K']
+```
+
+示例中，我们克隆了 `name` 并更新它，这并没有依赖 `name` 变量。因此，它是一个纯函数。
 
 ## 为什么纯函数是好的？
 
