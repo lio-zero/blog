@@ -52,6 +52,8 @@ rl.on('close', () => {
 - `emitKeypressEvents()` 为指定流触发按键事件
 - `moveCursor()` 将光标移动到相对于当前位置的新位置
 
+详细 API 请查阅[文档](http://nodejs.cn/api/readline.html#readline)。
+
 ## 示例：打开一个文件并逐行返回内容
 
 使用 [`line` 事件](http://nodejs.cn/api/readline.html#event-line)，逐行读取文件内容：
@@ -71,4 +73,32 @@ rl.on('line', (line) => {
 })
 ```
 
-详细 API 请查阅[文档](http://nodejs.cn/api/readline.html#readline)。
+## 示例：回文扫描器
+
+```js
+const readline = require('readline')
+
+const { stdin: input, stdout: output } = require('process')
+const rl = readline.createInterface({
+  input,
+  output
+})
+
+function isPalindrome(str) {
+  const result = str
+    .replace(/[\W_]/g, '')
+    .toLowerCase()
+    .split('')
+    .reverse()
+    .join('')
+  if (result == str.toLowerCase()) return true
+  else return false
+}
+
+console.log('------- 回文扫描器 ------- ')
+console.log('输入回文: ')
+rl.on('line', (input) => {
+  console.log(`${input} ${isPalindrome(input) ? '是' : '不是'}回文`)
+  console.log('输入回文: ')
+})
+```

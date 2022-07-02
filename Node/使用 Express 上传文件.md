@@ -37,7 +37,7 @@ const upload = function (fileEle, backendUrl) {
 }
 ```
 
-### 用法
+## 用法
 
 假设我们有一个允许用户选择多个文件的文件输入：
 

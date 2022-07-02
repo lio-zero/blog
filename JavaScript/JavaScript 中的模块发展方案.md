@@ -37,7 +37,7 @@ CMD 最为代表的 [seajs](https://github.com/seajs/seajs) 库。
 
 ## UMD
 
-[UMD](https://github.com/umdjs/umd)（通用模块定义）模式，用于在任何地方工作的 JavaScript 模块。
+[UMD](https://github.com/umdjs/umd)（Universal Module Definition，通用模块定义）模式，用于在任何地方工作的 JavaScript 模块。
 
 如果你经常阅读源码，你会发现很多库都会使用 UMD：
 

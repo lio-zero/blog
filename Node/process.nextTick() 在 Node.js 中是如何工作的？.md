@@ -6,8 +6,6 @@
 
 浏览器 JavaScript 为我们引入了 `setTimeout()` 等函数，以便在不久的将来延迟任务。该函数的作用是：获取一个回调函数和一个表示回调函数执行时间的数值，以毫秒为单位。
 
-浏览器 JavaScript 为我们引入了 `setTimeout()` 等函数，以便在不久的将来延迟任务。该函数的作用是：获取一个回调函数和一个表示回调函数执行时间的数值，以毫秒为单位。
-
 ```js
 setTimeout(callback, 0)
 ```
@@ -29,7 +27,6 @@ function cb() {
 process.nextTick(cb)
 console.log('在第一次迭代中处理')
 
-// result
 // 在第一次迭代中处理
 // 在下一次迭代中处理
 ```
