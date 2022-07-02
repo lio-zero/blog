@@ -6,7 +6,7 @@
 
 JavaScript 有两种类型的作用域：全局作用域、局部作用域。局部作用域又可以分为：函数作用域、块作用域（ES6）和其他更具体的作用域。
 
-**全局作用域**
+### 全局作用域
 
 ```js
 let age = 18
@@ -20,7 +20,7 @@ function foo() {
 foo() // 18
 ```
 
-**函数作用域**
+### 函数作用域
 
 ```js
 function text() {
@@ -28,10 +28,10 @@ function text() {
 }
 
 // 函数外部访问不到函数内部变量
-console.log(age) // undefined
+console.log(age) // ReferenceError
 ```
 
-**块作用域**
+### 块作用域
 
 ```js
 {
@@ -65,7 +65,7 @@ function bar() {
 bar() // 1
 ```
 
-**分析**
+分析：
 
 如果是词法作用域，调用 `foo` 函数时，会先在其内部作用域中查找，如果找不到，往上一层查找，找到了 `value`，结果为 1。
 

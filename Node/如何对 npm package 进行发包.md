@@ -61,3 +61,7 @@ $ npm publish
 最后，当你发包成功后，可以在 [npm devtool](https://npm.devtool.tech/zx) 查看各项数据。
 
 ![npm devtool](https://upload-images.jianshu.io/upload_images/18281896-6a0b37bec731ae98.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+## 更多资料
+
+[A Comprehensive Guide To Creating and Publishing Your First NPM Package](https://eedris.hashnode.dev/a-comprehensive-guide-to-creating-and-publishing-your-first-npm-package)

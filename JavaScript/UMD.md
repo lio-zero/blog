@@ -1,6 +1,6 @@
 # UMD
 
-`UMD` 提供对 JavaScript 模块捆绑器和加载器的支持，以及全局命名空间（和其他模式一样）。
+UMD（Universal Module Definition，通用模块定义） 提供对 JavaScript 模块捆绑器和加载器的支持，以及全局命名空间（和其他模式一样）。
 
 ```js
 ;(function (root, factory) {
