@@ -102,7 +102,7 @@ HTML `title` 包含表示与其所属元素相关的建议信息的文本。也�
 ```html
 <a href="/logo.png" download></a>
 <!-- 下载的文件名为 'logo' -->
-<a href="/logo.png" download="logo">home</a>
+<a href="/logo.png" download="logo">logo</a>
 ```
 
 详细可查看 [使用 HTML5 download 属性创建可下载的链接](https://github.com/lio-zero/blog/blob/master/HTML/%E4%BD%BF%E7%94%A8%20HTML5%20download%20%E5%B1%9E%E6%80%A7%E5%88%9B%E5%BB%BA%E5%8F%AF%E4%B8%8B%E8%BD%BD%E7%9A%84%E9%93%BE%E6%8E%A5.md)
@@ -202,6 +202,48 @@ avatar.dataset.animateSpeed = 4000
 avatar.dataset.id = 'user'
 console.log(avatar.dataset)
 ```
+
+## autofocus
+
+`autofocus` 属性用于自动对焦：
+
+```html
+<input autofocus />
+```
+
+当页面加载时将焦点放在指定的 HTML 元素上。
+
+## spellcheck
+
+`spellcheck` 属性定义是否可以检查元素的拼写错误。它可以具有以下值：
+
+```html
+<input type="text" spellcheck="true|false" />
+```
+
+当拼写检查用户键入的内容妨碍到您时，可以选择关闭它。
+
+## datalist
+
+`<datalist>` 标签定义选项列表。与 `input` 元素配合使用，来定义 `input` 可能的值。
+
+自动建议文本输入控件：
+
+```html
+<label for="course">选择学习课程：</label>
+<input list="target" name="course" id="course" />
+<datalist id="target">
+  <option value="HTML"></option>
+  <option value="CSS"></option>
+  <option value="JavaScript"></option>
+  <option value="Node"></option>
+  <option value="Vue"></option>
+  <option value="React"></option>
+  <option value="Vite"></option>
+</datalist>
+```
+
+使用 `input` 元素的 `list` 属性来绑定 `datalist`。
 
 ## 更多资料
 

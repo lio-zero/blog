@@ -39,11 +39,11 @@ To github.com:lio-zero/xxx.git
 
 ## 其他常用命令
 
-- `git tag` 显示本地所有标签。
+- `git tag` 显示本地所有标签
 - `git ls-remote --tags` 查看远程所有标签
 - `git push -d origin <tag_name>` 删除远程特定标签
 - `git tag <tag_name>` 创建轻量标签。
-- `git tag -a <tag_name> -m "message"` 创建带注释的标签。
-- `git push --tags` 将所有标签推送到远程仓库。
-- `git show <tag_name>` 显示特定标签的标签数据。
+- `git tag -a <tag_name> -m "message"` 创建带注释的标签
+- `git push --tags` 将所有标签推送到远程仓库
+- `git show <tag_name>` 显示特定标签的标签数据
 - `git tag -d <tag_name>` 删除特定标签

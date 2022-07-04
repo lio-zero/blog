@@ -7,7 +7,7 @@
 安装：
 
 ```js
-npm i -S fs-extra
+npm i fs-extra
 ```
 
 引入：
@@ -19,23 +19,23 @@ const fse = require('fs-extra')
 `fs-extra` 提供的每个方法都有同步和异步版本，例如：
 
 ```js
-const fs = require('fs-extra')
+const { copy, copySync } = require('fs-extra')
 
 // 同步
 try {
-  fs.copySync('/tmp/myfile', '/tmp/mynewfile')
+  copySync('/tmp/myFile', '/tmp/myNewFile')
   console.log('success!')
 } catch (err) {
   console.error(err)
 }
 
 // 异步 promise
-fs.copy('/tmp/myfile', '/tmp/mynewfile')
+copy('/tmp/myFile', '/tmp/myNewFile')
   .then(() => console.log('success!'))
   .catch((err) => console.error(err))
 
 // 异步回调
-fs.copy('/tmp/myfile', '/tmp/mynewfile', (err) => {
+copy('/tmp/myFile', '/tmp/myNewFile', (err) => {
   if (err) return console.error(err)
   console.log('success!')
 })
@@ -46,7 +46,7 @@ fs.copy('/tmp/myfile', '/tmp/mynewfile', (err) => {
 ```js
 async function copyFiles() {
   try {
-    await fs.copy('/tmp/myfile', '/tmp/mynewfile')
+    await copy('/tmp/myFile', '/tmp/myNewFile')
     console.log('success!')
   } catch (err) {
     console.error(err)
@@ -54,6 +54,18 @@ async function copyFiles() {
 }
 
 copyFiles()
+```
+
+## 清空文件夹
+
+使用 `emptyDirSync()` 方法清空文件夹的所有文件：
+
+```js
+const { emptyDirSync } = require('fs-extra')
+
+const folder = './node_modules'
+
+emptyDirSync(folder)
 ```
 
 > [点击此处查看所有的 API 示例](https://github.com/jprichardson/node-fs-extra/tree/0220eac966d7d6b9a595d69b1242ab8a397fba7f/docs)

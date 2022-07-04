@@ -32,3 +32,7 @@ fs.readFile('./file.csv', async (err, data) => {
 ```
 
 现在您可以开始对数据进行任何需要做的处理，这些数据被格式化为 JavaScript 对象数组。
+
+## 更多资料
+
+[将表格导出到 csv](https://github.com/lio-zero/blog/blob/main/JavaScript/%E5%B0%86%E8%A1%A8%E6%A0%BC%E5%AF%BC%E5%87%BA%E5%88%B0%20csv.md)

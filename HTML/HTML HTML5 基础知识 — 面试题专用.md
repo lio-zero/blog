@@ -334,7 +334,6 @@ document.doctype
 ## `rel="noopener"` 应在什么场景下使用，为什么？
 
 - `rel="noopener"` 是 `<a>` 标签的一个属性。他可以禁止打开的新页面中使用 `window.opener` 属性，这样一来打开的新页面就不能通过 `window.opener` 去操作你的页面。
-
 - 新页面可以通过 `window.opener.location = newURL` 将你的页面导航至任何网址。
 
 ```html
@@ -687,9 +686,8 @@ Web 语义化是指通过 HTML 标签表示页面包含的信息，包含了 HTM
 <canvas width="300" height="300"> 抱歉，您的浏览器不支持canvas元素 </canvas>
 ```
 
-- `figure` 代表一段独立的内容，经常与说明（caption）配合使用，并且作为一个独立的引用单元
-
-- `figcaption` 是与其相关联的图片的说明/标题，用于描述其父节点 `figure` 元素里的其他数据。
+- `figure` 是当您想要显示带有标题的图像时经常使用的语义标签。经常与 `img` 和 `figcaption` 标签配合使用。
+- `figcaption` 标签包含标题文本。
 
 ```html
 <style>
@@ -701,10 +699,12 @@ Web 语义化是指通过 HTML 标签表示页面包含的信息，包含了 HTM
     max-width: 220px;
     margin: auto;
   }
+
   img {
     max-width: 220px;
     max-height: 150px;
   }
+
   figcaption {
     background-color: #222;
     color: #fff;
@@ -715,7 +715,7 @@ Web 语义化是指通过 HTML 标签表示页面包含的信息，包含了 HTM
 </style>
 
 <figure>
-  <img src="1.jpg" alt="索隆" />
+  <img src="avatar.jpg" alt="D.O" />
   <figcaption>An elephant at sunset</figcaption>
 </figure>
 ```
