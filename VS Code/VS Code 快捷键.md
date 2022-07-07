@@ -1,8 +1,8 @@
-# VSCode 快捷键
+# VS Code 快捷键
 
 [Visual Studio Code](https://code.visualstudio.com/) 是开源代码编辑器，可运行于 Mac OS X、Windows 和 Linux。
 
-今天来说一下 VSCode 的一些常用快捷键，你可以打开官网的[快捷键文档](https://code.visualstudio.com/docs/getstarted/keybindings)进行查找，也可以在编辑器内，按 `F1` 或者 `Ctrl + shift + p`，输入 shortcuts 回车，就会自动跳转到该文档。这里也提供三个 PDF：
+今天来说一下 VS Code 的一些常用快捷键，你可以打开官网的[快捷键文档](https://code.visualstudio.com/docs/getstarted/keybindings)进行查找，也可以在编辑器内，按 `F1` 或者 `Ctrl + shift + p`，输入 shortcuts 回车，就会自动跳转到该文档。这里也提供三个 PDF：
 
 - [键盘快捷方式 （MacOS）](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
 - [键盘快捷方式（Windows）](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
