@@ -7,7 +7,7 @@ import { validator } from '../../../helpers/validator'
 import { authService } from '../../../services/authService'
 ```
 
-缺点是，当我们更改目录结构时，必须相应地更新这些导入。尽管 VSCode 等流行编辑器会自动更新路径，但这并不能确保该过程始终有效。
+缺点是，当我们更改目录结构时，必须相应地更新这些导入。尽管 VS Code 等流行编辑器会自动更新路径，但这并不能确保该过程始终有效。
 
 幸运的是，TypeScript 提供了使用绝对路径的能力。在 TypeScript 配置文件 `tsconfig.json` 中，我们可以在 `path` 属性下指示特定路径的别名。
 

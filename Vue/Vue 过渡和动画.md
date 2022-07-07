@@ -5,7 +5,7 @@
 为了适应广泛的开发人员，Vue 提供了几种方法来实现过渡：
 
 - CSS 过渡/动画样式
-- Javascript 钩子可以对 DOM 进行编辑
+- JavaScript 钩子可以对 DOM 进行编辑
 - 使用第三方 CSS/JS 库
 
 本文将介绍如何在 Vue 中使用它们。

@@ -1,6 +1,6 @@
 # Vue 插槽
 
-本文参考官网的[插槽](https://vuejs.org/v2/guide/components-slots.html)，你可以在 [CodeSandBox](https://codesandbox.io/s/competent-black-vdp1l?file=/src/components/Home.vue) 测试效果，基本模板已经给出。
+本文参考官网的[插槽](https://vuejs.org/v2/guide/components-slots.html)，你可以在 [CodeSandbox](https://codesandbox.io/s/competent-black-vdp1l?file=/src/components/Home.vue) 测试效果，基本模板已经给出。
 
 > 在 2.6.0 中，具名插槽和作用域插槽引入了一个新的统一的语法 (即 `v-slot` 指令)。它取代了 `slot` 和 `slot-scope` 这两个目前已被废弃但未被移除且仍在[文档中](https://cn.vuejs.org/v2/guide/components-slots.html#%E5%BA%9F%E5%BC%83%E4%BA%86%E7%9A%84%E8%AF%AD%E6%B3%95)的 attribute。新语法的由来可查阅这份 [RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0001-new-slot-syntax.md)。
 

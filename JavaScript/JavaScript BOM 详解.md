@@ -378,7 +378,7 @@ history.pushState(stateObj, '', 'bar.html')
 
 **popState 事件在用户返回或前进进会被出发触发**
 
-> 需要注意的是调用 `history.pushState()` 或 `history.replaceState()` 不会触发 `popstate` 事件。只有在做出浏览器动作时，才会触发该事件，如用户点击浏览器的回退按钮（或者在 Javascript 代码中调用 `history.go()`、`history.back()` 或者`history.forward()`方法）
+> 需要注意的是调用 `history.pushState()` 或 `history.replaceState()` 不会触发 `popstate` 事件。只有在做出浏览器动作时，才会触发该事件，如用户点击浏览器的回退按钮（或者在 JavaScript 代码中调用 `history.go()`、`history.back()` 或者`history.forward()`方法）
 >
 > 不同的浏览器在加载页面时处理 `popstate` 事件的形式存在差异。页面加载时 Chrome 和 Safari 通常会触发(emit )`popstate` 事件，但 Firefox 则不会。
 

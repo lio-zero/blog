@@ -9,28 +9,28 @@
 - 基于 CSS 的另一种语言：CSS 预处理器定义了一种新的语言，其基本思想是，用一种专门的编程语言，为 CSS 增加了一些编程的特性，将 CSS 作为目标生成文件，然后开发者就只要使用这种语言进行编码工作
 - 扩展 CSS：CSS 预处理器为 CSS 增加一些编程的特性，无需考虑浏览器的兼容性问题，例如你可以在 CSS 中使用变量、简单的逻辑程序、函数、插值、mixin 等等在编程语言中的一些基本特性，可以让你的 CSS 更加简洁、适应性更强、可读性更佳，更易于代码的维护等。
 
-目前主流的预处理器里有：[Sass（scss）](https://sass-lang.com/)、[Less](http://lesscss.org/)、[Stylus](https://stylus.bootcss.com/)、[PostCSS（后预处理器）](https://postcss.org/)
+目前主流的预处理器里有：[SASS（SCSS）](https://sass-lang.com/)、[Less](http://lesscss.org/)、[Stylus](https://stylus.bootcss.com/)、[PostCSS（后预处理器）](https://postcss.org/)
 
-下面我们将来介绍 `Sass` 预处理器。详细内容查阅 [Sass 文档](https://sass-lang.com/documentation) 。
+下面我们将来介绍 `SASS` 预处理器。详细内容查阅 [SASS 文档](https://sass-lang.com/documentation) 。
 
-## 什么是 Sass？
+## 什么是 SASS？
 
-> Sass 是最早的 CSS 预处理语言，有比 Less 更为强大的功能。但因其一开始的缩进式语法并不能被开发者们接受，所以使用率不高，不过由于其强大的功能和 Ruby on Rails 的大力推动，逐渐被更多开发者使用。
+> SASS 是最早的 CSS 预处理语言，有比 Less 更为强大的功能。但因其一开始的缩进式语法并不能被开发者们接受，所以使用率不高，不过由于其强大的功能和 Ruby on Rails 的大力推动，逐渐被更多开发者使用。
 
-> Sass 是采用的 Ruby 语言编写的一款 CSS 预处理语言，它诞生于 2007 年，是最早成熟 CSS 预处理脚本语言，它被解释或编译成级联样式表。它允许您编写可维护的 CSS，并提供变量、嵌套、混合、扩展、函数、循环、条件等功能。最初它是为了配合 HAML 而设计的，因此有着和 HAML 一样的缩进式风格。
+> SASS 是采用的 Ruby 语言编写的一款 CSS 预处理语言，它诞生于 2007 年，是最早成熟 CSS 预处理脚本语言，它被解释或编译成级联样式表。它允许您编写可维护的 CSS，并提供变量、嵌套、混合、扩展、函数、循环、条件等功能。最初它是为了配合 HAML 而设计的，因此有着和 HAML 一样的缩进式风格。
 
-## Sass 和 SCSS 有什么区别？
+## SASS 和 SCSS 有什么区别？
 
-> `Sass` 从第三代开始，放弃了缩进式风格，并且完全向下兼容普通的 `CSS` 代码，这一代的 `Sass` 也被称为 `Scss`。`Scss` 完全继承了 `Sass` 中的功能，并引入了一些新语法特性。
+> `SASS` 从第三代开始，放弃了缩进式风格，并且完全向下兼容普通的 `CSS` 代码，这一代的 `SASS` 也被称为 `SCSS`。`SCSS` 完全继承了 `SASS` 中的功能，并引入了一些新语法特性。
 
 主要有两点不同：
 
-- 文件扩展：Sass 的后缀扩展名为 `.sass`，而 SCSS 的 后缀为扩展名为 `.scss`
-- 语法书写：Sass 是以严格的缩进式语法规则来书写，不带大括号 `{}` 和分号 `;`，而 SCSS 书写方式更像 CSS。
+- 文件扩展：SASS 的后缀扩展名为 `.sass`，而 SCSS 的 后缀为扩展名为 `.scss`
+- 语法书写：SASS 是以严格的缩进式语法规则来书写，不带大括号 `{}` 和分号 `;`，而 SCSS 书写方式更像 CSS。
 
 ## 变量
 
-`Sass` 变量很简单：您可以为以 `$` 开头的名称分配一个值，然后可以引用该名称而不是值本身。
+`SASS` 变量很简单：您可以为以 `$` 开头的名称分配一个值，然后可以引用该名称而不是值本身。
 
 ```scss
 $red: #833;
@@ -42,15 +42,15 @@ body {
 
 变量可以减少重复，进行复杂的数学运算，配置库等。
 
-### CSS 变量与 Sass 变量的区别
+### CSS 变量与 SASS 变量的区别
 
-- `Sass` 变量都是由 `Sass` 编译出来的。CSS 变量包含在 CSS 中输出。
-- CSS 变量对于不同的元素可以有不同的值，但是 `Sass` 变量一次只有一个值。
-- `Sass` 变量是必需的，这意味着如果您使用一个变量然后更改它的值，那么前面的使用将保持不变。CSS 变量是声明性的，这意味着如果您更改该值，它将影响前面使用和后面使用的。
+- `SASS` 变量都是由 `SASS` 编译出来的。CSS 变量包含在 CSS 中输出。
+- CSS 变量对于不同的元素可以有不同的值，但是 `SASS` 变量一次只有一个值。
+- `SASS` 变量是必需的，这意味着如果您使用一个变量然后更改它的值，那么前面的使用将保持不变。CSS 变量是声明性的，这意味着如果您更改该值，它将影响前面使用和后面使用的。
 
 ## 嵌套
 
-`Sass` 允许开发人员以嵌套的方式使用 CSS。
+`SASS` 允许开发人员以嵌套的方式使用 CSS。
 
 ```scss
 .markdown-body {
@@ -65,7 +65,7 @@ body {
 
 ### 引用父级选择器 `&`
 
-`Sass` 允许在嵌套的代码块内，使用 `&` 引用父元素
+`SASS` 允许在嵌套的代码块内，使用 `&` 引用父元素
 
 ```scss
 a {
@@ -81,13 +81,13 @@ a {
 
 ### 嵌套属性
 
-CSS 许多属性都位于相同的命名空间，例如 `text-align`、`text-decoration`、`text-transform` 都位于 font 命名空间下，`Sass` 当中只需要编写命名空间一次，后续嵌套的子属性都将会位于该命名空间之下。
+CSS 许多属性都位于相同的命名空间，例如 `text-align`、`text-decoration`、`text-transform` 都位于 font 命名空间下，`SASS` 当中只需要编写命名空间一次，后续嵌套的子属性都将会位于该命名空间之下。
 
 ```scss
 text: {
-  align: center;          // 将编译为 text-align: center
-  decoration: underline;  // 将编译为 text-decoration: underline
-  transform: uppercase;   // 将编译为 text-transform: uppercase
+  align: center; // 将编译为 text-align: center
+  decoration: underline; // 将编译为 text-decoration: underline
+  transform: uppercase; // 将编译为 text-transform: uppercase
 }
 ```
 
@@ -96,7 +96,7 @@ text: {
 ## 注释
 
 ```scss
-// 单行注释，该注释方式只保留在 Sass 源文件中，编译后被省略。此注释不会包含在 CSS 中。
+// 单行注释，该注释方式只保留在 SASS 源文件中，编译后被省略。此注释不会包含在 CSS 中。
 
 /* 多行注释，该注释方式会保留到编译后的文件。但压缩模式下，仍会被删除 */
 /* 多行注释可以使用插值表达式 #{1 + 1} */
@@ -202,7 +202,7 @@ body {
 
 ## 引入 SCSS 模块
 
-`Sass` 能够将代码分割为多个片段，并以下划线作为其命名前缀。`Sass` 会通过这些下划线来辨别哪些文件是 `Sass` 片段，并且不让片段内容直接生成为 CSS 文件，只在使用 `@import` 指令的位置被导入。
+`SASS` 能够将代码分割为多个片段，并以下划线作为其命名前缀。`SASS` 会通过这些下划线来辨别哪些文件是 `SASS` 片段，并且不让片段内容直接生成为 CSS 文件，只在使用 `@import` 指令的位置被导入。
 
 ```scss
 // _variables.scss
@@ -220,7 +220,7 @@ $gray-1: #eee;
 
 **颜色设置**
 
-Sass 提供了一些内置的颜色函数，以便生成系列颜色。
+SASS 提供了一些内置的颜色函数，以便生成系列颜色。
 
 ```scss
 // RGBA
@@ -339,13 +339,15 @@ global-variable-exists(red) // 检测某个全局变量是否定义。
 
 ## 循环语句
 
-Sass 提供了以下循环：
+SASS 提供了以下循环：
 
 **for 循环**
 
 ```scss
 @for $i from 1 through 4 {
-  .item-#{$i} { left: 20px * $i; }
+  .item-#{$i} {
+    left: 20px * $i;
+  }
 }
 ```
 
@@ -378,7 +380,9 @@ $backgrounds: (home, 'home.jpg'), (about, 'about.jpg');
 ```scss
 $i: 6;
 @while $i > 0 {
-  .item-#{$i} { width: 2em * $i; }
+  .item-#{$i} {
+    width: 2em * $i;
+  }
   $i: $i - 2;
 }
 ```
@@ -387,13 +391,13 @@ $i: 6;
 
 ```scss
 @if $position == 'left' {
-   position: absolute;
-   left: 0;
+  position: absolute;
+  left: 0;
 } @else if $position == 'right' {
-   position: absolute;
-   right: 0;
+  position: absolute;
+  right: 0;
 } @else {
-   position: static;
+  position: static;
 }
 ```
 
@@ -410,16 +414,16 @@ $attr: border;
 }
 
 @media #{$tablet}
-// 使用 #{} 可以避免 Sass 运行运算表达式，直接编译 CSS。
+
 font: #{$size}/#{$line-height}
-url("#{$background}.jpg")
+url("#{$background}.jpg");
 ```
 
 ## 列表
 
-> Sass 列表（List）函数用于处理列表，可以访问列表中的值，向列表添加元素，合并列表等。
+> SASS 列表（List）函数用于处理列表，可以访问列表中的值，向列表添加元素，合并列表等。
 >
-> Sass 列表是不可变的，因此在处理列表时，返回的是一个新的列表，而不是在原有的列表上进行修改。
+> SASS 列表是不可变的，因此在处理列表时，返回的是一个新的列表，而不是在原有的列表上进行修改。
 >
 > 列表的起始索引值为 1，记住不是 0。
 
@@ -445,9 +449,9 @@ set-nth(list, n, value) // 设置列表第 n 项的值为 value。
 
 ## Map
 
-> Sass Map（映射）对象是以一对或多对的 `key/value` 来表示。
+> SASS Map（映射）对象是以一对或多对的 `key/value` 来表示。
 >
-> Sass Map 是不可变的，因此在处理 Map 对象时，返回的是一个新的 Map 对象，而不是在原有的 Map 对象上进行修改。
+> SASS Map 是不可变的，因此在处理 Map 对象时，返回的是一个新的 Map 对象，而不是在原有的 Map 对象上进行修改。
 
 ```scss
 $map: (key1: value1, key2: value2, key3: value3);

@@ -52,7 +52,7 @@ sup {
 
 - [Bootstrap's reboot](https://github.com/twbs/bootstrap/blob/master/scss/_reboot.scss#L3)
 - [Tachyons](https://github.com/tachyons-css/tachyons/blob/master/src/_normalize.css)
-- [Tailwindcss](https://unpkg.com/tailwindcss@1.1.4/dist/base.css)
+- [TailwindCSS](https://unpkg.com/tailwindcss@1.1.4/dist/base.css)
 - etc
 
 ## 更多资源

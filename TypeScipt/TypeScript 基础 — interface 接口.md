@@ -132,7 +132,7 @@ const user: User = {
 console.log(user) // { name: 'D.O', age: 18, address: {} }
 ```
 
-VSCode 编辑器虽然会提示您 `'User'` 已被定义。但是 `interface` 接口还是会对相同的接口名进行合并，并正常编译输出。
+VS Code 编辑器虽然会提示您 `'User'` 已被定义。但是 `interface` 接口还是会对相同的接口名进行合并，并正常编译输出。
 
 ## 任意数量标识
 

@@ -13,7 +13,7 @@ sh -c "$(curl -fsSL https://raw.github.com/antfu/1990-script/master/index.sh)"
 - `-S（--show-error）` — 指定只输出错误信息，通常与 `-s` 一起使用。
 - `-s（--silent）` — 不显示错误和进度信息。
 
-我们可能会经常使用这个命令来下载例如 Github 中的项目文件。
+我们可能会经常使用这个命令来下载例如 GitHub 中的项目文件。
 
 ## 相关资料
 

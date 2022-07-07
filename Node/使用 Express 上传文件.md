@@ -1,6 +1,6 @@
 # 使用 Express 上传文件
 
-以下方法使用 Ajax 封装了上传文件的简单示例，将所选文件从 `fileEle` 元素发送到后端：
+以下方法使用 AJAX 封装了上传文件的简单示例，将所选文件从 `fileEle` 元素发送到后端：
 
 ```js
 const upload = function (fileEle, backendUrl) {
@@ -17,7 +17,7 @@ const upload = function (fileEle, backendUrl) {
     })
     // or => [...files].forEach(file => formData.append(fileEle.name, file, file.name))
 
-    // 创建新的 Ajax 请求
+    // 创建新的 AJAX 请求
     const req = new XMLHttpRequest()
     req.open('POST', backendUrl, true)
 

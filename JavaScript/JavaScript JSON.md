@@ -262,4 +262,4 @@ console.log(meetup.date.getDate())
 
 - [What is the correct JSON content type?](https://stackoverflow.com/questions/477816/what-is-the-correct-json-content-type)
 - [JSON 方法，toJSON](https://zh.javascript.info/json#pai-chu-he-zhuan-huan-replacer)
-- [数据类型和 Json 格式](http://www.ruanyifeng.com/blog/2009/05/data_types_and_json.html)
+- [数据类型和 JSON 格式](http://www.ruanyifeng.com/blog/2009/05/data_types_and_json.html)

@@ -453,7 +453,7 @@ html
 - 如果需要使用 iframe，最好通过 javascript 动态给 iframe 添加 src 属性值，这样可以绕开以上两个问题
 - iframe 框架结构有时会让人感到迷惑，如果框架个数多的话，可能会出现上下、左右滚动条，会分散访问者的注意力，用户体验度差。
 
-> **Tips**：除非特殊需要，一般不推荐使用。目前 iframe 的优点完全可以使用 Ajax 实现，因此已经没有必要使用 iframe 了。
+> **Tips**：除非特殊需要，一般不推荐使用。目前 iframe 的优点完全可以使用 AJAX 实现，因此已经没有必要使用 iframe 了。
 
 ## div+css 的布局较 table 布局有什么优点？
 
@@ -517,7 +517,7 @@ HTML5 被设计成尽可能向后兼容现有的 web 浏览器
 - 更好的实践 web 语义化，比如 `article`、`footer`、`header`、`nav`、`section` 等语义标签
 - 表单控件：`calendar`、`date`、`time`、`email`、`url` 等
 - 新增表单元素：`datalist`、`keygen`、`output`
-- 新的技术：多线程编程的 `webWorker`， 全双工通信协议 `webSocket` 和地理定位 `Geolocation`
+- 新的技术：多线程编程的 `webWorker`， 全双工通信协议 `WebSocket` 和地理定位 `Geolocation`
 
 ### 什么是 data-\* 属性？
 
@@ -621,7 +621,7 @@ Web 语义化是指通过 HTML 标签表示页面包含的信息，包含了 HTM
 > Canvas 是一个 HTML5 元素，用于在网页上绘制图形。它是一个带有 "立即模式" 图形应用程序编程接口（API）的位图，用于在其上绘图。`<canvas>` 元素只是图形的容器。为了绘制图形，你应该使用 js 画布在绘制路径、方框、圆、文本和添加图像时有几种策略。
 
 - HTML `<canvas>` 元素提供了一个空白绘图区域，可通过 JavaScript API（[Canvas](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API) API 或 [WebGL](https://developer.mozilla.org/zh-CN/docs/Web/API/WebGL_API) API）绘制图形及图形动画
-  - 通过 Javascript 来绘制 2D 图形
+  - 通过 JavaScript 来绘制 2D 图形
   - 是逐像素进行渲染的
   - 其位置发生改变，会重新进行绘制
 
@@ -1392,10 +1392,10 @@ self.addEventListener(
 
 - WebSocket 是 HTML5 开始提供的一种在单个 TCP 连接上进行全双工通讯的协议。
 - WebSocket 是一种在客户端与[服务器](https://developer.mozilla.org/zh-CN/docs/Glossary/Server)之间保持[TCP](https://developer.mozilla.org/zh-CN/docs/Glossary/TCP)长连接的[网络协议](https://developer.mozilla.org/zh-CN/docs/Glossary/Protocol)，可以随时进行信息交换。
-- Websocket 使用 ws 或 wss 的统一资源标志符，类似于 HTTPS，其中 wss 表示在 TLS 之上的 Websocket。
+- WebSocket 使用 ws 或 wss 的统一资源标志符，类似于 HTTPS，其中 wss 表示在 TLS 之上的 Websocket。
 - 默认情况下，Websocket 协议使用 80 端口；运行在 TLS 之上时，默认使用 443 端口。
 
-**webSocket 如何兼容低浏览器？**
+**WebSocket 如何兼容低浏览器？**
 
 - Adobe Flash Socket
 - ActiveX HTMLFile（IE）
@@ -1925,7 +1925,7 @@ fullscreen(false) // 退出全屏模式
   - 内联脚本在页面加载过程中消耗很多资源，因为解析器认为内联脚本会改变页面结构。
   - 通常，尽量少的使用内联脚本和减少用 `document.write()` 来输出内容，在一定情况下可以加速整体页面的载入。现在浏览器中一般使用现代的 W3C DOM 方法操作页面内容，优于使用 `document.write()` 的传统方法。
 - 缩小和压缩图像
-  - 较大的图像会导致页面需要更多的时间来加载。在将图像添加到页面之前，请考虑使用 Photoshop 等图像处理工具内置的压缩功能，或使用 [Compress Jpeg](https://compressjpeg.com/) 或 [Tiny PNG](https://tinypng.com/) 等专用工具对图像进行压缩
+  - 较大的图像会导致页面需要更多的时间来加载。在将图像添加到页面之前，请考虑使用 Photoshop 等图像处理工具内置的压缩功能，或使用 [Compress JPEG](https://compressjpeg.com/) 或 [Tiny PNG](https://tinypng.com/) 等专用工具对图像进行压缩
 - 最小化文件数量
   - 减少一个页面引用的文件数量可以降低在下载一个页面的过程中需要的 [HTTP](https://developer.mozilla.org/en-US/docs/HTTP) 请求数量，从而减少这些请求的收发时间。
   - 根据其缓存设置，浏览器可能会为每个所引用的文件发送一个带 [If-Modified-Since](https://wiki.developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since) 的请求给网络服务器，以查询这些文件自上次加载后是否有被修改。查询引用文件上次修改时间会花费太多时间，导致网页首屏延迟，这是因为在渲染页面之前浏览器必须确认每个文件的修改时间。

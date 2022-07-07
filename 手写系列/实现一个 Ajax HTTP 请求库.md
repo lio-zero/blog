@@ -1,4 +1,4 @@
-# 实现一个 Ajax HTTP 请求库
+# 实现一个 AJAX HTTP 请求库
 
 使用 [UMD](https://github.com/lio-zero/blog/blob/main/JavaScript/UMD.md) 作为通用的模块系统：
 

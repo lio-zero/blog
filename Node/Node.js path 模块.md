@@ -130,7 +130,7 @@ export const syncStaticDir = (): void => {
 
 默认情况下，`path` 模块会根据 Node 进程运行的操作系统自动在 POSIX（OSX、Linux）和 Windows 模式之间切换。
 
-但是，`path` 模块确实可以在 POSIX 上使用 Windows `path` 模块，反之亦然。`path.posix` 和 `path.win32` 属性分别包含 `path` 模块的 Posix 和 Windows 版本。
+但是，`path` 模块确实可以在 POSIX 上使用 Windows `path` 模块，反之亦然。`path.posix` 和 `path.win32` 属性分别包含 `path` 模块的 POSIX 和 Windows 版本。
 
 ```js
 // 返回 'path\to\test.txt'，与操作系统无关

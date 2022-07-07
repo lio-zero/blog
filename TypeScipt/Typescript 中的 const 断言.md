@@ -1,6 +1,6 @@
-# Typescript 中的 const 断言
+# TypeScript 中的 const 断言
 
-在 Typescript 4.3 中，TypeScript 引入了 `const` 断言。`const` 断言用于告诉 TypeScript 编译器以下内容之一：
+在 TypeScript 4.3 中，TypeScript 引入了 `const` 断言。`const` 断言用于告诉 TypeScript 编译器以下内容之一：
 
 ## 对象属性是只读的
 
@@ -120,4 +120,4 @@ type NeededUnionType = typeof list[number] // 'a'|'b'|'c'
 
 ![只读联合类型](https://upload-images.jianshu.io/upload_images/18281896-b558bd7d93da267e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-来自 [Typescript derive union type from tuple/array values](https://stackoverflow.com/questions/45251664/typescript-derive-union-type-from-tuple-array-values)
+来自 [TypeScript derive union type from tuple/array values](https://stackoverflow.com/questions/45251664/typescript-derive-union-type-from-tuple-array-values)

@@ -16,7 +16,7 @@ console.log(plants) // ["broccoli", "cauliflower", "cabbage"]
 对空数组使用 `pop` 方法，不会报错，而是返回`undefined`。
 
 ```js
-[].pop() // undefined
+;[].pop() // undefined
 ```
 
 > **注意**：该方法会改变原数组。
@@ -495,7 +495,7 @@ things.findIndex((item) => item.v > 3) // 3
 
 如果您想从数组的末尾开始搜索数组，则必须反转数组并使用提供的方法。这并不好，因为它需要不必要的数组突变。
 
-幸运的是，有一个针对 `findLast` 和 `findLastIndex` 的 ECMAscript 提案。
+幸运的是，有一个针对 `findLast` 和 `findLastIndex` 的 ECMAScript 提案。
 
 ```js
 const things = [{ v: 1 }, { v: 2 }, { v: 3 }, { v: 4 }, { v: 5 }]
@@ -797,7 +797,7 @@ a // [1, 2, 3, 4, 5, 6]
 
 如果你好奇的话，它的硬编码是 [65536](https://bugs.webkit.org/show_bug.cgi?id=80797)。
 
-[Javascript Array.push is 945x faster than Array.concat 🤯🤔](https://dev.to/uilicious/javascript-array-push-is-945x-faster-than-array-concat-1oki) 提供了许多基准来证明为什么 `push` 比 `concat` 更快。
+[JavaScript Array.push is 945x faster than Array.concat 🤯🤔](https://dev.to/uilicious/javascript-array-push-is-945x-faster-than-array-concat-1oki) 提供了许多基准来证明为什么 `push` 比 `concat` 更快。
 
 ## `slice` 和 `splice` 的区别
 

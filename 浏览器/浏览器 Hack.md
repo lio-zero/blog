@@ -14,7 +14,7 @@
 }
 ```
 
-## 仅限 Webkit
+## 仅限 WebKit
 
 ```css
 @media all and (-webkit-min-device-pixel-ratio: 1) {}

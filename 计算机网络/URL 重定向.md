@@ -18,5 +18,5 @@
 ## 更多资料
 
 - [永久性重定向（301）和临时性重定向（302）对 SEO 有什么影响](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/241)
-- [Http 状态码 301 和 302 的应用场景分别是什么](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/249)
+- [HTTP 状态码 301 和 302 的应用场景分别是什么](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/249)
 - [The Ultimate Guide to 3xx HTTP Status Codes](https://www.sitepoint.com/3xx-http-status-codes-ultimate-guide/)

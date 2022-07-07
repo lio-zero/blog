@@ -6,4 +6,4 @@
 
 ## 更多资料
 
-[从 GitHub 快速转至 VSCode](https://github.com/lio-zero/blog/blob/main/VSCode/%E4%BB%8E%20GitHub%20%E5%BF%AB%E9%80%9F%E8%BD%AC%E8%87%B3%20VSCode.md)
+[从 GitHub 快速转至 VS Code](https://github.com/lio-zero/blog/blob/main/VS%20Code/%E4%BB%8E%20GitHub%20%E5%BF%AB%E9%80%9F%E8%BD%AC%E8%87%B3%20VSCode.md)

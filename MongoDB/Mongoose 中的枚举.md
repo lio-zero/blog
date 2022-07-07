@@ -18,7 +18,7 @@ await Test.create({ name: 'valid' }) // ✅
 
 ## TypeScript 枚举
 
-您还可以使用 [Typescript 枚举](https://www.typescriptlang.org/docs/handbook/enums.html)。在运行时，TypeScript 枚举只是 POJO，其中对象的值就是枚举值。当您设置 `enum` 为一个对象时，Mongoose 将在对象上运行 `Object.values()` 来获取所需的值。
+您还可以使用 [TypeScript 枚举](https://www.typescriptlang.org/docs/handbook/enums.html)。在运行时，TypeScript 枚举只是 POJO，其中对象的值就是枚举值。当您设置 `enum` 为一个对象时，Mongoose 将在对象上运行 `Object.values()` 来获取所需的值。
 
 ```js
 enum Status {

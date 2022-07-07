@@ -38,7 +38,7 @@ Composition API 为我们提供了访问重要组件信息（如 `props` 和 `sl
 `setup` 函数有参数让我们访问一些组件属性：`props` 和 `context`。
 
 - `props` — 在我们的组件中包含定义的 `props`
-- `context` — 是一个 Javascript 对象，它公开了三个组件属性
+- `context` — 是一个 JavaScript 对象，它公开了三个组件属性
 
 这三个属性是：
 

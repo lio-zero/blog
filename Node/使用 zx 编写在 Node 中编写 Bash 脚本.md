@@ -110,9 +110,9 @@ console.log(`当前分支：${chalk.red.bold(branch)}`)
 
 ## 用户输入和命令行参数
 
-zx 提供提问功能，从命令行界面捕获用户输入。您还可以使用选项来启用传统的 Unix 选项卡完成功能。
+zx 提供提问功能，从命令行界面捕获用户输入。您还可以使用选项来启用传统的 UNIX 选项卡完成功能。
 
-它使用的是 Node  的 [readline](https://nodejs.org/api/readline.html)  包。
+它使用的是 Node 的 [readline](https://nodejs.org/api/readline.html) 包。
 
 以下脚本将捕获文件名和模板。它使用用户输入的配置构建一个文件。
 

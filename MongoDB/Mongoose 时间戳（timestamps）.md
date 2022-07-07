@@ -116,7 +116,7 @@ const doc = await User.create({
 doc.updated_at // 2021-08-20T22:40:06.667Z
 ```
 
-## 使用 Unix 时间戳
+## 使用 UNIX 时间戳
 
 虽然日期类型通常已经足够了，但您也可以让 Mongoose 将时间戳存储为自 1970 年 1 月 1 日以来的秒数。Mongoose `Schema` 支持 `timestamps.currentTime` 选项，该选项允许您传递用于获取当前时间的自定义函数。
 
@@ -126,7 +126,7 @@ const userSchema = mongoose.Schema(
     name: String
   },
   {
-    // 让 Mongoose 使用 Unix 时间（自1970年1月1日起的秒数）
+    // 让 Mongoose 使用 UNIX 时间（自1970年1月1日起的秒数）
     timestamps: {
       currentTime: () => Math.floor(Date.now() / 1000)
     }

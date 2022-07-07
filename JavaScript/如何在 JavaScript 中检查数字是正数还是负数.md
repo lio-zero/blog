@@ -16,9 +16,9 @@ Math.sign(0) // 0
 
 ```js
 1 - // 正数
-1 // 负数
+  1 // 负数
 0 - // 正零
-0 // 负零
+  0 // 负零
 NaN // 不是数字
 
 Math.sign(8) // 1
@@ -94,7 +94,7 @@ const reverseInteger = (num) => {
 reverseInteger(-321) // -123
 ```
 
-> 你可以在 Leetcode 的 [整数反转](https://leetcode-cn.com/problems/reverse-integer/)进行练习。
+> 你可以在 LeetCode 的 [整数反转](https://leetcode-cn.com/problems/reverse-integer/)进行练习。
 
 ## 负零
 

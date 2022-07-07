@@ -75,7 +75,7 @@ npx jsdoc index.js
 
 ## 更多资料
 
-[Document This](https://marketplace.visualstudio.com/items?itemName=oouo-diogo-perdigao.docthis) 是一个 VSCode 扩展，可以自动为 TypeScript 和 JavaScript 文件生成详细的 JSDoc 注释。
+[Document This](https://marketplace.visualstudio.com/items?itemName=oouo-diogo-perdigao.docthis) 是一个 VS Code 扩展，可以自动为 TypeScript 和 JavaScript 文件生成详细的 JSDoc 注释。
 
 另一个不错的 JSDoc 注释 扩展 — [Add jsdoc comments](https://marketplace.visualstudio.com/items?itemName=stevencl.addDocComments)
 

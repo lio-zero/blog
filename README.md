@@ -360,7 +360,7 @@
 - [TypeScript 文字联合类型与字符串枚举](https://github.com/lio-zero/blog/blob/main/TypeScipt/TypeScript%20%E6%96%87%E5%AD%97%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9E%9A%E4%B8%BE.md)
 - [TypeScript 类型转换](https://github.com/lio-zero/blog/blob/main/TypeScipt/TypeScript%20%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.md)
 - [TypeScript 装饰器](https://github.com/lio-zero/blog/blob/main/TypeScipt/TypeScript%20%E8%A3%85%E9%A5%B0%E5%99%A8.md)
-- [Typescript 中的 const 断言](https://github.com/lio-zero/blog/blob/main/TypeScipt/Typescript%20%E4%B8%AD%E7%9A%84%20const%20%E6%96%AD%E8%A8%80.md)
+- [TypeScript 中的 const 断言](https://github.com/lio-zero/blog/blob/main/TypeScipt/TypeScript%20%E4%B8%AD%E7%9A%84%20const%20%E6%96%AD%E8%A8%80.md)
 - [在 TypeScript 中使用 unknown 而不是 any](https://github.com/lio-zero/blog/blob/main/TypeScipt/%E5%9C%A8%20TypeScript%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20unknown%20%E8%80%8C%E4%B8%8D%E6%98%AF%20any.md)
 - [缩短 TypeScript 中的导入路径](https://github.com/lio-zero/blog/blob/main/TypeScipt/%E7%BC%A9%E7%9F%AD%20TypeScript%20%E4%B8%AD%E7%9A%84%E5%AF%BC%E5%85%A5%E8%B7%AF%E5%BE%84.md)
 
@@ -458,7 +458,7 @@
 - [递归删除 node_modules](https://github.com/lio-zero/blog/blob/main/Node/%E9%80%92%E5%BD%92%E5%88%A0%E9%99%A4%20node_modules.md)
 - [防止 npm 安装不支持的 Node.js 版本](https://github.com/lio-zero/blog/blob/main/Node/%E9%98%B2%E6%AD%A2%20npm%20%E5%AE%89%E8%A3%85%E4%B8%8D%E6%94%AF%E6%8C%81%E7%9A%84%20Node.js%20%E7%89%88%E6%9C%AC.md)
 
-## Git 和 Github
+## Git 和 GitHub
 
 - [Git Amend](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/Git%20Amend.md)
 - [Git Cherry Pick](https://github.com/lio-zero/blog/blob/main/Git%20%E5%92%8C%20Github/Git%20Cherry%20Pick.md)
@@ -488,7 +488,7 @@
 - [实现 new 运算符](https://github.com/lio-zero/blog/blob/main/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%20new%20%E8%BF%90%E7%AE%97%E7%AC%A6.md)
 - [实现 reduce](https://github.com/lio-zero/blog/blob/main/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%20reduce.md)
 - [实现 sleep 函数](https://github.com/lio-zero/blog/blob/main/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%20sleep%20%E5%87%BD%E6%95%B0.md)
-- [实现一个 Ajax HTTP 请求库](https://github.com/lio-zero/blog/blob/main/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%20Ajax%20HTTP%20%E8%AF%B7%E6%B1%82%E5%BA%93.md)
+- [实现一个 AJAX HTTP 请求库](https://github.com/lio-zero/blog/blob/main/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%20AJAX%20HTTP%20%E8%AF%B7%E6%B1%82%E5%BA%93.md)
 - [实现一个 Event Bus](https://github.com/lio-zero/blog/blob/main/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%20Event%20Bus.md)
 - [实现一个 add 方法](https://github.com/lio-zero/blog/blob/main/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%20add%20%E6%96%B9%E6%B3%95.md)
 - [实现一个简单的单页应用](https://github.com/lio-zero/blog/blob/main/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%8D%95%E9%A1%B5%E5%BA%94%E7%94%A8.md)
@@ -608,10 +608,10 @@
 - [什么是包管理器？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%9F.md)
 - [什么是单一职责原则？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99%EF%BC%9F.md)
 
-## VSCode
+## VS Code
 
-- [VSCode 快捷键](https://github.com/lio-zero/blog/blob/main/VSCode/VSCode%20%E5%BF%AB%E6%8D%B7%E9%94%AE.md)
-- [从 GitHub 快速转至 VSCode](https://github.com/lio-zero/blog/blob/main/VSCode/%E4%BB%8E%20GitHub%20%E5%BF%AB%E9%80%9F%E8%BD%AC%E8%87%B3%20VSCode.md)
+- [VS Code 快捷键](https://github.com/lio-zero/blog/blob/main/VS%20Code/VS%20Code%20%E5%BF%AB%E6%8D%B7%E9%94%AE.md)
+- [从 GitHub 快速转至 VS Code](https://github.com/lio-zero/blog/blob/main/VS%20Code/%E4%BB%8E%20GitHub%20%E5%BF%AB%E9%80%9F%E8%BD%AC%E8%87%B3%20VSCode.md)
 
 其他文章会陆续整理...
 
