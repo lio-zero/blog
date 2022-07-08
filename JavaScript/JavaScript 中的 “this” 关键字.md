@@ -5,7 +5,7 @@
 `this` 的值取决于函数的调用方式：
 
 - 默认情况下，指全局对象。
-- 在函数中，当不处于严格模式时，它引用全局对象 `window`；当处于严格模式时，它将是 `undefined`。
+- 在函数中，当不处于严格模式时，它引用全局对象 `window`；当处于[严格模式](https://github.com/lio-zero/blog/blob/main/JavaScript/JavaScript%20%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%EF%BC%88'use-strict'%EF%BC%89.md)时，它将是 `undefined`。
 - 在箭头函数中，`this` 保留封闭词法上下文的 `this` 值。
 - 在对象方法中，`this` 指调用该方法的对象。
 - 在构造函数调用中，`this` 绑定到正在构造的新对象。
@@ -57,11 +57,11 @@ function User(name) {
   this.name = name
 }
 
-new User('lio') // User {name: "lio"}
-new User('lion') // User {name: "lion"}
+new User('lio') // User {name: "lio"}
+new User('lion') // User {name: "lion"}
 ```
 
-可以看看 `new` 的原理。
+可以看看 [`new` 的原理](https://github.com/lio-zero/blog/blob/main/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%20new%20%E8%BF%90%E7%AE%97%E7%AC%A6.md)。
 
 ## 对象上下文
 
@@ -104,7 +104,7 @@ console.log(user.run()) // lio
 console.log(user.foo() === window) // true
 ```
 
-> **注意**：箭头函数没有自己的 `this`，`arguments`，`super` 等。
+> **注意**：箭头函数没有自己的 `this`，`arguments` 和 `super` 等。
 
 ## 事件处理程序上下文
 
@@ -123,7 +123,7 @@ btn.addEventListener('click', () => {
 
 ## call/apply/bind 绑定
 
-如果使用 `apply`、`call` 或 `bind` 来调用/创建函数，则函数中的对象就是作为参数传入的对象。
+如果使用 [`apply`、`call` 或 `bind`](<https://github.com/lio-zero/blog/blob/main/JavaScript/JavaScript%20%E5%87%BD%E6%95%B0%E6%96%B9%E6%B3%95%20%E2%80%94%20call()%EF%BC%8Capply()%20%E5%92%8C%20bind().md>) 来调用/创建函数，则函数中的对象就是作为参数传入的对象。
 
 使用 `Function.prototype.bind()` 从现有函数返回一个新函数，其中该函数永久绑定到 `bind()` 的第一个参数。
 
