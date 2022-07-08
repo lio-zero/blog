@@ -84,6 +84,15 @@ npm i express cheerio axios
 npm i eslint-{plugin-import,plugin-react,loader} express
 ```
 
+额外的，当你需要指定包版本时，可以使用 `@` 符号：
+
+```bash
+npm i vue@3.2.25
+npm i -g webpack@5.58.0
+```
+
+检查 npm 包的所有版本，可以在下面的**检查任何 npm 包的最新版本**找到。
+
 ## 干净安装你的包依赖
 
 `npm ci` 用于清除安装包依赖项。它通常用于自动化环境，如 CI/CD 平台。
