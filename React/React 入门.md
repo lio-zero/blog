@@ -23,6 +23,7 @@ React 会找出已经进行了哪些更改，并且只更改需要更改的内�
 你可以直接在 HTML 文件中练习、编写 React，通过 CDN 引入的方式：
 
 ```html
+<!-- 加载 React 和 React DOM -->
 <script
   src="https://unpkg.com/react@17/umd/react.development.js"
   crossorigin
@@ -31,6 +32,7 @@ React 会找出已经进行了哪些更改，并且只更改需要更改的内�
   src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
   crossorigin
 ></script>
+<!-- 使用 JSX 需要用到的 Babel -->
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 ```
 
@@ -48,15 +50,11 @@ React 会找出已经进行了哪些更改，并且只更改需要更改的内�
 </script>
 ```
 
-这种使用 React 的方式可以用于测试目的，但对于生产，您需要搭建一个 React 环境。
+并使用特殊的 `text/babel` MIME 类型加载您的脚本：
+
+这种使用 React 的方式可以用于测试目的，它无需设置复杂的工作流程即可快速启动。但对于生产，您需要搭建一个 React 环境。
 
 ### 使用 `create-react-app`
-
-全局安装 `create-react-app`：
-
-```bash
-npm i -g create-react-app
-```
 
 运行以下命令来创建一个名为 `my-react-app` 的 React 应用程序：
 
@@ -105,6 +103,8 @@ npm dev
 
 下面我们来看一下 React 的一些基础用法。
 
+> 额外的，您可以使用 [Codepen](https://codepen.io/) 和 [CodeSandbox](https://codesandbox.io/s) 这种在线代码编写平台。快速开发。
+
 ## React 渲染 HTML
 
 React 的目标是以多种方式在网页中渲染 HTML。
@@ -135,6 +135,27 @@ ReactDOM.render(<p>Hello</p>, document.getElementById('root'))
 // <main id="app"><main>
 ReactDOM.render(<p>Hallo</p>, document.getElementById('app'))
 ```
+
+## React 中引用 DOM 元素
+
+要在 React 组件中访问 DOM 元素：
+
+```js
+function App() {
+  const inputEl = useRef(null)
+  const onButtonClick = () => {
+    inputEl.current.focus()
+  }
+  return (
+    <>
+      <input ref={inputEl} type='text' />
+      <button onClick={onButtonClick}>聚焦</button>
+    </>
+  )
+}
+```
+
+使用到 `useRef` 钩子。关于 Hooks 内容可以查阅 [React Hooks](https://github.com/lio-zero/blog/blob/main/React/React%20Hooks.md)。
 
 ## React JSX
 
@@ -207,11 +228,44 @@ const elem = (
 )
 ```
 
-如果 HTML 不正确，或者 HTML 缺少父元素，JSX 将抛出错误。
+如果 HTML 不正确，或者 HTML 缺少父元素，JSX 将抛出错误。这行不通：
 
-或者，您可以使用“片段”来换行多行。这将防止不必要地向 DOM 添加额外的节点。
+```js
+const elem = (
+  <p>我是一段文字</p>
+  <p>我也是一段文字</p>
+)
+```
 
-片段看起来像一个空的 HTML 标记：`<></>`。
+解决此问题的一种“经典”方法是将组件和其他 HTML 元素包装在 `div` 内:
+
+```js
+const elem = (
+  <div>
+    <p>我是一段文字</p>
+    <p>我也是一段文字</p>
+  </div>
+)
+```
+
+一种解决方案是返回一个 JSX 元素数组：
+
+```js
+const elem = [<p>我是一段文字</p>, <p>我也是一段文字</p>]
+```
+
+另一种解决方案是使用 Fragment（片段）：
+
+```js
+const elem = (
+  <Fragment>
+    <p>我是一段文字</p>
+    <p>我也是一段文字</p>
+  </Fragment>
+)
+```
+
+它可以使用空的 HTML 标记：`<></>` 表示。
 
 ```js
 const elem = (
@@ -221,6 +275,10 @@ const elem = (
   </>
 )
 ```
+
+这将防止不必要地向 DOM 添加额外的节点。
+
+> 推荐：[<> 与 React.Fragment 的区别](https://github.com/lio-zero/blog/blob/main/React/React.Fragment%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 
 ### 元素必须关闭
 
@@ -274,6 +332,63 @@ const elem = <h1>{x < 10 ? 'React' : 'Vue'}</h1>
 
 > **注意**：为了在 JSX 中嵌入 JavaScript 表达式，JavaScript 必须用大括号括起来，`{}`。
 
+### JSX 自动转义
+
+为了减轻 XSS 漏洞攻击的风险，JSX 强制在表达式中自动转义。
+
+这意味着您在字符串表达式中使用 HTML 实体时可能会遇到问题。
+
+您希望打印以下内容（`© 2020`）：
+
+```js
+<p>{'&copy; 2020'}</p>
+```
+
+但事实并非如此，它将打印 `&copy; 2020`，因为字符串被转义了。
+
+要解决此问题，可以将实体移到表达式之外：
+
+```js
+<p>&copy; 2020</p>
+```
+
+或者通过使用一个常量来打印与您需要打印的 HTML 实体相对应的 Unicode 表示：
+
+```js
+<p>{'\u00A9 2020'}</p>
+```
+
+### 在 JSX 中添加注释
+
+您可以使用表达式中的普通 JavaScript 注释向 JSX 添加注释：
+
+```js
+<p>
+  {/* 注释 */}
+  {
+    // 另一个注释
+  }
+</p>
+```
+
+### 扩展属性
+
+在 JSX 中，一个常见的操作是为属性赋值。
+
+```js
+<BlogPost title={data.title} date={data.date} />
+```
+
+你可以通过：
+
+```js
+<BlogPost {...data} />
+```
+
+由于 ES6 扩展运算符，`data` 对象的属性将自动用作属性。
+
+表单和样式可往下看。
+
 ## React 组件
 
 组件就像返回 HTML 元素的函数。
@@ -285,6 +400,8 @@ const elem = <h1>{x < 10 ? 'React' : 'Vue'}</h1>
 在较旧的 React 代码库中，您可能会发现主要使用 `Class` 组件。现在建议将函数组件与 React 16.8 中添加的 Hooks 一起使用。
 
 创建 React 组件时，组件的名称必须以大写字母开头。
+
+> **Tisp**：本文不会使用类组件。
 
 ### Class 组件
 
@@ -505,6 +622,14 @@ function Football() {
 }
 ```
 
+注意，不能像这样使用：
+
+```js
+<button onClick={shoot('球门')}>发射!</button>
+```
+
+因为 `onClick` 中的表达式将在挂载时执行。一旦应用程序启动，它将执行并打印"球门"，而不会等待你的点击。
+
 ### React 事件对象
 
 事件处理程序可以访问触发函数的 React 事件。
@@ -517,6 +642,172 @@ function Football() {
 
   return <button onClick={(e) => shoot('球门!', e)}>发射!</button>
 }
+```
+
+### 事件参考
+
+以下是一个[事件列表](https://zh-hans.reactjs.org/docs/events.html)：
+
+剪贴板：
+
+- onCopy
+- onCut
+- onPaste
+
+复合：
+
+- onCompositionEnd
+- onCompositionStart
+- onCompositionUpdate
+
+键盘：
+
+- onKeyDown
+- onKeyPress
+- onKeyUp
+
+焦点：
+
+- onFocus
+- onBlur
+
+表单：
+
+- onChange
+- onInput
+- onSubmit
+
+鼠标：
+
+- onClick
+- onContextMenu
+- onDoubleClick
+- onDrag
+- onDragEnd
+- onDragEnter
+- onDragExit
+- onDragLeave
+- onDragOver
+- onDragStart
+- onDrop
+- onMouseDown
+- onMouseEnter
+- onMouseLeave
+- onMouseMove
+- onMouseOut
+- onMouseOver
+- onMouseUp
+
+选择：
+
+- onSelect
+
+触摸：
+
+- onTouchCancel
+- onTouchEnd
+- onTouchMove
+- onTouchStart
+
+UI：
+
+- onScroll
+
+鼠标滚轮：
+
+- onWheel
+
+媒体：
+
+- onAbort
+- onCanPlay
+- onCanPlayThrough
+- onDurationChange
+- onEmptied
+- onEncrypted
+- onEnded
+- onError
+- onLoadedData
+- onLoadedMetadata
+- onLoadStart
+- onPause
+- onPlay
+- onPlaying
+- onProgress
+- onRateChange
+- onSeeked
+- onSeeking
+- onStalled
+- onSuspend
+- onTimeUpdate
+- onVolumeChange
+- onWaiting
+
+图片：
+
+- onLoad
+- onError
+
+动画：
+
+- onAnimationStart
+- onAnimationEnd
+- onAnimationIteration
+
+过渡：
+
+- onTransitionEnd
+
+其他：
+
+- onToggle
+
+### 示例：双击编辑文本
+
+- 双击事件使用 `onDoubleClick`，并使用 `toggle` 状态变量，当双击元素时，显示不同的元素
+- 使用 `onChange()` 事件侦听器来设置 `name` 变量的值
+- 使用 `onKeyDown()` 拦截 `Enter` 或 `ESC` 按键事件并返回显示 `p` 元素
+
+```js
+import ReactDOM from 'react-dom'
+import { useState } from 'react'
+
+function App() {
+  const [toggle, setToggle] = useState(true)
+  const [name, setName] = useState('test')
+
+  return (
+    <>
+      {toggle ? (
+        <p
+          onDoubleClick={() => {
+            setToggle(false)
+          }}
+        >
+          {name}
+        </p>
+      ) : (
+        <input
+          type='text'
+          value={name}
+          onChange={(event) => {
+            setName(event.target.value)
+          }}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter' || event.key === 'Escape') {
+              setToggle(true)
+              event.preventDefault()
+              event.stopPropagation()
+            }
+          }}
+          autoFocus
+        />
+      )}
+    </>
+  )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
 ## React 条件渲染
@@ -583,7 +874,7 @@ const cars = ['Ford', 'BMW', 'Audi']
 ReactDOM.render(<Garage cars={cars} />, document.getElementById('root'))
 ```
 
-如果`cars.length` 等于 true，则将渲染 `&&` 后面的表达式。
+如果 `cars.length` 等于 `true`，则将渲染 `&&` 后面的表达式。
 
 尝试清空 `cars` 数组：
 
@@ -608,6 +899,32 @@ function Goal(props) {
 }
 
 ReactDOM.render(<Goal isGoal={false} />, document.getElementById('root'))
+```
+
+### 示例：点击时显示不同的组件
+
+导入 `useState` 钩子，并声明了一个 `state` 变量，根据该变量和条件渲染，实现点击时显示不同的组件：
+
+```js
+import ReactDOM from 'react-dom'
+import { useState } from 'react'
+
+const AddTagButton = (props) => <button onClick={props.addTag}>添加标签</button>
+
+const AnotherComponent = () => <p>某些内容</p>
+
+function App() {
+  const [state, setState] = useState('start')
+
+  return (
+    <>
+      {state === 'start' && <AddTagButton addTag={() => setState('add-tag')} />}
+      {state === 'add-tag' && <AnotherComponent />}
+    </>
+  )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
 ## React 渲染列表
@@ -779,7 +1096,7 @@ ReactDOM.render(<MyForm />, document.getElementById('root'))
 
 ### 多个输入字段
 
-您可以通过向每个元素添加一个 `name` 属性来控制多个输入字段的值 。
+您可以通过向每个元素添加一个 `name` 属性来控制多个输入字段的值。
 
 我们将使用一个空对象初始化我们的状态。
 
@@ -908,14 +1225,35 @@ function MyForm() {
 
 通过对 `<textarea>` 和 `<select>` 进行这些细微的更改，React 能够以相同的方式处理所有输入元素。
 
+### value 和 defaultValue
+
+- `value` 属性始终保存字段的当前值
+- `defaultValue` 属性保存创建字段时设置的默认值
+
+当检查 `input.value` 和 `input.getAttribute('value')` 返回一个当前值和一个原始默认值时，这有助于解决常规 DOM 交互的一些奇怪行为。
+
+我们希望为组件赋予一个初始值，需要将：
+
+- `value` 替换为 `defaultValue`
+- `checked` 替换为 `defaultChecked`
+
+```html
+<!-- ❌ -->
+<input name="enable" type="checkbox" checked="checked" />
+<!-- ✅ -->
+<input name="enable" type="checkbox" defaultChecked="{true}" />
+```
+
+> 额外的，[Formik](https://github.com/jaredpalmer/formik) 库可以简化所有这些表单处理内容并自动化验证、错误处理等。
+
 ## React 路由
 
-Vite 构建工具没有为我们添加路由，我们需要自己手动安装依赖。React Router 是最流行的解决方案。
+Vite 构建工具没有为我们添加路由，我们需要自己手动安装依赖。[React Router](https://github.com/remix-run/react-router) 是最流行的解决方案。
 
 添加 React 路由：
 
 ```bash
-npm i -D react-router-dom
+npm i react-router-dom
 ```
 
 本节写一个简单的示例，在 `src` 文件夹中，我们将创建一个 `pages` 包含多个文件的文件夹：
@@ -1176,25 +1514,25 @@ import SayHello from './SayHello.js'
 ReactDOM.render(<SayHello />, document.getElementById('root'))
 ```
 
-## React Sass
+## React SASS
 
-Sass 是一个 CSS 预处理器。
+SASS 是一个 CSS 预处理器。
 
-Sass 文件在服务器上执行并将 CSS 发送到浏览器。
+SASS 文件在服务器上执行并将 CSS 发送到浏览器。
 
 > 详细内容可以查看我之前写过的一篇 [SASS 预处理器](https://github.com/lio-zero/blog/blob/master/CSS/SASS%20%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8.md)。
 
-通过在终端中运行以下命令来安装 Sass：
+通过在终端中运行以下命令来安装 SASS：
 
 ```bash
 npm i sass
 ```
 
-现在我们可以在项目中包含 Sass 文件了！
+现在我们可以在项目中包含 SASS 文件了！
 
-创建 Sass 文件的方式与创建 CSS 文件相同，但 Sass 文件具有文件扩展名 `.scss`
+创建 SASS 文件的方式与创建 CSS 文件相同，但 SASS 文件具有文件扩展名 `.scss`
 
-在 Sass 文件中，您可以使用变量和其他 Sass 函数：
+在 SASS 文件中，您可以使用变量和其他 SASS 函数：
 
 ```scss
 // index.scss
@@ -1205,7 +1543,7 @@ h1 {
 }
 ```
 
-以与导入 CSS 文件相同的方式导入 Sass 文件：
+以与导入 CSS 文件相同的方式导入 SASS 文件：
 
 ```js
 // main.js
@@ -1225,10 +1563,12 @@ const Header = () => {
 ReactDOM.render(<Header />, document.getElementById('root'))
 ```
 
+另外，你可以使用 [Autoprefixer](https://github.com/postcss/autoprefixer)，这样 CSS 样式默认会自动添加前缀。
+
 ## 最后
 
 这里附带一张 React 学习路线图，您可以借鉴学习。
 
-以下图片来自 [React Developer](https://roadmap.sh/react)：
+以下路线图来自 [React Developer](https://roadmap.sh/react)：
 
 ![React 开发路线图](https://upload-images.jianshu.io/upload_images/18281896-55f172a3c20bfe98.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
