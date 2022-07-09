@@ -123,5 +123,3 @@ useEffect(() => {
 ```
 
 从 v16.9.0 开始，React 还[反对](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html#deprecating-javascript-urls)使用 `javascript:` URL。
-
-https://thisthat.dev/undefined-vs-void/

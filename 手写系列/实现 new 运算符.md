@@ -42,7 +42,7 @@ console.log(p) // { name: 'O.O', age: 20 }
 
 ## 扩展：可以使用 new 一个箭头函数吗？
 
-箭头函数没有 `prototype`、没有自己的 `this` 指向、不可以使用 `arguments`、自然不可以 `new`
+箭头函数没有 `prototype`、没有自己的 `this` 指向、不可以使用 `arguments`，自然不可以 `new`
 
 ## 更多资料
 
