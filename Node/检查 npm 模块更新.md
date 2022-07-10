@@ -22,6 +22,13 @@ npm i npm-check-updates -g
 
 ![npm-check-updates](https://upload-images.jianshu.io/upload_images/18281896-91bfcf77ef23c111.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+使用 `ncu -u` 命令更新 `package.json` 文件相关依赖，并运行 `npm i` 安装最新包：
+
+```bash
+ncu -u
+npm i
+```
+
 ## `npm-check` 模块
 
 为了便于查看依赖信息，我们可以安装 [`npm-check`](https://www.npmjs.com/package/npm-check) 包，它用于检查过时、不正确和未使用的依赖项。
