@@ -2,9 +2,19 @@
 
 [Emmet](https://docs.emmet.io/)（前身为 Zen Coding）是许多流行的文本编辑器的插件，可以极大地改善 HTML 和 CSS 工作流程，提高前端开发效率。
 
-Emmet 在大部分编辑器都支持，如：Sublime Text、VSCode 等。你可以在编辑器内下载插件，使用时，按下面所接受的基本语法编写，按 **tab** 键或者回车就会自动生成 HTML 标签。
+Emmet 在大部分编辑器都支持，如：Sublime Text、VS Code 等。使用时，按下面所接受的基本语法编写，按 **tab** 键或者回车就会自动生成对应的 HTML 标签。
 
 官网也提供了一份超详细的[备忘单](https://docs.emmet.io/cheat-sheet/) 和 [PDF 文档](https://docs.emmet.io/cheatsheet-a5.pdf)。以下内容将以备忘单为参考，提供常用的基本语法。
+
+## HTML 模板
+
+从 HTML 模板开始，在空的 html 文件中输入 `!` 会触发 Emmet 的建议：
+
+```html
+!
+```
+
+它将生成一个 HTML5 基本模板。
 
 ## 后代节点：>
 

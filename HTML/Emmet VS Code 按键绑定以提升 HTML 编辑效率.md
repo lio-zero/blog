@@ -4,7 +4,7 @@ Emmet 是一个自动将代码片段扩展为 HTML 的工具。它包含在 VS C
 
 例如以下片段：
 
-```html
+```txt
 div.someClass>span*5
 ```
 
@@ -47,7 +47,7 @@ Emmet 还提供了其他一些快捷方式提升 HTML 开发效率。
 
 Emmet 的可用命令如下：
 
-```
+```txt
 editor.emmet.action.balanceIn
 editor.emmet.action.balanceOut
 editor.emmet.action.decrementNumberByOne
@@ -111,3 +111,11 @@ editor.emmet.action.wrapWithAbbreviation
   }
 ]
 ```
+
+额外的，如果你不想自己配置，可以安装 [Emmet Keybindings](https://marketplace.visualstudio.com/items?itemName=agutierrezr.emmet-keybindings) 扩展，它是一组用于 VS Code 的 Emmet 键绑定。它可以用作预定义的键绑定组，以防您不知道映射到哪个键。
+
+## 更多资料
+
+[Emmet 语法](https://github.com/lio-zero/blog/blob/main/HTML/Emmet%20%E8%AF%AD%E6%B3%95.md)
+
+还有许多有用的缩写，例如 [Wrap with Abbreviation](https://docs.emmet.io/actions/wrap-with-abbreviation/) 和 [Remove Tag](https://docs.emmet.io/actions/remove-tag/) ，查阅它们以了解更多。
