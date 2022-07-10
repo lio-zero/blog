@@ -1,14 +1,18 @@
-# BEM 命令规范
+# BEM 命名规范
+
+众所周知，CSS 在大型、复杂、快速迭代的系统中难以管理。有多种编写 CSS 的方法可以编写更易于维护的 CSS。
+
+本文将来了解 CSS BEM 命名规范。
 
 BEM 是一种前端项目开发的方法论，由 [Yandex](http://yandex.ru/) 公司提出。
 
 BEM 的名称来源于该方法学的三个组成部分的英文首字母，分别是块（Block）、元素（Element）和修饰符（Modifier）。
 
-这里先推荐一篇关于使用 BEM 的组件命令规范的示例文章：[bem naming cheat sheet by 9elements](https://9elements.com/bem-cheat-sheet/#form-blocks)。
+这里先推荐一篇关于使用 BEM 的组件命名规范的示例文章：[bem naming cheat sheet by 9elements](https://9elements.com/bem-cheat-sheet/#form-blocks)。
 
 ![bem naming cheat sheet by 9elements](https://upload-images.jianshu.io/upload_images/18281896-17eb45f3195525d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-其中介绍了包括：面包屑、按钮、卡片、列表、导航、布局、表单控件等一些组件的结构、命令示例。
+其中介绍了包括：面包屑、按钮、卡片、列表、导航、布局、表单控件等一些组件的结构、命名示例。
 
 ## 什么是 CSS BEM？
 
@@ -17,7 +21,6 @@ BEM 的名称来源于该方法学的三个组成部分的英文首字母，分�
 它原则上建议为独立的 CSS 类命名，并且在需要层级关系时，将关系也体现在命名中，这自然会使选择器高效且易于覆盖。
 
 - block（块）是一个独立的组件，可在项目中重复使用，并充当子组件（元素）的 "命名空间"。
-
 - 当 block（块）或 element（元素）处于特定状态或结构或样式不同时，将 modifier（修饰符）用作标志。
 
 ## BEM 命名约定
@@ -27,12 +30,9 @@ BEM 的名称来源于该方法学的三个组成部分的英文首字母，分�
 - `block--modifier` 代表 `.block` 的不同状态或不同版本。
 
 ```css
-.block {
-}
-.block__element {
-}
-.block--modifier {
-}
+.block {}
+.block__element {}
+.block--modifier {}
 ```
 
 ## 示例
@@ -83,13 +83,13 @@ BEM 的优点在于所产生的 CSS 类名都只使用一个类别选择器，�
 
 ## 其他的一些命名规范
 
-除了 BEM 以外，还有其他一些常用命名规范如：[OOCSS](https://github.com/stubbornella/oocss)、[SMACSS](https://smacss.com/) 等。
+除了 BEM 以外，还有其他一些常用命名规范如：[OOCSS](http://oocss.org/)、[SMACSS](https://smacss.com/) 等。
 
 ### OOCSS
 
 OOCSS 表示的是面向对象 CSS（**Object Oriented CSS**），是一种把面向对象方法学应用到 CSS 代码组织和管理中的实践
 
-**OOCSS 有两个重要的原则**
+**OOCSS 有两个重要的原则**：
 
 - 第一个原则是把结构和外观分开。
 - 第二个原则是把容器和内容分开。
@@ -108,8 +108,9 @@ SMACSS 把 CSS 样式规则分成若干个不同的类别：
 
 ## 更多资源
 
+- [A Look at Some CSS Methodologies](https://www.webfx.com/blog/web-design/css-methodologies/)
 - [如何看待 CSS 中 BEM 的命名方式？](https://www.zhihu.com/question/21935157/answer/20116700)
 - [BEMIT: Taking the BEM Naming Convention a Step Further](https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/)
-- [BEM 文档](https://en.bem.info/methodology/quick-start)
+- [BEM Docs](https://en.bem.info/methodology/quick-start)
 - [BEM 101](https://css-tricks.com/bem-101)
-- [BEM 教程](https://en.bem.info/tutorials/)
+- [BEM TUTORIALS](https://en.bem.info/tutorials/)

@@ -646,3 +646,44 @@ table {
   all: initial;
 }
 ```
+
+## 在 HTML 中的字符串中保留空格和换行符
+
+我将通过表单中的 `<textarea>` 字段获得的工作描述渲染出来，并将其存储在数据库中。
+
+现在，这个描述没有被解释为 HTML，当我把它添加到页面中时，浏览器没有考虑到空格和换行符。
+
+我想要这个：
+
+![保留空格和换行符](https://upload-images.jianshu.io/upload_images/18281896-0190648d25aa8efb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+但：
+
+![未保留空格和换行符](https://upload-images.jianshu.io/upload_images/18281896-7788afeabc9ff598.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+我们可以添加以下 CSS 解决这个问题：
+
+```css
+.whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+```
+
+## 使用 hr 作为分隔符
+
+我想在我的 HTML 页面上分离兄弟元素。
+
+我的一个想法是将它们包装在 `section` 或 `div` 标签中，并在该元素的底部的顶部应用边距。
+
+另一种方法是不触及整个 HTML 结构，而是放置一个标签作为分隔符。
+
+所以，我使用了一个 `hr` 标签，它在语义上表示段落级标签之间的主题中断。
+
+我以这种方式对其进行了样式设置，使其不可见但仍占用空间：
+
+```css
+hr {
+  margin-top: 20px;
+  border: none;
+}
+```

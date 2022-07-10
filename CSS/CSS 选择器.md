@@ -150,7 +150,7 @@ img[src$='.jpg'] {
 
 ## 伪选择器
 
-**伪类**
+### 伪类
 
 ```css
 p:lang(language) 为 <p> 元素的 lang 属性选择一个开始值
@@ -193,7 +193,7 @@ p:first-of-type 选择的每个 p 元素是其父元素的第一个 p 元素
 p:last-of-type 选择属于其父元素的最后 p 元素的每个 p 元素
 ```
 
-**伪元素**
+### 伪元素
 
 ```css
 p::selection 	选择用户选择的元素部分。
