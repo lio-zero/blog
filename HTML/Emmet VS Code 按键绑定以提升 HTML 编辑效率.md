@@ -26,6 +26,8 @@ Emmet 还提供了其他一些快捷方式提升 HTML 开发效率。
 
 ## 添加 VS Code 快捷方式
 
+> 组合键：`Ctrl + K` 和 `Ctrl + S` 打开键盘快捷键窗口，在搜索框输入 Emmet，可以找出内置 Emmet 可以绑定热键的特定操作。
+
 按住 `Ctrl+Shift+p` 打开命令面板，输入 `shortcut`，找到关于 JSON 的选项。
 
 将打开一个按键绑定的 `keybindings.json` 文件：
@@ -112,10 +114,8 @@ editor.emmet.action.wrapWithAbbreviation
 ]
 ```
 
-额外的，如果你不想自己配置，可以安装 [Emmet Keybindings](https://marketplace.visualstudio.com/items?itemName=agutierrezr.emmet-keybindings) 扩展，它是一组用于 VS Code 的 Emmet 键绑定。它可以用作预定义的键绑定组，以防您不知道映射到哪个键。
+额外的，如果你不想自己配置热键，可以安装 [Emmet Keybindings](https://marketplace.visualstudio.com/items?itemName=agutierrezr.emmet-keybindings) 扩展，它是一组用于 VS Code 的 Emmet 键绑定。它可以用作预定义的键绑定组，以防您不知道映射到哪个键。
 
 ## 更多资料
-
-[Emmet 语法](https://github.com/lio-zero/blog/blob/main/HTML/Emmet%20%E8%AF%AD%E6%B3%95.md)
 
 还有许多有用的缩写，例如 [Wrap with Abbreviation](https://docs.emmet.io/actions/wrap-with-abbreviation/) 和 [Remove Tag](https://docs.emmet.io/actions/remove-tag/) ，查阅它们以了解更多。
