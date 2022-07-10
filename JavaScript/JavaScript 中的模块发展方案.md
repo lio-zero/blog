@@ -24,8 +24,8 @@
 
 **更多详细内容**：
 
-- [Javascript 模块化编程（二）：AMD 规范](http://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html)
-- [Javascript 模块化编程（三）：require.js 的用法](http://www.ruanyifeng.com/blog/2012/11/require_js.html)
+- [JavaScript 模块化编程（二）：AMD 规范](http://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html)
+- [JavaScript 模块化编程（三）：require.js 的用法](http://www.ruanyifeng.com/blog/2012/11/require_js.html)
 
 ## CMD
 
@@ -344,7 +344,7 @@ import baz from './baz'
 
 推荐一篇关于 ES6 之前各种规范的模块化 [《JavaScript Module Pattern: In-Depth》](http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth)
 
-也可以阅读阮一峰老师的 [Javascript 模块化编程（一）：模块的写法](http://www.ruanyifeng.com/blog/2012/10/javascript_module.html)
+也可以阅读阮一峰老师的 [JavaScript 模块化编程（一）：模块的写法](http://www.ruanyifeng.com/blog/2012/10/javascript_module.html)
 
 ## 总结
 

@@ -4,6 +4,7 @@
 
 以下是一些关于这方面的资料：
 
+- [Introduction to CSS layout](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction)
 - [学习 CSS 布局](https://zh.learnlayout.com/)
 - [Flex 布局](https://github.com/lio-zero/blog/blob/main/CSS/Flex%20%E5%B8%83%E5%B1%80.md)
 - [The box model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
@@ -15,3 +16,4 @@
 - [Understanding Flexbox: Everything you need to know](https://www.freecodecamp.org/news/understanding-flexbox-everything-you-need-to-know-b4013d4dc9af#.pr6cltk9j)
 - [CSS Flexible Box Layout](https://www.w3.org/TR/css-flexbox-1/) 和 [CSS Grid Layout](https://www.w3.org/TR/css-grid-1/) 规范。
 - [The Holy Grail Layout with CSS Grid](https://bitsofco.de/holy-grail-layout-css-grid/)
+- [magic-of-css](https://adamschwartz.co/magic-of-css/)

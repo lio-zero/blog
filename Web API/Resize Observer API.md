@@ -32,11 +32,11 @@ function init() {
   return '不支持 Resize Observer API'
 }
 
-function resize(event) {
-  const target = event.target
+function resize(e) {
+  const value = e.target.value
 
-  img.style.width = `${target.value}%`
-  text.textContent = `${target.value}%`
+  img.style.width = `${value}%`
+  text.textContent = `${value}%`
 }
 
 range.addEventListener('input', (e) => {

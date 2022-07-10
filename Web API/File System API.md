@@ -94,7 +94,7 @@ async function imageUpload() {
 }
 ```
 
-[查看效果](https://codepen.io/lio-zero/pen/GRxpYoW) — 在 codePen 上代码内嵌在 iframe 内，导致无法访问执行成功，将其复制到本地进行测试。
+[查看效果](https://codepen.io/lio-zero/pen/GRxpYoW) — 在 CodePen 上代码内嵌在 `iframe` 内，导致无法访问执行成功，将其复制到本地进行测试。
 
 ## 进一步阅读
 

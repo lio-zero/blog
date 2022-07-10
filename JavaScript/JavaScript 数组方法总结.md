@@ -580,7 +580,7 @@ const money = () => '🤑'
 Array(3).fill('🤑') // ['🤑', '🤑', '🤑']
 ```
 
-**示例：重复字符串**
+**示例**：重复字符串
 
 ```js
 Array(3).fill('LOVE').join('')
@@ -640,11 +640,11 @@ ES6 `Set`是可以相互转换的，可以使用 `Array.from` 转换成数组
 ```js
 const article = new Set(['JavaScript', 'TypeScript', 'Node.js'])
 
-article // Set(3) {'JavaScript', 'TypeScript', 'Node.js'}
+article // Set(3) {'JavaScript', 'TypeScript', 'Node.js'}
 Array.from(article) // ['JavaScript', 'TypeScript', 'Node.js']
 ```
 
-**示例：重复字符串**
+**示例**：重复字符串
 
 一个类数组对象必须含有 `length` 属性，且元素属性名必须是数值或者可转换为数值的字符。我们正好可以利用这一点。
 
@@ -708,7 +708,7 @@ const arr = [1, 2, 3]
 arr.valueOf() // [1, 2, 3]
 ```
 
-> 详细查看 MDN 上[`valueOf` 各个类型的示例](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf#%E4%BD%BF%E7%94%A8_valueof 'Permalink to 使用 valueOf')。
+> 详细查看 MDN 上 [`valueOf` 各个类型的示例](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf#%E4%BD%BF%E7%94%A8_valueof)。
 
 ## 有无 `mutation`
 

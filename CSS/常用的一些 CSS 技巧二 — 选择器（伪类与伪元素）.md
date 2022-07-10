@@ -582,7 +582,7 @@ li:nth-child(even) {
 
 ## 使用负 `:nth-child` 和 `:nth-last-child` 来选择元素
 
-使用负的  `nth-child`  可以选择 1 至 n 个元素。
+使用负的 `nth-child` 可以选择 1 至 n 个元素。
 
 在以下示例中，前三项将添加下划线。第二到第五项的范围为蓝色。
 

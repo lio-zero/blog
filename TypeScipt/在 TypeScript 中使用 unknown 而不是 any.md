@@ -23,7 +23,7 @@ console.log(c) // undefined
 
 ## 为什么使用 `unknown`？
 
-`unknown` 类型是在 TypeScript 的第 3 版中引入的，作为 `any`  类型的附带类型，当分配给变量时，`unknown` 意味着变量类型未知。
+`unknown` 类型是在 TypeScript 的第 3 版中引入的，作为 `any` 类型的附带类型，当分配给变量时，`unknown` 意味着变量类型未知。
 
 TypeScript 不允许使用 `unknown` 的变量，除非将该变量强制转换为已知类型或收窄其类型。
 

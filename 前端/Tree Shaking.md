@@ -88,9 +88,9 @@ module.exports = {
 
 ## 引入支持 Tree Shaking 的 Package
 
-为了减小生产环境体积，我们可以**使用一些支持 ES 的 package，比如使用  `lodash-es`  替代  `lodash`**。
+为了减小生产环境体积，我们可以**使用一些支持 ES 的 package，比如使用 `lodash-es` 替代 `lodash`**。
 
-我们可以在  [npm.devtool](https://npm.devtool.tech/lodash-es)中查看某个库是否支持 Tree Shaking。
+我们可以在 [npm.devtool](https://npm.devtool.tech/lodash-es)中查看某个库是否支持 Tree Shaking。
 
 查看两者对比：
 

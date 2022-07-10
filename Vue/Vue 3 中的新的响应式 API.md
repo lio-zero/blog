@@ -318,7 +318,7 @@ const user = reactive({
   name: 'O.O'
 })
 
-console.log(toRaw(open)) // RefImpl {_shallow: false, dep: undefined, __v_isRef: true, _rawValue: true, _value: true}
+console.log(toRaw(open)) // RefImpl {_shallow: false, dep: undefined, __v_isRef: true, _rawValue: true, _value: true}
 console.log(toRaw(user)) // {name: 'O.O'}
 ```
 

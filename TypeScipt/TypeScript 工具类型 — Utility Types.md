@@ -45,7 +45,7 @@ const nameAgeMap: Record<string, number> = {
 }
 ```
 
-`Record<string, number>`  相当于  `{ [key: string]: number }`
+`Record<string, number>` 相当于 `{ [key: string]: number }`
 
 ## Omit
 
@@ -65,7 +65,7 @@ const user: Omit<Person, 'age' | 'location'> = {
 
 ## Pick
 
-`Pick`  从对象类型中删除除指定键以外的所有键。与 `Omit` 相反。
+`Pick` 从对象类型中删除除指定键以外的所有键。与 `Omit` 相反。
 
 ```ts
 interface Person {

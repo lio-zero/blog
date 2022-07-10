@@ -25,7 +25,7 @@ let ourTuple: [number, boolean, string]
 ourTuple = [false, 'I.O', 6]
 ```
 
-即使我们有一个  `boolean`、`string` 和 `number，但顺序在元组中很重要，并且会抛出一个错误。
+即使我们有一个 `boolean`、`string` 和 `number，但顺序在元组中很重要，并且会抛出一个错误。
 
 ## 只读元组
 
