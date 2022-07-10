@@ -34,6 +34,7 @@
 - [对于特定于语言的样式，在 lang 属性选择器上使用 lang 伪类](https://github.com/lio-zero/blog/blob/main/HTML/%E5%AF%B9%E4%BA%8E%E7%89%B9%E5%AE%9A%E4%BA%8E%E8%AF%AD%E8%A8%80%E7%9A%84%E6%A0%B7%E5%BC%8F%EF%BC%8C%E5%9C%A8%20lang%20%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8A%E4%BD%BF%E7%94%A8%20lang%20%E4%BC%AA%E7%B1%BB.md)
 - [强制浏览器下载新的 favicon](https://github.com/lio-zero/blog/blob/main/HTML/%E5%BC%BA%E5%88%B6%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8B%E8%BD%BD%E6%96%B0%E7%9A%84%20favicon.md)
 - [指定文档类型](https://github.com/lio-zero/blog/blob/main/HTML/%E6%8C%87%E5%AE%9A%E6%96%87%E6%A1%A3%E7%B1%BB%E5%9E%8B.md)
+-
 - [按时间间隔刷新页面（不使用 JavaScript）](https://github.com/lio-zero/blog/blob/main/HTML/%E6%8C%89%E6%97%B6%E9%97%B4%E9%97%B4%E9%9A%94%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2%EF%BC%88%E4%B8%8D%E4%BD%BF%E7%94%A8%20JavaScript%EF%BC%89.md)
 - [显示日期、时间时使用 datetime 属性](https://github.com/lio-zero/blog/blob/main/HTML/%E6%98%BE%E7%A4%BA%E6%97%A5%E6%9C%9F%E3%80%81%E6%97%B6%E9%97%B4%E6%97%B6%E4%BD%BF%E7%94%A8%20datetime%20%E5%B1%9E%E6%80%A7.md)
 - [正确加载 SVG Favicon](https://github.com/lio-zero/blog/blob/main/HTML/%E6%AD%A3%E7%A1%AE%E5%8A%A0%E8%BD%BD%20SVG%20Favicon.md)
@@ -281,6 +282,7 @@
 - [从 DOM 中移除一个元素](https://github.com/lio-zero/blog/blob/main/DOM/%E4%BB%8E%20DOM%20%E4%B8%AD%E7%A7%BB%E9%99%A4%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0.md)
 - [从 DOM 元素中移除所有子元素](https://github.com/lio-zero/blog/blob/main/DOM/%E4%BB%8E%20DOM%20%E5%85%83%E7%B4%A0%E4%B8%AD%E7%A7%BB%E9%99%A4%E6%89%80%E6%9C%89%E5%AD%90%E5%85%83%E7%B4%A0.md)
 - [从给定文本中去除 HTML](https://github.com/lio-zero/blog/blob/main/DOM/%E4%BB%8E%E7%BB%99%E5%AE%9A%E6%96%87%E6%9C%AC%E4%B8%AD%E5%8E%BB%E9%99%A4%20HTML.md)
+- [从页面中删除所有 CSS](https://github.com/lio-zero/blog/blob/main/DOM/%E4%BB%8E%E9%A1%B5%E9%9D%A2%E4%B8%AD%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%20CSS.md)
 - [使用 JavaScript 从多个元素中添加和删除 CSS 类](https://github.com/lio-zero/blog/blob/main/DOM/%E4%BD%BF%E7%94%A8%20JavaScript%20%E4%BB%8E%E5%A4%9A%E4%B8%AA%E5%85%83%E7%B4%A0%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%92%8C%E5%88%A0%E9%99%A4%20CSS%20%E7%B1%BB.md)
 - [使用 JavaScript 将文本和 HTML 注入元素的四种不同方法](https://github.com/lio-zero/blog/blob/main/DOM/%E4%BD%BF%E7%94%A8%20JavaScript%20%E5%B0%86%E6%96%87%E6%9C%AC%E5%92%8C%20HTML%20%E6%B3%A8%E5%85%A5%E5%85%83%E7%B4%A0%E7%9A%84%E5%9B%9B%E7%A7%8D%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95.md)
 - [使用 JavaScript 检查复选框是否被选中](https://github.com/lio-zero/blog/blob/main/DOM/%E4%BD%BF%E7%94%A8%20JavaScript%20%E6%A3%80%E6%9F%A5%E5%A4%8D%E9%80%89%E6%A1%86%E6%98%AF%E5%90%A6%E8%A2%AB%E9%80%89%E4%B8%AD.md)
@@ -406,6 +408,8 @@
 ## React
 
 - [React Hooks](https://github.com/lio-zero/blog/blob/main/React/React%20Hooks.md)
+- [React Portals](https://github.com/lio-zero/blog/blob/main/React/React%20Portals.md)
+- [React 严格模式](https://github.com/lio-zero/blog/blob/main/React/React%20%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F.md)
 - [React 入门](https://github.com/lio-zero/blog/blob/main/React/React%20%E5%85%A5%E9%97%A8.md)
 - [<> 与 React.Fragment 的区别](https://github.com/lio-zero/blog/blob/main/React/React.Fragment%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 - [使用 React 自动聚焦字段](https://github.com/lio-zero/blog/blob/main/React/%E4%BD%BF%E7%94%A8%20React%20%E8%87%AA%E5%8A%A8%E8%81%9A%E7%84%A6%E5%AD%97%E6%AE%B5.md)
@@ -500,6 +504,7 @@
 
 ## 浏览器
 
+- [Data URL](https://github.com/lio-zero/blog/blob/main/%E6%B5%8F%E8%A7%88%E5%99%A8/Data%20URL.md)
 - [强缓存与协商缓存](https://github.com/lio-zero/blog/blob/main/%E6%B5%8F%E8%A7%88%E5%99%A8/%E5%BC%BA%E7%BC%93%E5%AD%98%E4%B8%8E%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98.md)
 - [浏览器 Hack](https://github.com/lio-zero/blog/blob/main/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%20Hack.md)
 - [浏览器内核](https://github.com/lio-zero/blog/blob/main/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8.md)
@@ -512,9 +517,12 @@
 ## Web API
 
 - [Battery API](https://github.com/lio-zero/blog/blob/main/Web%20API/Battery%20API.md)
+- [File System API](https://github.com/lio-zero/blog/blob/main/Web%20API/File%20System%20API.md)
+- [History API](https://github.com/lio-zero/blog/blob/main/Web%20API/History%20API.md)
 - [Picture in Picture](https://github.com/lio-zero/blog/blob/main/Web%20API/Picture%20in%20Picture.md)
 - [Resize Observer API](https://github.com/lio-zero/blog/blob/main/Web%20API/Resize%20Observer%20API.md)
 - [Screen Capture API](https://github.com/lio-zero/blog/blob/main/Web%20API/Screen%20Capture%20API.md)
+- [Speech Synthesis API](https://github.com/lio-zero/blog/blob/main/Web%20API/Speech%20Synthesis%20API.md)
 - [Web Bluetooth API](https://github.com/lio-zero/blog/blob/main/Web%20API/Web%20Bluetooth%20API.md)
 - [Web Fullscreen API](https://github.com/lio-zero/blog/blob/main/Web%20API/Web%20Fullscreen%20API.md)
 - [Web Geolocation API](https://github.com/lio-zero/blog/blob/main/Web%20API/Web%20Geolocation%20API.md)
@@ -599,6 +607,7 @@
 
 ## WTF
 
+- [Repo 托管服务](https://github.com/lio-zero/blog/blob/main/WTF/Repo%20%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1.md)
 - [什么是 CSRF 攻击？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20CSRF%20%E6%94%BB%E5%87%BB%EF%BC%9F.md)
 - [什么是 CSS？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20CSS%EF%BC%9F.md)
 - [什么是 NPM？](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20NPM%EF%BC%9F.md)
