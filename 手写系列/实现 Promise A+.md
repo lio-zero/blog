@@ -1,8 +1,8 @@
 # 实现 Promise/A+
 
-本文的目标是编写一个与 [`promise`](https://github.com/then/promise/blob/master/src/core.js) 类似的符合 Promises/A+ 的实现。
+本文的目标是编写一个与 [`promise`](https://github.com/then/promise/blob/master/src/core.js) 类似的符合 Promise/A+ 的实现。
 
-以下前半部分译自 [Implementing promises from scratch](https://www.mauriciopoppe.com/notes/computer-science/computation/promises/)，你可以查看原文，它还使用 TDD 方式，编写一些测试用例，帮助你理解。
+以下前半部分译自 [Implementing promises from scratch](https://www.mauriciopoppe.com/notes/computer-science/computation/promises/)，也是本文的重点。你可以查看原文，它还使用 TDD 方式，编写一些测试用例，帮助你理解。下半部分是 Promise 各个方法的实现。
 
 ## Promise 状态
 
@@ -466,7 +466,7 @@ class APromise {
 }
 ```
 
-## 实现 Promise.race
+## 实现 Promise.race()
 
 `Promise.race` 与 `Promise.all` 类似，但只等待第一个 settled 的 promise 并取得其 `result/error`，第一个 settled promise 之后，所有其他的 `result/error` 都会被忽略。
 
@@ -500,7 +500,7 @@ APromise.race([sleep(3000), err(100), sleep(2000)]).catch(console.error) // Erro
 APromise.race([err(50), err(60)]).catch(console.error) // 50
 ```
 
-## 实现 Promise.all
+## 实现 Promise.all()
 
 - 如果传入的可迭代对象内的 promise 全部成功，那么就返回 `resolve` 成功的数组
 - 一旦有一个 promise 执行失败，`Promise.all` 直接返回错误的那个 `reject`。
@@ -544,7 +544,7 @@ APromise.all([sleep(3000), err(100), sleep(2000)]).catch(console.error) // 100
 APromise.all([err(50), err(60)]).catch(console.error) // 50
 ```
 
-## 实现 promise.any
+## 实现 promise.any()
 
 > [`Promise.any()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/any) 接收一个 `Promise` 可迭代对象，只要其中的一个 `promise` 成功，就返回那个已经成功的 `promise`。如果可迭代对象中没有一个 `promise` 成功（即所有的 `promises` 都失败/拒绝），就返回一个失败的 `promise` 和 `AggregateError` 类型的实例。
 
@@ -590,7 +590,7 @@ APromise.any([sleep(3000), err(100), sleep(2000)]).then(console.info) // 2000
 APromise.any([err(50), err(60)]).catch(console.log) // AggregateError
 ```
 
-## 实现 Promise.allSettled
+## 实现 Promise.allSettled()
 
 > [`Promise.allSettled()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled) 方法返回一个在所有给定的 promise 都已经 fulfilled 或 rejected 后的 promise，并带有一个对象数组，每个对象表示对应的 promise 结果。
 
@@ -638,7 +638,7 @@ APromise.allSettled([err(50), err(60)]).then(console.log)
 
 ## 更多资料
 
-以上 Promise A+ [完整示例](https://github.com/lio-zero/web-demos/blob/main/promise/es6-promise.js)。
+以上 Promise/A+ [完整示例](https://github.com/lio-zero/web-demos/blob/main/promise/es6-promise.js)。
 
 - [JavaScript Promise 迷你书（中文版）](http://liubin.org/promises-book/)
 - [Promises/A+](https://promisesaplus.com/)
