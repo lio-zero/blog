@@ -1,6 +1,6 @@
 # 实现 Promise/A+
 
-本文的目标是编写一个与 [`promise`](https://github.com/then/promise/blob/master/src/core.js) 类似的符合 Promise/A+ 的实现。
+本文的目标是编写一个与 [`then/promise`](https://github.com/then/promise/blob/master/src/core.js) 类似的符合 Promise/A+ 的实现。
 
 以下前半部分译自 [Implementing promises from scratch](https://www.mauriciopoppe.com/notes/computer-science/computation/promises/)，也是本文的重点。你可以查看原文，它还使用 TDD 方式，编写一些测试用例，帮助你理解。下半部分是 Promise 各个方法的实现。
 
@@ -67,7 +67,7 @@ function doResolve(promise, executor) {
 - 当 promise 处于 `FULFILLED` 状态时，`onFulfilled` 函数将被调用，并带有 promise 履行的 `value`，例如 `onFulfilled(value)`
 - 当 promise 处于 `REJECTED` 状态时，`onRejected` 函数将被调用，并带有 promise 被拒绝的 `reason`，例如 `onRejected(reason)`
 
-我们将这些函数称为 promise `handlers`。
+我们将这些函数称为 promise `handlers`（译为**处理程序**，以下关于 handler 将不翻译）。
 
 让我们将 `then` 函数添加到类原型中，注意它会根据 Promise 的状态调用 `onFulfilled` 或 `onRejected` 函数。
 
@@ -129,15 +129,15 @@ function doResolve(promise, executor) {
 
 ## 异步 executor
 
-如果解析器的 `fulfill/reject` 是异步执行，则我们的 `.then` 方法将失败，因为它的处理程序将立即执行。
+如果解析器的 `fulfill/reject` 是异步执行，则我们的 `.then` 方法将失败，因为它的 handlers 将立即执行。
 
-让我们向 Promise 添加一个队列，它的目的是存储一旦 Promise 状态从 `PENDING` 更改为其他状态时将调用的处理程序，同时我们的 `.then` 方法应该检查 Promise 状态，以决定是立即调用处理程序还是存储处理程序，让我们将此逻辑移动到新的辅助函数 `handle`。
+让我们向 Promise 添加一个队列，它的目的是存储一旦 Promise 状态从 `PENDING` 更改为其他状态时将调用的 handlers，同时我们的 `.then` 方法应该检查 Promise 状态，以决定是立即调用 handler 还是存储 handler，让我们将此逻辑移动到新的辅助函数 `handle`。
 
 ```js
 class APromise {
   constructor(executor) {
     this.state = PENDING
-    // 存在 .then 处理程序队列
+    // 存储 .then handler 队列
     this.queue = []
     doResolve(this, executor)
   }
@@ -149,7 +149,7 @@ class APromise {
 
 // 检查 promise 的状态：
 // - 如果 promise 为 PENDING，将其推入 queue 以供以后使用
-// - 如果 promise 还不是 PENDING，则调用处理程序
+// - 如果 promise 还不是 PENDING，则调用 handler
 function handle(promise, handler) {
   if (promise.state === PENDING) {
     // 如果为 PENDING，推入 queue
@@ -167,7 +167,7 @@ function handleResolved(promise, handler) {
 }
 ```
 
-此外，应该更新 `fulfill` 和 `reject` 方法，以便在调用时调用 Promise 中存储的所有处理程序，这将在更新状态和值后调用的新函数 `finale` 中实现。
+此外，应该更新 `fulfill` 和 `reject` 方法，以便在调用时调用 Promise 中存储的所有 handlers，这将在更新状态和值后调用的新函数 `finale` 中实现。
 
 ```js
 function fulfill(promise, value)
@@ -180,7 +180,7 @@ function reject(promise, reason) {
   finale(promise)
 }
 
-// 调用 promise 中存储的所有处理程序
+// 调用 promise 中存储的所有 handlers
 function finale(promise) {
   const length = promise.queue.length
   for (let i = 0; i < length; i += 1) {
@@ -193,7 +193,7 @@ function finale(promise) {
 
 我们的 `.then` 方法应该返回一个新的 Promise。
 
-实现也很简单，但是我们将看到新的 Promise 以不同于使用 `executor` 的方式转换到不同的状态，新的 Promise 使用处理程序进行转换，如下所示：
+实现也很简单，但是我们将看到新的 Promise 以不同于使用 `executor` 的方式转换到不同的状态，新的 Promise 使用 handlers 进行转换，如下所示：
 
 - 如果 `onFulfilled` 或 `onRejected` 函数被调用
   - 如果执行时没有错误，Promise 将转换为 `FULFILLED` 状态，返回值作为 `value`
@@ -213,7 +213,7 @@ class APromise {
 }
 ```
 
-对于实现，我们首先必须将新的 Promise 也存储在处理程序队列中，这样，如果观察到的 Promise 被解析，那么队列中的元素就知道需要解析哪个 Promise。
+对于实现，我们首先必须将新的 Promise 也存储在 handler 队列中，这样，如果观察到的 Promise 被解析，那么队列中的元素就知道需要解析哪个 Promise。
 
 ```js
 class APromise {
@@ -229,7 +229,7 @@ class APromise {
 function handleResolved(promise, handler) {
   const cb =
     promise.state === FULFILLED ? handler.onFulfilled : handler.onRejected
-  // 根据规则执行处理程序和转换
+  // 执行 handler 并根据规则进行转换
   try {
     const value = cb(promise.value)
     fulfill(handler.promise, value)
@@ -239,9 +239,9 @@ function handleResolved(promise, handler) {
 }
 ```
 
-## 异步处理程序
+## 异步 handlers
 
-接下来，让我们考虑处理程序返回 Promise 的情况，在这种情况下，作为处理程序一部分的 Promise（不是返回的 Promise）应该采用返回的 Promise 的状态 `value` 或 `reason`。
+接下来，让我们考虑 handler 返回 Promise 的情况，在这种情况下，作为 handler 一部分的 Promise（不是返回的 Promise）应该采用返回 Promise 的状态履行值或拒绝原因。
 
 让我们设想以下场景：
 
@@ -259,13 +259,13 @@ const rOnFulfilled = value => (
 const r = q.then(rOnFulfilled)
 ```
 
-在我们当前的实现中，元组 `{ q，qOnFulfilled }` 存储在 `p` 的处理程序中，并且我们确信在将元组 `{ r, rOnFulfilled }` 存储在 `q` 之前调用了 `qOnFulfilled`，我们可以利用这一事实，并检测处理程序何时将 Promise 返回给返回的 Promise 中存储观察器，而不是在 `qOnFulfilled` 返回的 Promise 上存储 `{r，onFulfilled}`。
+在我们当前的实现中，元组 `{ q, qOnFulfilled }` 存储在 `p` 的 handlers 中，并且我们确信在 `q` 存储元组 `{ r, rOnFulfilled }` 之前，`qOnFulfilled` 被调用，我们可以利用这一事实，并检测 handler 何时返回一个 Promise，在返回的 Promise 中存储观察者，例如在 `qOnFulfilled` 返回的 Promise 上存储 `{ r, onFulfilled }`。
 
 请注意，我们使用的是 `while`，因为嵌套的 Promise 本身可能有另一个 Promise 作为解析值。
 
 ```js
 function handle(promise, handler) {
-  // 接受最深处的 promise
+  // 取最深处的 promise 的状态
   while (promise.value instanceof APromise) {
     promise = promise.value
   }
@@ -276,9 +276,9 @@ function handle(promise, handler) {
 
 ## 其他情况
 
-### 无效的处理程序
+### 无效的 handlers
 
-如果应该是函数的处理程序不是函数，我们的实现将失败
+如果原本应该是函数的 handler 不是函数，那么我们的实现就会失败：
 
 ```js
 const p = new APromise((fulfill) => fulfill('p'))
@@ -292,7 +292,7 @@ const q = p.then(qOnFulfilled)
 function handleResolved(promise, handler) {
   const cb =
     promise.state === FULFILLED ? handler.onFulfilled : handler.onRejected
-  // 如果处理程序不是函数，则立即解析
+  // 如果 handler 不是函数，则立即解析
   if (typeof cb !== 'function') {
     if (promise.state === FULFILLED) {
       fulfill(handler.promise, promise.value)
@@ -305,9 +305,9 @@ function handleResolved(promise, handler) {
 }
 ```
 
-### 在事件循环之后执行处理程序
+### 在事件循环之后执行 handlers
 
-处理程序是用一个新的堆栈调用的，此外，即使 `executor/handlers` 是同步的，也可以确保将来调用观察者，从而使 Promise 解决方案保持一致。
+要求 [2.2.4](https://promisesaplus.com/#point-34)，正如 [3.1](https://promisesaplus.com/#point-67) 中指出的，handlers 被一个新的堆栈调用，此外，即使 `executor/handlers` 是同步的，也可以确保将来调用观察者，从而使 Promise 解析保持一致。
 
 我们可以使用任何允许我们在事件循环之后调用函数的函数，这包括 `setTimeout`、`setImmediate` 和 `requestAnimationFrame`
 
@@ -321,7 +321,7 @@ function handleResolved(promise, handler) {
 
 ### 以已解决的 Promise 为理由拒绝
 
-只有当 promise 不处于 `REJECTED` 状态时才采用嵌套 promise 的状态。
+要求 [2.2.7.2](https://promisesaplus.com/#point-42)，只有当 promise 不处于 `REJECTED` 状态时才采用嵌套 promise 的状态。
 
 ```js
 function handle(promise, handler) {
@@ -333,7 +333,7 @@ function handle(promise, handler) {
 
 ### Promise 本身无法解决
 
-在 `fulfill` 方法上，让我们检查履行值是否等于 Promise 本身，如果是这样，则抛出一个 `TypeError`：
+要求 [2.3.1](https://promisesaplus.com/#point-48)，在 `fulfill` 方法上，让我们检查履行值是否等于 Promise 本身，如果是这样，则抛出一个 `TypeError`：
 
 ```js
 function fulfill(promise, value) {
@@ -350,7 +350,7 @@ function fulfill(promise, value) {
 
 ### Thenable
 
-处理程序的返回值可能是一个 thenable，一个具有 `then` 属性的对象/函数，它是一个可访问的函数，`then` 函数就像一个 `executor`，它接收一个应用于转换 thenable 状态的 `fulfill` 和 `reject` 回调。
+[2.3.3.3](https://promisesaplus.com/#point-56) 相关要求，handler 的返回值可能是一个 `thenable`，一个 object/function，它具有一个可访问的 `then` 属性，这是一个函数，`then` 函数就像一个 executor，它接收一个 `fulfill` 和 `reject` 回调，应该用来转换 thenable 的状态。
 
 让我们修改 `fulfill` 方法并添加对 thenable 的检查，注意访问属性并不总是安全的操作（例如，属性可能使用 [`getter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)），这就是为什么我们应该将它包装在 `try/catch` 中。
 
@@ -647,5 +647,6 @@ APromise.allSettled([err(50), err(60)]).then(console.log)
 - [通过从头开始构建 Promise 来学习 JavaScript Promise](https://levelup.gitconnected.com/understand-javascript-promises-by-building-a-promise-from-scratch-84c0fd855720)
 - [implementing](https://www.promisejs.org/implementing/)
 - [Optimization killers](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers)
-- [Promise 实现原理](https://segmentfault.com/a/1190000013396601)
 - [es6-promise](https://github.com/stefanpenner/es6-promise)
+- [性能提升优化技巧](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers)
+- [关于异步堆栈跟踪](https://github.com/kriskowal/q#long-stack-traces)
