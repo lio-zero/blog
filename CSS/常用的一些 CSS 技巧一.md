@@ -687,3 +687,19 @@ hr {
   border: none;
 }
 ```
+
+## 从图像中剔除白色背景
+
+使用 `mix-blend-mode: multiply;`，从图像中剔除白色背景：
+
+```css
+img {
+  mix-blend-mode: multiply;
+}
+```
+
+效果如下：
+
+![未使用 mix-blend-mode: multiply;](https://upload-images.jianshu.io/upload_images/18281896-a8898fe60dc62715.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![使用 mix-blend-mode: multiply;](https://upload-images.jianshu.io/upload_images/18281896-6df40560bc4a494a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

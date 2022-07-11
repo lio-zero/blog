@@ -171,6 +171,41 @@ css 如下
 
 更多方法：[CSS 巧妙实现分隔线的几种方法](https://www.400zi.com/4258.html)
 
+## 为破损的图片定义样式
+
+只需要一点 CSS 就可以美化破损的图片：
+
+```css
+img {
+  display: block;
+  font-family: sans-serif;
+  font-weight: 300;
+  height: auto;
+  line-height: 2;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+```
+
+以添加伪元素的法则来显示用户信息和 URL 的引用：
+
+```css
+img::before {
+  content: '很抱歉，下面的图像已损坏 :(';
+  display: block;
+  margin-bottom: 10px;
+}
+
+img::after {
+  content: '(url: ' attr(src) ')';
+  display: block;
+  font-size: 12px;
+}
+```
+
+了解更多关于这类样式的技巧，可以查阅 [Styling Broken Images](http://bitsofco.de/styling-broken-images/)。
+
 ## CSS `:empty`
 
 通常，我们希望为包含内容的元素设置样式。当元素完全没有子元素或文本时，该怎么办？您可以使用 `:empty` 选择器：
@@ -741,7 +776,7 @@ ol {
 
 然而，它只对指数小于 10 的项目有效。这意味着，如果我们的列表中有 100 多个项目，那么它们的前缀如下：
 
-```
+```txt
 01. Item 02. Item ... 09. Item 10. Item ... 99. Item 100. Item ...
 ```
 
