@@ -48,7 +48,7 @@
 </script>
 ```
 
-然后，我们有一个 `TodoList.vue ` 组件，其中包含 `TodoInfo` 组件。
+然后，我们有一个 `TodoList.vue` 组件，其中包含 `TodoInfo` 组件。
 
 如果我们要在等待组件获取数据并解析时显示 `Loading...` 之类的内容，只需要三步：
 

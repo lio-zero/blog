@@ -47,7 +47,7 @@ for (let k of Object.keys(person)) {
 // age: 42
 ```
 
-- `for ... of ` 支持迭代 Unicode 字符串。
+- `for...of` 支持迭代 Unicode 字符串。
 
 ```js
 const msg = 'Hell😀 W😀rld'

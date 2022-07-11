@@ -73,7 +73,7 @@ reg.multiline // true
 ;/abc/gim.source // "abc"
 ```
 
-`unicode ` 只读属性。属性表明正则表达式带有 `u` 修饰符。
+`unicode` 只读属性。属性表明正则表达式带有 `u` 修饰符。
 
 ```js
 ;/\u{61}/u.unicode // true
