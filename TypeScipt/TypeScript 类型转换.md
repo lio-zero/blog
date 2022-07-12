@@ -44,5 +44,5 @@ let x: unknown = 'hello'(<string>x).length
 要覆盖 TypeScript 在强制转换时可能引发的类型错误，请先强制转换为 `unknown`，然后再转换为目标类型。
 
 ```ts
-let n: unknown = 4(n as unknown as string).length // x 实际上不是一个数字，所以它将返回未定义的值
+let n: unknown = 4(n as unknown as string).length // n 实际上不是一个数字，所以它将返回 undefined
 ```

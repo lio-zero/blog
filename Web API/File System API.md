@@ -96,6 +96,8 @@ async function imageUpload() {
 
 [查看效果](https://codepen.io/lio-zero/pen/GRxpYoW) — 在 CodePen 上代码内嵌在 `iframe` 内，导致无法访问执行成功，将其复制到本地进行测试。
 
+由于 File System Access API 兼容性不佳，如果您想在项目中使用，建议使用 [browser-fs-access](https://github.com/GoogleChromeLabs/browser-fs-access) 库，其提供了简洁的 API 和优雅降级方案。
+
 ## 进一步阅读
 
 [The File System Access API: simplifying access to local files](https://web.dev/file-system-access/)

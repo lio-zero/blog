@@ -12,8 +12,8 @@ Promise 可以从 `PENDING` 状态转换为带 `value` 值的 `FULFILLED` 状态
 
 为了进行状态转换，promise 构造函数接收到一个名为 `executor` 的函数，`executor` 会立即被调用，调用时使用两个函数 `fulfill` 和 `reject` 来执行状态转换：
 
-- `fulfill(value)` — 从 `PENDING` 转态转化到 `FULFILLED` 带有 `value`，`value` 现在是 promise 的一个属性。
-- `reject(reason)` — 从 `PENDING` 转态转化到 `REJECTED` 带有 `reason`，`reason` 现在是 promise 的一个属性。
+- `fulfill(value)` — 从 `PENDING` 状态转化到 `FULFILLED` 带有 `value`，`value` 现在是 promise 的一个属性。
+- `reject(reason)` — 从 `PENDING` 状态转化到 `REJECTED` 带有 `reason`，`reason` 现在是 promise 的一个属性。
 
 最初的实现很简单：
 
