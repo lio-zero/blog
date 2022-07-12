@@ -12,8 +12,8 @@ Promise 可以从 `PENDING` 状态转换为带 `value` 值的 `FULFILLED` 状态
 
 为了进行状态转换，promise 构造函数接收到一个名为 `executor` 的函数，`executor` 会立即被调用，调用时使用两个函数 `fulfill` 和 `reject` 来执行状态转换：
 
-- `fulfill(value)` — 通过 `value` 从 `PENDING` 到 `FULFILLED`，`value` 现在是 promise 的属性。
-- `reject(reason)` — 通过 `reason` 从`PENDING` 到 `REJECTED`，`reason` 现在是 promise 的属性。
+- `fulfill(value)` — 从 `PENDING` 转态转化到 `FULFILLED` 带有 `value`，`value` 现在是 promise 的一个属性。
+- `reject(reason)` — 从 `PENDING` 转态转化到 `REJECTED` 带有 `reason`，`reason` 现在是 promise 的一个属性。
 
 最初的实现很简单：
 
@@ -27,7 +27,7 @@ class APromise {
   constructor(executor) {
     // 初始化状态
     this.state = PENDING
-    // 成功的 value 或拒绝的 reason 在内部映射为 value，最初 promise 没有值
+    // 成功的 value 或拒绝的 reason 在内部映射为 value，最初 promise 没有 value
 
     // 调用立即执行程序
     doResolve(this, executor)
@@ -350,7 +350,7 @@ function fulfill(promise, value) {
 
 ### Thenable
 
-[2.3.3.3](https://promisesaplus.com/#point-56) 相关要求，handler 的返回值可能是一个 `thenable`，一个 object/function，它具有一个可访问的 `then` 属性，这是一个函数，`then` 函数就像一个 executor，它接收一个 `fulfill` 和 `reject` 回调，应该用来转换 thenable 的状态。
+根据 [2.3.3.3](https://promisesaplus.com/#point-56) 相关要求，handler 的返回值可能是一个 `thenable`，一个 object/function，它具有一个可访问的 `then` 属性，这是一个函数，`then` 函数就像一个 executor，它接收一个 `fulfill` 和 `reject` 回调，应该用来转换 thenable 的状态。
 
 让我们修改 `fulfill` 方法并添加对 thenable 的检查，注意访问属性并不总是安全的操作（例如，属性可能使用 [`getter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)），这就是为什么我们应该将它包装在 `try/catch` 中。
 
@@ -393,7 +393,9 @@ function fulfill(promise, value) {
 }
 ```
 
-## 实现 Promise.catch()
+## 实现 Promise.prototype.catch()
+
+[`Promise.prototype.catch`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch) 用于处理拒绝的情况，是特殊的 `.then` 方法，调用 `catch` 之后，可以继续使用 `.then`。
 
 ```js
 class APromise {
@@ -404,7 +406,7 @@ class APromise {
 }
 ```
 
-## 实现 Promise.finally()
+## 实现 Promise.prototype.finally()
 
 > [`Promise.prototype.finally()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally) 返回一个 `Promise`。在 promise 结束时，无论结果是 fulfilled 或者是 rejected，都会执行指定的回调函数。这为在 Promise 是否成功完成后都需要执行的代码提供了一种方式。
 
@@ -468,18 +470,20 @@ class APromise {
 
 ## 实现 Promise.race()
 
-`Promise.race` 与 `Promise.all` 类似，但只等待第一个 settled 的 promise 并取得其 `result/error`，第一个 settled promise 之后，所有其他的 `result/error` 都会被忽略。
+`Promise.race` 与 `Promise.all` 类似，但只等待第一个 settled 的 promise 并取得其 `value/reason`，第一个 settled promise 之后，所有其他的 `value/reason` 都会被忽略。
+
+如果传的参数数组是空，则返回的 promise 将永远等待。
 
 ```js
 class APromise {
   // ...
-  static race(arr) {
+  static race(promises) {
     const _Promise = this
-    if (!Array.isArray(arr)) {
+    if (!Array.isArray(promises)) {
       return _Promise.reject(new TypeError('race() only accepts an array'))
     }
     return new _Promise((resolve, reject) => {
-      arr.forEach((p) => {
+      promises.forEach((p) => {
         _Promise.resolve(p).then(resolve, reject)
       })
     })
@@ -502,8 +506,9 @@ APromise.race([err(50), err(60)]).catch(console.error) // 50
 
 ## 实现 Promise.all()
 
+- 如果传入的可迭代对象为空，那么此 promise 对象回调完成，直接 `resolve`
 - 如果传入的可迭代对象内的 promise 全部成功，那么就返回 `resolve` 成功的数组
-- 一旦有一个 promise 执行失败，`Promise.all` 直接返回错误的那个 `reject`。
+- 一旦有一个 promise 执行失败，`Promise.all` 直接返回错误的那个 `reject`
 
 ```js
 class APromise {
@@ -650,3 +655,5 @@ APromise.allSettled([err(50), err(60)]).then(console.log)
 - [es6-promise](https://github.com/stefanpenner/es6-promise)
 - [性能提升优化技巧](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers)
 - [关于异步堆栈跟踪](https://github.com/kriskowal/q#long-stack-traces)
+
+<!-- https://zhuanlan.zhihu.com/p/183801144 -->
