@@ -2,7 +2,7 @@
 
 你可以使用 `. eslint.*` 文件或 `package.json` 文件中的 `eslintConfig` 选项来[配置 ESLint](https://eslint.org/docs/user-guide/configuring)。你的 `.eslint.*` 文件可以是 `.eslintrc.json`、`.eslintrc.js` 或 `.eslintrc.yml`。
 
-> 配置文件优先级：.eslintrc.js > .eslintrc.yaml > .eslintrc.yml > .eslintrc.json > .eslintrc > package.json。详细内容可以查看[如何在 Node.js 应用程序中使用 ESLint](https://www.jianshu.com/p/64283842f473)。
+> 配置文件优先级：.eslintrc.js > .eslintrc.yaml > .eslintrc.yml > .eslintrc.json > .eslintrc > package.json。详细内容可以查看[如何在 Node.js 应用程序中使用 ESLint](https://github.com/lio-zero/blog/blob/main/Node/%E5%A6%82%E4%BD%95%E5%9C%A8%20Node.js%20%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E4%BD%BF%E7%94%A8%20ESLint.md)
 
 下面是一个简单的 `.eslintrc.json` 文件，它启用了 [`no-unused-vars` ESLint 规则](https://eslint.org/docs/rules/no-unused-vars):
 
@@ -123,7 +123,7 @@ $ echo $?
 
 ## `parser` 选项
 
-`parserOptions` 配置选项告诉 ESLint 你的目标是什么版本的 JavaScript 。例如，当您设置 `parserOptions.ecmaVersion` 为 `2017` 时，下面的 JavaScript 是有效的：
+`parserOptions` 配置选项告诉 ESLint 你的目标是什么版本的 JavaScript。例如，当您设置 `parserOptions.ecmaVersion` 为 `2017` 时，下面的 JavaScript 是有效的：
 
 ```js
 ;(async function () {

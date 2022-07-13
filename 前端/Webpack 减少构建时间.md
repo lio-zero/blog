@@ -86,7 +86,7 @@ resolve: {
 
 - 使用数量更少/体积更小的 library（例如：`moment -> day.js`、`lodash -> lodash/es`）。
 - 在多页面应用程序中使用 [SplitChunksPlugin](https://webpack.docschina.org/plugins/split-chunks-plugin#root)，并开启 `async` 模式。
-- 移除未引用代码 — 涉及到了 [Tree Shaking](https://www.jianshu.com/p/3ea493b98183)。
+- 移除未引用代码 — 涉及到了 [Tree Shaking](https://github.com/lio-zero/blog/blob/main/%E5%89%8D%E7%AB%AF/Tree%20Shaking.md)。
 - 只编译你当前正在开发的那些代码（缓存）。
 
 ## 最小化 entry chunk
