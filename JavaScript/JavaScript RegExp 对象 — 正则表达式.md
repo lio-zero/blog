@@ -406,3 +406,4 @@ reg1.test('1+1') // true
 - [CyrilEx Regex Tester](https://extendsclass.com/regex-tester.html)
 - [一份 PDF 备忘单（英文）](https://appletree.or.kr/quick_reference_cards/Regular_Expressions/regex-cheatsheet.pdf)
 - [The Complete Guide to Regular Expressions (Regex)](https://dev.to/coderpad/the-complete-guide-to-regular-expressions-regex-1m6)
+- [iHateRegex](https://ihateregex.io/)

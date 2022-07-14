@@ -6,7 +6,7 @@
 arr.map(func)
 ```
 
-- `arr` 是调用映射的数组。
+- `arr` 是调用 `map` 的数组。
 - `func` 是需要在数组的每个元素上运行的函数。
 
 `map` 方法的基本功能很简单：
@@ -18,8 +18,7 @@ arr.map(func)
 ```js
 function newMap(func) {
   let destArr = []
-  const srcArrLen = this.length
-  for (let i = 0; i < srcArrLen; i++) {
+  for (let i = 0; i < this.length; i++) {
     destArr.push(func.call(this, this[i]))
   }
 
@@ -55,5 +54,5 @@ Object.defineProperty(Array.prototype, 'newMap', {
 ```js
 const arr = [1, 2, 3]
 const newArr = arr.newMap((item) => item + 1)
-console.log(newArr)
+console.log(newArr) // [2, 3, 4]
 ```

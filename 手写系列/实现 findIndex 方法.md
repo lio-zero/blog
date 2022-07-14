@@ -113,6 +113,3 @@ if (!Array.prototype.findIndex) {
   })
 }
 ```
-
-<!-- https://github.com/sisterAn/JavaScript-Algorithms/issues/137 -->
-<!-- https://github.com/sisterAn/JavaScript-Algorithms/issues/84 -->
