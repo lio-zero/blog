@@ -113,3 +113,5 @@ if (!Array.prototype.findIndex) {
   })
 }
 ```
+
+另外，`find` 方法的实现与 `findIndex` 类似，只不过是将返回的索引替换为当前值，如果没有返回 `undefined`。
