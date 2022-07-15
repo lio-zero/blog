@@ -494,6 +494,36 @@ textarea:focus {
 
 ![发光的输入框](https://upload-images.jianshu.io/upload_images/18281896-d1e390d36742ffe8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+## 使用 fieldset 禁用表单
+
+通过将控件或任何内容包裹在 `<fieldset>` 中并应用 `disabled` 属性来禁用整个表单或输入组
+
+```html
+<style>
+  [disabled] {
+    display: none;
+  }
+</style>
+
+<form name="form">
+  <label for="has-language">
+    <input
+      type="checkbox"
+      id="has-language"
+      name="has-language"
+      onChange="document.forms.form.language.disabled = !this.checked"
+    />
+    Select language
+  </label>
+  <fieldset name="language" disabled>
+    <legend>Language:</legend>
+    <input type="text" name="HTML" placeholder="HTML" />
+    <input type="text" name="CSS" placeholder="CSS" />
+    <input type="text" name="JS" placeholder="JS" />
+  </fieldset>
+</form>
+```
+
 ## 非表单 fieldset 外观
 
 ```html
@@ -511,12 +541,13 @@ CSS 如下：
   border: 1px solid #ddd;
   padding: 10px;
 }
+
 .fieldset h1 {
   position: absolute;
   top: 0;
   font-size: 18px;
   line-height: 1;
-  margin: -9px 0 0; /* half of font-size */
+  margin: -9px 0 0;
   background: #fff;
   padding: 0 3px;
 }
@@ -524,7 +555,7 @@ CSS 如下：
 
 效果如下：
 
-![fieldset ](https://upload-images.jianshu.io/upload_images/18281896-b6f7ecd73b6b096d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![fieldset](https://upload-images.jianshu.io/upload_images/18281896-b6f7ecd73b6b096d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 将 WebKit 的文件上传输入按钮强制向右移动
 

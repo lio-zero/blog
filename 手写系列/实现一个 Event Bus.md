@@ -2,7 +2,7 @@
 
 截取 [EventBus](https://github.com/greenrobot/EventBus) 的定义：
 
-> EventBus 能够简化各组件间的通信，让我们的代码书写变得简单，能有效的分离事件发送方和接收方，能够避免复杂且容易出错的依赖关系和生命周期问题。
+> EventBus 能够简化各组件间的通信，能有效的分离事件发送方和接收方，能够避免复杂且容易出错的依赖关系和生命周期问题。
 
 简单的讲，组件间的通信，是一个触发与监听的过程。
 
@@ -101,3 +101,7 @@ function mitt(all) {
 ```
 
 我们所实现的 Event Bus 对同一事件的监听进行过滤，而 mitt 将多次监听进行收集。
+
+## 更多资料
+
+[Node 的 EventEmitter 源码](https://github.com/nodejs/node/blob/main/lib/events.js)

@@ -179,7 +179,7 @@ HTML `reversed` 属性可以帮助我们创建一个降序的编号列表。此�
 </ol>
 ```
 
-## data-* 和 dataset
+## data-\* 和 dataset
 
 `data-*` 自定义数据属性，它赋予我们在所有 HTML 元素上嵌入自定义数据属性的能力。
 

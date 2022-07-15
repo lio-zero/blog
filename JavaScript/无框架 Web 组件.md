@@ -33,3 +33,5 @@ Web 组件允许您添加自己的 HTML 自定义元素。元素名称必须包�
 - 推荐阮一峰老师的 [Web 组件入门实例教程](http://www.ruanyifeng.com/blog/2019/08/web_components.html)，通过一个示例帮助您如何使用 Web Component API 开发组件。
 - 关于 Web 组件的讨论，可以查阅 [WEBCOMPONENTS](https://www.webcomponents.org/)，其中提供了很多 Web 组件及相关 Web 规范的讨论。
 - [Web components](https://zh.javascript.info/web-components)
+- [The broken promise of Web Components](https://dmitriid.com/blog/2017/03/the-broken-promise-of-web-components/)
+- [Regarding the broken promise of Web Components](https://robdodson.me/posts/regarding-the-broken-promise-of-web-components/)
