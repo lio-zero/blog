@@ -23,8 +23,10 @@ canvas {
 默认情况下，`canvas` 元素是宽 300 像素和高 150 像素，如果您需要更改 `canvas` 的大小，可以使用 `width` 和 `height` 属性：
 
 ```html
-<canvas width="550px" height="350px"></canvas>
+<canvas width="550" height="350"></canvas>
 ```
+
+> 推荐：[style="width: ___" 与 width="___"](https://github.com/lio-zero/blog/blob/main/CSS/style%3D'width__'%20%E4%B8%8E%20width%3D'__'.md)
 
 ## 绘制线条
 
@@ -33,7 +35,7 @@ canvas {
 首先，我们为 `canvas` 添加一个 `id`，方便我们使用 JS 去操作它：
 
 ```html
-<canvas id="myCanvas" width="550px" height="350px"></canvas>
+<canvas id="myCanvas" width="550" height="350"></canvas>
 ```
 
 访问 `canvas` 元素：

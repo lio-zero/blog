@@ -1,6 +1,5 @@
 # style="width: ___" 与 width="___"
 
-
 有两种方法可以定义图片的尺寸：
 
 - 使用 `height` 或 `width` 属性：
@@ -33,7 +32,7 @@ CSS `width` 和 `height` 属性可用于所有 HTML 元素。但 HTML `width` �
 
 `width` 属性默认为 300，`height` 属性默认为 150。
 
-建议直接或通过 JavaScript 设置 `canvas` 的 `height` 和 `width` 属性，以避免 `canvas` 拉伸的问题。
+建议直接在 `canvas` 标签上添加这两个属性，或通过 JavaScript 设置 `canvas` 的 `height` 和 `width` 属性，以避免 `canvas` 拉伸的问题。
 
 ```html
 <!-- 工作 -->
@@ -43,7 +42,7 @@ CSS `width` 和 `height` 属性可用于所有 HTML 元素。但 HTML `width` �
 </canvas>
 ```
 
-`canvas` 的 `width` 和 `height` 属性必须是不带单位的正数。`width="100px"` 将不起作用，尽管它似乎是其他元素的有效属性声明。
+`canvas` 的 `width` 和 `height` 属性必须是不带单位的正数。尽管您带了 `px`（或其他单位）或存在小数，它都是可以的，浏览器解析器会对 `px` 正常解析，其他单位忽略，小数部分进行取整。
 
 CSS 样式属性的优先级高于 HTML 属性。
 
