@@ -7,7 +7,7 @@
 语法：
 
 ```css
-will-change: <animateable-feature> = scroll-position | contents | <custom-ident>
+will-change: <animateable-feature> = scroll-position | contents | <custom-ident>;
 ```
 
 `will-change` 属性的取值：
@@ -27,8 +27,10 @@ will-change: <animateable-feature> = scroll-position | contents | <custom-ident>
 
 ## 更多资源
 
+- [will-change](https://css-tricks.com/almanac/properties/w/will-change/)
 - [Fix scrolling performance with CSS will-change property](https://www.fourkitchens.com/blog/article/fix-scrolling-performance-css-will-change-property/)
 - [My white whale: A use case for will-change](https://www.nicchan.me/blog/a-use-case-for-will-change/)
 - [Everything You Need to Know About the CSS will-change Property](https://dev.opera.com/articles/css-will-change-property/)
 - [An Introduction to the CSS will-change Property](https://www.sitepoint.com/introduction-css-will-change-property/)
 - [使用 CSS3 will-change 提高页面滚动、动画等渲染性能](https://www.zhangxinxu.com/wordpress/2015/11/css3-will-change-improve-paint/)
+- [How to create high-performance CSS animations](https://web.dev/animations-guide/)

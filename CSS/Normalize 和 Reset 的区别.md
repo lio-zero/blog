@@ -55,9 +55,13 @@ sup {
 - [TailwindCSS](https://unpkg.com/tailwindcss@1.1.4/dist/base.css)
 - etc
 
-## 更多资源
+## 更多资料
 
-- [water.css](https://github.com/kognise/water.css) 为常用标签添加了更多视觉样式
+- [sanitize.css](https://github.com/csstools/sanitize.css) 是一个 CSS 库，它提供一致的、跨浏览器的 HTML 元素默认样式以及有用的默认样式
+- [My Custom CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/) — Josh Comeau 的 CSS 重置
+- [A Modern CSS Reset](https://piccalil.li/blog/a-modern-css-reset/) — Andy Bell 的 CSS 重置
+- [cssremedy](https://github.com/jensimmons/cssremedy/) — Jen Simmons 的 CSS Remedy
+- [Open Props](https://open-props.style/) — Adam Argyle 的 Open Props，包含一个自定义 normalize.css
 - [minireset](https://github.com/jgthms/minireset.css) 是另一个小型的现代 CSS 重置
 - [Browser Default Styles](https://browserdefaultstyles.com/) 允许我们获取特定元素的各种渲染引擎的默认样式
 - [CSS Reset 与 Sprites](https://github.com/lio-zero/blog/blob/master/CSS/CSS%20Reset%20%E4%B8%8E%20Sprites.md)

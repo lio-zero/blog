@@ -734,3 +734,8 @@ img {
 ![未使用 mix-blend-mode: multiply;](https://upload-images.jianshu.io/upload_images/18281896-a8898fe60dc62715.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ![使用 mix-blend-mode: multiply;](https://upload-images.jianshu.io/upload_images/18281896-6df40560bc4a494a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+## text-size-adjust
+
+<!-- https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ -->
+<!-- https://css-tricks.com/your-css-reset-needs-text-size-adjust-probably/ -->

@@ -1847,29 +1847,31 @@ fullscreen(false) // 退出全屏模式
 
 - ARIA `role` 没有为大多数元素的默认语义添加任何内容
 - 在某些情况下，HTML 元素的语义可以通过 ARIA `role`，状态或属性来表达。常被称为元素的“[默认隐式 ARIA 语义](https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics)”
-- ARIA 允许开发人员以有意义的方式重新发明和扩展本机 HTML 特性。但它的特性与内置技术相比是脆弱的。
+- ARIA 允许开发人员以有意义的方式重新发明和扩展原生 HTML 特性。但它的特性与内置技术相比是脆弱的。
 
 一些冗余 ARIA 的示例：
 
 ```html
-<button role="button">按我</button>
-<a href="https://www.baidu.com" role="link"></a>
+<button role="button">关注</button>
+<a href="https://github.com/lio-zero" role="link">lio-zero</a>
 <input type="checkbox" role="checkbox" />
 <input type="radio" role="radio" />
 ```
 
-- HTML5 使用默认的隐式语义定义了一组新的结构和分段元素，这些语义与 ARIA `role` 匹配（在某些情况下）：
-  - 使用 `role = button` 时，考虑使用 `<button>` 元素，或者其他各种原生 HTML 按钮类型。
-  - 使用 `role=link` 时，考虑改用 `<a href>` 元素。
-  - 使用 `role=heading` 和 `aria-level="1-6"`，考虑改用 `<h1>` 到 `<h6>` 元素。
-  - 使用 `role=list` 和 `role=listitem` 时，考虑改用 `<ol>` 或 `<ul>` 和 `<li>` 元素。
-  - 使用 `role=listbox` 和 `role=option`，考虑改用 `<select>` 和 `<option>` 元素。
-  - 使用 `role=checkbox` 或 `role=radio` 时，考虑改用 `<input type="checkbox">` 或 `<input type="radio">` 元素。
-  - 使用 `role=textbox`，可以考虑使用 `<input type="text">` 或搜索、电子邮件、url 或电话。
-  - `article`、`aside`、`footer`、`header`、`main`、`nav`、`section` 等等…
-  - 这意味着在实现后，浏览器将公开该元素的默认隐式语义，因此您不必这样做。
+HTML5 使用默认的隐式语义定义了一组新的结构和分段元素，这些语义与 ARIA `role` 匹配（在某些情况下）：
 
-**更多资料**
+- 使用 `role = button` 时，考虑使用 `<button>` 元素，或者其他各种原生 HTML 按钮类型。
+- 使用 `role=link` 时，考虑改用 `<a href>` 元素。
+- 使用 `role=heading` 和 `aria-level="1-6"`，考虑改用 `<h1>` 到 `<h6>` 元素。
+- 使用 `role=list` 和 `role=listitem` 时，考虑改用 `<ol>` 或 `<ul>` 和 `<li>` 元素。
+- 使用 `role=listbox` 和 `role=option`，考虑改用 `<select>` 和 `<option>` 元素。
+- 使用 `role=checkbox` 或 `role=radio` 时，考虑改用 `<input type="checkbox">` 或 `<input type="radio">` 元素。
+- 使用 `role=textbox`，可以考虑使用 `<input type="text">` 或搜索、电子邮件、url 或电话。
+- `article`、`aside`、`footer`、`header`、`main`、`nav`、`section` 等等…
+
+这意味着在实现后，浏览器将公开该元素的默认隐式语义，因此您不必这样做。
+
+更多资料：
 
 - [在 HTML 和 ARIA 大括号上（默认的隐式 ARIA 语义，他们不想让你知道）](http://html5doctor.com/on-html-belts-and-aria-braces/)
 - [HTML5 – W3C 建议书 2014 年 10 月 28 日](http://www.w3.org/TR/html5/)

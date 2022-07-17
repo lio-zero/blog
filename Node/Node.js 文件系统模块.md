@@ -2,7 +2,7 @@
 
 ## 了解如何使用 Node.js 中的 `fs` 模块
 
-文件系统模块（简称 `fs`）允许我们访问计算机上的文件系统并与之交互。
+[文件系统模块](http://nodejs.cn/api/fs.html)（简称 `fs`）允许我们访问计算机上的文件系统并与之交互。
 
 使用 `fs` 模块，我们可以执行以下操作：
 
@@ -285,3 +285,92 @@ fs.appendFile(
 ```
 
 上面的代码片段演示了如何向现有文件添加新内容。如果运行应用程序并打开文件，您应该会看到其中的新内容。
+
+## 读取文件的详细信息
+
+每个文件都带有一组细节，我们可以使用 Node.js 来检查这些细节。
+
+`stat` 方法检查给定路径文件的详细信息：
+
+```js
+const { stat } = require('fs')
+
+stat('./file.txt', (err, stats) => {
+  if (err) {
+    console.error(err)
+    return
+  }
+
+  // do something ...
+})
+```
+
+同步方法 `statSync` 会阻塞线程，直到文件统计信息准备好：
+
+```js
+const { statSync } = require('fs')
+
+try {
+  const stats = statSync('./file.txt')
+} catch (err) {
+  console.error(err)
+}
+```
+
+文件信息包含在 `stats` 变量中。包括：
+
+- 如果文件是目录或文件，则使用 `stats.isFile()` 和 `stats.isDirectory()`
+- 如果文件是符号链接，则使用 `stats.isSymbolicLink()`
+- 文件大小（以字节为单位），使用 `stats.size`
+
+还有其他高级方法，但在日常工作中大部分内容就是这些：
+
+```js
+const { stat } = require('fs')
+
+stat('./file.txt', (err, stats) => {
+  if (err) {
+    console.error(err)
+    return
+  }
+
+  stats.isFile() // true
+  stats.isDirectory() // false
+  stats.isSymbolicLink() // false
+  stats.size //1024000 == 1MB
+})
+```
+
+## 检查文件是否存在
+
+`fs.exists` 已经废弃，建议使用 `fs.access`：
+
+```js
+const { access, constants } = require('fs')
+
+const file = 'package.json'
+
+// 检查当前目录中是否存在该文件
+access(file, constants.F_OK, (err) => {
+  console.log(`${file} ${err ? '不存在' : '存在'}`)
+})
+```
+
+## stat() 与 fstat() 的区别
+
+- `fs.stat` 接收的第一个参数是一个文件路径字符串
+- `fs.fstat` 接收的是一个文件描述符
+
+## readFile() 与 createReadStream() 的区别
+
+- `readFile` 方法异步读取文件的全部内容，并存储在内存中，然后再传递给用户
+- `createReadStream` 使用一个可读的流，逐块读取文件，而不是全部存储在内存中
+
+与 `readFile` 相比，`createReadStream` 使用更少的内存和更快的速度来优化文件读取操作。如果文件相当大，用户不必等待很长时间直到读取整个内容，因为读取时会先向用户发送小块内容。
+
+## watch() 与 watchFile() 的区别
+
+二者主要用来监听文件变动：
+
+- `fs.watch` 利用操作系统原生机制来监听，可能不适用网络文件系统
+- `fs.watchFile` 则是定期检查文件状态变更，适用于网络文件系统，但是相比 `fs.watch` 有些慢，因为不是实时机制
