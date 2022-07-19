@@ -1,6 +1,6 @@
 # Node.js path 模块
 
-[`path` 模块](http://nodejs.cn/api/path.html)是一个内置模块，可帮助您以独立于操作系统的方式使用文件系统路径。如果要构建支持 OSX、Linux 和 Windows 的 CLI 工具，则 `path` 模块是必不可少的。
+[`path` 模块](https://nodejs.org/api/path.html)是一个内置模块，可帮助您以独立于操作系统的方式使用文件系统路径。如果要构建支持 OSX、Linux 和 Windows 的 CLI 工具，则 `path` 模块是必不可少的。
 
 即使您正在构建一个只在 Linux 上运行的后端服务，`path` 模块仍然有助于在操作路径时避免边缘情况。
 

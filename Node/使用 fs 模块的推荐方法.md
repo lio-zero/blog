@@ -2,7 +2,7 @@
 
 在编写使用 `fs` 模块的 Node.js 脚本时，我通常使用 `util.promisify` 方法来保证文件系统方法。基于 Promise 的方法允许使用 `async/await`，这使得代码更容易掌握和阅读。
 
-从 Node.js 11 开始，`fs` 模块在 [`promises` 属性中提供了 `promisified` 方法](http://nodejs.cn/api/fs.html#fs_fs_promises_api)。
+从 Node.js 11 开始，`fs` 模块在 [`promises` 属性中提供了 `promisified` 方法](https://nodejs.org/api/fs.html#fs_fs_promises_api)。
 
 ```js
 // 旧的方法使用 util.promisify

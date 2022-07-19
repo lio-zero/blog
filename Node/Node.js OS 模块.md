@@ -1,6 +1,6 @@
 # Node.js OS 模块
 
-[OS 模块](http://nodejs.cn/api/os.html)提供有关计算机操作系统的信息。
+[OS 模块](https://nodejs.org/api/os.html)提供有关计算机操作系统的信息。
 
 获取有关计算机操作系统的信息：
 

@@ -20,7 +20,7 @@ Node.js 服务器通常需要读写文件系统，当然，文件存储在二进
 
 发送到接收器的数据流需要存储在某个地方（缓冲区），直到接收器准备好接收更多数据块进行处理。这就是 Node.js `Buffer` 类发挥作用的地方，它在 [V8 引擎](<https://en.wikipedia.org/wiki/V8_(JavaScript_engine)>) 之外处理和存储二进制数据。
 
-以上概念讲完了，下面是 Node.js 的 [`Buffer` 模块](http://nodejs.cn/api/buffer.html)的一些简单介绍。
+以上概念讲完了，下面是 Node.js 的 [`Buffer` 模块](https://nodejs.org/api/buffer.html)的一些简单介绍。
 
 ## Buffer 属性和方法
 
@@ -51,7 +51,7 @@ buf.length // 15
 - `buf.length` 返回缓冲区对象的长度，以字节为单位
 - etc
 
-详细示例请查阅[文档](http://nodejs.cn/api/buffer.html#buffer)。
+详细示例请查阅[文档](https://nodejs.org/api/buffer.html#buffer)。
 
 > **扩展**：Node 全局对象有 `process`、`console`、`Buffer`、`global`、EventLoop 相关 API（`setImmediate`、`setInterval` 和 `setTimeout` 等）及为模块包装所使用的全局对象（`exports`、`module`、`require` 等），它们都不需要您使用 `require()` 即可在 Node 环境中使用。
 

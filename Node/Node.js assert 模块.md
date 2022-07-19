@@ -1,6 +1,6 @@
 # Node.js assert 模块
 
-[`assert` 模块](http://nodejs.cn/api/assert.html)提供了一组用于验证不变量的断言函数。
+[`assert` 模块](https://nodejs.org/api/assert.html)提供了一组用于验证不变量的断言函数。
 
 该模块用于测试 Node.js 应用程序中功能的表达式。如果测试结果返回 `false`，`assert` 将抛出错误并停止程序。您可以将 `assert` 模块与 [Mocha](https://mochajs.org/) 和 [Chai](https://github.com/chaijs/chai) 等单元测试工具结合使用。
 
@@ -44,7 +44,7 @@ const assert = require('assert')
 
 ## 断言方法
 
-[严格断言模式](http://nodejs.cn/api/assert.html#strict-assertion-mode)：
+[严格断言模式](https://nodejs.org/api/assert.html#strict-assertion-mode)：
 
 - `assert.deepStrictEqual (actual, expected[, message])` 方法
 - `assert.fail([message])` 方法
@@ -52,7 +52,7 @@ const assert = require('assert')
 - `assert.doesNotMatch(string, regexp[, message])` 方法
 - `assert.doesNotReject(asyncFn[, error][, message])` 方法
 
-[传统断言模式](http://nodejs.cn/api/assert.html#legacy-assertion-mode)：
+[传统断言模式](https://nodejs.org/api/assert.html#legacy-assertion-mode)：
 
 - `assert.deepEqual(actual, expected[, message])` 方法
 - `assert.equal(actual, expected[, message])` 方法

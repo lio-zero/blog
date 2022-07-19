@@ -1,6 +1,6 @@
 # Node.js readline 模块
 
-[`readline` 模块](http://nodejs.cn/api/readline.html#readline)提供了一种读取数据流的方法，一次一行。
+[`readline` 模块](https://nodejs.org/api/readline.html#readline)提供了一种读取数据流的方法，一次一行。
 
 它有两种 API：
 
@@ -29,7 +29,7 @@ rl.question('你觉得 Node.js 怎么样？', (answer) => {
 步骤如下：
 
 - 使用 `readline` 的 `createInterface` 方法创建了一个接口实例
-- 调用实例的[相关方法](http://nodejs.cn/api/readline.html#class-interfaceconstructor)，如 `question` 方法输入
+- 调用实例的[相关方法](https://nodejs.org/api/readline.html#class-interfaceconstructor)，如 `question` 方法输入
 - 监听 `readline` 的 `close` 事件
 
 一旦执行，Node.js 应用程序将不会终止，直到 `readline.Interface` 关闭，因为接口在输入流上等待接收数据。
@@ -52,11 +52,11 @@ rl.on('close', () => {
 - `emitKeypressEvents()` 为指定流触发按键事件
 - `moveCursor()` 将光标移动到相对于当前位置的新位置
 
-详细 API 请查阅[文档](http://nodejs.cn/api/readline.html#readline)。
+详细 API 请查阅[文档](https://nodejs.org/api/readline.html#readline)。
 
 ## 示例：打开一个文件并逐行返回内容
 
-使用 [`line` 事件](http://nodejs.cn/api/readline.html#event-line)，逐行读取文件内容：
+使用 [`line` 事件](https://nodejs.org/api/readline.html#event-line)，逐行读取文件内容：
 
 ```js
 const readline = require('readline')

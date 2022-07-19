@@ -1,6 +1,6 @@
 # Node.js HTTP 和 HTTPS 模块
 
-[http 模块](http://nodejs.cn/api/http.html#http)提供了一种让 Node.js 通过 HTTP（超文本传输协议）传输数据的方法。而 [https 模块](http://nodejs.cn/api/https.html#https) 通过 HTTP TLS/SSL 协议传输数据的方法，该协议是安全的 HTTP 协议。
+[http 模块](https://nodejs.org/api/http.html#http)提供了一种让 Node.js 通过 HTTP（超文本传输协议）传输数据的方法。而 [https 模块](https://nodejs.org/api/https.html#https) 通过 HTTP TLS/SSL 协议传输数据的方法，该协议是安全的 HTTP 协议。
 
 > 各种 Node HTTP 服务框架的底层原理都是离不开该模块。
 
