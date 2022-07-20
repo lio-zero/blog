@@ -2,7 +2,7 @@
 
 > Webpack 构建项目的速度很大程度上取决于项目的复杂度和电脑配置。确保项目在有足够的磁盘空间和良好的处理器情况下运行。
 
-除此之外，我们可以通过一些配置来提升 webpack 的构建速度。webpack 的 [Build Performance](https://webpack.js.org/guides/build-performance/#root) 章节提供了一些提高构建/编译性能的方法。本文将根据 webpack 提供的优化建议来减少项目构建时间。
+除此之外，我们可以通过一些配置来提升 webpack 的构建速度。webpack 的 [Build Performance](https://webpack.docschina.org/guides/build-performance/) 章节提供了一些提高构建/编译性能的方法。本文将根据 webpack 提供的优化建议来减少项目构建时间。
 
 ## 保持最新的 Webpack、Node 和包管理器
 
@@ -10,7 +10,7 @@
 
 ## 优化 Loader 的文件搜索范围
 
-通过使用 `include` 字段，仅将 loader 应用在实际需要将其转换的模块：
+通过使用 `include` 和 `exclude` 字段，仅将 loader 应用在实际需要将其转换的模块：
 
 ```js
 module.exports = {
@@ -27,9 +27,9 @@ module.exports = {
 }
 ```
 
-以上示例中，`test` 在为 JS 文件时才使用 babel，`include` 仅在 `src` ⽂件夹下查找，`exclude` 排除 `node_modules` 目录。
+以上示例中，`test` 设置仅在 JS 文件时才使用 `babel-loader`，`include` 仅在 `src` ⽂件夹下查找，`exclude` 排除 `node_modules` 目录。
 
-将 Babel 编译过的文件缓存起来，下次只需要编译更改过的文件即可，这样可以大幅度加快打包时间。
+另外，将 Babel 编译过的文件缓存起来，下次只需要编译更改过的文件即可，这样可以大幅度加快打包时间。
 
 ```js
 loader: 'babel-loader?cacheDirectory=true'
@@ -59,12 +59,12 @@ module.exports = {
 
 减少以下方法条目数量，因为他们会增加文件系统调用的次数。（层级不要过深）
 
-- `esolve.modules`
-- `resolve.extensions`
-- `resolve.mainFiles`
-- `resolve.descriptionFiles`
+- [`resolve.modules`](https://webpack.docschina.org/configuration/resolve/#resolvemodules) 告诉 webpack 解析模块时应该搜索的目录。
+- [`resolve.extensions`](https://webpack.docschina.org/configuration/resolve/#resolveextensions) 尝试按顺序解析这些后缀名。如果有多个文件有相同的名字，但后缀名不同，webpack 会解析列在数组首位的后缀的文件 并跳过其余的后缀。
+- [`resolve.mainFiles`](https://webpack.docschina.org/configuration/resolve/#resolvemainfiles) 解析目录时要使用的文件名。
+- [`resolve.descriptionFiles`](https://webpack.docschina.org/configuration/resolve/#resolvedescriptionfiles) 用于描述的 JSON 文件。
 
-如果不使用 symlinks（例如 `npm link` 或 `yarn link`），可以设置：
+如果不使用 [symlinks](https://classic.yarnpkg.com/en/package/symlinks)（例如 `npm link` 或 `yarn link`），可以设置：
 
 ```js
 resolve: {
@@ -115,7 +115,7 @@ module.exports = {
         include: path.resolve('src'),
         use: [
           'thread-loader' // 注意，这里需要放置在第一位
-          // 耗时的 loader （例如 babel-loader）
+          // 后面放置耗时的 loader （例如 babel-loader）
         ]
       }
     ]
@@ -144,9 +144,11 @@ use: [
 
 详细的介绍，查看[文档](https://webpack.docschina.org/loaders/thread-loader#examples)。
 
-## 压缩代码 — [TerserWebpackPlugin](https://webpack.docschina.org/plugins/terser-webpack-plugin)
+> [`happypack`](https://www.npmjs.com/package/happypack) 插件已经未维护好几年，使用 `thread-loader` 替换。
 
-webpack v5 提供了开箱即带有最新版本的 `terser-webpack-plugin`，其默认的生产环境下缩小您的代码。但如果需要自定义配置，仍需要安装它。
+## 开启多进程压缩代码
+
+webpack v5 提供了开箱即用最新版本的 [`terser-webpack-plugin`](https://webpack.docschina.org/plugins/terser-webpack-plugin)，其默认的生产环境下缩小您的代码。但如果需要自定义配置，仍需要安装它。
 
 ```js
 const TerserPlugin = require('terser-webpack-plugin')
@@ -168,7 +170,7 @@ new TerserPlugin({
 })
 ```
 
-**注意**，这里启用了 `cache` 意味着只有当现有文件发生新更改时，terser 才会压缩它们，提升二次构建速度。
+> **注意**，这里启用了 `cache` 意味着只有当现有文件发生新更改时，terser 才会压缩它们，提升二次构建速度。
 
 ## HardSourceWebpackPlugin
 
@@ -181,6 +183,10 @@ module.exports = {
   plugins: [new HardSourceWebpackPlugin()]
 }
 ```
+
+缓存默认的存放路径是：`node_modules/.cache/hard-source`。
+
+> **注意**：首次构建时间并没有太大变化，它只在后续的的构建中有所提升，而且建议不要在开发环境中使用它，它并不理想，但在生产环境中会得到很大提升。另外，它已经有好几年未维护。
 
 ## 避免额外的优化步骤
 
@@ -226,6 +232,7 @@ module.exports = {
 ## 其他
 
 - 每个 loader 都有一个启动时间，去除无用的 loader。
+- webpack 会自动开启 [**tree-shaking** 优化](https://webpack.docschina.org/blog/2020-10-10-webpack-5-release/#major-changes-optimization)，去除无用代码
 - 使用 `speed-measure-webpack-plugin` 插件分析每个 loader、plugin 的耗时：
 
 ```js
@@ -249,4 +256,4 @@ module.exports = {
 }
 ```
 
-> ...
+- [DllPlugin](https://webpack.docschina.org/plugins/dll-plugin) 表示动态链接库。这里不展开解释，并且建议有一些文章建议不在使用它，详细可以查看[辛辛苦苦学会的 webpack dll 配置，可能已经过时了](https://juejin.cn/post/6844903952140468232)。

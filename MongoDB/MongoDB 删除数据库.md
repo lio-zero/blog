@@ -18,7 +18,7 @@ $ show dbs
 切换到 `user` 数据库，使用 `db.dropDatabase()` 方法删除当前数据库。
 
 ```bash
-$ use music
+$ use user
 $ db.dropDatabase()
 # { "dropped" : "user", "ok" : 1 }
 ```

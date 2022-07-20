@@ -11,24 +11,24 @@ substr(startPosition, length)
 substring(startPosition, endPosition)
 ```
 
-如您所见，`substr` 和 `substring` 的第二个参数分别是子字符串的长度和结束位置。给定一个 `helloworld` 字符串：
+如您所见，`substr` 和 `substring` 的第二个参数分别是子字符串的长度和结束位置。给定一个 `hello world` 字符串：
 
 ```js
-'helloworld'.substr(2, 4) // 'llow'
-'helloworld'.substring(2, 4) // 'll'
+'hello world'.substr(2, 4) // 'llo '
+'hello world'.substring(2, 4) // 'll'
 ```
 
 `substr` 允许使用负数作为起始位置参数。
 
 ```js
-'helloworld'.substr(-2, 4) // 'ld'
+'hello world'.substr(-2, 4) // 'ld'
 ```
 
 另一方面，子字符串将使负开始位置变为 0（零）：
 
 ```js
-'helloworld'.substring(-2, 5) // 'hello'
-'helloworld'.substring(0, 5) // 'hello'
+'hello world'.substring(-2, 5) // 'hello'
+'hello world'.substring(0, 5) // 'hello'
 ```
 
 ## slice
@@ -36,7 +36,7 @@ substring(startPosition, endPosition)
 `slice` 是获取子字符串的另一个方法。它没有被弃用为 [`substr`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)，并且支持负索引。
 
 ```js
-'helloworld'.slice(2, 4) // 'll'
-'helloworld'.slice(-10, 5) // 'hello'
-'helloworld'.slice(-5) // 'world'
+'hello world'.slice(2, 4) // 'll'
+'hello world'.slice(-10, 5) // 'ello'
+'hello world'.slice(-5) // 'world'
 ```

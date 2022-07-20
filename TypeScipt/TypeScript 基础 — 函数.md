@@ -48,6 +48,8 @@ function add(a: number, b: number, c?: number) {
 }
 ```
 
+注意，可选参数不能直接使用，它需要配合[类型收窄](https://github.com/lio-zero/blog/blob/main/TypeScipt/TypeScript%20%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E6%94%B6%E7%AA%84.md)。
+
 ## 默认参数
 
 对于具有默认值的参数，默认值位于类型注释之后：

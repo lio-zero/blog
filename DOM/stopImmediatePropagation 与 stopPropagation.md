@@ -23,4 +23,4 @@ button.addEventListener('click', function () {
 })
 ```
 
-单击按钮将在控制台中打印 `foo` 和 `bar`。我们不会看到 `baz，`因为最后一个监听器没有被调用。
+单击按钮将在控制台中打印 `foo` 和 `bar`。我们不会看到 `baz`，因为最后一个监听器没有被调用。

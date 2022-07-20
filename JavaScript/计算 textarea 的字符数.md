@@ -31,12 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 ```
 
-> **注意**：
->
-> 常见的错误是捕获 `keyup` 事件。它在某些情况下不起作用，例如：
->
-> - 用户将文本拖动到文本区域
->
-> - 用户在文本区域中单击鼠标右键，然后从关联菜单中选择“粘贴”
+**注意**，常见的错误是捕获 `keyup` 事件。但它在某些情况下不起作用，例如：
 
-> [查看效果](https://codepen.io/lio-zero/pen/wveLxox)
+- 用户将文本拖动到文本区域
+- 用户在文本区域中单击鼠标右键，然后从关联菜单中选择**粘贴**
+
+[查看效果](https://codepen.io/lio-zero/pen/wveLxox)

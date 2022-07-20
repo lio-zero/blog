@@ -20,7 +20,8 @@ Sass 提供[接受参数](https://sass-lang.com/documentation/at-rules/mixin#arg
 在此 Sass `mixin` 中设置默认参数更安全、更有用：
 
 ```scss
-@mixin foo($a: 1, $b: 2, $c: 3) { }
+@mixin foo($a: 1, $b: 2, $c: 3) {
+}
 
 .el {
   @include foo;
@@ -40,12 +41,12 @@ Sass 提供[接受参数](https://sass-lang.com/documentation/at-rules/mixin#arg
 }
 ```
 
-### 使用 Sass 默认参数的示例
+## 使用 Sass 默认参数的示例
 
 这是一个快速的 `mixin`，它输出你需要的非常基本的样式滚动条（[Kitty 也有一个](https://css-tricks.com/snippets/sass/custom-scrollbars-mixin/)）：
 
 ```scss
-@mixin scrollbars(
+@mixin scrollbar(
   $size: 10px,
   $foreground-color: #eee,
   $background-color: #333
@@ -71,21 +72,21 @@ Sass 提供[接受参数](https://sass-lang.com/documentation/at-rules/mixin#arg
 
 ```scss
 .scrollable {
-  @include scrollbars;
+  @include scrollbar;
 }
 
 .thick-but-otherwise-default-scrollable {
   // 我可以跳过 $b 和 $c，因为它们是第二和第三
-  @include scrollbars(30px);
+  @include scrollbar(30px);
 }
 
 .custom-colors-scrollable {
   // 如果所有其他参数都已命名，我可以跳过第一个参数。
-  @include scrollbars($foreground-color: orange, $background-color: black);
+  @include scrollbar($foreground-color: orange, $background-color: black);
 }
 
 .totally-custom-scrollable {
-  @include scrollbars(20px, red, black);
+  @include scrollbar(20px, red, black);
 }
 ```
 
