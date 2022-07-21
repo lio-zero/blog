@@ -56,8 +56,8 @@ styled-components 创建了一个 React 组件，该组件渲染与 `styled` 对
 `Button` 将创建并渲染 `button` HTML 标签，而 `Div` 将创建并渲染 `div` 标签。它们是组件，所以我们可以向它们传递 `props`。
 
 ```html
-<button color="black">Click Me</button>
-<div borderColor="green"></div>
+<Button color="black">Click Me</Button>
+<Div borderColor="green"></Div>
 ```
 
 这将使样式化组件将包含 `color` 的 `props` 传递给 `Button` 组件，并将包含 `borderColor` 的 `props` 传递给 `Div` 组件。然后，我们可以使用一个函数在标签的模板字符串中获取 `props`。
@@ -123,9 +123,9 @@ const Div = styled.div`
 
 ```html
 <ThemeProvider theme="{theme}">
-  <div>
-    <button>Click Me</button>
-  </div>
+  <Div>
+    <Button>Click Me</Button>
+  </Div>
 </ThemeProvider>
 ```
 
@@ -185,7 +185,7 @@ const Button = styled.button`
 `Button` 组件将创建并渲染一个按钮元素。在渲染按钮组件时，我们可以通过将 `as` props 传递给 `Button` 组件，并使用我们希望它更改为的任何 HTML 标签名来更改它。
 
 ```html
-<button as="a">Click Me</button>
+<Button as="a">Click Me</Button>
 ```
 
 这将创建并渲染 `a` 标签。`as="a"` 将其从渲染 `Button` 元素更改为呈现 `a` 标签。
