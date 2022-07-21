@@ -45,7 +45,7 @@ export default useAutoFocus
 
 ## 使用 `useRef()` 和 `useEffect()`
 
-`useffect() ` 钩子会告诉 React，在组件渲染之后，您需要组件执行一些操作。它接受两个参数。第一个是要运行的函数，第二个是一个依赖项数组，其功能与 `useCallback()` 中的相同。
+`useEffect()` 钩子会告诉 React，在组件渲染之后，您需要组件执行一些操作。它接受两个参数。第一个是要运行的函数，第二个是一个依赖项数组，其功能与 `useCallback()` 中的相同。
 
 `useRef()` 钩子对函数组件的作用与 `createRef()` 对基于类组件的作用相同。这个钩子创建了一个普通的 JavaScript 对象，您可以将其传递给一个元素，以保持对它的引用。可以通过对象的 `current` 属性访问此引用。
 

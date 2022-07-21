@@ -1,6 +1,6 @@
 # 使用 Styled Components 编写样式化组件
 
-[Styled Components](https://styled-components.com/) 是一个 CSS-in-JS 库，可让您编写常规 CSS 并将其附加到 JavaScript 组件。使用 styled-components，您可以使用您已经熟悉的 CSS，而不必学习新的样式结构。
+[Styled Components](https://styled-components.com/) 是最流行的 CSS-in-JS 库，可让您编写常规 CSS 并将其附加到 JavaScript 组件。使用它，您可以使用您已经熟悉的 CSS，而不必学习新的样式结构。
 
 本文将介绍 Styled Components 的一些功能，并提供一些示例帮助您理解。
 
@@ -56,8 +56,8 @@ styled-components 创建了一个 React 组件，该组件渲染与 `styled` 对
 `Button` 将创建并渲染 `button` HTML 标签，而 `Div` 将创建并渲染 `div` 标签。它们是组件，所以我们可以向它们传递 `props`。
 
 ```html
-<Button color="black">Click Me</Button>
-<Div borderColor="green"></Div>
+<button color="black">Click Me</button>
+<div borderColor="green"></div>
 ```
 
 这将使样式化组件将包含 `color` 的 `props` 传递给 `Button` 组件，并将包含 `borderColor` 的 `props` 传递给 `Div` 组件。然后，我们可以使用一个函数在标签的模板字符串中获取 `props`。
@@ -72,12 +72,12 @@ const Button = styled.button`
 const Div = styled.div`
   padding: 10px;
   color: palevioletred;
-  border: 1px solid
-    ${(props) => (props.borderColor ? props.borderColor : 'palevioletred')};
+  border: 1px solid ${(props) =>
+      props.borderColor ? props.borderColor : 'palevioletred'};
 `
 ```
 
-标签模板字符串中的函数将接收一个 `props` 参数，它是传递给组件的 `props`。这使我们能够引用传递给 `Button` 和 `Div` 组件的 `color` 和 `borderColor `，从而使样式化组件的样式具有动态性。
+标签模板字符串中的函数将接收一个 `props` 参数，它是传递给组件的 `props`。这使我们能够引用传递给 `Button` 和 `Div` 组件的 `color` 和 `borderColor`，从而使样式化组件的样式具有动态性。
 
 ## 主题化
 
@@ -122,10 +122,10 @@ const Div = styled.div`
 最后，我们将渲染 `ThemeProvider` 标签之间的 `Div` 和 `Button` 组件，并将主题对象传递给 `ThemeProvider` 中的主题 `props`。
 
 ```html
-<ThemeProvider theme={theme}>
-  <Div>
-    <Button>Click Me</Button>
-  </Div>
+<ThemeProvider theme="{theme}">
+  <div>
+    <button>Click Me</button>
+  </div>
 </ThemeProvider>
 ```
 
@@ -156,7 +156,7 @@ export default createGlobalStyle`
 接下来，将其导入 `main` 组件中。
 
 ```js
-import GlobalStyle from "./globalStyles"
+import GlobalStyle from './globalStyles'
 
 function Home() {
   return (
@@ -185,7 +185,7 @@ const Button = styled.button`
 `Button` 组件将创建并渲染一个按钮元素。在渲染按钮组件时，我们可以通过将 `as` props 传递给 `Button` 组件，并使用我们希望它更改为的任何 HTML 标签名来更改它。
 
 ```html
-<Button as="a">Click Me</Button>
+<button as="a">Click Me</button>
 ```
 
 这将创建并渲染 `a` 标签。`as="a"` 将其从渲染 `Button` 元素更改为呈现 `a` 标签。
@@ -316,6 +316,10 @@ const MatButton = styled.button.attrs({
 ```
 
 上面的例子是一个 Material Design 风格的组件。
+
+## 供应商前缀
+
+Styled Components 会自动添加所有需要的供应商前缀，因此您无需担心这个问题。
 
 ## 更多资料
 
