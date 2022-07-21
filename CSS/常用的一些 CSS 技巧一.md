@@ -735,7 +735,314 @@ img {
 
 ![使用 mix-blend-mode: multiply;](https://upload-images.jianshu.io/upload_images/18281896-6df40560bc4a494a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-## text-size-adjust
+## 使用指针事件来控制鼠标事件
 
-<!-- https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ -->
-<!-- https://css-tricks.com/your-css-reset-needs-text-size-adjust-probably/ -->
+[`pointer-events`](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events) 允许您指定鼠标如何与其触摸的元素进行交互。
+
+要禁用按钮上的默认指针事件，例如：
+
+```css
+.button-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+```
+
+## 指示缺少 alt 属性的 img 元素
+
+以下 CSS 为任何缺少 `alt` 属性或 `alt` 属性为空的 `img` 提供红色轮廓：
+
+```css
+img:not([alt]),
+img[alt=''] {
+  outline: 8px solid red;
+}
+```
+
+如果您使用的是 Visual Studio Code，则可以安装 [webhint 扩展](https://marketplace.visualstudio.com/items?itemName=webhint.vscode-webhint)。当您将鼠标悬停在元素上时，它将自动检测问题并显示详细信息。
+
+![webhint image](https://upload-images.jianshu.io/upload_images/18281896-cbee5653f019dc2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+## 快速输入颜色变量
+
+我们通常为颜色声明变量，主要在文件顶部，如下所示：
+
+```css
+:root {
+  --color-primary: #...;
+}
+```
+
+然后，可以使用 `var` 函数重新使用这些颜色：
+
+```css
+.btn-primary {
+  background-color: var(--color-primary);
+}
+```
+
+如果您使用的是 VS Code，则不必完全键入 `var(...)`。相反，只需键入 `--`，VS Code 就会显示现有的颜色变量。
+
+![Visual Studio Code 自动完成颜色变量](https://upload-images.jianshu.io/upload_images/18281896-e4d93450ea9bb2c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+## 使用 currentColor 关键字重用当前颜色
+
+我们可以一次性为 `color` 属性定义一个值，并将其与 `currentColor` 关键字一起重用，而不是在几个地方重复使用颜色。
+
+```css
+/* ❌ */
+div {
+  color: #d1d5db;
+  background-image: linear-gradient(to bottom, #d1d5db, #fff);
+}
+
+/* ✅ */
+div {
+  color: #d1d5db;
+  background-image: linear-gradient(to bottom, currentColor, #fff);
+}
+```
+
+因为元素的 `color` 属性（如果未指定）是从其父元素继承的，所以我们可以在元素的子元素中使用 `currentColor` 关键字。
+
+例如，假设我们希望链接的颜色与其容器（给定的 `div` 元素）相同：
+
+```css
+/* 不好的做法：在三个地方声明相同的颜色 */
+div {
+  color: #fff;
+}
+
+div a {
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* 好的做法 */
+div {
+  color: #fff;
+}
+
+div a {
+  border-bottom: 1px solid currentColor;
+  color: currentColor;
+  text-decoration: none;
+}
+```
+
+我们经常在 camelCase 格式中使用 `currentColor` 关键字。但是，CSS 不区分大小写，这意味着`currentColor`、`CurrentColor` 甚至 `Currentcolor` 都是有效的关键字，并且与 `currentColor` 具有相同的效果。
+
+## 给“默认”链接定义样式
+
+给 “默认” 链接定义样式：
+
+```css
+a[href]:not([class]) {
+  color: #008000;
+  text-decoration: underline;
+}
+```
+
+通过 CMS 系统插入的链接，通常没有 `class` 属性，以上样式可以识别它们，而且不会影响其它样式。
+
+## 用 rem 来调整全局大小；用 em 来调整局部大小
+
+在根元素设置基本字体大小后 (`html { font-size: 100%; }`), 使用 `em` 设置文本元素的字体大小:
+
+```css
+h2 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1em;
+}
+```
+
+然后设置模块的字体大小为 `rem`:
+
+```css
+article {
+  font-size: 1.25rem;
+}
+
+aside .module {
+  font-size: 0.9rem;
+}
+```
+
+现在，每个模块变得独立，更容易、灵活的样式便于维护。
+
+## 为 body 元素添加行高
+
+不必为每一个 `<p>`，`<h*>` 元素逐一添加 `line-height`，直接添加到 `body` 元素：
+
+```css
+body {
+  line-height: 1.5;
+}
+```
+
+文本元素可以很容易地继承 `body` 的样式。
+
+## 转义 CSS 类名
+
+CSS 类名不能包含 `:` 字符。例如，不可能在 CSS 中声明以下类：
+
+```css
+.lg:flex {
+}
+```
+
+但是，我们可以使用 `\` 字符来更正它：
+
+```css
+.lg\:flex {
+}
+```
+
+类名可以像往常一样在 HTML 中使用：
+
+```html
+<div class="lg:flex">...</div>
+```
+
+在一些 CSS 框架（如 [Tailwind](https://tailwindcss.com/)）中，经常使用 `\` 来转义 CSS 类名。
+
+## 使用 SVG 图标
+
+没有理由不使用 SVG 图标：
+
+```css
+.logo {
+  background: url('logo.svg');
+}
+```
+
+SVG 在所有分辨率下都可以良好缩放，并且支持所有 [IE9](https://caniuse.com/#search=svg) 以后的浏览器，现在使用它替换您的 .png，.jpg，或 .gif 文件吧。
+
+> **注意**： 针对仅有图标的按钮，如果 SVG 没有加载成功的话，以下样式对无障碍有所帮助：
+
+```css
+.no-svg .icon-only::after {
+  content: attr(aria-label);
+}
+```
+
+## 在打印模式下显示链接
+
+当用户打印网页时，他们将看不到实际的链接。如果一个链接同时显示文本和它的链接，它会更有用。
+
+我们可以通过在 `:after` 元素中包含链接来实现：
+
+```css
+@media print {
+  a::after {
+    content: ' (' attr(href) ') ';
+  }
+}
+```
+
+在打印模式下，用户将看到包含在其内容之后的链接：
+
+```html
+<!-- 正常模式-->
+<a href="https://getfrontend.tips">Front-End Tips</a>
+<!-- 打印模式-->
+<a href="https://getfrontend.tips">Front-End Tips (https://getfrontend.tips)</a>
+```
+
+## 隐藏 Microsoft Edge 的密码显示按钮
+
+![image.png](https://upload-images.jianshu.io/upload_images/18281896-9c58577904f79002.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+如果您使用的是 Edge，需要隐藏 `input` 的 `password` 类型提供的**密码显示**按钮，可以使用下面的伪元素。
+
+```css
+::-ms-reveal {
+  display: none;
+}
+```
+
+> [新的 CSS 属性`input-security`正在使密码显示更容易](https://twitter.com/stefanjudis/status/1457281480556781568)。
+
+## 防止锚链接消失在粘性标题后面
+
+粘性标题是一种常见的布局，可以在许多网站上看到。问题是它不能很好地处理锚链接。
+
+假设我们有一个包含不同锚链接的目录。每个锚都会将用户带到页面中的特定 `section`。
+
+当用户单击定位点时，页面将滚动到目标 `section`。但该 `section` 的某些部分显示在标题下，这对用户来说不是一个好的体验。
+
+为了防止这种情况发生，我们希望在目标的顶部添加一个边距，但它仅在滚动时有效。此时，`scroll-margin-top` 就派上了用场。
+
+```css
+header {
+  height: 2rem;
+}
+
+section {
+  scroll-margin-top: 2rem;
+}
+```
+
+## 创建自定义表情符号光标
+
+创建自定义光标有两种常用方法：
+
+- 使用图像
+- 创建 `canvas` 元素并生成 base64 图像
+
+这两种方法最终都通过将图像的 URL 设置为 `cursor` 属性来更改光标：
+
+```css
+.custom-cursor {
+  cursor: url(/path/to/image.png), auto;
+}
+
+/* 或者 */
+.custom-cursor {
+  cursor: url('data:image/png;base64,...'), auto;
+}
+```
+
+要创建自定义表情符号光标，我们可以使用内联 SVG 元素，该元素在中心显示表情符号，如下所示：
+
+```css
+.custom-cursor {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewport="0 0 48 48" style="fill:black;font-size:24px"><text y="50%">🚀</text></svg>')
+      16 0, auto;
+}
+```
+
+> [查看效果](https://codepen.io/lio-zero/pen/GRvMEvY)
+
+## 只为 Firefox 编写 CSS 规则
+
+如果您想添加一些 CSS 规则来修复 Firefox 上的问题，那么这个技巧可能很有用。
+
+有两种检测 Firefox 的方法：
+
+```css
+@-moz-document url-prefix() {
+  h1 {
+    color: blue;
+  }
+}
+
+/* 使用 `@support` */
+@supports (-moz-appearance: none) {
+  h1 {
+    color: blue;
+  }
+}
+```
+
+上面的示例代码将为 Firefox 上的 `h1` 添加蓝色。
+
+> **解释**
+>
+> 任何以 CSS 开头的规则 `@-moz-` 都是 Gecko 引擎特定的规则，而不是标准规则。也就是说，它是 Mozilla 特定的扩展。
+>
+> `url-prefix` 规则将包含的样式规则应用于 URL 以其开头的任何页面。不带 URL 参数使用时，`@-moz-document url- prefix()` 它适用于**所有**页面。实际上，这是仅用于 Gecko（Mozilla Firefox）的 [CSS hack](http://en.wikipedia.org/wiki/CSS_filter)。所有其他浏览器将忽略样式。

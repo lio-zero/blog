@@ -69,8 +69,6 @@ function run() {
 }
 ```
 
-在不同 `iframe` 引入以上代码段，查看效果。
-
 ## 更多资料
 
 [broadcast-channel](https://github.com/pubkey/broadcast-channel) 用于不同的浏览器选项卡或 nodejs-processes + LeaderElection 通道之间发送数据

@@ -2,15 +2,15 @@
 
 CSS `@supports` 指令会像 `@media` 查询一样出现在 CSS 代码中：
 
-```
-@supports(prop:value) {
+```css
+@supports (prop: value) {
   /* more styles */
 }
 ```
 
 CSS `@supports` 允许开发人员以多种不同的方式检查样式支持。
 
-例如：检查是否支持 `dispaly: flex`：
+例如：检查是否支持 `display: flex`：
 
 ```css
 @supports (display: flex) {
