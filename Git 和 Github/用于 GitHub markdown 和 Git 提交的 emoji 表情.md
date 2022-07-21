@@ -17,3 +17,4 @@
 ![emoji-cheat-sheet](https://upload-images.jianshu.io/upload_images/18281896-ada16db4f6548c54.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - [gist:7360908](https://gist.github.com/rxaviers/7360908) github markdown emoji 标记的完整列表
+- [git-commit-emoji-cn](https://github.com/liuchengxu/git-commit-emoji-cn) 😁 git commit message emoji 使用指南

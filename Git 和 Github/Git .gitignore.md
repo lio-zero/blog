@@ -1,6 +1,6 @@
 # Git .gitignore
 
-`.gitignore` 用于指定有意忽略的未跟踪文件。
+[`.gitignore`](https://git-scm.com/docs/gitignore) 用于指定有意忽略的未跟踪文件。
 
 ## Git 忽略文件或目录
 
@@ -74,5 +74,3 @@ git config --global core.excludesfile ~/.gitignore_global
 ```
 
 您永远不必担心 `DS_Store` 文件再次提交！
-
-<!-- https://www.stefanjudis.com/today-i-learned/git-supports-global-gitignore-files/ -->
