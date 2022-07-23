@@ -56,7 +56,7 @@ cwebp image.png -o image.webp
 
 另一个选择是使用 [Modernizr](https://modernizr.com/) 并检查 `Modernizr.webp` 设置。
 
-如果您不需要支持 IE，一个非常方便的方法是使用 `<picture>` 标签，现在除了 Opera Mini 和 IE（所有版本）之外的所有主流浏览器都支持这个标签。
+如果您不需要支持 IE，一个非常方便的方法是使用 `<picture>` 标签，现在除了 IE（所有版本）之外的所有主流浏览器都支持这个标签。
 
 `<picture>` 标签通常用于响应式图像，但我们也可以将它用于 WebP。
 

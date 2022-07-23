@@ -19,7 +19,7 @@ Node.js 中的包包含模块所需的所有文件。
 下载一个包非常容易。打开命令行界面，告诉 npm 下载你想要的包。
 
 ```bash
-$ npm i upper-case
+npm i upper-case
 ```
 
 下载完后，npm 会创建一个名为 `node_modules` 的文件夹，将在其中放置相关依赖包。您将来在项目上安装的所有软件包都将放置在此文件夹中。
@@ -42,7 +42,7 @@ console.log(uc.upperCase('Hello World!'))
 
 > 推荐 [package.json 详解](https://github.com/lio-zero/blog/blob/master/Node/package.json%20%E8%AF%A6%E8%A7%A3.md)
 
-> 关于 NPM 的更多信息，你可以查阅[官方文档](https://docs.npmjs.com/cli/v6/configuring-npm/package-json)。
+关于 NPM 的更多信息，你可以查阅[官方文档](https://docs.npmjs.com/cli/v6/configuring-npm/package-json)。
 
 ## 更多资料
 
@@ -50,6 +50,7 @@ console.log(uc.upperCase('Hello World!'))
 - [how-to-npm](https://github.com/workshopper/how-to-npm)
 - [Bundlephobia](https://bundlephobia.com/) 查找将 npm 包添加到您的捆绑包的成本
 - [npm trends](https://www.npmtrends.com/) 相同类型 npm 包的比较
+- [npmview](https://github.com/pd4d10/npmview)
 - [如何对 npm package 进行发包](https://github.com/lio-zero/blog/blob/master/Node/%E5%A6%82%E4%BD%95%E5%AF%B9%20npm%20package%20%E8%BF%9B%E8%A1%8C%E5%8F%91%E5%8C%85.md)
 - [防止 npm 安装不支持的 Node.js 版本](https://github.com/lio-zero/blog/blob/master/Node/%E9%98%B2%E6%AD%A2%20npm%20%E5%AE%89%E8%A3%85%E4%B8%8D%E6%94%AF%E6%8C%81%E7%9A%84%20Node.js%20%E7%89%88%E6%9C%AC.md)
 - [常用的 npm 命令](https://github.com/lio-zero/blog/blob/master/Node/%E5%B8%B8%E7%94%A8%E7%9A%84%20npm%20%E5%91%BD%E4%BB%A4.md)
