@@ -1,6 +1,23 @@
 # Article
 
-本仓库备份之前写过的文章，以下整理一份分类清单：
+本仓库已经沉淀了大量内容，为了方便检索，您可以通过以下几种方式进行搜索：
+
+- 使用 GitHub 自带的网页搜索，按下 `T` 键。
+- 使用 [Sourcegraph.com](https://sourcegraph.com/github.com/lio-zero/blog) 进行搜索。
+- 最近写的[文章搜索站点](https://lio-zero-article-search.netlify.app/)。
+- 将这个仓库克隆到本地，然后在仓库目录使用下面的命令。
+
+```bash
+grep -nri [搜索词] docs | cat --number
+```
+
+比如，搜索 CSS 相关内容。
+
+```bash
+grep -nri css docs | cat --number
+```
+
+后面新增的文章可能不会在 `README.md` 内更新。您可以通过上面分享的几种方式进行搜索。
 
 ## Canvas
 
@@ -685,9 +702,9 @@
 
 ## 勘误及提问
 
-如果有疑问或者发现错误，可以在相应的 issues 进行提问或勘误。
+如果有疑问或者发现错误，可以在相应的 [issues 进行提问或勘误](https://github.com/lio-zero/blog/issues)。
 
-如果喜欢或者有所启发，欢迎 `star`，对作者也是一种鼓励。
+如果喜欢或者有所启发，欢迎 `Star`，对作者也是一种鼓励。
 
 ## License
 
