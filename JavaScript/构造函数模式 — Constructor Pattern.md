@@ -10,11 +10,10 @@
 var MyPlugin = (function () {
   'use strict'
 
-  // 方法
   /**
    * 创建构造函数对象
    */
-  var Constructor = function (selector) {
+  function Constructor(selector) {
     this.nodes = document.querySelectorAll(selector)
   }
 
@@ -36,6 +35,14 @@ var MyPlugin = (function () {
     })
   }
 
+  // 静态构造方法
+  /**
+   * 获取页面的标签种类
+   */
+  Constructor.tagNameList = function () {
+    return Array.from(document.getElementsByTagName('*')).map((v) => v.tagName)
+  }
+
   // 返回构造函数
   return Constructor
 })()
@@ -44,6 +51,8 @@ var MyPlugin = (function () {
 使用：
 
 ```js
+MyPlugin.tagNameList() // [...]
+
 // 创建构造函数的新实例
 var headings = new MyPlugin('h2')
 

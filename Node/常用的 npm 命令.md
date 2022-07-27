@@ -369,3 +369,13 @@ npm-check -u
 它将显示用于选择要更新的模块的交互式 UI。替代的还有 [`npm-check-updates`](https://www.npmjs.com/package/npm-check-updates)。
 
 > 可查看另一篇[检查 npm 模块更新](https://github.com/lio-zero/blog/blob/master/Node/%E6%A3%80%E6%9F%A5%20npm%20%E6%A8%A1%E5%9D%97%E6%9B%B4%E6%96%B0.md)
+
+## npm shrinkwrap
+
+[npm shrinkwrap](https://docs.npmjs.com/cli/shrinkwrap) 命令用于锁定包依赖项的版本，以便您可以准确控制在安装包时将使用每个依赖项的哪些版本。
+
+```bash
+npm shrinkwrap
+```
+
+它在部署 Node.js 应用程序时非常有用。通过它，您可以确定要部署哪些版本的依赖项。

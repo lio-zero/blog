@@ -1,6 +1,6 @@
-# Node-工具 — PM2 备忘录
+# 使用 pm2 为 Node.js 应用程序提供服务
 
-[PM2](https://github.com/Unitech/pm2) 是 node 进程管理工具，可以利用它来简化很多 node 应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。
+[PM2](https://pm2.keymetrics.io/) 是 node 进程管理工具，可以利用它来简化很多 node 应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。
 
 ## PM2 特性
 
@@ -25,9 +25,10 @@ pm2 的功能十分强大，除了重启进程以外，还能实时收集日志�
 
 ### 分叉模式（Fork mode）
 
+启动程序，并为进程提供一个名称：
+
 ```bash
-# 启动并命名一个进程
-$ pm2 start app.js --name my-app
+pm2 start app.js --name my-app
 ```
 
 ### 集群模式（Cluster mode）
@@ -36,7 +37,7 @@ $ pm2 start app.js --name my-app
 # 指定同时起多少个进程（进程数由 CPU 核数决定），组成一个集群
 $ pm2 start app.js -i max
 $ pm2 start app.js -i 0 # 将根据可用的 CPU 使用 LB 启动最大进程
-$ pm2 start app.js -i 4  # 启动4个应用程序实例，并将网络请求负载均衡到每个应用中。
+$ pm2 start app.js -i 4 # 启动4个应用程序实例，并将网络请求负载均衡到每个应用中。
 
 
 $ pm2 start app.js -o out.log  # 标准输出日志文件的路径
@@ -157,14 +158,29 @@ $ pm2 save
 
 ### 开机自动启动
 
-先 `pm2 start` 运行你要开机启动的程序，在输入以下两个命令。
+要为 PM2 生成启动脚本，可以运行以下命令：
 
 ```bash
-pm2 save
 pm2 startup
 ```
 
-按上面步骤试了一下发生错误提示。网上找了一些文章，但还没试过，这里贴出来给有需要的看看 **[在 windows 上安装 pm2 并设置开机启动](https://www.huaface.com/article/11)**。
+确保在启动时所有 PM2 进程都在运行，可以运行以下命令：
+
+```bash
+pm2 save
+```
+
+这将创建文件 `dump.pm2` 文件，它将自动启动我们的脚本。
+
+也就是说，每当我们的服务器重启时，进程都会自动重启。
+
+如果您需要手动重启所有进程，可以执行以下命令。
+
+```bash
+pm2 resurrect
+```
+
+> Tips：如果按上面步骤遇到错误。可以看看这篇 **[在 windows 上安装 pm2 并设置开机启动](https://www.huaface.com/article/11)**。
 
 ### 其他
 

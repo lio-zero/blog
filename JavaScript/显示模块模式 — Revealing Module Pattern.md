@@ -13,7 +13,6 @@ var myPlugin = (function () {
   // 私有变量
   var publicAPIs = {}
 
-  // 方法
   /**
    * 私有方法
    */

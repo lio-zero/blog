@@ -2,7 +2,7 @@
 
 [ESLint](https://eslint.org/) 是一个开源 JavaScript linting 实用程序，它可以帮助您克服开发人员的错误，因为 JavaScript 是弱类型的语言。
 
-JavaScript 社区中有很多选项，比如 [JSHint](https://github.com/jshint/jshint) 和 [JSCS](https://github.com/jscs-dev/node-jscs)，用于代码 linting，包括今天我们要讲的 ESLint。
+JavaScript 社区中有很多选项，比如 [JSLint](http://jslint.com/)、[JSHint](https://jshint.com/) 和 [JSCS](https://jscs-dev.github.io/)（未维护，已与 ESLint 合并），用于代码 linting，包括今天我们要讲的 ESLint。
 
 ESLint 旨在使所有规则完全可插入。这是它产生的主要原因之一。它允许开发人员创建自己的 linting 规则。[ESLint 官方指南](http://eslint.org/docs/user-guide)中提供的每个规则都是独立的规则，开发人员可以在任何时候决定是否使用特定的规则。
 

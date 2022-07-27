@@ -18,7 +18,7 @@ $ npm login
 npm publish
 ```
 
-> **注意**：`package.json` 不能将 `private` 设置为 `ture`，他会将包标记为私有。
+> **注意**：`package.json` 不能将 `private` 设置为 `true`，他会将包标记为私有。
 
 一旦发包成功，我们就可以像其他依赖包一样，通过 `npm i xxx` 安装我们发布的包，在项目上使用。
 

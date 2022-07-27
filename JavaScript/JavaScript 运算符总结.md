@@ -288,8 +288,8 @@ console.log(x, y) // 0, 2
 
 它也适用于非布尔值，任何虚假的值都会评估为 `false`，同样任何真实的值都会评估为 `true`
 
-- Falsy：`false`、`null`、`undefined`、`NaN`、`0 or +0 or -0`、` 空字符串（""、''、``） `
-- truthy：其他都为 `ture`
+- Falsy：`false`、`null`、`undefined`、`NaN`、`0`、`+0`、`-0` 和空字符串（""、''、``）
+- truthy：其他都为 `true`
 
 ```js
 console.log(!true) // false

@@ -107,7 +107,7 @@ const obj = { 0: 'a', 1: 'b', length: 2 }
 Array.prototype.join.call(obj, '-') // 'a-b'
 ```
 
-**示例：重复字符串**
+**示例**：重复字符串
 
 使用 `join` 方法来重复字符串。
 
@@ -313,7 +313,7 @@ const greaterThanTen = array.filter((item) => item > 10)
 console.log(greaterThanTen) //[11, 20]
 ```
 
-**示例：过滤对象数组**
+**示例**：过滤对象数组
 
 ```js
 const countries = [
@@ -330,7 +330,7 @@ let asianCountries = countries.filter((country) => country.continent === 'Asia')
 console.log(asianCountries) // [{name: "Nepal", continent: "Asia"}]
 ```
 
-**示例：在数组中搜索特定字母**
+**示例**：在数组中搜索特定字母
 
 ```js
 const names = ['Victoria', 'Pearl', 'Olivia', 'Annabel', 'Sandra', 'Sarah']
@@ -404,7 +404,7 @@ arr.sort((a, b) => b - a) // [100000, 30, 21, 4, 1]
 ```
 
 > 更多内容可查阅[如何在 JavaScript 中对对象数组进行排序？](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%20JavaScript%20%E4%B8%AD%E5%AF%B9%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F%EF%BC%9F.md)
-
+>
 > **注意**：该方法会改变原数组。
 
 ## Array.prototype.every()
@@ -430,7 +430,7 @@ const even = (item) => item % 2 === 0
 console.log(arr.some(even)) // true
 ```
 
-**示例：数组扁平化**
+**示例**：数组扁平化
 
 ```js
 let arr = [1, 2, [3, 4, 5, [6, 7], 8], 9, 10, [11, [12, 13]]]
@@ -666,7 +666,7 @@ Array.from({ length: 3 }, () => 'LOVE') // ['LOVE', 'LOVE', 'LOVE']
 Array.from({ length: 3 }, () => 'LOVE').join('') //'LOVELOVELOVE'
 ```
 
-**分块**
+**示例**：分块
 
 在使用 API 时，我经常需要将用户列表分块并批量发送。`Array.from()` 是一种将数组分块的好方法，因为第二个参数是一个 `map` 函数。
 
@@ -709,6 +709,52 @@ arr.valueOf() // [1, 2, 3]
 ```
 
 > 详细查看 MDN 上 [`valueOf` 各个类型的示例](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf#%E4%BD%BF%E7%94%A8_valueof)。
+
+## Array.prototype.at()
+
+[`at()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/at) 方法接收一个整数值并返回该索引的项目，允许正数和负数。负整数从数组中的最后一个项目开始倒数。
+
+语法：
+
+```js
+at(index)
+```
+
+### 通过索引获取数组项
+
+以下是一个示例，假设我们有以下数组：
+
+```js
+let arr = ['O.O', 'D.O', 'K.O', 'O.K', 'KK']
+```
+
+使用括号表示法，可以通过其索引获取项：
+
+```js
+arr[2] // 'K.O'
+
+arr[4] // 'KK'
+```
+
+使用 `at()` 方法可以执行相同的操作。在数组中调用它，并传入所需的索引，它返回匹配项。
+
+```js
+arr.at(2) // 'K.O'
+
+arr.at(4) // 'KK'
+```
+
+如果要从数组末尾获取项，通过括号表示法，需要获取数组的长度，从想要的末尾减去数字，然后将其传入。
+
+```js
+arr[arr.length - 2] // 'O.K'
+```
+
+而使用 `at()` 方法，只需将索引作为负整数传递。
+
+```js
+arr.at(-2) // 'O.K'
+```
 
 ## 有无 `mutation`
 
@@ -904,7 +950,7 @@ list.indexOf(2) // 1
 
 ## 通过索引获取数组的子集
 
-**不改变原数组**
+**不改变原数组**：
 
 ```js
 list.slice(0, 1) // [1]
@@ -912,7 +958,7 @@ list.slice(1) // [2, 3, 4, 5]
 list.slice(1, 2) // [2]
 ```
 
-**改变原数组**
+**改变原数组**：
 
 ```js
 re = list.splice(1) // re = [2, 3, 4, 5]  list == [1]
@@ -950,13 +996,13 @@ list.splice(list.indexOf(2), 0, 6) // [1, 6, 2, 1, 3, 4, 5]
 
 ## 添加元素
 
-**不改变原数组**
+不改变原数组：
 
 ```js
 list.concat([6]) // [1, 2, 3, 4, 5, 6]
 ```
 
-**改变原数组**
+改变原数组：
 
 ```js
 list.push(6) // list == [1, 2, 3, 4, 5, 6]

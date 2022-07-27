@@ -1,4 +1,4 @@
-# 创建 GUID、UUID
+# 创建 GUID/UUID
 
 根据 [RFC 4122](https://www.ietf.org/rfc/rfc4122.txt)，UUID（通用唯一标识符）也称为 GUID（全局唯一标识符），是设计用于提供特定唯一性保证的标识符。
 
@@ -17,6 +17,8 @@ const crypto = require('crypto')
 crypto.randomUUID() // bb2c6a75-b373-4c24-a3c3-1fb0911a8a25
 ```
 
+因为它是一个加密安全的标识符，所以需要 SSL 证书才能运行。但是，对于测试而言，`localhost://` 和 `file://` 除外。
+
 如果这两种方法都不适用于您，还有以下最原始的方法：
 
 ```js
@@ -32,7 +34,7 @@ function uuidv4() {
 uuidv4() // 'ab399796-c3b4-4329-903a-4db62af83a17'
 ```
 
-但强烈建议不要使用任何依赖 `Math.random()` 的 UUID 生成器。基于 `Math.random()` 的解决方案不能提供良好的唯一性保证。[点击查看详情 ](https://bocoup.com/blog/random-numbers)
+但强烈建议不要使用任何依赖 `Math.random()` 的 UUID 生成器。基于 `Math.random()` 的解决方案不能提供良好的唯一性保证。[点击此处查看详情](https://bocoup.com/blog/random-numbers)
 
 ## 更多资料
 
