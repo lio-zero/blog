@@ -121,5 +121,3 @@ function evalThrow(count: number) {
 ```
 
 这对我们来说更为安全。当然，这种“类型转换”可以是任何有助于增强应用程序的东西。即使验证了复杂的对象，也可以将参数缩小到特定的类型，并确保它们与代码的其余部分保持一致。非常有用，尤其是当你依赖很多函数时。
-
-[TypeScript 类型保护和类型谓词](https://dev.to/smeijer/typescript-type-guards-and-type-predicates-4m5e)

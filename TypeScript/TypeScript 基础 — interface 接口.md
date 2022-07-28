@@ -56,7 +56,7 @@ printUser(myObj) // { name: 'D.O', height: 180 }
 
 带有可选属性的接口与普通的接口定义差不多，只是在可选属性名字定义的后面加一个 `?` 符号。
 
-**好处**
+好处：
 
 - 可以对可能存在的属性进行预定义
 - 可以捕获引用了不存在的属性时的错误
@@ -150,7 +150,7 @@ interface IVariate {
 
 继承使用 `extends` 关键字
 
-**单接口继承**
+**单接口继承**：
 
 ```ts
 interface two extends one {

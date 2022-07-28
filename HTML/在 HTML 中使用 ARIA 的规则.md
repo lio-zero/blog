@@ -104,7 +104,7 @@ HTML5 使用默认的隐式语义定义了一组新的结构和分段元素，�
 - 使用 `role=listbox` 和 `role=option`，考虑改用 `<select>` 和 `<option>` 元素。
 - 使用 `role=checkbox` 或 `role=radio` 时，考虑改用 `<input type="checkbox">` 或 `<input type="radio">` 元素。
 - 使用 `role=textbox`，可以考虑使用 `<input type="text">` 或搜索、电子邮件、URL 或电话。
-- 其他一些语义元素：`article`、`aside`、`footer`、`header`、`main`、`nav`、`section` 等等…
+- 其他一些语义元素：`article`、`aside`、`footer`、`header`、`main`、`nav`、`section` 等等。
 
 这意味着在实现后，浏览器将公开该元素的默认隐式语义，因此您不必这样做。
 

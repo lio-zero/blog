@@ -21,7 +21,7 @@ const message = String('hello')
 
 我们经常使用 `typeof variable==='string'` 来检查给定变量是否为原始字符串。
 
-另一方面，`String` 是一个基本包装字符串的对象，用于操纵字符串。我们可以从构造函数中创建 `String` 的实例，例如 `new String(…)`：
+另一方面，`String` 是一个基本包装字符串的对象，用于操纵字符串。我们可以从构造函数中创建 `String` 的实例，例如 `new String(...)`：
 
 ```ts
 const message = new String('hello')
@@ -63,11 +63,11 @@ bar = foo
 ```ts
 // Do NOT
 const reverse = (s: String): String => {
-    ...
+  // ...
 }
 
 // Do
 const reverse = (s: string): string => {
-    ...
+  // ...
 }
 ```

@@ -20,7 +20,7 @@ W3C [使用 HTML 的 `translate` 属性](https://www.w3.org/International/questi
 ```html
 <p>
   The question in the title
-  <cite translate="no">How Far Can You Go?</cite> applies to…
+  <cite translate="no">How Far Can You Go?</cite> applies to...
 </p>
 ```
 
