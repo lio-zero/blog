@@ -1944,7 +1944,7 @@ HTML5 使用默认的隐式语义定义了一组新的结构和分段元素，�
   - 参考：[为什么我们不建议用 Table 布局](https://www.html5tricks.com/why-not-table-layout.html) 和 [最小化布局](https://medium.com/better-programming/web-performance-dom-reflow-76ac7c4d2d4f)
 - [如何制作快速加载的 HTML 页面](https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/Tips_for_authoring_fast-loading_HTML_pages) 中还有其他方面的例子，如：高效地排列页面组件、合理的选择 user-agent 等
 - [优先分配资源](https://web.dev/prioritize-resources/)
-- [预加载关键资产以提高加载速度](https://web.dev/preload-critical-assets/)
+- [预加载关键资源以提高加载速度](https://web.dev/preload-critical-assets/)
 - [尽早建立网络连接以提高感知的页面速度](https://web.dev/preconnect-and-dns-prefetch/)
 - [预取资源以加速将来的导航](https://web.dev/link-prefetch/)
 - [Best Practices for Speeding Up Your Web Site](http://developer.yahoo.com/performance/rules.html)

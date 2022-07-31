@@ -1,13 +1,14 @@
 # 忽略 ESLint 中的行和文件
 
-[ESLint](https://eslint.org/) 根据预定义的规则分析代码以发现问题。然而，有时你需要打破 ESLint 规则。ESLint 支持两种机制来[忽略代码中的规则冲突](https://eslint.org/docs/user-guide/configuring)：
+[ESLint](https://eslint.org/) 根据预定义的规则分析代码以发现问题。然而，有时你需要打破 ESLint 规则。ESLint 支持几种机制来[忽略代码中的规则冲突](https://eslint.org/docs/user-guide/configuring)：
 
 - 使用注释，可以[禁用](https://eslint.org/docs/user-guide/configuring#using-configuration-comments)行或代码块的某些规则。
 - 使用 [`.eslintignore` 文件](https://eslint.org/docs/user-guide/configuring#eslintignore)。
+- 使用 [ESLint 配置文件](https://github.com/lio-zero/blog/blob/main/%E5%89%8D%E7%AB%AF/ESLint%20%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.md)禁用规则。
 
 ## 使用注释禁用 ESLint
 
-ESLint 允许您使用 `/* eslint */` 注释禁用单个 lint 规则。例如，许多 ESLint 规则[不允许使用 JavaScript 的 `eval()` 函数](https://eslint.org/docs/rules/no-eval)，因为 [`eval()` 有几个安全问题](https://alligator.io/js/eval/)。但是，如果您确实确定要允许 `eval()`，可以按如下方式禁用 lint 规则：
+ESLint 允许您使用 `/* eslint */` 注释禁用单个 lint 规则。例如，许多 ESLint 规则[不允许使用 JavaScript 的 `eval()` 函数](https://github.com/lio-zero/blog/blob/main/JavaScript/JavaScript%20Eval.md)，因为 [`eval()` 有几个安全问题](https://alligator.io/js/eval/)。但是，如果您确实确定要允许 `eval()`，可以按如下方式禁用 lint 规则：
 
 ```js
 const res = eval('42') // eslint-disable-line no-eval
@@ -31,7 +32,7 @@ function usesEval() {
 
 您还可以通过将 `/* eslint-disable */` 置于文件顶部来禁用所有 ESLint 规则。
 
-## 使用[`.eslintignore`](https://eslint.org/docs/user-guide/configuring#eslintignore)
+## 使用 [`.eslintignore`](https://eslint.org/docs/user-guide/configuring#eslintignore)
 
 您可以使用注释来禁用文件的所有 ESLint 规则，但[通常不鼓励这样做](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-abusive-eslint-disable.md)。如果您确定要让 ESLint 忽略一个文件，通常最好将其列在项目根目录中的 `.eslintignore` 文件中。
 
@@ -51,4 +52,28 @@ ESLint 认为 `.eslintignore` 中的路径相对于 `.eslintignore` 文件的位
 
 ```txt
 data/*
+```
+
+## ESLint 配置文件
+
+可以在 `.eslintrc.js` 文件单独配置全局禁用规则。
+
+```json
+{
+  "rules": {
+    "no-eval": 0
+  }
+}
+```
+
+您也可以在 `package.json` 的 `eslintConfig` 字段配置禁用规则，如下所示：
+
+```json
+{
+  "eslintConfig": {
+    "rules": {
+      "no-eval": 0
+    }
+  }
+}
 ```

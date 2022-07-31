@@ -180,7 +180,7 @@ esbuild App.js --bundle --outfile=AppBundle.js --loader:.js=jsx
 
 现在您有了 `AppBundle.js`，让我们打开 `index.html` 来检查您的绑定过程是否正常工作。
 
-这里我们需要通过 server 的方式打开 `index.html`，推荐 VSCode 插件 [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)，也可以使用 [`http-server`](https://www.npmjs.com/package/http-server) 模块，我们也会在下面介绍到 esbuild 的 `serve` 模式，来开启一个 server。
+这里我们需要通过 server 的方式打开 `index.html`，推荐 VS Code 插件 [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)，也可以使用 [`http-server`](https://www.npmjs.com/package/http-server) 模块，我们也会在下面介绍到 esbuild 的 `serve` 模式，来开启一个 server。
 
 ![Hello esbuild](https://upload-images.jianshu.io/upload_images/18281896-6929781c593a7f71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 

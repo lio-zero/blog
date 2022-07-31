@@ -15,7 +15,7 @@ i === undefined // true
 
 为什么我们需要这样的东西？
 
-首先，在早期，人们能够覆盖 `undefined` 并赋予它一个实际值。而 `void`总是返回**真正的意义上 `undefined`**。
+首先，在早期，人们能够覆盖 `undefined` 并赋予它一个实际值。而 `void` 总是返回**真正的意义上 `undefined`**。
 
 其次，这是调用立即执行函数的好方法：
 
@@ -25,7 +25,7 @@ void (function () {
 })()
 ```
 
-所有这些都不会污染全局名称空间：
+所有这些都不会污染全局命名空间：
 
 ```js
 void (function fn(i) {
@@ -89,7 +89,7 @@ foo(void 2) // ✅
 function doSomething(callback: () => void) {
   // 在当前环境中，callback 总是返回 undefined
   let c = callback()
-  // c 也是 undefend 类型
+  // c 也是 undefined 类型
 }
 
 // 这个函数返回一个数字
@@ -97,7 +97,7 @@ function aNumberCallback(): number {
   return 2
 }
 
-// 正常工作，doSometing 确保了类型安全
+// 正常工作，doSomething 确保了类型安全
 doSomething(aNumberCallback)
 ```
 

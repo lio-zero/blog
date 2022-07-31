@@ -40,3 +40,5 @@ JSON.parse(json) // {name: 'O.O', age: 20}
 
 - [Eval：执行代码字符串](https://zh.javascript.info/eval)
 - [Why is using the JavaScript eval function a bad idea?](https://stackoverflow.com/questions/86513/why-is-using-the-javascript-eval-function-a-bad-idea)
+- [既然不提倡在 JavaScript 中使用 eval，为什么还要设计出来？](https://www.zhihu.com/question/545741796)
+- [Reasons Why You Should Never Use eval() in JavaScript](https://www.digitalocean.com/community/tutorials/js-eval)

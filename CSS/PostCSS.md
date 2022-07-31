@@ -18,7 +18,7 @@ PostCSS 相比 Sass 或 Less 等 CSS 预处理器提供的主要好处是能够�
 pnpm i -g postcss-cli
 ```
 
-通过输入以下内容确保其正常工作：
+输入以下命令确保其正常工作：
 
 ```bash
 postcss --help

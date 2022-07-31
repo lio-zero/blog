@@ -131,7 +131,7 @@ console.log(arr1.concat(arr2)) // ["a", "b", "c", "d", "e", "f"]
 ```js
 const arr = []
 
-arr.concat(1, '1', true, {}, null, undefined) // [1, '1', true, {…}, null, undefined]
+arr.concat(1, '1', true, {}, null, undefined) // [1, '1', true, {...}, null, undefined]
 ```
 
 如果数组成员包括对象，`concat` 方法返回当前数组的一个浅拷贝。所谓“浅拷贝”，指的是新数组拷贝的是对象的引用。

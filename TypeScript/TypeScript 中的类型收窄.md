@@ -197,8 +197,8 @@ function calculateArea(shape: Circle | Reactangle) {
     console.log(3.14 * shape.radius * shape.radius)
 
     //  任何访问 height 或 width 的尝试都将导致错误
-    shape.width // Error
-    shape.height // Error
+    shape.width // TypeError
+    shape.height // TypeError
   }
   if ('width' in shape && 'height' in shape) {
     // 现在可以从 shape 对象访问 height 和 width
@@ -226,7 +226,7 @@ console.log(typeof x) // "string"
 
 JavaScript 的 `instanceof` 运算符用于检查某个值是否是某个类的实例。它以 `value instanceof value2` 的格式使用，并返回一个布尔值。当检查某个值是否为类的实例 `instanceof` 时，TypeScript 会将该类型分配给变量，从而收窄类型。
 
-以下面的示例为例，其中一个函数接受一个日期，可以是字符串或日期。如果是日期，我们想将其转换为字符串，如果是字符串，我们将按原样返回。我们可以使用 `instanceof` 检查它是否是 `Date` 的实例，并将其转换为字符串，如下所示。
+以下面的示例为例，其中函数接受一个参数，可以是字符串或日期。如果是日期，我们将其转换为字符串，如果是字符串，我们将按原样返回。我们可以使用 `instanceof` 检查它是否是 `Date` 的实例，并将其转换为字符串，如下所示：
 
 ```ts
 function dateToString(value: string | Date) {

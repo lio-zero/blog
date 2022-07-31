@@ -214,3 +214,5 @@ export default {
 - `methods`
 
 例如，这些是我们在 `setup` 自身内部声明的属性，但我们没有内置方法来访问所有 `data` 属性的列表。
+
+> 关于 Composition API 的问题，可以查看 [Composition API FAQ](https://vuejs.org/guide/extras/composition-api-faq.html)。

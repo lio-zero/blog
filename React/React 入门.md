@@ -103,7 +103,7 @@ npm dev
 
 下面我们来看一下 React 的一些基础用法。
 
-> 额外的，您可以使用 [Codepen](https://codepen.io/) 和 [CodeSandbox](https://codesandbox.io/s) 这种在线代码编写平台。快速开发。
+> 额外的，您可以使用 [CodePen](https://codepen.io/) 和 [CodeSandbox](https://codesandbox.io/s) 这种在线代码编写平台。快速开发。
 
 ## React 渲染 HTML
 

@@ -16,3 +16,7 @@ MongoDB 由 MongoDB Inc. 于 2007 年 10 月开发，2009 年 2 月首度推出�
 - [MongoDB Interview Questions](https://www.tutorialspoint.com/mongodb/mongodb_interview_questions.htm)
 - [Top 20 MongoDB Interview Questions & Answers (2022 Update)](http://career.guru99.com/top-20-mongodb-interview-questions/)
 - [MongoDB Interview Questions](http://www.javatpoint.com/mongodb-interview-questions)
+- [MongoDB Cheat Sheet](https://developer.mongodb.com/quickstart/cheat-sheet/)
+- [MongoDB Cheat Sheet](https://www.bmc.com/blogs/mongodb-cheat-sheet/)
+- [PDF](https://blogs.bmc.com/mongodb-cheat-sheet/?print=pdf)
+- [GitHub](https://gist.github.com/bradtraversy/f407d642bdc3b31681bc7e56d95485b6)
