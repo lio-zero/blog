@@ -46,7 +46,7 @@ crontab 语法如下所示：
 使用 `npm` 安装 `node-cron` 模块。
 
 ```bash
-npm install --save node-cron
+npm i node-cron
 ```
 
 ### 语法
@@ -66,7 +66,7 @@ cron.schedule(cronExpression: string, task: Function, options: Object)
 const cron = require('node-cron')
 
 cron.schedule('5 * * * * *', () => {
-  console.log('每分钟在第 5 秒运行一个任务')
+  console.log('每分钟在第 5 秒运行任务')
 })
 ```
 
@@ -92,27 +92,27 @@ cron.schedule('30 5 * * *', () => {
 const cron = require('node-cron')
 
 cron.schedule('0 16 * * friday', () => {
-  console.log('每周五下午 4:00 运行任务')
+  console.log('每周五下午 16:00 运行任务')
 })
 ```
 
-或者，您可能需要每季度运行一次数据库备份。crontab 语法没有**一个月的最后一天**选项，因此您可以使用**下个月的第一天**，如下所示。
+或者，您可能需要每个季度（1 月、4 月、7 月和 10 月）运行一次数据库备份。crontab 语法没有**一个月的最后一天**选项，因此您可以使用**下个月的第一天**，如下所示。
 
 ```js
 const cron = require('node-cron')
 
 cron.schedule('2 3 1 1,4,7,10 *', () => {
-  console.log('在每个季度的第一天运行任务')
+  console.log('在每个季度第一天的 03:02 运行任务')
 })
 ```
 
-下面显示的任务在上午 10:05 到下午 6:05 之间每小时运行五分钟。
+下面显示的任务从上午 10 点到下午 6 点，每小时 5 分钟运行任务。
 
 ```js
 const cron = require('node-cron')
 
 cron.schedule('5 10-18 * * *', () => {
-  console.log('在上午 10 点到下午 6 点之间每小时运行五分钟的任务')
+  console.log('从上午 10 点到下午 18 点，每小时第 5 分钟运行任务')
 })
 ```
 
@@ -120,13 +120,13 @@ cron.schedule('5 10-18 * * *', () => {
 
 分钟也可以用同样的方法划分。例如，`minutes` 位置的表达式为 `*/10`，表示**每 10 分钟运行一次任务**。
 
-下面的任务在上午 8 点到下午 5:58 之间每两小时运行五分钟。
+下面的任务在上午 8 点到下午 5:58 之间每两小时后的每 5 分钟运行一次任务。
 
 ```js
 const cron = require('node-cron')
 
 cron.schedule('*/5 8-18/2 * * *', () => {
-  console.log('在上午 8 点到下午 5:58 之间每两小时运行一次任务。')
+  console.log('从上午 8 点到下午 18 点，每 2 小时后的每 5 分钟运行一次任务')
 })
 ```
 
@@ -144,7 +144,7 @@ cron.schedule('*/5 8-18/2 * * *', () => {
 const cron = require('node-cron')
 
 const task = cron.schedule('*/5 8-18/2 * * *', () => {
-  console.log('在上午 8 点到下午 5:58 之间每两小时运行一次任务。')
+  console.log('从上午 8 点到下午 18 点，每 2 小时后的每 5 分钟运行一次任务')
 })
 
 task.start()
@@ -158,7 +158,7 @@ task.start()
 const cron = require('node-cron')
 
 const task = cron.schedule('*/5 8-18/2 * * *', () => {
-  console.log('在上午 8 点到下午 5:58 之间每两小时运行一次任务。')
+  console.log('从上午 8 点到下午 18 点，每 2 小时后的每 5 分钟运行一次任务')
 })
 
 task.stop()
@@ -172,10 +172,14 @@ task.stop()
 const cron = require('node-cron')
 
 const task = cron.schedule('*/5 8-18/2 * * *', () => {
-  console.log('在上午 8 点到下午 5:58 之间每两小时运行一次任务。')
+  console.log('从上午 8 点到下午 18 点，每 2 小时后的每 5 分钟运行一次任务')
 })
 
 task.destroy()
 ```
 
 以上便是 `node-cron` 的大部分功能，您应该使用这些功能来安排频繁运行的任务。
+
+## 更多资料
+
+[How To Easily And Safely Manage Cron Jobs In Linux](https://ostechnix.com/how-to-easily-and-safely-manage-cron-jobs-in-linux/)

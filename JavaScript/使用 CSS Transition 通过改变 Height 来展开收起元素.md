@@ -12,7 +12,7 @@
 
 我们将为此创建一个 CSS 类。单击**查看更多**按钮时，将使用 JavaScript 将此类添加到 `<article>` 元素上。
 
-首先，我们将向 HTML 文件添加一个 <article> 元素，并为其添加一些内容。
+首先，我们将向 HTML 文件添加一个 `<article>` 元素，并为其添加一些内容。
 
 ```html
 <article id="article">

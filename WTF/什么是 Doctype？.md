@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 ```
 
-告诉浏览器这是一个 HTML5 文档。
+它告诉浏览器这是一个 HTML5 文档。
 
 ## 浏览器渲染模式
 
@@ -68,3 +68,7 @@ HTML5 不是基于 SGML，而是基于它自己的标准，因此不需要 DTD�
 ```html
 <!DOCTYPE html>
 ```
+
+## 更多资料
+
+[指定文档类型](https://github.com/lio-zero/blog/blob/main/HTML/%E6%8C%87%E5%AE%9A%E6%96%87%E6%A1%A3%E7%B1%BB%E5%9E%8B.md)

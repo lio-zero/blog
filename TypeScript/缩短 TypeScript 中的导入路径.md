@@ -13,7 +13,7 @@ import { authService } from '../../../services/authService'
 
 例如，以下设置将在 `src` 文件夹中找到所有以 `@` 开头的导入：
 
-```js
+```json
 {
   "paths": {
     "@/*": ["src/*"]
@@ -35,7 +35,7 @@ import { authService } from '@/services/authService'
 
 例如，有些库遵循特定的目录结构模式，我们可以预先定义给定文件夹的路径：
 
-```js
+```json
 {
   "paths": {
     "@helpers/*": ["src/helpers/*"],

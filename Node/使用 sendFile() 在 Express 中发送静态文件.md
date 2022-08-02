@@ -1,6 +1,6 @@
 # 使用 sendFile() 在 Express 中发送静态文件
 
-Express [`sendFile()` 方法](https://expressjs.com/en/api.html#res.sendFile)允许您发送原始文件作为对 HTTP 请求的响应。您可以将其 `res.sendFile()` 视为单个接口的 Express `static`中间件。
+Express [`sendFile()` 方法](https://expressjs.com/en/api.html#res.sendFile)允许您发送原始文件作为对 HTTP 请求的响应。您可以将其 `res.sendFile()` 视为单个接口的 Express `static` 中间件。
 
 ## 使用 `sendFile()`
 

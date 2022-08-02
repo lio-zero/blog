@@ -37,7 +37,7 @@ const p: Point = {
 
 其中 `type` 别名必须是唯一的，并且不允许合并声明，否则编译器将报错。
 
-```js
+```ts
 type Person = {
   firstName: string
 }

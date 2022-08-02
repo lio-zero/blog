@@ -85,7 +85,7 @@ foo(void 2) // ✅
 
 所以 `void` 和 `undefined` 基本上是一样的。但有一个区别很重要：**`void` 作为返回类型可以被不同的类型替换，以允许高级回调模式**：
 
-```js
+```ts
 function doSomething(callback: () => void) {
   // 在当前环境中，callback 总是返回 undefined
   let c = callback()
@@ -105,7 +105,7 @@ doSomething(aNumberCallback)
 
 如果你想确保传递的函数只返回 `undefined`，请确保调整你的回调方法签名:
 
-```js
+```ts
 function doSomething(callback: () => undefined) {
   /* ... */
 }

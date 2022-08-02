@@ -2,8 +2,6 @@
 
 [nodemon](http://nodemon.io/) 是一种工具，可在检测到目录中的文件更改时通过自动重新启动节点应用程序来帮助开发基于 node.js 的应用程序。
 
-可以在 [nodemon-demo](https://github.com/lio-zero/nodemon-demo) 下进行测试
-
 ## nodemon 特性
 
 - 自动重新启动应用程序。
@@ -19,13 +17,13 @@
 
 全局安装：
 
-```sh
+```bash
 npm i -g nodemon
 ```
 
 本地安装：
 
-```sh
+```bash
 npm i -D nodemon
 ```
 
@@ -45,7 +43,7 @@ npm i -D nodemon
 
 `nodemon` 一般只在开发时使用，它最大的长处在于 watch 功能，一旦文件发生变化，就自动重启进程。
 
-```sh
+```bash
 # 默认监视当前目录的文件变化
 $ nodemon app.js
 
@@ -61,7 +59,7 @@ $ nodemon app.js localhost 3697
 
 `watch` 可以监控多个目录，默认值：`'*.*'`。默认情况下，nodemon 监控当前工作目录。如果您想要控制该选项，请使用该选项添加特定路径：`--watch`
 
-```sh
+```bash
 # 监控指定文件夹或者文件变化
 $ nodemon --watch app --watch libs app.js
 ```
@@ -252,7 +250,7 @@ nodemon --delay 2500ms app.js
 }
 ```
 
-优先级：本地配置文件 -> nodemonConfig -> 全局配置文件。命令行中指定的参数选项会被本地配置文件覆盖，而在 `package.json` 中配置的会被命令行覆盖。
+**优先级**：本地配置文件 -> nodemonConfig -> 全局配置文件。命令行中指定的参数选项会被本地配置文件覆盖，而在 `package.json` 中配置的会被命令行覆盖。
 
 每次修改配置文件修改完记得重启一下。
 
@@ -286,6 +284,6 @@ module.exports = {
 ## 更多
 
 - [使用 nodemon 作为模块](https://github.com/remy/nodemon/blob/master/doc/requireable.md)
-- [gulp-nodemon](https://github.com/JacksonGariety/gulp-nodemon) 插件，将 nodemon 与项目的其余 gulp 工作流程集成在一起。
-- [grunt-nodemon](https://github.com/ChrisWren/grunt-nodemon) 插件，将 nodemon 与项目的其余 grun t 工作流程集成在一起。
+- [gulp-nodemon](https://github.com/JacksonGariety/gulp-nodemon) 插件，将 nodemon 与项目的其余 Gulp 工作流程集成在一起。
+- [grunt-nodemon](https://github.com/ChrisWren/grunt-nodemon) 插件，将 nodemon 与项目的其余 Grunt 工作流程集成在一起。
 - [常问问题](https://github.com/remy/nodemon/blob/master/faq.md#overriding-the-underlying-default-ignore-rules)
