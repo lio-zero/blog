@@ -16,19 +16,23 @@ crontab 是 Linux 系统的定时任务执行器。cron 的操作由 [crontab](h
 
 crontab 语法如下所示：
 
-```bash
- # ┌────────────── second (可选)
- # │ ┌──────────── 分钟 (minute，0 - 59)
- # │ │ ┌────────── 小时 (hour，0 - 23)
- # │ │ │ ┌──────── 一个月中的第几天 (day of month，1 - 31)
- # │ │ │ │ ┌────── 月份 (month，1 - 12)
- # │ │ │ │ │ ┌──── 星期中星期几 (day of week，0 - 6) 注意：星期天为 0
- # │ │ │ │ │ │
- # │ │ │ │ │ │
- # * * * * * *
+```txt
+┌────────────── second (可选)
+│ ┌──────────── 分钟 (minute，0 - 59)
+│ │ ┌────────── 小时 (hour，0 - 23)
+│ │ │ ┌──────── 一个月中的第几天 (day of month，1 - 31)
+│ │ │ │ ┌────── 月份 (month，1 - 12)
+│ │ │ │ │ ┌──── 一个星期中星期几 (day of week，0 - 6) 注意：星期天为 0
+│ │ │ │ │ │
+│ │ │ │ │ │
+* * * * * *
 ```
 
-允许的 cron 值包括以下内容。
+单个星号的行为类似于通配符。这意味着该任务将针对该时间单位的每个实例运行。五个星号（`* * * * *`）表示 crontab 默认每分钟运行一次。
+
+星号处的数字将被视为该时间单位的值。允许您将任务安排为每天、每周或更复杂的时间。
+
+将上面的图形表示重新编写成表格，允许的 cron 值包括以下内容。
 
 | **字段**           | **值**                                 |
 | ------------------ | -------------------------------------- |
@@ -132,7 +136,7 @@ cron.schedule('*/5 8-18/2 * * *', () => {
 
 ## 定时任务方法
 
-在结束之前，让我们关注一下三个关键的定时任务方法。
+让我们关注一下三个关键的定时任务方法。
 
 ### 开始任务
 
@@ -179,6 +183,103 @@ task.destroy()
 ```
 
 以上便是 `node-cron` 的大部分功能，您应该使用这些功能来安排频繁运行的任务。
+
+## 示例：删除错误日志文件
+
+考虑一个场景，您需要在每个月的第十五天定期从服务器中删除日志文件。
+
+```js
+const cron = require('node-cron')
+const fs = require('fs')
+
+cron.schedule('0 0 15 * *', () => {
+  fs.unlink('./error.log', (err) => {
+    if (err) throw err
+    console.log('错误日志文件已成功删除')
+  })
+})
+```
+
+## 示例：备份数据库
+
+确保用户数据的保存是任何业务的关键。如果发生意外事件，并且数据库损坏，则需要从备份中恢复数据库。如果您的业务没有任何形式的现有备份，您将面临严重的麻烦。
+
+考虑一个场景，您需要在每天晚上 11:59 例行备份数据库转储。
+
+假设您已经在环境中安装并运行了 SQLite。给定一个名为 `database.sqlite` 的数据库，用于进行数据库备份的 shell 命令可能类似于：
+
+```bash
+sqlite3 database.sqlite .dump > data_dump.sql
+```
+
+为了执行以上命令，我们安装 `shelljs`：
+
+```bash
+pnpm install shelljs
+```
+
+它可以在运行 shell 命令。
+
+完整示例如下：
+
+```js
+const cron = require('node-cron')
+const shell = require('shelljs')
+
+// 每天晚上 11:59 备份数据库
+cron.schedule('59 23 * * *', () => {
+  if (shell.exec('sqlite3 database.sqlite .dump > data_dump.sql').code !== 0) {
+    shell.exit(1)
+  } else {
+    shell.echo('数据库备份完成')
+  }
+})
+```
+
+## 示例：发送预定的电子邮件
+
+发送电子邮件，nodemailer 包可以帮助到我们，安装：
+
+```bash
+pnpm i nodemailer
+```
+
+假设我们需要在每周五为公司员工统一发送一封邮件：
+
+```js
+const cron = require('node-cron')
+const nodemailer = require('nodemailer')
+
+// 创建邮件传输器
+let transporter = nodemailer.createTransport({
+  host: 'your_demo_email_smtp_host.example.com',
+  port: your_demo_email_port,
+  auth: {
+    user: 'your_demo_email_address@example.com',
+    pass: 'your_demo_email_password'
+  }
+})
+
+// 每周五发送邮件
+cron.schedule('0 0 * * 5', () => {
+  let messageOptions = {
+    from: 'your_demo_email_address@example.com',
+    to: 'your_demo_email_address@example.com',
+    subject: '预定电子邮件',
+    text: '你好，这封电子邮件是公司自动发送的。'
+  }
+
+  transporter.sendMail(messageOptions, (error, info) => {
+    if (error) {
+      throw error
+    } else {
+      console.log('电子邮件已成功发送！')
+    }
+  })
+})
+```
+
+如果需要测试效果，Nodemailer 支持 [Ethereal Email](https://ethereal.email/) 提供的测试账户。创建一个 Ethereal 帐户并使用为您生成的用户名和密码。
 
 ## 更多资料
 

@@ -1,4 +1,4 @@
-# Node 工具 — nodemon 详解
+# 使用 nodemon 自动重启 Node.js 应用程序
 
 [nodemon](http://nodemon.io/) 是一种工具，可在检测到目录中的文件更改时通过自动重新启动节点应用程序来帮助开发基于 node.js 的应用程序。
 
@@ -52,6 +52,14 @@ $ nodemon app.js localhost 3697
 ```
 
 ## 参数
+
+您可以使用以下命令查看所有可用选项：
+
+```bash
+nodemon --help
+```
+
+以下是它们的详细解释。
 
 ### watch
 
@@ -212,7 +220,7 @@ nodemon --delay 2500ms app.js
 
 ## 配置文件
 
-你可以在命令行中添加参数选项以支持某种功能，也可以使用本地和全局配置文件。可以使用该 `--config` 选项指定备用本地配置文件。
+你可以在命令行中添加参数选项以支持某种功能，也可以使用本地和全局配置文件。可以使用 `--config` 选项指定备用本地配置文件。
 
 ```json
 // nodemon.json
@@ -237,7 +245,9 @@ nodemon --delay 2500ms app.js
 }
 ```
 
-你还可以在 `package.json` 中使用 `nodemonConfig` 字段进行配置，这时独立配置文件将被忽略。
+注意，使用 `execMap` 代替 `--exec`。`execMap` 允许您为某些文件扩展名指定二进制文件。
+
+如果您不想将 `nodemon.json` 配置文件添加到项目中，你还可以在 `package.json` 中使用 `nodemonConfig` 字段进行配置，这时独立配置文件将被忽略。
 
 ```json
 {
@@ -287,3 +297,5 @@ module.exports = {
 - [gulp-nodemon](https://github.com/JacksonGariety/gulp-nodemon) 插件，将 nodemon 与项目的其余 Gulp 工作流程集成在一起。
 - [grunt-nodemon](https://github.com/ChrisWren/grunt-nodemon) 插件，将 nodemon 与项目的其余 Grunt 工作流程集成在一起。
 - [常问问题](https://github.com/remy/nodemon/blob/master/faq.md#overriding-the-underlying-default-ignore-rules)
+
+<!-- https://www.digitalocean.com/community/tutorials/workflow-nodemon -->

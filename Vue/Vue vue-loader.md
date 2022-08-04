@@ -1,6 +1,6 @@
 # vue-loader
 
-[vue-loader](https://github.com/vuejs/vue-loader) 作为 webpack 中一个为解析 `.vue` 文件的 loader。主要的作用是将 Vue 单文件组件（SFC，Single-File Component）解析为 vue runtime 可识别的组件模块。
+[vue-loader](https://github.com/vuejs/vue-loader) 作为 webpack 中一个为解析 `.vue` 文件的 loader。主要的作用是将 [Vue 单文件组件](https://vuejs.org/guide/scaling-up/sfc.html)（SFC，Single-File Component）解析为 vue runtime 可识别的组件模块。
 
 有了 vue-loader，我们就可以在项目中编写 SFC 格式的 Vue 组件。
 

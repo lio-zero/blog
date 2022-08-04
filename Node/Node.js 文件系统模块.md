@@ -374,3 +374,45 @@ access(file, constants.F_OK, (err) => {
 
 - `fs.watch` 利用操作系统原生机制来监听，可能不适用网络文件系统
 - `fs.watchFile` 则是定期检查文件状态变更，适用于网络文件系统，但是相比 `fs.watch` 有些慢，因为不是实时机制
+
+## 截断文件内容
+
+[`ftruncate`](https://nodejs.org/api/fs.html#fsftruncatefd-len-callback) 用于截断文件的内容。
+
+语法：
+
+```js
+fs.ftruncate(fd, len, callback)
+```
+
+`close` 方法接受以下参数：
+
+- `fd` — 文件 `fs.open()` 方法返回的文件描述符。
+- `len` — 文件的长度，在此长度之后文件将被截断。
+- `callback` — 回调函数，它不获取任何参数，除非给完成回调一个可能的异常。
+
+截断文件内容示例：
+
+```js
+const { open, close, ftruncate } = require('node:fs')
+
+function closeFd(fd) {
+  close(fd, (err) => {
+    if (err) throw err
+  })
+}
+
+open('temp.txt', 'r+', (err, fd) => {
+  if (err) throw err
+
+  try {
+    ftruncate(fd, 4, (err) => {
+      closeFd(fd)
+      if (err) throw err
+    })
+  } catch (err) {
+    closeFd(fd)
+    if (err) throw err
+  }
+})
+```

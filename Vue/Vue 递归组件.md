@@ -1,6 +1,6 @@
 # Vue 递归组件
 
-> SFC 可以通过其文件名隐式引用自身。
+> [SFC](https://vuejs.org/guide/scaling-up/sfc.html) 可以通过其文件名隐式引用自身。
 
 即组件通过组件名引用自身，这种情况就是[递归组件](https://vuejs.org/api/sfc-script-setup.html#using-components)。
 

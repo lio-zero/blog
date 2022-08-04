@@ -37,7 +37,7 @@
 }
 ```
 
-或者
+或者：
 
 ```css
 .container {
@@ -68,7 +68,7 @@
 }
 ```
 
-`transform` 还可以使用 `margin` 代替，需要注意的是 `margin` 的值是宽和高值的负一半：
+`transform` 还可以使用 `margin` 代替，但需要提前知道元素的宽高：
 
 ```css
 .container {
@@ -125,7 +125,7 @@
 }
 ```
 
-使用 `margin：auto`：
+使用 `margin: auto`：
 
 ```css
 .container {
@@ -199,3 +199,8 @@
 搭配众多，一个个尝试。
 
 > [演示地址](https://codepen.io/lio-zero/pen/XWVyqjZ)
+
+## 更多资料
+
+- [Centering in CSS: A Complete Guide](https://css-tricks.com/centering-css-complete-guide/)
+- [How to horizontally center an element](https://stackoverflow.com/questions/114543/how-to-horizontally-center-an-element)

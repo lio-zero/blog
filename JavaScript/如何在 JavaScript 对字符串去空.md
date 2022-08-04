@@ -121,13 +121,13 @@ string.trimRight() // '   Hello'
 
 我应该该选择哪一个？[ECMAScript 规范](https://ecma-international.org/ecma-262/10.0/index.html#sec-string.prototype.trimstart)给出了很好的解答：
 
-> 首选属性 `trimStart` 和 `trimEnd`。`trimleft` 和 `trimright` 属性主要是为了与旧代码兼容而提供的。
+> 首选属性 `trimStart` 和 `trimEnd`。`trimLeft` 和 `trimRight` 属性主要是为了与旧代码兼容而提供的。
 
 ## 为什么会有别名？
 
-所以 `trimLeft` 和 `trimRight` 首先被引入。然而，委员会决定提议改为 `trimStart` 和 `trimEnd`。这是因为它与其他内置方法 `padStart` 和 `padEnd` 更为一致。这对我来说很有意义，我认为一致性是关键，使用相同的语言有助于减少混乱。
+因为 `trimLeft` 和 `trimRight` 首先被引入。然而，委员会决定提议改为 `trimStart` 和 `trimEnd`。这是因为它与其他内置方法 `padStart` 和 `padEnd` 更为一致。这至少对我来说很有意义的，我认为一致性是关键，使用相同的语言有助于减少混乱。
 
-但出于 Web 兼容性的考虑，他们保留了旧的术语（`trimLeft` 和 `trimRight`）作为别名。因此，如果您的代码使用的是旧方法，没问题，它们仍然可以工作。但是，如果您有这个能力，我建议您将其更改为使用正式的方法，而不是别名，这样您的代码库中就不会有两种不同的方法。记住，这一切都是为了一致性
+但出于 Web 兼容性的考虑，他们保留了旧的术语（`trimLeft` 和 `trimRight`）作为别名。因此，如果您的代码使用的是旧方法，没问题，它们仍然可以工作。但是，如果您有这个能力，我建议您将其更改为使用正式的方法，而不是别名，这样您的代码库中就不会有两种不同的方法。记住，这一切都是为了一致性。
 
 ## 其他解决方案
 
@@ -143,13 +143,18 @@ const str = '  h i   '
 str.replace(/ /g, '') // 'hi'
 ```
 
-我们可以替换一下正则，只匹配开头和结尾：
+我们可以编写更加精确的正则，只匹配开头和结尾：
 
 ```js
-const str = '      Superman      '
-const trimStr = str.replace(/^\s+ | \s+$/g, '')
+/**
+ * @desc 删除字符串两边的空格
+ */
+function remove_both_trim(str) {
+  return str.replace(/^\s+|\s+$/g, '')
+}
 
-console.log(trimStr) // 'Superman'
+const str = '      Superman      '
+removeBothTrim(str) // 'Superman'
 ```
 
 ## 浏览器支持

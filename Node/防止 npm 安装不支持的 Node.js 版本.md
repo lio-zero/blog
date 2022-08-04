@@ -28,15 +28,16 @@ $ npm install
 
 ## 如何防止不支持 Node.js 版本的 `npm install`
 
-操作方法很简单，我们可以将一个本地 `npm` 配置文件（`.npmrc`）添加到模块/项目根目录中，[并显式启用 strict Node.js 引擎处理](https://docs.npmjs.com/cli/v7/using-npm/config#engine-strict)。
+操作方法很简单，我们可以将一个本地 `npm` 配置文件（`.npmrc`）添加到模块/项目根目录中，[并显式启用严格的 Node.js 引擎处理](https://docs.npmjs.com/cli/v7/using-npm/config#engine-strict)。
 
 ```bash
+# .npmrc
 engine-strict=true
 ```
 
 如果项目包含定义 `engine-strict=true` 的 `.npmrc`，其 Node.js 未满足版本要求，则无法运行 `npm install`。
 
-> **注意**：`EBADENGINE` 将从 **WARN** 变为 **ERR**，安装过程将失败，状态代码为 `1`。
+> **注意**：`EBADENGINE` 将从 **WARN** 变为 **ERR**，安装过程将失败，状态码为 `1`。
 
 ```bash
 $ npm install
@@ -52,14 +53,16 @@ $ npm install
 # npm ERR!     /Users/node_cache/.npm/_logs/2021-08-09T15_15_48_050Z-debug.log
 ```
 
+在这方面，[pnpm](https://pnpm.io/package_json#engines) 与 npm 保持一致。
+
 ## Yarn 呢?
 
-Yarn 不需要额外的配置文件，默认情况下严格处理 `engines` 属性。这似乎是处理 Node.js 版本的正确方法。
+[Yarn](https://yarnpkg.com/) 不需要额外的配置文件，默认情况下严格处理 `engines` 属性。这似乎是处理 Node.js 版本的正确方法。
 
 ```bash
 $ yarn install
 
-# yarn install v1.22.5
+# yarn install v1.22.19
 # info No lockfile found.
 # [1/5] 🔍  Validating package.json...
 # error engine-test@1.0.0: The engine "node" is incompatible with this module. Expected version ">=15.0.0". Got "14.16.0"

@@ -17,6 +17,7 @@
 - [Radium](https://github.com/FormidableLabs/radium)
 - [Emotion](https://github.com/emotion-js/emotion)
 - [Styled Components](https://styled-components.com/)
+- etc
 
 其中最流行的工具之一是 Styled Components。
 
@@ -26,7 +27,27 @@ Styled Components 允许您在组件中编写简单的 CSS，而不用担心类�
 
 > 推荐：[使用 Styled Components 编写样式化组件](https://github.com/lio-zero/blog/blob/main/React/%E4%BD%BF%E7%94%A8%20Styled%20Components%20%E7%BC%96%E5%86%99%E6%A0%B7%E5%BC%8F%E5%8C%96%E7%BB%84%E4%BB%B6.md)。
 
+使用 CSS-in-JS 的好处：
+
+- 组件化思考 — 无效维护一推样式表，样式直接在组件上编写。
+- 消除无用代码 — 当组件被渲染时，样式被应用，组件销毁是样式随组件消失。
+- 范围界定 — 编写新样式不会影响到网站的其他内容，无需担心全局范围的样式受到影响。
+- 命名 — 无效考虑设置一个 ID 或类
+- CSS 中 JavaScript 的可能性 — 在样式中使用 JS 特有的功能。
+- 代码共享 — 往往一个组件设计好后，可以在任何项目中使用。
+- 设计系统友好
+
+使用 CSS-in-JS 的缺点：
+
+- 学习曲线
+- 新的依赖
+- 挑战现状
+
+有一个不错的 [CSS-in-JS playground](https://www.cssinjsplayground.com/)，你可以在这里尝试各种流行的 CSS-in-JS 解决方案，并支持实时预览。
+
 ## 进一步阅读
 
 - [What are CSS Modules and why do we need them?](https://css-tricks.com/css-modules-part-1-need/)
 - [CSS Modules](https://glenmaddern.com/articles/css-modules)
+- [awesome-css-in-js](https://github.com/tuchk4/awesome-css-in-js)
+- [CSS in JS: Benefits, Drawbacks, and Tooling](https://medium.com/object-partners/css-in-js-benefits-drawback-and-tooling-80286b03f9aa)
