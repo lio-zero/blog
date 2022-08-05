@@ -13,6 +13,8 @@
 - **`border`（边框）**：围绕在内边距和内容外的边框。
 - **`margin`（边界）**：边距周围的透明区域（即边距与任何相邻元素之间的空间）
 
+它们解释了元素的大小，对应着相应的 CSS 属性，除了 content（CSS 属性 `width/height`）。
+
 ## IE 盒模型和 W3C 盒模型
 
 这里需要介绍一下 IE 盒模型和 W3C 盒模型的区别。
@@ -43,9 +45,9 @@
 
 CSS3 `box-sizing` 属性提供给我们切换盒模型的权利，它有如下三个值：
 
-- `content-box`： 默认的标准（W3C）盒模型元素效果
-- `border-box` ：触发怪异（IE）盒模型元素的效果
-- `inherit`：继承父元素 `box-sizing` 属性的值
+- `content-box` — 默认的标准（W3C）盒模型元素效果
+- `border-box` — 触发怪异（IE）盒模型元素的效果
+- `inherit` — 继承父元素 `box-sizing` 属性的值
 
 ```css
 .box {
@@ -55,4 +57,4 @@ CSS3 `box-sizing` 属性提供给我们切换盒模型的权利，它有如下�
 
 > **注意**：到 IE8+ 才支持使用 `box-sizing` 进行盒模型切换。
 
-我们可能不明确或者总是去计算加上 `padding` 和 `border` 才能获取元素的实际大小，这变的很麻烦。这时，我们可以使用 `box-sizing: border-box` 设置有 `padding` 和 `border` 值时不把元素的宽度撑开。
+我们可能不明确或者总是去计算加上 `padding` 和 `border` 才能获取元素的实际大小，这变的很麻烦。这时，我们可以使用 `box-sizing: border-box` 在设置有 `padding` 和 `border` 值时不把元素的宽度/高度撑开。

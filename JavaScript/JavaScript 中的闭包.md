@@ -101,7 +101,7 @@ for (var i = 1; i < 5; i++) {
 
 原因：`i` 是声明在全局作用域中的，定时器中的匿名函数也是执行在全局作用域中，因此输出全为 11。
 
-解决：我们可以让 `i` 在每次迭代的时候，都产生一个私有的作用域，在这个私有的作用域中保存当前 `i` 的值。
+解决：我们可以让 `i` 在每次迭代的时候，都产生一个私有的作用域，在这个私有的作用域中保存当前 `i` 的值（这里使用 [IIFE](https://github.com/lio-zero/blog/blob/main/JavaScript/JavaScript%20%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%88IIFE%EF%BC%89.md)）。
 
 ```js
 // 立即执行函数
@@ -187,6 +187,15 @@ data[2]() // 3
 
 ## 闭包的应用场景
 
+以下是闭包的一些用途：
+
+- 初始化函数 - 用于确保函数只调用一次
+- 内存优化 - 用于提高函数的内存效率和性能
+- 封装 - 用于隐藏函数的变量并选择性地公开方法
+- 函数式编程 - 实现[高阶函数](https://github.com/lio-zero/blog/blob/main/JavaScript/JavaScript%20%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0.md)和[柯里化](https://github.com/lio-zero/blog/blob/main/JavaScript/%E6%9F%AF%E9%87%8C%E5%8C%96.md)关键
+
+以下是一些示例。
+
 ### setTimeout
 
 原生的 `setTimeout` 传递的第一个函数不能带参数，通过闭包可以实现传参效果。
@@ -225,9 +234,9 @@ function debounce(fn, delay) {
 }
 ```
 
-### 封装私有变量
+### 封装
 
-闭包的应用比较典型是定义模块，我们将操作函数暴露给外部，而细节隐藏在模块内部：
+闭包的应用比较典型是定义模块，我们将操作函数暴露给外部，而将细节隐藏在模块内部：
 
 ```js
 function module() {
@@ -239,6 +248,7 @@ function module() {
     get
   }
 }
+
 const f = module()
 f.add(1)
 f.add(2)

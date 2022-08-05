@@ -33,7 +33,7 @@ path.extname(req.files.logo.name) //.png
 
 它不需要任何第三方库。
 
-或者，您可以使用 [mime-types](https://www.npmjs.com/package/mime-types) 包并查看 MIME 类型：
+或者，您可以使用 [mime-types](https://www.npmjs.com/package/mime-types) 包并查看 [MIME 类型](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_Types)：
 
 ```js
 const mime = require('mime-types')

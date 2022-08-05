@@ -6,6 +6,8 @@
 
 一个不错的 [HTML5 Cross Browser Polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills) 列表。
 
+[Polyfill.io](https://polyfill.io/v3/) 是一种通过选择性地填充浏览器所需的内容来减少 Web 开发挫折的服务。Polyfill.io 读取每个请求的 User-Agent header，并返回适用于请求浏览器的 polyfill。
+
 ## 更多资料
 
 [What is a Polyfill?](https://remysharp.com/2010/10/08/what-is-a-polyfill)（Remy Sharp，概念发明者）

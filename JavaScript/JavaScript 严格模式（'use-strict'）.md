@@ -5,15 +5,14 @@
 您可以对整个文件应用“严格模式”。或者，将其用于特定函数：
 
 ```js
-'use strict'(
-  // Non-strict code...
+'use strict'
 
-  function () {
-    'use strict'
+// Non-strict code...
+;(function () {
+  'use strict'
 
-    // Define your library strictly...
-  }
-)()
+  // Define your library strictly...
+})()
 
 // Non-strict code...
 ```
@@ -29,6 +28,8 @@
 - 提高编译器效率，增加运行速度
 - 它捕获一些常见的编码错误，通过**抛出异常**来消除了一些原有**静默错误**。
 - 它会禁用令人困惑或考虑不周的功能，包括在 ECMAScript 的未来版本中可能会定义的一些语法。
+
+严格模式主要删除了 ES3 中可能的功能，并且自 ES5 以来已被弃用（但由于向后兼容性要求而未被删除）
 
 IE6-9 不支持严格模式，详细的支持情况如下：
 
@@ -68,7 +69,7 @@ function func(x, x) {} // Error
 function func(a = 1, b = 2) {
   'use strict'
   return a + b
-} // Error
+} // SyntaxError
 ```
 
 - 不能使用 `with` 语句
@@ -77,7 +78,7 @@ function func(a = 1, b = 2) {
 'use strict'
 with (Math) {
   x = cos(2)
-} // Error
+} // SyntaxError
 ```
 
 - 不能对只读属性赋值，否则报错
@@ -97,7 +98,12 @@ obj.x = 1 // TypeError
 
 ```js
 'use strict'
-var x = 010 // Error
+var x = 010 // SyntaxError
+
+// 它有时会令人混淆
+
+// 但您仍然可以使用以下 0oXX 语法在严格模式下启用八进制数：
+0o10
 ```
 
 - 不能删除不可删除的属性，否则报错
@@ -117,7 +123,7 @@ let obj = {
   name: 'lio'
 }
 
-delete obj // Error
+delete obj // SyntaxError
 delete obj[name] // √
 ```
 
@@ -127,8 +133,10 @@ delete obj[name] // √
 'use strict'
 
 eval('var x = 2')
-console.log(x) // Error
+console.log(x) // ReferenceError
 ```
+
+其他：
 
 - `eval` 和 `arguments` 不能被重新赋值
 - `arguments` 不会自动反映函数参数的变化

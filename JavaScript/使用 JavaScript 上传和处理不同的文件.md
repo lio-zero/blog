@@ -165,7 +165,7 @@ function logFile(event) {
 
 首先，我们要更新我们的 `handleSubmit()` 函数。
 
-我们将不使用 `FileReader.readAsText()` 方法，而是使用 `FileReader.readAsDataURL()` 方法，再次传入文件。这将把文件作为 base64 编码的数据 URL 进行处理。
+我们将不使用 `FileReader.readAsText()` 方法，而是使用 `FileReader.readAsDataURL()` 方法，再次传入文件。这将把文件作为 base64 编码的 [Data URL](https://github.com/lio-zero/blog/blob/main/%E6%B5%8F%E8%A7%88%E5%99%A8/Data%20URL.md) 进行处理。
 
 ```js
 function handleSubmit(event) {
@@ -183,7 +183,7 @@ function handleSubmit(event) {
 let app = document.querySelector('#app')
 ```
 
-在 `logFile()` 事件处理程序函数中，`event.target.result` 是图像文件的数据 URL 字符串。您可以将其保存到 `localStorage`，将其发送到服务器等等。
+在 `logFile()` 事件处理程序函数中，`event.target.result` 是图像文件的 Data URL 字符串。您可以将其保存到 `localStorage`，将其发送到服务器等等。
 
 因为我们想在 UI 中显示它，所以我们将使用 `document.createElement()` 方法来创建一个 `img` 元素。然后，我们将从方法返回 `event.target.result` 的 `FileReader.readAsDataURL()` 设置为 `src` 属性。
 
