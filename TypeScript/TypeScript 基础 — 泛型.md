@@ -18,6 +18,10 @@ console.log(foo<string, number>('hello', 20)) // ['hello', 20]
 
 TypeScript 还可以从函数参数推断泛型参数的类型。
 
+如果您使用的是 VS Code 编辑器，这一点尤其明显：
+
+![推断泛型参数的类型](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f2737c07a9c643129e2ae8279aac444f~tplv-k3u1fbpfcp-watermark.image?)
+
 ## 类
 
 泛型可以用来创建泛型类，比如 Map。
@@ -103,7 +107,7 @@ function foo<S extends string | number, T extends string | number>(
 
 foo('a', 'b') // a b
 foo('a', 1) // a 1
-foo('a', true) // Error
+foo('a', true) // TypeError
 ```
 
 这可以与默认值结合使用。

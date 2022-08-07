@@ -23,7 +23,7 @@ location /static/ {
 
 在这种情况下，Nginx 将派生的最终路径是
 
-```nginx
+```txt
 /var/www/app/static/static
 ```
 
@@ -49,7 +49,7 @@ location /static/ {
 
 最终路径将正确形成为：
 
-```
+```txt
 /var/www/app/static
 ```
 

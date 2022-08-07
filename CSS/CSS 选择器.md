@@ -2,8 +2,6 @@
 
 > [CSS 选择器](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Selectors)是 CSS 规则集的一部分，它实际上选择要设置样式的内容。
 
-查看[常用的一些 CSS 技巧二 — 选择器（伪类与伪元素）](https://github.com/lio-zero/blog/blob/master/CSS/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%20CSS%20%E6%8A%80%E5%B7%A7%E4%BA%8C%20%E2%80%94%20%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%88%E4%BC%AA%E7%B1%BB%E4%B8%8E%E4%BC%AA%E5%85%83%E7%B4%A0%EF%BC%89.md) 了解更多关系选择器的技巧。
-
 ## CSS 选择符
 
 **通用选择器**：`*` 将匹配文档的所有元素。不推荐使用通配选择器，因为它是性能最低的一个 CSS 选择器。
@@ -221,7 +219,7 @@ CSS3 为了区分两者，明确规定伪类用一个冒号（`:`）来表示，
 - 伪类名称对大小写不敏感。
 - 伪元素也有人称为伪对象
 
-关于伪类和伪元素的使用示例，可以查看 - [常用的一些 CSS 技巧二 — 选择器（伪类与伪元素）](https://github.com/lio-zero/blog/blob/master/CSS/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%20CSS%20%E6%8A%80%E5%B7%A7%E4%BA%8C%20%E2%80%94%20%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%88%E4%BC%AA%E7%B1%BB%E4%B8%8E%E4%BC%AA%E5%85%83%E7%B4%A0%EF%BC%89.md) 和 [An Ultimate Guide To CSS Pseudo Classes And Pseudo Elements](https://www.smashingmagazine.com/2016/05/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/)
+关于伪类/伪元素的示例可以查阅我最近新开的另一个仓库 [css-tricks](https://github.com/lio-zero/css-tricks)，里面提供了大量的 CSS 技巧（包括伪类/伪元素），也可以阅读 [An Ultimate Guide To CSS Pseudo Classes And Pseudo Elements](https://www.smashingmagazine.com/2016/05/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/) 文章。
 
 ### CSS 属性 content 有什么作用？
 

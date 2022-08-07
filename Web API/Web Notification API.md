@@ -34,7 +34,11 @@ n.close()
 Notification.requestPermission()
 ```
 
-在这个非常简单的表单中，它将显示一个权限授予面板，除非之前已经授予了权限。
+它将请求弹出一个选项框：
+
+![授予权限](https://upload-images.jianshu.io/upload_images/18281896-279e258846894ecd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+它将显示一个权限授予面板，除非之前已经授予了权限。
 
 要在用户交互（允许或拒绝）时执行操作，您可以向其附加处理函数：
 

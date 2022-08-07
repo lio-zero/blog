@@ -16,6 +16,10 @@
 
 ![线上 VS Code 编辑器](https://cdn.beekka.com/blogimg/asset/202108/bg2021082509.jpg)
 
-## 更多资料
+## Gitpod
 
-[最适合程序员的笔记软件](https://www.ruanyifeng.com/blog/2021/08/best-note-taking-software-for-programmers.html)
+相比于前两种，[Gitpod](https://www.gitpod.io/) 提供了即时编码的开发环境。
+
+![Gitpod 演示](https://user-images.githubusercontent.com/22498066/135150975-23bba3a6-f099-48c5-83ed-a1a6627ff0e9.png)
+
+只需要在 GitHub 托管的项目地址前添加 `gitpod.io/#` 即可。
