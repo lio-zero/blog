@@ -2,7 +2,7 @@
 
 确保设置项目的使用特定的 Node.js 版本，使开发人员在 `git clone` 或 `git pull` 您的项目时，可以正常运行项目。
 
-我们可以通过在 `package.json`中设置 `engines` 属性来[指定版本范围](https://docs.npmjs.com/files/package.json#engines)。
+我们可以通过在 `package.json` 中设置 `engines` 属性来[指定版本范围](https://docs.npmjs.com/files/package.json#engines)。
 
 ```json
 {

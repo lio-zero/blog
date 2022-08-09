@@ -50,7 +50,7 @@ $ vim .husky/pre-commit
 
 在 `pre-commit` 中进行代码风格校验：
 
-```sh
+```bash
 #!/bin/sh
 
 npm run lint

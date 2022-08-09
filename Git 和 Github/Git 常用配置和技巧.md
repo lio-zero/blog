@@ -1,10 +1,10 @@
-## Git 常用配置和技巧
+# Git 常用配置和技巧
 
 以下使用 `--global` 标志全局配置的命令可以 `~/.gitconfig` 文件下查看。
 
 ## 创建别名
 
-[Git](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases) 允许我们为 Git 命令设置别名，极大地提高效率。
+[Git Aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases) 允许我们为 Git 命令设置别名，极大地提高效率。
 
 使用下面的命令创建别名，将 `<alias>` 替换为别名名称，将 `<command>` 替换为要使用别名的命令：
 
@@ -14,7 +14,7 @@ git config --global alias.<alias> <command>
 
 例如：
 
-```
+```bash
 git config --global alias.co checkout
 git config --global alias.br branch
 ```
@@ -255,7 +255,7 @@ git sttaus # 自动改为 "git status" 运行
 
 ## 配置 Git 文本编辑器
 
-默认情况下打开 Git 使用的是 `vi` 编辑器，如果你没怎么使用过 Linux 系统的话，可能不是很熟。你可以通过下面的命令来使用其他编辑器打开 Git。
+默认情况下打开 Git 使用的是 `vi` 编辑器，如果你没怎么使用过 UNIX 系统的话，可能不是很熟。你可以通过下面的命令来使用其他编辑器打开 Git。
 
 ```bash
 git config --global core.editor <editor-command>

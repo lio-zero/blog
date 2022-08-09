@@ -36,7 +36,7 @@
 
 > 您应该使用已经内置了所需语义和行为的原生 HTML 元素或属性，而不是重新使用 HTML 元素并添加 ARIA `role`、状态或属性使其可访问。
 
-在 HTML 中使用 ARIA 的首要规则是尽量不要在 HTML 中使用 ARIA（如果不需要的话）。HTML5 语义元素为我们提供了一系列具有隐式含义的元素，类似于我们可以使用 ARIA 定义的显式含义，常被称为元素的[默认隐式 ARIA 语义](https://links.jianshu.com/go?to=https%3A%2F%2Fwww.w3.org%2FTR%2Fwai-aria-1.1%2F%23implicit_semantics)。
+在 HTML 中使用 ARIA 的首要规则是尽量不要在 HTML 中使用 ARIA（如果不需要的话）。HTML5 语义元素为我们提供了一系列具有隐式含义的元素，类似于我们可以使用 ARIA 定义的显式含义，常被称为元素的[默认隐式 ARIA 语义](https://www.w3.org/TR/wai-aria-1.1/%23implicit_semantics)。
 
 因此，只要有可能，我们就应该使用 HTML 语义元素来代替 ARIA 属性。
 

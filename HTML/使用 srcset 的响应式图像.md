@@ -55,3 +55,6 @@
 - [Responsive Image Breakpoints Generator, A New Open Source Tool](https://www.smashingmagazine.com/2016/01/responsive-image-breakpoints-generation/)
 - [Leaner Responsive Images With Client Hints](https://www.smashingmagazine.com/2016/01/leaner-responsive-images-client-hints/)
 - [How To Solve Adaptive Images In Responsive Web Design](https://www.smashingmagazine.com/2013/06/clown-car-technique-solving-for-adaptive-images-in-responsive-web-design/)
+- [Picturefill 2.0: Responsive Images And The Perfect Polyfill](https://www.smashingmagazine.com/2014/05/picturefill-2-0-responsive-images-and-the-perfect-polyfill/)
+- [Srcset and sizes](https://ericportis.com/posts/2014/srcset-sizes/)
+- [Picturefill](https://scottjehl.github.io/picturefill/)

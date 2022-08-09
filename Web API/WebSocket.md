@@ -1,4 +1,4 @@
-# WebSockets
+# WebSocket
 
 [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) 是 Web 应用程序中 HTTP 通信的替代方案。
 
@@ -6,13 +6,13 @@
 
 一旦建立，通道将保持开放状态，以低延迟和开销提供非常快速的连接。
 
-以下是 [WebSockets 的支持情况](https://caniuse.com/websockets)：
+以下是 [WebSocket 的支持情况](https://caniuse.com/websockets)：
 
 ![浏览器对 WebSocket 的支持](https://upload-images.jianshu.io/upload_images/18281896-60ead383f2d687ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 可以看到，所有现代浏览器都支持 WebSocket。
 
-## WebSockets 与 HTTP 的区别
+## WebSocket 与 HTTP 的区别
 
 HTTP 是一种非常不同的协议，也是一种不同的通信方式。
 
@@ -133,3 +133,5 @@ Firefox DevTools 在这方面要做的更好，能展示的内容更多：
 ## 更多资料
 
 [WebSocket 教程](https://www.ruanyifeng.com/blog/2017/05/websocket.html)
+
+<!-- https://devdojo.com/bobbyiliev/quick-introduction-to-websockets-with-nodejs -->
