@@ -133,5 +133,3 @@ Firefox DevTools 在这方面要做的更好，能展示的内容更多：
 ## 更多资料
 
 [WebSocket 教程](https://www.ruanyifeng.com/blog/2017/05/websocket.html)
-
-<!-- https://devdojo.com/bobbyiliev/quick-introduction-to-websockets-with-nodejs -->
