@@ -26,9 +26,11 @@
 - `checkbox` 和 `radio` 使用 `checked` 属性和 `change` 事件
 - `select` 字段将 `value` 作为 prop 并将 `change` 作为事件
 
-## 自定义组件
+## 在组件上使用 `v-model`
 
-我们就可以在每个会发出 `input` 事件并接受 `value` 值的组件上使用 `v-model`。
+要在组件上使用 `v-model` 指令实现双向绑定，我们可以在每个会发出 `update:modelValue` 事件并接受 `modelValue` 值的组件上使用 `v-model`。
+
+> **注意**：Vue 2.x 使用 `value` 属性和 `input` 事件。
 
 以下是一个 `myCounter` 组件：
 
@@ -53,8 +55,6 @@
 
 由于每次更改 `update:modelValue` 事件时都会发出一个新值，并接受 `modelValue` 属性，因此我们可以安全地在此组件上使用 `v-model` 指令：
 
-> **注意**：Vue 2.x 使用 `value` 属性和 `input` 事件。
-
 ```html
 <myCounter v-model="count" />
 <!-- 相当于 -->
@@ -72,7 +72,7 @@
 <template>
   <!-- v-model 参数 -->
   <custom-input v-model:title="pageTitle"></custom-input>
-  <!-- 简写: -->
+  <!-- 相同于 -->
   <!-- <custom-input :title="pageTitle" @update:title="pageTitle = $event" /> -->
 
   <p>Title: {{ pageTitle }}</p>
@@ -106,7 +106,7 @@ Vue3 允许我们在同一组件上绑定多个 `v-model`：
 ```html
 <template>
   <custom-input v-model:title="pageTitle" v-model:content="pageContent" />
-  <!-- 简写： -->
+  <!-- 相同于 -->
   <!-- <custom-input
     :title="pageTitle"
     @update:title="pageTitle = $event"
@@ -157,6 +157,44 @@ Vue3 允许我们在同一组件上绑定多个 `v-model`：
 ```
 
 Vue3 还有一些其他的更改，如 `.sync` 修饰符被合并到了 `v-model` 中、自定义 `v-model` 修饰符。
+
+## 自定义 `v-model` 修饰符
+
+Vue 允许我们自定义 `v-model` 修饰符。
+
+以下是官网的一个[示例](https://vuejs.org/guide/components/events.html#usage-with-v-model)：
+
+```html
+<custom-input v-model.capitalize="text" />
+
+<script setup>
+  import { ref } from 'vue'
+  const text = ref('')
+</script>
+```
+
+```html
+<input type="text" :value="modelValue" @input="emitValue" />
+
+<script setup>
+  const props = defineProps({
+    modelValue: String,
+    modelModifiers: { default: () => ({}) } // <- 关键
+  })
+  const emit = defineEmits(['update:modelValue'])
+  const emitValue = (e) => {
+    let value = e.target.value
+    if (props.modelModifiers.capitalize) {
+      value = value.charAt(0).toUpperCase() + value.slice(1)
+    }
+    emit('update:modelValue', value)
+  }
+</script>
+```
+
+组件的 `v-model` 上所添加的修饰符，可以通过 `modelModifiers` prop 在组件内访问到。
+
+更多详细内容请看官网（实时更新）。
 
 ## 更多资料
 
