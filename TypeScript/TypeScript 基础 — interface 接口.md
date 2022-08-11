@@ -63,7 +63,7 @@ printUser(myObj) // { name: 'D.O', height: 180 }
 
 ## 只读属性（`readonly`）
 
-一些对象属性只能在对象刚刚创建的时候修改其值。你可以在属性名前用 `readonly`来指定只读属性：
+一些对象属性只能在对象刚刚创建的时候修改其值。你可以在属性名前用 `readonly` 来指定只读属性：
 
 ```ts
 interface Point {
@@ -165,3 +165,5 @@ interface three extends one, two {
   name: string
 }
 ```
+
+> 推荐：[TypeScript 基础 — interface 和 type 的区别](https://github.com/lio-zero/blog/blob/main/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20interface%20%E5%92%8C%20type%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)

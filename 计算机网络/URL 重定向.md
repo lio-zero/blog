@@ -13,7 +13,7 @@
 
 如果有一个令人讨厌的 301 重定向无法清除，请打开开发工具勾选 **disable cache** 选项：
 
-![image.png](https://upload-images.jianshu.io/upload_images/18281896-507706cec008ae17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![disable cache](https://upload-images.jianshu.io/upload_images/18281896-507706cec008ae17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 更多资料
 

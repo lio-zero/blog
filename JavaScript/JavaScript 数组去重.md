@@ -49,8 +49,7 @@ unique(arr) // [1, 2, "1", null, "", undefined, NaN, true, false]
 使用 `Array.prototype.filter()` 创建一个只包含唯一值的新数组。
 
 ```js
-const unique = (arr) =>
-  arr.filter((item, index, arr) => arr.indexOf(item) === index)
+const unique = (arr) => arr.filter((item, index) => arr.indexOf(item) === index)
 
 unique(arr) // [1, 2, "1", null, "", undefined, true, false]
 ```
@@ -128,19 +127,17 @@ const unique = (arr) => {
 unique(arr) // ["1", "2", "null", "", "undefined", "NaN", "true", "false"]
 ```
 
-**注意两个问题**
+**注意两个问题**：
 
 - 数组中的任何类型都会转为字符串类型。
 - 当数组中存在相同值不同类型的数据时，会去掉其中一个。如数值 1 和字符串 '1'，会去掉其中一个。
 
----
-
-当然，为了快速开发，我们会使用一些工具库来去重。例如：
+当然，为了快速开发，我们会使用一些工具库来对数组去重。例如：
 
 - lodash 的 `_.uniq(array)`
-- Ramda 的 `R.uniq`(array)
+- Ramda 的 `R.uniq(array)`
 
 ## 更多资料
 
 - [Remove duplicate values from JS array [duplicate]](https://stackoverflow.com/questions/9229645/remove-duplicate-values-from-js-array)
-- [JavaScript专题之数组去重](https://github.com/mqyqingfeng/Blog/issues/27)
+- [JavaScript 专题之数组去重](https://github.com/mqyqingfeng/Blog/issues/27)

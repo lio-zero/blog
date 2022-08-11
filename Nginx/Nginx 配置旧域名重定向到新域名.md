@@ -6,10 +6,10 @@ Nginx 里的 `rewrite` 模块是专门负责静态重写的。
 
 基本用法是：`rewrite patten replace flag`。`patten` 是正则表达式，与 `patten` 匹配的 URL 会被改写为 `replace`，而 `flag` 是可选的，可以有如下标志：
 
-- `last` – 完成 `rewrite`，然后搜索相应的 URI 和位置
-- `break` – 中止 `rewirte`，不再匹配后面的规则
-- `redirect` – 返回 code 为 302 的临时重定向
-- `permanent` – 返回 code 为 301 的永久重定向
+- `last` — 完成 `rewrite`，然后搜索相应的 URI 和位置
+- `break` — 中止 `rewrite`，不再匹配后面的规则
+- `redirect` — 返回 code 为 302 的临时重定向
+- `permanent` — 返回 code 为 301 的永久重定向
 
 例如，要将旧域名重定向到新域名上：
 

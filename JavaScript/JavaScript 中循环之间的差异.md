@@ -25,6 +25,7 @@ Object.defineProperty(users, 'role', {
   writable: true,
   enumerable: false
 })
+// {languages: 'JavaScript', role: 'Admin'}
 
 for (const item in users) {
   console.log(item) // languages
@@ -37,7 +38,9 @@ for (const item in users) {
 
 ### 可迭代对象
 
-如果一个对象定义了它的迭代行为，那么它是可迭代的。在本例中，将在 `for...of` 构造中循环的值将定义其迭代行为。可迭代的内置类型包括 `Array`、`String`、`Set` 和 `Map` 对象不可迭代，因为它没有指定 `@iterator` 方法。
+如果一个对象定义了它的迭代行为，那么它是可迭代的。在本例中，将在 `for...of` 构造中循环的值将定义其迭代行为。可迭代的内置类型包括 `Array`、`String`、`Set` 和 `Map`，而 `Object` 不可迭代，因为它没有指定 `@iterator` 方法。
+
+> 推荐：阮一峰老师的 [Iterator 和 for...of 循环](https://es6.ruanyifeng.com/#docs/iterator)，也可以看看冴羽的 [ES6 系列之迭代器与 for of](https://github.com/mqyqingfeng/Blog/issues/90)。
 
 基本上，在 JavaScript 中，**所有可迭代对象都是可枚举对象，但并非所有可枚举对象都是可迭代对象**。
 
@@ -52,7 +55,7 @@ const languages = ['JavaScript', 'Python', 'Go']
 for (const language in languages) {
   console.log(language)
 }
-// output
+// output：
 // 0
 // 1
 // 2
@@ -61,7 +64,10 @@ for (const language in languages) {
 for (const language of languages) {
   console.log(author)
 }
-// output -> JavaScript Python Go
+// output：
+// JavaScript
+// Python
+// Go
 ```
 
 在使用这种构造时，需要牢记的一点是，如果调用了 `typeof`，并且输出为 `object`，那么您可以使用 `for...in` 循环。
@@ -74,7 +80,7 @@ typeof languages // "object" -> 因此我们可以在中使用 for
 
 乍一看，这可能令人惊讶，但需要注意的是，数组是一种特殊类型的对象，以索引为键。知道 `for...in` 将在构造中查找对象可以极大地帮助我们。当 `for...in` 循环找到一个对象时，它将在每个键上循环。
 
-我们可以将 `for ..in` 循环在 `languages` 数组上的方式可视化如下：
+我们可以将 `for...in` 循环在 `languages` 数组上的方式可视化如下：
 
 ```js
 const languages = {
@@ -86,13 +92,13 @@ const languages = {
 
 **注意**：如果它可以被追踪到一个对象（或者从对象原型链继承它），`for...in` 将以没有特定顺序遍历键。
 
-同时，如果它实现了一个迭代器 `for.. of` 构造，它将在每次迭代中循环遍历该值。
+同时，如果它实现了一个迭代器 `for...of` 构造，它将在每次迭代中循环遍历该值。
 
-## 在 `forEach` 与 `map` 方法
+## `forEach` 和 `map` 方法
 
 虽然 `forEach` 和 `map` 方法可以用来实现相同的目标，但它们的行为和性能特性有所不同。
 
-在基本级别，当函数被调用时，它们都会接收一个回调作为参数。
+当函数被调用时，它们都会接收一个回调作为参数。
 
 考虑以下片段：
 
@@ -139,4 +145,4 @@ console.log(newScores) // [4, 16, 64, 256, 1024]
 
 ## 结论
 
-在上面讨论的所有循环结构中，给我们最多控制的是 `for..of` 循环。我们可以将其与关键字 `return`、`continue` 和 `break` 一起使用。这意味着我们可以指定对数组中的每个元素要发生什么，以及是否要提前离开或跳过。
+在上面讨论的所有循环结构中，给我们最多控制权的是 `for...of` 循环。我们可以将其与关键字 `return`、`continue` 和 `break` 一起使用。这意味着我们可以指定对数组中的每个元素要发生什么，以及是否要提前离开或跳过。

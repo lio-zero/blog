@@ -8,7 +8,7 @@ const object = {
 }
 ```
 
-如果我们想把某个东西转换成一个**对象**，我们需要传递具有这两个要求的东西：键和值。
+如果我们想把某个东西转换成一个**对象**，我们需要传递具有这两个要求的东西：**键和值**。
 
 满足这些要求的参数有两种类型：
 
@@ -32,9 +32,9 @@ const nestedArray = [
 Object.fromEntries(nestedArray) // { key 1: "value 1", key 2: "value 2"}
 ```
 
-## Map
+## Map 对象
 
-ES6 为我们带来了一个名为 [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Objects_vs._Maps) 新的数据结构，它与 `Objects` 非常相似。
+ES6 为我们带来了一个名为 [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Objects_vs._Maps) 新的数据结构，它与 `Object` 非常相似。
 
 > TC39：`Map` 对象是键/值对的集合，其中键和值可以是任意的 ECMAScript 语言值。
 
@@ -55,7 +55,7 @@ map.set('key 2', 'value 2')
 // Map(2) {"key 1" => "value 1", "key 2" => "value 2"}
 ```
 
-现在让我们使用 `object.fromEntries` 将 `map` 转换成一个对象
+现在让我们使用 `object.fromEntries` 将 `map` 转换成一个对象：
 
 ```js
 Object.fromEntries(map) // { key 1: "value 1", key 2: "value 2"}
@@ -63,7 +63,7 @@ Object.fromEntries(map) // { key 1: "value 1", key 2: "value 2"}
 
 ## 其他类型
 
-尝试将其他数据类型传递到 `Object.fromEntries` 时要小心。以下所以列出的所有情况将一致抛出一个错误：
+尝试将其他数据类型传递到 `Object.fromEntries` 时要小心。以下列出的所有情况将一致抛出一个错误：
 
 | 类型        |                                      |
 | :---------- | :----------------------------------- |
@@ -77,7 +77,7 @@ Object.fromEntries(map) // { key 1: "value 1", key 2: "value 2"}
 
 > **注意**：确保只传递一个键值对。
 
-## `Object.fromEntries` 和 `Object.entries`
+## `Object.fromEntries` 和 `Object.entries` 的区别
 
 `Object.entries` 方法返回一个给定对象自身可枚举属性的键值对数组。
 
@@ -108,8 +108,11 @@ console.log(Object.entries(user).filter(([key, value]) => key !== 'age'))
 它返回了一组嵌套数组，而不是我们想要的对象转对象，后面又引入了 `fromEntries` 方便该操作。
 
 ```js
-const arr = [["name", "O.O"], ["address", "xxx"]]
-console.log((Object.fromEntries(arr)) // {name: "O.O", address: "xxx"}
+const arr = [
+  ['name', 'O.O'],
+  ['address', 'xxx']
+]
+console.log(Object.fromEntries(arr)) // {name: 'O.O', address: 'xxx'}
 
 const user = {
   name: 'O.O',
@@ -118,7 +121,7 @@ const user = {
 }
 
 Object.fromEntries(Object.entries(user).filter(([key, value]) => key !== 'age'))
-// {name: "O.O", address: "xxx"}
+// {name: 'O.O', address: 'xxx'}
 ```
 
 ## 浏览器支持情况
@@ -157,11 +160,11 @@ toObject(array) // { key1: 'value1', key2: 'value2' }
 toObject(map) // { key1: 'value1', key2: 'value2' }
 ```
 
-### Underscore 和 Lodash
+### 第三方库
 
-Underscore 和 Lodash 也可将键值对转换为对象。
+一些第三方库，例如：Underscore 和 Lodash 也提供了可将键值对转换为对象的方法。
 
-`_.object` — 将阵列转换为对象。传递单个**[键、值]**对列表，或键列表和值列表。
+`_.object` — 将数组转换为对象。传递单个键值对列表，或键列表和值列表。
 
 ```js
 // Underscore

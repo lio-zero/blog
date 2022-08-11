@@ -97,6 +97,8 @@ console.log(html)
 
 在 HTTP 的响应头 `set-cookie` 时设置 `httpOnly`，让浏览器知道不能通过 `document.cookie` 的方式获取到 cookie 内容。
 
+通过服务器设置：
+
 ```js
 app.get('/', (req, res) => {
   if (req.cookies.isVisit) {
@@ -109,7 +111,9 @@ app.get('/', (req, res) => {
 })
 ```
 
-虽然避免了攻击者直接获取到 cookie，但是攻击者仍然可以在页面内发起别的请求，直接篡改用户的信息。我们可以配合 token 或者验证码的形式来防止这种情况的放生。而这两种相比，验证码的安全性会更搞些。
+虽然避免了攻击者直接获取到 Cookie，但是攻击者仍然可以在页面内发起别的请求，直接篡改用户的信息。我们可以配合 token 或者验证码的形式来防止这种情况的发生。而这两种相比，验证码的安全性会更搞些。
+
+> 推荐：[HTTP Cookie](https://github.com/lio-zero/blog/blob/main/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP%20Cookie.md)
 
 ## 设置 CSP 安全策略
 

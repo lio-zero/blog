@@ -108,7 +108,7 @@ class Rectangle implements Shape {
 }
 ```
 
-一个类可以通过在 `implements` 后面列出每个接口来实现多个接口，每个接口之间用逗号分隔，例如：`class Rectangle implements Shape, Colored {`
+一个类可以通过在 `implements` 后面列出每个接口来继承多个接口，每个接口之间用逗号分隔，例如：`class Rectangle implements Shape, Colored {`
 
 ## 继承：Extends 关键字
 
@@ -178,7 +178,7 @@ class Square extends Rectangle {
 }
 ```
 
-默认情况下，重写方法时，`override`关键字是可选的，仅有助于防止意外重写不存在的方法。使用设置 `NoImplicitoOverride` 强制在重写时使用它。
+默认情况下，重写方法时，`override`关键字是可选的，仅有助于防止意外重写不存在的方法。使用设置 `noImplicitOverride` 强制在重写时使用它。
 
 ## 抽象类
 
@@ -208,3 +208,5 @@ class Rectangle extends Polygon {
 ```
 
 抽象类不能直接实例化，因为它们没有实现所有成员。
+
+## Implements 和 Extend 关键字的区别

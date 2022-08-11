@@ -65,7 +65,7 @@ document.cookie = 'name=O.O; max-age=3600' // 60 分钟后过期
 document.cookie = 'name=O.O; max-age=31536000' // 1年后过期
 ```
 
-## 设置 Cookie 路径
+## 设置 Cookie Path
 
 `path` 参数指定 Cookie 的文档位置，因此它被分配给特定路径，并且仅当路径与当前文档位置或父级匹配时才发送到服务器：
 
@@ -77,7 +77,7 @@ document.cookie = 'name=O.O; path=/dashboard'
 
 如果未设置路径，则默认为当前文档位置。这意味着要从内部页面应用全局 Cookie，需要指定 `path=/`。
 
-## 设置 Cookie 域
+## 设置 Cookie Domain
 
 `domain` 参数可用于为 Cookie 指定子域。
 
@@ -115,7 +115,15 @@ document.cookie = 'name=O.O; Secure; HttpOnly'
 document.cookie = 'name=O.O; SameSite=None; Secure;'
 ```
 
-注意，`SameSite=None` 需要和 `Secure` 一起使用。
+它有三个值：
+
+- `None` — 任何情况下都会向第三方网站请求发送 Cookie
+- `Lax` — 只有导航到第三方网站的 GET 链接会发送 Cookie，跨域的图片、`iframe` 和 `form` 表单都不会发送 Cookie
+- `Strict` — 任何情况下都不会向第三方网站请求发送 Cookie
+
+目前，主流浏览器 `SameSite` 的默认值为 `Lax`，而在以前是 `None`，这将会预防大部分 CSRF 攻击，如果需要手动指定 `SameSite` 为 `None`，需要指定 Cookie `Secure` 属性，即在 HTTPS 下发送。
+
+> 推荐：阮一峰老师的 [Cookie 的 SameSite 属性](http://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html)
 
 ## 更新 Cookie 值或参数
 
