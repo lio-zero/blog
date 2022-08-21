@@ -1,10 +1,10 @@
 # 如何在 Node.js 应用程序中使用 ESLint
 
-[ESLint](https://eslint.org/) 是一个开源 JavaScript linting 实用程序，它可以帮助您克服开发人员的错误，因为 JavaScript 是弱类型的语言。
+[ESLint](https://eslint.org/) 是一个开源 JavaScript lint 实用程序，它可以帮助您克服开发人员的错误，因为 JavaScript 是弱类型的语言。
 
-JavaScript 社区中有很多选项，比如 [JSLint](http://jslint.com/)、[JSHint](https://jshint.com/) 和 [JSCS](https://jscs-dev.github.io/)（未维护，已与 ESLint 合并），用于代码 linting，包括今天我们要讲的 ESLint。
+JavaScript 社区中有很多选项，比如 [JSLint](http://jslint.com/)、[JSHint](https://jshint.com/) 和 [JSCS](https://jscs-dev.github.io/)（未维护，已与 ESLint 合并），包括今天我们要讲的 ESLint。
 
-ESLint 旨在使所有规则完全可插入。这是它产生的主要原因之一。它允许开发人员创建自己的 linting 规则。[ESLint 官方指南](http://eslint.org/docs/user-guide)中提供的每个规则都是独立的规则，开发人员可以在任何时候决定是否使用特定的规则。
+ESLint 旨在使所有规则完全可插入。这是它产生的主要原因之一。它允许开发人员创建自己的 lint 规则。[ESLint 官方指南](http://eslint.org/docs/user-guide)中提供的每个规则都是独立的规则，开发人员可以在任何时候决定是否使用特定的规则。
 
 ## 安装
 
@@ -193,13 +193,16 @@ eslint index.js
 
 ESLint 个人并不提倡任何编码风格。您可以设置 `.eslintrc` 文件以使用您喜欢的[样式规则](http://eslint.org/docs/rules/#stylistic-issues)强制编码样式。
 
-您还可以将 ESLint 与样式指南（如 [Airbnb](https://github.com/airbnb/javascript)、[JavaScript 标准风格](http://standardjs.com/)）一起使用。
+您还可以将 ESLint 与样式指南（如 [Airbnb](https://github.com/airbnb/javascript)、[JavaScript Standard Style](http://standardjs.com/)）一起使用。
 
 你还必须使用额外的插件，例如：
 
 - Airbnb 的插件 [`eslint-config-airbnb-base`](https://www.npmjs.com/package/eslint-config-airbnb-base)。
 - JavaScript 标准风格 [eslint-config-standard](https://github.com/feross/eslint-config-standard)
-- 一些流行库的插件：[Vue](https://www.npmjs.com/package/eslint-plugin-vue) | [React](https://www.npmjs.com/package/eslint-plugin-react)
+
+有许多一些流行库的插件：[Vue](https://www.npmjs.com/package/eslint-plugin-vue) | [React](https://www.npmjs.com/package/eslint-plugin-react) | [Angular](https://github.com/EmmanuelDemey/eslint-plugin-angular)
+
+您还可以在 [awesome-eslint](https://github.com/dustinspecker/awesome-eslint) 找到一些 ESLint 配置、插件等列表。
 
 ## 团队规范
 

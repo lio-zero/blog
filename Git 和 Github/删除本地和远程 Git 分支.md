@@ -49,7 +49,7 @@ $ git fetch <remote_name> --prune # 删除多个过时的远程跟踪分支
 $ git fetch <remote_name> -p      # 简写
 ```
 
-> **注意：**在大多数情况下，`<remote_name>` 将是 `origin`
+> **注意**：在大多数情况下，`<remote_name>` 将是 `origin`
 
 ## 更多资料
 

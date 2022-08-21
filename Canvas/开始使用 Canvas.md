@@ -47,30 +47,32 @@ const canvas = document.querySelector('#myCanvas')
 获取渲染上下文：
 
 ```js
-const context = canvas.getContext('2d')
+const ctx = canvas.getContext('2d')
 ```
 
 移动虚拟笔并指定起始坐标和结束坐标：
 
 ```js
-context.moveTo(50, 50)
-context.lineTo(450, 300)
+ctx.beginPath()
+
+ctx.moveTo(50, 50)
+ctx.lineTo(450, 300)
 
 // 绘制完后，关闭路径
-context.closePath()
+ctx.closePath()
 ```
 
 指定了绘制的线的厚度和颜色：
 
 ```js
-context.lineWidth = 20
-context.strokeStyle = 'plum'
+ctx.lineWidth = 20
+ctx.strokeStyle = 'plum'
 ```
 
 最后，将线绘制在 `canvas` 上：
 
 ```js
-context.stroke()
+ctx.stroke()
 ```
 
 最终效果如下：

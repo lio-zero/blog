@@ -1,6 +1,6 @@
 # CSS @Supports
 
-CSS `@supports` 指令会像 `@media` 查询一样出现在 CSS 代码中：
+CSS [`@supports`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@supports) 指令会像 `@media` 查询一样出现在 CSS 代码中：
 
 ```css
 @supports (prop: value) {
@@ -62,7 +62,7 @@ CSS `@supports` 允许开发人员以多种不同的方式检查样式支持。
 
 ## JavaScript `CSS.supports`
 
-CSS `@supports` 对应的 JavaScript 是 `window.CSS.supports`。`CSS.supports` 提供了两种使用方法。
+CSS `@supports` 对应的 JavaScript 是 [`CSS.supports`](https://developer.mozilla.org/zh-CN/docs/Web/API/CSS/supports)。`CSS.supports` 提供了两种使用方法。
 
 - 第一种使用方法包括提供两个参数：一个用于属性，另一个用于值：
 
@@ -78,7 +78,7 @@ const supportsFlexAndAppearance = CSS.supports(
 )
 ```
 
-您可以通过这两种方法来检查 CSS 支持情况 —— 它避免了在临时节点上进行属性检查，也避免了为检查支持而构建字符串。
+您可以通过这两种方法来检查 CSS 支持情况，它避免了在临时节点上进行属性检查，也避免了为检查支持而构建字符串。
 
 在使用 `supports` 的 JavaScript 方法之前，首先检测功能是很重要的。Opera 使用了一个不同的方法名，因此会抛出一些东西：
 

@@ -115,29 +115,29 @@ CommonJS 指定了一个全局方法 `require()` 来加载模块，获取依赖�
 
 ## ES Module
 
-> ES6 Module 模块输出的是一个值的引用，编译时输出接口，ES6 模块不是对象，它对外接口只是一种静态定义，在代码静态解析阶段就会生成。
+> ES6 Module 输出的是一个值的引用，编译时输出接口。ES6 模块不是对象，它对外接口只是一种静态定义，在代码静态解析阶段就会生成。
 
-模块可以相互加载，并可以使用特殊的指令 `export` 和 `import` 来交换功能，从另一个模块调用一个模块的函数：
+模块可以相互加载，并可以使用特殊的命令 `export` 和 `import` 来交换功能。
 
-模块功能主要由两个命令构成：`export`和`import`。
-
-- `export`命令用于规定模块的对外接口
-- `import`命令用于输入其他模块提供的功能。
+- `export` 命令用于规定模块的对外接口
+- `import` 命令用于输入其他模块提供的功能
 
 ```js
-export const name = 'li'   // 命名导出
-import { name } from '...' // 命名导入
+export const name = 'lio'   // 命名导出
+import { name } from 'file.js' // 命名导入
 
-export default 'li'       // 默认导出
-import anyName from '...' // 默认导入
+export default 'lio'       // 默认导出
+import anyName from 'file.js' // 默认导入
 
 export { name as newName }    // 重命名导出
-import { newName } from '...' // 命名导入
+import { newName } from 'file.js' // 命名导入
 
 // 默认名称导出
-export const name = 'value'
-export default 'value'
-import * as anyName from '...' // 全部导入
+export const name = 'lio'
+export default 'lio'
+import * as anyName from 'file.js' // 全部导入
+// or
+import anyName, { name } from 'file.js' // 默认 + 命名导入
 
 // 导出列表，并重命名
 export {
@@ -145,13 +145,13 @@ export {
   age as anyAge
 }
 // 导入列表 + 重命名
-import { name as newName, anyAge } from '...'
+import { name as newName, anyAge } from 'file.js'
 ```
 
 模块路径必须是原始类型字符串，不能是函数调用
 
 ```js
-import ... from getModuleName() // Error, only from "string" is allowed
+import anyName from getModuleName() // Error, only from "string" is allowed
 ```
 
 无法根据条件或者在运行时导入：
@@ -358,10 +358,15 @@ import baz from './baz'
 
 ## 更多资料
 
+- [MDN Docs：Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+- [现代 JS 教程：模块](https://zh.javascript.info/modules)
 - [Relation between CommonJS, AMD and RequireJS?](https://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs)
+- [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)
+- [JavaScript modules](https://v8.dev/features/modules)
+- [Understanding Modules and Import and Export Statements in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-modules-and-import-and-export-statements-in-javascript)
+- [More on importing and exporting](https://2ality.com/2014/09/es6-modules-final.html#more-on-importing-and-exporting)
 - [前端模块管理器简介](http://www.ruanyifeng.com/blog/2014/09/package-management.html)
 - [require() 源码解读](http://www.ruanyifeng.com/blog/2015/05/require.html)
-- [模块 (Module) 简介](https://zh.javascript.info/modules-intro)
 - [JavaScript 模块的循环加载](http://www.ruanyifeng.com/blog/2015/11/circular-dependency.html)
 - [JavaScript 模块化七日谈](https://huangxuan.me/js-module-7day/#/)
 - [JavaScript 模块化编程简史（2009-2016）](https://yuguo.us/weblog/javascript-module-development-history/)

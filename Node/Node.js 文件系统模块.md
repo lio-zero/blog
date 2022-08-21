@@ -47,7 +47,12 @@ const path = require('path')
 
 需要注意的是，默认情况下，所有 `fs` 方法都是异步的。但是，我们可以通过在方法末尾添加 `Sync` 来使用同步版本。
 
-例如，`writeFile` 方法改为 `writeFileSync`。同步方法同步的完成代码，因此它们阻塞了主线程。阻塞 Node.js 中的主线程被认为是不好的做法，我们不应该这么做。
+例如，`writeFile` 方法改为 `writeFileSync`。
+
+同步方法有两个缺点：
+
+- 同步方法同步的执行代码，因此它们阻塞了主线程。例如：我使用 `fs.readdirSync` 同步读取目录下的所有文件，它将阻塞后面代码的运行，直到读取目录完成。阻塞 Node.js 中的主线程被认为是不好的做法，我们不应该这么做
+- 还有，同步代码需要使用 `try...catch` 捕获错误
 
 因此，以下都使用文件系统模块中的异步方法。
 
@@ -66,15 +71,11 @@ const path = require('path')
 导入 `fs` 和 `path` 模块后，在文件中编写以下代码：
 
 ```js
-fs.writeFile(
-  'content.txt',
-  'All work and no play makes Jack a dull boy!',
-  (err) => {
-    if (err) throw err
+fs.writeFile('content.txt', 'All work and no play makes Jack a dull boy!', (err) => {
+  if (err) throw err
 
-    process.stdout.write('创建成功!')
-  }
-)
+  process.stdout.write('创建成功!')
+})
 ```
 
 上面的代码创建了一个名为 `content.txt` 的新文件，并添加了文本 `All work and no play makes Jack a dull boy!` 作为内容。如果存在任何错误，回调函数将抛出该错误。否则，它将向控制台输出文件创建成功。
@@ -122,9 +123,9 @@ fs.readFile(filePath, (error, content) => {
 - `fs.readFileSync` — 同步写入文件
 - `fs.promises.readFile` — 使用基于 Promise 的 API 写入文件
 
-## 读取目录的内容
+## 读取目录中的文件列表
 
-在目录中显示文件与读取文件内容非常相似。但是，不是传递文件路径，而是传递当前工作目录（我们可以传递任何其他目录）。
+读取目录中的文件列表与读取文件内容非常相似。但是，不是传递文件路径，而是传递当前工作目录（我们可以传递任何其他目录）。
 
 然后，传递一个回调函数来处理响应。在文件中编写以下代码：
 
@@ -139,6 +140,8 @@ fs.readdir(process.cwd(), (error, files) => {
 到目前为止，您只使用 `process.stdout.write` 将内容输出到终端。但是，您可以简单地使用 `console.log`，就像上面的代码片段一样。
 
 如果运行该应用程序，我们应该会得到一个包含目录中所有文件的数组。
+
+它同有一个同步 `readdirSync` 方法。
 
 ## 删除文件
 
@@ -161,15 +164,11 @@ fs.unlink(filePath, (error) => {
 我们可以使用 `mkdir` 方法异步创建目录。在文件中编写以下代码：
 
 ```js
-fs.mkdir(
-  `${process.cwd()}/myFolder/secondFolder`,
-  { recursive: true },
-  (err) => {
-    if (err) throw err
+fs.mkdir(`${process.cwd()}/myFolder/secondFolder`, { recursive: true }, (err) => {
+  if (err) throw err
 
-    console.log('已成功创建文件夹!')
-  }
-)
+  console.log('已成功创建文件夹!')
+})
 ```
 
 首先，要在当前工作目录中创建一个新文件夹。如前所述，您可以使用 `cwd()` 方法从 `process` 对象获取当前工作目录。
@@ -245,15 +244,11 @@ fs.rename(
 )
 
 // 重命名文件
-fs.rename(
-  `${process.cwd()}/content.txt`,
-  `${process.cwd()}/newFile.txt`,
-  (err) => {
-    if (err) throw err
+fs.rename(`${process.cwd()}/content.txt`, `${process.cwd()}/newFile.txt`, (err) => {
+  if (err) throw err
 
-    console.log('文件重命名!')
-  }
-)
+  console.log('文件重命名!')
+})
 ```
 
 您可以看到 `rename` 方法包含三个参数：
@@ -273,15 +268,11 @@ fs.rename(
 如果比较 `writeFile` 和 `appendFile` 这两种方法，我们可以发现它们是相似的。传递文件路径、内容和回调。
 
 ```js
-fs.appendFile(
-  filePath,
-  '\nAll work and no play makes Jack a dull boy!',
-  (err) => {
-    if (err) throw err
+fs.appendFile(filePath, '\nAll work and no play makes Jack a dull boy!', (err) => {
+  if (err) throw err
 
-    console.log('All work and no play makes Jack a dull boy!')
-  }
-)
+  console.log('All work and no play makes Jack a dull boy!')
+})
 ```
 
 上面的代码片段演示了如何向现有文件添加新内容。如果运行应用程序并打开文件，您应该会看到其中的新内容。

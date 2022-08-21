@@ -179,3 +179,4 @@ let sessions = {
 - [Stop using JWT for sessions](http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/)
 - [Stop using JWT for sessions, part 2: Why your solution doesn’t work](http://cryto.net/~joepie91/blog/2016/06/19/stop-using-jwt-for-sessions-part-2-why-your-solution-doesnt-work/)
 - [Branca](https://branca.io/) 一种安全令牌的数据格式，听说比 JWT 更安全，同类项目还有 [Paseto](https://paseto.io/)
+- [JWT Common Attacks](https://blog.devgenius.io/jwt-common-attacks-b41de384113e)

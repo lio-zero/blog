@@ -60,3 +60,4 @@ JAM 代表 JavaScript、API 以及 Markup。而 stack 译为**技术栈**，也�
 
 - [Jamstack Training](https://jamstack.training/) — Jamstack 视频课程
 - [JAMSTACK](https://css-tricks.com/tag/jamstack/)
+- 关于 Jamstack 的对话：[Demystifying JAMstack: An Interview With Phil Hawskworth](https://www.smashingmagazine.com/2019/05/demystifying-jamstack-interview-phil-hawskworth/) 和 [JAMstack Fundamentals: What, What And How](https://www.smashingmagazine.com/2019/06/jamstack-fundamentals-what-what-how/)

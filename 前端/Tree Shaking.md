@@ -84,7 +84,7 @@ module.exports = {
 
 `uglifyjs-webpack-plugin` 有两个非常重要的选项。首先，启用 `cache` 意味着只有当现有文件发生新更改时，Uglify 才会缩小它们，而 `test` 选项指定了我们要缩小的特定文件类型。
 
-> **注意：**[uglifyjs-webpack-plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin) 提供了一个全面的选项列表，可用于缩小代码。
+> **注意**：[uglifyjs-webpack-plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin) 提供了一个全面的选项列表，可用于缩小代码。
 
 ## 引入支持 Tree Shaking 的 Package
 

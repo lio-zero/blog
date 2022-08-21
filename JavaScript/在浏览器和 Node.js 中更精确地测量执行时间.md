@@ -2,7 +2,7 @@
 
 测量应用程序中的某个片段需要多长时间是很重要的。
 
-在前端中，我们有 [Navigation TimingAPI](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API)，[Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API) 以及 [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API) 收集精确的指标。
+在前端中，我们有 [Navigation TimingAPI](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API)、[Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API) 以及 [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API) 收集精确的指标。
 
 此外，我们最常用的应该是使用 `Date` 对象来评估某件事情需要多长时间。例如：
 
@@ -37,7 +37,7 @@ console.timeEnd('testEnd') // testTime: 48.5732421875 ms
 
 在浏览器中，我们可以使用 [`window.performance.now()`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now) 方法，其返回一个精确到毫秒的 [`DOMHighResTimeStamp`](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp)。
 
-`window.performance.now` 也可用于 Web 或 Services Workers。在 Window 上下文中，返回的值是自 `navigationStart` 以来经过的时间。
+`window.performance.now` 也可用于 Web Worker 或 Service Worker。在 Window 上下文中，返回的值是自 `navigationStart` 以来经过的时间。
 
 ```js
 const before = window.performance.now()
@@ -62,14 +62,12 @@ Node.js `process` 模块中有一个名为 `hrtime.bigint()` 的方法以毫微�
 以下是文档给出的一个代码示例：
 
 ```js
-import { hrtime } from 'process'
-
-const start = hrtime.bigint() // 191051479007711n
+const start = process.hrtime.bigint()
 
 setTimeout(() => {
-  const end = hrtime.bigint() // 191052633396993n
+  const end = process.hrtime.bigint()
 
-  console.log(`Benchmark took ${end - start} nanoseconds`) // 基准测试耗时 1154389282 毫微秒
+  console.log(`基准测试花费了 ${Number(end - start) / 10000000} 毫秒`)
 }, 1000)
 ```
 
@@ -93,7 +91,7 @@ setTimeout((_) => {
 }, 1000)
 ```
 
-指定单位：
+[hirestime](https://www.npmjs.com/package/hirestime) 是对 `process.hrtime.bigint()` 进行包装，它可以指定输出单位：
 
 ```js
 import hirestime from 'hirestime'

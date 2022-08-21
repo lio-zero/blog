@@ -6,10 +6,10 @@
 
 ## 用途
 
-实际上 JavaScript 可以捕获你的经度和纬度，并可以发送到后端 Web 服务器，做一些奇特的位置感知的事情，比如
+实际上 JavaScript 可以捕获你的经度和纬度，并可以发送到后端 Web 服务器，做一些奇特的位置感知的事情，比如：
 
-- 在地图上显示你的位置或标注一些信息
-- `watchPosition` 方法可以用于路线导航。
+- 在地图上显示用户的位置、用户附近的兴趣点或标注一些其他信息
+- `watchPosition` 方法可以用于路线导航（GPS）
 
 如今，大多数浏览器和移动设备都支持地理定位 API。以下是 [Can I Use](https://www.caniuse.com/?search=geolocation) 给出的兼容情况：
 
@@ -19,9 +19,9 @@
 
 浏览器通过 `navigator.geolocation` 属性提供该 API，该属性将返回一个 Geolocation 对象。该对象具有以下三个方法。
 
-- `Geolocation.getCurrentPosition()`：返回一个 Position 对象，表示用户的当前位置。
-- `Geolocation.watchPosition()`：指定一个监听函数，每当用户的位置发生变化，就执行该监听函数。
-- `Geolocation.clearWatch()`：取消 `watchPosition()` 方法指定的监听函数。
+- `Geolocation.getCurrentPosition()` — 返回一个 Position 对象，表示用户的当前位置。
+- `Geolocation.watchPosition()` — 指定一个监听函数，每当用户的位置发生变化，就执行该监听函数。
+- `Geolocation.clearWatch()` — 取消 `watchPosition()` 方法指定的监听函数。
 
 下面我们将来讲讲这三个方法。
 
@@ -35,25 +35,25 @@ navigator.geolocation.getCurrentPosition(success, error, options)
 
 该方法接受三个参数。
 
-- `success` —— 用户同意给出位置时的回调函数，它的参数是一个 Position 对象。
-- `error` —— 用户拒绝给出位置时的回调函数，它的参数是一个 PositionError 对象。该参数可选。
-- `options` —— 参数对象，该参数可选。
+- `success` — 用户同意给出位置时的回调函数，它的参数是一个 Position 对象。
+- `error` — 用户拒绝给出位置时的回调函数，它的参数是一个 PositionError 对象。该参数可选。
+- `options` — 参数对象，该参数可选。
 
 Position 对象有两个属性。
 
-- `Position.coords` —— 返回一个 Coordinates 对象，表示当前位置的坐标。
-- `Position.timestamp` —— 返回一个对象，代表当前时间戳。
+- `Position.coords` — 返回一个 Coordinates 对象，表示当前位置的坐标。
+- `Position.timestamp` — 返回一个对象，代表当前时间戳。
 
 PositionError 对象主要有两个属性。
 
-- `PositionError.code` —— 整数，表示发生错误的原因。`1`表示无权限，有可能是用户拒绝授权；`2`表示无法获得位置，可能设备有故障；`3`表示超时。
-- `PositionError.message` —— 字符串，表示错误的描述。
+- `PositionError.code` — 整数，表示发生错误的原因。`1`表示无权限，有可能是用户拒绝授权；`2`表示无法获得位置，可能设备有故障；`3`表示超时。
+- `PositionError.message` — 字符串，表示错误的描述。
 
 参数对象 `option` 可以指定三个属性。
 
-- `enableHighAccuracy` —— 是否返回高精度结果。如果设为 `true`，可能导致响应时间变慢或（移动设备的）功耗增加；反之，如果设为 `false`，设备可以更快速地响应。默认值为 `false`。
-- `timeout` —— 正整数，表示等待查询的最长时间，单位为毫秒。默认值为 `Infinity`。
-- `maximumAge` —— 正整数，表示可接受的缓存最长时间，单位为毫秒。如果设为 `0`，表示不返回缓存值，必须查询当前的实际位置；如果设为 `Infinity`，必须返回缓存值，不管缓存了多少时间。默认值为 `0`。
+- `enableHighAccuracy` — 是否返回高精度结果。如果设为 `true`，可能导致响应时间变慢或（移动设备的）功耗增加；反之，如果设为 `false`，设备可以更快速地响应。默认值为 `false`。
+- `timeout` — 正整数，表示等待查询的最长时间，单位为毫秒。默认值为 `Infinity`。
+- `maximumAge` — 正整数，表示可接受的缓存最长时间，单位为毫秒。如果设为 `0`，表示不返回缓存值，必须查询当前的实际位置；如果设为 `Infinity`，必须返回缓存值，不管缓存了多少时间。默认值为 `0`。
 
 ```js
 const options = {
@@ -73,6 +73,7 @@ const success = (pos) => {
   console.log(`设备运行的方向：${crd.heading} 度`)
 }
 
+// 处理错误和拒绝
 const error = (err) => {
   console.warn(`ERROR(${err.code}): ${err.message}`)
 }
@@ -88,7 +89,7 @@ navigator.geolocation.getCurrentPosition(success, error, options)
 // 设备运行的方向：xxx 度
 ```
 
-效果如下：
+询问允许获取位置：
 
 ![询问允许获取位置](https://upload-images.jianshu.io/upload_images/18281896-c22b4bd32f82a9dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -110,17 +111,17 @@ navigator.geolocation.getCurrentPosition(success, error, options)
 
 以下属性都返回浮点数，全部为只读属性：
 
-- `Coordinates.latitude` —— 表示纬度。
-- `Coordinates.longitude` —— 表示经度。
-- `Coordinates.altitude` —— 表示相对于海平面的位置海拔（单位：米）。如果实现无法提供数据，则此值可以为 `null`。
-- `Coordinates.accuracy` —— 表示经度和纬度属性的精度（单位：米）。
-- `Coordinates.altitudeAccuracy` ——表示海拔的精度（单位：米）。此值可以为 `null`。
-- `Coordinates.speed` —— 表示设备的速度（单位：米/秒）。此值可以为 `null`。
-- `Coordinates.heading` —— 表示设备运行的方向（单位：度）。表示设备离正北方向有多远。0 度表示正北，方向是顺时针方向确定的（这意味着东是 90 度，西是 270 度）。如果 `Coordinates.speed` 为 0，`heading` 属性返回 `NaN`。如果设备无法提供标题信息，则此值为 `null`。
+- `Coordinates.latitude` — 表示纬度。
+- `Coordinates.longitude` — 表示经度。
+- `Coordinates.altitude` — 表示相对于海平面的位置海拔（单位：米）。如果实现无法提供数据，则此值可以为 `null`。
+- `Coordinates.accuracy` — 表示经度和纬度属性的精度（单位：米）。
+- `Coordinates.altitudeAccuracy` —表示海拔的精度（单位：米）。此值可以为 `null`。
+- `Coordinates.speed` — 表示设备的速度（单位：米/秒）。此值可以为 `null`。
+- `Coordinates.heading` — 表示设备运行的方向（单位：度）。表示设备离正北方向有多远。0 度表示正北，方向是顺时针方向确定的（这意味着东是 90 度，西是 270 度）。如果 `Coordinates.speed` 为 0，`heading` 属性返回 `NaN`。如果设备无法提供标题信息，则此值为 `null`。
 
 ## Geolocation.watchPosition()
 
-`Geolocation.watchPosition()`对象指定一个监听函数，每当用户的位置发生变化，就是自动执行这个函数。
+`Geolocation.watchPosition()` 对象指定一个监听函数，每当用户的位置发生变化，就是自动执行这个函数。
 
 ```js
 navigator.geolocation.watchPosition(success[, error[, options]])
@@ -128,9 +129,9 @@ navigator.geolocation.watchPosition(success[, error[, options]])
 
 该方法接受三个参数。
 
-- `success` —— 表示监听成功的回调函数，该函数可以传入一个 Position 对象作为参数。
-- `error` —— 可选，表示监听失败的回调函数，该函数可以传入一个 PositionError 对象作为参数。
-- `options` —— 可选，表示监听的参数配置对象。
+- `success` — 表示监听成功的回调函数，该函数可以传入一个 Position 对象作为参数。
+- `error` — 可选，表示监听失败的回调函数，该函数可以传入一个 PositionError 对象作为参数。
+- `options` — 可选，表示监听的参数配置对象。
 
 该方法返回一个整数值，表示监听函数的编号。该整数用来供`Geolocation.clearWatch()`方法取消监听。
 

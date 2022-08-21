@@ -58,7 +58,7 @@ fetch('./file.json')
 ```js
 fetch('./file.json')
   .then((response) => {
-    //...
+    // ...
   })
   .catch((err) => console.error(err))
 ```
@@ -74,7 +74,7 @@ fetch('./file.json')
     return response
   })
   .then((response) => {
-    //...
+    // ...
   })
 ```
 

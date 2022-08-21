@@ -46,4 +46,5 @@ title |> toLowerCase |> addHyphens
 
 ## 更多资料
 
-[Hack Pipe for Functional Programmers: How I learned to stop worrying and love the placeholder](https://jamesdigioia.com/hack-pipe-for-functional-programmers-how-i-learned-to-stop-worrying-and-love-the-placeholder/) — James DiGioia 介绍了相比于传统的 [Ramda](https://ramdajs.com/) 和 [Lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide) 函数式编程库引入的柯里化概念，JavaScript 引入管道运算符的好处。
+- [Hack Pipe for Functional Programmers: How I learned to stop worrying and love the placeholder](https://jamesdigioia.com/hack-pipe-for-functional-programmers-how-i-learned-to-stop-worrying-and-love-the-placeholder/) — James DiGioia 介绍了相比于传统的 [Ramda](https://ramdajs.com/) 和 [Lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide) 函数式编程库引入的柯里化概念，JavaScript 引入管道运算符的好处。
+- [I'VE USED THE PIPE() FUNCTION 2,560 TIMES AND I CAN TELL YOU IT'S GOOD!](https://www.obvibase.com/dev-blog/i-ve-used-the-pipe-function-2-560-times-and-i-can-tell-you-it-s-good)

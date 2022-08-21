@@ -2,6 +2,58 @@
 
 使用 npm 时，您很可能会在大多数交互中使用命令行工具。因此，这里详细列出了您将遇到并需要最频繁使用的命令。
 
+## npm 帮助
+
+`npm help` 命令提供了快速查询所有选项：
+
+```bash
+npm help
+```
+
+它可以帮助我们无论是否在线/离线状态下，都可以快速查看 npm 提供的所有选项。
+
+还可以显示特定 npm 命令的帮助：
+
+```bash
+npm help <command>
+# or
+npm <command> -h
+```
+
+## npm 的全局配置文件
+
+npm 配置文件是 `.npmrc`，全局配置文件默认在用户目录下。
+
+如果没有找到，可以通过以下命令查看：
+
+```bash
+npm config get userconfig
+```
+
+您可以查看该文件的所有 npm 配置信息。
+
+以下是其他一些便捷的命令。
+
+查看所有配置项：
+
+```bash
+npm config ls -l
+```
+
+查看缓存配置，`get` 后面可以跟任意配置项
+
+```bash
+npm config get cache
+```
+
+打开全局 `.npmrc` 文件，：
+
+```bash
+npm config edit
+```
+
+还有一些不错的命令。会在下文讲到。
+
 ## 快速初始化项目
 
 `npm init` 命令是一个逐步构建项目的工具。
@@ -21,18 +73,30 @@ npm init -y
 
 完成以上面操作后，将会生成一个 `package.json` 文件并将其放置在当前目录中。
 
-## 安装其他来源的包
-
-`npm cli` 还可以让你安装其他来源的包：
+您可以通过 `npm config set` 配置常用的默认字段值：
 
 ```bash
-$ npm config set xxx
-
-# 淘宝镜像
-$ npm config set registry https://registry.npm.taobao.org
+npm config set init-author-name "lio-zero"
+npm config set init-author-email "licroning@163.com"
+npm config set init-author-url "https://github.com/lio-zero"
+npm config set init-license "MIT"
+# ...
 ```
 
-查看是否切换成功
+> **Tips**：您可以打开全局的 `.npmic` 文件配置统一配置它们。
+
+## 安装其他来源的包
+
+npm cli 还可以让你安装其他来源的包：
+
+```bash
+npm config set xxx
+
+# 淘宝镜像
+npm config set registry https://registry.npmmirror.com
+```
+
+查看是否切换成功：
 
 ```bash
 npm config get registry
@@ -40,7 +104,9 @@ npm config get registry
 
 如果返回设置的源链接，说明镜像设置成功。
 
-> **建议**：您可以安装 [nrm](https://github.com/Pana/nrm) 包在不同源之间快速切换，例如 `npm`、`cnpm`、`taobao` 等。
+> **Tips**：您可以安装 [nrm](https://github.com/Pana/nrm) 包在不同源之间快速切换，例如 `npm`、`cnpm`、`taobao` 等。
+
+**注意**：原淘宝 npm 域名已停止解析，详细内容查阅[【公告】淘宝 npm 域名即将切换 && npmmirror 重构升级 && 微信交流群](https://zhuanlan.zhihu.com/p/465424728?spm=a2c6h.24755359.0.0.2b394dccWTS9up)。
 
 ## 使用快捷方式安装包
 
@@ -122,6 +188,7 @@ npm run env
 
 ```json
 {
+  "name": "app-project",
   "scripts": {
     "serve": "nodemon app.js"
   }
@@ -133,7 +200,7 @@ npm run env
 我们可以使用不带参数的 `npm run` 命令查看项目上的所有命令脚本：
 
 ```bash
-$ npm run
+npm run
 
 #  serve
 #    nodemon app.js
@@ -141,13 +208,13 @@ $ npm run
 
 > **注意**：每当 `npm run` 命令，都会新建一个 shell 文件来执行我们当前的执行的命令，只要符合 shell 可运行的命令，都可以执行。
 
-在执行 `npm scripts` 的过程中，我们可以通过 `npm_package_` 前缀拿到 package.json 内的字段。
+在执行 `npm scripts` 的过程中，我们可以通过 `npm_package_xxx` 前缀拿到 `package.json` 内的字段。
+
+例如，获取 `name` 字段：
 
 ```js
 console.log(process.npm_package_name) // app-project
 ```
-
-`npm script` 还有许多其他的技巧，如通配符、传参、执行顺序、默认值、钩子、简写形式等，关于 `npm scripts` 的详情内容请看阮老师的 [npm scripts 使用指南](http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html)。
 
 ## 在 package.json 中配置自己的变量
 
@@ -190,35 +257,37 @@ npm config set app-project:myVariable Hello Node
 但也有其他更快速的方法，我们可以通过运行以下命令快速进入主页：
 
 ```bash
-$ npm home <package-name>
+npm home <package_name>
+# or
+npm docs <package_name>
 
 # example
-$ npm home axios
-$ npm home vue
+npm home axios
+npm home vue
 ```
 
 导航到 issues：
 
 ```bash
-npm bug <package-name>
+npm bug <package_name>
 ```
 
 打开它的存储库也很容易：
 
 ```bash
-npm repo <package-name>
+npm repo <package_name>
 ```
 
-这三个命令都将在您的默认浏览器中打开目标网站。
+这几个命令都将在您的默认浏览器中打开目标网站，它们通常会通过 `package.json` 文件所提供的信息进行检索。
 
 ## npm root 定位全局节点模块目录
 
 ```bash
 # 本地 node_modules
-$ npm root
+npm root
 
 # 全局 node_modules
-$ npm root -g
+npm root -g
 ```
 
 ## 删除重复包
@@ -226,9 +295,9 @@ $ npm root -g
 `npm dedupe` 命令用于删除重复的依赖项。它通过删除重复的包并在多个依赖包之间有效地共享公共依赖项来简化整体结构。它会产生一个扁平的和去重的树。
 
 ```bash
-$ npm dedupe
+npm dedupe
 # or
-$ npm ddp
+npm ddp
 ```
 
 ## 扫描您的应用程序是否存在漏洞
@@ -242,9 +311,9 @@ npm audit
 如果发现存在漏洞，我们可以使用 `npm audit fix`，它将自动安装所有易受攻击依赖包的修补版本（如果可用）。
 
 ```bash
-$ npm audit fix
+npm audit fix
 # or
-$ npm audit fix --force
+npm audit fix --force
 ```
 
 更好的做法是使用 [synk](https://github.com/snyk/cli)，它是一个高级版的 `npm audit`，可自动修复，且支持 CI/CD 集成与多种语言。
@@ -265,16 +334,38 @@ pnpm store prune
 
 ## 检查环境
 
-`npm doctor` 命令可以在我们的环境中运行多项检查。
+`npm doctor` 命令可以在我们的环境中运行多项检查，已检查当前 node 和 npm 存在的问题。
 
 ```bash
 npm doctor
 ```
 
-## 在本地测试你的包
+## 在本地测试你的 npm 包
+
+我们可以将本地开发的 npm 包安装到全局或指定目录。
 
 ```bash
+npm i . -g
+# 在某个项目中安装本地包
+npm i /path/to/packageName
+```
+
+npm 为我们提供了另一个命令， 命令
+
+我们还可以使用 `npm link` 命令做一个软链指向当前需要测试的项目：
+
+```bash
+# 先在本地开发的 npm 包中执行
+npm link
+
+# 然后切换到你需要安装本地测试包的项目中
 npm link <package_name>
+```
+
+使用 `npm unlink` 可以取消安装本地的调试包：
+
+```
+npm unlink <package_name>
 ```
 
 ## 检查过时的包
@@ -282,31 +373,33 @@ npm link <package_name>
 使用 `npm outdated` 命令来检查所有过时的 npm 包。它还显示了应该为任何过时的软件包安装的最新版本。
 
 ```bash
-$ npm outdated --long
+npm outdated --long
 # or
-$ npm outdated -l
+npm outdated -l
 ```
 
 ## 检查任何 npm 包的最新版本
 
-我们可以通过运行以下命令来检查任何 npm 包的最新版本
+我们可以通过运行以下命令来检查任何已发布的 npm 包的最新版本的详细信息：
 
 ```bash
-$ npm view <package-name>
+npm view <package_name>
 # or
-$ npm v <package-name>
+npm v <package_name>
+npm info <package_name>
+npm show <package_name>
 ```
 
-仅显示最新版本
+仅显示最新版本号：
 
 ```bash
-npm v <package-name> version
+npm v <package_name> version
 ```
 
-显示所有版本的列表
+显示所有版本的列表：
 
 ```bash
-npm v <package-name> versions
+npm v <package_name> versions
 ```
 
 ## 列出所有已安装的包
@@ -314,18 +407,18 @@ npm v <package-name> versions
 `npm list` 命令可以列出项目中安装的所有 npm 包。它将创建一个树结构，显示已安装的包及其依赖项。
 
 ```bash
-$ npm list
+npm list
 #or
-$ npm ls
+npm ls
 ```
 
 - 可以利用 `--depth flag` 来限制搜索深度
 
 ```bash
-$ npm ls --depth=1
+npm ls --depth=1
 
 # 查看全局安装的软件包
-$ npm list -g --depth 0
+npm list -g --depth 0
 ```
 
 ## 发布一个包
@@ -343,6 +436,43 @@ npm publish
 ```
 
 > 详细内容可查阅另一篇[如何对 npm package 进行发包](https://github.com/lio-zero/blog/blob/master/Node/%E5%A6%82%E4%BD%95%E5%AF%B9%20npm%20package%20%E8%BF%9B%E8%A1%8C%E5%8F%91%E5%8C%85.md)。
+
+## 弃用包的相关操作
+
+> **注意**：强烈建议弃用包或包版本而不是取消发布它们，因为取消发布会从注册表中完全删除一个包，这意味着任何依赖它的人都将无法再使用它，而不会发出警告。
+
+弃用整个包：
+
+```bash
+npm deprecate <package_name> "弃用信息"
+```
+
+弃用包的单个版本：
+
+```bash
+npm deprecate <package_name>@<version> "弃用信息"
+```
+
+取消弃用操作：
+
+```bash
+# 将弃用消息改为空字符串即可
+npm deprecate <package_name> ""
+```
+
+取消发布整个包：
+
+```bash
+npm unpublish <package_name> -f
+```
+
+取消发布包的指定版本：
+
+```bash
+npm unpublish <package_name>@<version>
+```
+
+取消发布包后，以相同名称重新发布将被阻止 24 小时。如果您错误地取消发布了一个包，建议您以不同的名称再次发布，或者对于未发布的版本，增加版本号并再次发布。
 
 ## 更新软件包
 
@@ -370,6 +500,30 @@ npm-check -u
 
 > 可查看另一篇[检查 npm 模块更新](https://github.com/lio-zero/blog/blob/master/Node/%E6%A3%80%E6%9F%A5%20npm%20%E6%A8%A1%E5%9D%97%E6%9B%B4%E6%96%B0.md)
 
+antfu 的 [taze](https://github.com/antfu/taze) 也是一个不错的选择。
+
+## 查看哪些包已过时
+
+查看哪些包已过时：
+
+```bash
+npm outdated
+```
+
+查看全局环境的已过时包：
+
+```bash
+npm outdated -g --depth=0
+```
+
+## 检测当前镜像源的延迟
+
+检测当前镜像源的延迟情况：
+
+```bash
+npm ping
+```
+
 ## 锁定包依赖
 
 [npm shrinkwrap](https://docs.npmjs.com/cli/shrinkwrap) 命令用于锁定包依赖项的版本，以便您可以准确控制在安装包时将使用每个依赖项的哪些版本。
@@ -379,3 +533,27 @@ npm shrinkwrap
 ```
 
 它在部署 Node.js 应用程序时非常有用。通过它，您可以确定要部署哪些版本的依赖项。
+
+## 控制项目版本号
+
+当我们发布 npm 包后，每次我们要推送新版本时，都需要修改版本号的，这时可以通过 `npm version` 命令进行设置：
+
+```bash
+# 新补丁版本表示向后兼容的错误修复
+npm version patch
+
+# 新的次要版本表示向后兼容的新功能
+npm version minor
+
+# 新的主要版本表示重大更改
+npm version major
+```
+
+控制该版本进行升级，注意需要遵循 [Semver 规范](https://semver.org/)。
+
+## 更多资料
+
+- [awesome-npm](https://github.com/sindresorhus/awesome-npm) 收集了很多很棒的 npm 资源和技巧
+- [13 npm Tricks for Faster JavaScript Development](https://bretcameron.medium.com/13-npm-tricks-for-faster-javascript-development-4fe2a83f87a2)
+- [10 Tips and Tricks That Will Make You an npm Ninja](https://www.sitepoint.com/10-npm-tips-and-tricks/)
+- [2018 年了，你还是只会 npm install 吗？](https://juejin.cn/post/6844903582337237006#comment)

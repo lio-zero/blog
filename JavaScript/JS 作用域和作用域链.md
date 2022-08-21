@@ -84,4 +84,7 @@ bar() // 1
 ## 更多资料
 
 - [JavaScript 深入之词法作用域和动态作用域](https://github.com/mqyqingfeng/Blog/issues/3)
-- [变量作用域，闭包](https://zh.javascript.info/closure#ci-fa-huan-jing)
+- [JavaScript 深入之作用域链](https://github.com/mqyqingfeng/Blog/issues/6)
+- [变量作用域，闭包](https://zh.javascript.info/closure)
+- [ES6: var, let and const — The battle between function scope and block scope](https://www.deadcoderising.com/2017-04-11-es6-var-let-and-const-the-battle-between-function-scope-and-block-scope/)
+- [You Don't Know JS Yet: Scope & Closures - 2nd Edition](https://github.com/getify/You-Dont-Know-JS/tree/2nd-ed/scope-closures)

@@ -52,3 +52,14 @@ function App() {
 ```
 
 这是一个非常简单的示例，但希望在将这些概念应用于更复杂的场景之前，您能够了解 HOC 的要点。
+
+## 更多资料
+
+高阶组件（HOC）是 React 中用于复用组件逻辑的一种高级技巧。HOC 自身不是 React API 的一部分，它是一种基于 React 的组合特性而形成的设计模式。
+
+具体而言，高阶组件是参数为组件，返回值为新组件的函数。
+
+- [Docs：Higher-Order Components](https://reactjs.org/docs/higher-order-components.html)
+- [React 高阶组件(HOC)入门指南](https://github.com/MrErHu/blog/issues/4)
+- [hoc 库 recompose](https://github.com/acdlite/recompose) 函数组件和高阶部件的 React 实用皮带。
+- [精读 React 高阶组件](https://zhuanlan.zhihu.com/p/27434557)

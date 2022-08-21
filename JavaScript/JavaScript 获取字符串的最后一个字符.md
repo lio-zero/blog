@@ -21,7 +21,7 @@ console.log(last_character) // "o"
 - [`String.prototype.substr()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr) 方法返回一个字符串中从指定位置开始到指定字符数的字符。
 
 ```js
-let last_character = str.substr(str.length - 1 , 1) // "o"
+let last_character = str.substr(str.length - 1, 1) // "o"
 
 console.log(last_character) // "o"
 ```
@@ -33,8 +33,8 @@ let last_character = str.substring(str.length - 1) // "o"
 
 console.log(last_character) // "o"
 ```
-- 使用 [`String.prototype.replace()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) 方法，传递一个正则表达式，`$2` 匹配结果中对应的分组来获取最后一个字符。
 
+- 使用 [`String.prototype.replace()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) 方法，传递一个正则表达式，`$2` 匹配结果中对应的分组来获取最后一个字符。
 
 ```js
 const last_character = str.replace(/^(.*[n])*.*(.|n)$/g, '$2')

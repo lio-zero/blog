@@ -30,6 +30,8 @@ video {
 
 如果您想要获取系统是否处于暗黑模式下有两种方式，可以查看[检测暗模式](https://github.com/lio-zero/blog/blob/master/JavaScript/%E6%A3%80%E6%B5%8B%E6%9A%97%E6%A8%A1%E5%BC%8F.md)。
 
+推荐一些关于暗模式的文章：
+
 - [A Complete Guide to Dark Mode on the Web](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/)
 - [Dark Mode in CSS](https://css-tricks.com/dark-modes-with-css/)
 - [A Dark Mode Toggle with React and ThemeProvider](https://css-tricks.com/a-dark-mode-toggle-with-react-and-themeprovider/)
@@ -37,3 +39,4 @@ video {
 - [Dark mode and variable fonts](https://css-tricks.com/dark-mode-and-variable-fonts/)
 - [The Quest for the Perfect Dark Mode](https://www.joshwcomeau.com/react/dark-mode/)
 - [Dark mode in 5 minutes, with inverted lightness variables](https://lea.verou.me/2021/03/inverted-lightness-variables/)
+- [How to Implement Dark Background Mode in CSS](https://codehandbook.org/implement-dark-background-mode-css/)

@@ -58,3 +58,8 @@ CSS3 `box-sizing` 属性提供给我们切换盒模型的权利，它有如下�
 > **注意**：到 IE8+ 才支持使用 `box-sizing` 进行盒模型切换。
 
 我们可能不明确或者总是去计算加上 `padding` 和 `border` 才能获取元素的实际大小，这变的很麻烦。这时，我们可以使用 `box-sizing: border-box` 在设置有 `padding` 和 `border` 值时不把元素的宽度/高度撑开。
+
+## 更多资料
+
+- [CSS 盒模型之内边距、边框、外边距 十九问 （持续更新）](https://juejin.cn/post/6880111680153059341)
+- [CSS Box Model Module Level 3](https://www.w3.org/TR/css-box-3/)

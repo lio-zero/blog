@@ -1,4 +1,4 @@
-## JavaScript 中响应图像的最大宽度和高度
+# JavaScript 中响应图像的最大宽度和高度
 
 当我们操作砌体布局时，经常需要获取图像的当前宽度和高度，现代浏览器为我们提供了两个属性来方便的获取这些值。
 
@@ -42,6 +42,5 @@ function getMaxWidth(img) {
 **注意**：你应该确保图像必须已加载完成，然后再检查宽度，以确保图像有尺寸：
 
 ```js
-const hasDimensions = (img) =>
-  !!((img.complete && typeof img.naturalWidth !== 'undefined') || img.width)
+const hasDimensions = (img) => !!((img.complete && typeof img.naturalWidth !== 'undefined') || img.width)
 ```

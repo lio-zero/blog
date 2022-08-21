@@ -269,3 +269,4 @@ f.get(2) // null
 - [A simple guide to help you understand closures in JavaScript](https://medium.com/@prashantramnyc/javascript-closures-simplified-d0d23fa06ba4) (Prashant Ram)
 - [Master the JavaScript Interview: What is a Closure?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36) (JavaScript Scene)
 - [How do JavaScript closures work?](https://stackoverflow.com/questions/111102/how-do-javascript-closures-work)
+- [7 Interview Questions on JavaScript Closures. Can You Answer Them?](https://dmitripavlutin.com/javascript-closures-interview-questions/#questions-7-smart-multiplication)

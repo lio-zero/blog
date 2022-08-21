@@ -1,5 +1,7 @@
 # Clipboard — 剪贴板操作
 
+<!-- https://davidwalsh.name/navigator-clipboard-api -->
+
 四种实现剪贴板的操作：
 
 - 原生 `document.execCommand()` 方法

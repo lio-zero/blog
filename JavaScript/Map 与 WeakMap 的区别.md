@@ -14,7 +14,7 @@ const attrs = new WeakMap()
 attrs.set('color', 'plum') // error
 ```
 
-与 `Map `不同，`WeakMap` 不支持对键和值进行迭代。无法获取 `WeakMap` 的所有键或值。此外，也没有办法清除 `WeakMap`。
+与 `Map` 不同，`WeakMap` 不支持对键和值进行迭代。无法获取 `WeakMap` 的所有键或值。此外，也没有办法清除 `WeakMap`。
 
 **最重要的区别是，`WeakMap` 不会阻止在没有对键的引用时对键进行垃圾收集。**
 

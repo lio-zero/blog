@@ -1,10 +1,10 @@
 # ESLint 配置文件
 
-你可以使用 `. eslint.*` 文件或 `package.json` 文件中的 `eslintConfig` 选项来[配置 ESLint](https://eslint.org/docs/user-guide/configuring)。你的 `.eslint.*` 文件可以是 `.eslintrc.json`、`.eslintrc.js` 或 `.eslintrc.yml`。
+你可以使用 `.eslint.*` 文件或 `package.json` 文件中的 `eslintConfig` 选项来[配置 ESLint](https://eslint.org/docs/latest/user-guide/configuring)。你的 `.eslint.*` 文件可以是 `.eslintrc.json`、`.eslintrc.js` 或 `.eslintrc.yml`，也可以是 `.eslintrc`。
 
 > 配置文件优先级：.eslintrc.js > .eslintrc.yaml > .eslintrc.yml > .eslintrc.json > .eslintrc > package.json。详细内容可以查看[如何在 Node.js 应用程序中使用 ESLint](https://github.com/lio-zero/blog/blob/main/Node/%E5%A6%82%E4%BD%95%E5%9C%A8%20Node.js%20%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E4%BD%BF%E7%94%A8%20ESLint.md)
 
-下面是一个简单的 `.eslintrc.json` 文件，它启用了 [`no-unused-vars` ESLint 规则](https://eslint.org/docs/rules/no-unused-vars):
+下面是一个简单的 `.eslintrc.json` 文件，它启用了 [`no-unused-vars` ESLint 规则](https://eslint.org/docs/latest/rules/no-unused-vars):
 
 ```json
 {
@@ -59,11 +59,11 @@ $ echo $?
 1
 ```
 
-> **提示：**`echo $?` 命令是在 [Linux 中获取最后一个命令的退出代码的方式](https://shapeshed.com/unix-exit-codes/)。退出代码 `0` 意味着命令成功，即使出现警告，`eslint` 也成功了。如果退出代码为 `1`，则表示执行失败。
+> **Tips**：`echo $?` 命令是在 [Linux 中获取最后一个命令的退出代码的方式](https://shapeshed.com/unix-exit-codes/)。退出代码 `0` 意味着命令成功，即使出现警告，`eslint` 也成功了。如果退出代码为 `1`，则表示执行失败。
 
 ## 规则
 
-[rules](https://eslint.org/docs/rules/) 是 ESLint 的基本构建块。每个 ESLint 配置都是一组规则，以及这些规则执行的严格程度（错误或警告）。甚至 [JavaScript Standard Style](https://github.com/standard/standard/blob/master/RULES.md) 也是作为 ESLint 规则的集合。
+[rules](https://eslint.org/docs/latest/rules/) 是 ESLint 的基本构建块。每个 ESLint 配置都是一组规则，以及这些规则执行的严格程度（错误或警告）。甚至 [JavaScript Standard Style](https://github.com/standard/standard/blob/master/RULES.md) 也是作为 ESLint 规则的集合。
 
 规则配置可以是字符串（或用相应数字代替）或数组。如果规则配置为字符串，则必须为 `'off'`、`'warn'` 或 `'error'`。
 
@@ -84,7 +84,7 @@ $ echo $?
 }
 ```
 
-如果规则配置是一个数组，数组的第一个元素是一个字符串或对应数字（`'off'`， `'warn'` 或 `'error'`），第二个元素是配置单个规则的选项。例如，下面的 `.eslintrc.json` 告诉 ESLint，当任何一行代码的长度超过 66 个字符时，使用 [`max-len` 规则](https://eslint.org/docs/rules/max-len) 就会出错。
+如果规则配置是一个数组，数组的第一个元素是一个字符串或对应数字（`'off'`， `'warn'` 或 `'error'`），第二个元素是配置单个规则的选项。例如，下面的 `.eslintrc.json` 告诉 ESLint，当任何一行代码的长度超过 66 个字符时，使用 [`max-len` 规则](https://eslint.org/docs/latest/rules/max-len) 就会出错。
 
 ```json
 {
@@ -99,10 +99,9 @@ $ echo $?
 
 ## 使用 `extends`
 
-列出您想要使用的每一个 ESLint 规则通常是不可行的，所以 ESLint 提供了一个 [`extends` 选项](https://eslint.org/docs/user-guide/configuring#extending-configuration-files)，允许您扩展现有的 ESLint 配置，并进行覆盖。
+列出您想要使用的每一个 ESLint 规则通常是不可行、不推荐的，所以 ESLint 提供了一个 [`extends` 选项](https://eslint.org/docs/latest/user-guide/configuring#extending-configuration-files)，允许您扩展现有的 ESLint 配置，并进行覆盖。
 
-出于实际目的，如果你正在构建自己的 ESLint 配置，我们建议使用 ESLint 内置的
-`eslint:recommended`配置作为起点。
+出于实际目的，如果你正在构建自己的 ESLint 配置，我建议使用 ESLint 内置的 `eslint:recommended` 配置作为起点。
 
 ```json
 {
@@ -110,7 +109,7 @@ $ echo $?
 }
 ```
 
-你可以在 [ESLint 推荐的配置中找到一个完整的规则列表](https://eslint.org/docs/rules/)。你可以通过指定你自己的 `rules` 属性来覆盖 ESLint 推荐的配置中的单个规则。例如，下面的 ESLint 配置使用推荐的配置，除了禁用 `no-undef` 规则。
+你可以在 [ESLint 推荐的配置中找到一个完整的规则列表](https://eslint.org/docs/latest/rules/)。你可以通过指定你自己的 `rules` 属性来覆盖 ESLint 推荐的配置中的单个规则。例如，下面的 ESLint 配置使用推荐的配置，除了禁用 `no-undef` 规则。
 
 ```json
 {
@@ -131,7 +130,7 @@ $ echo $?
 })()
 ```
 
-但是，如果您更改 `parser.ecmaVersion` 为 `2016`，ESLint 将会失败并出现以下错误，因为 ES2017 中引入了异步函数。
+但是，如果您更改 `parser.ecmaVersion` 为 `2016`，ESLint 将会失败并出现以下错误，因为异步函数在 ES2017 才被引入。
 
 ```bash
 $ ./node_modules/.bin/eslint ./test.js
@@ -214,11 +213,11 @@ process.env.MESSAGE = 'Hello, World'
 }
 ```
 
-ESLint 档有一个支持环境的[完整列表](https://eslint.org/docs/user-guide/configuring#specifying-environments)。
+ESLint 档有一个支持环境的[完整列表](https://eslint.org/docs/latest/user-guide/configuring#specifying-environments)。
 
 ## 插件
 
-ESLint 自带了各种各样的[内置规则](https://eslint.org/docs/rules/)，但你也可以找到许多在 npm 上有额外规则的插件。许多 ESLint 插件为使用特定的库和框架提供了额外的规则。
+ESLint 自带了各种各样的[内置规则](https://eslint.org/docs/latest/rules/)，但你也可以找到许多在 npm 上有额外规则的插件。许多 ESLint 插件为使用特定的库和框架提供了额外的规则。
 
 例如，[eslint-plugin-vue](https://www.npmjs.com/package/eslint-plugin-vue) 提供了额外的特定于 Vue 规则。运行 `npm i eslint-plugin-vue -D` 后，你可以在 ESLint 配置中添加一个 `plugins` 列表，其中包括 `'eslint-plugin-vue'`，或者简称为 `'vue'`，因为 ESLint 足够聪明，可以为你添加 `'eslint-plugin-'` 前缀。
 
@@ -231,7 +230,7 @@ ESLint 自带了各种各样的[内置规则](https://eslint.org/docs/rules/)，
 }
 ```
 
-一旦你这样做了，你就可以访问特定于 Vue 的规则，比如 [`no-async-in-computed-properties`](https://eslint.vuejs.org/rules/no-async-in-computed-properties.html).。下面的 ESLint 配置打开了 `no-async-in-computed-properties` 规则。
+一旦你这样做了，你就可以访问特定于 Vue 的规则，比如 [`no-async-in-computed-properties`](https://eslint.vuejs.org/rules/no-async-in-computed-properties.html)。下面的 ESLint 配置打开了 `no-async-in-computed-properties` 规则。
 
 ```json
 {

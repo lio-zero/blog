@@ -154,3 +154,4 @@ app.get('/', (req, res) => {
 - [web 安全之 XSS 攻击原理及防范](https://www.cnblogs.com/tugenhua0707/p/10909284.html)
 - [Cross-site Scripting (XSS)](https://www.acunetix.com/websitesecurity/cross-site-scripting/)
 - XSS 攻击脑图：[xss virus 1.0](https://raw.githubusercontent.com/phith0n/Mind-Map/master/xss%20virus%201.0.png)、[XSS 脑图](https://raw.githubusercontent.com/phith0n/Mind-Map/master/XSS%E8%84%91%E5%9B%BE.png) 和 [XSS2](https://raw.githubusercontent.com/phith0n/Mind-Map/master/XSS2.png)
+- [5 ways to prevent code injection in JavaScript and Node.js](https://snyk.io/blog/5-ways-to-prevent-code-injection-in-javascript-and-node-js/)

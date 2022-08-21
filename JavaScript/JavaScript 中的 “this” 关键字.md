@@ -159,4 +159,8 @@ func.apply(user) // {name: "lio", age: 18}
 
 ## 更多资料
 
-[Understanding the "this" keyword in JavaScript](https://www.30secondsofcode.org/blog/s/javascript-this)
+- [Understanding the "this" keyword in JavaScript](https://www.30secondsofcode.org/blog/s/javascript-this)
+- [You Don't Know JS — Chapter 1: this Or That?](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20&%20object%20prototypes/ch1.md#chapter-1-this-or-that)
+- [You Don't Know JS — Chapter 2: this All Makes Sense Now!](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20&%20object%20prototypes/ch2.md#chapter-2-this-all-makes-sense-now)
+- [JavaScript: What is the meaning of this?](https://web.dev/i18n/en/javascript-this/)
+- [深入理解 js this 绑定 ( 无需死记硬背，尾部有总结和面试题解析 )](https://segmentfault.com/a/1190000011194676)

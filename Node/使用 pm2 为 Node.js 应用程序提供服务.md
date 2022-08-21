@@ -200,3 +200,7 @@ $ pm2 ping
 # 向脚本发送系统信号
 $ pm2 sendSignal SIGHUP my-app
 ```
+
+## 更多资料
+
+[Right Sizing PM2 Clusters](https://vadosware.io/post/right-sizing-pm2-clusters/)

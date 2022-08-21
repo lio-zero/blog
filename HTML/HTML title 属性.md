@@ -33,3 +33,8 @@ HTML `title` 全局属性包含表示与其所属元素相关的建议信息的�
 在这种情况下，`alt` 实际上成为了首要方案，因为它的优先级更高。因此，即使 `title` 拥有有用的内容，它也不会被使用，因为 `alt` 在那里。
 
 对于一个普遍可靠的文本替代图像，`alt` 属性应该是首选方法。在提供 `title` 属性的情况下，它应该与 `alt` 具有相同的值。
+
+## 更多资料
+
+- [The Trials and Tribulations of the Title Attribute](https://www.24a11y.com/2017/the-trials-and-tribulations-of-the-title-attribute/)
+- [Using the HTML title attribute](https://developer.paciellogroup.com/blog/2013/01/using-the-html-title-attribute-updated/)

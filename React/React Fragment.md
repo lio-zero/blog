@@ -1,4 +1,4 @@
-# <> 与 React.Fragment 的区别
+# `<>` 和 `React.Fragment` 的区别
 
 `<>` 是 `React.Fragment` 的简写标签。它允许我们对元素列表进行分组，而无需将它们包装到新节点中。
 

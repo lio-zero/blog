@@ -9,7 +9,7 @@
 这方面的例子包括 `outline`，`visibility`，`background`，或 `color`。[根据 Opera 的说法](https://dev.opera.com/articles/efficient-javascript/?page=3#reflow)，重绘是昂贵的，因为浏览器必须验证 DOM 树中所有其他节点的可见性。
 
 > **扩展**：重绘是在关键渲染路径中的 Paint 阶段，将渲染树中的每个节点转换成屏幕上的实际像素，这一步通常称为绘制或栅格化。
-
+>
 > **记住一点：回流必定会发生重绘，重绘不一定会引发回流。**
 
 ## 回流（Reflow）

@@ -395,6 +395,7 @@ reg1.test('1+1') // true
 
 ## 更多资料
 
+- [xregexp](https://github.com/slevithan/xregexp) 扩展的 JavaScript 正则表达式
 - [learn-regex](https://github.com/ziishaned/learn-regex)
 - [regexr](https://regexr.com/) RegExr 是基于 HTML/JS 的工具，用于创建，测试和学习正则表达式。
 - [RegExper](https://regexper.com/) 可以将正则表达式转成解释图片。

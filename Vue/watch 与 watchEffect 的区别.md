@@ -96,7 +96,7 @@ Vue watcher 只跟踪一个依赖项，**但如果我们需要跟踪两个依赖
 
 ```html
 <script setup>
-  import { ref, watchEffect } from 'vue'
+  import { ref, watch } from 'vue'
 
   watch(
     title,
@@ -117,9 +117,9 @@ Vue watcher 只跟踪一个依赖项，**但如果我们需要跟踪两个依赖
 
 这需要看您的项目适合哪一种。
 
-## 对于 `watcheffect` 还需要注意的事
+## 对于 `watcheffect` 需要注意的事项
 
-以下整理 [Vue 文档对于 WatchEffect](https://v3.cn.vuejs.org/guide/reactivity-computed-watchers.html#watcheffect) 需要注意的事。
+以下整理 [Vue 文档对于 WatchEffect](https://v3.cn.vuejs.org/guide/reactivity-computed-watchers.html#watcheffect) 需要注意的事项。
 
 ### props 是响应的
 

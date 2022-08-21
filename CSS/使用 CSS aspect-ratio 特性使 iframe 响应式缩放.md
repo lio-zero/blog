@@ -36,7 +36,7 @@ iframe {
 
 - 将 `iframe` 放在 `div` 的左上角。
 - 使其达到 `div` 元素 `height` 和 `width` 的 `100%`。
-- 在 `div` 顶部添加等于 `iframe` 纵横比的 `padinng`（对于高清视频，为 `56.25%` 或 `9/16*100`）。
+- 在 `div` 顶部添加等于 `iframe` 纵横比的 `padding`（对于高清视频，为 `56.25%` 或 `9/16*100`）。
 
 ```css
 .responsive-iframe {
@@ -95,4 +95,10 @@ iframe {
 
 快速查看 `aspect-ratio` 兼容情况：
 
-![aspect-ratio](https://upload-images.jianshu.io/upload_images/18281896-b9e25e8a37d2ea37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![aspect-ratio 的支持情况](https://upload-images.jianshu.io/upload_images/18281896-b9e25e8a37d2ea37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+以下是关于 `aspect-ratio` 属性的相关文章：
+
+- [Create Responsive Image Effects With CSS Gradients And aspect-ratio](https://www.smashingmagazine.com/2021/02/responsive-image-effects-css-gradients-aspect-ratio/)
+- [Designing An Aspect Ratio Unit For CSS](https://www.smashingmagazine.com/2019/03/aspect-ratio-unit-css/)
+- [`aspect-ratio`](https://drafts.csswg.org/css-sizing-4/#ratios)

@@ -258,7 +258,7 @@ if (arr.includes(3, 2)) {
 
 ## Array.prototype.reduce()
 
-[`reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) 方法根据 reducer 函数和初始值创建任何类型的输出值。根据提供的 reducer 函数，结果可以是任何类型，例如整数、对象或数组。
+[`reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) 方法根据 reducer 函数和初始值创建任何类型的输出值。
 
 ```js
 const arr = [1, 2, 3, 4]
@@ -267,6 +267,8 @@ const reducer = (acc, cur) => acc + cur
 console.log(arr.reduce(reducer)) // 10
 console.log(arr.reduce(reducer, 5)) // 15
 ```
+
+注意，reducer 函数必须显式返回一个值，否则 `reduce()` 将返回 `undefined`。
 
 通过 reducer 函数仅获取 `name` 键：
 
@@ -287,7 +289,9 @@ let output = input.reduce(reducer, [])
 console.log(output)
 ```
 
-> **注意**：`Reduce()` 支持所以现代浏览器，以及 IE9 及更高版本，如果想支持低版本浏览器，[可以添加一个 polyfill 以支持 IE6](https://vanillajstoolkit.com/polyfills/arrayreduce/)。
+`Reduce()` 支持所以现代浏览器，以及 IE9 及更高版本，如果想支持低版本浏览器，可以添加一个 [polyfill](https://github.com/zloirock/core-js#ecmascript-array) 以支持 IE6。
+
+> 推荐：[Understand JavaScript Reduce With 5 Examples](http://thecodebarbarian.com/javascript-reduce-in-5-examples.html)。
 
 ## Array.prototype.reduceRight()
 
@@ -348,6 +352,14 @@ const arr = [1, 2, 3]
 const double = (x) => x * 2
 arr.map(double) // [2, 4, 6]
 ```
+
+有一道经典的面试题可以很好的检验您是否理解 `map` 方法：
+
+```js
+;['1', '2', '3'].map(parseInt)
+```
+
+您可以在 [A JavaScript Optional Argument Hazard](https://wirfs-brock.com/allen/posts/166) 找到问题的解决思路。
 
 ## Array.prototype.flat()
 

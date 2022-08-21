@@ -1,4 +1,4 @@
-# 在 Node.js 中将 Buffer 转换为 JSON 和 Utf8 字符串
+# 在 Node.js 中将 Buffer 转换为 JSON 和 UTF8 字符串
 
 Nodejs 和基于浏览器的 JavaScript 有所不同，因为 Node 甚至在 ES6 草案提出 `ArrayBuffer` 之前就有处理二进制数据的方法。在 Node 中，`Buffer` 类是大多数 I/O 操作使用的主要数据结构。它是在 V8 堆外部分配的原始二进制数据，一旦分配，就无法调整大小。
 
@@ -101,3 +101,8 @@ console.log(bufferOriginal.toString('utf8')) // All work and no play makes Jack 
 `.toString()` 不是将 Buffer 转换为字符串的唯一方法。此外，默认情况下，它会转换为 utf-8 格式字符串。
 
 另一种将 Buffer 转换为字符串的方法是使用 Node.js API 中的 `StringDecoder` 核心模块。
+
+<!-- https://masteringjs.io/tutorials/node/buffer
+https://masteringjs.io/tutorials/node/buffer-to-string
+https://masteringjs.io/tutorials/node/buffer-length
+https://masteringjs.io/tutorials/node/buffer-compare -->

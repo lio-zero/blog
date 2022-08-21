@@ -39,7 +39,7 @@ const data = new Blob(['Test'])
 - [ArrayBufferView](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)
 - 另一个 Blob
 
-Blob 构造函数接受一个可选的第二个参数，该参数表示 MIME 类型：
+Blob 构造函数接受一个可选的第二个参数，该参数表示 [MIME 类型](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_Types)：
 
 ```js
 const data = new Blob(['Test'], { type: 'text/plain' })
@@ -156,3 +156,5 @@ text // 'Test'
 ## 更多资料
 
 - [Blob](https://zh.javascript.info/blob)
+- [你不知道的 Blob](https://juejin.cn/post/6844904178725158926)
+- [《你不知道的 Blob》番外篇](https://juejin.cn/post/6844904183661854727)
