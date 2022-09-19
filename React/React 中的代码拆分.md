@@ -88,5 +88,3 @@ const App = () => (
 ```
 
 [使用 React Suspense 预缓存图像](https://css-tricks.com/pre-caching-image-with-react-suspense/)
-
-<!-- https://dev.to/nyanyiwast/how-to-implement-lazy-loading-in-react-code-splitting-1je6 -->

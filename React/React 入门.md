@@ -1514,6 +1514,5 @@ ReactDOM.render(<Header />, document.getElementById('root'))
 ## 更多资料
 
 - [React 官网](https://reactjs.org/)
-- [React 备忘单](https://reactcheatsheet.com/)
 - [Awesome React](https://github.com/enaqx/awesome-react)
 - [86 张脑图，一口气看完 React](https://juejin.cn/post/7085145274200358949) — 一篇不错的脑图，整理的也挺全面
