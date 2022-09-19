@@ -2,9 +2,9 @@
 
 您可能熟悉 JavaScript 中的[高阶函数](https://github.com/lio-zero/blog/blob/main/JavaScript/JavaScript%20%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0.md)。它是将函数作为参数或将函数作为结果返回的函数。
 
-在 React 中，我们将这个概念扩展到组件，因此当组件接受组件作为输入并返回组件作为输出时，我们就有了一个高阶组件（HOC）。
+在 React 中，我们将这个概念扩展到组件，因此当组件接受另一个组件作为输入并返回一个新的组件作为输出时，我们就有了一个高阶组件（HOC）。
 
-通常，高阶组件允许您创建可组合和可复用的代码，并且更具封装性。
+通常，高阶组件允许您创建**可组合和可复用**的代码，并且更具**封装性**。
 
 我们可以使用 HOC 将方法或属性添加到组件的状态，例如 [Redux](https://redux.js.org/) 存储。
 
@@ -55,11 +55,8 @@ function App() {
 
 ## 更多资料
 
-高阶组件（HOC）是 React 中用于复用组件逻辑的一种高级技巧。HOC 自身不是 React API 的一部分，它是一种基于 React 的组合特性而形成的设计模式。
+关于高阶组件，这里整理了一些的资料供大家参考：
 
-具体而言，高阶组件是参数为组件，返回值为新组件的函数。
-
-- [Docs：Higher-Order Components](https://reactjs.org/docs/higher-order-components.html)
-- [React 高阶组件(HOC)入门指南](https://github.com/MrErHu/blog/issues/4)
-- [hoc 库 recompose](https://github.com/acdlite/recompose) 函数组件和高阶部件的 React 实用皮带。
-- [精读 React 高阶组件](https://zhuanlan.zhihu.com/p/27434557)
+- [React Docs: Higher-Order Components](https://reactjs.org/docs/higher-order-components.html)
+- [hoc 库 recompose](https://github.com/acdlite/recompose) 函数组件和高阶组件的 React 实用工具。（该库已不在积极维护，已经有更好的 Hooks，可以大概了解一下）
+- [深入理解 React 高阶组件](https://zhuanlan.zhihu.com/p/24776678)

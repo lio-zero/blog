@@ -4,7 +4,7 @@
 
 例如，考虑使用 `map()` 从初始集合创建一个新数组，然后使用 `filter()` 过滤结果：
 
-```js
+```jsx
 const list = ['Express', 'Koa', 'Egg']
 list.map((item) => item).filter((item) => item === 'E') // [ 'E', 'E' ]
 ```
@@ -19,7 +19,7 @@ list.map((item) => item).filter((item) => item === 'E') // [ 'E', 'E' ]
 
 使用外部组件来扩展和专门化更通用的组件：
 
-```js
+```jsx
 const Button = (props) => {
   return <button>{props.text}</button>
 }
@@ -37,7 +37,7 @@ const LoginButton = () => {
 
 例如，组件可以专注于跟踪点击事件，而当点击事件发生时实际发生的情况取决于容器组件：
 
-```js
+```jsx
 const Button = (props) => {
   return <button onClick={props.onClickHandler}>{props.text}</button>
 }
@@ -61,7 +61,7 @@ const Container = () => {
 
 组件需要 `props.children` 在其 JSX 中输出：
 
-```js
+```jsx
 const Sidebar = (props) => {
   return <aside>{props.children}</aside>
 }
@@ -69,12 +69,14 @@ const Sidebar = (props) => {
 
 并且您可以以透明的方式将更多组件嵌入其中：
 
-```js
+```jsx
 <Sidebar>
   <Link title='First link' />
   <Link title='Second link' />
 </Sidebar>
 ```
+
+> **扩展**：如果您使用过 Vue，那么它类似于其中的[插槽](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20%E6%8F%92%E6%A7%BD.md)的概念。
 
 ## 高阶组件
 

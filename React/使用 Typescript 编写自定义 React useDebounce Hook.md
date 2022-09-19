@@ -47,7 +47,10 @@ useEffect(() => {
 最后，我们的函数将返回三个元素组成的数组。第一个元素 `debouncedValue` 是泛型类型，第二个元素 `value` 也将是泛型类型，最后一个元素将是我们的设置的 `React.Dispatch` 类型。
 
 ```ts
-function useDebounce<T>(initialValue: T, time: number): [T, T, React.Dispatch<T>] {}
+function useDebounce<T>(
+  initialValue: T,
+  time: number
+): [T, T, React.Dispatch<T>] {}
 ```
 
 ## 编写一个没有防抖的版本
@@ -57,7 +60,10 @@ function useDebounce<T>(initialValue: T, time: number): [T, T, React.Dispatch<T>
 ```ts
 import { useState, useEffect } from 'react'
 
-function useDebounce<T>(initialValue: T, time: number): [T, T, React.Dispatch<T>] {
+function useDebounce<T>(
+  initialValue: T,
+  time: number
+): [T, T, React.Dispatch<T>] {
   const [value, setValue] = useState<T>(initialValue)
   const [debouncedValue, setDebouncedValue] = useState<T>(initialValue)
 
@@ -76,7 +82,10 @@ function useDebounce<T>(initialValue: T, time: number): [T, T, React.Dispatch<T>
 ```ts
 import React, { useState, useEffect } from 'react'
 
-function useDebounce<T>(initialValue: T, time: number): [T, T, React.Dispatch<T>] {
+function useDebounce<T>(
+  initialValue: T,
+  time: number
+): [T, T, React.Dispatch<T>] {
   const [value, setValue] = useState<T>(initialValue)
   const [debouncedValue, setDebouncedValue] = useState<T>(initialValue)
 
@@ -84,9 +93,7 @@ function useDebounce<T>(initialValue: T, time: number): [T, T, React.Dispatch<T>
     const debounce = setTimeout(() => {
       setDebouncedValue(value)
     }, time)
-    return () => {
-      clearTimeout(debounce)
-    }
+    return () => clearTimeout(debounce)
   }, [value, time])
 
   return [debouncedValue, value, setValue]
@@ -97,4 +104,6 @@ function useDebounce<T>(initialValue: T, time: number): [T, T, React.Dispatch<T>
 
 ## 最后
 
-对于 React 的 TypeScript 实践，有一个不错的项目 [React+TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react)，它为经验丰富的 React 开发人员提供 TypeScript 入门的备忘单。
+对于 React 的 TypeScript 实践，有一个不错的项目 [React TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react)，它为经验丰富的 React 开发人员提供 TypeScript 入门的备忘单。
+
+另外，如果您看到英文头疼，有一篇不错的文章 [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://juejin.cn/post/6910863689260204039)，其中作者的一些实际经验和这份备忘单，值得一读。
