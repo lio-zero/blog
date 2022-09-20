@@ -19,8 +19,19 @@ grep -nri css docs | cat --number
 
 后面新增的文章可能不会在 `README.md` 内更新。您可以通过上面分享的几种方式进行搜索。
 
+## 学习说明
+
+学习一门语言、相关工具、框架都从官方文档出发，它们都是最新、最完善的。
+
+如果觉得文档看不下去或一些术语很难理解，可以先找一些大佬的文章、视频先入个门，回头在跟着文档刷一遍。
+
+前端技术栈日新月异，大家加油吧。
+
+> **Tips**：本人也是一名前端小白，文章没啥深度，都是很基础的内容，不喜勿喷。
+
 ## Canvas
 
+- [使用 toBlob 下载 Canvas API 生成的图像](/Canvas/%E4%BD%BF%E7%94%A8%20toBlob%20%E4%B8%8B%E8%BD%BD%20Canvas%20API%20%E7%94%9F%E6%88%90%E7%9A%84%E5%9B%BE%E5%83%8F.md)
 - [在 HTML canvas 绘制文本](/Canvas/%E5%9C%A8%20HTML%20canvas%20%E7%BB%98%E5%88%B6%E6%96%87%E6%9C%AC.md)
 - [将 canvas 打印到 Data URL](/Canvas/%E5%B0%86%20canvas%20%E6%89%93%E5%8D%B0%E5%88%B0%20Data%20URL.md)
 - [开始使用 Canvas](/Canvas/%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%20Canvas.md)
@@ -168,6 +179,7 @@ grep -nri css docs | cat --number
 - [删除 Git remote](/Git%20%E5%92%8C%20Github/%E5%88%A0%E9%99%A4%20Git%20remote.md)
 - [删除本地和远程 Git 分支](/Git%20%E5%92%8C%20Github/%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%92%8C%E8%BF%9C%E7%A8%8B%20Git%20%E5%88%86%E6%94%AF.md)
 - [同时推送到 2 个存储库并保持同步](/Git%20%E5%92%8C%20Github/%E5%90%8C%E6%97%B6%E6%8E%A8%E9%80%81%E5%88%B0%202%20%E4%B8%AA%E5%AD%98%E5%82%A8%E5%BA%93%E5%B9%B6%E4%BF%9D%E6%8C%81%E5%90%8C%E6%AD%A5.md)
+- [在 Git 和 GitHub 中重命名默认分支](/Git%20%E5%92%8C%20Github/%E5%9C%A8%20Git%20%E5%92%8C%20GitHub%20%E4%B8%AD%E9%87%8D%E5%91%BD%E5%90%8D%E9%BB%98%E8%AE%A4%E5%88%86%E6%94%AF.md)
 - [在不切换分支的情况下查看不同分支中的文件](/Git%20%E5%92%8C%20Github/%E5%9C%A8%E4%B8%8D%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E6%9F%A5%E7%9C%8B%E4%B8%8D%E5%90%8C%E5%88%86%E6%94%AF%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6.md)
 - [将本地 git 标签推送到 GitHub 上的远程仓库](/Git%20%E5%92%8C%20Github/%E5%B0%86%E6%9C%AC%E5%9C%B0%20git%20%E6%A0%87%E7%AD%BE%E6%8E%A8%E9%80%81%E5%88%B0%20GitHub%20%E4%B8%8A%E7%9A%84%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93.md)
 - [用于 GitHub markdown 和 Git 提交的 emoji 表情](/Git%20%E5%92%8C%20Github/%E7%94%A8%E4%BA%8E%20GitHub%20markdown%20%E5%92%8C%20Git%20%E6%8F%90%E4%BA%A4%E7%9A%84%20emoji%20%E8%A1%A8%E6%83%85.md)
@@ -422,6 +434,8 @@ grep -nri css docs | cat --number
 - [Mongoose create() 方法](</MongoDB/Mongoose%20create()%20%E6%96%B9%E6%B3%95.md>)
 - [Mongoose Populate](/MongoDB/Mongoose%20Populate.md)
 - [Mongoose Schema 和 SchemaTypes](/MongoDB/Mongoose%20Schema%20%E5%92%8C%20SchemaTypes.md)
+- [Mongoose Virtuals](/MongoDB/Mongoose%20Virtuals.md)
+- [Mongoose 中的 db 属性](/MongoDB/Mongoose%20%E4%B8%AD%E7%9A%84%20db%20%E5%B1%9E%E6%80%A7.md)
 - [Mongoose 中的 ObjectIds](/MongoDB/Mongoose%20%E4%B8%AD%E7%9A%84%20ObjectIds.md)
 - [Mongoose 中的 Promise](/MongoDB/Mongoose%20%E4%B8%AD%E7%9A%84%20Promise.md)
 - [Mongoose 中的枚举](/MongoDB/Mongoose%20%E4%B8%AD%E7%9A%84%E6%9E%9A%E4%B8%BE.md)
@@ -434,6 +448,7 @@ grep -nri css docs | cat --number
 - [Mongoose 的 save() 方法](</MongoDB/Mongoose%20%E7%9A%84%20save()%20%E6%96%B9%E6%B3%95.md>)
 - [Mongoose 解决 Query was already executed 问题](/MongoDB/Mongoose%20%E8%A7%A3%E5%86%B3%20Query%20was%20already%20executed%20%E9%97%AE%E9%A2%98.md)
 - [使用 Mongoose 连接到 MongoDB](/MongoDB/%E4%BD%BF%E7%94%A8%20Mongoose%20%E8%BF%9E%E6%8E%A5%E5%88%B0%20MongoDB.md)
+- [使用 Mongoose 验证数据唯一性](/MongoDB/%E4%BD%BF%E7%94%A8%20Mongoose%20%E9%AA%8C%E8%AF%81%E6%95%B0%E6%8D%AE%E5%94%AF%E4%B8%80%E6%80%A7.md)
 - [在 Mongoose 中使用 MongoDB Explain](/MongoDB/%E5%9C%A8%20Mongoose%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20MongoDB%20Explain.md)
 
 ## Nginx
@@ -448,6 +463,7 @@ grep -nri css docs | cat --number
 - [Express 中的错误处理中间件](/Node/Express%20%E4%B8%AD%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E4%B8%AD%E9%97%B4%E4%BB%B6.md)
 - [JavaScript Lodash 工具库](/Node/JavaScript%20Lodash%20%E5%B7%A5%E5%85%B7%E5%BA%93.md)
 - [Node Koa 框架](/Node/Node%20Koa%20%E6%A1%86%E6%9E%B6.md)
+- [Node REPL](/Node/Node%20REPL.md)
 - [Node.js assert 模块](/Node/Node.js%20assert%20%E6%A8%A1%E5%9D%97.md)
 - [Node.js Buffer 模块 — 缓冲区](/Node/Node.js%20Buffer%20%E6%A8%A1%E5%9D%97%20%E2%80%94%20%E7%BC%93%E5%86%B2%E5%8C%BA.md)
 - [Node.js HTTP 和 HTTPS 模块](/Node/Node.js%20HTTP%20%E5%92%8C%20HTTPS%20%E6%A8%A1%E5%9D%97.md)
@@ -474,8 +490,10 @@ grep -nri css docs | cat --number
 - [使用 Node.js 显示整个对象](/Node/%E4%BD%BF%E7%94%A8%20Node.js%20%E6%98%BE%E7%A4%BA%E6%95%B4%E4%B8%AA%E5%AF%B9%E8%B1%A1.md)
 - [使用 Node.js 生成子进程](/Node/%E4%BD%BF%E7%94%A8%20Node.js%20%E7%94%9F%E6%88%90%E5%AD%90%E8%BF%9B%E7%A8%8B.md)
 - [使用 Node.js 递归创建目录](/Node/%E4%BD%BF%E7%94%A8%20Node.js%20%E9%80%92%E5%BD%92%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95.md)
+- [使用 Nodemailer 发送电子邮件](/Node/%E4%BD%BF%E7%94%A8%20Nodemailer%20%E5%8F%91%E9%80%81%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6.md)
 - [使用 nodemon 自动重启 Node.js 应用程序](/Node/%E4%BD%BF%E7%94%A8%20nodemon%20%E8%87%AA%E5%8A%A8%E9%87%8D%E5%90%AF%20Node.js%20%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F.md)
 - [使用 pm2 为 Node.js 应用程序提供服务](/Node/%E4%BD%BF%E7%94%A8%20pm2%20%E4%B8%BA%20Node.js%20%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%8F%90%E4%BE%9B%E6%9C%8D%E5%8A%A1.md)
+- [使用 process.mainModule 或 require.main 确定 Node.js 入口脚本](/Node/%E4%BD%BF%E7%94%A8%20process.mainModule%20%E6%88%96%20require.main%20%E7%A1%AE%E5%AE%9A%20Node.js%20%E5%85%A5%E5%8F%A3%E8%84%9A%E6%9C%AC.md)
 - [使用 sendFile() 在 Express 中发送静态文件](</Node/%E4%BD%BF%E7%94%A8%20sendFile()%20%E5%9C%A8%20Express%20%E4%B8%AD%E5%8F%91%E9%80%81%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6.md>)
 - [使用 zx 编写在 Node 中编写 Bash 脚本](/Node/%E4%BD%BF%E7%94%A8%20zx%20%E7%BC%96%E5%86%99%E5%9C%A8%20Node%20%E4%B8%AD%E7%BC%96%E5%86%99%20Bash%20%E8%84%9A%E6%9C%AC.md)
 - [创建 GUID、UUID](/Node/%E5%88%9B%E5%BB%BA%20GUID%E3%80%81UUID.md)
@@ -489,7 +507,9 @@ grep -nri css docs | cat --number
 - [如何在 Node.js 应用程序中使用 ESLint](/Node/%E5%A6%82%E4%BD%95%E5%9C%A8%20Node.js%20%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E4%BD%BF%E7%94%A8%20ESLint.md)
 - [如何对 npm package 进行发包](/Node/%E5%A6%82%E4%BD%95%E5%AF%B9%20npm%20package%20%E8%BF%9B%E8%A1%8C%E5%8F%91%E5%8C%85.md)
 - [常用的 npm 命令](/Node/%E5%B8%B8%E7%94%A8%E7%9A%84%20npm%20%E5%91%BD%E4%BB%A4.md)
+- [快速执行 JavaScript 文件的语法检查](/Node/%E5%BF%AB%E9%80%9F%E6%89%A7%E8%A1%8C%20JavaScript%20%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%AD%E6%B3%95%E6%A3%80%E6%9F%A5.md)
 - [打开包的主页或存储库](/Node/%E6%89%93%E5%BC%80%E5%8C%85%E7%9A%84%E4%B8%BB%E9%A1%B5%E6%88%96%E5%AD%98%E5%82%A8%E5%BA%93.md)
+- [查找未使用的 npm 依赖项](/Node/%E6%9F%A5%E6%89%BE%E6%9C%AA%E4%BD%BF%E7%94%A8%E7%9A%84%20npm%20%E4%BE%9D%E8%B5%96%E9%A1%B9%20.md)
 - [检查 npm 模块更新](/Node/%E6%A3%80%E6%9F%A5%20npm%20%E6%A8%A1%E5%9D%97%E6%9B%B4%E6%96%B0.md)
 - [防止 npm 安装不支持的 Node.js 版本](/Node/%E9%98%B2%E6%AD%A2%20npm%20%E5%AE%89%E8%A3%85%E4%B8%8D%E6%94%AF%E6%8C%81%E7%9A%84%20Node.js%20%E7%89%88%E6%9C%AC.md)
 
@@ -503,19 +523,30 @@ grep -nri css docs | cat --number
 - [React 中的代码拆分](/React/React%20%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81%E6%8B%86%E5%88%86.md)
 - [React 中的单向数据流](/React/React%20%E4%B8%AD%E7%9A%84%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81.md)
 - [React 入门](/React/React%20%E5%85%A5%E9%97%A8.md)
+- [React 受控组件和非受控组件](/React/React%20%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6%E5%92%8C%E9%9D%9E%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6.md)
 - [React 声明式](/React/React%20%E5%A3%B0%E6%98%8E%E5%BC%8F.md)
 - [React 展示组件与容器组件](/React/React%20%E5%B1%95%E7%A4%BA%E7%BB%84%E4%BB%B6%E4%B8%8E%E5%AE%B9%E5%99%A8%E7%BB%84%E4%BB%B6.md)
 - [React 纯函数](/React/React%20%E7%BA%AF%E5%87%BD%E6%95%B0.md)
 - [React 组合组件](/React/React%20%E7%BB%84%E5%90%88%E7%BB%84%E4%BB%B6.md)
 - [React 高阶组件](/React/React%20%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6.md)
+- [使用 React Hooks 获取数据时避免 Race Condition](/React/%E4%BD%BF%E7%94%A8%20React%20Hooks%20%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE%E6%97%B6%E9%81%BF%E5%85%8D%20Race%20Condition.md)
+- [使用 React 创建一个无限滚动组件](/React/%E4%BD%BF%E7%94%A8%20React%20%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%97%A0%E9%99%90%E6%BB%9A%E5%8A%A8%E7%BB%84%E4%BB%B6.md)
 - [使用 React 自动聚焦字段](/React/%E4%BD%BF%E7%94%A8%20React%20%E8%87%AA%E5%8A%A8%E8%81%9A%E7%84%A6%E5%AD%97%E6%AE%B5.md)
 - [使用 Styled Components 编写样式化组件](/React/%E4%BD%BF%E7%94%A8%20Styled%20Components%20%E7%BC%96%E5%86%99%E6%A0%B7%E5%BC%8F%E5%8C%96%E7%BB%84%E4%BB%B6.md)
 - [使用 Typescript 编写自定义 React useDebounce Hook](/React/%E4%BD%BF%E7%94%A8%20Typescript%20%E7%BC%96%E5%86%99%E8%87%AA%E5%AE%9A%E4%B9%89%20React%20useDebounce%20Hook.md)
+- [修复 React 中的 “Cannot read property 'map' of undefined” 错误](/React/%E4%BF%AE%E5%A4%8D%20React%20%E4%B8%AD%E7%9A%84%20%E2%80%9CCannot%20read%20property%20'map'%20of%20undefined%E2%80%9D%20%E9%94%99%E8%AF%AF.md)
 - [在 React 中使用 useContext 切换暗、亮主题](/React/%E5%9C%A8%20React%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20useContext%20%E5%88%87%E6%8D%A2%E6%9A%97%E3%80%81%E4%BA%AE%E4%B8%BB%E9%A2%98.md)
 
 ## Share
 
+- [Markdown 语法](/Share/Markdown%20%E8%AF%AD%E6%B3%95.md)
 - [五款基于浏览器的在线代码编辑器](/Share/%E4%BA%94%E6%AC%BE%E5%9F%BA%E4%BA%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%9C%A8%E7%BA%BF%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8.md)
+
+## SourceCode
+
+- [co 源码解读](/SourceCode/co%20%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB.md)
+- [flexible.js 源码解读](/SourceCode/flexible.js%20%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB.md)
+- [nextTick 实现原理](/SourceCode/nextTick%20%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.md)
 
 ## TypeScript
 
@@ -525,12 +556,12 @@ grep -nri css docs | cat --number
 - [TypeScript keyof 关键字](/TypeScript/TypeScript%20keyof%20%E5%85%B3%E9%94%AE%E5%AD%97.md)
 - [TypeScript 中的 const 断言](/TypeScript/TypeScript%20%E4%B8%AD%E7%9A%84%20const%20%E6%96%AD%E8%A8%80.md)
 - [TypeScript 中的类型收窄](/TypeScript/TypeScript%20%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E6%94%B6%E7%AA%84.md)
+- [TypeScript 命名空间](/TypeScript/TypeScript%20%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4.md)
 - [TypeScript 基础 — const 和 readonly 的区别](/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20const%20%E5%92%8C%20readonly%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 - [TypeScript 基础 — d.ts 和 .ts 的区别](/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20d.ts%20%E5%92%8C%20.ts%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 - [TypeScript 基础 — interface 中的函数和属性](/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20interface%20%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%B1%9E%E6%80%A7.md)
 - [TypeScript 基础 — interface 和 type 的区别](/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20interface%20%E5%92%8C%20type%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 - [TypeScript 基础 — interface 接口](/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20interface%20%E6%8E%A5%E5%8F%A3.md)
-- [TypeScript 基础 — namespace 命名空间](/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20namespace%20%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4.md)
 - [TypeScript 基础 — Null 和 Undefined](/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20Null%20%E5%92%8C%20Undefined.md)
 - [TypeScript 基础 — Object 类型](/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20Object%20%E7%B1%BB%E5%9E%8B.md)
 - [TypeScript 基础 — string 和 String 的区别](/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20string%20%E5%92%8C%20String%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
@@ -542,6 +573,7 @@ grep -nri css docs | cat --number
 - [TypeScript 基础 — 类型断言（Type Assertion）](/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80%EF%BC%88Type%20Assertion%EF%BC%89.md)
 - [TypeScript 基础 — 类型谓词](/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20%E7%B1%BB%E5%9E%8B%E8%B0%93%E8%AF%8D.md)
 - [TypeScript 基础 — 联合类型](/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B.md)
+- [TypeScript 声明文件](/TypeScript/TypeScript%20%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6.md)
 - [TypeScript 工具类型 — Utility Types](/TypeScript/TypeScript%20%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%9E%8B%20%E2%80%94%20Utility%20Types.md)
 - [TypeScript 文字联合类型与字符串枚举](/TypeScript/TypeScript%20%E6%96%87%E5%AD%97%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9E%9A%E4%B8%BE.md)
 - [TypeScript 类型转换](/TypeScript/TypeScript%20%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.md)
@@ -573,6 +605,8 @@ grep -nri css docs | cat --number
 - [Vue 插槽](/Vue/Vue%20%E6%8F%92%E6%A7%BD.md)
 - [Vue 条件渲染 v-if 与 v-show](/Vue/Vue%20%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93%20v-if%20%E4%B8%8E%20v-show.md)
 - [Vue 的深度 CSS 选择器](/Vue/Vue%20%E7%9A%84%E6%B7%B1%E5%BA%A6%20CSS%20%E9%80%89%E6%8B%A9%E5%99%A8.md)
+- [Vue 组件声明的多种方式](/Vue/Vue%20%E7%BB%84%E4%BB%B6%E5%A3%B0%E6%98%8E%E7%9A%84%E5%A4%9A%E7%A7%8D%E6%96%B9%E5%BC%8F.md)
+- [Vue 组件通信](/Vue/Vue%20%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1.md)
 - [Vue 过渡和动画](/Vue/Vue%20%E8%BF%87%E6%B8%A1%E5%92%8C%E5%8A%A8%E7%94%BB.md)
 - [Vue 递归组件](/Vue/Vue%20%E9%80%92%E5%BD%92%E7%BB%84%E4%BB%B6.md)
 - [Vue 错误处理 — onErrorCaptured 钩子](/Vue/Vue%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%20%E2%80%94%20onErrorCaptured%20%E9%92%A9%E5%AD%90.md)
@@ -597,15 +631,18 @@ grep -nri css docs | cat --number
 - [Broadcast Channel API](/Web%20API/Broadcast%20Channel%20API.md)
 - [Cache API](/Web%20API/Cache%20API.md)
 - [Channel Messaging API](/Web%20API/Channel%20Messaging%20API.md)
+- [CSS Font Loading API](/Web%20API/CSS%20Font%20Loading%20API.md)
 - [Fetch API](/Web%20API/Fetch%20API.md)
 - [File System API](/Web%20API/File%20System%20API.md)
 - [getUserMedia() 方法](</Web%20API/getUserMedia()%20%E6%96%B9%E6%B3%95.md>)
 - [History API](/Web%20API/History%20API.md)
+- [IndexedDB](/Web%20API/IndexedDB.md)
 - [Intersection Observer](/Web%20API/Intersection%20Observer.md)
 - [Picture in Picture](/Web%20API/Picture%20in%20Picture.md)
 - [requestAnimationFrame](/Web%20API/requestAnimationFrame.md)
 - [Resize Observer API](/Web%20API/Resize%20Observer%20API.md)
 - [Screen Capture API](/Web%20API/Screen%20Capture%20API.md)
+- [Service Worker](/Web%20API/Service%20Worker.md)
 - [Speech Synthesis API](/Web%20API/Speech%20Synthesis%20API.md)
 - [URL 对象](/Web%20API/URL%20%E5%AF%B9%E8%B1%A1.md)
 - [Web Bluetooth API](/Web%20API/Web%20Bluetooth%20API.md)
@@ -666,8 +703,10 @@ grep -nri css docs | cat --number
 ## 手写系列
 
 - [仅执行一次函数](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E4%BB%85%E6%89%A7%E8%A1%8C%E4%B8%80%E6%AC%A1%E5%87%BD%E6%95%B0.md)
+- [实现 async、await](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%20async%E3%80%81await.md)
 - [实现 call、apply、bind](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%20call%E3%80%81apply%E3%80%81bind.md)
 - [实现 instanceof 运算符](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%20instanceof%20%E8%BF%90%E7%AE%97%E7%AC%A6.md)
+- [实现 JS 原生数组方法](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%20JS%20%E5%8E%9F%E7%94%9F%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95.md)
 - [实现 JSON.parse](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%20JSON.parse.md)
 - [实现 new 运算符](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%20new%20%E8%BF%90%E7%AE%97%E7%AC%A6.md)
 - [实现 Object.assign](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%20Object.assign.md)
@@ -680,12 +719,14 @@ grep -nri css docs | cat --number
 - [实现一个 JavaScript 模板引擎](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%20JavaScript%20%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E.md)
 - [实现一个有效期的 localStorage API](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E6%9C%89%E6%95%88%E6%9C%9F%E7%9A%84%20localStorage%20API.md)
 - [实现一个简单的单页应用](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%8D%95%E9%A1%B5%E5%BA%94%E7%94%A8.md)
+- [实现一个简单的双向数据绑定](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.md)
 - [实现一个精简版的 Redux](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%B2%BE%E7%AE%80%E7%89%88%E7%9A%84%20Redux.md)
 - [实现一个继承方法](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%BB%A7%E6%89%BF%E6%96%B9%E6%B3%95.md)
 - [实现数组洗牌函数](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E6%95%B0%E7%BB%84%E6%B4%97%E7%89%8C%E5%87%BD%E6%95%B0.md)
 - [构建一个虚拟 DOM](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%99%9A%E6%8B%9F%20DOM.md)
 - [构建模块打包器](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%9D%97%E6%89%93%E5%8C%85%E5%99%A8.md)
 - [模拟 setInterval](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E6%A8%A1%E6%8B%9F%20setInterval.md)
+- [统计字符串中出现最多的字母和个数](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E7%BB%9F%E8%AE%A1%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AD%97%E6%AF%8D%E5%92%8C%E4%B8%AA%E6%95%B0.md)
 - [节流和防抖](/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96.md)
 
 ## 数据结构和算法
@@ -719,6 +760,7 @@ grep -nri css docs | cat --number
 ## 浏览器
 
 - [Data URL](/%E6%B5%8F%E8%A7%88%E5%99%A8/Data%20URL.md)
+- [关键渲染路径](/%E6%B5%8F%E8%A7%88%E5%99%A8/%E5%85%B3%E9%94%AE%E6%B8%B2%E6%9F%93%E8%B7%AF%E5%BE%84.md)
 - [强缓存与协商缓存](/%E6%B5%8F%E8%A7%88%E5%99%A8/%E5%BC%BA%E7%BC%93%E5%AD%98%E4%B8%8E%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98.md)
 - [浏览器 Hack](/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%20Hack.md)
 - [浏览器内核](/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8.md)
@@ -731,8 +773,11 @@ grep -nri css docs | cat --number
 ## 计算机网络
 
 - [DNS — 域名系统](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/DNS%20%E2%80%94%20%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F.md)
+- [HTTP 2](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP%202.md)
 - [HTTP Cookie](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP%20Cookie.md)
+- [HTTP 与 HTTPS 的区别](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP%20%E4%B8%8E%20HTTPS%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 - [HTTP 中 GET 和 POST 的区别？](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP%20%E4%B8%AD%20GET%20%E5%92%8C%20POST%20%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
+- [HTTPS](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTPS.md)
 - [TCP 协议](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%20%E5%8D%8F%E8%AE%AE.md)
 - [TCP 和 UDP 的区别](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%20%E5%92%8C%20UDP%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 - [UDP 协议](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/UDP%20%E5%8D%8F%E8%AE%AE.md)
