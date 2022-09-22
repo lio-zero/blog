@@ -8,7 +8,7 @@ npm update <name> -g
 npm update <name> -D
 ```
 
-您可以指定项目所依赖的模块进行更新，但如果我们需要像 yarn 的内置命令 `yarn upgrade-interactive` 一样，查看项目模块详细的更新情况呢？有一些方便模块可以帮助到我们。
+您可以指定项目所依赖的模块进行更新，但如果我们需要像 yarn 的 `yarn upgrade-interactive` 命令一样的交互式更新模式，查看项目模块详细的更新情况呢？有一些方便 npm 包可以帮助到我们。
 
 ## `npm-check-updates` 模块
 
@@ -18,9 +18,7 @@ npm update <name> -D
 npm i npm-check-updates -g
 ```
 
-使用 `ncu` 命令检查 npm 模块更新并将为您更新 `package.json`。
-
-![npm-check-updates](https://upload-images.jianshu.io/upload_images/18281896-91bfcf77ef23c111.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+你也可以不全局安装，在需要使用到时使用 npx 即可。
 
 使用 `ncu -u` 命令更新 `package.json` 文件相关依赖，并运行 `npm i` 安装最新包：
 
@@ -28,6 +26,8 @@ npm i npm-check-updates -g
 ncu -u
 npm i
 ```
+
+![npm-check-updates](https://upload-images.jianshu.io/upload_images/18281896-91bfcf77ef23c111.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## `npm-check` 模块
 
@@ -48,3 +48,5 @@ npm-check -u
 ![npm-check](https://upload-images.jianshu.io/upload_images/18281896-b99ac4b59b74e1f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 它将显示用于选择要更新的模块的交互式 UI。
+
+> 更新：antfu 的 [taze](https://github.com/antfu/taze) 也是一个不错的选择。

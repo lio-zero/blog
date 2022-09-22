@@ -41,3 +41,4 @@ uuidv4() // 'ab399796-c3b4-4329-903a-4db62af83a17'
 - [How to create a GUID / UUID](https://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid)
 - [Collisions when generating UUIDs in JavaScript](https://stackoverflow.com/questions/6906916/collisions-when-generating-uuids-in-javascript)
 - [Why is NanoID Replacing UUID?](https://blog.bitsrc.io/why-is-nanoid-replacing-uuid-1b5100e62ed2)
+- [UUID vs Crypto.randomUUID vs NanoID](https://medium.com/@matynelawani/uuid-vs-crypto-randomuuid-vs-nanoid-313e18144d8c)

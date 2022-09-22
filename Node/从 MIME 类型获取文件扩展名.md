@@ -24,11 +24,11 @@
 
 有两种获取方式：`path` 内置模块和 `mime-types` 包。
 
-`path` 模块：
+使用内置 `path` 模块：
 
 ```js
 const path = require('path')
-path.extname(req.files.logo.name) //.png
+path.extname(req.files.logo.name) // .png
 ```
 
 它不需要任何第三方库。
@@ -38,6 +38,6 @@ path.extname(req.files.logo.name) //.png
 ```js
 const mime = require('mime-types')
 
-mime.extension('text/plain') //txt
-mime.extension('image/png') //png
+mime.extension('text/plain') // txt
+mime.extension('image/png') // png
 ```

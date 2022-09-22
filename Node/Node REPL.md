@@ -78,7 +78,7 @@ const repl = require('repl')
 
 // 定义可用的方法和状态
 const state = {
-  printSomething() {
+  print() {
     console.log("That's awesome!")
   }
 }

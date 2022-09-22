@@ -34,26 +34,26 @@ const res = await axios.get('http://localhost:5000/test')
 ```js
 const app = require('express')()
 
-// 此响应将没有 CORS 标头，因为订单很重要。Express 将在此路由处理程序之后运行 CORS 中间件。
+// 此响应将没有 CORS 标头，因为顺序很重要。Express 将在此路由处理程序之后运行 CORS 中间件。
 app.get('/nocors', (req, res) => {
   res.send('ok')
 })
 
 app.use(require('cors')())
 
-// 此响应将具有 CORS 头，因为此路由处理程序位于中间件列表中 CORS 中间件之后。
+// 此响应将具有 CORS 标头，因为此路由处理程序位于中间件列表中 CORS 中间件之后。
 app.get('/cors', (req, res) => {
   res.send('ok')
 })
 ```
 
-另一个常见的中间件功能是 Express 的 [body-parse](http://expressjs.com/en/resources/middleware/body-parser.html)。该中间件负责解析请求主体并设置 `req.body` 属性。确保在使用 `req.body` 之前调用 `app.use(express.json())`，否则它将是 `undefined` 的！
+另一个常见的中间件功能是 Express 的 [body-parser](http://expressjs.com/en/resources/middleware/body-parser.html)。该中间件负责解析请求体并设置 `req.body` 属性。确保在使用 `req.body` 之前调用 `app.use(express.json())`，否则它将是 `undefined` 的！
 
 ```js
 const express = require('express')
 const app = express()
 
-// body 在 HTTP 响应中总是 undefined，因为 Express 将在这个路由处理程序之后运行 JSON body-parser 。
+// body 在 HTTP 响应中总是 undefined，因为 Express 将在这个路由处理程序之后运行 JSON body-parser。
 app.post('/nobody', (req, res) => {
   res.json({ body: req.body })
 })
@@ -85,7 +85,7 @@ app.get('/cors', (req, res) => {
   res.send('ok')
 })
 
-// 此响应也具有 CORS 标头，因为 /CORS/test 以 /CORS 开头
+// 此响应也具有 CORS 标头，因为 /cors/test 以 /cors 开头
 app.get('/cors/test', (req, res) => {
   res.send('ok')
 })
