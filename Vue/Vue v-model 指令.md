@@ -1,6 +1,6 @@
 # Vue v-model 指令
 
-`v-model` 是 Vue 应用程序中最常用的指令。它通常用于在表单元素上启用双向数据绑定，并与 `input`、`checkbox`、`select`、`textarea` 和 `radio` 一起使用。
+`v-model` 是 Vue 应用中最常用的指令。它通常用于在表单元素上创建双向数据绑定，并与 `input`、`checkbox`、`select`、`textarea` 和 `radio` 表单元素一起使用。
 
 在下面的例子中，`v-model` 应用于 `input` 元素，将 `someVal` 变量与 `input` 的原生值属性绑定在一起。
 
@@ -8,7 +8,7 @@
 <input v-model="someVal" />
 ```
 
-`v-model` 本质上是一种语法糖，通过在内部为不同的输入元素使用不同的属性并抛出不同的事件。
+`v-model` 本质上是一种语法糖，通过在内部为不同的 `input` 元素使用不同的属性并抛出不同的事件。
 
 上面的示例中，指令会监听原生的 `input` 事件，并在每次触发 `someVal` 时更新它。
 
@@ -18,13 +18,15 @@
 <input :value="someVal" @input="someVal = $event.target.value" />
 ```
 
+不难看出，**单向绑定 + 事件**便可达到双向绑定的效果。
+
 这就是 `v-model` 应用于常规输入的工作原理。
 
 其他的表单元素如下：
 
-- `text` 和 `textarea` 元素使用 `value` 属性和 `input` 事件
-- `checkbox` 和 `radio` 使用 `checked` 属性和 `change` 事件
-- `select` 字段将 `value` 作为 prop 并将 `change` 作为事件
+- `input` 元素若是 `text / textarea` 类型，使用 `value` 属性和 `input` 事件。
+- `input` 元素若是 `radio / checkbox` 类型，使用 `checked` 属性和 `change` 事件。
+- `select` 元素使用 `value` 属性和 `change` 事件。
 
 ## 在组件上使用 `v-model`
 
@@ -101,7 +103,7 @@
 
 ## 多个 `v-model` 绑定
 
-Vue3 允许我们在同一组件上绑定多个 `v-model`：
+Vue 3 允许我们在同一组件上绑定多个 `v-model`：
 
 ```html
 <template>
@@ -148,15 +150,17 @@ Vue3 允许我们在同一组件上绑定多个 `v-model`：
 
 `v-model` 支持的三个修饰符：
 
-- `.lazy` — 监听 `change` 事件，而不是 `input`
-- `.number` — 将有效输入字符串强制转换为数字
-- `.trim` — 修剪输入
+- `.lazy` — 默认情况下，`v-model` 监听 `input` 事件，这意味着每次输入值都会同步更新数据。`.lazy` 修饰符将事件监听改为 `change` 事件，也就是失焦时同步更新数据。这减少了 Vue 实例同步次数，并且在某些情况下，可以显著提高性能。
+- `.number` — 将有效输入字符串强制转换为数字。
+- `.trim` — 修剪输入，想一下 JS 字符串的 `trim()` 方法。
 
 ```html
 <input type="text" v-model.trim.lazy="value" />
 ```
 
-Vue3 还有一些其他的更改，如 `.sync` 修饰符被合并到了 `v-model` 中、自定义 `v-model` 修饰符。
+你可以自由的链接多个修饰符以达到目的。
+
+Vue 3 还有一些其他的更改，如 `.sync` 修饰符被合并到了 `v-model` 中、自定义 `v-model` 修饰符。
 
 ## 自定义 `v-model` 修饰符
 
