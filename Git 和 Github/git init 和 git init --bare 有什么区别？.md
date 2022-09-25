@@ -15,7 +15,7 @@
 
 因此，在您的计算机中：
 
-```git
+```bash
 git init
 touch README
 git add README
@@ -24,14 +24,14 @@ git commit -m "initial commit"
 
 在服务器上：
 
-```git
+```bash
 cd /www/project
 git init --bare
 ```
 
 在客户端，你推送：
 
-```git
+```bash
 git push username@server:/www/project main
 ```
 

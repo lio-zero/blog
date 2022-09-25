@@ -20,7 +20,7 @@ Git 不会跟踪 `.gitignore` 中指定的文件和文件夹。但是，`.gitign
 
 转到项目的根目录，然后创建 `.gitignore` 文件：
 
-```git
+```bash
 touch .gitignore
 ```
 
@@ -54,13 +54,13 @@ temp/
 
 运行以下命令以定义 `.gitignore_global` 为 `core.excludesfile` 选项：
 
-```git
+```bash
 git config --global core.excludesfile ~/.gitignore_global
 ```
 
 此命令在全局 `.gitconfig` 中创建以下设置：
 
-```git
+```bash
 # .gitconfig
 [core]
   excludesfile = ~/.gitignore_global
@@ -68,7 +68,7 @@ git config --global core.excludesfile ~/.gitignore_global
 
 创建一个 `.gitignore_global` 文件，并添加要排除的文件。
 
-```git
+```bash
 # .gitignore_global
 .DS_Store
 ```

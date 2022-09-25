@@ -24,7 +24,7 @@ git cherry-pick <commit-hash>
 
 假设您有 `master` 和 `develop` 分支，现在需要将 `develop` 分支的某一个提交，如 `x` 应用到 `master` 分支，步骤如下：
 
-```git
+```bash
 git checkout master
 git cherry-pick x
 ```
@@ -36,13 +36,13 @@ git cherry-pick x
 
 应用 `develop` 分支的最近一次提交，可以直接使用分支名：
 
-```git
+```bash
 git cherry-pick develop
 ```
 
 转移多个提交：
 
-```git
+```bash
 git cherry-pick <HashA> <HashB>
 ```
 
@@ -62,7 +62,9 @@ git cherry-pick -x <commit-hash>
 git notes copy <from> <to>
 ```
 
-至于其他的情况，例如：配置项、代码冲突和转移到另一个代码库，可以阅读阮一峰了老师的 [git cherry-pick 教程](https://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html)。
+至于其他的情况，例如：配置项、代码冲突和转移到另一个代码库，
+
+推荐阅读阮一峰老师的 [git cherry-pick 教程](https://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html)，其中介绍了其他的示例，例如：配置项、代码冲突和转移到另一个代码库。
 
 ## 进一步阅读
 

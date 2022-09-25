@@ -4,7 +4,7 @@
 
 要删除未跟踪的文件和目录，您可以执行：
 
-```git
+```bash
 # 删除未跟踪的文件。
 # f
 $ git clean -f
@@ -16,7 +16,7 @@ $ git clean -fd
 
 如果您还想删除被 `.gitignore` 隐藏的文件，可以使用以下命令：
 
-```git
+```bash
 # 忽略的文件、未被跟踪的文件和文件夹
 # x
 $ git clean -xfd
@@ -24,7 +24,7 @@ $ git clean -xfd
 
 如果想要先查看哪些文件可能会被删除，而不执行删除动作，可以执行以下命令：
 
-```git
+```bash
 # n
 $ git clean -xfdn
 ```

@@ -12,26 +12,26 @@
 
 假设现在我们修改了 `README.md` 的内容，并且已经 `commit`。
 
-```git
+```bash
 git add README.md
 git commit -m "Adding lines to readme"
 ```
 
 查找日志：
 
-```git
+```bash
 git log --oneline
 ```
 
 发现存在一个拼写错误。我们可以使用 `amend` 提交一个新的 `commit` 去替换它：
 
-```git
+```bash
 git commit --amend -m "Added lines to README.md"
 ```
 
 重新查看日志：
 
-```git
+```bash
 git log --oneline
 ```
 

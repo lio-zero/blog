@@ -4,7 +4,7 @@
 
 要删除本地分支，可以使用以下方法之一：
 
-```git
+```bash
 git branch -d <branch_name>
 git branch -D <branch_name>
 ```
@@ -16,13 +16,13 @@ git branch -D <branch_name>
 
 Git v1.5.0 删除远程分支使用：
 
-```git
+```bash
 git push <remote_name> :<branch_name>
 ```
 
 Git v1.7.0 删除远程分支使用：
 
-```git
+```bash
 git push <remote_name> --delete <branch_name>
 ```
 
@@ -30,7 +30,7 @@ git push <remote_name> --delete <branch_name>
 
 示例：
 
-```git
+```bash
 git push origin :next
 ```
 
@@ -40,7 +40,7 @@ git push origin :next
 
 如果需要删除远程上不再存在的任何远程分支的所有过时的本地远程跟踪分支，可以使用：
 
-```git
+```bash
 $ git branch --delete --remotes <remote_name>/<branch_name>
 $ git branch -dr <remote_name>/<branch_name>
 

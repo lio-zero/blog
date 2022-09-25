@@ -8,18 +8,21 @@
 
 ## 查看变化中的差异
 
-`git diff` 显示暂存区和工作区的差异
+`git diff` 显示暂存区和工作区的差异：
 
 ```bash
+# 所有文件的差异
 git diff
-git diff [file] # 具体某个文件
+
+# 具体某个文件的差异
+git diff [file]
 ```
 
 ## 显示暂存区与上次 commit 的差异
 
 `--cached` 和 `--staged` 都可以用于显示暂存区与上次 commit 的差异：
 
-```git
+```bash
 git diff --cached [file]
 git diff --staged [file]
 ```

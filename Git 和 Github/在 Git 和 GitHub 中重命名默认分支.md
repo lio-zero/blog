@@ -4,9 +4,11 @@
 
 为了同步本地分支与远程分支，我们需要采取一些步骤。
 
-下面图示是我们在 GitHub 切换仓库的默认分支时，提供给我们如何同步本地分支与远程分支的步骤。
+下面图示是我在 GitHub 切换仓库的默认分支时，提供给我们如何同步本地分支与远程分支的步骤。
 
 ![重命名默认分支](https://upload-images.jianshu.io/upload_images/18281896-0dc6ae649d923d99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+以下是上图 👆 命令的大致分析。
 
 使用 `-m` 标志在本地移动默认分支。
 

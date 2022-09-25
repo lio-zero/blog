@@ -90,7 +90,7 @@ git log --after="2022-6-30" --before="2022-7-1" --oneline
 
 另外的一个常用的 [`git reflog`](https://git-scm.com/docs/git-reflog) 命令，它管理 reflog 信息，常用来恢复本地错误操作很重要的一个命令。
 
-```git
+```bash
 git reflog
 ```
 

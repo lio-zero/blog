@@ -6,18 +6,18 @@
 
 问题是本地 Git 如何重新授权 GitHub 帐户附带的存储库。本文可能对您有所帮助。
 
-## 创建不同的关键点
+## 创建不同的密钥
 
 假设 `foo` 和 `bar` 是您希望在同一台计算机中使用的两个 GitHub 用户名。您可以按照[官方的 GitHub 指南生成 SSH 密钥](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)。
 
-```git
-// 为 foo 生成 SSH 密钥
+```bash
+# 为 foo 生成 SSH 密钥
 $ ssh-keygen -t ed25519 -C "foo@domain.com"
 ```
 
 当要求您指定要保存密钥的文件时，不要使用默认密钥。将文件名更改为与帐户关联的名称，例如：
 
-```git
+```bash
 Enter a file in which to save the key (/home/you/.ssh/id_ed25519):
 `/home/you/.ssh/id_foo`
 ```
@@ -26,30 +26,30 @@ Enter a file in which to save the key (/home/you/.ssh/id_ed25519):
 
 ## 向 SSH 代理添加密钥
 
-```git
-// 删除缓存的密钥
+```bash
+# 删除缓存的密钥
 $ ssh-add -D
 
-// 在后台启动 ssh-agent
+# 在后台启动 ssh-agent
 $ eval "$(ssh-agent -s)"
 
-// 将 SSH 私钥添加到 ssh-agent
+# 将 SSH 私钥添加到 ssh-agent
 $ ssh-add ~/.ssh/id_foo
 $ ssh-add ~/.ssh/id_bar
 ```
 
-## 将密钥映射到 GitHub repos
+## 将密钥映射到 GitHub repo
 
 这一步让 SSH 知道应该为特定主机使用哪个私钥。
 
-```git
+```bash
 cd ~/.ssh
 touch config
 ```
 
 将以下内容添加到 `config` 文件：
 
-```git
+```bash
 Host github.com-foo
   HostName github.com
   User git
@@ -67,13 +67,13 @@ Host github.com-bar
 
 ## 更改 GitHub 设置
 
-假设 `foo` 帐户访问一个 GitHub respose，其 URL 为 `github.com/foo/a-foo-repos`。转到其克隆文件夹，并更改 `.git/config` 文件，如下所示。
+假设 `foo` 帐户访问一个 GitHub 存储库，其 URL 为 `github.com/foo/a-foo-repos`。转到其克隆文件夹，并更改 `.git/config` 文件，如下所示。
 
-值得注意的是，使用了在上一步中创建的 SSH 主机 `github.com-foo`：
-
-```git
+```bash
 [remote "origin"]
   url = git@github.com-foo:foo/a-foo-repos.git
 ```
+
+注意，这里使用了在上一步中创建的 SSH Host `github.com-foo`：
 
 为 `bar` 存储库应用类似的设置。

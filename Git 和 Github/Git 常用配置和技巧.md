@@ -1,6 +1,6 @@
 # Git 常用配置和技巧
 
-以下使用 `--global` 标志全局配置的命令可以 `~/.gitconfig` 文件下查看。
+以下使用 `--global` 标志为全局配置命令，可以在全局的 `~/.gitconfig` 文件下查看。
 
 ## 创建别名
 
@@ -104,9 +104,9 @@ git lg -p
 
 ![Git 日志](https://upload-images.jianshu.io/upload_images/18281896-3e842e6049c04ec8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-## 强制推送
+## 更安全的强制推送
 
-有时，您需要将更改推送到远程存储库并覆盖文件。您可能习惯于使用 `git push --force`。
+有时，您需要将更改推送到远程存储库并覆盖文件。您可能习惯于使用 `git push --force` 或 `-f`。
 
 但是如果其他人已经将更改推送到同一分支，会发生什么？您的命令将清除他们的提交。**这肯定是不行的**。
 
@@ -279,7 +279,7 @@ git config --global core.editor "vi"
 
 使用 `git config -e` 将在默认 Git 文本编辑器（如果未配置）中打开 Git 当前项目的配置文件：
 
-```git
+```bash
 git config -e
 ```
 
