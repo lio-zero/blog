@@ -2,17 +2,17 @@
 
 JavaScript 采用异步事件驱动编程模型，与 HTML 的交互是通过[事件](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture)实现的。
 
-事件驱动编程是一种涉及构建发送和接收事件的应用程序的范例。当程序发出事件时，程序通过运行任何注册到该事件和上下文的回调函数来响应，并将相关数据传递给该函数。
+事件驱动编程是一种涉及构建发送和接收事件的应用的范例。当程序发出事件时，程序通过运行任何注册到该事件和上下文的回调函数来响应，并将相关数据传递给该函数。
 
-一个常见的例子是元素监听 DOM 事件（例如 `click` 和 `mouseenter`），其中在事件发生时运行回调函数。
+例如，监听元素的的 `click` 事件，其中在事件发生时运行回调函数。
 
 ```js
-document.addEventListener('click', (event) => {
+element.addEventListener('click', (event) => {
   // 此回调函数在用户单击文档时运行。
 })
 ```
 
-当我们执行了特定的事件时，如在一个按钮上监听了 `click` 点击事件，当你按下按钮时，它将触发你给定的事件句柄（也就是一个函数，其中执行一些 JS 语句）。但这个触发过程是怎样的呢？下面我们来通过一些问题来看看本文要讲的事件的传播机制。
+当我们执行了特定的事件时，如在一个按钮上监听了 `click` 点击事件，当你按下按钮时，它将触发你给定的事件句柄（也就是一个函数，其中执行一些 JS 语句）。但这个触发过程是怎样的呢？下面我们通过一些问题来看看本文要讲的事件的传播机制。
 
 你可以在这 👉[测试效果](https://codepen.io/lio-zero/pen/YzZLLqq)，配合下文进行阅读。
 
@@ -66,11 +66,11 @@ emoji.attachEvent('onclick', function (e) {
 **事件冒泡（默认模式）**是事件传播的一种，其中事件首先在目标元素上触发，然后在同一嵌套层次结构中依次在目标元素的祖先（父代）上触发，直到到达最外层的 DOM 元素。
 
 ```js
-emoji.onclick = function () {
+emoji.onclick = () => {
   alert(11)
 }
 
-smile.onclick = function () {
+smile.onclick = () => {
   alert(22)
 }
 
@@ -78,17 +78,15 @@ smile.onclick = function () {
 // 22
 ```
 
-> **注意**：捕捉模式不会在某些特殊事件（例如 `focus`）和 IE < 9 时出现。
-
 ## 什么是事件捕获？
 
 **事件捕获**也是事件传播的一种，其中事件首先被最外层的元素捕获，然后在同一嵌套层次结构中依次触发目标元素的后代（子元素），直到到达最里面的 DOM 元素。
 
 当一个事件发生以后，它会在不同的 DOM 节点之间传播（propagation）。[DOM 事件](http://www.w3.org/TR/DOM-Level-3-Events/)标准描述了事件传播的 3 个阶段：
 
-- **捕获阶段（capture phase）**：事件从 `Window` 对象向下传递到目标元素。
-- **目标阶段（target phase）**：事件到达目标元素。
-- **冒泡阶段（bubbling phase）**：事件从目标元素上开始冒泡。
+- **捕获阶段（capture phase）** — 事件从 `window` 对象向下传递到目标元素。
+- **目标阶段（target phase）** — 事件到达目标元素。
+- **冒泡阶段（bubbling phase）** — 事件从目标元素上开始冒泡。
 
 在捕获阶段中，事件从祖先元素向下传播到目标元素。当事件达到目标元素后，冒泡才开始。
 
@@ -100,29 +98,32 @@ smile.onclick = function () {
 - `true` —— 在捕获阶段开始触发事件
 
 ```js
-smile.addEventListener('click', function (e) {
+smile.addEventListener('click', (e) => {
   console.log(e.target.innerHTML)
 })
 
 emoji.addEventListener(
   'click',
-  function (e) {
+  (e) => {
     alert('Emoji List')
   },
   true
 )
 
-document.addEventListener('click', function () {
+document.addEventListener('click', () => {
   alert('document')
 })
 
-window.addEventListener('click', function () {
+window.addEventListener('click', () => {
   alert('window')
 })
-
-// 点击 smile 时，将依次输出 'Emoji List' -> 😀 -> 'document' -> 'window'
-// 由于将 list 设置为捕获阶段开始，所以先触发，在触发 😀，然后在依次往上触发。
 ```
+
+运行上面代码，点击 `smile` 元素时，将依次输出 **'Emoji List' -> 😀 -> 'document' -> 'window'**。
+
+**原因**：由于将 `ul` 被我们设置为捕获阶段，所以它先被触发，然后在触发点击的目标元素 😀，然后在依次往上冒泡。
+
+> **注意**：捕获阶段不会在某些特殊事件（例如 `focus`）和 IE < 9 时出现。
 
 ## 事件委托（Event Delegation）
 
@@ -131,9 +132,8 @@ window.addEventListener('click', function () {
 例如本文的示例，我们不必为列表的每个子项添加事件，而是添加在其父级上，当我们触发某一项时，通过事件冒泡到父级，从而触发事件。
 
 ```js
-emoji.addEventListener('click', function (e) {
+emoji.addEventListener('click', (e) => {
   console.log(e.target.innerHTML)
-  // e.target 存储当前由事件捕获/冒泡阶触发的元素
 })
 ```
 
@@ -144,7 +144,7 @@ emoji.addEventListener('click', function (e) {
 
 ## 阻止事件传播
 
-使用 `event.stopPropagation()` 方法用于阻止捕获和冒泡阶段中当前事件在 DOM 中的进一步传播。
+使用 `event.stopPropagation()` 方法可以阻止捕获和冒泡阶段中当前事件在 DOM 中的进一步传播。
 
 ```js
 function handler(e) {
@@ -154,7 +154,7 @@ function handler(e) {
 
 ## 取消默认事件
 
-使用 `event.preventDefault()` 方法取消浏览器对当前事件的默认行为，例如：
+使用 `event.preventDefault()` 方法取消浏览器对当前事件的默认行为。例如：
 
 - 表单元素中使用，它将阻止其提交
 - 锚元素中使用，它将阻止其导航
@@ -187,15 +187,15 @@ function handler(e) {
 
 ## 很高兴你知道
 
-- 事件本身在传播，而不是绑定在事件上的方法会传播；
-- 并非所有的事件都会传播，像 `focus`，`blur` 事件就不传播，`mouseenter` 和 `mouseleave` 事件也不会传播；
+- 事件本身在传播，而不是绑定在事件上的方法会传播。
+- 并非所有的事件都会传播，像 `focus`、`blur` 事件就不传播，`mouseenter` 和 `mouseleave` 事件也不会传播。
 - 您应该知道哪些事件有默认行为，并在需要时阻止它。
-- 如果是使用 `on<event>` 分配的处理程序，那么您可以使用 `return false` 来阻止默认行为。
 - 不建议通过元素属性注册事件处理程序，例如 `onclick`。因为我们传递了一个字符串，所以它有一个潜在的安全问题。如果传递给 `onclick` 属性的方法不存在，浏览器也不会发出警告。
-- 事件处理程序返回的值通常会被忽略。唯一的例外是从使用 `on<event>` 分配的处理程序中返回的 `return false`。在所有其他情况下，`return` 值都会被忽略。并且，返回 `true` 没有意义。
-- 如果是使用 `addEventListener`，你可以使用 `return false`，但常用的是使用 `event` 对象中 `e.preventDefault()` 方法来阻止默认行为的发生。
+- 事件处理程序返回的值通常会被忽略。唯一的例外是使用 `on<event>` 分配的处理程序中返回的 `return false`。在所有其他情况下，`return` 值都会被忽略。并且，返回 `true` 没有意义。
+- 如果是使用 `on<event>` 分配的处理程序，那么您可以使用 `return false` 来阻止默认行为。
+- 如果是使用 `addEventListener` 分配的处理程序，那么您可以使用 `event` 事件对象中的 `e.preventDefault()` 方法来阻止默认行为的发生。
 - `return false` 做着与 `event.stopPropagation()` 和 `event.preventDefault()` 类似的工作，但它们之间毫无关联。
-- 为避免内存泄漏问题，请记住在不再使用处理程序时将其删除。
+- 为避免内存泄漏问题，请记住将不再使用的处理程序删除。
 
 ```js
 const handler = (e) => {
@@ -205,6 +205,6 @@ const handler = (e) => {
 // 附加事件监听器
 ele.addEventListener('click', handler)
 
-// 以后再移除它
+// 不在使用时，请移除它
 ele.removeEventListener('click', handler)
 ```
