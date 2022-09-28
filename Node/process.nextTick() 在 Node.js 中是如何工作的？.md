@@ -1,34 +1,62 @@
 # process.nextTick() 在 Node.js 中是如何工作的？
 
-[process](https://nodejs.org/api/process.html) 对象是 Node.js 核心 API 提供的少数全局对象之一。它可以从任何地方访问，因此它的方法也可以访问。
+当您试图理解 Node.js 事件循环时，其中一个重要部分是 [`process.nextTick()`](https://nodejs.org/docs/latest/api/process.html#process_process_nexttick_callback_args)。
 
-其中 [`process.nextTick()`](https://nodejs.org/docs/latest/api/process.html#process_process_nexttick_callback_args) 方法用于将函数的执行推迟到下一个[事件循环迭代](https://github.com/lio-zero/blog/blob/master/JavaScript/JavaScript%20%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6%20%E2%80%94%20%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%EF%BC%88Event-Loop%EF%BC%89.md)。
+> **Tips**：[process](https://nodejs.org/api/process.html) 对象是 Node.js 核心 API 提供的少数全局对象之一。它可以从任何地方访问，因此它的方法也可以访问。
 
-浏览器 JavaScript 为我们引入了 `setTimeout()` 等函数，以便在不久的将来延迟任务。该函数的作用是：获取一个回调函数和一个表示回调函数执行时间的数值，以毫秒为单位。
+在 Node.js 中，每次事件循环执行一次完整的过程，我们称之为 **tick**。
 
-```js
-setTimeout(callback, 0)
-```
-
-在 Node.js 中，事件循环的每次迭代都称为一个记号。为了计划在事件循环的下一次迭代中调用回调函数，我们使用 `process.nextTick()`。它只接受一个没有时间限制的回调，因为它将在事件循环的下一次迭代中执行。
+当我们将函数传递给 `process.nextTick()` 时，我们指示引擎在当前操作结束时，在下一个事件循环 **tick** 开始之前调用此函数：
 
 ```js
-process.nextTick(callback)
+process.nextTick(() => {
+  // do something ...
+})
 ```
+
+事件循环正忙于处理当前功能代码。
+
+当此操作结束时，JS 引擎运行该操作期间传递给 `nextTick` 调用的所有函数。
+
+我们可以通过这种方式告诉 JS 引擎异步处理函数（在当前函数之后），但要尽可能快，而不是让它排队。
+
+这里我们讲一下，浏览器的 `setTimeout()` 函数，它用于在不久的将来执行延迟任务。
+
+```js
+setTimeout(() => {
+  // do something ...
+}, 0)
+```
+
+> 推荐：详细用法请看 [JavaScript 中的 setTimeout 和 setInterval 方法](https://github.com/lio-zero/blog/blob/main/JavaScript/JavaScript%20%E4%B8%AD%E7%9A%84%20setTimeout%20%E5%92%8C%20setInterval%20%E6%96%B9%E6%B3%95.md#javascript-%E4%B8%AD%E7%9A%84-settimeout-%E5%92%8C-setinterval-%E6%96%B9%E6%B3%95)。
+
+先来看一个 🌰：
+
+```js
+process.nextTick(() => {
+  console.log('nextTick')
+})
+
+console.log('log')
+
+setTimeout(() => {
+  console.log('setTimeout')
+})
+
+// log
+// nextTick
+// setTimeout
+```
+
+从上面的代码片段可以看出，`nextTick` 在 `setTimeout` 之前先被打印。
 
 `setTimeout()` 和 `process.nextTick()` 之间的区别在于 `process.nextTick()` 函数特定于 Node.js 事件循环。
 
-`setTimeout()` 使用 JavaScript 运行时调度自己的事件队列。当使用 `process.nextTick()` 时，事件循环在单个迭代中处理事件队列中的事件后，与之关联的回调函数将立即运行。与 `setTimeout()` 相比，它更快，因为队列与 `setTimeout()` 或 JavaScript 运行时关联。
+调用 `setTimeout()` 将在下一个 **tick** 结束时执行函数，这比使用 `nextTick()` 时要晚得多，后者将优先处理调用并在下一 **tick** 开始前执行。
 
-```js
-function cb() {
-  console.log('在下一次迭代中处理')
-}
-process.nextTick(cb)
-console.log('在第一次迭代中处理')
+所以，如果要确保在下一次事件循环迭代中代码已经执行，请使用 `nextTick()`。
 
-// 在第一次迭代中处理
-// 在下一次迭代中处理
-```
+## 更多资料
 
-上面的代码片段是 `process.nextTick()` 工作原理的一个示例。运行后，您会发现，第二个 `console.log` 打印在与函数 `cb()` 关联的 `console.log` 之前。
+- [process.nextTick 与 setTimeout(fn, 0)](https://gist.github.com/mmalecki/1257394) — 一个基准测试
+- [JavaScript 运行机制 — 事件循环（Event-Loop）](https://github.com/lio-zero/blog/blob/main/JavaScript/JavaScript%20%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6%20%E2%80%94%20%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%EF%BC%88Event-Loop%EF%BC%89.md)
