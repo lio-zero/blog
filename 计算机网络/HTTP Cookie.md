@@ -123,7 +123,7 @@ document.cookie = 'name=O.O; SameSite=None; Secure;'
 
 目前，主流浏览器 `SameSite` 的默认值为 `Lax`，而在以前是 `None`，这将会预防大部分 CSRF 攻击，如果需要手动指定 `SameSite` 为 `None`，需要指定 Cookie `Secure` 属性，即在 HTTPS 下发送。
 
-> 推荐：阮一峰老师的 [Cookie 的 SameSite 属性](http://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html)
+> 推荐：阮一峰老师的 [Cookie 的 SameSite 属性](http://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html)或冴羽的[预测最近面试会考 Cookie 的 SameSite 属性](https://juejin.cn/post/6844904095711494151)。
 
 ## 更新 Cookie 值或参数
 
@@ -265,3 +265,8 @@ Firefox：
 ## Cookie 的替代品
 
 有一种流行的技术，称为 JSON Web Tokens（JWT），它是一种基于 Token 的身份验证。
+
+## 更多资料
+
+- [Cookie，document.cookie](https://zh.javascript.info/cookie)
+- [当浏览器全面禁用三方 Cookie](https://juejin.cn/post/6844904128557105166)

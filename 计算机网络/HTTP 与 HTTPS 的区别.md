@@ -57,4 +57,7 @@ HTTP/2 引入了更好的并行性、二进制传输、多路复用和 header �
 
 ## 更多资料
 
-[HTTP vs HTTPS — What's the Difference?](https://www.freecodecamp.org/news/http-vs-https/)
+- [HTTP vs HTTPS — What's the Difference?](https://www.freecodecamp.org/news/http-vs-https/)
+- [HTTP 和 HTTPS 详解](https://juejin.cn/post/6844903604868874247)
+- [20 分钟助你拿下 HTTP 和 HTTPS，巩固你的 HTTP 知识体系](https://juejin.cn/post/6994629873985650696)
+- [What is HTTPS?](https://www.cloudflare.com/en-gb/learning/ssl/what-is-https/)

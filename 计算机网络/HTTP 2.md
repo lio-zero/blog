@@ -55,3 +55,6 @@ HTTP/1.1 使用基于文本的通信。HTTP/2 使用二进制通信，它有一�
 - [A Comprehensive Guide To HTTP/2 Server Push](https://www.smashingmagazine.com/2017/04/guide-http2-server-push/)
 - [Will WebSocket survive HTTP/2?](https://www.infoq.com/articles/websocket-and-http2-coexist/)
 - [Using SSE Instead Of WebSockets For Unidirectional Data Flow Over HTTP/2](https://www.smashingmagazine.com/2018/02/sse-websockets-data-flow-http2/)
+- [简单讲解一下 http2 的多路复用](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/14)
+- [What is HTTP/2 – The Ultimate Guide](https://kinsta.com/learn/what-is-http2/)
+- [http2-explained](https://http2-explained.haxx.se/zh)

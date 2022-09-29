@@ -52,3 +52,4 @@ HTTPS 是一种在 web 服务器和浏览器之间发送数据的安全方式。
 - [HTTPS 为何重要](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https)
 - [Enabling HTTPS on Your Servers](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https)
 - [The Complete Guide To Switching From HTTP To HTTPS](https://www.smashingmagazine.com/2017/06/guide-switching-http-https/)
+- [谈谈 HTTPS](https://juejin.cn/post/6844903504046211079)
