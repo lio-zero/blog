@@ -164,3 +164,5 @@ func.apply(user) // {name: "lio", age: 18}
 - [You Don't Know JS — Chapter 2: this All Makes Sense Now!](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20&%20object%20prototypes/ch2.md#chapter-2-this-all-makes-sense-now)
 - [JavaScript: What is the meaning of this?](https://web.dev/i18n/en/javascript-this/)
 - [深入理解 js this 绑定 ( 无需死记硬背，尾部有总结和面试题解析 )](https://segmentfault.com/a/1190000011194676)
+- [What 10x JavaScript Developers Know About ‘this’](https://blog.bitsrc.io/what-javascript-10x-developers-know-about-this-object-408f467f0497)
+- [JavaScript 中的 this](https://juejin.cn/post/6844903488304971789)

@@ -1,6 +1,6 @@
 # ArrayBuffer
 
-正如 Blob 是磁盘上可用数据的不透明表示一样，`ArrayBuffer` 是内存中可用字节的不透明表示。
+正如 Blob 是磁盘上可用数据的不透明表示一样，[`ArrayBuffer`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) 是内存中可用字节的不透明表示。
 
 构造函数接受一个参数，以字节为单位的长度：
 
@@ -34,3 +34,7 @@ const downloadBlob = (url, callback) => {
   xhr.send(null)
 }
 ```
+
+## 更多资料
+
+[ArrayBuffer，二进制数组](https://zh.javascript.info/arraybuffer-binary-arrays)

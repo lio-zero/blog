@@ -407,4 +407,7 @@ reg1.test('1+1') // true
 - [CyrilEx Regex Tester](https://extendsclass.com/regex-tester.html)
 - [一份 PDF 备忘单（英文）](https://appletree.or.kr/quick_reference_cards/Regular_Expressions/regex-cheatsheet.pdf)
 - [The Complete Guide to Regular Expressions (Regex)](https://dev.to/coderpad/the-complete-guide-to-regular-expressions-regex-1m6)
+- [Regex Cheat Sheet](https://dev.to/emmabostian/regex-cheat-sheet-2j2a)
 - [iHateRegex](https://ihateregex.io/)
+- [JS 正则表达式完整教程（略长）](https://juejin.cn/post/6844903487155732494)
+- [正则表达式不要背](https://juejin.cn/post/6844903845227659271)

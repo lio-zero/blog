@@ -146,3 +146,8 @@ console.log(newScores) // [4, 16, 64, 256, 1024]
 ## 结论
 
 在上面讨论的所有循环结构中，给我们最多控制权的是 `for...of` 循环。我们可以将其与关键字 `return`、`continue` 和 `break` 一起使用。这意味着我们可以指定对数组中的每个元素要发生什么，以及是否要提前离开或跳过。
+
+## 更多资料
+
+- [Array Iteration](https://gist.github.com/ljharb/58faf1cfcb4e6808f74aae4ef7944cff)
+- [JavaScript 数组方法总结](https://github.com/lio-zero/blog/blob/main/JavaScript/JavaScript%20%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.md)

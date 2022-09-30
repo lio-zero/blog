@@ -13,7 +13,7 @@ console.log(before) // 1505722233092
 // some code here
 // ...
 
-console.log(Date.now() - before) // 81736ms
+console.log(`${(Date.now() - before) / 1000}s`) // 10.845s
 ```
 
 我可以用 `Date.now` 来计算时间。它返回一个 UNIX 时间戳。
@@ -23,30 +23,30 @@ console.log(Date.now() - before) // 81736ms
 `console.time` 和 `console.timeEnd` 也是一种很常用的简便方法。在你不需要高分辨率计时的情况下，该测量时间的方式也是一种不错的选择。
 
 ```js
-console.time('testStart')
+console.time('test')
 
 // some code here
 // ...
 
-console.timeEnd('testEnd') // testTime: 48.5732421875 ms
+console.timeEnd('test') // testTime: 48.5732421875 ms
 ```
 
 但如果我们想更精确一点呢？
 
 ## 浏览器中更精确的时间戳
 
-在浏览器中，我们可以使用 [`window.performance.now()`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now) 方法，其返回一个精确到毫秒的 [`DOMHighResTimeStamp`](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp)。
+在浏览器中，我们可以使用 [`performance.now()`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now) 方法，其返回一个精确到毫秒的 [`DOMHighResTimeStamp`](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp)。
 
-`window.performance.now` 也可用于 Web Worker 或 Service Worker。在 Window 上下文中，返回的值是自 `navigationStart` 以来经过的时间。
+`performance.now` 也可用于 [Web Worker](https://github.com/lio-zero/blog/blob/main/Web%20API/Web%20Worker.md) 或 [Service Worker](https://github.com/lio-zero/blog/blob/main//Web%20API/Service%20Worker.md)。在 Window 上下文中，返回的值是自 `navigationStart` 以来经过的时间。
 
 ```js
-const before = window.performance.now()
-console.log(before) // 1381822.74
+const before = performance.now()
 
 // some code here
 // ...
 
-console.log(window.performance.now() - before) // 7335.410000000149ms
+console.log(performance.now() - before)
+console.log(`这需要 ${end - start}ms 才能完成`)
 ```
 
 既然，我们说到了浏览器，那我们也应该来说一说 Node.js，其有什么方法可以用来测量时间？
@@ -67,7 +67,7 @@ const start = process.hrtime.bigint()
 setTimeout(() => {
   const end = process.hrtime.bigint()
 
-  console.log(`基准测试花费了 ${Number(end - start) / 10000000} 毫秒`)
+  console.log(`基准测试花费了 ${Number(end - start) / 1000000} 毫秒`)
 }, 1000)
 ```
 

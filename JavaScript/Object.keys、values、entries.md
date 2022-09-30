@@ -20,7 +20,7 @@ console.log(keyList) // ["name", "age"]
 
 上面的代码返回对象 `user` 中可用的键列表。
 
-**检查数组中是否存在键**
+### 检查数组中是否存在键
 
 可以使用 `Array.prototype.includes()` 方法检查数组中是否存在键。
 
@@ -36,7 +36,7 @@ if (keyList.length > 0) {
 }
 ```
 
-**计算属性数量**
+### 计算属性数量
 
 ```js
 const count = (obj) => Object.keys(obj).length
@@ -44,7 +44,7 @@ const count = (obj) => Object.keys(obj).length
 count(user) // 2
 ```
 
-**判断对象是否为空**
+### 判断对象是否为空
 
 ```js
 const isEmpty = (obj) => (Object.keys(obj).length === 0 ? '空' : '非空')
@@ -72,7 +72,7 @@ for (let value of Object.values(user)) {
 // 18
 ```
 
-**属性求和**
+### 属性求和
 
 ```js
 let price = {

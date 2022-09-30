@@ -11,7 +11,7 @@ let obj = {}
 obj.name // undefined
 ```
 
-调用函数时没有传递需要使用到的参数，没有明确的返回值等，都为 `undefined`。
+调用函数时没有传递需要使用到的参数，没有明确的返回值，都为 `undefined`。
 
 ```js
 function foo(a) {
@@ -43,14 +43,14 @@ console.log(typeof undefined) // 'undefined'
 console.log(typeof null) // 'object'
 ```
 
-由于它们是不同的类型，下面是相等和严格相等运算符在相互比较时的结果:
+由于它们是不同的类型，下面是相等和严格相等运算符在相互比较时的结果：
 
 ```js
 null == undefined // true
 null === undefined // false
 ```
 
-您可能不知道的是，在使用 `JSON.stringify` 方法时，`JSON.stringify` 将自动省略值为 `undefined` 的数据，但保留了 `null`:
+您可能不知道的是，在使用 `JSON.stringify` 方法时，`JSON.stringify` 将自动省略值为 `undefined` 的数据，但保留了 `null`：
 
 ```js
 JSON.stringify({

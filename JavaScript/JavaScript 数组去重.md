@@ -54,7 +54,7 @@ const unique = (arr) => arr.filter((item, index) => arr.indexOf(item) === index)
 unique(arr) // [1, 2, "1", null, "", undefined, true, false]
 ```
 
-**注意**：该方法直接把 `NaN` 全局过滤了。
+**注意**：该方法直接把 `NaN` 全部过滤了。
 
 ## Array.prototype.includes()
 
@@ -96,15 +96,13 @@ unique(arr) // [1, 2, "1", null, "", undefined, NaN, true, false]
 
 ## Object.hasOwnProperty()
 
-利用 `Object.hasOwnProperty` 判断是否存在对象属性
+利用 `Object.hasOwnProperty` 判断是否存在对象属性。
 
 ```js
 const unique = (arr) => {
   const obj = {}
   return arr.filter((item) =>
-    obj.hasOwnProperty(typeof item + item)
-      ? false
-      : (obj[typeof item + item] = true)
+    obj.hasOwnProperty(item) ? false : (obj[item] = true)
   )
 }
 
@@ -113,14 +111,13 @@ unique(arr) // [1, 2, "1", null, "", undefined, NaN, true, false]
 
 ## Object 键值对
 
-利用**对象键值对**不能相同名来去重
+利用**对象键值对**不能相同名来去重。
 
 ```js
 const unique = (arr) => {
   const obj = {}
-  arr.forEach((value) => {
-    obj[value] = ''
-  })
+  // [1, 2, 3, 4, 4, 4]
+  arr.forEach((value) => obj[value] = '')
   return Object.keys(obj)
 }
 

@@ -1,6 +1,6 @@
 # JavaScript 组合函数
 
-**组合函数**指的是将多个函数合成为一个函数。
+**组合（compose）函数**指的是将多个函数合成为一个函数。
 
 在 JS 函数式编程中，你可以经常看到如下表达式运算。
 
@@ -14,7 +14,7 @@ a(b(c(x)))
 const f = compose(a, b, c) // 组合函数 f(x)
 ```
 
-我们使用昨天写的 [如何在 JavaScript 中使用管道（管道运算符）？](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%20JavaScript%20%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%AE%A1%E9%81%93%EF%BC%88%E7%AE%A1%E9%81%93%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%89%EF%BC%9F.md) 中的示例：
+我们使用昨天写的[如何在 JavaScript 中使用管道（管道运算符）？](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%20JavaScript%20%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%AE%A1%E9%81%93%EF%BC%88%E7%AE%A1%E9%81%93%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%89%EF%BC%9F.md) 中的示例：
 
 ```js
 const compose = (f) => (g) => (x) => f(g(x))
@@ -49,4 +49,5 @@ fn('Hello World') //  'dlrow olleH'
 
 ## 更多资料
 
-[JavaScript 专题之函数组合](https://github.com/mqyqingfeng/Blog/issues/45)
+- [JavaScript 专题之函数组合](https://github.com/mqyqingfeng/Blog/issues/45)
+- [实现 compose 的五种思路](https://segmentfault.com/a/1190000011447164)

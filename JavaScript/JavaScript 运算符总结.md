@@ -4,11 +4,11 @@
 
 ## 箭头运算符（=>）
 
-从技术上讲，它不是运算符，但是在**箭头功能中**使用了这种字符组合。
+从技术上讲，它不是运算符，但是在**箭头功能**中使用了这种字符组合。
 
 箭头函数是编写函数定义的另一种方法。
 
-箭头函数在某种程度上受到限制：它没有自己的上下文（因此 `this` 无法使用），没有 `arguments` 和 `super`，因此不能使用 new 进行调用。
+箭头函数在某种程度上受到限制：它没有自己的上下文（因此 `this` 无法使用），没有 `arguments` 和 `super`，因此不能使用 `new` 进行调用。
 
 - 如果它只用到一个参数，箭头函数可以省略括号
 - 如果省略括号，箭头函数有一个隐式的返回
@@ -19,8 +19,10 @@ let sayHi = () => 'Hello!'
 sayHi() // "Hello!"
 
 let arr = [1, 2, 3]
-arr.forEach((item) => console.log(item)) // 1 2 3
+arr.forEach(console.log) // 1 2 3
 ```
+
+> 推荐：[JavaScript 中定义函数的方法](https://github.com/lio-zero/blog/blob/main/JavaScript/JavaScript%20%E4%B8%AD%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95.md)。
 
 ## 加法运算符（+）
 
@@ -28,7 +30,7 @@ arr.forEach((item) => console.log(item)) // 1 2 3
 
 如果将数字和字符串一起使用，它将执行串联。
 
-较不常见的是，它可以用作一[元运算符](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus)，尝试将包含数字的字符串转换为数字。这是一个晦涩的技巧，通常最好使用[Number()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) 方法。
+较不常见的是，它可以用作[一元运算符](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus)，尝试将包含数字的字符串转换为数字。这是一个晦涩的技巧，通常最好使用[Number()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) 方法。
 
 ```js
 console.log(1 + 1) // 2
@@ -97,7 +99,7 @@ let key = '123456'
 
 该运算符检查两个值是否相等。返回一个布尔值。
 
-与严格相等运算符（`===`）不同，此运算符将忽略类型并仅关注值。例如，数字 `2` 被认为等效于字符串 "2"。
+与严格相等运算符（`===`）不同，此运算符将忽略类型并仅关注值。例如，数字 `2` 被认为等效于字符串 `"2"`。
 
 ```js
 // 数字不同，因此它们不相等
@@ -114,7 +116,7 @@ console.log(10 == '10') // true
 
 该运算符检查两个值是否相等。返回一个布尔值。
 
-与相等运算符（`==`）不同，此运算符检查类型和值。例如，数字 `2` 不视为等效于字符串 "2"。
+与相等运算符（`==`）不同，此运算符检查类型和值。例如，数字 `2` 不视为等效于字符串 `"2"`。
 
 ```js
 // 数字不同，因此它们不相等
@@ -127,11 +129,11 @@ console.log(10 === 10) // true
 console.log(10 === '10') // false
 ```
 
-## 不等式运算符（!=）
+## 不等运算符（!=）
 
 `true` 如果每侧代表不同的值，则此运算符返回。
 
-与严格不等式运算符（`!==`）不同，不考虑值的类型。例如，该数字 `2` 被认为等效于字符串 "2"，因此表达式 `2 != '2'` 返回 `false`。通常这是不好的，建议改用**严格的不等式运算符**。
+与严格不等式运算符（`!==`）不同，不考虑值的类型。例如，该数字 `2` 被认为等效于字符串 `"2"`，因此表达式 `2 != '2'` 返回 `false`。通常这是不好的，建议无论什么时候都使用**严格的不等运算符**。
 
 ```js
 const a = 10
@@ -206,7 +208,7 @@ console.log(x) // 6
 
 ## 除法运算符（/）
 
-该运算符执行数学除法运算。可以认为它是易于键入的除法符号（÷）
+该运算符执行数学除法运算。可以认为它是易于键入的除法符号（`÷`）
 
 ```js
 console.log(10 / 2) // 5
@@ -226,7 +228,7 @@ console.log(x) // 2
 
 ## 幂运算符(**)
 
-幂运算符也叫做指数运算符，该运算符将值本身乘以指定次数，它相当于现代的 `Math.pow()`
+幂运算符也叫做指数运算符，该运算符将值本身乘以指定次数，它相当于 `Math.pow()` 方法。
 
 ```js
 let x = 2
@@ -454,11 +456,11 @@ console.log(user.running?.()) // undefined
 
 ## 管道运算符（|>）
 
-该运算符目前是第 1 阶段建议的功能；它在任何浏览器中都不存在。
+该运算符目前是第 2 阶段建议的功能；它在任何浏览器中都不存在。
 
 它起一种 "反向" 函数调用的作用；不是使用参数调用函数，而是将参数 "传递" 到函数中。
 
-这在某些函数式编程范例中很有用；例如，它为柯里化（Currying）提供了更好的接口。
+这在某些函数式编程范例中很有用。例如，它为[柯里化](https://github.com/lio-zero/blog/blob/main/JavaScript/%E6%9F%AF%E9%87%8C%E5%8C%96.md)（Currying）提供了更好的接口。
 
 ```js
 // 典型的函数调用：
@@ -467,6 +469,8 @@ alert('hello')
 // 用管道替代：
 'hello' |> alert
 ```
+
+> 推荐：[如何在 JavaScript 中使用管道（管道运算符）？](https://github.com/lio-zero/blog/blob/master/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%20JavaScript%20%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%AE%A1%E9%81%93%EF%BC%88%E7%AE%A1%E9%81%93%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%89%EF%BC%9F.md)
 
 ## 属性访问器运算符（.）
 
@@ -515,7 +519,7 @@ num %= 4
 console.log(num) // 1
 ```
 
-## 剩余/展开运算符（...）
+## 剩余/扩展运算符（...）
 
 根据上下文，此运算符实际上是两个单独的运算符。
 
@@ -544,10 +548,10 @@ const { age, name, ...others } = {
 } // others: { name: 'zhaosi', age: 20 }
 ```
 
-**展开运算符**：执行与 "rest" 相反的操作，可用于从数组中填充函数。它也可以用于克隆或合并数组和对象。
+**扩展运算符**：执行与 "rest" 相反的操作，可用于从数组中填充函数。它也可以用于克隆或合并数组和对象。
 
 ```js
-// 展开运算符
+// 扩展运算符
 function addNums(a, b) {
   console.log(a + b)
 }
@@ -660,7 +664,9 @@ console.log(~b) // 0000000000000010
 // 输出: 2
 ```
 
-## 其他不常用运算符
+## 其他运算符
+
+本文篇幅过长，以下运算法您可以在 MDN 的 [Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators) 章节查看它们的具体用法。
 
 ### 按位与运算符（&）
 
