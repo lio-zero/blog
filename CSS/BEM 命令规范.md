@@ -106,6 +106,19 @@ SMACSS 把 CSS 样式规则分成若干个不同的类别：
 - **状态**：该类别中的 CSS 样式用来描述布局和模块在不同状态下的外观。比如在不同的屏幕尺寸下，布局会发生变化。标签式模块的每个标签页可以有显示或隐藏的状态。
 - **主题**：该类别和状态类似，只不过是用来改变布局和模块的视觉效果。
 
+## CSS 架构
+
+这一节总结一下目前前端的一些 CSS 架构：
+
+- [BEM](http://getbem.com/)
+- [CSS Modules](https://github.com/css-modules/css-modules)
+- [Atomic](https://acss.io/)
+- [OOCSS](https://github.com/stubbornella/oocss/wiki)
+- [SMACSS](https://smacss.com/)
+- [SUITCSS](https://suitcss.github.io/)
+
+另外，可以了解一下近几年很火的 [CSS-in-JS](https://github.com/lio-zero/blog/blob/main/WTF/%E4%BB%80%E4%B9%88%E6%98%AF%20CSS-in-JS.md)。
+
 ## 更多资源
 
 - [A Look at Some CSS Methodologies](https://www.webfx.com/blog/web-design/css-methodologies/)
@@ -114,3 +127,4 @@ SMACSS 把 CSS 样式规则分成若干个不同的类别：
 - [BEM Docs](https://en.bem.info/methodology/quick-start)
 - [BEM 101](https://css-tricks.com/bem-101)
 - [BEM TUTORIALS](https://en.bem.info/tutorials/)
+- [Modern alternatives to BEM](https://daverupert.com/2022/08/modern-alternatives-to-bem/)

@@ -602,9 +602,9 @@ nav {
 ## 更多资料
 
 - [Basic concepts of flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
-- [flex 备忘单](http://www.sketchingwithcss.com/samplechapter/cheatsheet.html)
-- [Flex 布局教程：语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
-- [Flex 布局教程：实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
+- [flex 备忘单](https://www.sketchingwithcss.com/samplechapter/cheatsheet.html)
+- [Flex 布局教程：语法篇](https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+- [Flex 布局教程：实例篇](https://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
 - [What Happens When You Create A Flexbox Flex Container?(opens new window)](https://www.smashingmagazine.com/2018/08/flexbox-display-flex-container/)
 - [Everything You Need To Know About Alignment In Flexbox(opens new window)](https://www.smashingmagazine.com/2018/08/flexbox-alignment/)
 - [Flexbox: How Big Is That Flexible Box?(opens new window)](https://www.smashingmagazine.com/2018/09/flexbox-sizing-flexible-box/)

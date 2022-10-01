@@ -36,7 +36,7 @@ iframe {
 
 - 将 `iframe` 放在 `div` 的左上角。
 - 使其达到 `div` 元素 `height` 和 `width` 的 `100%`。
-- 在 `div` 顶部添加等于 `iframe` 纵横比的 `padding`（对于高清视频，为 `56.25%` 或 `9/16*100`）。
+- 为 `div` 的 `padding-top` 添加等于 `iframe` 的纵横比（对于高清视频，为 `56.25%` 或 `9/16*100`）。
 
 ```css
 .responsive-iframe {
@@ -65,9 +65,9 @@ iframe {
 
 [CSS `aspect-ratio` 属性](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media/aspect-ratio)告诉浏览器，在向上或向下缩放某个元素时，要在该元素上保留特定的纵横比。
 
-我们可以使用几行 CSS 直接针对 `iframe` 元素，以在响应性布局中保留它们的尺寸，而不需要包装器元素。
+我们可以使用几行 CSS 直接针对 `iframe` 元素，以在响应性布局中保留它们的尺寸，而不需要额外的元素进行包装。
 
-将 `iframe` 的 `height` 和 `width` 设置为 `100%`。然后将 `aspect-ratio` 属性的值指定为 `width / height`。对于高清视频，我们将使用 `16/9`。
+将 `iframe` 的 `height` 和 `width` 设置为 `100%`。然后将 `aspect-ratio` 属性的值指定为 `width / height`。对于高清视频，我们将使用 `16 / 9`。
 
 ```css
 iframe {
@@ -77,28 +77,25 @@ iframe {
 }
 ```
 
-现在，我们可以 `iframe` 按原样包含元素，它们会随着布局放大或缩小。
+现在，我们可以按原样包含元素 `iframe`，它们会随着布局放大或缩小。
 
 ```html
-<div class="responsive-iframe">
-  <iframe
-    src="/path/to/file"
-    width="640"
-    height="360"
-    frameborder="0"
-    allow="autoplay; fullscreen; picture-in-picture"
-    allowfullscreen
-  >
-  </iframe>
-</div>
+<iframe
+  src="/path/to/file"
+  width="640"
+  height="360"
+  frameborder="0"
+  allow="autoplay; fullscreen; picture-in-picture"
+  allowfullscreen
+>
+</iframe>
 ```
 
-快速查看 `aspect-ratio` 兼容情况：
+[快速查看 `aspect-ratio` 兼容情况](https://caniuse.com/?search=aspect-ratio)：
 
-![aspect-ratio 的支持情况](https://upload-images.jianshu.io/upload_images/18281896-b9e25e8a37d2ea37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![aspect-ratio 的支持情况](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f5a31663627d421cae14c0d8636b3e10~tplv-k3u1fbpfcp-zoom-1.image)
 
-以下是关于 `aspect-ratio` 属性的相关文章：
+以上是一个使用 `aspect-ratio` 解决 `iframe` 响应式缩放的示例。如需了解更多，这里还整理了关于 `aspect-ratio` 属性的相关文章供大家参考：
 
 - [Create Responsive Image Effects With CSS Gradients And aspect-ratio](https://www.smashingmagazine.com/2021/02/responsive-image-effects-css-gradients-aspect-ratio/)
 - [Designing An Aspect Ratio Unit For CSS](https://www.smashingmagazine.com/2019/03/aspect-ratio-unit-css/)
-- [`aspect-ratio`](https://drafts.csswg.org/css-sizing-4/#ratios)

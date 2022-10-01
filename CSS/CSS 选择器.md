@@ -105,6 +105,8 @@ p::first-line { }
 - **通用兄弟选择器（~）**
 - **相邻兄弟选择器（+）**
 
+用法上一节已经讲到。
+
 ## 属性选择器
 
 CSS 属性选择器通过已经存在的属性名或属性值匹配元素。
@@ -146,6 +148,10 @@ img[src$='.jpg'] {
 }
 ```
 
+匹配方式类似正则。
+
+属性选择器有多种匹配方式，这节进行扩展介绍。
+
 ## 伪选择器
 
 ### 伪类
@@ -154,17 +160,17 @@ img[src$='.jpg'] {
 p:lang(language) 为 <p> 元素的 lang 属性选择一个开始值
 
 input:focus 选择元素输入后具有焦点
-a:link 	选择所有未访问链接
+a:link 选择所有未访问链接
 a:visited 选择所有访问过的链接
-a:active   选择正在活动链接
-a:hover 	把鼠标放在链接上的状态
+a:active 选择正在活动链接
+a:hover 把鼠标放在链接上的状态
 input:valid  选择所有有效值的属性
-#line:target 	选择当前活动 #line 元素(点击 URL 包含锚的名字)
-input:required 选择有 "required" 属性指定的元素属性
+#line:target 选择当前活动 #line 元素(点击 URL 包含锚的名字)
+input:required 选择有 required 属性指定的元素属性
 input:read-write 选择没有只读属性的元素属性
 input:read-only 选择只读属性的元素属性
-input:out-of-range 	选择指定范围以外的值的元素属性
-input:optional 	选择没有"required"的元素属性
+input:out-of-range 选择指定范围以外的值的元素属性
+input:optional 选择没有 required 的元素属性
 
 /* CSS3 新增选择器 */
 input[type="text"] 属性选择器
@@ -183,10 +189,10 @@ p:nth-last-child(n) 选择所有 p 元素倒数的第二个子元素
 p:nth-of-type(n) 选择所有 p 元素第二个为 p 的子元素
 p:nth-last-of-type(n) 选择所有 p 元素倒数的第二个为 p 的子元素
 
-p:first-child  选择器匹配属于任意元素的第一个子元素的 p 元素
-p:last-child   	选择所有 p 元素的最后一个子元素
-p:only-child   	选择所有仅有一个子元素的 p 元素
-p:only-of-type  选择属于其父元素唯一的 p 元素的每个 p 元素
+p:first-child 选择器匹配属于任意元素的第一个子元素的 p 元素
+p:last-child 选择所有 p 元素的最后一个子元素
+p:only-child 选择所有仅有一个子元素的 p 元素
+p:only-of-type 选择属于其父元素唯一的 p 元素的每个 p 元素
 p:first-of-type 选择的每个 p 元素是其父元素的第一个 p 元素
 p:last-of-type 选择属于其父元素的最后 p 元素的每个 p 元素
 ```
@@ -194,11 +200,11 @@ p:last-of-type 选择属于其父元素的最后 p 元素的每个 p 元素
 ### 伪元素
 
 ```css
-p::selection 	选择用户选择的元素部分。
-p::before    在每个 p 元素之前插入内容
-p::after 	在每个 p 元素之后插入内容
-p::first-line   选择每个 p 元素的第一行
-p::sfirst-letter 选择每个 p 元素的第一个字母
+p::selection 选择用户选择的元素部分。
+p::before 在每个 p 元素之前插入内容
+p::after 在每个 p 元素之后插入内容
+p::first-line 选择每个 p 元素的第一行
+p::first-letter 选择每个 p 元素的第一个字母
 ```
 
 ## 常见的问题
@@ -215,17 +221,18 @@ CSS3 为了区分两者，明确规定伪类用一个冒号（`:`）来表示，
 
 还需要注意：
 
-- IE6-7 不支持 `:focus`。
-- 伪类名称对大小写不敏感。
+- IE 6-7 不支持 `:focus`
+- 伪类名称对大小写不敏感
 - 伪元素也有人称为伪对象
 
 关于伪类/伪元素的示例可以查阅我最近新开的另一个仓库 [css-tricks](https://github.com/lio-zero/css-tricks)，里面提供了大量的 CSS 技巧（包括伪类/伪元素），也可以阅读 [An Ultimate Guide To CSS Pseudo Classes And Pseudo Elements](https://www.smashingmagazine.com/2016/05/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/) 文章。
 
-### CSS 属性 content 有什么作用？
+### CSS `content` 属性有什么作用？
 
-`content` 属性专门应用在 `before/after` 伪元素上，用于插入额外内容或样式
+`content` 属性专门应用在 `before/after` 伪元素上，用于插入额外内容或样式。
 
 ```css
+/* <div data-icon="icon">...</div> */
 a::before {
   content: attr(data-icon);
 }
@@ -239,19 +246,19 @@ a::before {
 
 权重分为四级，分别是：
 
-- 内联样式，如 `style="xxx"`，权值为 1000；
-- ID 选择器，如 `#content`，权值为 100；
-- 类、伪类和属性选择器，如 `.content`、`:hover`、`[attribute]`，权值为 10；
-- 元素选择器和伪元素选择器，如`div`、`p`，权值为 1。
+- 内联样式，如 `style="xxx"`，权值为 1000
+- ID 选择器，如 `#content`，权值为 100
+- 类、伪类和属性选择器，如 `.content`、`:hover` 和 `[attribute]`，权值为 10
+- 元素选择器和伪元素选择器，如 `div`、`p`，权值为 1
 
 相同权重，以定义最近者为准：行内样式 > 内部样式 > 外部样式 > 导入样式
 
-- 含外部载入样式时，后载入样式覆盖其前面的载入的样式和内部样式
+- 含外部载入样式时，后载入样式将覆盖其之前载入的样式和内部样式（只覆盖相同的 CSS 选择器）
 - 选择器优先级：`!important > id > class > tag`
 - 在同一组属性设置中，`!important` 优先级最高，高于行内样式
 
-> **注意：通用选择器（`*`）、子选择器（`>`）和相邻兄弟选择器（`+`）并不在这四个等级中，所以他们的权值都为 0**。 权重值大的选择器其优先级也高，相同权重的优先级又遵循后定义覆盖前面定义的情况。
-
+> **注意：通用选择器（`*`）、子选择器（`>`）和相邻兄弟选择器（`+`）并不在这四个等级中，所以他们的权值都为 0**。权重值大的选择器其优先级也高，相同权重的优先级又遵循后定义覆盖前面定义的情况。
+>
 > 详细内容请查看：[优先级](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity) 和 [CSS3 选择器优先级](http://www.w3.org/TR/selectors/#specificity)
 
 ### 浏览器如何解析 CSS 选择器？
@@ -259,3 +266,7 @@ a::before {
 浏览器**从右往左**解析 CSS 选择器，这样的匹配节点的方式能快速、准确的与 render 树上的节点进行匹配，避免了许多无效匹配。浏览器需要评估的规则越少，样式引擎执行的速度就越快。
 
 > 详细内容可查看：[Why do browsers match CSS selectors from right to left?](https://stackoverflow.com/questions/5797014/why-do-browsers-match-css-selectors-from-right-to-left)
+
+### 浏览器如何解析 CSS？
+
+浏览器如何解析 CSS？

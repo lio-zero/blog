@@ -36,9 +36,9 @@
 
 这里还涉及一道常见的面试题。
 
-## 页面导入样式时，使用 link 和 @import 有什么区别？
+## 页面导入样式时，使用 `link` 和 `@import` 有什么区别？
 
-- `link` 属于 XHTML 标签，除了加载 CSS 外，还能用于定义 RSS，定义 rel 连接属性等作用；而 `@import` 是 CSS 提供的，只能用于加载 CSS；
-- 页面被加载的时，`link` 会同时被加载，而 `@import` 引用的 CSS 会等到页面被加载完再加载；
-- `@import` 是 CSS2.1 提出的，只在 IE5 以上才能被识别，而 `link` 是 XHTML 标签，无兼容问题；
-- `link` 方式的样式的权重高于 `@import` 的权重。
+- `link` 属于 XHTML 标签，除了加载 CSS 外，还能用于定义 RSS，定义 `rel` 连接属性等作用；而 `@import` 是 CSS 提供的，只能用于加载 CSS。
+- 页面被加载的时，`link` 会同时被加载，而 `@import` 引用的 CSS 会等到页面被加载完再加载。
+- `@import` 是 CSS2.1 提出的，只在 IE5 以上才能被识别，而 `link` 是 XHTML 标签，无兼容问题。
+- `link` 引入样式的方式权重高于 `@import` 的权重。

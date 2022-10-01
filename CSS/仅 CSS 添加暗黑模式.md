@@ -13,9 +13,9 @@ CSS `filter` 属性将模糊或颜色偏移等图形效果应用于元素。滤�
 对于暗黑模式，将使用两个 `filter` 的两个函数：`invert` 和 `hue-rotate`。
 
 - [`invert`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/invert) — 反转元素和图片的颜色。在 100% 的情况下会完全反转，即黑色变为白色，白色变为黑色，#222 -> #ddd。
-- [`hue-rotate`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate) — 帮助我们处理所有其他非黑色和白色的颜色。 将色相旋转 180 度，我们确保应用程序的颜色主题不会改变，而只是减弱其颜色。
+- [`hue-rotate`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate) — 帮助我们处理所有其他非黑色和白色的颜色。 将色相旋转 180 度，我们确保应用的颜色主题不会改变，而只是减弱其颜色。
 
-注意，它还会反转应用程序中的所有图像和视频。如果不想给图片、视频应用暗黑模式，可以添加：
+注意，它还会反转应用中的所有图像和视频。如果不想给图片、视频应用暗黑模式，可以添加：
 
 ```css
 img,
