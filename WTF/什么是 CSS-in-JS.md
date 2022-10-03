@@ -16,10 +16,12 @@
 - [jsxstyle](https://github.com/jsxstyle/jsxstyle)
 - [Radium](https://github.com/FormidableLabs/radium)
 - [Emotion](https://github.com/emotion-js/emotion)
-- [Styled Components](https://styled-components.com/)
+- [Styled Components](https://www.styled-components.com/)
+- [JSS](http://cssinjs.org/)
+- [Aphrodite](https://github.com/Khan/aphrodite)
 - etc
 
-其中最流行的工具之一是 Styled Components。
+其中最流行的工具之一是 Styled Components 和 Emotion。
 
 这意味着它是 [CSS Modules](https://github.com/css-modules/css-modules) 的继承者，是一种编写 CSS 的方法，其作用范围仅限于单个组件，而不会泄漏到页面中的任何其他元素。
 
@@ -51,3 +53,4 @@ Styled Components 允许您在组件中编写简单的 CSS，而不用担心类�
 - [CSS Modules](https://glenmaddern.com/articles/css-modules)
 - [awesome-css-in-js](https://github.com/tuchk4/awesome-css-in-js)
 - [CSS in JS: Benefits, Drawbacks, and Tooling](https://medium.com/object-partners/css-in-js-benefits-drawback-and-tooling-80286b03f9aa)
+- [Facebook 重构：抛弃 Sass / Less，迎接原子化 CSS 时代](https://juejin.cn/post/6917073600474415117)
