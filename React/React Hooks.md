@@ -1,12 +1,14 @@
 # React Hooks
 
-Hooks 在 16.8 版本中被添加到 React，允许函数组件访问状态和其他 React 特性。因此，通常不再需要类组件。
+[Hooks](https://reactjs.org/docs/hooks-intro.html) 是 React 16.8 引入的新特性，允许函数组件访问状态和其他 React 特性。因此，通常不再需要类组件。
 
-尽管 Hooks 通常会替换类组件，但没有计划从 React 中删除类。
+尽管 Hooks 通常会替换类组件，但没有计划从 React 中删除类。所以，不需要强制改造类组件，两种方式是可以并存。
+
+> **Tips**：您可以在 [codesandbox](https://codesandbox.io/) 或其他在线代码编辑器调试以下的任何示例。
 
 ## 什么是 Hooks？
 
-Hooks 允许我们“挂钩”到 React 特性，例如状态和生命周期方法。
+Hooks 允许我们 **hook** 到 React 特性，例如状态和生命周期方法。
 
 ```js
 import React, { useState } from 'react'
@@ -27,9 +29,6 @@ function FavoriteColor() {
       <button type='button' onClick={() => setColor('pink')}>
         Pink
       </button>
-      <button type='button' onClick={() => setColor('green')}>
-        Green
-      </button>
     </>
   )
 }
@@ -37,35 +36,39 @@ function FavoriteColor() {
 ReactDOM.render(<FavoriteColor />, document.getElementById('root'))
 ```
 
-使用 React 提供的钩子前，我们需要从 `react` 中 `import` 钩子。
+使用 React 提供的钩子前，我们需要使用 `import` 从 `react` 导入钩子。
 
-这里我们使用 `useState` 钩子来跟踪应用程序状态。状态通常指需要跟踪的应用程序数据或属性。
+这里我们使用 `useState` 钩子来跟踪应用状态。状态通常指需要跟踪的应用数据或属性。
 
-## 挂钩规则
+## Hooks 规则
 
-钩子有 3 条规则：
+Hooks 有 3 条规则：
 
 - Hooks 只能在 React 函数组件内部调用。
 - Hooks 只能在组件的顶层调用。
-- Hooks 不能是有条件的
+- Hooks 不能是有条件的。
 
-> **注意**：钩子在 React 类组件中不起作用。
+详细内容请查阅 [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html)。
+
+> **注意**：Hooks 在 React 类组件中不起作用。
 
 下面我们来看看 React 提供的一些 Hooks。
 
-## `useState` Hooks
+## `useState` Hook
 
-React `useState` 钩子允许我们跟踪函数组件中的状态。状态通常指应用程序中需要跟踪的数据或属性。
+React `useState` 钩子允许我们跟踪函数组件中的状态。状态通常指应用中需要跟踪的数据或属性。
+
+以 `useState` 钩子为例，详细讲解使用 Hook 的每一步。
 
 ### 导入 `useState`
 
-要使用 `useState` 钩子，我们首先需要将 `import` 它到我们的组件中。
+要使用 `useState` 钩子，我们首先需要使用 `import` 关键字将它导入到我们的组件中。
 
 ```js
 import { useState } from 'react'
 ```
 
-我们从 react 中解构 `useState`，因为它是一个命名导出。
+我们从 react 包中解构 `useState`，因为它是一个命名导出。
 
 ### 初始化 `useState`
 
@@ -73,8 +76,8 @@ import { useState } from 'react'
 
 `useState` 接受初始状态并返回两个值：
 
-- 当前状态。
-- 更新状态的函数。
+- 当前状态
+- 更新状态的函数
 
 ```js
 import { useState } from 'react'
@@ -107,7 +110,7 @@ ReactDOM.render(<FavoriteColor />, document.getElementById('root'))
 
 ### 更新状态
 
-为了更新我们的状态，我们使用定义好的 `setColor` 状态更新程序函数。
+为了更新我们的状态，我们使用定义好的 `setColor` 状态更新函数。
 
 ```js
 import { useState } from 'react'
@@ -129,7 +132,7 @@ function FavoriteColor() {
 ReactDOM.render(<FavoriteColor />, document.getElementById('root'))
 ```
 
-> **注意**：我们不应该直接更新状态。例如：不允许使用 `color="red"`。
+**注意**，我们不应该直接更新状态。例如：不允许使用 `color="red"`。
 
 ### 状态可以持有什么
 
@@ -195,7 +198,7 @@ ReactDOM.render(<User />, document.getElementById('root'))
 
 如果我们只调用 `setUser({ age: 18 })`，这将从我们的状态中删除 `name` 和 `year`。
 
-我们可以使用 JavaScript 扩展运算符来帮助我们。
+我们可以使用 ES6 扩展运算符来帮助我们。
 
 ```js
 import { useState } from 'react'
@@ -209,9 +212,7 @@ function User() {
   })
 
   const updateUser = () => {
-    setUser((previousState) => {
-      return { ...previousState, age: 18 }
-    })
+    setUser((previousState) => { ...previousState, age: 18 })
   }
 
   return (
@@ -232,11 +233,17 @@ ReactDOM.render(<User />, document.getElementById('root'))
 
 然后我们返回一个对象，展开 `previousState` 并仅覆盖 `age`。
 
-## `useEffect` Hooks
+## `useEffect` Hook
 
-`useEffect` Hook 允许您在组件中执行副作用。副作用的一些示例如：获取数据、直接更新 DOM 和定时器。
+`useEffect` Hook 允许您在组件中执行**副作用（side effect）**。副作用的一些示例有：获取数据、直接更新 DOM 和定时器。
+
+> **Tips**：如果您熟悉类组件，那么可以将它想象为类组件的 `componentDidMount`、`componentDidUpdate` 和 `componentWillUnmount` 钩子的结合体。
 
 `useEffect` 接受两个参数。第二个参数是可选的。
+
+```ts
+useEffect(function, [options])
+```
 
 以定时器为例，使用 `setTimeout()` 计算初始渲染后的 1 秒：
 
@@ -259,9 +266,9 @@ function Timer() {
 ReactDOM.render(<Timer />, document.getElementById('root'))
 ```
 
-可是等等！！它一直在计数，即使它应该只计数一次！
+如果您运行上面的示例，您会发现它一直在计数，即使它应该只计数一次！
 
-`useEffect` 在每个渲染上运行。这意味着当计数发生变化时，会发生渲染，然后触发另一个效果。
+`useEffect` 在每个渲染上运行。这意味着当计数发生变化时，会发生渲染，然后触发另一个 effect。
 
 这不是我们想要的。有几种方法可以控制副作用何时运行。
 
@@ -293,26 +300,12 @@ useEffect(() => {
 
 所以，为了解决这个问题，让我们只在初始渲染上运行这个效果。
 
-```js
-import { useState, useEffect } from 'react'
-import ReactDOM from 'react-dom'
-
-function Timer() {
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    setTimeout(() => {
-      setCount((count) => count + 1)
-    }, 1000)
-  }, []) // <- 在此处添加空括号
-
-  return <h1>我渲染了 {count} 次!</h1>
-}
-
-ReactDOM.render(<Timer />, document.getElementById('root'))
+```diff
+- useEffect(() => { ... })
++ useEffect(() => { ... }, []) // <- 在此处添加空括号
 ```
 
-下面是一个依赖于变量的 `useEffect` 钩子的示例。如果 `count` 变量更新，效果将再次运行：
+下面是一个依赖于变量的 `useEffect` 钩子的示例。如果 `count` 变量更新，effect 将再次运行：
 
 ```js
 import { useState, useEffect } from 'react'
@@ -340,13 +333,41 @@ ReactDOM.render(<Counter />, document.getElementById('root'))
 
 如果存在多个依赖项，则应将它们包含在 `useEffect` 依赖项数组中。
 
+**注意传入的依赖**，如果每次传入的依赖都重新生成一个新的引用，那么也会出现无限循环的情况。
+
+```js
+const getDep = () => {
+  return {
+    foo: 'content'
+  }
+}
+
+useEffect(() => {
+  // 无限循环
+}, [getDep()])
+```
+
+这种情况可以使用字符串序列化解决。
+
+```js
+const dep = JSON.stringify(getDeps())
+
+useEffect(() => {
+  // 无限循环
+}, [dep])
+```
+
+这样比较的就是字符串是否相等。
+
 ### 清理 Effect
 
-有些效果需要清理以减少内存泄漏。
+有些 effect 需要清理以减少内存泄漏。
 
-超时、订阅、事件监听器和其他不再需要的效果应该被处理。
+超时、订阅、事件监听器和其他不再需要的 effect 应该被处理。
 
 我们通过在 `useEffect` 钩子的末尾包含一个返回函数来实现这一点。
+
+下面以清除定时器为例：
 
 ```js
 import { useState, useEffect } from 'react'
@@ -369,11 +390,11 @@ function Timer() {
 ReactDOM.render(<Timer />, document.getElementById('root'))
 ```
 
-> **注意**：要清除定时器，我们必须为其命名。
+**注意**，要清除定时器，我们必须为其命名。
 
-## `useContext` Hooks
+## `useContext` Hook
 
-React Context 是一种全局管理状态的方法。
+[React Context](https://github.com/lio-zero/blog/blob/main/React/React%20Context%20API.md) 是一种全局管理状态的方法。
 
 与单独使用 `useState` 相比，它可以与 `useState` 钩子一起使用，在深度嵌套的组件之间更容易地共享状态。
 
@@ -508,7 +529,7 @@ import ReactDOM from 'react-dom'
 
 const UserContext = createContext()
 
-function Component1() {
+function Comp1() {
   const [user, setUser] = useState('O.O')
 
   return (
@@ -557,10 +578,10 @@ function Comp5() {
   )
 }
 
-ReactDOM.render(<Component1 />, document.getElementById('root'))
+ReactDOM.render(<Comp1 />, document.getElementById('root'))
 ```
 
-## `useRef` Hooks
+## `useRef` Hook
 
 `useRef` 钩子允许在渲染之间持久化值。
 
@@ -568,7 +589,7 @@ ReactDOM.render(<Component1 />, document.getElementById('root'))
 
 ### 不会导致重新渲染
 
-如果我们试图计算应用程序使用 `useState` 钩子渲染的次数，我们将陷入无限循环，因为这个钩子本身会导致重新渲染。
+如果我们试图计算应用使用 `useState` 钩子渲染的次数，我们将陷入无限循环，因为这个钩子本身会导致重新渲染。
 
 为了避免这种情况，我们可以使用 `useRef` 钩子。
 
@@ -601,7 +622,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 `useRef()` 只返回一项。它返回一个名为 `current` 的对象。
 
-初始化 `useRef` 时，我们设置初始值为 `useRef(0)`。它其实类似于 `const count= { current:0 }`，我们可以使用 `count` 访问 `count.current`。
+初始化 `useRef` 时，我们设置初始值为 `useRef(0)`。它其实类似于 `const count = { current: 0 }`，我们可以使用 `count` 访问 `count.current`。
 
 ### 访问 DOM 元素
 
@@ -665,11 +686,11 @@ function App() {
 ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
-这一次，我们结合使用 `useState`、`useffect` 和 `useRef` 来跟踪之前的状态。
+这一次，我们结合使用 `useState`、`useEffect` 和 `useRef` 来跟踪之前的状态。
 
 在 `useEffect` 中，每次通过在 `input` 字段中输入文本来更新 `inputValue` 时，我们都会更新 `useRef` 当前值。
 
-## `useReducer` Hooks
+## `useReducer` Hook
 
 `useReducer` 钩子类似于 `useState` 钩子。它允许自定义状态逻辑。
 
@@ -677,7 +698,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 `useReducer` 钩子接受两个参数：
 
-- `reducer`函数包含自定义状态逻辑，`initialState` 可以是一个简单的值，但通常会包含一个对象。
+- `reducer` 函数包含自定义状态逻辑，`initialState` 可以是一个简单的值，但通常会包含一个对象。
 - `useReducer` 钩子返回当前 `state` 和 `dispatch` 方法。
 
 下面是计数器使用 `useReducer` 的示例：
@@ -746,19 +767,21 @@ ReactDOM.render(<Todos />, document.getElementById('root'))
 
 通过添加更多操作，添加、删除和完成 todo 的所有逻辑都可以包含在单个 `useReducer` 钩子中。
 
-## `useCallback` Hooks
+## `useCallback` Hook
 
-React `useCallback` Hook 返回一个已记忆的回调函数。
+React `useCallback` Hook 返回一个 **memoized**（译为**记忆**，一种函数的缓存手段）的回调函数。
 
-这使我们能够隔离资源密集型函数，以便它们不会在每次渲染时自动运行。
+> **推荐**：[JavaScript 函数记忆](https://github.com/lio-zero/blog/blob/main/JavaScript/JavaScript%20%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BF%86.md)。
 
-`useCallbackHook` 仅在其依赖项之一更新时运行，提高了性能。
+这允许我们隔离资源密集型函数，以便它们不会在每次渲染时自动运行。
 
-### 问题
+`useCallback` Hook 仅在其中一个依赖项更新时运行，这避免传入的回调函数每次都是新的函数实例而导致依赖组件重新渲染，提高了性能。
+
+### 问题所在
 
 使用 `useCallback` 的一个原因是防止组件重新渲染，除非其 `props` 已更改。
 
-在本例中，您可能会认为 todos 组件不会重新渲染，除非 todos 发生更改：
+在本例中，您可能会认为 Todos 组件不会重新渲染，除非 `todos` 发生更改：
 
 ```js
 // main.js
@@ -773,9 +796,8 @@ const App = () => {
   const increment = () => {
     setCount((c) => c + 1)
   }
-  const addTodo = () => {
-    setTodos((t) => [...t, 'New Todo'])
-  }
+
+  const addTodo = () => setTodos((t) => [...t, 'New Todo'])
 
   return (
     <>
@@ -817,79 +839,41 @@ export default memo(Todos)
 
 您会注意到，即使 `todos` 没有更改，`Todos` 组件也会重新渲染。
 
-为什么这不起作用？我们使用的是 `memo`，所以 `Todos` 组件不应该重新渲染，因为当 `count `增加时，`todos` 状态和 `addTodo` 函数都没有改变。
+> 先说明一下 `React.memo` 的作用，当某个组件状态更新时，它的所有子组件树将会重新渲染，而 `React.memo` 可以避免这种情况。
 
-这是因为所谓的“参照平等”。
+**为什么这不起作用？**我们使用了 `memo`，所以 `Todos` 组件不应该重新渲染，因为当 `count` 增加时，`todos` 状态和 `addTodo` 函数都没有改变。
+
+这是因为所谓的**引用平等**。
 
 每次组件重新渲染时，都会重新创建其函数。因此，`addTodo` 函数实际上发生了变化。
 
-### 解决方案
+### 解决
 
 为了解决这个问题，我们可以使用 `useCallback` 钩子来防止函数被重新创建，除非有必要。
 
 使用 `useCallback` 钩子可以防止 `Todos` 组件不必要地重新渲染：
 
-```js
-import { useState, useCallback } from 'react'
-import ReactDOM from 'react-dom'
-import Todos from './Todos'
+```diff
+- import { useState } from 'react'
 
-const App = () => {
-  const [count, setCount] = useState(0)
-  const [todos, setTodos] = useState([])
+- const addTodo = () => setTodos((t) => [...t, 'New Todo'])
 
-  const increment = () => {
-    setCount((c) => c + 1)
-  }
-  const addTodo = useCallback(() => {
-    setTodos((t) => [...t, 'New Todo'])
-  }, [todos])
++ import { useState, useCallback } from 'react'
 
-  return (
-    <>
-      <Todos todos={todos} addTodo={addTodo} />
-      <hr />
-      <div>
-        次数: {count}
-        <button onClick={increment}>+</button>
-      </div>
-    </>
-  )
-}
-
-ReactDOM.render(<App />, document.getElementById('root'))
++ const addTodo = useCallback(() => setTodos((t) => [...t, 'New Todo']), [todos])
 ```
 
-`Todos.js` 组件:
+推荐阅读：[How to Implement Memoization in React to Improve Performance](https://www.sitepoint.com/implement-memoization-in-react-to-improve-performance/)。
 
-```js
-import { memo } from 'react'
+## `useMemo` Hook
 
-const Todos = ({ todos, addTodo }) => {
-  console.log('子渲染')
-  return (
-    <>
-      <h2>Todos List</h2>
-      {todos.map((todo, index) => {
-        return <p key={index}>{todo}</p>
-      })}
-      <button onClick={addTodo}>新增 Todo</button>
-    </>
-  )
-}
+React `useMemo` 钩子返回一个已缓存的值，它仅在其中一个依赖项更新时运行，避免依赖的组件每次都重新渲染，提高了性能。
 
-export default memo(Todos)
-```
+`useMemo` 和 `useCallback` 钩子类似。主要区别在于 `useMemo` 返回一个已缓存的值，而 `useCallback` 返回一个已缓存的函数。
 
-## `useMemo` Hooks
+### 性能问题
 
-React `useMemo` 钩子返回一个已记忆的值，它仅在其中一个依赖项更新时运行，提高性能。
-
-`useMemo` 和 `useCallback` 钩子类似。主要区别在于 `useMemo` 返回一个已记忆的值， `useCallback` 返回一个已记忆的函数。
-
-### 性能
-
-`useMemo` 钩子可以用来防止昂贵的、资源密集型的函数不必要地运行。
+`useMemo` 钩子可以用来防止昂贵的、资源密集型的函数不必要地运行。如果您使用过 Vue，那么您可能很快就联想到 [Vue 计算属性](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20Computed%20%E2%80%94%20%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7.md)。
 
 在本例中，我们有一个在每个渲染上运行的昂贵函数。
 
@@ -898,6 +882,14 @@ React `useMemo` 钩子返回一个已记忆的值，它仅在其中一个依赖�
 ```js
 import { useState } from 'react'
 import ReactDOM from 'react-dom'
+
+const expensiveCalculation = (num) => {
+  console.log('计算...')
+  for (let i = 0; i < 1000000000; i++) {
+    num += 1
+  }
+  return num
+}
 
 const App = () => {
   const [count, setCount] = useState(0)
@@ -931,81 +923,33 @@ const App = () => {
   )
 }
 
-const expensiveCalculation = (num) => {
-  console.log('计算...')
-  for (let i = 0; i < 1000000000; i++) {
-    num += 1
-  }
-  return num
-}
-
 ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
-## 使用 `useMemo`
+### 使用 `useMemo`
 
-为了解决这个性能问题，我们可以使用 `useMemoHook` 来记忆 `expensiveCalculation` 函数。这将导致该函数仅在需要时运行。
+为了解决这个性能问题，我们可以使用 `useMemo` Hook 来缓存 `expensiveCalculation` 函数。这将影响该函数仅在需要时运行。
 
-`useMemoHook` 接受第二个参数来声明依赖项。昂贵的函数只会在其依赖关系发生变化时运行。
+`useMemo` Hook 接受第二个参数来声明依赖项。昂贵的函数计算只会在其依赖关系发生变化时运行。
 
-在下面的示例中，昂贵的函数只会在 `count` 更改时运行，而不是在添加待办事项时运行。
+我们只需要更改上面示例的其中一行即可：
 
-```js
-import { useState, useMemo } from 'react'
-import ReactDOM from 'react-dom'
-
-const App = () => {
-  const [count, setCount] = useState(0)
-  const [todos, setTodos] = useState([])
-  const calculation = useMemo(() => expensiveCalculation(count), [count])
-
-  const increment = () => {
-    setCount((c) => c + 1)
-  }
-  const addTodo = () => {
-    setTodos((t) => [...t, 'New Todo'])
-  }
-
-  return (
-    <div>
-      <div>
-        <h2>Todos List</h2>
-        {todos.map((todo, index) => {
-          return <p key={index}>{todo}</p>
-        })}
-        <button onClick={addTodo}>新增 Todo</button>
-      </div>
-      <hr />
-      <div>
-        Count: {count}
-        <button onClick={increment}>+</button>
-        <h2>昂贵的计算</h2>
-        {calculation}
-      </div>
-    </div>
-  )
-}
-
-const expensiveCalculation = (num) => {
-  console.log('计算...')
-  for (let i = 0; i < 1000000000; i++) {
-    num += 1
-  }
-  return num
-}
-
-ReactDOM.render(<App />, document.getElementById('root'))
+```diff
+- const calculation = expensiveCalculation(count)
++ const calculation = useMemo(() => expensiveCalculation(count), [count])
 ```
 
-## 自定义 Hooks
+昂贵的函数计算只会在 `count` 更改时运行，而不是在添加待办事项时运行。
+
+## 自定义 Hook
 
 Hooks 是可重用的函数。
 
 当您有需要在多个组件中使用相同的组件逻辑时，我们可以将该逻辑提取到自定义 Hook。
 
-自定义 Hooks 以 `use` 开头。本节将编写一个 `useFetch` 示例。
+自定义 Hook 以 `use` 开头。本节将编写一个 `useFetch` 示例。
 
-### 自定义 `useFetch` 钩子
+### 自定义 `useFetch` Hook
 
 在下面的代码中，我们在 `Home` 组件中获取数据并显示它。
 
@@ -1014,6 +958,7 @@ Hooks 是可重用的函数。
 使用 **JSONPlaceholder** 服务获取假 `Todos` 列表，并在页面上显示标题：
 
 ```js
+// main.js
 import { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 
@@ -1062,25 +1007,21 @@ const useFetch = (url) => {
 export default useFetch
 ```
 
-```js
-// main.js
-import ReactDOM from 'react-dom'
-import useFetch from './useFetch'
+封装为自定义钩子前后区别：
 
-const Home = () => {
-  const [data] = useFetch('https://jsonplaceholder.typicode.com/todos')
+```diff
+- import { useState, useEffect } from 'react'
 
-  return (
-    <>
-      {data &&
-        data.map((item) => {
-          return <p key={item.id}>{item.title}</p>
-        })}
-    </>
-  )
-}
+- const [data, setData] = useState(null)
+- useEffect(() => {
+-   fetch('https://jsonplaceholder.typicode.com/todos')
+-     .then((res) => res.json())
+-     .then((data) => setData(data))
+- }, [])
 
-ReactDOM.render(<Home />, document.getElementById('root'))
++ import useFetch from './useFetch'
+
++ const [data] = useFetch('https://jsonplaceholder.typicode.com/todos')
 ```
 
 我们创建了一个名为 `useFetch.js` 的新文件，其中包含一个名为 `useFetch` 的函数，该函数包含获取数据所需的所有逻辑。
@@ -1092,3 +1033,38 @@ ReactDOM.render(<Home />, document.getElementById('root'))
 在 `main.js` 中，我们导入 `useFetch` 钩子，并像其他钩子一样使用它。这就是我们传递 URL 以从中获取数据的地方。
 
 现在我们可以在任何组件中重用这个自定义钩子，从任何 URL 获取数据。
+
+当然，这是最简单的一个自定义钩子，您可以在此基础上加上您业务上所需要的任何逻辑。
+
+React 官网的 [Building Your Own Hooks](https://reactjs.org/docs/hooks-custom.html) 章节介绍了如何自定义 Hook。
+
+[搞懂这 12 个 Hooks，保证让你玩转 React](https://juejin.cn/post/7101486767336849421)
+
+另外，这里提供一些社区开发者提供的 Hooks：
+
+- [ahooks](https://ahooks.js.org/) 和 [usehooks-ts](https://github.com/juliencrn/usehooks-ts) — 两个很棒的 React Hooks 库
+- [30 seconds of code](https://www.30secondsofcode.org/) 提供了许多常见的 [React Hooks](https://www.30secondsofcode.org/react/t/hooks/p/1)。
+- Josh Comeau 也分享了一些常用的 [React Hooks](https://www.joshwcomeau.com/snippets/)
+
+## 最后
+
+以上便是本文介绍的 React Hooks，我们重点介绍了几个常用的钩子，它还有其他内置的钩子，例如：`useLayoutEffect`、`useDebugValue`、`useImperativeHandle`、`useId` 等。您可以在 [Hooks API Reference](https://reactjs.org/docs/hooks-reference.html) 章节了解它们。
+
+## 更多资料
+
+React Hooks 还有很多没有讲到，详细 Hooks 介绍请查阅文档，这里也整理了一些资料供大家参考：
+
+- [Hooks FAQ](https://reactjs.org/docs/hooks-faq.html)
+- [Understanding useMemo and useCallback](https://www.joshwcomeau.com/react/usememo-and-usecallback/)
+- [useEffect 完整指南](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/)
+- [React Hooks 最佳实践](https://juejin.cn/post/6844904165500518414)
+- [使用 react hooks 带来的收益抵得过使用它的成本吗?](https://www.zhihu.com/question/350523308/answer/858145147)
+- [The Ugly Side of React Hooks](https://medium.com/swlh/the-ugly-side-of-hooks-584f0f8136b6) — 正如标题所暗示的那样，作者不喜欢 Hooks，并给出了理由。
+- [【React 深入】从 Mixin 到 HOC 再到 Hook](https://juejin.cn/post/6844903815762673671)
+- [「react 进阶」一文吃透 react-hooks 原理](https://juejin.cn/post/6944863057000529933)
+- [不优雅的 React Hooks](https://juejin.cn/post/7051535411042058271)
+- [React Hooks 使用误区，驳官方文档](https://juejin.cn/post/7046358484610187277)
+- [React Hooks 详解 【近 1W 字】+ 项目实战](https://juejin.cn/post/6844903985338400782)
+- [React Hook + TS 购物车实战（性能优化、闭包陷阱、自定义 hook）](https://juejin.cn/post/6844904079181905927)
+- [我打破了 React Hook 必须按顺序、不能在条件语句中调用的枷锁](https://juejin.cn/post/6939766434159394830)
+- [「React 进阶」 React 全部 Hooks 使用大全（包含 React v18 版本）](https://juejin.cn/post/7118937685653192735)
