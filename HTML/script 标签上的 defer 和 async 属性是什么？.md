@@ -24,7 +24,9 @@
 <script src="/path/to/script.js" defer></script>
 ```
 
-`async` 和 `defer` 的作用是：让浏览器知道脚本可以与文档解析器过程并行下载，从而不阻塞页面的渲染。
+**`async` 和 `defer` 的作用是**让浏览器知道脚本可以与文档解析器过程并行下载，从而不阻塞页面的渲染。
+
+但是，它们之间也存在一些本质的区别。
 
 ## 区别
 
@@ -46,7 +48,7 @@
 
 > **注意**：这个过程文档是不会停止解析的。
 
-`async` 脚本在完全下载后立即执行，加载和渲染后续文档元素的过程将和 JS 脚本的加载与执行并行进行（异步），因此它们的执行顺序可能与页面中显示的顺序不同。
+`async` 脚本在完全下载后立即执行，加载和渲染后续文档元素的过程将和 JS 脚本的加载与执行并行进行（异步），因此它们的执行顺序可能与页面中显示的顺序不同（这个时候操作 DOM 可能会获取不到）。
 
 另一方面，`defer` 脚本**保证执行顺序**。它是等到页面渲染完毕，所有脚本下载完成，在 `DOMContentLoaded` 事件前按照脚本的在文档中的顺序执行。
 
@@ -74,10 +76,10 @@
 
 ```html
 <body>
-  ...
-  <script src="..."></script>
-  <script src="..."></script>
-  <script src="..."></script>
+  <!-- ... -->
+  <script src="/path/to/script.js"></script>
+  <script src="/path/to/script.js"></script>
+  <script src="/path/to/script.js"></script>
 </body>
 ```
 
@@ -95,3 +97,7 @@ document.head.appendChild(script)
 - 关于 `defer`，我们还要记住的是它是按照加载顺序执行脚本的
 - 标记为 `async` 的脚本并不保证按照指定它们的先后顺序执行。对它来说脚本的加载和执行是紧紧挨着的，所以不管你声明的顺序如何，只要它加载完了就会立刻执行。
 - `async` 对于应用脚本的用处不大，因为它完全不考虑依赖（哪怕是最低级的顺序执行），不过它对于那些可以不依赖任何脚本或不被任何脚本依赖的脚本来说却是非常合适的。
+
+## 更多资料
+
+[脚本：async，defer](https://zh.javascript.info/script-async-defer)

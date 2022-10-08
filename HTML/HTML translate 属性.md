@@ -13,7 +13,7 @@ HTML 标准规定，默认情况下，所有 HTML 元素都处于**启用翻译�
 </p>
 ```
 
-W3C [使用 HTML 的 `translate` 属性](https://www.w3.org/International/questions/qa-translate-flag)指南提供了多个使用示例 ，如：
+[W3C 使用 HTML 的 `translate` 属性](https://www.w3.org/International/questions/qa-translate-flag)指南提供了多个使用示例 ，如：
 
 - 作品名称：
 
@@ -24,4 +24,4 @@ W3C [使用 HTML 的 `translate` 属性](https://www.w3.org/International/questi
 </p>
 ```
 
-虽然 Google 翻译可以识别 `translate="no"` 属性，但 Chrome 的内置*翻译*功能不能（尽管基于 Google 翻译），但它确实可以识别一个 [`notranslate` 类](https://cloud.google.com/translate/faq#technical_questions)。因此，请确保同时包含两者。
+虽然 Google 翻译可以识别 `translate="no"` 属性，但 Chrome 的内置翻译功能不能（尽管基于 Google 翻译），但它确实可以识别一个 [`notranslate`](https://cloud.google.com/translate/faq#technical_questions)  类。因此，请确保同时包含两者。

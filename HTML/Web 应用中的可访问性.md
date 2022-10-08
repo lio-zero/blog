@@ -1,4 +1,4 @@
-# Web 应用程序中的可访问性
+# Web 应用中的可访问性
 
 > 维基百科：可访问性是最常用于描述设施或设施，帮助残疾人，如“轮椅”。这可以扩展到盲文标识、轮椅坡道，音频信号在人行横道，轮廓人行道，网站设计，等等。
 
@@ -204,3 +204,13 @@ ARIA 通过 HTML 属性为屏幕阅读器提供了额外的信息。其不影响
 - [WAI-ARIA](http://www.w3.org/WAI/intro/aria)
 - [在 HTML 中使用 ARIA 的规则](https://github.com/lio-zero/blog/blob/main/HTML/%E5%9C%A8%20HTML%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20ARIA%20%E7%9A%84%E8%A7%84%E5%88%99.md)
 - [webhint](https://webhint.io) 是一个可自定义的整理工具，可通过检查代码中的最佳做法和常见错误来帮助您提高网站的可访问性，速度，跨浏览器兼容性以及其他功能。
+
+Web 可访问性意味着网站、工具和技术的设计和开发方式使残疾人可以轻松使用它们。
+
+<!-- [辅助功能教程](https://www.w3schools.com/accessibility/index.php)
+https://gomakethings.com/when-you-make-accessibility-easier-websites-get-more-accessible/
+https://gomakethings.com/ten-quick-accessibility-tests-you-can-do-right-now/
+https://gomakethings.com/inclusive-design-principles/ -->
+<!-- https://tigerabrodi.hashnode.dev/introduction-to-accessibility -->
+<!-- https://tigerabrodi.hashnode.dev/common-accessibility-errors -->
+<!-- https://frontendmasters.com/courses/accessibility-v2/ -->
