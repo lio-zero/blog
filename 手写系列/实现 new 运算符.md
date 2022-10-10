@@ -1,7 +1,8 @@
 # 实现 new 运算符
 
-[`new`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new) 运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象类型之一
-new 操作符可以帮助我们构建出一个实例，并且绑定上 this。
+[`new`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new) 运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象类型之一。
+
+`new` 操作符可以帮助我们构建出一个实例，并且绑定上 `this`。
 
 ## 原理
 
