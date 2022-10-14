@@ -30,7 +30,7 @@ IE6 能识别下划线 `_` 和星号 `*`。
 }
 ```
 
-IE7 能识别星号 `* `，但不能识别下划线 `_`。
+IE7 能识别星号 `*`，但不能识别下划线 `_`。
 
 ```css
 .box {
@@ -92,5 +92,5 @@ IE7 能识别星号 `* `，但不能识别下划线 `_`。
 
 ## 更多
 
-- [BROWSERHACKS](http://browserhacks.com/) 网站列出了来自整个互连网的特定于**浏览器的 CSS 和 JavaScript hack**。
+- [BROWSERHACKS](http://browserhacks.com/) 网站列出了来自整个互联网特定于**浏览器的 CSS 和 JavaScript hack**。
 - [Can I Use](https://www.caniuse.com/) 可以查看属性的兼容情况

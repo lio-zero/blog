@@ -61,7 +61,7 @@ toBlob 还可以有 2 个附加参数：
 - `type` — 它是一个 [MIME 类型](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_Types)，用于指定图片格式，默认格式为 `image/png`
 - `quality` — 它需要一个介于 0（0% 质量）和 1（100% 质量）之间的数字，这在使用有损 MIME 类型（如 `image/jpeg`）时指定图片展示质量。
 
-例如，这将创建一个质量为 90% 的 Jpeg blob：
+例如，这将创建一个质量为 90% 的 JPEG blob：
 
 ```js
 canvas.toBlob(
