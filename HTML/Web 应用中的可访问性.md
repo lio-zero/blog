@@ -191,7 +191,8 @@ ARIA 通过 HTML 属性为屏幕阅读器提供了额外的信息。其不影响
 ## 更多资料
 
 - [A Complete Guide To Accessible Front-End Components](https://www.smashingmagazine.com/2021/03/complete-guide-accessible-front-end-components/)
-- [Web Content Accessibility Guidelines (WCAG) 2.0](https://www.w3.org/TR/WCAG20/)
+- [Using ARIA](https://w3c.github.io/using-aria/)
+- [MDN: ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
 - [Accessibility](https://web.dev/accessibility/)
 - [WebAIM](https://webaim.org/)
 - [On HTML belts and ARIA braces (The Default Implicit ARIA semantics they didn’t want you to know about)](http://html5doctor.com/on-html-belts-and-aria-braces/)
@@ -204,13 +205,4 @@ ARIA 通过 HTML 属性为屏幕阅读器提供了额外的信息。其不影响
 - [WAI-ARIA](http://www.w3.org/WAI/intro/aria)
 - [在 HTML 中使用 ARIA 的规则](https://github.com/lio-zero/blog/blob/main/HTML/%E5%9C%A8%20HTML%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20ARIA%20%E7%9A%84%E8%A7%84%E5%88%99.md)
 - [webhint](https://webhint.io) 是一个可自定义的整理工具，可通过检查代码中的最佳做法和常见错误来帮助您提高网站的可访问性，速度，跨浏览器兼容性以及其他功能。
-
-Web 可访问性意味着网站、工具和技术的设计和开发方式使残疾人可以轻松使用它们。
-
-<!-- [辅助功能教程](https://www.w3schools.com/accessibility/index.php)
-https://gomakethings.com/when-you-make-accessibility-easier-websites-get-more-accessible/
-https://gomakethings.com/ten-quick-accessibility-tests-you-can-do-right-now/
-https://gomakethings.com/inclusive-design-principles/ -->
-<!-- https://tigerabrodi.hashnode.dev/introduction-to-accessibility -->
-<!-- https://tigerabrodi.hashnode.dev/common-accessibility-errors -->
-<!-- https://frontendmasters.com/courses/accessibility-v2/ -->
+- [Accessibility Tutorial](https://www.w3schools.com/accessibility/index.php)
