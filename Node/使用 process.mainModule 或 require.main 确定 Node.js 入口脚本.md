@@ -1,6 +1,6 @@
 # 使用 process.mainModule 或 require.main 确定 Node.js 入口脚本
 
-ES2020 的 `import.meta` 旨在解决访问模块元信息的问题，如脚本当前元素是什么。
+[ES2020](https://github.com/lio-zero/blog/blob/main/JavaScript/ES2020%EF%BC%88ES11%EF%BC%89.md) 的 `import.meta` 旨在解决访问模块元信息的问题，如脚本当前元素是什么。
 
 ```html
 <!-- index.html -->
@@ -164,10 +164,6 @@ Module {
 */
 ```
 
-事实证明，如果我们在运行时将 `process.mainModule` 设置为其他值，`require.main` 仍然保留对初始主模块的引用。
+如果我们在运行时将 `process.mainModule` 设置为其他值，`require.main` 仍然保留对初始主模块的引用。
 
 > **注意**：`process.mainModule` 自 14.x 被废弃，但您还可以使用它。
-
-## 更多资料
-
-[ES2020（ES11）](https://github.com/lio-zero/blog/blob/main/JavaScript/ES2020%EF%BC%88ES11%EF%BC%89.md)

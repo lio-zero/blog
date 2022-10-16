@@ -1,6 +1,6 @@
 # Node REPL
 
-REPL（Read Eval Print Loop，交互式解释器）是一个处理 Node.js 表达式的交互式 shell，类似 Window 系统的终端或 Unix/Linux shell，我们可以在终端中输入命令，并接收系统的响应。
+REPL（Read Eval Print Loop，交互式解释器）是一个处理 Node.js 表达式的交互式 shell，类似 Window 系统的终端或 UNIX/Linux shell，我们可以在终端中输入命令，并接收系统的响应。
 
 REPL 与 Node.js 安装捆绑在一起，并执行以下所需的任务：
 
