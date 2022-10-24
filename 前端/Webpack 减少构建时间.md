@@ -35,6 +35,34 @@ module.exports = {
 loader: 'babel-loader?cacheDirectory=true'
 ```
 
+## 使用更快的 `swc-loader` 替代 `babel-loader`
+
+在 webpack 中耗时最久的当属负责 AST 转换的 loader。
+
+JavaScript 是单线程语言，使用 JavaScript 编写的 loader 无法使用多核 CPU 处理编译任务链，导致性能很低。
+
+而 swc 使用 Rust 编写，在处理 CPU 密集型任务有天然的优势。
+
+正如官网所描述的：
+
+> SWC 在单线程上比 Babel 快 20 倍，在四核上比 Babel 快 70 倍。
+
+以下是一个 [swc-loader](https://swc.rs/docs/usage/swc-loader) 简单的配置：
+
+```js
+module: {
+  rules: [
+    {
+      test: /\.m?js$/,
+      exclude: /(node_modules)/,
+      use: {
+        loader: 'swc-loader'
+      }
+    }
+  ]
+}
+```
+
 ## 别名 — `resolve.alias`
 
 通过别名的方式来映射一个路径，能让 webpack 更快找到路径：
@@ -60,7 +88,7 @@ module.exports = {
 减少以下方法条目数量，因为他们会增加文件系统调用的次数。（层级不要过深）
 
 - [`resolve.modules`](https://webpack.docschina.org/configuration/resolve/#resolvemodules) 告诉 webpack 解析模块时应该搜索的目录。
-- [`resolve.extensions`](https://webpack.docschina.org/configuration/resolve/#resolveextensions) 尝试按顺序解析这些后缀名。如果有多个文件有相同的名字，但后缀名不同，webpack 会解析列在数组首位的后缀的文件 并跳过其余的后缀。
+- [`resolve.extensions`](https://webpack.docschina.org/configuration/resolve/#resolveextensions) 尝试按顺序解析后缀名。如果有多个文件有相同的名字，但后缀名不同，webpack 会解析列在数组首位的后缀的文件 并跳过其余的后缀。
 - [`resolve.mainFiles`](https://webpack.docschina.org/configuration/resolve/#resolvemainfiles) 解析目录时要使用的文件名。
 - [`resolve.descriptionFiles`](https://webpack.docschina.org/configuration/resolve/#resolvedescriptionfiles) 用于描述的 JSON 文件。
 
@@ -102,7 +130,7 @@ module.exports = {
 }
 ```
 
-## 解析构建资源
+## 开启多进程解析耗时 loader
 
 webpack 提供了 [`thread-loader`](https://webpack.docschina.org/loaders/thread-loader) 允许我们可以将耗时的 loader 放置在独立的线程下运行：
 
@@ -144,7 +172,7 @@ use: [
 
 详细的介绍，查看[文档](https://webpack.docschina.org/loaders/thread-loader#examples)。
 
-> [`happypack`](https://www.npmjs.com/package/happypack) 插件已经未维护好几年，使用 `thread-loader` 替换。
+> **Tips**：[`happypack`](https://www.npmjs.com/package/happypack) 插件作者已表示不在维护此项目，建议使用上述给出的 `thread-loader` 模块替换。
 
 ## 开启多进程压缩代码
 
@@ -218,22 +246,24 @@ module.exports = {
 
 ## 持久化缓存
 
-添加 [`cache`](https://webpack.js.org/configuration/cache/#cache)，持久缓存生成的 webpack 模块和 chunks，以提高构建速度。
+webpack 5 为了我们内置缓存插件，通过添加 [`cache`](https://webpack.js.org/configuration/cache/#cache) 配置项来开启缓存，开启后将持久缓存生成的 webpack 模块和 chunks，以提升构建速度。
 
 ```js
 module.exports = {
-  //...
+  // ...
   cache: true
 }
 ```
 
 对于开发环境使用 `true`，对于生产环境使用 `false`。
 
+当将 `cache.type` 设置为 `'filesystem'` 是会开放更多的可配置项。详细请查阅文档。
+
 ## 其他
 
 - 每个 loader 都有一个启动时间，去除无用的 loader。
 - webpack 会自动开启 [**tree-shaking** 优化](https://webpack.docschina.org/blog/2020-10-10-webpack-5-release/#major-changes-optimization)，去除无用代码
-- 使用 `speed-measure-webpack-plugin` 插件分析每个 loader、plugin 的耗时：
+- 使用 `speed-measure-webpack-plugin` 插件分析每个 loader/plugin 的耗时：
 
 ```js
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
@@ -256,4 +286,5 @@ module.exports = {
 }
 ```
 
-- [DllPlugin](https://webpack.docschina.org/plugins/dll-plugin) 表示动态链接库。这里不展开解释，并且建议有一些文章建议不在使用它，详细可以查看[辛辛苦苦学会的 webpack dll 配置，可能已经过时了](https://juejin.cn/post/6844903952140468232)。
+- [DllPlugin](https://webpack.docschina.org/plugins/dll-plugin) 表示动态链接库。它采用 webpack 的 DllPlugin 和 DllReferencePlugin 引入 dll，让一些基本上不会做任何改动的代码先打包成静态资源，避免反复编译浪费时间。具体操作不在展示，有一些文章建议不在使用它，详细内容可以查阅[辛辛苦苦学会的 webpack dll 配置，可能已经过时了](https://juejin.cn/post/6844903952140468232)。
+- 将不怎么需要更新的第三方库脱离 webpack 打包，不被打入 bundle 中，从而减少打包时间。webpack 的 [`externals`](https://webpack.js.org/configuration/externals/) 可以帮助到您，它告诉 webpack 从 bundle 中排除某个依赖。`external` 通常用于排除将通过 CDN 加载的依赖。
