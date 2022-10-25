@@ -390,9 +390,3 @@ That is so funny! 😂
 - [Markdown Guide](https://www.markdownguide.org/)
 - [Writing on GitHub](https://docs.github.com/en/get-started/writing-on-github)
 - [Typora 画流程图、时序图(顺序图)、甘特图](https://www.runoob.com/markdown/md-advance.html) 来自菜鸟教程的 Markdown 高级技巧中的一篇笔记
-
-
-<!-- https://www.sitepoint.com/learn-markdown/ -->
-<!-- https://anupamkumarkrishnan.hashnode.dev/markdown-cheatsheet -->
-<!-- https://www.freecodecamp.org/news/markdown-cheatsheet/ -->
-<!-- https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#mentioning-users-and-teams -->
