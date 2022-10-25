@@ -68,6 +68,8 @@ Prettier 的另一个很好的用例是在您的 Git 存储库的 PR 上运行�
 
 格式化是一个经常被初学者忽视的话题，但拥有清晰一致的格式化是您作为一名新开发人员成功的关键。
 
-此外，即使您在 2 周前开始使用 JavaScript，使用 Prettier，您的代码 - 风格方面 - 看起来就像从 1998 年以来编写 JS 的 JavaScript Guru 编写的代码。
-
 此外，即使您刚开始学习 JavaScript，从代码风格上看，您的代码也会变得更漂亮，就像一位资深大佬编写代码一样。
+
+## 最后
+
+可以看看 Anthony Fu 月初发表的[为什么我不使用 Prettier](https://zhuanlan.zhihu.com/p/572527461)。他解释了自己为什么使用 ESLint 而不使用 Prettier。

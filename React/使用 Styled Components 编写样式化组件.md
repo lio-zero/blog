@@ -323,4 +323,5 @@ Styled Components 会自动添加所有需要的供应商前缀，因此您无�
 
 ## 更多资料
 
-[The styled-components Happy Path](https://www.joshwcomeau.com/css/styled-components/)
+- [The styled-components Happy Path](https://www.joshwcomeau.com/css/styled-components/)
+- [Demystifying styled-components](https://www.joshwcomeau.com/react/demystifying-styled-components/)

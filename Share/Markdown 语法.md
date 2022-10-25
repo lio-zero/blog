@@ -220,18 +220,6 @@ console.log('代码块')
 + console.log('Hello')
 ```
 
-## 内联代码
-
-两个反引号 **``** 可以实现代码高亮效果：
-
-```markdown
-`==`（相等运算符）和 `===`（严格相等运算符）
-```
-
-效果：
-
-`==`（相等运算符）和 `===`（严格相等运算符）
-
 ## 区块引用
 
 Markdown 区块引用是在段落开头使用 **>** 符号 ，然后后面紧跟一个**空格**符号
@@ -402,3 +390,9 @@ That is so funny! 😂
 - [Markdown Guide](https://www.markdownguide.org/)
 - [Writing on GitHub](https://docs.github.com/en/get-started/writing-on-github)
 - [Typora 画流程图、时序图(顺序图)、甘特图](https://www.runoob.com/markdown/md-advance.html) 来自菜鸟教程的 Markdown 高级技巧中的一篇笔记
+
+
+<!-- https://www.sitepoint.com/learn-markdown/ -->
+<!-- https://anupamkumarkrishnan.hashnode.dev/markdown-cheatsheet -->
+<!-- https://www.freecodecamp.org/news/markdown-cheatsheet/ -->
+<!-- https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#mentioning-users-and-teams -->

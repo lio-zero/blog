@@ -2,7 +2,7 @@
 
 现在，我们基本不会使用 JSONP 进行跨域了，因为有更好解决跨域的办法（如 CORS），但我们还是有必要了解 JSONP 的原理，以及它是如何实现的（毕竟面试很可能会问到）。
 
-JSONP 的原理是利用 `script` 标签不受同源策略约束，可以用来进行跨域请求。
+JSONP 的原理是利用 `script` 标签不受[浏览器同源策略](https://github.com/lio-zero/blog/blob/main/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5.md)的约束，可以用来进行跨域请求。
 
 优点也显而易见，`script` 标签各个浏览器都兼容，但也有局限，只能用于 GET 请求。
 
@@ -33,7 +33,7 @@ const jsonp = ({ url, params, callbackName }) => {
 }
 ```
 
-JSONP 需要与后端配合，这里我们使用 Node 的 Expess 框架起一个简单的服务器：
+JSONP 需要与后端配合，这里我们使用 Node 的 Express 框架起一个简单的服务器：
 
 ```js
 const app = require('express')()
