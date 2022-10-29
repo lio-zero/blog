@@ -1,8 +1,12 @@
 # Broadcast Channel API
 
-[Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API) 是一种很好的方式，可以将 1 对 1 消息从浏览器窗口发送到 `iframe` 或 Web Worker 等。
+[Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API) 可以在同源情况下，实现 1 对 1 消息在不同窗口、Tab 页面、`iframe` 或 Web Worker 之间发送。
 
-BroadcastChannel API 也可用于发送 1 对多消息，同时与多个实体通信。
+Broadcast Channel API 也可用于发送 1 对多消息，同时与多个实体通信。
+
+以下 MDN 提供的 Broadcast Channel API 的原理图：
+
+![Broadcast Channel API 的原理](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API/broadcastchannel.png)
 
 [Broadcast 支持情况](https://caniuse.com/?search=Broadcast)：
 
@@ -10,13 +14,13 @@ BroadcastChannel API 也可用于发送 1 对多消息，同时与多个实体�
 
 ## 基本用法
 
-首先初始化 `BroadcastChannel` 对象：
+首先，初始化 `BroadcastChannel` 对象：
 
 ```js
-const channel = new BroadcastChannel('broadcast-receiver')
+const channel = new BroadcastChannel('test_channel')
 ```
 
-要在频道上发送消息，请使用 `postMessage()` 方法：
+要在频道（本例 `test_channel`）上发送消息，请使用 `postMessage()` 方法：
 
 ```js
 channel.postMessage('Hey!')
@@ -57,7 +61,7 @@ const hasSupport = () => Boolean('BroadcastChannel' in window)
 const CHANNEL_NAME = 'web_api_channel'
 
 function run() {
-  const receiver = document.getElementById('broadcast-receiver')
+  const receiver = document.getElementById('test_channel')
 
   const bc = new BroadcastChannel(CHANNEL_NAME)
   bc.postMessage('I am superman!')
@@ -71,4 +75,4 @@ function run() {
 
 ## 更多资料
 
-[broadcast-channel](https://github.com/pubkey/broadcast-channel) 用于不同的浏览器选项卡或 nodejs-processes + LeaderElection 通道之间发送数据
+[broadcast-channel](https://github.com/pubkey/broadcast-channel) 用于不同的浏览器选项卡或 nodejs-processes + LeaderElection 通道之间发送数据。
