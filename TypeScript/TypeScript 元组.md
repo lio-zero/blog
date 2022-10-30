@@ -1,4 +1,4 @@
-# TypeScript 基础 — 元组
+# TypeScript 元组
 
 ## 类型化数组
 

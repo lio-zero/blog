@@ -1,4 +1,4 @@
-# TypeScript 基础 — string 和 String 的区别
+# TypeScript string 和 String 的区别
 
 `string` 和 `String` 是有效的 TypeScript 类型。以下声明有效：
 

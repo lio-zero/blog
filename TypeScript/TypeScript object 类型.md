@@ -1,4 +1,4 @@
-# TypeScript 基础 — Object 类型
+# TypeScript object 类型
 
 `object` 表示非原始类型，也就是除 `number`、`string`、`boolean`、`symbol`、`bigInt`、`null` 或 `undefined` 之外的类型。
 

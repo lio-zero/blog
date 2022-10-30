@@ -1,4 +1,4 @@
-# TypeScript 基础 — 类
+# TypeScript 类
 
 TypeScript 向 JavaScript 类添加类型和可访问性修饰符。
 
@@ -208,5 +208,3 @@ class Rectangle extends Polygon {
 ```
 
 抽象类不能直接实例化，因为它们没有实现所有成员。
-
-## Implements 和 Extend 关键字的区别

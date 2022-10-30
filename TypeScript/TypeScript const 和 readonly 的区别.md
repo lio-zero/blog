@@ -1,4 +1,4 @@
-# TypeScript 基础 — const 和 readonly 的区别
+# TypeScript const 和 readonly 的区别
 
 ## 区别
 

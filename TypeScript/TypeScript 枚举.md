@@ -1,4 +1,4 @@
-# TypeScript 基础 — 枚举
+# TypeScript 枚举
 
 ## 什么是枚举？
 

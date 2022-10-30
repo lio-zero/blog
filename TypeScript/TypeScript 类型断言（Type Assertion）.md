@@ -1,4 +1,4 @@
-# TypeScript 基础 — 类型断言（Type Assertion）
+# TypeScript 类型断言（Type Assertion）
 
 类型断言可以用来手动指定一个值具体的类型，即允许变量从一种类型更改为另一种类型。
 

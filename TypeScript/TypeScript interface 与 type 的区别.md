@@ -1,4 +1,4 @@
-# TypeScript 基础 — interface 和 type 的区别
+# TypeScript interface 与 type 的区别
 
 使用 `interface` 和 `type` 声明是表示给定数据结构的常用方法。
 

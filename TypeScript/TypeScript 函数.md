@@ -1,4 +1,4 @@
-# TypeScript 基础 — 函数
+# TypeScript 函数
 
 TypeScript 有一个特定的语法用于输入函数参数和返回值。
 
@@ -98,4 +98,4 @@ const negateFunction: Negate = (value) => value * -1
 ## 更多资料
 
 - [使用泛型定义函数](https://github.com/lio-zero/blog/blob/main/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20%E5%87%BD%E6%95%B0.md)
-- [TypeScript 基础 — interface 中的函数和属性](https://github.com/lio-zero/blog/blob/main/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20interface%20%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%B1%9E%E6%80%A7.md)
+- [TypeScript interface 中的函数和属性](https://github.com/lio-zero/blog/blob/main/TypeScript/TypeScript%20interface%20%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%B1%9E%E6%80%A7.md)

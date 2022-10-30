@@ -1,4 +1,4 @@
-# TypeScript 基础 — Null 和 Undefined
+# TypeScript null 和 undefined
 
 `null` 和 `undefined` 都有各自的类型名称。这些类型本身没有用处，因为我们只能将 `null` 和 `undefined` 赋值给定义为 `null` 或 `undefined` 类型的变量。
 
@@ -7,10 +7,10 @@ let u: undefined = undefined
 u = 'string' // compile error
 
 let n: null = null
-n = 43 //compile error
+n = 43 // compile error
 ```
 
-默认情况下，`null` 和 `undefined` 是所有类型的子类型。 就是说可以把 `null` 和 `undefined` 赋值给 `number` 类型的变量。
+默认情况下，`null` 和 `undefined` 是所有类型的子类型。就是说可以把 `null` 和 `undefined` 赋值给 `number` 类型的变量。
 
 ```ts
 let value: string | undefined | null = null

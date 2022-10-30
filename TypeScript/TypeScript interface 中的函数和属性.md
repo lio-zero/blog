@@ -1,4 +1,4 @@
-# TypeScript 基础 — interface 中的函数和属性
+# TypeScript interface 中的函数和属性
 
 在接口中定义方法有两种方法。
 

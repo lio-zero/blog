@@ -1,4 +1,4 @@
-# TypeScript 基础 — interface 接口
+# TypeScript interface 接口
 
 > TypeScript 的核心原则之一是对值所具有的结构进行类型检查。
 
@@ -166,4 +166,4 @@ interface three extends one, two {
 }
 ```
 
-> 推荐：[TypeScript 基础 — interface 和 type 的区别](https://github.com/lio-zero/blog/blob/main/TypeScript/TypeScript%20%E5%9F%BA%E7%A1%80%20%E2%80%94%20interface%20%E5%92%8C%20type%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
+> 推荐：[TypeScript interface 与 type 的区别](https://github.com/lio-zero/blog/blob/main/TypeScript/TypeScript%20interface%20%E4%B8%8E%20type%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)

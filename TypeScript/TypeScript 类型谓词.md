@@ -1,4 +1,4 @@
-# TypeScript 基础 — 类型谓词
+# TypeScript 类型谓词
 
 TypeScript 中的[类型谓词（type predicates）](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates)可以帮助您根据条件缩小类型范围。它与 type guards 类似，但在函数上工作。如果函数返回 `true`，则将参数的类型更改为更有用的类型。
 

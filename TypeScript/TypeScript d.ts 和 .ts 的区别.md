@@ -1,4 +1,4 @@
-# TypeScript 基础 — *.d.ts 和 *.ts 的区别
+# TypeScript *.d.ts 与 *.ts 的区别
 
 ## 区别
 
