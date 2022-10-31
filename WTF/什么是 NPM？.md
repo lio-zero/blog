@@ -47,6 +47,7 @@ console.log(uc.upperCase('Hello World!'))
 ## 更多资料
 
 - [awesome-npm](https://github.com/sindresorhus/awesome-npm) 收集了众多的与 npm 相关的资源。
+- [awesome-micro-npm-packages](https://github.com/parro-it/awesome-micro-npm-packages)
 - [how-to-npm](https://github.com/workshopper/how-to-npm)
 - [Bundlephobia](https://bundlephobia.com/) 查找将 npm 包添加到您的捆绑包的成本
 - [npm trends](https://www.npmtrends.com/) 相同类型 npm 包的比较

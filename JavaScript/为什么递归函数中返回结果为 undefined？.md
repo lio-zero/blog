@@ -30,4 +30,5 @@ console.log(factorial(5)) // 120
 
 ## 更多资料
 
-[JavaScript 专题之递归](https://github.com/mqyqingfeng/Blog/issues/49)
+- [JavaScript 专题之递归](https://github.com/mqyqingfeng/Blog/issues/49)
+- [尾调用优化](http://www.ruanyifeng.com/blog/2015/04/tail-call.html)

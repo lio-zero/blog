@@ -36,7 +36,7 @@ Object.fromEntries(nestedArray) // { key 1: "value 1", key 2: "value 2"}
 
 ES6 为我们带来了一个名为 [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Objects_vs._Maps) 新的数据结构，它与 `Object` 非常相似。
 
-> TC39：`Map` 对象是键/值对的集合，其中键和值可以是任意的 ECMAScript 语言值。
+> TC39：`Map` 对象是键/值对的集合，其中键和值可以是任意的 ECMAScript 类型值。
 
 让我们创建新的 `map` 对象。
 
@@ -88,7 +88,7 @@ const array = Object.entries(object) // [ ["key1", "value1"], ["key2", "value2"]
 Object.fromEntries(array) // { key1: 'value1', key2: 'value2' }
 ```
 
-### 对象到对象转换
+### 对象到对象的转换
 
 你可以在最初的 [TC39 提案](https://github.com/tc39/proposal-object-from-entries) 找到引入 `Object.entries` 方法的缘由。
 
@@ -101,7 +101,7 @@ const user = {
   address: 'xxx'
 }
 
-console.log(Object.entries(user).filter(([key, value]) => key !== 'age'))
+Object.entries(user).filter(([key, value]) => key !== 'age')
 // [["name", "O.O"], ["address", "xxx"]]
 ```
 
@@ -112,7 +112,8 @@ const arr = [
   ['name', 'O.O'],
   ['address', 'xxx']
 ]
-console.log(Object.fromEntries(arr)) // {name: 'O.O', address: 'xxx'}
+
+Object.fromEntries(arr) // {name: 'O.O', address: 'xxx'}
 
 const user = {
   name: 'O.O',
@@ -136,7 +137,7 @@ Object.fromEntries(Object.entries(user).filter(([key, value]) => key !== 'age'))
 
 ### Reduce
 
-将数组转换为对象的一种常用方法是使用 `reduce` 方法
+将数组转换为对象的一种常用方法是使用 `reduce` 方法。
 
 ```js
 const array = [
@@ -162,7 +163,7 @@ toObject(map) // { key1: 'value1', key2: 'value2' }
 
 ### 第三方库
 
-一些第三方库，例如：Underscore 和 Lodash 也提供了可将键值对转换为对象的方法。
+一些第三方库，例如：Underscore 和 Lodash 也提供了可将键值数组对转换为对象的方法。
 
 `_.object` — 将数组转换为对象。传递单个键值对列表，或键列表和值列表。
 

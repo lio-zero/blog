@@ -22,7 +22,7 @@ esbuild 是一个用 Go 编写的快速而简单的 JavaScript 捆绑包，其�
 首先，使用 npm 安装 esbuild：
 
 ```bash
-$ npm i -g esbuild
+npm i -g esbuild
 ```
 
 然后，您可以通过调用 esbuild 命令来验证是否安装成功：
@@ -34,13 +34,13 @@ $ esbuild --version
 
 如果您不想在全局范围内安装 esbuild，也可以这样做：
 
-```git
-$ npm i esbuild
+```bash
+npm i esbuild
 ```
 
 但您必须使用完整路径调用 esbuild：
 
-```git
+```bash
 $ ./node_modules/.bin/esbuild --version
 # 0.14.38
 ```

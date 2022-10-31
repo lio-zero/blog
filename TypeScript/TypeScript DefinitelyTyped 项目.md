@@ -4,13 +4,15 @@
 
 有时项目不再维护，有时他们不感兴趣、不同意或没有时间使用 TypeScript。
 
-## 在 TypeScript 中使用非类型化 npm 包
+## 在 TypeScript 中使用非类型 npm 包
 
-由于缺少类型，将非类型化的 npm 包与 TypeScript 一起使用将不是类型安全的。
+由于缺少类型，将非类型的 npm 包与 TypeScript 一起使用将不是类型安全的。
 
 为了帮助 TypeScript 开发人员使用这些包，有一个社区维护的项目叫做 [DefinitelyTyped](http://definitelytyped.org/)。
 
 DefinitelyTyped 是一个为没有类型的 npm 包提供 TypeScript 定义的中央存储库的项目。
+
+例如 jQuery：
 
 ```bash
 npm i -D @types/jquery
