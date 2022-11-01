@@ -83,6 +83,8 @@ module.exports = {
 }
 ```
 
+> 推荐：[使用别名缩短 Webpack 中的导入路径](https://github.com/lio-zero/blog/blob/main/%E5%89%8D%E7%AB%AF/%E4%BD%BF%E7%94%A8%E5%88%AB%E5%90%8D%E7%BC%A9%E7%9F%AD%20Webpack%20%E4%B8%AD%E7%9A%84%E5%AF%BC%E5%85%A5%E8%B7%AF%E5%BE%84.md)
+
 ## 解析
 
 减少以下方法条目数量，因为他们会增加文件系统调用的次数。（层级不要过深）
@@ -174,7 +176,7 @@ use: [
 
 > **Tips**：[`happypack`](https://www.npmjs.com/package/happypack) 插件作者已表示不在维护此项目，建议使用上述给出的 `thread-loader` 模块替换。
 
-## 开启多进程压缩代码
+## 压缩代码
 
 webpack v5 提供了开箱即用最新版本的 [`terser-webpack-plugin`](https://webpack.docschina.org/plugins/terser-webpack-plugin)，其默认的生产环境下缩小您的代码。但如果需要自定义配置，仍需要安装它。
 
@@ -200,21 +202,12 @@ new TerserPlugin({
 
 > **注意**，这里启用了 `cache` 意味着只有当现有文件发生新更改时，terser 才会压缩它们，提升二次构建速度。
 
-## HardSourceWebpackPlugin
+你也可以选择其他受欢迎的插件，例如：
 
-[`HardSourceWebpackPlugin`](https://github.com/mzgoddard/hard-source-webpack-plugin) 用于为模块提供中间缓存步骤，提升二次构建速度：
+- [`closure-webpack-plugin`](https://github.com/webpack-contrib/closure-webpack-plugin)
+- [`webpack-parallel-uglify-plugin`](https://github.com/gdborton/webpack-parallel-uglify-plugin)
 
-```js
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
-
-module.exports = {
-  plugins: [new HardSourceWebpackPlugin()]
-}
-```
-
-缓存默认的存放路径是：`node_modules/.cache/hard-source`。
-
-> **注意**：首次构建时间并没有太大变化，它只在后续的的构建中有所提升，而且建议不要在开发环境中使用它，它并不理想，但在生产环境中会得到很大提升。另外，它已经有好几年未维护。
+如果决定尝试一些其他压缩插件，只要确保它们也会按照 [Tree Shaking](https://webpack.docschina.org/guides/tree-shaking) 指南中所描述的具有删除未引用代码（dead code）的能力，并将它作为 [`optimization.minimizer`](https://webpack.docschina.org/configuration/optimization/#optimization-minimizer)。
 
 ## 避免额外的优化步骤
 
@@ -231,6 +224,10 @@ module.exports = {
 }
 ```
 
+- 如果模块已经包含在所有父级模块中，告知 webpack 从 chunk 中检测出这些模块，或移除这些模块。将 `optimization.removeAvailableModules` 设置为 `true` 以启用这项优化。在生产环境中默认会被开启。
+- 如果 chunk 为空，告知 webpack 检测或移除这些 chunk。将 `optimization.removeEmptyChunks` 设置为 `false` 以禁用这项优化。
+- 对于动态导入模块，默认使用 webpack v4+ 提供的全新的通用分块策略（common chunk strategy）。请在 [SplitChunksPlugin](https://webpack.docschina.org/plugins/split-chunks-plugin/) 页面中查看配置其行为的可用选项。
+
 ## 输出结果不携带路径信息
 
 webpack 会在输出的 bundle 中生成路径信息。然而，在打包数千个模块的项目中，这会导致造成垃圾回收性能压力。在 `options.output.pathinfo` 设置中关闭：
@@ -245,6 +242,22 @@ module.exports = {
 ```
 
 ## 持久化缓存
+
+在 webpack 4 之前，我们可以使用 `hard-source-webpack-plugin`、`cache-loader` 等插件，或 webpack 的 `DllPlugin` 来开启缓存以提搞编译构建效率。
+
+例如，[`HardSourceWebpackPlugin`](https://github.com/mzgoddard/hard-source-webpack-plugin) 用于为模块提供中间缓存步骤，提升二次构建速度：
+
+```js
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
+
+module.exports = {
+  plugins: [new HardSourceWebpackPlugin()]
+}
+```
+
+缓存默认的存放路径是：`node_modules/.cache/hard-source`。
+
+> **注意**：首次构建时间并没有太大变化，它只在后续的的构建中有所提升，而且建议不要在开发环境中使用它，它并不理想，但在生产环境中会得到很大提升。另外，它已经有好几年未维护。
 
 webpack 5 为了我们内置缓存插件，通过添加 [`cache`](https://webpack.js.org/configuration/cache/#cache) 配置项来开启缓存，开启后将持久缓存生成的 webpack 模块和 chunks，以提升构建速度。
 
@@ -288,3 +301,4 @@ module.exports = {
 
 - [DllPlugin](https://webpack.docschina.org/plugins/dll-plugin) 表示动态链接库。它采用 webpack 的 DllPlugin 和 DllReferencePlugin 引入 dll，让一些基本上不会做任何改动的代码先打包成静态资源，避免反复编译浪费时间。具体操作不在展示，有一些文章建议不在使用它，详细内容可以查阅[辛辛苦苦学会的 webpack dll 配置，可能已经过时了](https://juejin.cn/post/6844903952140468232)。
 - 将不怎么需要更新的第三方库脱离 webpack 打包，不被打入 bundle 中，从而减少打包时间。webpack 的 [`externals`](https://webpack.js.org/configuration/externals/) 可以帮助到您，它告诉 webpack 从 bundle 中排除某个依赖。`external` 通常用于排除将通过 CDN 加载的依赖。
+- [工具存在某些可能会降低构建性能的问题](https://webpack.docschina.org/guides/build-performance/#specific-tooling-issues)
