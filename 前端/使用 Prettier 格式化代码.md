@@ -73,3 +73,5 @@ Prettier 的另一个很好的用例是在您的 Git 存储库的 PR 上运行�
 ## 最后
 
 可以看看 Anthony Fu 月初发表的[为什么我不使用 Prettier](https://zhuanlan.zhihu.com/p/572527461)。他解释了自己为什么使用 ESLint 而不使用 Prettier。
+
+如果你确定在项目中同时使用 ESLint 和 Prettier，又很出现一些奇特的行为不知道怎么解决，可以看看[彻底搞懂 ESLint 与 Prettier 在 vscode 中的代码自动格式化](https://juejin.cn/post/7156893291726782500)。

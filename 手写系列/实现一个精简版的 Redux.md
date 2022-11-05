@@ -165,3 +165,9 @@ console.log(store.getState()) // { name: 'O.O', displayMode: 'dark' }
 
 - 我们有一种集中式的方式来访问有状态信息（通过调用 `store.getState()`）
 - 通过调度操作（通过调用 `store.dispatch(action)`），我们有了一种可重复、可预测的方式来更新有状态信息。
+
+## 更多资料
+
+- [Build Yourself a Redux](https://zapier.com/engineering/how-to-build-redux/)
+- [Let’s Write Redux!](https://www.jamasoftware.com/blog/lets-write-redux/)
+- [Redux: Implementing Store from Scratch](https://egghead.io/lessons/react-redux-implementing-store-from-scratch)

@@ -11,3 +11,10 @@ SVG Favicon 几乎是跨浏览器支持的。不幸的是，Safari 还不支持�
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" href="/favicon.svg" />
 ```
+
+## 更多资料
+
+- [强制浏览器下载新的 favicon](https://github.com/lio-zero/blog/blob/main/HTML/%E5%BC%BA%E5%88%B6%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8B%E8%BD%BD%E6%96%B0%E7%9A%84%20favicon.md)
+- [We Analyzed 425,909 Favicons](https://iconmap.io/blog#before-we-begin---favicon-best-practices)
+- [Definitive edition of "How to Favicon in 2021"](https://dev.to/masakudamatsu/favicon-nightmare-how-to-maintain-sanity-3al7)
+- [创建自动更改的 Favicon](https://css-tricks.com/how-to-create-a-favicon-that-changes-automatically/)

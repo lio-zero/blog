@@ -1,12 +1,12 @@
-# for-in 和 for-of 的区别
+# for...in 和 for...of 的区别
 
-在对数组或对象进行遍历时，我们经常会使用到到 `for ... in` 和 `for ... of`，本文将来讲解以下这两者的区别。
+在对数组或对象进行遍历时，我们经常会使用到到 `for...in` 和 `for...of`，本文将来讲解以下这两者的区别。
 
 ## 区别
 
-- 在 `for ... in` 和 `for ... of` 语句上迭代的值是不同的。
+- 在 `for...in` 和 `for...of` 语句上迭代的值是不同的。
 
-`for ... in` 迭代对象的可枚举属性键。而 `for ... of` 迭代对象属性的值。
+`for...in` 迭代对象的可枚举属性键。而 `for...of` 迭代对象属性的值。
 
 ```js
 const list = ['a', 'b', 'c']
@@ -20,7 +20,7 @@ for (let i of list) {
 }
 ```
 
-- `for ... of` 不像 `for ... in`，它不支持迭代普通对象。
+- `for...of` 不像 `for...in`，它不支持迭代普通对象。
 
 ```js
 const person = {
@@ -52,18 +52,18 @@ for (let k of Object.keys(person)) {
 ```js
 const msg = 'Hell😀 W😀rld'
 
-// for ... in
+// for...in
 for (let i in msg) {
   console.log(msg[i]) // 'H', 'e', 'l', 'l', '�', ' ', 'W', '�', '�', 'r', 'l', 'd'
 }
 
-// for ... of
+// for...of
 for (let c of msg) {
   console.log(c) // 'H', 'e', 'l', 'l', '😀', ' ', 'W', '😀', 'r', 'l', 'd'
 }
 ```
 
-- `for ... of` 循环可以通过 `await` 关键字在每次迭代中等待异步任务完成：
+- `for...of` 循环可以通过 `await` 关键字在每次迭代中等待异步任务完成：
 
 ```js
 for await (... of ...) {
@@ -73,7 +73,7 @@ for await (... of ...) {
 
 ## 建议
 
-- 不建议向原始对象（如 `Array`、`Boolean`、`Number`、`String` 等）添加自定义方法，因为 `for ... in` 声明遍历枚举的特性，它将包括添加到原型中的新方法。
+- 不建议向原始对象（如 `Array`、`Boolean`、`Number`、`String` 等）添加自定义方法，因为 `for...in` 声明遍历枚举的特性，它将包括添加到原型中的新方法。
 
 ```js
 Array.prototype.isEmpty = function () {
@@ -86,7 +86,7 @@ for (let i in a) {
 }
 ```
 
-- `for ... in` 已被[弃用](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features#Statements)。相反，使用 `for ... of`：
+- `for...in` 已被[弃用](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features#Statements)。相反，使用 `for...of`：
 
 ```js
 const addressBook = new Map()
@@ -101,7 +101,7 @@ for (const [name, phone] of addressBook) {
 // Bar: 444-555-666
 ```
 
-默认情况下，数组或对象的所有属性都将出现在 `for ... in`。但是，这种行为是可以避免的。使用 `Object.defineProperty` 可以决定属性是否可枚举。
+默认情况下，数组或对象的所有属性都将出现在 `for...in`。但是，这种行为是可以避免的。使用 `Object.defineProperty` 可以决定属性是否可枚举。
 
 ```js
 let person = {

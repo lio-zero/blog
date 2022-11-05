@@ -283,4 +283,5 @@ cron.schedule('0 0 * * 5', () => {
 
 ## 更多资料
 
-[How To Easily And Safely Manage Cron Jobs In Linux](https://ostechnix.com/how-to-easily-and-safely-manage-cron-jobs-in-linux/)
+- [node-schedule](https://www.npmjs.com/package/node-schedule) — 与 node-cron 类似的库
+- [How To Easily And Safely Manage Cron Jobs In Linux](https://ostechnix.com/how-to-easily-and-safely-manage-cron-jobs-in-linux/)

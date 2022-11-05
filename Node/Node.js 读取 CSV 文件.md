@@ -35,4 +35,5 @@ fs.readFile('./file.csv', async (err, data) => {
 
 ## 更多资料
 
-[将表格导出到 csv](https://github.com/lio-zero/blog/blob/main/JavaScript/%E5%B0%86%E8%A1%A8%E6%A0%BC%E5%AF%BC%E5%87%BA%E5%88%B0%20csv.md)
+- [将表格导出到 csv](https://github.com/lio-zero/blog/blob/main/JavaScript/%E5%B0%86%E8%A1%A8%E6%A0%BC%E5%AF%BC%E5%87%BA%E5%88%B0%20csv.md)
+- [csv](https://www.npmjs.com/package/csv) 功能齐全的 CSV 解析器，具有简单的 API，并针对大型数据集进行了测试。
