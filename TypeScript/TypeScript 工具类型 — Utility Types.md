@@ -58,8 +58,9 @@ interface Person {
   location?: string
 }
 
+// Omit 从类型中删除了 age 和 location，不能在此处定义
 const user: Omit<Person, 'age' | 'location'> = {
-  name: 'D.O' // Omit 从类型中删除了 age 和 location，不能在此处定义
+  name: 'D.O'
 }
 ```
 
@@ -119,6 +120,6 @@ const point: Parameters<PointPrinter>[0] = {
 
 ## 更多资料
 
-更多工具类型的详细内容可查阅 TS 官网的 [Utility Types 章节](https://www.typescriptlang.org/docs/handbook/utility-types.html#requiredtype)。
-
-- https://juejin.cn/post/6994102811218673700#heading-3
+- 更多工具类型的详细内容可查阅 TS 官网的 [Utility Types 章节](https://www.typescriptlang.org/docs/handbook/utility-types.html#requiredtype)。
+- 推荐一个不错的 TypeScript 项目 [type-challenges](https://github.com/type-challenges/type-challenges)。
+- [Ts 高手篇：22 个示例深入讲解 Ts 最晦涩难懂的高级类型工具](https://juejin.cn/post/6994102811218673700)
