@@ -46,7 +46,7 @@ const stream = fetch('/resource').then((res) => res.body)
 const reader = fetch('/resource').then((res) => res.body.getReader())
 ```
 
-我们以块的形式读取数据，其中块是一个字节或类型化数组。数据块在流中排队，我们每次读取一个数据块。
+我们以块的形式读取数据，其中块是一个字节或[类型化数组](https://github.com/lio-zero/blog/blob/main/JavaScript/%E7%B1%BB%E5%9E%8B%E5%8C%96%E6%95%B0%E7%BB%84.md)。数据块在流中排队，我们每次读取一个数据块。
 
 单个流可以包含不同类型的块。
 
@@ -264,17 +264,17 @@ const stream = new WritableStream({
 
 `start()`、`close()` 和 `write()` 被传递给控制器，这是一个 WritableStreamDefaultController 对象实例。
 
-至于 `ReadableStream()`，我们可以将第二个对象传递给新的 WritableStream。
+至于 `ReadableStream()`，我们可以将第二个对象传递给设置队列策略的 WritableStream。
 
-例如，让我们创建一个给定存储在内存中的字符串的流，创建一个消费者可以连接的流。
+例如，让我们创建一个流，给定一个存储在内存中的字符串，创建一个消费者可以连接到的流。
 
-我们首先定义一个解码器，我们将使用 Encoding API `TextDecoder()` 构造函数将接收到的字节转换为字符：
+我们首先定义一个解码器，使用 Encoding API `TextDecoder()` 构造函数将接收到的字节转换为字符：
 
 ```js
 const decoder = new TextDecoder('utf-8')
 ```
 
-我们可以初始化实现 `close()` 方法的 WritableStream，当消息完全接收并且客户端代码调用它时，它将打印到控制台：
+我们可以初始化 WritableStream 实现 `close()` 方法，当消息完全接收并且客户端代码调用它时，它将打印到控制台：
 
 ```js
 const writableStream = new WritableStream({
@@ -287,7 +287,7 @@ const writableStream = new WritableStream({
 })
 ```
 
-我们通过初始化 ArrayBuffer 并将其添加到块来启动 `write()` 实现。然后，我们继续使用 Encoding API 的 `decoder.decode()` 将这个块（一个字节）解码为字符。然后将此值添加到我们在此对象外部声明的 `result` 字符串中：
+我们通过初始化 ArrayBuffer 并将其添加到块来启动 `write()` 实现。然后，我们使用 Encoding API 的 `decoder.decode()` 方法将这个块（一个字节）解码为字符。然后将此值添加到对象外部声明的 `result` 字符串中：
 
 ```js
 let result
@@ -329,13 +329,13 @@ const encoder = new TextEncoder()
 const encoded = encoder.encode(message, { stream: true })
 ```
 
-此时，字符串已编码为字节数组。现在，我们在此数组上使用 `forEach` 循环将每个字节发送到流。在每次调用流编写器的 `write()` 方法之前，我们都会检查 `ready` 属性，该属性返回一个 promise，因此我们只在流编写器准备就绪时进行写入：
+此时，字符串已编码为字节数组。现在，我们在此数组上使用 `forEach` 循环将每个字节发送到流。在每次调用流写入器的 `write()` 方法之前，我们都会检查 `ready` 属性，该属性返回一个 promise，因此我们只在流写入器准备就绪时进行写入：
 
 ```js
 encoded.forEach((chunk) => writer.ready.then(() => writer.write(chunk)))
 ```
 
-我们现在唯一想念的就是关闭 `write`。`forEach` 是一个同步循环，这意味着我们只有在每个项目都写完后才能到达这一点。
+我们现在唯一错过的是关闭 `writer`。`forEach` 是一个同步循环，这意味着我们只有在每个项目都被写入之后才会到达这一点。
 
 我们仍然检查 `ready` 属性，然后调用 `close()` 方法：
 
