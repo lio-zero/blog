@@ -1,12 +1,10 @@
 # Mongoose 查询文档
 
+数据库最多操作的便是查询，本文将来看看如何使用 Mongoose 查询文档。
+
 ## 查找所有文档
 
-Mongoose [`Model.find(filter, callback)` 方法](https://mongoosejs.com/docs/api/model.html#model_Model.find)允许您查询具有给定键/值的文档，它将返回与给定过滤器匹配的文档数组。
-
-Mongoose 的 Model.find()函数是一个重要的理解方法。您可以不带任何参数调用它，它将返回该模型中的所有文档。你可以传入一个 filter 告诉 Mongoose 在数据库中查找什么的参数。这 filter 可能是一个 objectId 或一个 object。使用时 Model.find()，您应该明确列出您在模型中搜索的参数。这在从查询字符串中提取过滤器参数时很重要。
-
-猫鼬模型。find（）函数是一个重要的理解方法。您可以不带任何参数调用它，它将返回该模型中的所有文档。您可以传入一个过滤器，告诉 Mongoose 在数据库中查找什么。此筛选器可以是 objectId 或 object。
+Mongoose [`Model.find(filter, callback)`](https://mongoosejs.com/docs/api/model.html#model_Model.find) 方法允许你查询具有给定键/值的文档，它将返回与给定过滤器匹配的文档数组。
 
 假设你有一个 [mongoose 模型](https://mongoosejs.com/docs/models.html) `User`，其中包含应用程序的所有用户。要获取集合中所有用户的列表，可以调用 `User.find()` 将空对象作为第一个参数：
 
@@ -32,7 +30,7 @@ const filter = {}
 const all = await User.find(filter)
 ```
 
-同样地，你可以调用 `User.find()` 不带参数，也就是省略 `filter`，您将得到相同的结果。
+同样地，你可以调用 `User.find()` 不带参数，也就是省略 `filter`，你将得到相同的结果。
 
 ```js
 await User.find() // 返回上面带有 _id 属性和 __v 属性的数组
@@ -48,7 +46,7 @@ await User.find() // 返回上面带有 _id 属性和 __v 属性的数组
 await Model.find(req.query)
 ```
 
-### sanitizeFilter 选项
+### `sanitizeFilter` 选项
 
 Mongoose 6 引入了一个新 `sanitizeFilter` 选项，可以防御[查询选择器注入攻击](https://thecodebarbarian.com/2014/09/04/defending-against-query-selector-injection-attacks.html)。它只是将过滤器包装在 `$eq` 标签中，从而防止查询选择器注入攻击。
 
@@ -79,7 +77,7 @@ const cursor = User.find().cursor()
 for (let doc = await cursor.next(); doc != null; doc = await cursor.next()) {}
 ```
 
-或者，您可以使用异步迭代器。
+或者，你可以使用异步迭代器。
 
 ```js
 for await (const doc of User.find()) {
@@ -88,7 +86,7 @@ for await (const doc of User.find()) {
 
 ## 查询某些字段
 
-要过滤 mongoose 中的对象属性，可以对查询使用 `select()` 方法。其作用是：选择要返回的字段。
+要过滤 mongoose 中的对象属性，可以对查询使用 `select()` 方法。其作用是：**选择要返回的字段**。
 
 ```js
 //将返回仅包含文档的年龄、名称和id属性的所有文档
@@ -107,7 +105,7 @@ await Model.find().select({'name -_id'});
 
 ## 按 ID 查找
 
-在 Mongoose 中，[`Model.findById()` 方法](https://mongoosejs.com/docs/api/model.html#model_Model.findById)用于根据文档的 `_id` 查找一个文档。`findById()` 方法接受单个参数，即文档 `id`。如果 MongoDB 找到具有给定 `id` 的文档，则返回解析为 Mongoose 文档的 Promise；如果未找到任何文档，则返回 `null`。
+在 Mongoose 中，[`Model.findById()`](https://mongoosejs.com/docs/api/model.html#model_Model.findById) 方法用于根据文档的 `_id` 查找一个文档。`findById()` 方法接受单个参数，即文档 `id`。如果 MongoDB 找到具有给定 `id` 的文档，则返回解析为 Mongoose 文档的 Promise；如果未找到任何文档，则返回 `null`。
 
 ```js
 const schema = new mongoose.Schema({ _id: Number }, { versionKey: false })
@@ -119,7 +117,7 @@ await Model.findById(1) // { _id: 1 }
 await Model.findById(2) // null，因为找不到任何文档
 ```
 
-当您调用 `findById(_id)` 时，Mongoose 会在后台调用 `findOne({ _id })`。这意味着 `findById()` 触发 `findOne()` [中间件](https://mongoosejs.com/docs/middleware.html)。
+当你调用 `findById(_id)` 时，Mongoose 会在后台调用 `findOne({ _id })`。这意味着 `findById()` 触发 `findOne()` [中间件](https://mongoosejs.com/docs/middleware.html)。
 
 ```js
 const schema = new mongoose.Schema({ _id: Number }, { versionKey: false })
@@ -135,7 +133,7 @@ await Model.create({ _id: 1 })
 await Model.findById(1)
 ```
 
-[Mongoose 会强制转换查询以匹配您的模式](https://mongoosejs.com/docs/tutorials/query_casting.html)。这意味着如果您的 `_id` 是一个 [MongoDB ObjectId](https://docs.mongodb.com/manual/reference/method/ObjectId/)，您可以将 `_id` 作为字符串传递，Mongoose 将为您将其转换为 ObjectId。
+[Mongoose 会强制转换查询以匹配你的模式](https://mongoosejs.com/docs/tutorials/query_casting.html)。这意味着如果你的 `_id` 是一个 [MongoDB ObjectId](https://docs.mongodb.com/manual/reference/method/ObjectId/)，你可以将 `_id` 作为字符串传递，Mongoose 将为你将其转换为 ObjectId。
 
 ```js
 const _id = '9d641f2ed75f4e2513b90abc'
@@ -157,9 +155,9 @@ doc._id instanceof mongoose.Types.ObjectId // true
 
 ## 链式
 
-许多 Mongoose 模型函数，例如 [`find()`](https://thecodebarbarian.com/how-find-works-in-mongoose)，返回一个 [Mongoose Query](https://mongoosejs.com/docs/queries.html)。[Mongoose Query 类](https://mongoosejs.com/docs/api/query.html)提供了一个用于查找、更新和删除文档的[链式接口](https://schier.co/blog/2013/11/14/method-chaining-in-javascript.html)。
+许多 Mongoose 模型函数，例如 [`find()`](https://thecodebarbarian.com/how-find-works-in-mongoose)，返回一个 [Mongoose Query](https://mongoosejs.com/docs/queries.html)。[Mongoose Query](https://mongoosejs.com/docs/api/query.html) 类提供了一个用于查找、更新和删除文档的[链式接口](https://schier.co/blog/2013/11/14/method-chaining-in-javascript.html)。
 
-`Model.find()` 的第一个参数称为查询**过滤器**。当您调用 `find()` 时，MongoDB 将返回与查询过滤器匹配的所有文档。您可以使用 Mongoose 的[众多查询](https://mongoosejs.com/docs/api/query.html)来构建查询过滤器。只需确保使用 [`where()`](https://mongoosejs.com/docs/api/query.html#query_Query-where) 指定要添加到过滤器中的属性名即可。
+`Model.find()` 的第一个参数称为查询**过滤器**。当你调用 `find()` 时，MongoDB 将返回与查询过滤器匹配的所有文档。你可以使用 Mongoose 的[众多查询](https://mongoosejs.com/docs/api/query.html)来构建查询过滤器。只需确保使用 [`where()`](https://mongoosejs.com/docs/api/query.html#query_Query-where) 指定要添加到过滤器中的属性名即可。
 
 ```js
 let docs = await User.find()
@@ -173,7 +171,7 @@ docs = await User.find({
 })
 ```
 
-可链式操作允许添加到当前查询筛选器。可以使用 [`query.getFilter()` 方法](https://mongoosejs.com/docs/api/query.html#query_Query-getFilter)获取查询的当前筛选器。
+可链式操作允许添加到当前查询筛选器。可以使用 [`query.getFilter()`](https://mongoosejs.com/docs/api/query.html#query_Query-getFilter) 方法获取查询的当前筛选器。
 
 ```js
 const query = User.find().where('name').in(['D.O', 'O.K'])
@@ -186,13 +184,13 @@ query.getFilter()
 
 - `lt(value)` 和 `gt(value)` — 指定一个属性必须小于（`lt()`）或大于（`gt()`）一个值。`value` 可以是数字、字符串或日期。
 - `lte(value), gte(value)` — 指定一个属性必须大于或等于（`gte()`）或小于或等于（`gte()`）一个值。
-- `in(arr)` — 指定一个属性必须等于 `arr` 中指定的值之一
-- `nin(arr)` — 指定一个属性不能等于 `arr` 中指定的任何值
-- `eq(val)` — 指定一个属性必须等于 `val`
-- `ne(val)` — 指定一个属性不能等于 `val`
-- `regex(re)` — 指定一个属性必须是 `re` 匹配的字符串
+- `in(arr)` — 指定一个属性必须等于 `arr` 中指定的值之一。
+- `nin(arr)` — 指定一个属性不能等于 `arr` 中指定的任何值。
+- `eq(val)` — 指定一个属性必须等于 `val`。
+- `ne(val)` — 指定一个属性不能等于 `val`。
+- `regex(re)` — 指定一个属性必须是 `re` 匹配的字符串。
 
-您可以链式调用任意多个 `where()` 和查询方法来建立查询。例如：
+你可以链式调用任意多个 `where()` 和查询方法来建立查询。例如：
 
 ```js
 const docs = await User.find()
@@ -208,9 +206,9 @@ docs.map((doc) => doc.name) // [ 'D.O', 'O.O', 'O.K' ]
 
 ## 使用 LIKE 查询
 
-使用 [SQL LIKE 运算符](https://use-the-index-luke.com/sql/where-clause/searching-for-ranges/like-performance-tuning)允许您搜索带有通配符的字符串。MongoDB 没有类似的运算符，[`$text` 运算符](https://docs.mongodb.com/manual/reference/operator/query/text/)执行更复杂的文本搜索。但是 MongoDB 确实支持与 LIKE 类似的正则表达式查询。
+使用 [SQL LIKE](https://use-the-index-luke.com/sql/where-clause/searching-for-ranges/like-performance-tuning) 运算符允许我们搜索带有通配符的字符串。MongoDB 没有类似的运算符，[`$text`](https://docs.mongodb.com/manual/reference/operator/query/text/) 运算符执行更复杂的文本搜索。但是 MongoDB 确实支持与 LIKE 类似的正则表达式查询。
 
-例如，假设您想要查找 `email` 包含 `gmail` 的所有用户。您可以简单地通过 JavaScript 正则表达式 `/gmail/` 进行搜索：
+例如，假设你想要查找 `email` 包含 `gmail` 的所有用户。你可以简单地通过 JavaScript 正则表达式 `/gmail/` 进行搜索：
 
 ```js
 const User = mongoose.model(
@@ -232,13 +230,13 @@ docs.length // 3
 docs.map((doc) => doc.email).sort() // ['yyds@163.com', 'test@163.com', '163@qq.com']
 ```
 
-同样，您可以使用 `$regex` 运算符。
+同样，你可以使用 `$regex` 运算符。
 
 ```js
 const docs = await User.find({ email: { $regex: '163' } })
 ```
 
-需要注意的是 mongoose 不会为您转义 regexp 中的特殊字符。如果要对用户输入的数据使用 `$regexp`，应首先使用 [escape-string-regexp](https://www.npmjs.com/package/escape-string-regexp) 或用于转义正则表达式特殊字符的类似库来清理字符串。
+需要注意的是 mongoose 不会为你转义 regexp 中的特殊字符。如果要对用户输入的数据使用 `$regexp`，应首先使用 [escape-string-regexp](https://www.npmjs.com/package/escape-string-regexp) 或用于转义正则表达式特殊字符的类似库来清理字符串。
 
 ```js
 const escapeStringRegexp = require('escape-string-regexp')
@@ -292,12 +290,12 @@ await User.create([
 ])
 ```
 
-假设您要查找所有 `name` 为 O.O 的用户。可以将 `{ age: 'O.O' }` 作为 `filter` 传递。
+假设你要查找所有 `name` 为 O.O 的用户。可以将 `{ age: 'O.O' }` 作为 `filter` 传递。
 
 ```js
 const docs = await User.find({ name: 'O.O' })
 
-// MongoDB 可以按任何顺序返回文档，除非您明确排序
+// MongoDB 可以按任何顺序返回文档，除非你明确排序
 docs.map((doc) => doc.age).sort() // [29, 22]
 ```
 
@@ -319,7 +317,7 @@ docs.map((doc) => doc.age).sort() // [29, 22]
 
 ### 比较查询运算符
 
-`$eq` 查询运算符检查完全相等。还有一些[比较查询运算符](https://docs.mongodb.com/manual/reference/operator/query/#comparison)，比如 `$gt` 和 `$lt`。例如，假设您想查找年龄严格小于 29 岁的所有字符。您可以使用 `$lt` 查询运算符，如下所示。
+`$eq` 查询运算符检查完全相等。还有一些[比较查询运算符](https://docs.mongodb.com/manual/reference/operator/query/#comparison)，比如 `$gt` 和 `$lt`。例如，假设你想查找年龄严格小于 29 岁的所有字符。你可以使用 `$lt` 查询运算符，如下所示。
 
 ```js
 const docs = await User.find({ age: { $lt: 29 } })
@@ -327,7 +325,7 @@ const docs = await User.find({ age: { $lt: 29 } })
 docs.map((doc) => doc.name).sort() // ['K.O', 'O.O']
 ```
 
-假设你想找到所有年龄至少为 29 岁的用户。您可以使用 [`$gte` 查询运算符](https://docs.mongodb.com/manual/reference/operator/query/gte/#op._S_gte)。
+假设你想找到所有年龄至少为 29 岁的用户。你可以使用 [`$gte` 查询运算符](https://docs.mongodb.com/manual/reference/operator/query/gte/#op._S_gte)。
 
 ```js
 const docs = await User.find({ age: { $gte: 29 } })
@@ -335,7 +333,7 @@ const docs = await User.find({ age: { $gte: 29 } })
 docs.map((doc) => doc.name).sort() // ['D.O', 'O.K', 'O.O']
 ```
 
-比较运算符 `$lt`、[`$gt`](https://docs.mongodb.com/manual/reference/operator/query/gt/#op._S_gt)、[`$lte`](https://docs.mongodb.com/manual/reference/operator/query/lte/#op._S_lte) 和 `$gte` 不仅可以处理数字。您还可以在字符串、日期和其他类型上使用它们。MongoDB 使用 [unicode](https://www.w3.org/TR/xml-entity-names/bycodes.html) 顺序比较字符串。如果该顺序不适用于您，您可以使用 [MongoDB collations](https://thecodebarbarian.com/a-nodejs-perspective-on-mongodb-34-collations) 对其进行配置。
+比较运算符 `$lt`、[`$gt`](https://docs.mongodb.com/manual/reference/operator/query/gt/#op._S_gt)、[`$lte`](https://docs.mongodb.com/manual/reference/operator/query/lte/#op._S_lte) 和 `$gte` 不仅可以处理数字。你还可以在字符串、日期和其他类型上使用它们。MongoDB 使用 [unicode](https://www.w3.org/TR/xml-entity-names/bycodes.html) 顺序比较字符串。如果该顺序不适用于你，你可以使用 [MongoDB collations](https://thecodebarbarian.com/a-nodejs-perspective-on-mongodb-34-collations) 对其进行配置。
 
 ```js
 const docs = await User.find({ name: { $lte: 'K.O' } })
@@ -345,7 +343,7 @@ docs.map((doc) => doc.name).sort() // [ 'D.O', 'K.O' ]
 
 ### 正则表达式
 
-假设您要查找 `name` 包含 `K` 的用户。在 SQL 中，可以使用 [`LIKE` 运算符](https://www.w3schools.com/sql/sql_like.asp)。在 Mongoose 中，您可以简单地通过正则表达式进行查询，如下所示。
+假设你要查找 `name` 包含 `K` 的用户。在 SQL 中，可以使用 [`LIKE` 运算符](https://www.w3schools.com/sql/sql_like.asp)。在 Mongoose 中，你可以简单地通过正则表达式进行查询，如下所示。
 
 ```js
 const docs = await User.find({ name: /K/ })
@@ -353,7 +351,7 @@ const docs = await User.find({ name: /K/ })
 docs.map((doc) => doc.name).sort() // ['K.O', 'O.K']
 ```
 
-同样，您可以使用 [`$regex` 查询运算符](https://docs.mongodb.com/manual/reference/operator/query/regex/#op._S_regex)。这使您能够将正则表达式作为字符串传递，如果您是从 HTTP 请求中获取查询，这很方便。
+同样，你可以使用 [`$regex` 查询运算符](https://docs.mongodb.com/manual/reference/operator/query/regex/#op._S_regex)。这使你能够将正则表达式作为字符串传递，如果你是从 HTTP 请求中获取查询，这很方便。
 
 ```js
 const docs = await User.find({ name: { $regex: 'K' } })
@@ -374,7 +372,7 @@ const docs = await User.find({
 docs.map((doc) => doc.name) // ['O.O']
 ```
 
-假设您要查找 `age` 至少为 29 岁或 `name` 等于 `O.O` 的用户 。您需要 [`$or` 查询运算符](https://docs.mongodb.com/manual/reference/operator/query/or/#op._S_or)。
+假设你要查找 `age` 至少为 29 岁或 `name` 等于 `O.O` 的用户。你需要 [`$or`](https://docs.mongodb.com/manual/reference/operator/query/or/#op._S_or) 查询运算符。
 
 ```js
 const docs = await User.find({
@@ -384,7 +382,7 @@ const docs = await User.find({
 docs.map((doc) => doc.name).sort() // [ 'D.O', 'O.O', 'O.K', 'O.O' ]
 ```
 
-还有一个 [`$and` 查询运算符](https://docs.mongodb.com/manual/reference/operator/query/and/#op._S_and)。您很少需要使用 `$and` 查询运算符。`$and` 的主要用例是组合多个 `$or` 运算符。例如，假设您要查找满足以下两个条件的字符：
+还有一个 [`$and`](https://docs.mongodb.com/manual/reference/operator/query/and/#op._S_and) 查询运算符。你很少需要使用 `$and` 查询运算符。`$and` 的主要用例是组合多个 `$or` 运算符。例如，假设你要查找满足以下两个条件的字符：
 
 - `age` 至少 29 或 `name` 等于 `'O.O'`
 - `name` 以字母开头，在 `O` 之前或 `O` 之后。
@@ -403,3 +401,7 @@ const docs = await User.find({
 
 docs.map((doc) => doc.name).sort() // [ 'D.O', 'O.O', 'O.K' ]
 ```
+
+## 更多资料
+
+[9 Types of Mongodb Operators You Need To Know](https://kinsta.com/blog/mongodb-operators/)
