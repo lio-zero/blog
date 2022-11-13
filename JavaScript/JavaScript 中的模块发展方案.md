@@ -4,10 +4,10 @@
 
 在 ES6 之前，社区制定了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
 
-- [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition)：最古老的模块系统之一，最初由 [require.js](http://requirejs.org/) 库实现。
-- [CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1)：为 Node.js 服务器创建的模块系统。
-- CMD：代表的 [seajs](https://github.com/seajs/seajs) 库。
-- [UMD](https://github.com/umdjs/umd)：另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
+- [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) — 最古老的模块系统之一，最初由 [require.js](http://requirejs.org/) 库实现。
+- [CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1) — 为 Node.js 服务器创建的模块系统。
+- CMD — 代表的 [seajs](https://github.com/seajs/seajs) 库。
+- [UMD](https://github.com/umdjs/umd) — 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
 
 ## AMD
 
@@ -312,9 +312,9 @@ import { longNameA, longNameB, longNameC, longNameD, longNameE } from 'path'
 import { longNameA, longNameB, longNameC, longNameD, longNameE } from 'path'
 ```
 
-- 在模块 import 语句中禁止 Webpack loader 语法。eslint: [`import/no-webpack-loader-syntax`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md)
+- 在模块 import 语句中禁止 webpack loader 语法。eslint: [`import/no-webpack-loader-syntax`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md)
 
-> 为什么？因为在 Webpack 中使用了 `import` 语法，所以会将代码耦合到模块 loader 中。最好在 `webpack.config.js` 中使用 loader 语法。
+> 为什么？因为在 webpack 中使用了 `import` 语法，所以会将代码耦合到模块 loader 中。最好在 `webpack.config.js` 中使用 loader 语法。
 
 ```js
 // bad
@@ -348,11 +348,11 @@ import baz from './baz'
 
 ## 总结
 
-- AMD、CMD、CommonJS 和 ES6 Module 都是为了解决原始无模块化的痛点
-- AMD — 代表 requirejs 库，提前执行，推崇依赖前置
+- AMD、CMD、CommonJS 和 ES Module 都是为了解决原始无模块化的痛点
+- AMD — 代表 require.js 库，提前执行，推崇依赖前置
 - CMD — 代表 seajs 库，延迟执行，推崇依赖就近
 - CommonJS — 模块输出的是一个值的拷贝，运行时加载，加载的是一个对象（`module.exports` 属性），该对象只有在脚本运行完才会生成
-- ES6 Module — 模块输出的是一个值的引用，编译时输出接口，ES6 模块不是对象，它对外接口只是一种静态定义，在代码静态解析阶段就会生成
+- ES Module — 模块输出的是一个值的引用，编译时输出接口，ES6 模块不是对象，它对外接口只是一种静态定义，在代码静态解析阶段就会生成
 
 它们都是在 JS 推广模块定义过程的规范化产出。
 

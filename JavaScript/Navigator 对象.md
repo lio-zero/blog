@@ -2,6 +2,8 @@
 
 浏览器公开的 `window.navigator` 属性指向一个 navigator 对象，它是一个容器对象，包含有关访问者浏览器的信息。
 
+它提供了许多 web 平台 API。
+
 标准属性包括：
 
 - `cookieEnabled` — 返回一个布尔值，来表示当前页面是否启用了 cookie。
@@ -31,9 +33,7 @@
 
 ## 浏览器检测
 
-由于 `navigator` 可误导浏览器检测，使用对象检测可用来嗅探不同的浏览器。
-
-由于不同的浏览器支持不同的对象，您可以使用对象来检测浏览器。例如，由于只有 Opera 支持属性 `window.opera`，您可以据此识别出 Opera 浏览器。
+由于不同的浏览器支持不同的对象，你可以使用浏览器对象独有的属性来检测浏览器。例如，由于只有 Opera 支持属性 `window.opera`，你可以据此识别出 Opera 浏览器。
 
 ```js
 if (window.opera) {
@@ -82,8 +82,8 @@ console.log(isAppleDevice)
 
 ## 检测当前用户的首选语言
 
-- 使用 `navigation.language` 或 `navigation.languages` 的第一个，否则返回 `defaultLang`。
-- 省略参数 `defaultLang`，将以 `'zh-CN'` 用作默认语言。
+- 使用 `navigation.language` 或 `navigation.languages` 的第一个元素，否则返回 `defaultLang`。
+- 省略参数 `defaultLang` 将以 `'zh-CN'` 作为默认语言。
 
 ```js
 const detectLanguage = (defaultLang = 'zh-CN') =>
