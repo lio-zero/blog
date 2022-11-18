@@ -91,4 +91,5 @@ run().catch(console.err)
 
 ## 更多资料
 
-[Using SSE Instead Of WebSockets For Unidirectional Data Flow Over HTTP/2](https://www.smashingmagazine.com/2018/02/sse-websockets-data-flow-http2/)
+- [Using SSE Instead Of WebSockets For Unidirectional Data Flow Over HTTP/2](https://www.smashingmagazine.com/2018/02/sse-websockets-data-flow-http2/)
+- [Implementing Push Technology Using Server-Sent Events](https://www.sitepoint.com/implementing-push-technology-using-server-sent-events/)

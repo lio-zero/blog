@@ -48,7 +48,7 @@ overlay.addEventListener('click', () => {
 })
 ```
 
-**如果用户在模态框内单击会发生什么？**我们不希望事件冒泡到父元素（即覆盖层），因此调用 `stopPropagation` 方法：
+**如果用户在模态框内单击会发生什么**？我们不希望事件冒泡到父元素（即覆盖层），因此调用 `stopPropagation` 方法：
 
 ```js
 modal.addEventListener('click', (e) => {

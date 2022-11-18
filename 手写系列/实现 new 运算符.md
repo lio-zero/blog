@@ -38,13 +38,16 @@ function Person(name, age) {
   this.name = name
   this.age = age
 }
+
 let p = myNew(Person, 'O.O', 20)
 console.log(p) // { name: 'O.O', age: 20 }
 ```
 
-## 扩展：可以使用 new 一个箭头函数吗？
+> **扩展**：[`new.target`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new.target) 属性可以检测函数或构造方法是否是通过 `new` 运算符被调用的。
 
-箭头函数没有 `prototype`、没有自己的 `this` 指向、不可以使用 `arguments`，自然不可以 `new`
+## 扩展：可以使用 `new` 一个箭头函数吗？
+
+箭头函数没有 `prototype`、没有自己的 `this` 指向、不可以使用 `arguments`，自然不可以 `new`。
 
 ## 更多资料
 

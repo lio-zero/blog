@@ -75,16 +75,21 @@ setTimeout(function () {
 // 最终输出：1 7 6 8 2 4 3 5 9 11 10 12
 ```
 
-> **注意**：Node 的 `process.nextTick` 有专门的 **nextTick 队列**运行，它总是在其他微任务之前运行。
+这里需要额外注意两点：
+
+- Node 的 `process.nextTick` 有专门的 **nextTick 队列**运行，它总是在其他微任务之前运行。
+- 在 Node.js 中运行上述代码，如果版本在 v11 以上，那么不会有什么问题，但如果在这个版本以下的话，最终输出的结果会不一致。原因在于，浏览器的 Event Loop 和 Node.js 的 Event Loop 在处理异步事件的顺序是不同的。Node.js 的事件循环会先执行所有的宏任务，再执行微任务。
 
 ## 进一步阅读
+
+这里看了很多资料，都整理了过来，感兴趣的可以了解以下：
 
 - [HTML Living Standard — Event loops](https://html.spec.whatwg.org/multipage/webappapis.html#event-loops)
 - [这一次，彻底弄懂 JavaScript 执行机制](https://juejin.cn/post/6844903512845860872)
 - [事件循环：微任务和宏任务](https://zh.javascript.info/event-loop)
 - [一次弄懂 Event Loop（彻底解决此类面试问题）](https://juejin.cn/post/6844903764202094606)
-- [什么是 Event Loop？](http://www.ruanyifeng.com/blog/2013/10/event_loop.html)
-- [JavaScript 运行机制详解：再谈 Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
+- [什么是 Event Loop？](https://www.ruanyifeng.com/blog/2013/10/event_loop.html)
+- [JavaScript 运行机制详解：再谈 Event Loop](https://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 - [Nodejs Event Loop](https://stackoverflow.com/questions/10680601/nodejs-event-loop)
 - [第 10 题：常见异步笔试题，请写出代码的运行结果](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)
 - [JavaScript 的工作原理](https://blog.sessionstack.com/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with-2f077c4438b5)
