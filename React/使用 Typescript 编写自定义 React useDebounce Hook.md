@@ -1,10 +1,10 @@
-# 使用 Typescript 编写自定义 React useDebounce Hook
+# 使用 TypeScript 编写自定义 React useDebounce Hook
 
 在 [React Hooks](https://github.com/lio-zero/blog/blob/main/React/React%20Hooks.md) 中，我们介绍了如何使用，以及它的一些常用内置的 React Hooks 钩子，并在最后一节中，我们了解如何自定义钩子。这使我们可以将组件逻辑抽象为可重用的函数。
 
-在本文中，我们将使用 Typescript 编写一个自定义 `useDebounce` 钩子！
+在本文中，我们将继续使用 TypeScript 编写一个自定义 `useDebounce` 钩子！
 
-关于防抖，您可以看看我之前写的两篇文章：
+关于防抖，你可以看看我之前写的两篇文章：
 
 - [节流和防抖](https://github.com/lio-zero/blog/blob/main/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96.md)
 - [如何在用户停止输入 JavaScript 后执行函数](https://github.com/lio-zero/blog/blob/main/JavaScript/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%94%A8%E6%88%B7%E5%81%9C%E6%AD%A2%E8%BE%93%E5%85%A5%20JavaScript%20%E5%90%8E%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0.md)
@@ -106,4 +106,4 @@ function useDebounce<T>(
 
 对于 React 的 TypeScript 实践，有一个不错的项目 [React TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react)，它为经验丰富的 React 开发人员提供 TypeScript 入门的备忘单。
 
-另外，如果您看到英文头疼，有一篇不错的文章 [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://juejin.cn/post/6910863689260204039)，其中作者的一些实际经验和这份备忘单，值得一读。
+另外，如果你看到英文头疼，有一篇不错的文章 [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://juejin.cn/post/6910863689260204039)，其中作者的一些实际经验和这份备忘单，值得一读。

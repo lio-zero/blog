@@ -2,15 +2,15 @@
 
 `v-model` 是 Vue 应用中最常用的指令。它通常用于在表单元素上创建双向数据绑定，并与 `input`、`checkbox`、`select`、`textarea` 和 `radio` 表单元素一起使用。
 
-在下面的例子中，`v-model` 应用于 `input` 元素，将 `someVal` 变量与 `input` 的原生值属性绑定在一起。
+在下面的例子中，`v-model` 应用于 `input` 元素，将 `someVal` 变量与 `input` 的原生 `value` 属性绑定在一起。
 
 ```html
 <input v-model="someVal" />
 ```
 
-`v-model` 本质上是一种语法糖，通过在内部为不同的 `input` 元素使用不同的属性并抛出不同的事件。
+`v-model` 本质上是一种语法糖，通过在内部为不同类型的 `input` 元素使用不同的属性并抛出不同的事件。
 
-上面的示例中，指令会监听原生的 `input` 事件，并在每次触发 `someVal` 时更新它。
+上面的示例中，指令会监听原生的 `input` 事件，并在每次触发时更新 `someVal`。
 
 因此，我们可以将上述代码重写为具有相同效果的事件和属性：
 
@@ -146,7 +146,7 @@ Vue 3 允许我们在同一组件上绑定多个 `v-model`：
 </script>
 ```
 
-## 添加修饰符
+## `v-model` 修饰符
 
 `v-model` 支持的三个修饰符：
 

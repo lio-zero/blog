@@ -27,44 +27,40 @@ printNums()
 const sleepSync = (ms) => {
   const end = new Date().getTime() + ms
   while (new Date().getTime() < end) {
-    /* do nothing */
+    // do something
   }
 }
 
-const printNums = () => {
-  console.log(1)
+const print = () => {
+  console.log('All work and no play makes Jack a dull boy!')
   sleepSync(1000)
-  console.log(2)
-  console.log(3)
+  console.log('Yes')
 }
 
-printNums()
+print()
 ```
 
 ## 异步版本
 
-ES6 新增的 Promise API 和 ES7 的 `async/await` 可以方便我们实现的 `sleep` 方法：
+ES6 新增的 Promise、Generator 和 ES8 的 `async/await` 可以方便我们实现的 `sleep` 方法：
 
 ```js
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
-async function demo() {
-  for (let i = 0; i < 5; i++) {
-    console.log(`Waiting ${i} seconds...`)
-    await sleep(i * 1000)
-    console.log('1')
-  }
-  console.log('Done')
+async function foo() {
+  console.log('All work and no play makes Jack a dull boy!')
+  await sleep(1000)
+  console.log('Yes')
 }
 
-demo()
+foo()
 ```
 
-注意：
+需要注意的是：
 
 - `sleep` 返回的函数必须在异步函数中执行，并且必须使用 `await` 调用。
-- `await` 仅暂停当前异步函数。这意味着它不会阻止脚本其余部分的执行，这在绝大多数情况下都是您想要的。
+- `await` 仅暂停当前异步函数。这意味着它不会阻止脚本其余部分的执行，这在绝大多数情况下都是你想要的。
 
 ## 更多资料
 
-- [What is the JavaScript version of sleep()?](https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep)
+[What is the JavaScript version of sleep()?](https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep)

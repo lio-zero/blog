@@ -187,4 +187,5 @@ const constraints = {
 
 ## 更多资料
 
-[Sketchy Webcam Filter Effects](https://frontend.horse/articles/sketchy-webcam-filter-effects/)
+- [Sketchy Webcam Filter Effects](https://frontend.horse/articles/sketchy-webcam-filter-effects/)
+- [How to Record Audio Using the MediaStream API](https://www.sitepoint.com/mediastream-api-record-audio/)

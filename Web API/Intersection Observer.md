@@ -57,7 +57,7 @@ io.disconnect()
 
 以上是它实例的几个方法。
 
-本来继续往下写的，但已经有很多关于它的教程了，这里推荐阮一峰老师的 [IntersectionObserver API 使用教程](http://www.ruanyifeng.com/blog/2016/11/intersectionobserver_api.html)。
+本来继续往下写的，但已经有很多关于它的教程了，这里推荐阮一峰老师的 [IntersectionObserver API 使用教程](https://www.ruanyifeng.com/blog/2016/11/intersectionobserver_api.html)。
 
 以下是一些不错示例：
 
@@ -65,7 +65,7 @@ io.disconnect()
 - [示例二](https://codepen.io/michellebarker/full/xxwLpRG)
 - [返回顶部](https://codepen.io/lio-zero/pen/JjEpajw)
 
-还有很多示例，包括懒加载、无限滚动等，您可以进一步阅读下面的文章。
+还有很多示例，包括懒加载、无限滚动、虚拟列表等，您可以进一步阅读下面的文章。
 
 ## 更多资料
 
@@ -83,3 +83,4 @@ io.disconnect()
 - [Parsing Markdown into an Automated Table of Contents](https://css-tricks.com/parsing-markdown-into-an-automated-table-of-contents/)
 - [Lozad.js: Performant Lazy Loading of Images](https://css-tricks.com/lozad-js-performant-lazy-loading-images/)
 - [Table of Contents with IntersectionObserver](https://css-tricks.com/table-of-contents-with-intersectionobserver/)
+- [IntersectionObserver 实现虚拟列表初探](https://mp.weixin.qq.com/s/UEOE-nK2C8NyID2Xq1QwQw)

@@ -21,27 +21,27 @@ var undefined = 'foo'
 console.log(undefined) // 'foo'
 ```
 
-另一方面，不可能重写 `void` 操作符。因此，`void` 被用作 `undefined` 值的替换，以安全的方式获取 `undefined` 值。
+另一方面，`void` 运算符不能被重写。因此，`void` 被用作 `undefined` 值的替换，以安全的方式获取 `undefined` 值。
 
-在 ES5 中，不可能重写 `undefined`，因为它被 [`Writeable`](http://es5.github.io/#x15.1.1.3) 设置为 `false`。
+你可以在一些 JS 项目中看到这种情况，它们更喜欢用 `void` 而不是 `undefined`，以避免意外创建名为 `undefined` 的变量。由于这个原因，甚至有一个 ESLint 规则不允许 `undefined`。
+
+但在 ES5 中，`undefined` 有了新的修订，它不能在被重写，因为它被 [`Writeable`](http://es5.github.io/#x15.1.1.3) 设置为 `false`。
 
 ## 扩展
 
-- `void`是一个操作符，而不是一个函数。因此，我们不需要将表达式括在括号中。`void 0` 相当于 `void(0)`。
-
-- 有些缩微器使用 `void 0` 来缩短 `undefined` 的长度。
-
+- `void` 是一个运算符，而不是一个函数。因此，我们不需要将表达式括在括号中。`void 0` 相当于 `void(0)`。
+- 有些压缩器使用 `void 0` 来缩短 `undefined` 的长度。
 - 如果使用立即调用的函数表达式（称为 IIFE），则可以使用 `void` 将 `function` 关键字视为表达式，而不是声明。
 
-假设我们要执行以下 IIFE 函数：
+以下是一个 IIFE 函数：
 
 ```js
-function run() {
+;(function run() {
   console.log('Executed')
-}()
+})()
 ```
 
-那么我们可以使用 `void`
+我们可以使用 `void` 运算符作为括号的替代。因为 `void` 是一个一元运算符，所以它告诉 JavaScript 将函数声明视为一个表达式。
 
 ```js
 void (function run() {
@@ -49,13 +49,7 @@ void (function run() {
 })()
 ```
 
-或将函数用括号括起来，如下所示：
-
-```js
-;(function run() {
-  console.log('Executed')
-})()
-```
+不同之处在于，正常的 IIFE 仍然可以返回一个值，而对 IIFE 使用 `void` 将始终求值为 `undefined`。
 
 - 当与箭头函数一起使用时，可以使用 `void` 来避免副作用。
 
@@ -71,7 +65,7 @@ const sum = (a, b) => a + b
 button.onclick = () => doSomething()
 ```
 
-它照常工作，直到有人更改 `doSomething`，并使其返回 `boolean`。在返回 `false` 的情况下，将跳过 `click` 事件的默认行为，这可能是您不希望看到的。
+它照常工作，直到有人更改 `doSomething`，并使其返回 `boolean`。在返回 `false` 的情况下，将跳过 `click` 事件的默认行为，这可能是你不希望看到的。
 
 将结果传递给 `void` 将确保无论执行函数的结果如何，它都不会改变箭头函数的行为：
 
@@ -79,7 +73,7 @@ button.onclick = () => doSomething()
 button.onclick = () => void doSomething()
 ```
 
-在 React、Svelte 等现代库中可以看到使用 `void` 和 箭头函数的优势。
+在 React、Svelte 等现代库中可以看到使用 `void` 和箭头函数的优势。
 
 这些库允许我们在将组件装入 DOM 之后立即执行函数。例如，React 提供 [`useEffect`](https://reactjs.org/docs/hooks-reference.html#useeffect)，Svelte 具有 [`onMount`](https://svelte.dev/docs#onMount)。
 
@@ -90,7 +84,7 @@ button.onclick = () => void doSomething()
 useEffect(() => doSomething())
 ```
 
-它可以在运行时产生 bug。为了避免这种情况，我们可以使用 `void`
+它可以在运行时产生 bug。为了避免这种情况，我们可以使用 `void`：
 
 ```js
 useEffect(() => void doSomething())
@@ -119,7 +113,7 @@ useEffect(() => {
 现在，不推荐使用 `javascript:` 协议。由于用户可以将未初始化的输入放入事件处理程序中，因此可能会产生安全问题：
 
 ```html
-<a href="javascript: alert('unsanitized input')">...</a>
+<a href="javascript: alert('uninitialized input')">...</a>
 ```
 
-从 v16.9.0 开始，React 还[反对](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html#deprecating-javascript-urls)使用 `javascript:` URL。
+从 v16.9.0 开始，React 还[反对使用 `javascript:` URL](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html#deprecating-javascript-urls)。

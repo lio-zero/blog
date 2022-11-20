@@ -23,15 +23,15 @@ console.log(foo)
 - `let` 变量在声明之前不能使用。下面的示例代码将引发 `ReferenceError`：
 
 ```js
+var foo = 'hello'
 {
-  foo = 'hello'
-  let foo
   console.log(foo)
+  let foo = 'hi'
 }
 // ReferenceError: Cannot access 'foo' before initialization
 ```
 
-如果在上面的示例代码中使用 `var`，我们将在控制台中看到 `hello`。因为 `var` 存在变量提升，而 `let` 存在 TDZ（Temporal Dead Zone，暂存性死区）。
+如果在上面的示例代码中使用 `var`，我们将在控制台中看到 `hello`。因为 `var` 存在变量提升，而 `let` 存在 TDZ（Temporal Dead Zone，暂存性死区），即只要块级作用域中存在 `let`，那么它所声明的变量就绑定了这个区域，不再受外部的影响。
 
 - 同一作用域下 `let` 不能声明同名变量。
 
@@ -120,9 +120,10 @@ console.log(arr) // ['foo', 'bar']
 ## 总结
 
 - 声明变量的三种方式：`var`、`let`、`const`。
-- `var` 在全局作用域下声明变量，全局可用，而在局部作用域下声明的变量，只能在当前的环境下使用。
+- `var` 和 `let` 用于声明变量，而 `const` 用于声明只读的常量。
+- `var` 在全局作用域下声明变量，全局可用，而在函数作用域下声明的变量，只能在当前的环境下使用。
 - `var` 声明的变量，不是全局作用域就是函数作用域，没有块级作用域，会忽略代码块 `{}`（除函数外），其因在于 JS 早期块没有词法环境。
-- `var` 声明的变量允许重新声明，而 `let` 和 `const` 不允许重新声明。
+- `var` 声明的变量允许重新声明，而 `let` 和 `const` 在相同作用域内，不允许重新声明。
 - `var` 声明的变量存在变量提升，但是赋值不会。`let` 和 `const` 不存在变量提升。
 - `let` 和 `const` 声明形成块作用域，声明的变量只能在它声明的封闭块内使用。
 - 同一作用域下 `let` 和 `const` 不能声明同名变量，而 `var` 可以。

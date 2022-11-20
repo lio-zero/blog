@@ -1,6 +1,6 @@
 # Location 对象
 
-浏览器公开的 `window.location` 属性指向一个 [Location](https://developer.mozilla.org/zh-CN/docs/Web/API/Location) 对象，它是 `window` 对象的一部分，包含有关当前 URL 的信息。
+浏览器公开的 `window.location` 属性指向一个 [Location](https://developer.mozilla.org/en-US/docs/Web/API/Location) 对象，它是 `window` 对象的一部分，包含有关当前 URL 的信息。
 
 属性：
 

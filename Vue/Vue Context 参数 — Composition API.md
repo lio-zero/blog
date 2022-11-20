@@ -2,9 +2,11 @@
 
 在 Composition API 中，我们没有 `this` 与 Options API 中相同的引用。
 
-在 Options API 中，我们可以调用 `console.log(this)` 的任何选项并获得对组件本身的引用，让我们可以访问它的 `props`、`computed`、`data` 等。
+在 Options API 中，我们可以通过 `this` 访问任何选项并获得对组件本身的引用，让我们可以访问它的 `props`、`computed`、`data` 等。
 
-Vue3 允许我们使用 Composition API，这些功能都位于 `setup` 函数内。这意味着 `setup` 是我们声明响应式数据、方法和计算属性的地方。
+Vue 3 允许我们使用 Composition API，这些功能都位于 `setup` 函数内。这意味着 `setup` 是我们声明响应式数据、方法和计算属性的地方。
+
+> **Tips**：Vue 3.2 新增 `setup` 语法糖，使以下所提到的一切变的更加轻松。
 
 ```js
 import { ref } from 'vue'
@@ -42,9 +44,9 @@ Composition API 为我们提供了访问重要组件信息（如 `props` 和 `sl
 
 这三个属性是：
 
-- `context.attrs` – 传递给我们组件的**非 `props` 属性**
-- `context.slots` – 具有我们所有**模板插槽渲染功能的对象**
-- `context.emit` – 我们的组件**发出事件**的方法
+- `context.attrs` — 传递给组件的**非 `props` 属性**
+- `context.slots` — 所有**模板插槽渲染功能的对象**
+- `context.emit` — 组件**发出事件**的方法
 
 让我们更深入地了解其中的每一个。
 
@@ -52,10 +54,10 @@ Composition API 为我们提供了访问重要组件信息（如 `props` 和 `sl
 
 假设我们有一个自定义组件，它接受一个名为 `value` 的 prop。
 
-```
+```js
 export default {
   props: {
-    value: String,
+    value: String
   },
   setup(props, context) {
     console.log(context.attrs)
@@ -81,13 +83,13 @@ export default {
 
 ### context.slots
 
-`context.slots`让我们可以访问每个 `slot` 的 `render` 方法。当我们编写自己的**自定义渲染函数**而不使用模板代码时，这很有用。
+`context.slots` 让我们可以访问每个 `slot` 的渲染函数。当我们编写自己的**自定义渲染函数**而不使用模板代码时，这很有用。
 
 Vue 建议在大多数用例中使用模板，但如果你真的想使用 JavaScript 的全部功能，我们可以创建自己的渲染函数。
 
-[Vue 文档](https://v3.vuejs.org/guide/render-function.html)中使用自定义 `render` 方法的一个很好的例子是，如果我们正在创建一个组件，该组件根据 `prop` 的值渲染具有不同级别标题的插槽值。
+[Vue 渲染函数 & JSX](https://vuejs.org/guide/extras/render-function.html)中使用自定义 `h()` 方法的一个很好的例子是，如果我们正在创建一个组件，该组件根据 `prop` 的值渲染具有不同级别标题的插槽值。
 
-```
+```html
 <template>
   <div>
     <h1 v-if="level == 1">
@@ -113,16 +115,16 @@ Vue 建议在大多数用例中使用模板，但如果你真的想使用 JavaSc
 
 <script>
   export default {
-      props: {
-          level: Number
-      }
+    props: {
+      level: Number
+    }
   }
 </script>
 ```
 
-在这段代码中，我们对所有 6 个标题选项使用 `v-if` 和 `v-else-if` 条件。正如您所看到的，有很多重复的代码，而且看起来非常混乱。
+在这段代码中，我们对所有 6 个标题选项使用 `v-if` 和 `v-else-if` 条件。正如你所看到的，有很多重复的代码，而且看起来非常混乱。
 
-相反，我们可以使用 `render` 函数以编程方式生成我们的标题。使用 Composition API `setup` 函数，它看起来像这样。
+相反，我们可以使用渲染函数以编程方式生成我们的标题。使用 Composition API `setup` 函数，它看起来像这样。
 
 ```js
 import { h } from 'vue'
@@ -134,11 +136,13 @@ export default {
 }
 ```
 
-但是，我们如何让我们的插槽进行渲染？
+> **Tips**：在 Vue 2 中，它是 `render` 选项，在 Vue 3 中，它使用 `h` 替代。
+
+**但是，如何让我们的插槽进行渲染？**
 
 这就是 `context.slots` 发挥作用的地方。
 
-通过让我们访问每个插槽的渲染函数，我们可以轻松地将插槽添加到渲染函数中。每个插槽都可以通过其名称访问，并且由于我们没有明确命名插槽，因此将其命名为 `default`。
+通过访问每个插槽的渲染函数，我们可以轻松地将插槽添加到渲染函数中。每个插槽都可以通过其名称访问，并且由于我们没有明确命名插槽，因此其默认命名为 `default`。
 
 ```js
 import { h } from 'vue'
@@ -152,7 +156,7 @@ export default {
 }
 ```
 
-现在，如果我们使用像这样的简单父组件来运行它
+现在，我们可以像这样简单的引用父组件来运行它：
 
 ```html
 <template>
@@ -164,7 +168,7 @@ export default {
 
 ![image](https://upload-images.jianshu.io/upload_images/18281896-b928ef5bd27e89a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-因此，您可能不会经常使用 `context.slots`，但是当您编写复杂的 JavaScript 渲染函数时，它是一个强大的功能。
+因此，你可能不会经常使用 `context.slots`，但是当你编写复杂的 JavaScript 渲染函数时，它是一个强大的功能。
 
 > **注意**：根据 Vue 文档，`render` 函数的优先级高于根据 `template` 选项或挂载元素的 DOM 内 HTML 模板编译的渲染函数。
 
@@ -213,6 +217,6 @@ export default {
 - `computed`
 - `methods`
 
-例如，这些是我们在 `setup` 自身内部声明的属性，但我们没有内置方法来访问所有 `data` 属性的列表。
+例如，这些是我们在 `setup` 自身内部声明的属性，但我们没有内置方法来访问所有 `data` 属性的列表。也不推荐在 Vue 3 中混用 Vue 2 的写法/功能。
 
 > 关于 Composition API 的问题，可以查看 [Composition API FAQ](https://vuejs.org/guide/extras/composition-api-faq.html)。
