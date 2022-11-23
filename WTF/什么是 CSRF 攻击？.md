@@ -1,6 +1,6 @@
 # 什么是 CSRF 攻击？
 
-> **[CSRF](https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0)（Cross-site request forgery）：跨站请求伪造**。 是一种挟制用户在当前已登录的 Web 应用程序上执行非本意的操作的攻击方法。与 XXS 相比，XSS 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。
+> **[CSRF](https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0)（Cross-site request forgery，跨站点请求伪造）**是一种挟制用户在当前已登录的 Web 应用程序上执行非本意的操作的攻击方法。与 XXS 相比，XSS 利用的是用户对指定网站的信任，而 CSRF 利用的是网站对用户网页浏览器的信任。
 
 ## CSRF 的攻击原理
 
@@ -10,16 +10,19 @@
 
 ## CSRF 的防范
 
-- 对于 GET 的请求，我们不应对数据进行任何修改操作
-- 请求时附带验证信息，比如**验证码**或者 `token`
-- 对于 `cookie`，我们可以设置 `same-site`（`Lax` 或 `Strict`）来规定浏览器不能在跨域请求中携带 Cookie ，减少 CSRF 攻击
-- 验证 HTTP `Referer` 字段，判断请求来源。`Referer` 指的是页面请求来源。意思是，**只接受本站的请求，服务器才做响应**；如果不是，就拦截。
+- 对于 GET 的请求，我们不应对数据进行任何修改操作。
+- 请求时附带验证信息，比如**验证码**或者 `token`。
+- 对于 `cookie`，我们可以设置 `SameSite`（`Lax` 或 `Strict`）来规定浏览器不能在跨域请求中携带 Cookie，可以减少 CSRF 攻击。
+- 验证 HTTP `Referer` 字段，判断请求来源。`Referer` 指的是页面请求来源。意思是**只接受本站的请求，服务器才做响应**，如果不是，就拦截请求。
 
 ## 更多资源
 
 - [理解 CSRF(跨站请求伪造)](https://github.com/pillarjs/understanding-csrf/blob/master/README_zh.md)
 - [Cross-Site Request Forgery Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
-- [Cookie 的 SameSite 属性](http://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html)
+- [HTTP Cookie](https://github.com/lio-zero/blog/blob/main/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP%20Cookie.md)
+- [Cookie 的 SameSite 属性](https://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html)
 - [前端安全系列之二：如何防止 CSRF 攻击？](https://juejin.cn/post/6844903689702866952)
 - [安全问题：CSRF 和 XSS](https://github.com/poetries/FE-Interview-Questions/blob/master/%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98%EF%BC%9ACSRF%E5%92%8CXSS.md)
 - [Preventing CSRF and XSRF Attacks](https://blog.codinghorror.com/preventing-csrf-and-xsrf-attacks/)
+- [【面试篇】寒冬求职之你必须要懂的 Web 安全](https://juejin.cn/post/6844903842635579405)
+- [第 28 题：cookie 和 token 都存放在 header 中，为什么不会劫持 token？](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/31)
