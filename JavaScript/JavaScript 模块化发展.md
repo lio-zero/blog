@@ -1,4 +1,4 @@
-# JavaScript 中的模块发展方案
+# JavaScript 模块化发展
 
 随着我们的应用越来越大，我们想要将其拆分成多个文件，即所谓的**模块（module）**。
 
@@ -24,8 +24,8 @@
 
 **更多详细内容**：
 
-- [JavaScript 模块化编程（二）：AMD 规范](http://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html)
-- [JavaScript 模块化编程（三）：require.js 的用法](http://www.ruanyifeng.com/blog/2012/11/require_js.html)
+- [JavaScript 模块化编程（二）：AMD 规范](https://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html)
+- [JavaScript 模块化编程（三）：require.js 的用法](https://www.ruanyifeng.com/blog/2012/11/require_js.html)
 
 ## CMD
 
@@ -109,7 +109,7 @@ CommonJS 指定了一个全局方法 `require()` 来加载模块，获取依赖�
 
 只要能够提供这四个变量，浏览器就能加载 CommonJS 模块。
 
-详细内容推荐阮一峰老师的[浏览器加载 CommonJS 模块的原理与实现](http://www.ruanyifeng.com/blog/2015/05/commonjs-in-browser.html)。
+详细内容推荐阮一峰老师的[浏览器加载 CommonJS 模块的原理与实现](https://www.ruanyifeng.com/blog/2015/05/commonjs-in-browser.html)。
 
 你也可以使用现有的 CommonJS 格式转换工具，[Browserify](http://browserify.org/) 是目前最常用的。
 
@@ -344,7 +344,7 @@ import baz from './baz'
 
 推荐一篇关于 ES6 之前各种规范的模块化 [《JavaScript Module Pattern: In-Depth》](http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth)
 
-也可以阅读阮一峰老师的 [JavaScript 模块化编程（一）：模块的写法](http://www.ruanyifeng.com/blog/2012/10/javascript_module.html)
+也可以阅读阮一峰老师的 [JavaScript 模块化编程（一）：模块的写法](https://www.ruanyifeng.com/blog/2012/10/javascript_module.html)
 
 ## 总结
 
@@ -365,10 +365,11 @@ import baz from './baz'
 - [JavaScript modules](https://v8.dev/features/modules)
 - [Understanding Modules and Import and Export Statements in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-modules-and-import-and-export-statements-in-javascript)
 - [More on importing and exporting](https://2ality.com/2014/09/es6-modules-final.html#more-on-importing-and-exporting)
-- [前端模块管理器简介](http://www.ruanyifeng.com/blog/2014/09/package-management.html)
-- [require() 源码解读](http://www.ruanyifeng.com/blog/2015/05/require.html)
-- [JavaScript 模块的循环加载](http://www.ruanyifeng.com/blog/2015/11/circular-dependency.html)
+- [前端模块管理器简介](https://www.ruanyifeng.com/blog/2014/09/package-management.html)
+- [require() 源码解读](https://www.ruanyifeng.com/blog/2015/05/require.html)
+- [JavaScript 模块的循环加载](https://www.ruanyifeng.com/blog/2015/11/circular-dependency.html)
 - [JavaScript 模块化七日谈](https://huangxuan.me/js-module-7day/#/)
 - [JavaScript 模块化编程简史（2009-2016）](https://yuguo.us/weblog/javascript-module-development-history/)
 - [精读 js 模块化发展](https://zhuanlan.zhihu.com/p/26118022)
 - [JavaScript 模块化发展](https://segmentfault.com/a/1190000015302578)
+- [JavaScript 模块化思维导图](https://www.processon.com/view/link/5c8409bbe4b02b2ce492286a#map)
