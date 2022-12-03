@@ -34,7 +34,7 @@ try {
 
 ## 抛出异常
 
-您可能会看到类似 `ReferenceError: specs is not defined` 这样的情况。这表示通过 `throw` 语句引发的异常。
+你可能会看到类似 `ReferenceError: specs is not defined` 这样的情况。这表示通过 `throw` 语句引发的异常。
 
 ### 语法
 
@@ -52,13 +52,13 @@ if (somethingBadHappened) {
 }
 ```
 
-但 JavaScript 具有特殊的内置异常类型，其中之一是 `Error`，正如您在前面的示例中所看到的。这些内置的异常类型为我们提供了比异常消息更多的细节。
+但 JavaScript 具有特殊的内置异常类型，其中之一是 `Error`，正如你在前面的示例中所看到的。这些内置的异常类型为我们提供了比异常消息更多的细节。
 
 ### Error
 
 `Error` 类型用于表示一般异常。这种类型的异常最常用于实现用户定义的异常。它有两个内置属性可供使用。
 
-- `message` — 作为参数传递给 `Error` 构造函数的内容。例如，`new Error('这是一条错误消息')`。您可以通过 `message` 属性访问消息。
+- `message` — 作为参数传递给 `Error` 构造函数的内容。例如，`new Error('这是一条错误消息')`。你可以通过 `message` 属性访问消息。
 
 ```js
 const myError = new Error('Error!!!')
@@ -73,9 +73,11 @@ Error: Error!!!
     at <anonymous>:1:1
 ```
 
-**注意**，`new Error('...')` 在抛出之前不会执行任何操作，即 `throw new Error('error msg')` 将在 JavaScript 中创建一个 `Error` 实例，并停止脚本的执行，除非您对 `Error` 错误执行某些操作，例如捕获它。
+**注意**，`new Error('...')` 在抛出之前不会执行任何操作，即 `throw new Error('error msg')` 将在 JavaScript 中创建一个 `Error` 实例，并停止脚本的执行，除非你对 `Error` 错误执行某些操作，例如捕获它。
 
-## 捕捉异常
+另外，决不要尝试为基本 `Error` 类型实现**捕获所有**处理程序。这将混淆所发生的一切，并损害代码的可维护性和可扩展性。
+
+## 捕获异常
 
 现在我们知道了什么是异常以及如何抛出它们，让我们讨论一下如何通过捕获它们来阻止它们破坏我们的程序。
 
@@ -128,9 +130,9 @@ try {
 
 如上所示，在执行代码之前，不可能检查 `JSON.parse` 以获得 `stringify` 对象或字符串。
 
-> **注意**：您可以捕获程序产生的异常和运行时异常，但无法捕获 JavaScript 语法错误。
+> **注意**：你可以捕获程序运行时产生的异常，但无法捕获 JavaScript 语法错误。
 
-`try-catch-finally` 只能捕获同步错误。如果我们尝试将其用于异步代码，那么在异步代码完成其执行之前，`try-catch-finally` 可能已经执行了。
+重要的一点：`try-catch-finally` 只能捕获同步错误。如果我们尝试将其用于异步代码，那么在异步代码完成其执行之前，`try-catch-finally` 可能已经执行了。
 
 ## 如何处理异步代码块中的异常
 
@@ -149,7 +151,7 @@ fs.readdir(path, (error, files) => {
 
 我们可以看到有两个参数：`error` 和 `files`。如果有错误，`error` 参数将等于该错误，我们可以抛出该错误来进行异常处理。
 
-在 `if (error)` 块中返回某些内容或将其他指令包装在 `else` 块中都很重要。否则，您可能会遇到另一个错误。例如，当您尝试访问 `files` 时，`files` 可能未定义。
+在 `if (error)` 块中返回某些内容或将其他指令包装在 `else` 块中都很重要。否则，你可能会遇到另一个错误。例如，当你尝试访问 `files` 时，`files` 可能未定义。
 
 ### Promise
 
@@ -173,7 +175,7 @@ Promise.resolve('1')
     console.log(res) // 不会被执行
   })
   .catch((err) => {
-    console.error(err) // 捕获并处理异常 ——> Error: go wrong
+    console.error(err) // 捕获并处理异常 => Error: go wrong
   })
 ```
 
@@ -191,25 +193,25 @@ async function func() {
 }
 ```
 
-## 如何处理未捕获的异常
+## 如何处理全局未捕获的异常
 
-现在我们已经很好地理解了如何在同步和异步代码块中执行异常处理，让我们回答本文最后一个待解决的问题：**我们如何处理未捕获的异常？**
+现在我们已经很好地理解了如何在同步和异步代码块中执行异常处理，让我们回答本文最后一个待解决的问题：**我们如何处理全局未捕获的异常？**
 
 ### 在浏览器中
 
-我们可以使用 `window.onerror()` 方法来处理未捕获的异常。每当运行时发生错误时，该方法会在 `window` 对象上触发 `error` 事件。
+我们可以使用 `window.onerror` 事件来处理未捕获的异常。每当运行时发生错误时，会在 `window` 对象上触发 `error` 事件。
 
 ```js
 window.onerror = function () {
   // do something
 }
-
+// or
 window.addEventListener('error', () => {
   // do something
 })
 ```
 
-`onerror()` 的另一个实用做法是：当站点中的图片或视频等数据加载出错时，可以用该方法触发某些操作。例如，提供一张加载出错时的图片，或显示一条消息。
+`onerror` 的另一个常用做法是，当站点中的图片或视频等数据加载出错时，可以用该方法触发某些操作。例如，提供一张加载出错时的图片，或显示一条消息。
 
 ```html
 <img src="logo.png" onerror="alert('加载图片时出错')" />
@@ -228,14 +230,14 @@ process.on('uncaughtException', () => {})`
 `uncaughtException` 仅适用于同步代码。对于异步代码，还有另一个称为 `unhandledRejection` 的事件。
 
 ```js
-// Node
+// 在 Node.js 中
 process.on('unhandledRejection', (event, promise) => {
   // 第二个参数指向抛出错误的那个 promise
   console.log(event, promise)
   // do something
 })
 
-// 浏览器
+// 在浏览器中
 window.addEventListener('unhandledrejection', (event) => {
   console.log(event, p)
   // do something
@@ -244,21 +246,23 @@ window.addEventListener('unhandledrejection', (event) => {
 
 > 注意事件名大小写。
 
-决不要尝试为基本 `Error` 类型实现**捕获所有**处理程序。这将混淆所发生的一切，并损害代码的可维护性和可扩展性。
-
 ## 关键点
 
 - 我们无法捕获语法错误。
 - `throw` 语句用于生成用户定义的异常。在运行时，当 `throw` 遇到语句时，当前函数的执行将停止，控制权将传递给 `catch` 调用堆栈中的第一个子句。如果没有 `catch` 子句，程序将终止。
 - JavaScript 有一些内置的异常类型，最值得注意的是 `Error`，它返回 `Error` 中的两个重要属性：`stack` 和 `message`。
 - `try` 子句将包含可能产生异常的代码，`catch` 子句会在发生异常时执行。`finally` 子句无论之前情况如何，最后都会执行。
-- 对于异步代码，使用 `async/await` 配合 `try-catch` 语句捕获异常。
-- 捕获未处理的异常，这可以防止应用程序崩溃。
+- 对于 JS 运行时的同步异常，通过 `try-catch` 进行捕获，不过常规下它只能捕获同步代码。对于异步代码，使用 `async/await` 配合 `try-catch` 语句捕获异常。（Promise `then` 方法的第二个参数，或者 `catch` 捕获也可行）
+- `onerror` 可以监听所有同步、异步的运行时错误，但无法监听语法、接口、资源加载错误。而 `unhandledrejection` 可以监听到 Promise 中抛出的，未被 `.catch` 捕获的错误。
+- 前端知名框架 Vue 和 React 都有对应的错误监听方案，比如 React 的 [Error Boundaries](https://reactjs.org/docs/error-boundaries.html)，Vue 的 [errorHandler](https://vuejs.org/api/application.html#app-config-errorhandler)、[warnHandler](https://vuejs.org/api/application.html#app-config-warnhandler)、[errorCaptured](https://vuejs.org/api/options-lifecycle.html#errorcaptured) 等。另外，如果你对于 Vue 的组件错误监听感兴趣，可以阅读 [Vue 错误处理 — onErrorCaptured 钩子](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%20%E2%80%94%20onErrorCaptured%20%E9%92%A9%E5%AD%90.md)。
 
-不要觉得麻烦，异常处理可以帮助您提高代码的可维护性、可扩展性和可读性。
+捕获未处理的异常可以防止应用程序崩溃。
+
+不要觉得麻烦，异常处理可以提高项目的稳定性，并且帮助你提高代码的可维护性、可扩展性和可读性。
 
 ## 更多资料
 
 - [使用 promise 进行错误处理](https://zh.javascript.info/promise-error-handling)
 - [错误处理，"try...catch"](https://zh.javascript.info/try-catch)
 - [自定义 Error，扩展 Error](https://zh.javascript.info/custom-errors)
+- [209.精读《捕获所有异步 error》](https://github.com/ascoders/weekly/blob/master/%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/209.%E7%B2%BE%E8%AF%BB%E3%80%8A%E6%8D%95%E8%8E%B7%E6%89%80%E6%9C%89%E5%BC%82%E6%AD%A5%20error%E3%80%8B.md)

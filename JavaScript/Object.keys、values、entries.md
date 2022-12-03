@@ -1,6 +1,6 @@
 # Object.keys/values/entries
 
-JavaScript 中的数据结构 `Set`、`Map`、`Array` 都有 `keys()`，`values()` 和 `entries()`。
+JavaScript 中的数据结构 `Set`、`Map`、`Array` 都有 `keys()`、`values()` 和 `entries()`。
 
 普通对象也支持类似的方法，但是语法上有一些不同。
 
@@ -15,25 +15,17 @@ let user = {
 }
 
 const keyList = Object.keys(user)
-console.log(keyList) // ["name", "age"]
+console.log(keyList) // ['name', 'age']
 ```
-
-上面的代码返回对象 `user` 中可用的键列表。
 
 ### 检查数组中是否存在键
 
-可以使用 `Array.prototype.includes()` 方法检查数组中是否存在键。
+使用 `Array.prototype.includes()` 方法检查数组中是否存在键。
 
 ```js
 const val = 'age'
 
-if (keyList.length > 0) {
-  if (keyList.includes(val)) {
-    console.log('存在 key')
-  } else {
-    console.log('不存在 key')
-  }
-}
+keyList.includes(val) ? '存在 key' : '不存在 key'
 ```
 
 ### 计算属性数量
@@ -47,10 +39,10 @@ count(user) // 2
 ### 判断对象是否为空
 
 ```js
-const isEmpty = (obj) => (Object.keys(obj).length === 0 ? '空' : '非空')
+const isEmpty = (obj) => Object.keys(obj).length === 0
 
-console.log(empty(obj)) // "空"
-console.log(empty(user)) // "非空"
+isEmpty({}) // true
+isEmpty(user) // false
 ```
 
 ## Object.values()
@@ -82,7 +74,7 @@ let price = {
 }
 ```
 
-- **方式一**：使用 `Object.values` 和 `for..of` 循环返回所有数的总和
+- **方式一**：使用 `Object.values` 和 `for...of` 循环返回所有数的总和。
 
 ```js
 const sumPrice = (val) => {
@@ -96,10 +88,11 @@ const sumPrice = (val) => {
 sumPrice(price) // 650
 ```
 
-- **方式二**：使用 `Object.values` 和 `reduce` 来求和
+- **方式二**：使用 `Object.values` 和 `reduce` 来求和。
 
 ```js
 const sumPrice = (val) => Object.values(val).reduce((a, b) => a + b, 0)
+
 sumPrice(price) // 650
 ```
 
@@ -121,11 +114,8 @@ for (const [key, value] of Object.entries(user)) {
 // age: 18
 ```
 
-## 注意
+## 你应该知道
 
-`Object.keys/values/entries` 方法都是用 `Object.` 来调用。
-
-`Object.keys/values/entries` 会忽略 `symbol` 属性
-
-- 就像 `for..in` 循环一样，这些方法会忽略使用 `Symbol(...)` 作为键的属性。
-- 如果我们想要 `Symbol` 类型的键，可以 [`Object.getOwnPropertySymbols()`](https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols) 方法 ，它会返回一个只包含 `Symbol` 类型的键的数组。另外，还有一种方法 [`Reflect.ownKeys(obj)`](https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys)，它会返回所有键。
+- `Object.keys/values/entries` 方法都是用 `Object.` 来调用。
+- 就像 `for...in` 循环一样，`Object.keys/values/entries` 方法会忽略使用 `Symbol` 作为键的属性。
+- 如果我们想要 `Symbol` 类型的键，可以使用 [`Object.getOwnPropertySymbols()`](https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols) 方法，它会返回一个只包含 `Symbol` 类型键的数组。还有另一种由 [Reflect](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect) 对象提供的方法 [`Reflect.ownKeys(obj)`](https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys)，它会返回所有键。
