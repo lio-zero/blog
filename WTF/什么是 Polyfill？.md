@@ -12,7 +12,7 @@
 - [es6-promise](https://github.com/stefanpenner/es6-promise) ES6 风格的 Promise 的 polyfill
 - [unfetch](https://github.com/developit/unfetch) 🐕 最小 500b 的 `fetch` polyfill。
 
-Modernizr 提供了 HTML5 特性所有可能的 polyfill 列表：[HTML5 Cross Browser Polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills)。
+[Modernizr](https://modernizr.com/) 提供了 HTML5 特性所有可能的 polyfill 列表：[HTML5 Cross Browser Polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills)。
 
 [Polyfill.io](https://polyfill.io/v3/) 是一种通过选择性地填充浏览器所需的内容来减少 Web 开发挫折的服务。Polyfill.io 读取每个请求的 User-Agent header，并返回适用于请求浏览器的 polyfill。
 
@@ -20,4 +20,5 @@ Modernizr 提供了 HTML5 特性所有可能的 polyfill 列表：[HTML5 Cross B
 
 ## 更多资料
 
-[What is a Polyfill?](https://remysharp.com/2010/10/08/what-is-a-polyfill)（Remy Sharp，概念发明者）
+- [What is a Polyfill?](https://remysharp.com/2010/10/08/what-is-a-polyfill)（Remy Sharp，概念发明者）
+- [Polyfill 和转译器](https://zh.javascript.info/polyfills)

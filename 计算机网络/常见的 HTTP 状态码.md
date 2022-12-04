@@ -50,7 +50,7 @@
 ## 更多资源
 
 - [完整的 HTTP 状态代码列表](https://httpstatuses.com/)
-- [HTTP 状态码](http://www.restapitutorial.com/httpstatuscodes.html)
+- [HTTP Status Codes](https://www.restapitutorial.com/httpstatuscodes.html)
 - [Mozilla HTTP 响应状态码](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 
 如果你想了解这方面更加全面、详细的内容，可查阅 [《RESTful WebServices》](https://book.douban.com/subject/3094230/) 书籍，也可以在网上查阅一些电子文档，或者摘翻。
