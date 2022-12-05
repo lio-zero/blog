@@ -16,14 +16,14 @@ Nginx 里的 `rewrite` 模块是专门负责静态重写的。
 ```nginx
 server {
   listen 443 ssl;
+  server_name old.com;
   # ...
 
-  server_name old.com;
   rewrite .* https://new.com;
 }
 ```
 
-如果是跳转到新域名上时要保留路径，那么：
+如果是跳转到新域名上时要保留 `path` 部分，那么：
 
 ```nginx
 server {
@@ -35,13 +35,14 @@ server {
 }
 ```
 
-还有一种方式，如果域名不是 `www.new.domain.com` 就统一转到 `https://www.new.domain.com`：
+你还可以添加条件判断，如果域名不是 `new.domain.com` 就统一转到 `https://new.domain.com`：
 
 ```nginx
 server {
   listen 443 ssl;
   server_name old.domain.com new.domain.com example.com www.example.com;
-  if ($host != 'www.new.domain.com') {
+
+  if ($host != 'new.domain.com') {
     rewrite ^/(.*)$ https://new.domain.com/$1 permanent;
   }
 }
@@ -49,17 +50,7 @@ server {
 
 `$host` 是 `core` 模块内部的一个变量，当请求头里不存在 `host` 属性或者是个空值，`$host` 则等于 `server_name`。如果请求头里有 `host` 属性，那么 `$host` 等于 `host` 属性除了端口号的部分，例如 `host` 属性是 `www.example.com`，那么 `$host` 就是 `www.example.com`。
 
-也可以单独增加一个 server，在里面统一设置，`permanent` 是 301 重定向：
-
-```nginx
-server {
-  listen 443 ssl;
-  server_name new.domain.com;
-  # ...
-
-  rewrite ^/(.*)$ https://www.new.domain.com/$1 permanent;
-}
-```
+> **注意**：`permanent` 是永久重定向，如果重定向的地址错误，由于浏览器会记住它，会一直重定向你设置的错误地址。这时你可以通过清除浏览器缓存解决。
 
 `rewrite` 与 `location` 配合实现图片文件跳转到 CDN：
 
@@ -70,7 +61,19 @@ location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$ {
 }
 ```
 
-> **注意**：`permanent` 是永久重定向，如果重定向的地址错误，由于浏览器会记住它，会一直重定向你设置的地址。这时你可以通过清楚浏览器缓存解决。
+[nginx-tutorial](https://dunwu.github.io/nginx-tutorial) 教程推荐的最佳做法是，[使用 `return` 代替 `rewrite` 来做重定向](https://dunwu.github.io/nginx-tutorial/#/nginx-configuration?id=%e4%bd%bf%e7%94%a8-return-%e4%bb%a3%e6%9b%bf-rewrite-%e6%9d%a5%e5%81%9a%e9%87%8d%e5%ae%9a%e5%90%91)。
+
+因为它们比通过位置块评估 RegEx 更简单、更快捷。该指令停止处理，并将指定的代码返回给客户端。
+
+```nginx
+server {
+  # ...
+
+  return 301 https://new.domain.com$request_uri;
+}
+```
+
+`$request_uri` 也是一个内置变量，用于替代正则以高效的填补现有 URI。
 
 ## 更多资料
 

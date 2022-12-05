@@ -15,7 +15,6 @@
 CSS 如下：
 
 ```css
-/* 调整了上述自定义元素的 CSS */
 .type-writer .text {
   width: 43ch;
   animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
@@ -50,7 +49,7 @@ CSS 如下：
 
 ## 更多资源
 
-- [Typewriter effect](https://www.30secondsofcode.org/css/s/typewriter-effect) 添加部分 JS，以根据文本内容的宽度设置动画。
-- [typeit](https://github.com/alexmacarthur/typeit) 一个通用的 JavaScript 打字机效果，仅用于开源或个人项目。
+- [Typewriter effect](https://www.30secondsofcode.org/css/s/typewriter-effect) 通过 JS 获取文本的长度，并为其设置一个 CSS 变量，动态设置元素的宽度。这里使用 `1ch` 单位，相当于一个字形的长度。
+- [typeit](https://github.com/alexmacarthur/typeit) 一个通用的 JavaScript 打字机效果。
 - [Typewriter Animation That Handles Anything You Throw at It](https://css-tricks.com/typewriter-animation-that-handles-anything-you-throw-at-it/)
 - [Typewriter Effect](https://css-tricks.com/snippets/css/typewriter-effect/)
