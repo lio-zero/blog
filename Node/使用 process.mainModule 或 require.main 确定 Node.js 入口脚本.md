@@ -169,4 +169,4 @@ Module {
 
 > **注意**：`process.mainModule` 自 14.x 被废弃，但你仍然可以在 Node.js 内使用它。
 >
-> **扩展**：`import.meta.url` 需要在 ESM 中使用，这在 CJS 无法使用。如果你现在正在编写工具，想要在 CJS 和 ESM 中支持 `__dirname` 和 `import.meta.url`，可以看看 antfu 的 [Isomorphic `__dirname`](https://antfu.me/posts/isomorphic-dirname) 文章中给出的方法。另外，需要获取包根目录，可以看看 [Get Package Root](https://antfu.me/posts/get-package-root)。
+> **扩展**：`import.meta.url` 需要在 ESM 环境中使用，这在 CJS 无法使用。如果你现在正在编写项目，需要在 CJS 和 ESM 中支持 `__dirname` 和 `import.meta.url`，可以看看 [antfu](https://github.com/antfu) 的 [Isomorphic `__dirname`](https://antfu.me/posts/isomorphic-dirname) 文章中给出的方法。但通常在构建需要同时支持 CJS 和 ESM 的包中，我们会使用一些工具同时生成它们，antfu 在 [Publish ESM and CJS in a single package](https://antfu.me/posts/publish-esm-and-cjs) 中介绍两种便捷的方式。另外，需要获取包根目录，可以看看 [Get Package Root](https://antfu.me/posts/get-package-root)。
