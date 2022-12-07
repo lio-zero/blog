@@ -248,12 +248,12 @@ window.addEventListener('unhandledrejection', (event) => {
 
 ## 关键点
 
-- 我们无法捕获语法错误。
 - `throw` 语句用于生成用户定义的异常。在运行时，当 `throw` 遇到语句时，当前函数的执行将停止，控制权将传递给 `catch` 调用堆栈中的第一个子句。如果没有 `catch` 子句，程序将终止。
 - JavaScript 有一些内置的异常类型，最值得注意的是 `Error`，它返回 `Error` 中的两个重要属性：`stack` 和 `message`。
 - `try` 子句将包含可能产生异常的代码，`catch` 子句会在发生异常时执行。`finally` 子句无论之前情况如何，最后都会执行。
 - 对于 JS 运行时的同步异常，通过 `try-catch` 进行捕获，不过常规下它只能捕获同步代码。对于异步代码，使用 `async/await` 配合 `try-catch` 语句捕获异常。（Promise `then` 方法的第二个参数，或者 `catch` 捕获也可行）
-- `onerror` 可以监听所有同步、异步的运行时错误，但无法监听语法、接口、资源加载错误。而 `unhandledrejection` 可以监听到 Promise 中抛出的，未被 `.catch` 捕获的错误。
+- `try-catch` 无法捕获语法异常。
+- `onerror` 可以捕获语法错误，也可以捕获运行时错误。而 `unhandledrejection` 可以监听到 Promise 中抛出的，未被 `.catch` 捕获的错误。
 - 前端知名框架 Vue 和 React 都有对应的错误监听方案，比如 React 的 [Error Boundaries](https://reactjs.org/docs/error-boundaries.html)，Vue 的 [errorHandler](https://vuejs.org/api/application.html#app-config-errorhandler)、[warnHandler](https://vuejs.org/api/application.html#app-config-warnhandler)、[errorCaptured](https://vuejs.org/api/options-lifecycle.html#errorcaptured) 等。另外，如果你对于 Vue 的组件错误监听感兴趣，可以阅读 [Vue 错误处理 — onErrorCaptured 钩子](https://github.com/lio-zero/blog/blob/main/Vue/Vue%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%20%E2%80%94%20onErrorCaptured%20%E9%92%A9%E5%AD%90.md)。
 
 捕获未处理的异常可以防止应用程序崩溃。
@@ -265,4 +265,5 @@ window.addEventListener('unhandledrejection', (event) => {
 - [使用 promise 进行错误处理](https://zh.javascript.info/promise-error-handling)
 - [错误处理，"try...catch"](https://zh.javascript.info/try-catch)
 - [自定义 Error，扩展 Error](https://zh.javascript.info/custom-errors)
-- [209.精读《捕获所有异步 error》](https://github.com/ascoders/weekly/blob/master/%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/209.%E7%B2%BE%E8%AF%BB%E3%80%8A%E6%8D%95%E8%8E%B7%E6%89%80%E6%9C%89%E5%BC%82%E6%AD%A5%20error%E3%80%8B.md)
+- [精读《捕获所有异步 error》](https://github.com/ascoders/weekly/blob/master/%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/209.%E7%B2%BE%E8%AF%BB%E3%80%8A%E6%8D%95%E8%8E%B7%E6%89%80%E6%9C%89%E5%BC%82%E6%AD%A5%20error%E3%80%8B.md)
+- [精读《JavaScript 错误堆栈处理》](https://github.com/ascoders/weekly/blob/master/%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/6.%E7%B2%BE%E8%AF%BB%E3%80%8AJavaScript%20%E9%94%99%E8%AF%AF%E5%A0%86%E6%A0%88%E5%A4%84%E7%90%86%E3%80%8B.md)
