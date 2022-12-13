@@ -1,10 +1,10 @@
-# Stream
+# Web Streams
 
-[Stream API](https://developer.mozilla.org/zh-CN/docs/Web/API/Streams_API) 允许 JavaScript 以编程方式访问从网络接收的数据流，并且允许开发人员根据需要处理它们。
+[Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API) 允许 JavaScript 以编程方式访问从网络接收的数据流，并且允许开发人员根据需要处理它们。
 
 使用流，我们可以从网络或其他来源接收资源，并在第一个 bit 到达时立即处理它，而不用等待资源完全下载后再使用。
 
-## 什么是流?
+## 什么是流（Streams）?
 
 我可能最先想到的一个示例是加载 b 站视频，你不必完全加载它就可以开始观看。
 
@@ -12,9 +12,9 @@
 
 内容甚至不必结束，它可以无限地产生。
 
-## Stream API
+## Streams API
 
-Stream API 允许我们处理此类内容。
+Streams API 允许我们处理此类内容。
 
 我们有 2 种不同的流模式：读取流和写入流。
 
@@ -24,17 +24,19 @@ Stream API 允许我们处理此类内容。
 
 对于可读流，我们有 3 类对象：
 
-- [`ReadableStream`](https://developer.mozilla.org/zh-CN/docs/Web/API/ReadableStream)
-- [`ReadableStreamDefaultReader`](https://developer.mozilla.org/zh-CN/docs/Web/API/ReadableStreamDefaultReader)
-- [`ReadableStreamDefaultController`](https://developer.mozilla.org/zh-CN/docs/Web/API/ReadableStreamDefaultController)
+- [`ReadableStream`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)
+- [`ReadableStreamDefaultReader`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader)
+- [`ReadableStreamDefaultController`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultController)
 
 我们可以使用 ReadableStream 对象来使用流。
 
 下面是可读流的第一个示例。Fetch API 允许从 web 中获取资源，并将其作为流提供：
 
 ```js
-const stream = fetch('/resource').then((res) => res.body)
+const stream = fetch('https://github.com/').then((res) => res.body)
 ```
+
+![ReadableStream 对象](https://upload-images.jianshu.io/upload_images/18281896-1bbb559dd1d4cd4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 获取响应的 `body` 属性是一个 ReadableStream 对象实例。这是我们的可读流。
 
@@ -43,8 +45,10 @@ const stream = fetch('/resource').then((res) => res.body)
 对 ReadableStream 对象上调用 `getReader()` 将返回一个 ReadableStreamDefaultReader 对象，即**读取器**。我们可以这样做：
 
 ```js
-const reader = fetch('/resource').then((res) => res.body.getReader())
+const reader = fetch('https://github.com/').then((res) => res.body.getReader())
 ```
+
+![ReadableStreamDefaultReader 对象](https://upload-images.jianshu.io/upload_images/18281896-2a359a502b28d731.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 我们以块的形式读取数据，其中块是一个字节或[类型化数组](https://github.com/lio-zero/blog/blob/main/JavaScript/%E7%B1%BB%E5%9E%8B%E5%8C%96%E6%95%B0%E7%BB%84.md)。数据块在流中排队，我们每次读取一个数据块。
 
@@ -73,13 +77,13 @@ fetch('https://github.com/').then((res) => {
 })
 ```
 
-![Uint8Array](https://upload-images.jianshu.io/upload_images/18281896-9ef5b0a28aa95947.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Uint8Array](https://upload-images.jianshu.io/upload_images/18281896-8166b3ea8e6c1ebc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 如果打开每一组数组项，你将看到单个项。这些是存储在 Uint8Array 中的字节：
 
-![字节存储在 Uint8Array 中](https://upload-images.jianshu.io/upload_images/18281896-8166b3ea8e6c1ebc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![字节存储在 Uint8Array 中](https://upload-images.jianshu.io/upload_images/18281896-9ef5b0a28aa95947.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-你可以使用 Encoding API 将这些字节转换为字符：
+你可以使用 [Encoding API](https://developer.mozilla.org/en-US/docs/Web/API/Encoding_API) 将这些字节转换为字符：
 
 ```js
 const decoder = new TextDecoder('utf-8')
@@ -96,9 +100,9 @@ fetch('https://github.com/').then((res) => {
 
 这将打印出页面中加载的字符：
 
-![打印字符](https://upload-images.jianshu.io/upload_images/18281896-4276d0f897ac7129.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![将字节转换为字符](https://upload-images.jianshu.io/upload_images/18281896-4276d0f897ac7129.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-此新版本的代码加载流的每个块，并打印出来：
+以下代码加载流的每个块，并打印出来：
 
 ```js
 ;(async () => {
@@ -110,7 +114,7 @@ fetch('https://github.com/').then((res) => {
 
   reader.read().then(function processText({ done, value }) {
     if (done) {
-      console.log('流已完成。收到的内容:')
+      console.log('流已完成。收到的内容: ')
       console.log(result)
       return
     }
@@ -125,6 +129,8 @@ fetch('https://github.com/').then((res) => {
 ```
 
 我将其包装在一个 `async` 立即执行函数中，以使用 `await`。
+
+> 如果你在浏览器的控制台中测试，无需包括立即执行函数，因为浏览器会优先支持 ES 提案中新出的特性，ES 13 中已支持顶层 `await` 的使用。
 
 我们创建的 `processText()` 函数接收一个具有 2 个属性的对象。
 
@@ -232,9 +238,9 @@ const tees = stream.tee()
 
 对于可写流，我们有 3 类对象：
 
-- [WritableStream](https://developer.mozilla.org/zh-CN/docs/Web/API/WritableStream)
-- [WritableStreamDefaultWriter](https://developer.mozilla.org/zh-CN/docs/Web/API/WritableStreamDefaultWriter)
-- [WritableStreamDefaultController](https://developer.mozilla.org/zh-CN/docs/Web/API/WritableStreamDefaultController)
+- [WritableStream](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream)
+- [WritableStreamDefaultWriter](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)
+- [WritableStreamDefaultController](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultController)
 
 我们可以使用 `WritableStream` 对象创建稍后可以使用的流。
 
@@ -344,3 +350,8 @@ writer.ready.then(() => {
   writer.close()
 })
 ```
+
+## 更多资料
+
+- [精读《web streams》](https://github.com/ascoders/weekly/blob/master/%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/214.%E7%B2%BE%E8%AF%BB%E3%80%8Aweb%20streams%E3%80%8B.md)
+- [2016 - the year of web streams](https://jakearchibald.com/2016/streams-ftw/)
