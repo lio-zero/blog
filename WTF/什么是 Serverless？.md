@@ -1,6 +1,6 @@
 # 什么是 Serverless？
 
-Serverless 是一个术语，它标识了一种特定的运行程序的方式，不涉及管理你自己的服务器。
+Serverless 是一种**无服务器架构**，它标识了一种特定的运行程序的方式，不涉及管理你自己的服务器。
 
 你创建一个函数，将它放在云服务器的某个位置，然后你所拥有的就是一个要调用的 URL。
 
@@ -29,6 +29,7 @@ Serverless 是一个术语，它标识了一种特定的运行程序的方式，
 以上仅粗略介绍了 Serverless，以下提供一些链接供大家学习：
 
 - [frontend-focus/Serverless](https://github.com/lio-zero/frontend-focus#serverless) — 一份 Serverless 精彩列表
+- [精读《Serverless 给前端带来了什么》](https://github.com/ascoders/weekly/blob/master/%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/94.%E7%B2%BE%E8%AF%BB%E3%80%8AServerless%20%E7%BB%99%E5%89%8D%E7%AB%AF%E5%B8%A6%E6%9D%A5%E4%BA%86%E4%BB%80%E4%B9%88%E3%80%8B.md)
 - [Serverless 初探](https://cloud.tencent.com/developer/article/1005537)
 - [Serverless（无服务）基础知识](https://juejin.cn/post/6844903904224903181)
 - [探索 Serverless 中的前端开发模式](https://juejin.cn/post/6844903844745330695)
