@@ -11,32 +11,33 @@ const userSchema = new mongoose.Schema({
     unique: true // email 必须是唯一的
   }
 })
+
 const User = mongoose.model('User', userSchema)
 ```
 
-如果您尝试使用相同的 `name` 创建两个用户，您将得到一个重复密钥错误。
+如果你尝试使用相同的 `name` 创建两个用户，你将得到一个重复键错误。
 
 ```js
-// 抛出 MongoError:E11000 重复密钥错误集合
+// 抛出 MongoError: E11000 duplicate key error collection
 await User.create([{ email: 'test@163.com' }, { email: 'test2@163.com' }])
 
 const doc = new User({ email: 'test@163.com' })
-// 抛出 MongoError:E11000 重复密钥错误集合
+// 抛出 MongoError: E11000 duplicate key error collection
 await doc.save()
 ```
 
-更新还可能引发重复的密钥错误。例如，如果您创建了一个具有唯一电子邮件地址的用户，然后将其电子邮件地址更新为非唯一值，您将得到相同的错误。
+更新还可能引发重复键错误。例如，如果你创建了一个具有唯一电子邮件地址的用户，然后将其电子邮件地址更新为非唯一值，你将得到相同的错误。
 
 ```js
 await User.create({ email: 'test2@163.com' })
 
-// 抛出 MongoError:E11000 重复密钥错误集合
+// 抛出 MongoError: E11000 duplicate key error collection
 await User.updateOne({ email: 'test2@163.com' }, { email: 'test@163.com' })
 ```
 
 ## `unique` 定义索引，而不是验证器
 
-一个常见的问题是 `unique` 选项告诉 Mongoose 定义一个[唯一索引](https://docs.mongodb.com/manual/core/index-unique/)。这意味着当您使用 `validate()` 时，Mongoose 不会检查唯一性。
+一个常见的问题是 `unique` 选项告诉 Mongoose 定义一个[唯一索引](https://docs.mongodb.com/manual/core/index-unique/)。这意味着当你使用 `validate()` 时，Mongoose 不会检查唯一性。
 
 ```js
 await User.create({ email: 'test@163.com' })
@@ -66,13 +67,13 @@ await mongoose.connection.dropDatabase()
 // 重新生成所有索引
 await User.syncIndexes()
 
-// 抛出 MongoError:E11000 重复密钥错误集合
+// 抛出 MongoError: E11000 duplicate key error collection
 await User.create([{ email: 'test@163.com' }, { email: 'test@163.com' }])
 ```
 
 ## 处理 `null` 值
 
-`null` 是一个不同的值，您不能保存两个具有 `null` 的 `email` 用户。同样，不能保存两个没有 `email` 属性的用户。
+`null` 是一个不同的值，你不能保存两个具有 `null` 的 `email` 用户。同样，不能保存两个没有 `email` 属性的用户。
 
 ```js
 // 抛出，因为两个文档都有 undefined
@@ -94,7 +95,7 @@ const userSchema = new mongoose.Schema({
 })
 ```
 
-如果您需要 `email` 是唯一的，除非它没有定义，您可以改为定义一个 **[Sparse Indexes（稀疏索引）](https://docs.mongodb.com/manual/core/index-sparse/)** 在 `email` 上，如下所示。
+如果你需要 `email` 是唯一的，除非它没有定义，你可以改为定义一个 **[Sparse Indexes（稀疏索引）](https://www.mongodb.com/docs/manual/core/index-sparse/)** 在 `email` 上。如下所示：
 
 ```js
 const userSchema = new mongoose.Schema({
@@ -108,9 +109,9 @@ const userSchema = new mongoose.Schema({
 })
 ```
 
-## 用户友好的重复键错误
+## 向用户提供友好的重复键错误
 
-要使 `MongoDB E11000` 错误消息对用户友好，您可以使用 [mongoose-beautiful-unique-validation](https://www.npmjs.com/package/mongoose-beautiful-unique-validation) 包。
+要使 `MongoDB E11000` 错误消息对用户友好，你可以使用 [mongoose-beautiful-unique-validation](https://www.npmjs.com/package/mongoose-beautiful-unique-validation) 包。
 
 ```js
 const schema = new mongoose.Schema({ name: String })
@@ -121,7 +122,7 @@ const UserModel = mongoose.model('User', schema)
 const doc = await UserModel.create({ name: 'O.O' })
 
 try {
-  // 尝试创建具有相同 _id 的文档。这将始终失败，因为 MongoDB 集合在 _id 上总是有唯一的索引。
+  // 尝试创建具有相同 _id 的文档。这将始终失败，因为 MongoDB 集合在 _id 上始终具有唯一索引。
   await UserModel.create(Object.assign({}, doc.toObject()))
 } catch (err) {
   // _id 不是唯一的。
