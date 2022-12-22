@@ -94,3 +94,8 @@ require('dotenv').config()
 通过这种方式，您可以避免在 Node 命令之前在命令行中列出环境变量，这些变量将自动提取。
 
 它们的详细用法可以查阅各自文档。
+
+## 更多资料
+
+- [Here’s how you can actually use Node environment variables](https://www.freecodecamp.org/news/heres-how-you-can-actually-use-node-environment-variables-8fdf98f53a0a)
+- [精读《如何在 nodejs 使用环境变量》](https://github.com/ascoders/weekly/blob/master/%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/60.%E7%B2%BE%E8%AF%BB%E3%80%8A%E5%A6%82%E4%BD%95%E5%9C%A8%20nodejs%20%E4%BD%BF%E7%94%A8%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E3%80%8B.md)

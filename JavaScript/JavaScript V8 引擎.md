@@ -12,12 +12,12 @@ Node.js 生态系统非常庞大，多亏了它，V8 也支持桌面应用程序
 
 其他浏览器都有自己的 JavaScript 引擎:
 
-- Firefox 有 Spidermonkey
+- Firefox 有 SpiderMonkey
 - Safari 有 JavaScriptCore（也称为 Nitro）
 - Edge 有 Chakra
 - 还有很多其他的
 
-您可以在我的另一篇文章[浏览器内核](https://github.com/lio-zero/blog/blob/main/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8.md)。
+你可以在我的另一篇文章[浏览器内核](https://github.com/lio-zero/blog/blob/main/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8.md)。
 
 所有这些引擎都实现了 ECMA ES-262 标准，也称为 ECMAScript，这是 JavaScript 使用的标准。
 
@@ -37,7 +37,7 @@ JavaScript 通常被认为是一种解释型语言，但现代 JavaScript 引擎
 
 自从 2009 年 SpiderMonkey JavaScript 编译器被添加到 Firefox 3.5 之后，每个人都遵循这个想法。
 
-JavaScript 由 V8 内部编译，采用即时（JIT）编译来加快执行速度。
+JavaScript 由 V8 内部编译，采用即时编译（JIT）来加快执行速度。
 
 这看起来似乎有悖直觉，但自从 2004 年引入谷歌地图以来，JavaScript 已经从一种通常执行几十行代码的语言发展为在浏览器中运行数千到数十万行代码的完整应用程序。
 
@@ -47,8 +47,9 @@ JavaScript 由 V8 内部编译，采用即时（JIT）编译来加快执行速�
 
 ## 更多资料
 
-- [Vyacheslav Egorov](https://mrale.ph/) 是一名 V8 引擎工程师，您可以关注它的博客。
-- [V8 博客](http://v8project.blogspot.com/)
+- [Vyacheslav Egorov](https://mrale.ph/) 是一名 V8 引擎工程师，你可以关注它的博客。
+- [V8 blog](http://v8project.blogspot.com/)
 - [V8 是怎么跑起来的 —— V8 的 JavaScript 执行管道](https://juejin.cn/post/6844903990073753613)
 - [V8 编译浅谈](https://juejin.cn/post/7041021350114230285)
 - [认识 V8 引擎](https://zhuanlan.zhihu.com/p/27628685)
+- [How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code](https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e)
