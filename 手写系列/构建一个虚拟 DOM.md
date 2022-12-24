@@ -5,7 +5,7 @@
 构建自己的虚拟 DOM 需要了解两件事。
 
 - 虚拟 DOM 是真实 DOM 的任何一种表示形式
-- 当我们在虚拟 DOM 树中更改某些内容时，我们会得到一个新的虚拟树。算法比较这两种树（旧树和新树），找出差异，并且只对真实 DOM 进行必要的小改动，以反映虚拟 DOM。
+- 当我们在虚拟 DOM 树中更改某些内容时，我们会得到一个新的虚拟树。diff 算法比较这两种树（旧树和新树），找出差异，并且只对真实 DOM 进行必要的小改动，以反映虚拟 DOM。
 
 ## DOM 树
 
@@ -33,7 +33,7 @@
 
 在这里你可以注意到两件事：
 
-- 我们用如下对象表示 DOM 元素
+- 我们用如下对象表示 DOM 元素（这不是固定的，但通常如此）
 
 ```js
 { type: '...', props: { ... }, children: [ ... ] }
@@ -55,7 +55,7 @@ function h(type, props, ...children) {
 h('ul', { class: 'list' }, h('li', {}, 'item 1'), h('li', {}, 'item 2'))
 ```
 
-这样看起来就干净很多了。但我们还可以走的更远，你听说过 JSX？
+这样看起来就干净很多了。但我们还可以走的更远，**你听说过 JSX 吗？**
 
 如果你[在这里](https://babeljs.io/docs/plugins/transform-react-jsx/)阅读官方 Babel JSX 文档，你就会知道，Babel 会转译这段代码：
 
@@ -77,7 +77,7 @@ React.createElement(
 )
 ```
 
-注意到任何相似之处吗？如果我们可以用我们的 `h(...)` 调用替换那些 `React.createElement(...)`，事实证明我们可以 — 通过使用 **jsx pragma**。我们只需要在源文件的顶部包含类似注释行：
+**注意到任何相似之处吗？**如果我们可以用我们的 `h(...)` 调用替换那些 `React.createElement(...)`，事实证明我们可以 — 通过使用 **jsx pragma**。我们只需要在源文件的顶部包含类似注释行：
 
 ```jsx
 /** @jsx h */
@@ -88,7 +88,7 @@ React.createElement(
 </ul>
 ```
 
-它实际上告诉 Babel，转译 jsx 而不是 `React.createElement`，为每个节点调用 `h` 函数。你可以用任何东西来代替 `h`。这将被转译。
+它实际上告诉 Babel，转译 jsx 而不是 `React.createElement`，为每个节点调用 `h` 函数。你可以用任何东西来代替 `h`，这将被转译。
 
 因此，总结我之前所说的，我们将这样编写我们的 DOM：
 
@@ -114,7 +114,7 @@ const a = h(
 )
 ```
 
-当函数 `h` 执行时，它将返回纯 JS 对象，我们的虚拟 DOM 表示：
+当函数 `h` 执行时，它将返回纯 JS 对象，我们的虚拟 DOM 表示如下：
 
 ```js
 const a = {
@@ -126,6 +126,8 @@ const a = {
   ]
 }
 ```
+
+> Chris Coyier 在 [Messing with JSX](https://css-tricks.com/video-screencasts/199-messing-with-jsx/) 也介绍了这种用法。
 
 ## 应用 DOM 表示
 
@@ -160,7 +162,7 @@ function createElement(node) {
 
 现在让我们考虑子节点，它们中的每一个也是文本节点或元素。所以也可以用 `createElement(...)` 函数来创建。
 
-所以，我们可以为每个元素的子元素递归调用 `createElement(...)`，然后 `appendChild(...)` 将它们添加到我们的元素中，如下所示：
+所以，我们可以为每个元素的子元素递归调用 `createElement(...)`，然后将它们 `appendChild()` 到我们的元素中，如下所示：
 
 ```js
 function createElement(node) {
@@ -181,7 +183,7 @@ function createElement(node) {
 
 现在我们可以把虚拟 DOM 变成真正的 DOM，是时候考虑区分我们的虚拟树了。我们需要编写一个算法，它将比较两个虚拟树（新旧树），并只对真实 DOM 进行必要的更改。
 
-如何区分树？往下看一个示例：
+**如何区分树？**往下看一些示例：
 
 - 没有旧节点，添加了新节点，我们需要 `appendChild(...)`
 
@@ -212,6 +214,8 @@ function updateElement($parent, newNode, oldNode) {
   }
 }
 ```
+
+这个很简单，不需要过多的解释。
 
 ### 没有新节点
 
@@ -245,7 +249,7 @@ function changed(node1, node2) {
 }
 ```
 
-现在，有了当前节点在父节点中的索引，我们可以很容易地用新创建的节点替换它:
+现在，有了当前节点在父节点中的索引，我们可以很容易地用新创建的节点替换它：
 
 ```js
 function updateElement($parent, newNode, oldNode, index = 0) {
@@ -267,7 +271,7 @@ function updateElement($parent, newNode, oldNode, index = 0) {
 
 - 只有当节点是元素时才应该比较子节点（文本节点不能有子节点）
 - 现在我们将当前节点的引用作为父节点传递
-- 我们应该逐个比较所有的子函数，即使在某些时候我们会有 `undefined`，这是可以的，我们的函数可以处理
+- 我们应该逐个比较所有的子项，即使在某些时候我们会有 `undefined`，这没关系，我们的函数可以处理这一点
 - 最后 `index` 是 `children` 数组中子节点的索引
 
 ```js
@@ -294,5 +298,7 @@ function updateElement($parent, newNode, oldNode, index = 0) {
 ```
 
 以上就是虚拟 DOM 的实现。
+
+当然以上内容没有考虑很多情况，如果需要了解它们，可以阅读 [vue-design](https://github.com/HcySunYang/vue-design) 的 Vue 的渲染器部分。
 
 > 点击此处[查看示例](https://jsfiddle.net/deathmood/0htedLra/)
