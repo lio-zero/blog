@@ -24,7 +24,7 @@ const triangle = new Triangle()
 triangle.numberOfVertices = 4
 ```
 
-或 `type`、`interface`：
+`type` 或 `interface`：
 
 ```ts
 interface Person {
@@ -34,7 +34,7 @@ interface Person {
 }
 ```
 
-`const` 声明必须初始化，并且不能重新分配其值。可以在构造函数中重新分配 `readonly` 属性。
+`const` 声明必须初始化，并且不能重新分配其值。`readonly` 属性可以在构造函数中重新分配。
 
 ```ts
 class Square {
@@ -71,10 +71,10 @@ let person: Person = {
 
 updatePerson(person)
 
-person.fullName // `Foo, Bar`
+person.fullName // 'Foo, Bar'
 ```
 
-当然，如果我们传递原始类型 `Person`，编译器将抛出一个错误：
+但是，如果我们传递原始类型 `Person`，编译器将抛出一个错误：
 
 ```ts
 const updatePerson = (person: Person) => {
@@ -84,7 +84,7 @@ const updatePerson = (person: Person) => {
 }
 ```
 
-## 很高兴知道
+## 你应该知道
 
 在给定的类中，如果一个属性只有 `getter` 方法而没有 `setter` 方法，它将被视为只读。
 
@@ -107,7 +107,7 @@ const s = new Square()
 React [类型定义](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts)将 `props` 和 `state` 包装为只读类型。
 
 ```ts
-// P，S 分别代表 props 和 state
+// P, S 分别代表 props 和 state
 class Component<P, S> {
   constructor(props: Readonly<P>)
 

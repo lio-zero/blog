@@ -24,10 +24,11 @@ TypeScript 中类型别名和接口之间的区别在过去更为明显，但随
 
 ### 对象/函数
 
-两者都可以用来描述对象的结构或函数签名。但语法不同。
+两者都可以用来描述对象的结构或函数签名，但语法不同。
+
+接口：
 
 ```ts
-// 接口
 interface Point {
   x: number
   y: number
@@ -38,7 +39,7 @@ interface SetPoint {
 }
 ```
 
-类型别名
+类型别名：
 
 ```ts
 type Point = {
@@ -51,7 +52,7 @@ type SetPoint = (x: number, y: number) => void
 
 ### 其他类型
 
-与接口不同，类型别名是数据类型的定义，可用于任何其他类型，例如：联合类型、交叉类型、原始类型、元组等。
+与接口不同，类型别名是数据类型的定义，可用于任何其他类型。例如：联合类型、交叉类型、原始类型、元组等。
 
 ```ts
 // union
@@ -106,7 +107,7 @@ type Person = {
 
 在这种情况下，如果缺少一些定义，我们可以通过声明合并来提供它们。
 
-### 继承
+### Extend
 
 两者都可以继承，但同样，语法不同。此外，请注意接口和类型别名不是相互排斥的。接口可以继承类型别名，反之亦然。
 
@@ -143,13 +144,12 @@ interface Point extends PartialPointX {
 interface PartialPointX {
   x: number
 }
-
 type Point = PartialPointX & { y: number }
 ```
 
-### `implement` 关键字
+### Implements
 
-类可以以完全相同的方式实现接口或类型别名。但是请注意，类和接口被视为静态蓝图。因此，它们不能**实现/继承**命名联合类型的类型别名。
+类可以以相同的方式实现接口或类型别名。
 
 ```ts
 interface Point {
@@ -171,7 +171,11 @@ class SomePoint2 implements Point2 {
   x = 1
   y = 2
 }
+```
 
+但是请注意，类和接口被视为静态蓝图。因此，它们不能**实现/继承**命名联合类型的类型别名。
+
+```ts
 type PartialPoint = { x: number } | { y: number }
 
 // FIXME: 无法实现联合类型
@@ -183,14 +187,14 @@ class SomePartialPoint implements PartialPoint {
 
 ## 建议
 
-要决定是使用类型别名还是接口，您应该仔细考虑和分析情况，您正在处理什么，具体的代码等。
+要决定是使用类型别名还是接口，你应该仔细考虑和分析情况，你正在处理什么，具体的代码等。
 
 结合上述它们之间的区别，以下是一些我认为不错的建议：
 
-- 如果您希望定义一个变量类型，就用 `type`，如果希望能够继承并约束，就用 `interface`
-- 如果您不知道该用哪个，建议使用 `type`
-- 如果您是库的作者或为外部库创建类型定义，请使用 `interface`，方便其他人也可以扩展它们
+- 如果你希望定义一个变量类型，就用 `type`，如果希望能够继承并约束，就用 `interface`
+- 如果你不知道该用哪个，建议使用 `type`
+- 如果你是库的作者或为外部库创建类型定义，请使用 `interface`，方便其他人也可以扩展它们
 
 ## 更多资料
 
-Stack Overflow 有更多关于这方面的讨论，地址 👉 [Interfaces vs Types in TypeScript](https://stackoverflow.com/questions/37233735/interfaces-vs-types-in-typescript)。
+Stack Overflow 有更多关于这方面的讨论，地址 👉 [Interfaces vs Types in TypeScript](https://stackoverflow.com/questions/37233735/interfaces-vs-types-in-typescript)。也可以看看 [TypeScript 中 Interface 与 Type 的区别？在写 TypeScript 的时候，该用哪个比较好？](https://github.com/sisterAn/blog/issues/126)。

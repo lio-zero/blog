@@ -87,7 +87,7 @@ const person = new Person('O.O')
 console.log(person.getName()) // O.O
 ```
 
-## 继承：Implements 关键字
+## `implements` 关键字
 
 接口可以用来定义类必须遵循 `implements` 关键字的类型。
 
@@ -110,7 +110,7 @@ class Rectangle implements Shape {
 
 一个类可以通过在 `implements` 后面列出每个接口来继承多个接口，每个接口之间用逗号分隔，例如：`class Rectangle implements Shape, Colored {`
 
-## 继承：Extends 关键字
+## `extends` 关键字
 
 类可以通过 `extends` 关键字相互继承。一个类只能继承另一个类。
 
@@ -139,7 +139,7 @@ class Square extends Rectangle {
 }
 ```
 
-## Override 关键字
+## `override` 关键字
 
 当一个类继承另一个类时，它可以用相同的名称替换父类的成员。
 
@@ -178,7 +178,7 @@ class Square extends Rectangle {
 }
 ```
 
-默认情况下，重写方法时，`override`关键字是可选的，仅有助于防止意外重写不存在的方法。使用设置 `noImplicitOverride` 强制在重写时使用它。
+默认情况下，重写方法时，`override` 关键字是可选的，仅有助于防止意外重写不存在的方法。使用设置 `noImplicitOverride` 强制在重写时使用它。
 
 ## 抽象类
 

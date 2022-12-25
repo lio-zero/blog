@@ -1,8 +1,10 @@
 # TypeScript 类型谓词
 
-TypeScript 中的[类型谓词（type predicates）](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates)可以帮助您根据条件缩小类型范围。它与 type guards 类似，但在函数上工作。如果函数返回 `true`，则将参数的类型更改为更有用的类型。
+TypeScript 中的[类型谓词（Type Predicates）](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates)是一种特殊的类型保护，用于在运行时检查值是否满足某个条件，帮助你根据条件缩小类型范围。它允许在编译器不确定类型的情况下进行类型推断。
 
-让我们从一个基本的例子开始。假设您有一个函数，用于检查某个值是否为 `string` 类型：
+它与 Type Guards 类似，但在函数上工作。如果函数返回 `true`，则将参数的类型更改为更有用的类型。
+
+让我们从一个基本的例子开始。假设你有一个函数，用于检查某个值是否为 `string` 类型：
 
 ```ts
 function isString(s) {
@@ -20,9 +22,9 @@ function toUpperCase(x: unknown) {
 }
 ```
 
-TypeScript 会抛出一个错误。我们可以确定此时 `x` 的类型是 `string`。但是，由于验证封装在函数中，所以 `x` 的类型不会改变（与 type guard 相反）。
+TypeScript 会抛出一个错误。我们可以确定此时 `x` 的类型是 `string`。但是，由于验证封装在函数中，所以 `x` 的类型不会改变（与 Type Guard 相反）。
 
-让我们显式地告诉 TypeScript，如果 `isString` 的值为 `true`，则形参的类型是一个字符串:
+让我们显式地告诉 TypeScript，如果 `isString` 的值为 `true`，则形参的类型是一个字符串：
 
 ```ts
 function isString(s): s is string {
@@ -30,19 +32,21 @@ function isString(s): s is string {
 }
 ```
 
+类型谓词使用 `is` 关键字表示。
+
 TypeScript 现在知道我们在 `toUpperCase` 函数中处理的是字符串。
 
 ```ts
 function toUpperCase(x: unknown) {
   if (isString(x)) {
-    x.toUpperCase() // ✅ x是字符串
+    x.toUpperCase() // ✅ x 是字符串
   }
 }
 ```
 
 ## 缩小集合范围
 
-这不仅可以帮助您查找未知类型或多个类型，还可以缩小类型内的集合。我们来做一个掷骰子的程序。每次你掷出一个六，你就赢了。
+这不仅可以帮助你查找未知类型或多个类型，还可以缩小类型内的集合。我们来做一个掷骰子的程序。每次你掷出一个六，你就赢了。
 
 ```ts
 function pipsAreValid(pips: number) {

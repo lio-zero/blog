@@ -29,20 +29,22 @@ let c: Color = Color.Green
 
 枚举只是在 TypeScript 中组织代码的一种有用方式。以下是枚举派上用场的一些原因：
 
-- 使用枚举，您可以创建易于关联的常量，使常量更加清晰
+- 使用枚举，你可以创建易于关联的常量，使常量更加清晰
 - 开发人员可以自由地在 JavaScript 中创建内存高效的自定义常量。正如我们所知，JavaScript 不支持枚举，但 TypeScript 可以帮助我们访问它们
 - TypeScript 枚举使用 JavaScript 中的内联代码节省了运行时间和编译时间
 - TypeScript 枚举还提供了我们以前只有在 Java 等语言中才有的一定灵活性。这种灵活性使我们可以轻松地表达和记录我们的意图和用例
 
 ## TypeScript 枚举的类型
 
-TypeScript 枚举共有三种类型，即：
+TypeScript 共有三种枚举类型：
 
-1. 数字枚举
-2. 字符串枚举
-3. 异构枚举
+- 数字枚举
+- 字符串枚举
+- 异构枚举
 
 ## 数字枚举
+
+数字枚举的成员是数字。
 
 ```ts
 enum Days {
@@ -54,9 +56,9 @@ enum Days {
 console.log(Days) // { '0': 'Sun', '1': 'Mon', '2': 'Tue', Sun: 0, Mon: 1, Tue: 2 }
 ```
 
-默认情况下，第一个枚举成员的值是 0，后面的枚举成员的值依次加 1。也可以指定一个起始值。
+默认情况下，编译器会自动为每一个成员分配从 0 开始的数字。
 
-### 自定义枚举
+我们也可以手动指定成员的值。
 
 ```ts
 enum Color {
@@ -84,9 +86,11 @@ console.log(Color) // { '1': 'Red', '10': 'Green', '8': 'Blue', Red: 1, Green: 1
 
 ### 常量枚举
 
-常量枚举其实就是在 `enum`关键字前使用 `const` 修饰符。它会在**编译阶段被移除**。
+常量枚举其实就是在 `enum` 关键字前使用 `const` 修饰符，它会在**编译阶段被移除**。
 
-如果想提高数值枚举的性能，可以将它们声明为常量。我们来看一个简单的示例：
+常量枚举的主要作用是在编译时优化代码。当 TS 编译器发现常量枚举时，它会直接在编译时将枚举成员的值替换为对应的字面量，这样可以减少运行时的常量查找操作。
+
+如果你想提高数字枚举的性能，可以将它们声明为常量。我们来看一个简单的示例：
 
 ```ts
 enum Month {
@@ -116,7 +120,7 @@ console.log(Month.Jan) // 0
 console.log(0 /* Jan */)
 ```
 
-如果我们加上 `console.log(Month)`，他在编译阶段将会报错。
+如果我们加上 `console.log(Month)`，它在编译阶段将会报错。
 
 常量枚举成员在使用的地方被内联进来，且常量枚举不可能有**计算成员**。
 
@@ -130,13 +134,13 @@ const enum Directions {
 }
 ```
 
-其实，当您引用到上面的错误代码时，VSCode 编辑器已经智能的提示您当前代码有误：**常量枚举**成员初始值设定项只能包含文字值和其他计算的枚举值。
+其实，当你引用到上面的错误代码时，VS Code 编辑器已经智能的提示你当前代码有误：**常量枚举成员初始值设定项只能包含文字值和其他计算的枚举值**。
 
 > **总结**：当我们不需要整个对象，而需要对象的某个值时，就可以使用常量枚举，这样就可以避免在编译时生成多余的代码和间接引用。
 
 ### 计算枚举
 
-数值枚举的值可以是常量，也可以是求值的，就像 TypeScript 中的任何其他数字数据类型一样。可以使用计算值定义或初始化数值枚举：
+数字枚举的值可以是常量，也可以是求值的，就像 TypeScript 中的任何其他数字数据类型一样。可以使用计算值定义或初始化数值枚举：
 
 ```ts
 enum Weekend {
@@ -161,44 +165,41 @@ Weekend.Sunday // 120
 
 ## 字符串枚举
 
-字符串枚举是不可以做双向映射的。
+字符串枚举的成员是字符串。
 
 ```ts
 enum State {
-  success = '成功',
-  fail = '失败'
+  Success = '成功',
+  Fail = '失败'
 }
 
-console.log(State) // { success: '成功', fail: '失败' }
+console.log(State) // { Success: '成功', Fail: '失败' }
 ```
+
+如果我们为第一个枚举成员初始化为字符串，那么其他成员也必须初始化表达式，且字符串枚举是无法使用反向映射的，也就是不能枚举值获取到枚举成员。
+
+当然，你也可以省略赋值，让编译器自动使用成员的名称作为值。
 
 ## 异构枚举
 
-TypeScript 还允许混合字符串和数字，称为异构枚举值：
+异构枚举是指枚举成员的值可以是数字或字符串。
+
+例如，我们可以使用异构枚举来表示一组错误代码，如下所示：
 
 ```ts
-enum Weekend {
-  Friday = 'FRIDAY',
-  Saturday = 1,
-  Sunday = 2
+enum ErrorCode {
+  Success = 0,
+  NotFound = 'NOT_FOUND',
+  Unauthorized = 'UNAUTHORIZED'
 }
 
-console.log(Weekend)
-
-/*
-{
-  '1': 'Saturday',
-  '2': 'Sunday',
-  Friday: 'FRIDAY',
-  Saturday: 1,
-  Sunday: 2
-}
-*/
+console.log(ErrorCode.Success) // 0
+console.log(ErrorCode.NotFound) // 'NOT_FOUND'
 ```
 
 ## 枚举成员
 
-枚举成员的值不可修改
+枚举成员的值不可修改。
 
 ```ts
 enum State {
@@ -209,23 +210,18 @@ enum State {
 State.success = '等待成功' // 无法分配到 "success" ，因为它是只读属性。
 ```
 
-枚举成员可以分为**常量枚举**和**计算枚举**成员。在上面数字枚举内我们已经提到。
+枚举成员可以分为**常量枚举和计算枚举**：
 
-**const enum（常量枚举）**：
+- **常量枚举（const enum）** — 常量枚举是指枚举成员的值是常量表达式，而且在编译时已经计算出结果，然后以常量的形式，出现在运行时环境。常量枚举只能包含常量成员，不能包含计算成员。
+- **计算枚举（computed enum）** — 顾名思义，需要计算的枚举成员，这些枚举成员的值不会在编译阶段计算，而是保留到程序的执行阶段。
 
-1. 没有设置初始值
-2. 对已有枚举成员的引用
-3. 常量的表达式
+在上文数字枚举内我们已经提到。
 
-常量枚举成员会在编译时计算出结果，然后以常量的形式，出现在运行时环境
+## 常规枚举与常量枚举的区别
 
-**computed enum（计算枚举）**：
+可以使用或不使用 `const` 修饰符声明枚举。
 
-顾名思义，需要计算的枚举成员，这些枚举成员的值不会在编译阶段计算，而是保留到程序的执行阶段。
-
-## const enum 与 computed enum 的区别
-
-可以使用或不使用 `const` 关键字声明枚举。以下是常规枚举的示例：
+常规枚举：
 
 ```ts
 enum Direction {
@@ -236,7 +232,7 @@ enum Direction {
 }
 ```
 
-`const` 枚举：
+常量枚举：
 
 ```ts
 const enum Light {
@@ -246,9 +242,9 @@ const enum Light {
 }
 ```
 
-## 区别
+### 区别
 
-TypeScript 将常规枚举编译为 JavaScript 对象。给定上面的 `enum` 方向，它将被编译为以下 JavaScript 代码：
+TypeScript 将常规枚举编译为 JavaScript 对象。给定上面的 `Direction` 枚举，它将被编译为以下 JavaScript 代码：
 
 ```ts
 var Direction
@@ -260,11 +256,11 @@ var Direction
 })(Direction || (Direction = {}))
 ```
 
-另一方面，Light 枚举根本不被编译。如果不使用枚举，您将看不到任何内容。
+另一方面，`Light` 枚举根本不会被编译。如果不使用枚举，你将看不到任何内容。
 
-在其他情况下，所有枚举引用都被内联代码替换。例如，`console.log(Light.Red)` 编译为 `console.log(0 /* Red */)`。
+在其他情况下，所有枚举引用都被内联代码替换。例如 `console.log(Light.Red)` 编译为 `console.log(0 /* Red */)`。
 
-由于没有在运行时生成与 `const` 枚举关联的 JavaScript 对象，因此不可能在 `const` 枚举值上循环。
+由于没有在运行时生成与 `const enum` 关联的 JavaScript 对象，因此不可能在 `const enum` 值上循环。
 
 当我们尝试迭代 `Light` 枚举时，TypeScript 将抛出一个错误：
 
@@ -275,9 +271,9 @@ for (let i in Light) {
 }
 ```
 
-## 很高兴知道
+## 你应该知道
 
-如果不希望 TypeScript 去除为 `const` 枚举生成的代码，可以使用 `preserveConstEnums` 编译器标志。
+如果不希望 TypeScript 去除为 `const enum` 生成的代码，可以使用 `preserveConstEnums` 编译器标志。
 
 ```json
 {
@@ -285,4 +281,20 @@ for (let i in Light) {
     "preserveConstEnums": true
   }
 }
+```
+
+使用 `keyof` 和 `typeof` 的组合，可以联合枚举类型的成员。
+
+```ts
+enum State {
+  Success = '成功',
+  Fail = '失败'
+}
+
+type OnlyState = keyof typeof State
+// => type OnlyState = "Success" | "Fail"
+
+const s1: OnlyState = 'Success'
+const s2: OnlyState = 'Fail'
+const s3: OnlyState = 'Pending' // Type Error
 ```

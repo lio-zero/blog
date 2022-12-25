@@ -11,7 +11,7 @@ const x: any = {
 }
 ```
 
-您可以访问上面对象的属性，即 `x.a` 和 `x.b`，一切都将按预期工作。问题是，如果试图访问 `x.c` 值，TypeScript 不会抛出错误，因为对象 `x` 可以是任何东西。
+你可以访问上面对象的属性，即 `x.a` 和 `x.b`，一切都将按预期工作。问题是，如果试图访问 `x.c` 值，TypeScript 不会抛出错误，因为对象 `x` 可以是任何东西。
 
 ```ts
 const c = x.c
@@ -19,7 +19,9 @@ const c = x.c
 console.log(c) // undefined
 ```
 
-正如您所看到的，这可能是许多 bug 的来源，因为 TypeScript 在构建期间捕获的常见错误将被允许通过。这是因为当您使用 `any` 类型时，您都会选择不进行类型检查。
+正如你所看到的，这可能是许多 bug 的来源，因为 TypeScript 在构建期间捕获的常见错误将被允许通过。这是因为当你使用 `any` 类型时，你都会选择不进行类型检查。
+
+> 推荐：[TypeScript 中 any 类型的作用是什么？](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/525)
 
 ## 为什么使用 `unknown`？
 
@@ -47,7 +49,7 @@ if (typeof x === 'number') {
 
 与最初的示例相同，如果我们将类型更改为 `unknown` 并尝试访问任何属性，TypeScript 将抛出一个错误。
 
-您需要将其强制转换，以便 TypeScript 以允许您使用它。
+你需要将其强制转换，以便 TypeScript 以允许你使用它。
 
 ```ts
 const x: unknown = {
@@ -58,4 +60,4 @@ const x: unknown = {
 console.log((x as { a: string; b: string }).b)
 ```
 
-从上面的例子可以看出，`unknown` 类型迫使您通过类型转换或类型收窄来确定 `unknown` 的变量是什么。这会产生一个更好、更安全的程序，因为 TypeScript 随后可以对生成的类型进行类型检查。
+从上面的例子可以看出，`unknown` 类型迫使你通过类型转换或类型收窄来确定 `unknown` 的变量是什么。这会产生一个更好、更安全的程序，因为 TypeScript 随后可以对生成的类型进行类型检查。

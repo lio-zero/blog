@@ -1,12 +1,12 @@
 # TypeScript 工具类型 — Utility Types
 
-TypeScript 附带了大量类型，可以帮助进行一些常见的类型操作，通常称为 [Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html)。
+TypeScript 附带了大量内置工具类型，可以帮助进行一些常见的类型操作，通常称为 [Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html)。
 
-本章介绍了最流行的工具类型。
+本章介绍了最常用的工具类型。
 
 ## Partial
 
-`Partial` 将对象中的所有属性更改为可选。
+`Partial` 将对象中的所有属性更改为**可选**。
 
 ```ts
 interface Point {
@@ -20,7 +20,7 @@ pointPart.x = 10
 
 ## Required
 
-`Required` 更改对象中需要的所有属性。与 `Partial` 相反。
+`Required` 将对象中的所有属性更改为**必选**。与 `Partial` 相反。
 
 ```ts
 interface User {
@@ -29,9 +29,23 @@ interface User {
 }
 
 const user: User = { name: 'O.O' }
+const user2: Required<User> = { name: 'O.O' } // Type Error
+```
 
-const user2: Required<User> = { name: 'O.O' }
-// 类型 "{ name: string; }" 中缺少属性 "age"，但类型 "Required<User>" 中需要该属性。ts(2741)
+## Readonly
+
+`Readonly` 将对象中的所有属性更改为**只读**。
+
+```ts
+interface User {
+  name?: string
+  age?: number
+}
+
+const user: User = { name: 'O.O' }
+const user2: Readonly<User> = { name: 'O.O' }
+
+user2.name = 'D.O' // Type Error
 ```
 
 ## Record
@@ -49,7 +63,7 @@ const nameAgeMap: Record<string, number> = {
 
 ## Omit
 
-`Omit` 从对象类型中删除键。
+`Omit` 从对象类型中删除指定键。
 
 ```ts
 interface Person {
@@ -75,8 +89,9 @@ interface Person {
   location?: string
 }
 
+// Pick 只保留了 name，因此 age 和 location 已从类型中删除，无法在此处定义
 const user: Pick<Person, 'name'> = {
-  name: 'O.O' // Pick 只保留了 name，因此 age 和 location 已从类型中删除，无法在此处定义
+  name: 'O.O'
 }
 ```
 
@@ -92,7 +107,7 @@ const value: Exclude<Primitive, string> = true // 此处不能使用字符串，
 
 ## ReturnType
 
-`ReturnType` 提取函数类型的返回类型。
+`ReturnType` 获取函数类型的返回值类型。
 
 ```ts
 type foo = () => {

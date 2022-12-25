@@ -2,7 +2,7 @@
 
 > TypeScript 的核心原则之一是对值所具有的结构进行类型检查。
 
-在 TypeScript 里，接口的作用就是为这些类型命名和为你的代码或第三方代码定义契约。
+在 TypeScript 中，接口的作用就是为这些类型命名和为你的代码或第三方代码定义契约。
 
 接口（`interface`）是最常用的类型标注方式。
 
@@ -29,9 +29,9 @@ printUser(myObj)
 
 > **注意**：类型检查器不会去检查属性的顺序，只要相应的属性存在并且类型也是对的就可以
 
-## 可选属性（`?`）
+## 可选属性 — `?`
 
-接口里的属性不全都是必需的
+接口里的属性不全都是必需的。
 
 ```ts
 interface user {
@@ -61,7 +61,7 @@ printUser(myObj) // { name: 'D.O', height: 180 }
 - 可以对可能存在的属性进行预定义
 - 可以捕获引用了不存在的属性时的错误
 
-## 只读属性（`readonly`）
+## 只读属性 — `readonly`
 
 一些对象属性只能在对象刚刚创建的时候修改其值。你可以在属性名前用 `readonly` 来指定只读属性：
 
@@ -72,7 +72,7 @@ interface Point {
 }
 
 const p: Point = { x: 10, y: 20 }
-p.x = 5 // error
+p.x = 5 // Type Error
 ```
 
 TypeScript 具有 `ReadonlyArray` 类型，它与 `Array` 相似，只是把所有可变方法去掉了，因此可以确保数组创建后再也不能被修改。
@@ -81,10 +81,10 @@ TypeScript 具有 `ReadonlyArray` 类型，它与 `Array` 相似，只是把所�
 let arr: number[] = [1, 2, 3, 4]
 const ro: ReadonlyArray<number> = arr
 
-ro[0] = 12 // error!
-ro.push(5) // error!
-ro.length = 100 // error!
-arr = ro // error
+ro[0] = 12 // Type Error
+ro.push(5) // Type Error
+ro.length = 100 // Type Error
+arr = ro // Type Error
 ```
 
 就算把整个 `ReadonlyArray` 赋值到一个普通数组也是不可以的。但是你可以用类型断言重写：
@@ -132,7 +132,7 @@ const user: User = {
 console.log(user) // { name: 'D.O', age: 18, address: {} }
 ```
 
-VS Code 编辑器虽然会提示您 `'User'` 已被定义。但是 `interface` 接口还是会对相同的接口名进行合并，并正常编译输出。
+VS Code 编辑器虽然会提示你 `'User'` 已被定义。但是 `interface` 接口还是会对相同的接口名进行合并，并正常编译输出。
 
 ## 任意数量标识
 
