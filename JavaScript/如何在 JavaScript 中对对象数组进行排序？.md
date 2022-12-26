@@ -4,12 +4,9 @@
 
 ## Array.prototype.sort()
 
-> MDN：[`Array.prototype.sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) 方法用[原地算法](https://en.wikipedia.org/wiki/In-place_algorithm)对数组的元素进行排序，并返回数组。
+> MDN：[`Array.prototype.sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) 方法用[原地算法](https://en.wikipedia.org/wiki/In-place_algorithm) 对数组的元素进行排序，并返回数组。默认排序顺序是在将元素转换为字符串，然后比较它们的 UTF-16 代码单元值序列时构建的。
 
-使用 `Array.prototype.sort()` 方法需要注意以下两点：
-
-- 该方法默认会先将数组中的所有元素转换为字符串
-- 字符串根据 UTF-16 编码进行排序
+默认情况下，`sort` 方法按字典序对字符串进行排序。
 
 ```js
 const months = ['March', 'Jan', 'Feb', 'Dec']
@@ -60,9 +57,18 @@ arr.sort((a, b) => a.localeCompare(b)) // ['Hello', 'Hi', 'Hola']
 arr.sort((a, b) => b.localeCompare(a)) // ['Hola', 'Hi', 'Hello']
 ```
 
+还有几点需要注意：
+
+- `sort` 方法不会保留原始数组的顺序。如果你希望保留原始数组的顺序，则可以使用 `Array.prototype.slice` 等方法克隆数组，然后对克隆的数组进行排序。
+- `sort` 方法在不同浏览器中的实现可能略有不同。
+- 在使用 `sort` 方法时，应注意数组的类型。
+- 如果你希望对数组的子元素进行排序，则需要确保数组中的所有元素都具有该子元素。
+
+最重要的一点还是编写 `sort` 方法比较函数，只要这一步做好了，其他注意点都可以得以解决。
+
 ## 对象可以按照某个属性排序
 
-根据不同的场景，你可能需要按键、值或日期字段对 JavaScript 数组对象进行排序。
+根据不同的场景，你可能需要按价格、日期等字段对 JavaScript 数组对象进行排序。
 
 我们可以使用 `Array.prototype.sort()` 和 `String.prototype.localeCompare()` 对字符串数据进行排序。
 
@@ -74,7 +80,7 @@ let arr = [
 ]
 
 const sortData = (data, order = 'asc') => {
-  if (order == 'asc') {
+  if (order === 'asc') {
     return data.sort((a, b) => a.dataTime.localeCompare(b.dataTime))
   } else {
     return data.sort((a, b) => b.dataTime.localeCompare(a.dataTime))
@@ -82,5 +88,21 @@ const sortData = (data, order = 'asc') => {
   return data
 }
 
-console.log(sortData(arr))
+console.log(JSON.stringify(sortData(arr), null, 2))
+/*
+[
+  {
+    "name": "HTML",
+    "dataTime": "1999-01-20"
+  },
+  {
+    "name": "JavaScript",
+    "dataTime": "2000-07-22"
+  },
+  {
+    "name": "CSS",
+    "dataTime": "2020-08-20"
+  }
+]
+*/
 ```
