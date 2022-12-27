@@ -81,6 +81,44 @@ bar() // 1
 4. 编译器创建称为作用域链（Scope chain） 的等级层次结构，全局作用域（Global Scope） 位于此层次结构的顶部。
 5. 当代码中使用变量时，编译器会向后查看作用域链，如果找不到，则抛出未定义的错误。
 
+来看一下下面两道题：
+
+```js
+var name = 'O.O'
+
+;(function () {
+  if (typeof name == 'undefined') {
+    name = 'D.O'
+    console.log('Goodbye ' + name)
+  } else {
+    console.log('Hello ' + name)
+  }
+})()
+
+// Hello O.O
+```
+
+首先进入函数作用域当中，判断是否存在 `name` 属性，然而 JS 解析器发现在当前作用域中并没有找到 `name` 属性，接着会通过作用域链找到最外层，得到 `name` 属性，最后执行 `else` 的内容，得到 `Hello O.O`。
+
+看下面这一道：
+
+```js
+var name = 'O.O'
+
+;(function () {
+  if (typeof name == 'undefined') {
+    var name = 'D.O'
+    console.log('Goodbye ' + name)
+  } else {
+    console.log('Hello ' + name)
+  }
+})()
+
+// Goodbye O.O
+```
+
+仔细看一下，你会发现在立即执行函数中，`name` 变量前使用了 `var` 变量声明，它存在一个变量提升，`name` 属性会提升到当前作用域的最顶部，但不会提升赋值，在 `if` 语句判断时，`name` 属性暂时没有赋值的情况下为 `undefined`，所以打印 `Goodbye O.O`。
+
 ## 更多资料
 
 - [JavaScript 深入之词法作用域和动态作用域](https://github.com/mqyqingfeng/Blog/issues/3)

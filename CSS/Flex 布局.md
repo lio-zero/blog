@@ -16,7 +16,7 @@ Flex 布局在 2009 年由 W3C 提出的。它在所有的浏览器都支持：
 
 ## 基础概念
 
-为了使 Flexbox 正常工作，您需要设置父子关系。父级是 Flex 容器，其中的所有内容都是子级或 Flex 项。
+为了使 Flexbox 正常工作，你需要设置父子关系。父级是 Flex 容器，其中的所有内容都是子级或 Flex 项。
 
 **Flex 容器**仅环绕其直接子容器。因此，没有孙子或孙辈的关系。只有父母 <-> 直系子女！只要存在父子关系，就可以建立 Flexbox。因此，孩子也可以成为其孩子的伸缩容器。但这将是一个单独的 flex 容器。而且它不会继承祖父母的 flex 属性。
 
@@ -24,11 +24,11 @@ Flex 布局在 2009 年由 W3C 提出的。它在所有的浏览器都支持：
 
 ![flexbox 属性应用示意图](https://upload-images.jianshu.io/upload_images/18281896-d907e938cdf1d8b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-Flexbox 在 2 轴系统中运行：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴是您将伸缩项目如何放置在伸缩容器中的定义方向。确定横轴非常简单，它是在垂直于主轴的方向上进行的。
+Flexbox 在 2 轴系统中运行：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴是你将伸缩项目如何放置在伸缩容器中的定义方向。确定横轴非常简单，它是在垂直于主轴的方向上进行的。
 
 记住不要把他比作数学上的 **x** 和 **y** 轴。因为 **x** 轴并不总是主轴。这可能会让你出错。
 
-在每个轴上都有一个起点和终点。如果在主轴上，则将起始位置称为 **main start**，将结束位置称为 **main end**。相同的概念适用于交叉轴。知道起点和终点很重要，因为您可以控制 flex 项目的放置位置。
+在每个轴上都有一个起点和终点。如果在主轴上，则将起始位置称为 **main start**，将结束位置称为 **main end**。相同的概念适用于交叉轴。知道起点和终点很重要，因为你可以控制 flex 项目的放置位置。
 
 项目默认沿主轴排列。单个项目占据的主轴空间叫做 `main size`，占据的交叉轴空间叫做 `cross size`。
 
@@ -84,7 +84,7 @@ flex 容器有 2 种类型：`flex` 将创建一个块级 flex 容器，`inline-
 
 ### flex-wrap
 
-默认情况下，弹性项目将尝试使其自身收缩以适合一行，换句话说，不进行换行。但是，如果您希望 flex 项保持其大小并在容器中的多行中溢出，则可以使用 `flex-wrap: warp;`。此属性将使容器中的弹性项目占用多行。
+默认情况下，弹性项目将尝试使其自身收缩以适合一行，换句话说，不进行换行。但是，如果你希望 flex 项保持其大小并在容器中的多行中溢出，则可以使用 `flex-wrap: warp;`。此属性将使容器中的弹性项目占用多行。
 
 ```css
 .parent {
@@ -102,8 +102,8 @@ flex 容器有 2 种类型：`flex` 将创建一个块级 flex 容器，`inline-
 
 ```css
 .parent {
-  flex-flow: row nowrap /* default */ | <flex-direction> <flex-wrap> | <flex-direction> |
-    <flex-wrap>;
+  flex-flow: row nowrap /* default */ | <flex-direction> <flex-wrap> |
+    <flex-direction> | <flex-wrap>;
 }
 ```
 
@@ -113,8 +113,8 @@ flex 容器有 2 种类型：`flex` 将创建一个块级 flex 容器，`inline-
 
 ```css
 .parent {
-  justify-content: flex-start /* default */ | flex-end | center | space-around | space-between |
-    space-evenly;
+  justify-content: flex-start /* default */ | flex-end | center | space-around |
+    space-between | space-evenly;
 }
 ```
 
@@ -125,8 +125,8 @@ flex 容器有 2 种类型：`flex` 将创建一个块级 flex 容器，`inline-
 ```css
 .parent {
   flex-direction: column;
-  justify-content: flex-start /* default */ | flex-end | center | space-around | space-between |
-    space-evenly;
+  justify-content: flex-start /* default */ | flex-end | center | space-around |
+    space-between | space-evenly;
 }
 ```
 
@@ -157,8 +157,8 @@ flex 容器有 2 种类型：`flex` 将创建一个块级 flex 容器，`inline-
 
 ```css
 .parent {
-  align-content: stretch /* default */ | flex-start | flex-end | center | space-between |
-    space-around;
+  align-content: stretch /* default */ | flex-start | flex-end | center |
+    space-between | space-around;
 }
 ```
 
@@ -180,7 +180,7 @@ flex 容器有 2 种类型：`flex` 将创建一个块级 flex 容器，`inline-
 
 ### order
 
-默认情况下，弹性项目的显示顺序与在代码中显示的顺序相同。但是，如果您要更改该怎么办？没问题！使用 `order` 属性更改项目的顺序。
+默认情况下，弹性项目的显示顺序与在代码中显示的顺序相同。但是，如果你要更改该怎么办？没问题！使用 `order` 属性更改项目的顺序。
 
 ```css
 .child {
@@ -212,15 +212,20 @@ Flexbox 非常适合响应式设计。`flex-grow` 属性允许我们的 flex 项
 }
 ```
 
-你可以在 [flex-grow-calculation](https://www.samanthaming.com/flexbox30/22-flex-grow-calculation/) 和 [flex-shrink-calculation](https://www.samanthaming.com/flexbox30/24-flex-shrink-calculation/) 查看浏览器如何帮我们自动处理 `flex-grow`、`flex-shrink`。
+你可以在 [flex-grow-calculation](https://www.samanthaming.com/flexbox30/22-flex-grow-calculation/) 和 [flex-shrink-calculation](https://www.samanthaming.com/flexbox30/24-flex-shrink-calculation/) 查看浏览器如何帮我们自动处理 `flex-grow` 和 `flex-shrink`，它们是如何计算的出各自该占据多少空间（两者计算方式不同），以及对应的公式。
+
+如果你看完了，觉得自己理解了，可以尝试做一下以下两道题：
+
+- [求最终 left、right 的宽度（变形）](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/382)
+- [求最终 left、right 的宽度](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/381)
 
 ### flex-basis
 
-使用 `flex-basis` 属性可以设置项目的初始大小。您可以将此属性视为 flex 项目的宽度。
+使用 `flex-basis` 属性可以设置项目的初始大小。你可以将此属性视为 flex 项目的宽度。
 
-因此，您的下一个问题可能是 `width` 和 `flex-basis` 之间的区别是什么。当然，您仍然可以使用 `width`，它将仍然有效。
+因此，你的下一个问题可能是 `width` 和 `flex-basis` 之间的区别是什么。当然，你仍然可以使用 `width`，它将仍然有效。
 
-它起作用的原因是，如果未设置 `flex-basis`，它将默认为 `width`。因此，您的浏览器将始终尝试查找 `flex-basis` 值作为大小指示符。如果找不到它，那么它别无选择，只能使用 `width` 属性。不要让浏览器做额外的工作。使用适当的 flex 方法并使用 `flex-basis`。
+它起作用的原因是，如果未设置 `flex-basis`，它将默认为 `width`。因此，你的浏览器将始终尝试查找 `flex-basis` 值作为大小指示符。如果找不到它，那么它别无选择，只能使用 `width` 属性。不要让浏览器做额外的工作。使用适当的 flex 方法并使用 `flex-basis`。
 
 ```css
 .child {
@@ -236,8 +241,9 @@ Flexbox 非常适合响应式设计。`flex-grow` 属性允许我们的 flex 项
 
 ```css
 .child {
-  flex: 1 0 auto /* default */ | <flex-grow> <flex-shrink> <flex-basis> | <flex-grow> | <flex-basis>
-    | <flex-grow> <flex-basis> | <flex-grow> <flex-shrink>;
+  flex: 1 0 auto /* default */ | <flex-grow> <flex-shrink> <flex-basis> |
+    <flex-grow> | <flex-basis> | <flex-grow> <flex-basis> | <flex-grow>
+    <flex-shrink>;
 
   /* 相当于： */
   flex-grow: 1;
@@ -246,11 +252,13 @@ Flexbox 非常适合响应式设计。`flex-grow` 属性允许我们的 flex 项
 }
 ```
 
+面试经常会问到的一道 CSS 题是[**弹性盒子中 `flex: 0 1 auto` 表示什么意思**](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/380)？从上面一路看下来，你应该也知道了它们各自表示什么意思。
+
 ### align-self
 
 `align-items` 属性可以沿着横轴设置 flex 项。`align-items` 的问题是它强制所有 flex 项使用规则。
 
-但是如果你想让他们中的一个打破规则，你可以使用 `align-self`。此属性接受为 `align-items` 提供的所有相同值，因此您可以轻松脱离包装 😎
+但是如果你想让他们中的一个打破规则，你可以使用 `align-self`。此属性接受为 `align-items` 提供的所有相同值，因此你可以轻松脱离包装 😎
 
 ```css
 .child-1 {
@@ -548,7 +556,7 @@ nav {
 
 [演示地址](https://codepen.io/lio-zero/pen/JjLxqKM)
 
-您也可以使用 `order` 去调整排列顺序。
+你也可以使用 `order` 去调整排列顺序。
 
 ### 双飞翼布局
 
@@ -605,7 +613,7 @@ nav {
 - [flex 备忘单](https://www.sketchingwithcss.com/samplechapter/cheatsheet.html)
 - [Flex 布局教程：语法篇](https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 - [Flex 布局教程：实例篇](https://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
-- [What Happens When You Create A Flexbox Flex Container?(opens new window)](https://www.smashingmagazine.com/2018/08/flexbox-display-flex-container/)
-- [Everything You Need To Know About Alignment In Flexbox(opens new window)](https://www.smashingmagazine.com/2018/08/flexbox-alignment/)
-- [Flexbox: How Big Is That Flexible Box?(opens new window)](https://www.smashingmagazine.com/2018/09/flexbox-sizing-flexible-box/)
+- [What Happens When You Create A Flexbox Flex Container?](https://www.smashingmagazine.com/2018/08/flexbox-display-flex-container/)
+- [Everything You Need To Know About Alignment In Flexbox](https://www.smashingmagazine.com/2018/08/flexbox-alignment/)
+- [Flexbox: How Big Is That Flexible Box?](https://www.smashingmagazine.com/2018/09/flexbox-sizing-flexible-box/)
 - [Use Cases For Flexbox](https://www.smashingmagazine.com/2018/10/flexbox-use-cases/)

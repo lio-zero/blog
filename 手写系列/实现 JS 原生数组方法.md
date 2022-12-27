@@ -2,7 +2,7 @@
 
 理解数组方法的内部实现，有助于帮助我们更好的使用它们。这些数组方法都可以使用 [core-js](https://github.com/zloirock/core-js#ecmascript-array) 标准库提供的 polyfill 解决。
 
-如果您还不熟悉数组方法的话，可以阅读我写的另一篇 [JavaScript 数组方法总结](https://github.com/lio-zero/blog/blob/main/JavaScript/JavaScript%20%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.md)。
+如果你还不熟悉数组方法的话，可以阅读我写的另一篇 [JavaScript 数组方法总结](https://github.com/lio-zero/blog/blob/main/JavaScript/JavaScript%20%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.md)。
 
 以下只实现了一部分的数组方法，用最简单的方式实现它们。
 
@@ -12,7 +12,7 @@
 const arr = [1, 2, 3, 4, 5]
 ```
 
-您可以选择以下方式将它们添加到原型：
+你可以选择以下方式将它们添加到原型：
 
 ```js
 Array.prototype.methods = function (callback) {}
@@ -23,7 +23,7 @@ Object.defineProperty(Array.prototype, 'methods', {
 })
 ```
 
-> **注意**：不要在您的生产代码中遵循以下方法。这可能会损坏现有代码。
+> **注意**：以下实现仅提供参考，不要在你的生产代码中遵循以下方法。这可能会损坏现有代码。
 
 ## push
 
@@ -137,7 +137,6 @@ Array.prototype.myFlat = function () {
   }
   return arr
 }
-
 ;[1, [2, [4, 5]], [6, 7]].myFlat() // [1, 2, 3, 4, 5, 8, 9]
 ```
 
@@ -248,6 +247,6 @@ arr.myReduce((accumulator, elem) => (accumulator += elem), 100) // 115
 
 ## splice
 
-`splice` 实现是最复杂的，您可以阅读 [字节：模拟实现 Array.prototype.splice](https://github.com/sisterAn/JavaScript-Algorithms/issues/138) 了解更加细致的实现过程。
+`splice` 实现是最复杂的，你可以查看[如何模拟实现 Array.prototype.splice](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/384) 或[字节：模拟实现 Array.prototype.splice](https://github.com/sisterAn/JavaScript-Algorithms/issues/138) 了解实现过程。
 
 其他数组方法实现较为简单，基本一眼就能看懂，也就没有进行过多解释。
