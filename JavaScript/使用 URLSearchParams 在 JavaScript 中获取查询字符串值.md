@@ -17,7 +17,7 @@ https://example.com/post?name=O.O
 
 在这种情况下，我们有一个名为 `name` 的查询参数， 其值为 `O.O`。
 
-您可以有多个参数，如下所示：
+你可以有多个参数，如下所示：
 
 ```txt
 https://example.com/post?name=O.O&age=20
@@ -33,7 +33,7 @@ https://example.com/post?name=O.O&age=20
 const params = new URLSearchParams(window.location.search)
 ```
 
-**注意**：不要将完整的 URL 作为参数传递给 `URLSearchParams()`，而只传递 URL 的查询字符串部分，您可以使用 `window.location.search`。
+**注意**：不要将完整的 URL 作为参数传递给 `URLSearchParams()`，而只传递 URL 的查询字符串部分，你可以使用 `window.location.search`。
 
 例如：
 
@@ -43,21 +43,21 @@ https://example.com/post?name=O.O
 
 `window.location.search` 等于字符串 `?name=O.O`。
 
-现在您有了 `params` 对象，您可以查询它了。
+现在你有了 `params` 对象，你可以查询它了。
 
-您可以检查是否传递了参数：
+你可以检查是否传递了参数：
 
 ```js
 params.has('name')
 ```
 
-您可以获取参数的值：
+你可以获取参数的值：
 
 ```js
 params.get('name')
 ```
 
-您可以迭代所有参数，使用 `for...of`：
+你可以迭代所有参数，使用 `for...of`：
 
 ```js
 const params = new URLSearchParams(window.location.search)
@@ -94,7 +94,7 @@ https://example.com/post?name=D.O&name=O.O
 
 我们还使用 `sort()` 按键值对参数进行排序，使用 `toString()` 方法从值生成查询字符串。
 
-我们可以使用 `append()`、`.delete()`、`set()` 来编辑查询字符串，并使用 `toString()` 生成一个新的查询字符串。
+我们可以使用 `append()`、`.delete()` 和 `set()` 来编辑查询字符串，并使用 `toString()` 生成一个新的查询字符串。
 
 ## 示例：生成一个包含当前 URL 参数的对象
 
@@ -126,7 +126,7 @@ const queryStringToObject = (url) =>
 queryStringToObject('https://google.com?page=1&count=10') // {page: '1', count: '10'}
 ```
 
-您可以编写两个方法来在查询字符串和查询对象之间相互转换：
+你可以编写两个方法来在查询字符串和查询对象之间相互转换：
 
 ```js
 function objectToParams(object) {
@@ -155,6 +155,8 @@ objectToParams(params) // 'name=O O'
 
 记住，它不支持 IE 的任何版本，且 `URLSearchParams` 没有在最后一个字符串前加上 `?` 字符，因此需要手动将其添加到返回的字符串和主 URL 之间。
 
-在这之后，您可以配合 `encodeURI()` 和 `encodeURIComponent()` 对 URL 的特殊字符进行编码。
+在这之后，你可以配合 `encodeURI()` 和 `encodeURIComponent()` 对 URL 的特殊字符进行编码。
 
 > 推荐：[encodeURI 与 encodeURIComponent 的区别](https://github.com/lio-zero/blog/blob/main/JavaScript/encodeURI%20%E4%B8%8E%20encodeURIComponent%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
+>
+> 更新：[URL API](https://github.com/lio-zero/blog/blob/main/Web%20API/URL%20API.md)
