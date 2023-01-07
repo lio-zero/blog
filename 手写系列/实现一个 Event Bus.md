@@ -14,13 +14,13 @@ class EventEmitter {
     // 存储事件
     this.events = this.events || new Map()
   }
-  // 监听事件
+  // 注册监听事件
   on(type, handler) {
     if (!this.events.get(type)) {
       this.events.set(type, handler)
     }
   }
-  // 取消事件
+  // 取消事件监听
   off(type) {
     if (this.events.get(type)) {
       this.events.delete(type)
@@ -100,8 +100,8 @@ function mitt(all) {
 }
 ```
 
-我们所实现的 Event Bus 对同一事件的监听进行过滤，而 mitt 将多次监听进行收集。
+我们所实现的 Event Bus 对同一事件进行过滤，而 mitt 将同一事件回调进行收集，且可以通过通配符 `*` 事件类型监听所有事件。
 
 ## 更多资料
 
-[Node 的 EventEmitter 源码](https://github.com/nodejs/node/blob/main/lib/events.js)
+[Node 的 EventEmitter 源码](https://github.com/nodejs/node/blob/main/lib/events.js#L218)

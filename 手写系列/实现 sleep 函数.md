@@ -28,6 +28,8 @@ const sleepSync = (ms) => {
   const end = new Date().getTime() + ms
   while (new Date().getTime() < end) {
     // do something
+    console.log('Are you sure?')
+    break
   }
 }
 
@@ -42,18 +44,21 @@ print()
 
 ## 异步版本
 
-ES6 新增的 Promise、Generator 和 ES8 的 `async/await` 可以方便我们实现的 `sleep` 方法：
+ES6 新增的 Promise、Generator 和 ES8 的 `async/await` 可以方便我们实现异步版本的 `sleep` 方法：
 
 ```js
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
-async function foo() {
+async function print() {
   console.log('All work and no play makes Jack a dull boy!')
-  await sleep(1000)
+  await sleep(1000).then(() => {
+    // do something
+    console.log('Are you sure?')
+  })
   console.log('Yes')
 }
 
-foo()
+print()
 ```
 
 需要注意的是：
