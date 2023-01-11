@@ -18,7 +18,7 @@ element.addEventListener('click', (event) => {
 
 ## 什么是事件流？
 
-事件流是在网页上接收事件的顺序。当您单击嵌套在其他各种元素中的元素时，在您单击目标元素后，它会先触发目标元素上的 `click` 事件，在一层层往上触发事件，最终到达最顶层的 `window` 对象，这是浏览器默认的事件冒泡行为（IE 9+）。事件流有两种方式：
+事件流是在网页上接收事件的顺序。当你单击嵌套在其他各种元素中的元素时，在你单击目标元素后，它会先触发目标元素上的 `click` 事件，在一层层往上触发事件，最终到达最顶层的 `window` 对象，这是浏览器默认的事件冒泡行为（IE 9+）。事件流有两种方式：
 
 - 从外到内（事件捕获）
 - 从内到外（事件冒泡）
@@ -94,8 +94,8 @@ smile.onclick = () => {
 
 因为浏览器默认是从事件冒泡开始，我们看不到事件捕获，所以想要测试事件捕获，我们需要使用到 `addEventListener` 方法，`addEventListener` 用于添加事件句柄、注册监听器，参数三还可以指定在捕获阶段还是冒泡阶段触发事件：
 
-- `false`（默认值）—— 在冒泡阶段开始触发事件
-- `true` —— 在捕获阶段开始触发事件
+- `false`（默认值）— 在冒泡阶段开始触发事件
+- `true` — 在捕获阶段开始触发事件
 
 ```js
 smile.addEventListener('click', (e) => {
@@ -144,29 +144,79 @@ emoji.addEventListener('click', (e) => {
 
 ## 阻止事件传播
 
-使用 `event.stopPropagation()` 方法可以阻止捕获和冒泡阶段中当前事件在 DOM 中的进一步传播。
+你可以通过调用事件的 `event.stopPropagation()` 方法来阻止捕获和冒泡阶段中当前事件在 DOM 中的进一步传播。
 
 ```js
 function handler(e) {
+  // do something...
+
+  // 通常在事件处理程序的末尾
   e.stopPropagation()
 }
 ```
 
-## 取消默认事件
+## 阻止事件的默认行为
 
-使用 `event.preventDefault()` 方法取消浏览器对当前事件的默认行为。例如：
+浏览器对某些事件操作有一些默认行为。例如：
 
-- 表单元素中使用，它将阻止其提交
-- 锚元素中使用，它将阻止其导航
-- 上下文菜单中使用，它将阻止其显示或隐藏
+- 表单元素提交刷新页面
+- 锚元素导航
+- 上下文菜单的显示或隐藏
+
+- `click` 事件 — 点击元素时会触发该事件，默认行为是跳转到链接指向的页面。
+- `submit` 事件 — 提交表单时会触发该事件，默认行为是提交表单数据到服务器。
+- `keydown` 事件 — 按下键盘按键时会触发该事件，默认行为取决于按下的按键。例如，按下 `Enter` 键会提交表单，按下 `Tab` 键会使焦点跳到下一个输入字段。
+- `dragstart` 事件 — 开始拖动元素时会触发该事件，默认行为是拖动元素。
+- `drop` 事件 — 在拖动元素上释放鼠标时会触发该事件，默认行为是将拖动的数据放入目标元素中。
+
+还有很多类型的事件，默认行为可能不同。为了确保页面的正常工作，如果在需要时，你可以使用以下方法来阻止默认行为的发生。
+
+### 对于 `on<event>` 返回 `false`
 
 ```js
-function handler(e) {
-  e.preventDefault()
+ele.onclick = function (e) {
+  // do something
+
+  return false
 }
 ```
 
-您还可以在事件对象中使用 `event.defaultPrevented` 查看是否使用了 `event.preventDefault()` 方法。
+如果你使用内联属性，则情况相同：
+
+```html
+<form>
+  <button type="submit" onclick="return false">Click</button>
+</form>
+```
+
+我不推荐这种方法，因为：
+
+- 返回 `false` 没有意义
+- 它不适用于 `addEventListener()` 方法
+
+### 使用 `preventDefault()` 方法
+
+此方法适用于内联属性：
+
+```html
+<button type="submit" onclick="event.preventDefault()">Click</button>
+```
+
+和事件处理程序：
+
+```js
+ele.onclick = function (e) {
+  e.preventDefault()
+  // ...
+}
+
+ele.addEventListener('click', function (e) {
+  e.preventDefault()
+  // ...
+})
+```
+
+你还可以在事件对象中使用 `event.defaultPrevented` 查看是否使用了 `event.preventDefault()` 方法。
 
 它返回一个布尔值用来表明是否在特定元素中调用了 `event.preventDefault()`。
 
@@ -177,34 +227,32 @@ function handler(e) {
 }
 ```
 
-## `return false` 用法涉及哪些步骤
-
-事件处理程序中的 `return false` 语句执行以下步骤：
-
-- 首先，它停止了浏览器的默认操作或行为
-- 它防止事件传播 DOM
-- 停止回调执行，并在调用时立即返回
-
 ## 很高兴你知道
 
 - 事件本身在传播，而不是绑定在事件上的方法会传播。
-- 并非所有的事件都会传播，像 `focus`、`blur` 事件就不传播，`mouseenter` 和 `mouseleave` 事件也不会传播。
-- 您应该知道哪些事件有默认行为，并在需要时阻止它。
-- 不建议通过元素属性注册事件处理程序，例如 `onclick`。因为我们传递了一个字符串，所以它有一个潜在的安全问题。如果传递给 `onclick` 属性的方法不存在，浏览器也不会发出警告。
-- 事件处理程序返回的值通常会被忽略。唯一的例外是使用 `on<event>` 分配的处理程序中返回的 `return false`。在所有其他情况下，`return` 值都会被忽略。并且，返回 `true` 没有意义。
-- 如果是使用 `on<event>` 分配的处理程序，那么您可以使用 `return false` 来阻止默认行为。
-- 如果是使用 `addEventListener` 分配的处理程序，那么您可以使用 `event` 事件对象中的 `e.preventDefault()` 方法来阻止默认行为的发生。
+- 并非所有的事件都会传播，如 `focus`、`blur`、`mouseenter` 和 `mouseleave` 等事件传播。
+- 你应该知道哪些事件触发会有默认行为（如提交表单、点击链接等），并在需要时阻止它们。
+- 建议使用 `addEventListener` 来注册事件处理程序，不要使用 HTML 元素的属性来注册事件处理程序（如 `onclick`），因为这样可能会有潜在的安全隐患。如果传递给 `onclick` 属性的方法不存在，浏览器也不会发出警告。
+- 事件处理程序的返回值通常会被忽略，唯一的例外是使用 `on<event>` 分配的处理程序中返回 `return false`。在所有其他情况下，`return` 值都会被忽略，且返回 `true` 没有意义。
+- 如果是使用 `on<event>` 分配的处理程序，那么你可以使用 `return false` 来阻止默认行为。
+- 如果是使用 `addEventListener` 分配的处理程序，那么你可以使用 `event` 事件对象中的 `e.preventDefault()` 方法来阻止默认行为的发生。
 - `return false` 做着与 `event.stopPropagation()` 和 `event.preventDefault()` 类似的工作，但它们之间毫无关联。
-- 为避免内存泄漏问题，请记住将不再使用的处理程序删除。
+- 为了避免内存泄漏问题，请记住将不再使用的事件处理程序移除。
 
 ```js
 const handler = (e) => {
-  // ...
+  // do something...
+
+  // 不在使用时，请移除它
+  ele.removeEventListener('click', handler)
 }
 
 // 附加事件监听器
 ele.addEventListener('click', handler)
-
-// 不在使用时，请移除它
-ele.removeEventListener('click', handler)
 ```
+
+## 更多资料
+
+[你真的理解事件冒泡和事件捕获吗？](https://juejin.cn/post/6844903834075021326)
+
+<!-- https://flaviocopes.com/javascript-event-delegation/ -->

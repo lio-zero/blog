@@ -3,7 +3,7 @@
 `currentTarget` 和 `target` 是监听特定事件时事件对象的属性，例如：
 
 ```js
-element.addEventListener('click', (e) => {
+document.addEventListener('click', (e) => {
   console.log(e.currentTarget)
   console.log(e.target)
 })
@@ -11,7 +11,7 @@ element.addEventListener('click', (e) => {
 
 ## 区别
 
-`currentTarget` 是事件绑定到的元素。在上面的示例代码中，`e.currentTarget` 是 `element`。
+`currentTarget` 属性表示事件绑定到的当前元素。在上面的示例代码中，`e.currentTarget` 是 `document`。
 
 在 `click` 事件的情况下，`target` 是用户单击的元素。它可以是原始元素或其任何子元素，具体取决于用户单击的位置。
 
@@ -58,7 +58,7 @@ modal.addEventListener('click', (e) => {
 
 `stopPropagation()` 方法用于阻止捕获和冒泡阶段中当前事件在 DOM 中的进一步传播。示例中，我们阻止模态框的点击事件冒泡到父元素。
 
-> **Tips**：了解 [JavaScript 事件传播机制](https://github.com/lio-zero/blog/blob/main/DOM/JavaScript%20%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD%E6%9C%BA%E5%88%B6.md)可以帮助您更好的理解上面的做法。
+> **Tips**：了解 [JavaScript 事件传播机制](https://github.com/lio-zero/blog/blob/main/DOM/JavaScript%20%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD%E6%9C%BA%E5%88%B6.md)可以帮助你更好的理解上面的做法。
 
 **第二种方法**：为了确保用户单击覆盖区域而不是模态内部，我们可以简单地检查 `currentTarget` 和 `target` 属性是否引用相同的元素：
 
