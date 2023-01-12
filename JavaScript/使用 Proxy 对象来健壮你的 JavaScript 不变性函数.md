@@ -1,4 +1,4 @@
-# 使用 Proxy 对象来健壮您的 JavaScript 不变性函数
+# 使用 Proxy 对象来健壮你的 JavaScript 不变性函数
 
 虽然 JavaScript 允许我们突变（Mutation）对象，但我们可能会选择不允许自己（和其他程序员）这样做。
 
