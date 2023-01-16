@@ -1,6 +1,6 @@
 # 使用 srcset 的响应式图像
 
-`img` 标签的 [`srcset` 属性](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLImageElement/srcset)允许您根据你的喜好设置浏览器可以使用的响应图像，具体取决于像素密度或窗口宽度。通过这种方式，它只能下载渲染页面所需的资源，而不需要下载更大的图片（如果它是在移动设备上）。
+`img` 标签的 [`srcset` 属性](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLImageElement/srcset)允许你根据你的喜好设置浏览器可以使用的响应图像，具体取决于像素密度或窗口宽度。通过这种方式，它只能下载渲染页面所需的资源，而不需要下载更大的图片（如果它是在移动设备上）。
 
 下面是一个例子，我们为 4 种不同的屏幕尺寸提供了 4 个额外的图像:
 
@@ -9,17 +9,17 @@
   src="avatar.png"
   alt="一张头像"
   srcset="
-    avatar-500.png   500w,
-    avatar-800.png   800w,
+    avatar-500.png 500w,
+    avatar-800.png 800w,
     avatar-1000.png 1000w,
     avatar-1400.png 1400w
   "
 />
 ```
 
-在 `srcset` 中，我们使用 `w` 度量值来指示窗口宽度。
+在 `srcset` 中，我们使用 `w` 度量值来指示图像的宽度。
 
-我们还需要使用 [`sizes` 属性](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes)，它允许您为每个媒体条件列表指定图像的布局宽度:
+我们还需要使用 [`sizes` 属性](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes)，它允许你为每个媒体条件列表指定图像的布局宽度：
 
 ```html
 <img
@@ -27,8 +27,8 @@
   alt="一张头像"
   sizes="(max-width: 500px) 100vw, (max-width: 900px) 50vw, 800px"
   srcset="
-    avatar-500.png   500w,
-    avatar-800.png   800w,
+    avatar-500.png 500w,
+    avatar-800.png 800w,
     avatar-1000.png 1000w,
     avatar-1400.png 1400w
   "

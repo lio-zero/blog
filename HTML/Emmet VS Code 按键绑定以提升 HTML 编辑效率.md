@@ -114,7 +114,7 @@ editor.emmet.action.wrapWithAbbreviation
 ]
 ```
 
-另外，如果你不想自己配置热键，可以安装 [Emmet Keybindings](https://marketplace.visualstudio.com/items?itemName=agutierrezr.emmet-keybindings) 扩展，它是一组用于 VS Code 的 Emmet 键绑定。它可以用作预定义的键绑定组，以防您不知道映射到哪个键。
+另外，如果你不想自己配置热键，可以安装 [Emmet Keybindings](https://marketplace.visualstudio.com/items?itemName=agutierrezr.emmet-keybindings) 扩展，它是一组用于 VS Code 的 Emmet 键绑定。它可以用作预定义的键绑定组，以防你不知道映射到哪个键。
 
 ## 更多资料
 

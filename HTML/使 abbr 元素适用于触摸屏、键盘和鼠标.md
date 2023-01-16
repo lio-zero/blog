@@ -1,6 +1,6 @@
 # 使 abbr 元素适用于触摸屏、键盘和鼠标
 
-`<abbr>` 元素用于表示和定义首字母缩略词，当你传递一个 `title` 属性时，它将创建一个工具提示。
+`abbr`（abbreviation）元素用于表示和定义首字母缩略词，可以通过 `title` 属性为其定义完整的描述。
 
 ```html
 <abbr title="我是超人">I am Superman</abbr>
@@ -8,17 +8,11 @@
 
 如果用户将鼠标悬停在缩写词上，则完整定义将显示在本机浏览器工具提示中。
 
-```html
-<abbr title="Cascading Style Sheets">CSS</abbr>
-```
-
-如果用户将鼠标悬停在缩写词上，则完整定义将显示在本机浏览器工具提示中。
-
 ![abbr 提示](https://upload-images.jianshu.io/upload_images/18281896-425c0d50a7114037.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-> **注意**：`<abbr>` 元素不同浏览器的默认样式有些不同。在 Chrome 和 Firefox 中，它将带有下划线，并且在悬停时将带有 `title` 传递的值的工具提示。如果您在 Safari 上打开此页面，则不会出现下划线。此外，仅当您具有 `title` 属性时才显示下划线。
+> **注意**：`<abbr>` 元素不同浏览器的默认样式有些不同。在 Chrome 和 Firefox 中，它将带有下划线，并且在悬停时将带有 `title` 传递的值的工具提示。如果你在 Safari 上打开此页面，则不会出现下划线。此外，仅当你具有 `title` 属性时才显示下划线。
 
-定义术语时，你还可以与 `<dfn>` 混合使用
+定义术语时，你还可以与 `<dfn>` 混合使用：
 
 ```html
 <dfn> <abbr title="Today I learned">TIL</abbr> something awesome! </dfn>
@@ -76,7 +70,7 @@ abbr[title]:focus::after {
 
 ### 设置工具提示的样式
 
-由于跨浏览器的差异，我们建议为 `<abbr>` 代码加上自定义样式。这样，您将在浏览器之间拥有一致的外观，且使 **Tooltip** 显示为 **Tooltip**，而不仅仅是元素旁边的文本。
+由于跨浏览器的差异，我们建议为 `<abbr>` 代码加上自定义样式。这样，你将在浏览器之间拥有一致的外观，且使其显示为 **Tooltip**，而不仅仅是元素旁边的文本。
 
 ```css
 abbr[title] {
@@ -106,8 +100,10 @@ abbr[title]:focus::after {
 
 ![更改后的样式](https://upload-images.jianshu.io/upload_images/18281896-a80548e76d99737f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-> 👉 [查看效果](https://codepen.io/lio-zero/pen/BaRjpK)
+> 👉 [查看效果](https://codepen.io/lio-zero/pen/NWBvYKJ)
 
 ## 最后
 
-对比原来的效果，明显更加好看了一些，如果你想要更加好看的工具提示，可以继续更改其外观，或者使用现有的一些提示工具，如 Bootstrap 的[工具提示](https://getbootstrap.com/docs/4.5/components/tooltips/)组件。
+对比原来的效果，明显更加好看了一些，如果你想要更加好看的工具提示，可以继续更改其外观，或者使用现有的一些提示工具，如 Bootstrap 的 [Tooltips](https://getbootstrap.com/docs/4.5/components/tooltips/) 组件。
+
+> **更新**：在需要确保访问性的情况下，应该使用 `label` 元素来描述缩写词，而不是使用 `abbr` 元素。

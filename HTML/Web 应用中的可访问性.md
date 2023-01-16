@@ -6,19 +6,19 @@
 
 具有可访问的 HTML 意味着残疾人可以使用 Web。它们中有完全失明或视力受损的用户，有听力损失问题的人和许多其他不同的残疾。
 
-如果一个人看不到您的页面，但仍想消费其内容，该怎么办？首先，他们是如何做到的？他们不能使用鼠标，他们使用一种叫做屏幕阅读器的东西。你不必想象。你现在可以试试：谷歌提供免费的 [ChromeVox Chrome 扩展](https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn/)。可访问性还必须考虑允许工具轻松选择元素或在页面中导航。
+如果一个人看不到你的页面，但仍想消费其内容，该怎么办？首先，他们是如何做到的？他们不能使用鼠标，他们使用一种叫做屏幕阅读器的东西。你不必想象。你现在可以试试：谷歌提供免费的 [ChromeVox Chrome 扩展](https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn/)。可访问性还必须考虑允许工具轻松选择元素或在页面中导航。
 
 网页和 Web 应用程序并不总是以可访问性作为其首要目标之一，也许版本 1 可能发布时无法访问，但可以在发布后使网页可访问。越早越好，但永远不会太晚。
 
 这很重要，对于美国网站来说，有时这是[法定要求](http://www.section508.gov/)，政府或其他公共组织建立的网站必须可以访问的。
 
-以下是一部分您需要考虑的主要事项。
+以下是一部分你需要考虑的主要事项。
 
 > **注意**：还有其他一些事情需要注意，可能会出现在 CSS 主题中，例如颜色、对比度和字体。或者如何使 SVG 图像可访问。我不在这里谈论他们。
 
 ## 使用 HTML 语义
 
-语义 HTML 非常重要，它是您需要注意的主要事项之一。让我举例说明几个常见的场景。
+语义 HTML 非常重要，它是你需要注意的主要事项之一。让我举例说明几个常见的场景。
 
 使用正确的标题标签结构很重要。最重要的是 h1，对于不太重要的标题使用较大的数字，但所有相同级别的标题应该具有相同的含义（将其视为树结构）
 
@@ -68,17 +68,17 @@ h4
 <img src="avatar.png" alt="一张图片" />
 ```
 
-这对搜索引擎也有好处，如果这是您添加它的动机的话。
+这对搜索引擎也有好处，如果这是你添加它的动机的话。
 
 ## 使用 role 属性
 
-`role` 属性允许您为页面中的各种元素分配特定角色。
+`role` 属性允许你为页面中的各种元素分配特定角色。
 
-`role` 没有为大多数元素的默认语义添加任何内容，您可以手动分配许多不同的角色，例如：checkbox、img、list、grid、switch、feed 等等。
+`role` 没有为大多数元素的默认语义添加任何内容，你可以手动分配许多不同的角色，例如：checkbox、img、list、grid、switch、feed 等等。
 
-为了了解它们，您可以在参考 [MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles)。但您不需要为页面中的每个元素分配角色。在大多数情况下，屏幕阅读器可以从 HTML 标签推断。例如，您不需要将角色标签添加到诸如 `nav`、`button` 和 `form` 之类的语义标签中。
+为了了解它们，你可以在参考 [MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles)。但你不需要为页面中的每个元素分配角色。在大多数情况下，屏幕阅读器可以从 HTML 标签推断。例如，你不需要将角色标签添加到诸如 `nav`、`button` 和 `form` 之类的语义标签中。
 
-让我们以 `nav` 标签为例。您可以使用它来定义页面导航，如下所示：
+让我们以 `nav` 标签为例。你可以使用它来定义页面导航，如下所示：
 
 ```html
 <nav>
@@ -89,7 +89,7 @@ h4
 </nav>
 ```
 
-如果您被迫使用 `div` 标签而不是 `nav`，您将使用 `navigation` 角色：
+如果你被迫使用 `div` 标签而不是 `nav`，你将使用 `navigation` 角色：
 
 ```html
 <div role="navigation">
@@ -122,11 +122,11 @@ HTML5 使用[默认的隐式语义](https://www.w3.org/TR/wai-aria-1.1/#implicit
 - 使用 `role=textbox`，可以考虑使用 `<input type="text">` 或搜索、电子邮件、url 或电话。
 - `article`、`aside`、`footer`、`header`、`main`、`nav`、`section` 等等
 
-这意味着在实现后，浏览器将公开该元素的默认隐式语义，因此您不必这样做。
+这意味着在实现后，浏览器将公开该元素的默认隐式语义，因此你不必这样做。
 
 ## 使用 tabindex 属性
 
-`tabindex` 属性允许您更改按 **Tab** 键选择**可选**元素的顺序。默认情况下，只有链接和表单元素可以通过使用 **Tab** 键进行导航来选择它们（您不需要在它们上设置 `tabindex`）。
+`tabindex` 属性允许你更改按 **Tab** 键选择**可选**元素的顺序。默认情况下，只有链接和表单元素可以通过使用 **Tab** 键进行导航来选择它们（你不需要在它们上设置 `tabindex`）。
 
 添加 `tabindex="0"` 使元素可选择：
 
@@ -158,7 +158,7 @@ ARIA 通过 HTML 属性为屏幕阅读器提供了额外的信息。其不影响
 
 此属性设置当前元素与标记它的元素之间的相关性。
 
-如果您知道如何将 `input` 元素与 `label` 元素相关联，这是类似的。
+如果你知道如何将 `input` 元素与 `label` 元素相关联，这是类似的。
 
 我们传递描述当前元素的项 `id`。
 
@@ -190,19 +190,16 @@ ARIA 通过 HTML 属性为屏幕阅读器提供了额外的信息。其不影响
 
 ## 更多资料
 
+- [WAI-ARIA](http://www.w3.org/WAI/intro/aria)
 - [A Complete Guide To Accessible Front-End Components](https://www.smashingmagazine.com/2021/03/complete-guide-accessible-front-end-components/)
 - [Using ARIA](https://w3c.github.io/using-aria/)
 - [MDN: ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
 - [Accessibility](https://web.dev/accessibility/)
 - [WebAIM](https://webaim.org/)
 - [On HTML belts and ARIA braces (The Default Implicit ARIA semantics they didn’t want you to know about)](http://html5doctor.com/on-html-belts-and-aria-braces/)
-- [using-aria](https://w3c.github.io/using-aria/)
-- [Tools for Developing Accessible Websites (bitsofco.de)](https://bitsofco.de/tools-for-developing-accessible-websites/)
-- [Why you should use focus styles - LogRocket Blog](https://blog.logrocket.com/why-you-should-use-focus-styles-193d58672c5c/)
+- [Tools for Developing Accessible Websites](https://bitsofco.de/tools-for-developing-accessible-websites/)
 - [Four Ways Design Systems Can Promote Accessibility — and What They Can’t Do](https://24ways.org/2019/four-ways-design-systems-can-promote-accessibility/)
 - [The 6 Most Common Accessibility Problems (and How to Fix Them)](https://blog.scottlogic.com/2020/07/02/6-most-common-accessibility-problems.html#empty-links-and-empty-buttons)
-- [A practical guide to accessibility for forms](https://blog.logrocket.com/a-practical-guide-to-accessibility-for-forms/)
-- [WAI-ARIA](http://www.w3.org/WAI/intro/aria)
 - [在 HTML 中使用 ARIA 的规则](https://github.com/lio-zero/blog/blob/main/HTML/%E5%9C%A8%20HTML%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20ARIA%20%E7%9A%84%E8%A7%84%E5%88%99.md)
-- [webhint](https://webhint.io) 是一个可自定义的整理工具，可通过检查代码中的最佳做法和常见错误来帮助您提高网站的可访问性，速度，跨浏览器兼容性以及其他功能。
+- [webhint](https://webhint.io) 是一个可自定义的整理工具，可通过检查代码中的最佳做法和常见错误来帮助你提高网站的可访问性，速度，跨浏览器兼容性以及其他功能。
 - [Accessibility Tutorial](https://www.w3schools.com/accessibility/index.php)

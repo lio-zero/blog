@@ -4,13 +4,19 @@
 
 通常情况下，我们都是使用 JS 编写方法（例如 [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) ）或外部库延迟加载图像。而 HTML 标准中已经存在 `loading` 属性，可以精确的感知这种行为。
 
+`loading` 总共有三个值来控制图片的加载：
+
+- `eager` — 立即加载图片
+- `lazy` — 延迟加载图片，只在需要时加载
+- `auto` — 浏览器自行决定是否延迟加载图片
+
 以下是 [Can I Use](https://caniuse.com/?search=loading) 给出其的兼容情况：
 
-![loading 支持情况](https://upload-images.jianshu.io/upload_images/18281896-ad5bc70865973a6f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![loading 支持情况](https://upload-images.jianshu.io/upload_images/18281896-92dbbb81ce60d7bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-可以看到，在最新版本的 Chromium powered（包括 Chrome、Edge 和 Opera）和 Firefox 浏览器中，都支持 `loading="lazy"` 属性。
+可以看到，大部分现代浏览器基本上都实现了对 `loading` 属性的支持。
 
-用法很简单，我们只需要在想到延迟加载的图像上添加 `loading="lazy"` 属性即可：
+其用法很简单，我们只需要在想到延迟加载的图像上添加 `loading="lazy"` 属性即可：
 
 ```html
 <img src="/img/logo.png" alt="website logo" loading="lazy" />
@@ -30,6 +36,8 @@
 />
 ```
 
-> [查看效果](https://codepen.io/lio-zero/pen/oNeQKXq)
+你可以自行设置 `loading` 属性的值查看效果。
 
-> **Tips**：您可以打开控制台的 **Network** 选项卡边滚动边查看效果，**注意浏览器版本**。
+> [演示地址](https://codepen.io/lio-zero/pen/oNeQKXq)
+>
+> **Tips**：你可以打开控制台的 **Network** 选项卡边滚动边查看效果，**注意浏览器版本**。

@@ -1,24 +1,25 @@
 # HTML iframe 标签
 
-[`iframe` 标签](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe)允许我们将来自其他来源（其他网站）的内容嵌入到我们的网页中。
+HTML [`iframe` 标签](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe)用于在网页中嵌入另一个网页。
 
 从技术上讲，`iframe` 创建了一个新的嵌套浏览上下文。这意味着 `iframe` 中的任何内容都不会干扰父页面，反之亦然。JavaScript 和 CSS 不会泄漏到 `iframe` 或从 `iframe` 中泄漏。
 
-许多网站使用 `iframe` 执行各种操作。您可能熟悉 [CodePen](https://codepen.io/)、[Glitch](https://glitch.com/)、[CodeSandbox](https://codesandbox.io/) 或其他允许您在页面的某个部分编码的网站，并在一个框中看到结果。那个框便是 `iframe`。
+许多网站使用 `iframe` 执行各种操作。你可能熟悉 [CodePen](https://codepen.io/)、[Glitch](https://glitch.com/)、[CodeSandbox](https://codesandbox.io/) 或其他允许你在页面的某个部分编码的网站，并在一个框中看到结果。那个框便是 `iframe`。
 
-您可以这样创建：
+你可以这样创建：
 
 ```html
 <iframe src="page.html" />
 ```
 
-您也可以加载绝对 URL：
+
+你也可以加载绝对 URL：
 
 ```html
 <iframe src="https://example.com/page.html" />
 ```
 
-您可以设置一组 `width` 和 `height` 参数（或使用 CSS 设置），否则 `iframe` 将使用默认值，即 `300 x 150` 像素的框：
+你可以设置一组 `width` 和 `height` 参数（或使用 CSS 设置），否则 `iframe` 将使用默认值，即 `300 x 150` 像素的框：
 
 ```html
 <iframe src="page.html" width="800" height="400" />
@@ -26,7 +27,7 @@
 
 ## Srcdoc
 
-`srcdoc` 属性允许您指定一些要显示的内联 HTML。它是 `src` 的替代品，[但完全不支持 IE 浏览器](https://caniuse.com/?search=Srcdoc)：
+`srcdoc` 属性允许你指定一些要显示的内联 HTML。它是 `src` 的替代品，[但完全不支持 IE 浏览器](https://caniuse.com/?search=Srcdoc)：
 
 ```html
 <iframe srcdoc="<p>Hello iframe!</p>" />
@@ -48,7 +49,7 @@
 <iframe src="page.html" sandbox="" />
 ```
 
-我们可以通过在 `sandbox` 属性中添加选项来选择允许的内容。您可以通过在中间添加空格来允许多个。以下是您可以使用的选项的不完整列表：
+我们可以通过在 `sandbox` 属性中添加选项来选择允许的内容。你可以通过在中间添加空格来允许多个。以下是你可以使用的选项的不完整列表：
 
 - `allow-forms` 允许提交表单
 - `allow-modals` 允许打开模态窗口，包括在 JavaScript 调用 `alert()`
@@ -73,7 +74,7 @@
 - `geolocation` 允许访问 [Geolocation API](https://github.com/lio-zero/blog/blob/main/Web%20API/Web%20Geolocation%20API.md)
 - `gyroscope` 提供对 [Sensors API Gyroscope](https://developer.mozilla.org/en-US/docs/Web/API/Gyroscope) 接口的访问权限
 - `magnetometer` 提供对 [Sensors API Magnetometer](https://developer.mozilla.org/en-US/docs/Web/API/Magnetometer) 接口的访问权限
-- `microphone` 使用 getUserMedia API 访问设备麦克风
+- `microphone` 使用 [getUserMedia API](https://github.com/lio-zero/blog/blob/main/Web%20API/getUserMedia()%20%E6%96%B9%E6%B3%95.md) 访问设备麦克风
 - `midi` 允许访问 [Web MIDI API](https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API)
 - `payment` 提供对 [Payment Request API](https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API) 的访问权限
 - `speaker` 允许通过设备扬声器播放音频
