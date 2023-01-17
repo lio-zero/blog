@@ -3,26 +3,34 @@
 给定 DOM 中的一个项目列表，使用 `querySelector()` 获取它，如下所示：
 
 ```js
-const item = document.querySelector('.ele')
+const parent = document.querySelector('.parent-element')
 ```
 
-要删除其所有子元素，您有几个不同的解决方案。
+要删除其所有子元素，你有几个不同的解决方案。
 
-最快的解决方案是：
+最快的解决方案是使用 DOM 元素的 `innerHTML` 或 `textContent` 属性来移除所有子元素：
 
 ```js
-item.innerHTML = ''
+parent.innerHTML = ''
 ```
 
-另一个解决方案是，创建一个循环，检查 `firstChild` 属性是否存在，然后将其删除：
+另一个解决方案是，创建一个循环，检查 `firstChild` 属性是否存在，然后使用 DOM 元素的 `removeChild()` 方法将其删除：
 
 ```js
-while (item.firstChild) {
-  item.removeChild(item.firstChild)
+while (parent.firstChild) {
+  parent.removeChild(parent.firstChild)
 }
 ```
 
-当所有子元素都被移除时，循环结束。
+当 `parent` 的所有子元素都被移除时，循环结束。
+
+还有一种方法是使用 `Node.remove()`，如果你的浏览器支持这个方法，可以直接调用：
+
+```js
+while (parent.firstElementChild) {
+  parent.firstElementChild.remove()
+}
+```
 
 ## 更多资料
 

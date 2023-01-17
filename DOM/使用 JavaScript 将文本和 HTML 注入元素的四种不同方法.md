@@ -4,7 +4,7 @@
 
 ## `Element.innerHTML` 属性
 
-您可以使用 `Element.innerHTML` 属性来获取和设置元素内的 HTML 内容作为字符串。
+你可以使用 `Element.innerHTML` 属性来获取和设置元素内的 HTML 内容作为字符串。
 
 ```html
 <div class="greeting">
@@ -38,7 +38,7 @@ greeting.innerHTML += '<p>新段落</p>'
 
 ## `Element.outerHTML` 属性
 
-您可以使用 `Element.outerHTML` 属性来获取和设置包含元素的 HTML 内容。这与 `Element.innerHTML` 相同，但在获取和更新 HTML 内容时包括元素本身。
+你可以使用 `Element.outerHTML` 属性来获取和设置包含元素的 HTML 内容。这与 `Element.innerHTML` 相同，但在获取和更新 HTML 内容时包括元素本身。
 
 ```html
 <div class="greeting">
@@ -69,9 +69,9 @@ greeting.outerHTML = '我们可以在开头加上这个。' + greeting.innerHTML
 
 ## `Node.textContent` 属性
 
-您可以使用 `Node.textContent` 属性来获取和设置元素的文本（并省略标记）作为字符串。
+你可以使用 `Node.textContent` 属性来获取和设置元素的文本（并省略标记）作为字符串。
 
-在下面的示例中，您可能会注意到 `Node.textContent` 属性获取**所有**文本内容，包括元素内部的 CSS 属性 `style` 和 `hidden` UI 元素。
+在下面的示例中，你可能会注意到 `Node.textContent` 属性获取**所有**文本内容，包括元素内部的 CSS 属性 `style` 和 `hidden` UI 元素。
 
 使用该属性设置内容时，字符串中包含的任何 HTML 元素都会被 `Node.textContent` 自动编码并按原样渲染。
 
@@ -155,7 +155,7 @@ elem.innerText = '<p>回头见！</p>'
 
 ## 如何选择？
 
-一般来说，如果您只是修改文本，那么使用 `Node.textContent` 属性是最好、最安全的选择。
+一般来说，如果你只是修改文本，那么使用 `Node.textContent` 属性是最好、最安全的选择。
 
 对于修改 HTML，`Element.innerHTML` 属性非常有用，但它确实存在一些问题，它会删除事件监听器，并且存在一些安全问题。
 

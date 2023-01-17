@@ -35,9 +35,9 @@ let purple = document.querySelectorAll('p.color-purple')
 
 ## 添加和删除类
 
-您可以使用 `Element.classList` API 从元素中添加和删除类。
+你可以使用 `Element.classList` API 从元素中添加和删除类。
 
-它提供了一些可用于添加、删除、切换和检查元素上的类的方法。我们可以使用 `add()` 方法添加类，以及 `remove()` 方法 删除类。
+它提供了一些可用于添加、删除、切换和检查元素上的类的方法。我们可以使用 `add()` 方法添加类，以及 `remove()` 方法删除类。
 
 此方法仅适用于单个元素，而不适用于集合。
 
@@ -75,22 +75,26 @@ for (let elem of purple) {
 - `NodeList.forEach()` 方法
 
 ```js
-p.forEach(function (elem) {
+p.forEach((elem) => {
   elem.classList.add('color-blue')
 })
 
-purple.forEach(function (elem) {
+purple.forEach((elem) => {
   elem.classList.remove('color-purple')
 })
 ```
 
-`NodeList.forEach()` 方法也可以直接在 `document.querySelectorAll()` 方法返回的 NodeList 上调用，而无需将其保存到变量中。这有时可能很有用。
+`NodeList.forEach()` 方法也可以直接在 `document.querySelectorAll()` 方法返回的 NodeList 上调用，而无需将其保存到变量中。
 
 ```js
-document.querySelectorAll('p').forEach(function (elem) {
+document.querySelectorAll('p').forEach((elem) => {
   elem.classList.add('color-blue')
 })
 ```
+
+这有时可能很有用。
+
+`classList` 对象还有 `toggle()` 方法来切换类，`contains()` 方法来检查元素是否包含某个类。这里就不详细展开。
 
 ## 辅助函数
 
