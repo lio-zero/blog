@@ -10,8 +10,6 @@
 }
 ```
 
-分析：
-
 浏览器会先检查 `a`、`li`、`ul`，然后是 `.menu`。
 
 这是因为当浏览器扫描页面时，它只需要查看当前的节点和之前扫描过的所有节点。
@@ -20,6 +18,6 @@
 
 如果是相反的方式，则效率会很低，因为浏览器在第一次检查时找到了它正在扫描的元素，但随后被迫继续在文档中查找所有其他选择器。为此，浏览器需要有整个 html，并可能需要扫描整个网页之前，它才开始 css 绘制。
 
-这与大多数 lib 解析 dom 的方式相反。dom 就是在这里构建的，它不需要扫描整个页面，只需找到第一个元素，然后继续匹配其中的其他元素。
+这与大多数 lib 解析 DOM 的方式相反。DOM 就是在这里构建的，它不需要扫描整个页面，只需找到第一个元素，然后继续匹配其中的其他元素。
 
-详细内容您可以在 [Why do browsers match CSS selectors from right to left?](https://stackoverflow.com/questions/5797014/why-do-browsers-match-css-selectors-from-right-to-left) 查看，进行讨论。
+详细内容你可以在 [Why do browsers match CSS selectors from right to left?](https://stackoverflow.com/questions/5797014/why-do-browsers-match-css-selectors-from-right-to-left) 查看，进行讨论。
